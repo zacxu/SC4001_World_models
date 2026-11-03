@@ -1,0 +1,491 @@
+[
+  {
+    "case": "cover_0",
+    "sheet_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_0\\review_sheet.png",
+    "sheet_sha256": "eaf764873f3d630266cf29d22ee8d2dcb205d3ef18aa066ab907a0cbd038e742",
+    "source_report_sha256": "400222510588006e3dc84d1efe1c5657bdc07acd41e725ea891b68d9d1e634d3",
+    "frames": [
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_0\\locked_camera0_west_p0.png",
+        "sha256": "d2a02dcb93ebcfdff45dde11f2e77da755a189113814861b01a6f1284c6e9a95",
+        "camera_player": 0,
+        "state": "locked",
+        "view": "west"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_0\\locked_camera0_south_p0.png",
+        "sha256": "0bf77defcf979fc560ca6678da787c13a7e0634d8102661848e898b342a876ce",
+        "camera_player": 0,
+        "state": "locked",
+        "view": "south"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_0\\locked_camera0_southwest_p0.png",
+        "sha256": "e22f171ad26e78aa69a8edfd9d110ce60f6da863f556f4288cacc69896218230",
+        "camera_player": 0,
+        "state": "locked",
+        "view": "southwest"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_0\\locked_camera1_west_p1.png",
+        "sha256": "8a8306fa134f8424567baf45613552297d47ef51cadbc8ff44331717ac7dd8dc",
+        "camera_player": 1,
+        "state": "locked",
+        "view": "west"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_0\\locked_camera1_south_p1.png",
+        "sha256": "056e6b13745850712dbd09748a9a4e40e53cdf55a84d2178598155019593a349",
+        "camera_player": 1,
+        "state": "locked",
+        "view": "south"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_0\\locked_camera1_southwest_p1.png",
+        "sha256": "770c2bc2202dc01a00e98a37c5c6d2faaeac2da95613616e736dc70ca6f2c156",
+        "camera_player": 1,
+        "state": "locked",
+        "view": "southwest"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_0\\unlocked_camera0_west_p0.png",
+        "sha256": "41afd75c94ebe20cb8639b94c45e8a0c250e722259271e7c62ffd5a257f2a505",
+        "camera_player": 0,
+        "state": "unlocked",
+        "view": "west"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_0\\unlocked_camera0_south_p0.png",
+        "sha256": "668663e5522da10f75babfaf426596dfcc91bd0b0d95da767eb7fa9523a88ab0",
+        "camera_player": 0,
+        "state": "unlocked",
+        "view": "south"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_0\\unlocked_camera0_southwest_p0.png",
+        "sha256": "e86db78e42f1c7282cd077355f0d4d916ba93125e2f909c6eabc57be38d1310b",
+        "camera_player": 0,
+        "state": "unlocked",
+        "view": "southwest"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_0\\unlocked_camera1_west_p1.png",
+        "sha256": "b2fd37ac11fdad0aa214dafef8b1fe2753878206e475f64f7c60411e0604273a",
+        "camera_player": 1,
+        "state": "unlocked",
+        "view": "west"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_0\\unlocked_camera1_south_p1.png",
+        "sha256": "8ded2773a71615159e6a882c6d3cda37d5b46179b759664e0ba5ca06950cb6de",
+        "camera_player": 1,
+        "state": "unlocked",
+        "view": "south"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_0\\unlocked_camera1_southwest_p1.png",
+        "sha256": "87e38fb7d56d8774f08f3f9afeced8fd47b7214dc74a5ed54d46f37d29e4b9ee",
+        "camera_player": 1,
+        "state": "unlocked",
+        "view": "southwest"
+      }
+    ]
+  },
+  {
+    "case": "cover_1",
+    "sheet_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_1\\review_sheet.png",
+    "sheet_sha256": "6d3a5359619676326113f1074d56f43703e9863c87bf375712c500586441c252",
+    "source_report_sha256": "857fc750768f6b61d91203ffe06861327399f601526dc32f79cc29afd4fe98ab",
+    "frames": [
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_1\\locked_camera0_west_p0.png",
+        "sha256": "12eba08fdde318dc64e8f42bd1555f080abe80ceeb0a1ff5bf30b2c43f36a6c8",
+        "camera_player": 0,
+        "state": "locked",
+        "view": "west"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_1\\locked_camera0_south_p0.png",
+        "sha256": "191e692e4177c030af8a4f737fa8db89d3dedee208c0703f64cb5667853fd2b2",
+        "camera_player": 0,
+        "state": "locked",
+        "view": "south"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_1\\locked_camera0_southwest_p0.png",
+        "sha256": "99d188aea416e0e053a5aad8af79c6fe7da055ac44b769c7674dac0f6601dc32",
+        "camera_player": 0,
+        "state": "locked",
+        "view": "southwest"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_1\\locked_camera1_west_p1.png",
+        "sha256": "1bc706b334d4879c8871b87f533828ff11525602b2b619306560161e82a7d276",
+        "camera_player": 1,
+        "state": "locked",
+        "view": "west"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_1\\locked_camera1_south_p1.png",
+        "sha256": "498b2f1b9dc28f7a2581539353c6623a1c4788364e816b76e9d34af760337576",
+        "camera_player": 1,
+        "state": "locked",
+        "view": "south"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_1\\locked_camera1_southwest_p1.png",
+        "sha256": "592f364a77c69fc0a08b7487ad041807fa79e5beb490ab0e11c62618fdc318f6",
+        "camera_player": 1,
+        "state": "locked",
+        "view": "southwest"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_1\\unlocked_camera0_west_p0.png",
+        "sha256": "88223ecbc2897ad570a979e5c736d64048af84c4dffbdeb6ab35226f71e17609",
+        "camera_player": 0,
+        "state": "unlocked",
+        "view": "west"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_1\\unlocked_camera0_south_p0.png",
+        "sha256": "31263c6353be7965eb4eb2d5239f24e97ed3e6767f058a36e2b41e838b61d003",
+        "camera_player": 0,
+        "state": "unlocked",
+        "view": "south"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_1\\unlocked_camera0_southwest_p0.png",
+        "sha256": "10b2f6c68f5282ef6a401a5cd1416329f1c586a32f3e9794d3a344e47988a7b1",
+        "camera_player": 0,
+        "state": "unlocked",
+        "view": "southwest"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_1\\unlocked_camera1_west_p1.png",
+        "sha256": "61c8164d091ab44bade0a824f205f585027ed55f830f8f45c74dc3c11401b9e9",
+        "camera_player": 1,
+        "state": "unlocked",
+        "view": "west"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_1\\unlocked_camera1_south_p1.png",
+        "sha256": "b054e2ac78eec0ee0b1260bd3dc9ef92b89b36bac2834c94c019b077bf549cee",
+        "camera_player": 1,
+        "state": "unlocked",
+        "view": "south"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_1\\unlocked_camera1_southwest_p1.png",
+        "sha256": "eb422c88cfe72504dfee42cce0bbbae3bc106a30eed2a4fc393bc19a1dc26ca4",
+        "camera_player": 1,
+        "state": "unlocked",
+        "view": "southwest"
+      }
+    ]
+  },
+  {
+    "case": "cover_2",
+    "sheet_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_2\\review_sheet.png",
+    "sheet_sha256": "c2262e2684764e0048882b5d53de87598cb9c6f8ddbb6fe661288a441afe99f3",
+    "source_report_sha256": "bc2b512609604f411af7c16a3dcd49b30dc6f53a4460d6393bcea0927dae8930",
+    "frames": [
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_2\\locked_camera0_west_p0.png",
+        "sha256": "71557081f13eee19424cb5db816911d9f9349d0b42c577d920fbb3312202a1ab",
+        "camera_player": 0,
+        "state": "locked",
+        "view": "west"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_2\\locked_camera0_south_p0.png",
+        "sha256": "04824131f8a7f8353beea30a8eba34f32338ce772e76a191981d119793e67247",
+        "camera_player": 0,
+        "state": "locked",
+        "view": "south"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_2\\locked_camera0_southwest_p0.png",
+        "sha256": "f486f3931f944e8f4fdc85061516430b74e58357739223a98758ace677020dcf",
+        "camera_player": 0,
+        "state": "locked",
+        "view": "southwest"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_2\\locked_camera1_west_p1.png",
+        "sha256": "d8a41c3bba42be2663b8c2b8ddc88568b1d44ec3ae8de0633e7d4eb408cb94bf",
+        "camera_player": 1,
+        "state": "locked",
+        "view": "west"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_2\\locked_camera1_south_p1.png",
+        "sha256": "27ebb75319549d0989047839ad58744a091ad4a41d5da60adae2e283db0abcac",
+        "camera_player": 1,
+        "state": "locked",
+        "view": "south"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_2\\locked_camera1_southwest_p1.png",
+        "sha256": "e285a51b1739e50936d6130d5ebc942b3492f0e99f93ba417ddd73d8d6bbcbc3",
+        "camera_player": 1,
+        "state": "locked",
+        "view": "southwest"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_2\\unlocked_camera0_west_p0.png",
+        "sha256": "de10f1c7284010c616719102eead9efe111b6656b39fd174f3aa01e93183719f",
+        "camera_player": 0,
+        "state": "unlocked",
+        "view": "west"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_2\\unlocked_camera0_south_p0.png",
+        "sha256": "5d0dc932162e5436d38f606cf3cebd73b0af1f97740eb690bad30dddccd866de",
+        "camera_player": 0,
+        "state": "unlocked",
+        "view": "south"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_2\\unlocked_camera0_southwest_p0.png",
+        "sha256": "f5bb8dfefd706c5ce3e576ab9a7070c7a0e2af7700eebf11ab39ce6f629a6eb2",
+        "camera_player": 0,
+        "state": "unlocked",
+        "view": "southwest"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_2\\unlocked_camera1_west_p1.png",
+        "sha256": "fc2bfdee2b1e7182f60e4711d96763ae40febba6b340124376560351ce0fed0b",
+        "camera_player": 1,
+        "state": "unlocked",
+        "view": "west"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_2\\unlocked_camera1_south_p1.png",
+        "sha256": "eec746031128d28783d54d1a9a1e9a49f657f5e267cc7332b2c094b036c3ac6d",
+        "camera_player": 1,
+        "state": "unlocked",
+        "view": "south"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\cover_2\\unlocked_camera1_southwest_p1.png",
+        "sha256": "1d7609fa3947a374fe612fac48359a81299b0d96bdd31c26742c215ad9e93183",
+        "camera_player": 1,
+        "state": "unlocked",
+        "view": "southwest"
+      }
+    ]
+  },
+  {
+    "case": "relay_0",
+    "sheet_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\relay_0\\review_sheet.png",
+    "sheet_sha256": "9666b81bf9962a646ecda9c86ff172680273dc41dd7c5ea40a758c275467241c",
+    "source_report_sha256": "91d8f5a0b1262dce2d4488fdd57dacc65542069f84f07a419c0b085817d7366c",
+    "frames": [
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\relay_0\\locked_camera0_west_p0.png",
+        "sha256": "0d4cb1f99f4da7a3a84ee7d769273bc3b85f80f8b9133075abe3b05a0ec9b58b",
+        "camera_player": 0,
+        "state": "locked",
+        "view": "west"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\relay_0\\locked_camera0_south_p0.png",
+        "sha256": "52b594d34ecc086260a7aeac72457775f10a11f43e29d7ae0a4fd37726c9bf0b",
+        "camera_player": 0,
+        "state": "locked",
+        "view": "south"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\relay_0\\locked_camera0_northwest_p0.png",
+        "sha256": "4ea4076af533ef83fe7f0b1f93808e9e6cbde0dc5d0067ada1bd61278b33fde4",
+        "camera_player": 0,
+        "state": "locked",
+        "view": "northwest"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\relay_0\\unlocked_camera1_west_p1.png",
+        "sha256": "a73454c456259fc7dffc91a80284f71a3d832fa94c2b3737a324dc43f2e3b76b",
+        "camera_player": 1,
+        "state": "unlocked",
+        "view": "west"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\relay_0\\unlocked_camera1_south_p1.png",
+        "sha256": "2a4256a189cc95715c75f6ae94a57bf00dc409a44902ec7d0b953f283cbbd089",
+        "camera_player": 1,
+        "state": "unlocked",
+        "view": "south"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\relay_0\\unlocked_camera1_northwest_p1.png",
+        "sha256": "3444bfd73b8daa70818531e566ddaa9ca24661f077f8a37ab74bc6f5c190efc1",
+        "camera_player": 1,
+        "state": "unlocked",
+        "view": "northwest"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\relay_0\\unlocked_camera0_west_p0.png",
+        "sha256": "cc96ff57694e10c604124bdefaed03974d01a39e017d2374a87faf7c97033b31",
+        "camera_player": 0,
+        "state": "unlocked",
+        "view": "west"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\relay_0\\unlocked_camera0_south_p0.png",
+        "sha256": "855627476833ea4ffc631ea911116f04e10a0256d8582a7c15364df3b24819b6",
+        "camera_player": 0,
+        "state": "unlocked",
+        "view": "south"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\relay_0\\unlocked_camera0_northwest_p0.png",
+        "sha256": "21c1c24befcbb4d0d90fb593dfa11da2499b5320d38affb58a8be7448a076826",
+        "camera_player": 0,
+        "state": "unlocked",
+        "view": "northwest"
+      }
+    ]
+  },
+  {
+    "case": "relay_1",
+    "sheet_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\relay_1\\review_sheet.png",
+    "sheet_sha256": "2b7a0a3e9ae36c4bc92ed478d42a07efd03b33ef44eb89c8a360833f276e5ccb",
+    "source_report_sha256": "723b3168030898e3786b3d0a585f202fdcbe0677934a589eef6e9d64b572160c",
+    "frames": [
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\relay_1\\locked_camera1_west_p1.png",
+        "sha256": "27c5b20e5fe26bd4d57a6572349556f84a45e54eb5dfabbbcb8af40012ae12a2",
+        "camera_player": 1,
+        "state": "locked",
+        "view": "west"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\relay_1\\locked_camera1_south_p1.png",
+        "sha256": "9183be86e234dc1483f5c4d7041799c0b8c4f03862d9e45558fca2ee67ee8a67",
+        "camera_player": 1,
+        "state": "locked",
+        "view": "south"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\relay_1\\locked_camera1_northwest_p1.png",
+        "sha256": "cdeffebd713a6c347090e7422357781eb6a26b66817d0d700a3558d6eb5ffe17",
+        "camera_player": 1,
+        "state": "locked",
+        "view": "northwest"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\relay_1\\unlocked_camera0_west_p0.png",
+        "sha256": "c9b58ba499bd810598dcd9e4f33afb2cb847d78c22da21e55658622b945ede60",
+        "camera_player": 0,
+        "state": "unlocked",
+        "view": "west"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\relay_1\\unlocked_camera0_south_p0.png",
+        "sha256": "fc6ad7df0016185f1b779168d264159b2dbd23a44bbf5718bf03d1ffea88b472",
+        "camera_player": 0,
+        "state": "unlocked",
+        "view": "south"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\relay_1\\unlocked_camera0_northwest_p0.png",
+        "sha256": "9ba424c2d2d1313cfd690f83943844b94f088c42a963650c563ba2b1d7d5d9c3",
+        "camera_player": 0,
+        "state": "unlocked",
+        "view": "northwest"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\relay_1\\unlocked_camera1_west_p1.png",
+        "sha256": "f7678bc58518a056034e03c7ebee978b849221b28836691e7807963c3f920b29",
+        "camera_player": 1,
+        "state": "unlocked",
+        "view": "west"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\relay_1\\unlocked_camera1_south_p1.png",
+        "sha256": "74490e2014080d7ee095431695dc5ca1c5b7ff66cdd8b7fb6a92e3e648b1fe54",
+        "camera_player": 1,
+        "state": "unlocked",
+        "view": "south"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\relay_1\\unlocked_camera1_northwest_p1.png",
+        "sha256": "be7a4895292b1d243515d4113f5e11381d63c34a6ad0d04d3bef34b96c4594eb",
+        "camera_player": 1,
+        "state": "unlocked",
+        "view": "northwest"
+      }
+    ]
+  },
+  {
+    "case": "relay_2",
+    "sheet_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\relay_2\\review_sheet.png",
+    "sheet_sha256": "277f4a79ef3cd31a4a6cc655cd2d99c77cb7a0971064e3a7c594fb26d5833c16",
+    "source_report_sha256": "f1da1d4b55cea4de82ec0de0e8912c08556fd7097456fe9347a742578471c35b",
+    "frames": [
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\relay_2\\locked_camera1_west_p1.png",
+        "sha256": "06aa6136a79078359c26756441e3b19c43386e9379cb2f69abe36e56761bf59e",
+        "camera_player": 1,
+        "state": "locked",
+        "view": "west"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\relay_2\\locked_camera1_south_p1.png",
+        "sha256": "b68cedf433bef93d10904127d6fb748e1b4ad39ede8bb73b77d84f0200d30335",
+        "camera_player": 1,
+        "state": "locked",
+        "view": "south"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\relay_2\\locked_camera1_northwest_p1.png",
+        "sha256": "8b2e2f89be60655e92cea4de016ad151be808bde9d951752da1e22f363294796",
+        "camera_player": 1,
+        "state": "locked",
+        "view": "northwest"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\relay_2\\unlocked_camera0_west_p0.png",
+        "sha256": "d66b27827a5dbcdcec0f4ab3b90264426f226a1d26c3cf07e9d43b19201ab2bf",
+        "camera_player": 0,
+        "state": "unlocked",
+        "view": "west"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\relay_2\\unlocked_camera0_south_p0.png",
+        "sha256": "be79ce3254c61aa5aedf75a84abf4f03494013b9ebe9d179836ce0273c4d7274",
+        "camera_player": 0,
+        "state": "unlocked",
+        "view": "south"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\relay_2\\unlocked_camera0_northwest_p0.png",
+        "sha256": "74e7a5cf3d84d84b905d253066493c2f604369185c0e185d7ebce727ebf48520",
+        "camera_player": 0,
+        "state": "unlocked",
+        "view": "northwest"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\relay_2\\unlocked_camera1_west_p1.png",
+        "sha256": "48c768ce9d7a0fe9c926cc09dd3072e86b66859086cd027c1e8f9f0af164ea64",
+        "camera_player": 1,
+        "state": "unlocked",
+        "view": "west"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\relay_2\\unlocked_camera1_south_p1.png",
+        "sha256": "961da25ebaf493b4d385417d9a74315d1ae2612c46ce55de9b2ac1d72b04731c",
+        "camera_player": 1,
+        "state": "unlocked",
+        "view": "south"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\markers\\relay_2\\unlocked_camera1_northwest_p1.png",
+        "sha256": "d9c145bb9277cd0abf6570af558d62e32899856617d88deba7d684d5db55d614",
+        "camera_player": 1,
+        "state": "unlocked",
+        "view": "northwest"
+      }
+    ]
+  }
+]

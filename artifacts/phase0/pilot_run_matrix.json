@@ -1,0 +1,424 @@
+{
+  "experiment": "pilot",
+  "run_count": 8,
+  "distinct_seed_namespaces": 100,
+  "seed_collisions": [],
+  "runs": [
+    {
+      "run_id": "pilot-relay-B-0-5f110380aa",
+      "task_family": "relay",
+      "variant": "B",
+      "master_seed": 0,
+      "config_hash": "5f110380aaada2726c6f861061319adfd83c86996c84f6377fcbd84610587ea6",
+      "derived": {
+        "online_blocks": 6,
+        "local_ppo_cycles": 220,
+        "nominal_local_imagined_joint_steps": 844800,
+        "guided_local_cycles": 0,
+        "unguided_local_cycles": 220,
+        "teacher_ppo_cycles": 0,
+        "comparison_run_count": 8,
+        "checkpoint_count": 4
+      },
+      "real_budget": 200000,
+      "seeds": {
+        "derivation_version": "world-models-seeds-v1",
+        "task_family": "relay",
+        "master_seed": 0,
+        "variant": "B",
+        "components": {
+          "initial_collection": 1875063661,
+          "local_actor_initialization": 2136173318,
+          "local_critic_initialization": 2575056127,
+          "world_model_fitting_initial": 1622711448,
+          "world_model_initialization": 521663965,
+          "real_collection": 3268611519,
+          "world_model_fitting_online": 3991003217,
+          "imagination": 4028709323,
+          "local_policy_updates": 3444551699,
+          "teacher_initialization": 1776071926,
+          "teacher_rollouts": 4144660641,
+          "teacher_updates": 1238324853,
+          "distillation": 746387266
+        },
+        "local_action_sampling": {
+          "0": 3959025671,
+          "1": 4285804659
+        },
+        "paired_initial_components": [
+          "initial_collection",
+          "local_actor_initialization",
+          "local_critic_initialization",
+          "world_model_fitting_initial",
+          "world_model_initialization"
+        ],
+        "note": "Evaluation uses a separately frozen paired bank; training branch streams must not select test scenarios. Distinct uint32 hashes are not a proof of statistical independence, and manifests should be checked for collisions."
+      },
+      "execution_status": "not_started"
+    },
+    {
+      "run_id": "pilot-relay-B-1-5f110380aa",
+      "task_family": "relay",
+      "variant": "B",
+      "master_seed": 1,
+      "config_hash": "5f110380aaada2726c6f861061319adfd83c86996c84f6377fcbd84610587ea6",
+      "derived": {
+        "online_blocks": 6,
+        "local_ppo_cycles": 220,
+        "nominal_local_imagined_joint_steps": 844800,
+        "guided_local_cycles": 0,
+        "unguided_local_cycles": 220,
+        "teacher_ppo_cycles": 0,
+        "comparison_run_count": 8,
+        "checkpoint_count": 4
+      },
+      "real_budget": 200000,
+      "seeds": {
+        "derivation_version": "world-models-seeds-v1",
+        "task_family": "relay",
+        "master_seed": 1,
+        "variant": "B",
+        "components": {
+          "initial_collection": 1899012660,
+          "local_actor_initialization": 4203198844,
+          "local_critic_initialization": 203726578,
+          "world_model_fitting_initial": 2294288174,
+          "world_model_initialization": 4203652675,
+          "real_collection": 3954830792,
+          "world_model_fitting_online": 4265672148,
+          "imagination": 2161554629,
+          "local_policy_updates": 2562103248,
+          "teacher_initialization": 2227750522,
+          "teacher_rollouts": 3100548031,
+          "teacher_updates": 663041944,
+          "distillation": 2495856977
+        },
+        "local_action_sampling": {
+          "0": 1188967027,
+          "1": 2363571988
+        },
+        "paired_initial_components": [
+          "initial_collection",
+          "local_actor_initialization",
+          "local_critic_initialization",
+          "world_model_fitting_initial",
+          "world_model_initialization"
+        ],
+        "note": "Evaluation uses a separately frozen paired bank; training branch streams must not select test scenarios. Distinct uint32 hashes are not a proof of statistical independence, and manifests should be checked for collisions."
+      },
+      "execution_status": "not_started"
+    },
+    {
+      "run_id": "pilot-relay-D-0-5997c7b1a4",
+      "task_family": "relay",
+      "variant": "D",
+      "master_seed": 0,
+      "config_hash": "5997c7b1a48123dfff84bcdaeb5a7e2b40034f920ea6b8a163a0c0c9a7affa69",
+      "derived": {
+        "online_blocks": 6,
+        "local_ppo_cycles": 220,
+        "nominal_local_imagined_joint_steps": 844800,
+        "guided_local_cycles": 165,
+        "unguided_local_cycles": 55,
+        "teacher_ppo_cycles": 180,
+        "comparison_run_count": 8,
+        "checkpoint_count": 4
+      },
+      "real_budget": 200000,
+      "seeds": {
+        "derivation_version": "world-models-seeds-v1",
+        "task_family": "relay",
+        "master_seed": 0,
+        "variant": "D",
+        "components": {
+          "initial_collection": 1875063661,
+          "local_actor_initialization": 2136173318,
+          "local_critic_initialization": 2575056127,
+          "world_model_fitting_initial": 1622711448,
+          "world_model_initialization": 521663965,
+          "real_collection": 1379393404,
+          "world_model_fitting_online": 4236033012,
+          "imagination": 3045293928,
+          "local_policy_updates": 2426092349,
+          "teacher_initialization": 4124176200,
+          "teacher_rollouts": 3100629752,
+          "teacher_updates": 666708714,
+          "distillation": 1893008987
+        },
+        "local_action_sampling": {
+          "0": 575866510,
+          "1": 6441760
+        },
+        "paired_initial_components": [
+          "initial_collection",
+          "local_actor_initialization",
+          "local_critic_initialization",
+          "world_model_fitting_initial",
+          "world_model_initialization"
+        ],
+        "note": "Evaluation uses a separately frozen paired bank; training branch streams must not select test scenarios. Distinct uint32 hashes are not a proof of statistical independence, and manifests should be checked for collisions."
+      },
+      "execution_status": "not_started"
+    },
+    {
+      "run_id": "pilot-relay-D-1-5997c7b1a4",
+      "task_family": "relay",
+      "variant": "D",
+      "master_seed": 1,
+      "config_hash": "5997c7b1a48123dfff84bcdaeb5a7e2b40034f920ea6b8a163a0c0c9a7affa69",
+      "derived": {
+        "online_blocks": 6,
+        "local_ppo_cycles": 220,
+        "nominal_local_imagined_joint_steps": 844800,
+        "guided_local_cycles": 165,
+        "unguided_local_cycles": 55,
+        "teacher_ppo_cycles": 180,
+        "comparison_run_count": 8,
+        "checkpoint_count": 4
+      },
+      "real_budget": 200000,
+      "seeds": {
+        "derivation_version": "world-models-seeds-v1",
+        "task_family": "relay",
+        "master_seed": 1,
+        "variant": "D",
+        "components": {
+          "initial_collection": 1899012660,
+          "local_actor_initialization": 4203198844,
+          "local_critic_initialization": 203726578,
+          "world_model_fitting_initial": 2294288174,
+          "world_model_initialization": 4203652675,
+          "real_collection": 2198620490,
+          "world_model_fitting_online": 968230633,
+          "imagination": 637670386,
+          "local_policy_updates": 1976796004,
+          "teacher_initialization": 3052843592,
+          "teacher_rollouts": 3116101759,
+          "teacher_updates": 1950979570,
+          "distillation": 658325537
+        },
+        "local_action_sampling": {
+          "0": 3556208416,
+          "1": 2754441368
+        },
+        "paired_initial_components": [
+          "initial_collection",
+          "local_actor_initialization",
+          "local_critic_initialization",
+          "world_model_fitting_initial",
+          "world_model_initialization"
+        ],
+        "note": "Evaluation uses a separately frozen paired bank; training branch streams must not select test scenarios. Distinct uint32 hashes are not a proof of statistical independence, and manifests should be checked for collisions."
+      },
+      "execution_status": "not_started"
+    },
+    {
+      "run_id": "pilot-cover-B-0-30b1e58729",
+      "task_family": "cover",
+      "variant": "B",
+      "master_seed": 0,
+      "config_hash": "30b1e587293d483aaa351a5b15775ee92807f788674385f090b34c19d32475c1",
+      "derived": {
+        "online_blocks": 6,
+        "local_ppo_cycles": 220,
+        "nominal_local_imagined_joint_steps": 844800,
+        "guided_local_cycles": 0,
+        "unguided_local_cycles": 220,
+        "teacher_ppo_cycles": 0,
+        "comparison_run_count": 8,
+        "checkpoint_count": 4
+      },
+      "real_budget": 200000,
+      "seeds": {
+        "derivation_version": "world-models-seeds-v1",
+        "task_family": "cover",
+        "master_seed": 0,
+        "variant": "B",
+        "components": {
+          "initial_collection": 2818017310,
+          "local_actor_initialization": 871226136,
+          "local_critic_initialization": 71901704,
+          "world_model_fitting_initial": 1139214624,
+          "world_model_initialization": 2116957194,
+          "real_collection": 4022070039,
+          "world_model_fitting_online": 1833690422,
+          "imagination": 1019736336,
+          "local_policy_updates": 2183514971,
+          "teacher_initialization": 338622674,
+          "teacher_rollouts": 2456198115,
+          "teacher_updates": 3454889523,
+          "distillation": 2696291156
+        },
+        "local_action_sampling": {
+          "0": 2784252143,
+          "1": 3497219563
+        },
+        "paired_initial_components": [
+          "initial_collection",
+          "local_actor_initialization",
+          "local_critic_initialization",
+          "world_model_fitting_initial",
+          "world_model_initialization"
+        ],
+        "note": "Evaluation uses a separately frozen paired bank; training branch streams must not select test scenarios. Distinct uint32 hashes are not a proof of statistical independence, and manifests should be checked for collisions."
+      },
+      "execution_status": "not_started"
+    },
+    {
+      "run_id": "pilot-cover-B-1-30b1e58729",
+      "task_family": "cover",
+      "variant": "B",
+      "master_seed": 1,
+      "config_hash": "30b1e587293d483aaa351a5b15775ee92807f788674385f090b34c19d32475c1",
+      "derived": {
+        "online_blocks": 6,
+        "local_ppo_cycles": 220,
+        "nominal_local_imagined_joint_steps": 844800,
+        "guided_local_cycles": 0,
+        "unguided_local_cycles": 220,
+        "teacher_ppo_cycles": 0,
+        "comparison_run_count": 8,
+        "checkpoint_count": 4
+      },
+      "real_budget": 200000,
+      "seeds": {
+        "derivation_version": "world-models-seeds-v1",
+        "task_family": "cover",
+        "master_seed": 1,
+        "variant": "B",
+        "components": {
+          "initial_collection": 3692977995,
+          "local_actor_initialization": 3662937962,
+          "local_critic_initialization": 1528758847,
+          "world_model_fitting_initial": 3276331622,
+          "world_model_initialization": 3180616234,
+          "real_collection": 3731697306,
+          "world_model_fitting_online": 2723787493,
+          "imagination": 2848375591,
+          "local_policy_updates": 1713331356,
+          "teacher_initialization": 3969947171,
+          "teacher_rollouts": 1967500139,
+          "teacher_updates": 2405006664,
+          "distillation": 1057990241
+        },
+        "local_action_sampling": {
+          "0": 778675338,
+          "1": 4286115002
+        },
+        "paired_initial_components": [
+          "initial_collection",
+          "local_actor_initialization",
+          "local_critic_initialization",
+          "world_model_fitting_initial",
+          "world_model_initialization"
+        ],
+        "note": "Evaluation uses a separately frozen paired bank; training branch streams must not select test scenarios. Distinct uint32 hashes are not a proof of statistical independence, and manifests should be checked for collisions."
+      },
+      "execution_status": "not_started"
+    },
+    {
+      "run_id": "pilot-cover-D-0-ab104144c3",
+      "task_family": "cover",
+      "variant": "D",
+      "master_seed": 0,
+      "config_hash": "ab104144c338f234334ddeece760ef1ce9da3567988e823235f7e884919686ca",
+      "derived": {
+        "online_blocks": 6,
+        "local_ppo_cycles": 220,
+        "nominal_local_imagined_joint_steps": 844800,
+        "guided_local_cycles": 165,
+        "unguided_local_cycles": 55,
+        "teacher_ppo_cycles": 180,
+        "comparison_run_count": 8,
+        "checkpoint_count": 4
+      },
+      "real_budget": 200000,
+      "seeds": {
+        "derivation_version": "world-models-seeds-v1",
+        "task_family": "cover",
+        "master_seed": 0,
+        "variant": "D",
+        "components": {
+          "initial_collection": 2818017310,
+          "local_actor_initialization": 871226136,
+          "local_critic_initialization": 71901704,
+          "world_model_fitting_initial": 1139214624,
+          "world_model_initialization": 2116957194,
+          "real_collection": 795400512,
+          "world_model_fitting_online": 4042832765,
+          "imagination": 2071909162,
+          "local_policy_updates": 2254847560,
+          "teacher_initialization": 34305599,
+          "teacher_rollouts": 1294657991,
+          "teacher_updates": 3993557438,
+          "distillation": 2446488267
+        },
+        "local_action_sampling": {
+          "0": 2805860677,
+          "1": 416390619
+        },
+        "paired_initial_components": [
+          "initial_collection",
+          "local_actor_initialization",
+          "local_critic_initialization",
+          "world_model_fitting_initial",
+          "world_model_initialization"
+        ],
+        "note": "Evaluation uses a separately frozen paired bank; training branch streams must not select test scenarios. Distinct uint32 hashes are not a proof of statistical independence, and manifests should be checked for collisions."
+      },
+      "execution_status": "not_started"
+    },
+    {
+      "run_id": "pilot-cover-D-1-ab104144c3",
+      "task_family": "cover",
+      "variant": "D",
+      "master_seed": 1,
+      "config_hash": "ab104144c338f234334ddeece760ef1ce9da3567988e823235f7e884919686ca",
+      "derived": {
+        "online_blocks": 6,
+        "local_ppo_cycles": 220,
+        "nominal_local_imagined_joint_steps": 844800,
+        "guided_local_cycles": 165,
+        "unguided_local_cycles": 55,
+        "teacher_ppo_cycles": 180,
+        "comparison_run_count": 8,
+        "checkpoint_count": 4
+      },
+      "real_budget": 200000,
+      "seeds": {
+        "derivation_version": "world-models-seeds-v1",
+        "task_family": "cover",
+        "master_seed": 1,
+        "variant": "D",
+        "components": {
+          "initial_collection": 3692977995,
+          "local_actor_initialization": 3662937962,
+          "local_critic_initialization": 1528758847,
+          "world_model_fitting_initial": 3276331622,
+          "world_model_initialization": 3180616234,
+          "real_collection": 3336848517,
+          "world_model_fitting_online": 3815526429,
+          "imagination": 3030646315,
+          "local_policy_updates": 1568646208,
+          "teacher_initialization": 3406600816,
+          "teacher_rollouts": 1102829438,
+          "teacher_updates": 4258658076,
+          "distillation": 3048208453
+        },
+        "local_action_sampling": {
+          "0": 3771083580,
+          "1": 1969094775
+        },
+        "paired_initial_components": [
+          "initial_collection",
+          "local_actor_initialization",
+          "local_critic_initialization",
+          "world_model_fitting_initial",
+          "world_model_initialization"
+        ],
+        "note": "Evaluation uses a separately frozen paired bank; training branch streams must not select test scenarios. Distinct uint32 hashes are not a proof of statistical independence, and manifests should be checked for collisions."
+      },
+      "execution_status": "not_started"
+    }
+  ]
+}

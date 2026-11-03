@@ -1,0 +1,767 @@
+{
+  "constant_scale_rule": "std if std >= threshold, otherwise 1.0; unobserved fields remain unavailable",
+  "constant_threshold": 1e-06,
+  "fields": {
+    "enemy_1/health": {
+      "count": 44953,
+      "maximum": 1.0,
+      "mean": 0.4228427468698804,
+      "minimum": 0.0,
+      "scale": 0.43902544503380586,
+      "std": 0.43902544503380586,
+      "variance": 0.19274334138713128
+    },
+    "enemy_1/position_x": {
+      "count": 25502,
+      "maximum": 0.9625048637390137,
+      "mean": 0.2293070879255625,
+      "minimum": -0.9667739868164062,
+      "scale": 0.4314892749462534,
+      "std": 0.4314892749462534,
+      "variance": 0.18618299439364344
+    },
+    "enemy_1/position_y": {
+      "count": 25502,
+      "maximum": 0.9468183517456055,
+      "mean": -0.296569516533648,
+      "minimum": -0.9476101994514465,
+      "scale": 0.3969443285201575,
+      "std": 0.3969443285201575,
+      "variance": 0.1575647999443187
+    },
+    "enemy_2/health": {
+      "count": 10210,
+      "maximum": 1.0,
+      "mean": 0.7700195887997152,
+      "minimum": 0.0,
+      "scale": 0.39474982424115074,
+      "std": 0.39474982424115074,
+      "variance": 0.1558274237384194
+    },
+    "enemy_2/position_x": {
+      "count": 8390,
+      "maximum": 0.15042877197265625,
+      "mean": -0.36690261082693776,
+      "minimum": -0.8811518549919128,
+      "scale": 0.1625391188572461,
+      "std": 0.1625391188572461,
+      "variance": 0.026418965158889973
+    },
+    "enemy_2/position_y": {
+      "count": 8390,
+      "maximum": 0.9429890513420105,
+      "mean": 0.40361084771881095,
+      "minimum": -0.18931730091571808,
+      "scale": 0.1753362223459327,
+      "std": 0.1753362223459327,
+      "variance": 0.030742790866542354
+    },
+    "player_0/ammo": {
+      "count": 44953,
+      "maximum": 1.0,
+      "mean": 0.8980825543416879,
+      "minimum": 0.5600000023841858,
+      "scale": 0.11079847631860082,
+      "std": 0.11079847631860082,
+      "variance": 0.012276302354523547
+    },
+    "player_0/armor": {
+      "count": 44953,
+      "maximum": 1.0,
+      "mean": 0.9727655563403976,
+      "minimum": 0.4699999988079071,
+      "scale": 0.05406423452528659,
+      "std": 0.05406423452528659,
+      "variance": 0.00292294145480519
+    },
+    "player_0/heading_cos": {
+      "count": 44953,
+      "maximum": 1.0,
+      "mean": 0.35157140583267155,
+      "minimum": -0.999981164932251,
+      "scale": 0.7162189609104319,
+      "std": 0.7162189609104319,
+      "variance": 0.5129695999676188
+    },
+    "player_0/heading_sin": {
+      "count": 44953,
+      "maximum": 0.999981164932251,
+      "mean": -0.019404604954326943,
+      "minimum": -1.0,
+      "scale": 0.6025374754539915,
+      "std": 0.6025374754539915,
+      "variance": 0.36305140932646945
+    },
+    "player_0/health": {
+      "count": 44953,
+      "maximum": 1.0,
+      "mean": 0.9455324435834123,
+      "minimum": 0.0,
+      "scale": 0.10811642732451238,
+      "std": 0.10811642732451238,
+      "variance": 0.011689161857416567
+    },
+    "player_0/position_x": {
+      "count": 44953,
+      "maximum": 0.9736807346343994,
+      "mean": -0.18692560056541058,
+      "minimum": -0.9749990105628967,
+      "scale": 0.5490561529518583,
+      "std": 0.5490561529518583,
+      "variance": 0.30146265909429437
+    },
+    "player_0/position_y": {
+      "count": 44953,
+      "maximum": 0.9583330154418945,
+      "mean": -0.009494623145805594,
+      "minimum": -0.9583333134651184,
+      "scale": 0.6014174745636157,
+      "std": 0.6014174745636157,
+      "variance": 0.3617029787104773
+    },
+    "player_0/position_z": {
+      "count": 44953,
+      "maximum": 0.0,
+      "mean": 0.0,
+      "minimum": 0.0,
+      "scale": 1.0,
+      "std": 0.0,
+      "variance": 0.0
+    },
+    "player_0/velocity_x": {
+      "count": 44953,
+      "maximum": 0.2534627914428711,
+      "mean": 0.018172029165092647,
+      "minimum": -0.2519364356994629,
+      "scale": 0.08510586296464863,
+      "std": 0.08510586296464863,
+      "variance": 0.007243007910957551
+    },
+    "player_0/velocity_y": {
+      "count": 44953,
+      "maximum": 0.25148487091064453,
+      "mean": 0.007764321668918193,
+      "minimum": -0.2298755645751953,
+      "scale": 0.08263844020622077,
+      "std": 0.08263844020622077,
+      "variance": 0.006829111799717125
+    },
+    "player_1/ammo": {
+      "count": 44953,
+      "maximum": 1.0,
+      "mean": 0.9034123429930572,
+      "minimum": 0.5799999833106995,
+      "scale": 0.1068861760536099,
+      "std": 0.1068861760536099,
+      "variance": 0.01142465463136329
+    },
+    "player_1/armor": {
+      "count": 44953,
+      "maximum": 1.0,
+      "mean": 0.9661210595718134,
+      "minimum": 0.47999998927116394,
+      "scale": 0.07989726368340896,
+      "std": 0.07989726368340896,
+      "variance": 0.006383572744096181
+    },
+    "player_1/heading_cos": {
+      "count": 44953,
+      "maximum": 1.0,
+      "mean": 0.3647643280830828,
+      "minimum": -0.999981164932251,
+      "scale": 0.7264349407399744,
+      "std": 0.7264349407399744,
+      "variance": 0.5277077231278902
+    },
+    "player_1/heading_sin": {
+      "count": 44953,
+      "maximum": 1.0,
+      "mean": -0.01232184781470104,
+      "minimum": -1.0,
+      "scale": 0.5823121441033401,
+      "std": 0.5823121441033401,
+      "variance": 0.33908743317022916
+    },
+    "player_1/health": {
+      "count": 44953,
+      "maximum": 1.0,
+      "mean": 0.9322430091259465,
+      "minimum": 0.0,
+      "scale": 0.15978922009420965,
+      "std": 0.15978922009420965,
+      "variance": 0.02553259485831577
+    },
+    "player_1/position_x": {
+      "count": 44953,
+      "maximum": 0.9736825227737427,
+      "mean": -0.16553512639383341,
+      "minimum": -0.974999189376831,
+      "scale": 0.5425493786234677,
+      "std": 0.5425493786234677,
+      "variance": 0.29435982824471096
+    },
+    "player_1/position_y": {
+      "count": 44953,
+      "maximum": 0.9583332538604736,
+      "mean": -0.015525382202805752,
+      "minimum": -0.9583318829536438,
+      "scale": 0.609555922766326,
+      "std": 0.609555922766326,
+      "variance": 0.37155842297950714
+    },
+    "player_1/position_z": {
+      "count": 44953,
+      "maximum": 0.0,
+      "mean": 0.0,
+      "minimum": 0.0,
+      "scale": 1.0,
+      "std": 0.0,
+      "variance": 0.0
+    },
+    "player_1/velocity_x": {
+      "count": 44953,
+      "maximum": 0.2611403465270996,
+      "mean": 0.017841443849390116,
+      "minimum": -0.24542760848999023,
+      "scale": 0.08510533016850981,
+      "std": 0.08510533016850981,
+      "variance": 0.007242917223091066
+    },
+    "player_1/velocity_y": {
+      "count": 44953,
+      "maximum": 0.24619340896606445,
+      "mean": 0.008563914882527621,
+      "minimum": -0.2321772575378418,
+      "scale": 0.08280201521929106,
+      "std": 0.08280201521929106,
+      "variance": 0.006856173724375709
+    },
+    "task/elapsed_decisions": {
+      "count": 44953,
+      "maximum": 1.0,
+      "mean": 0.3285492255044967,
+      "minimum": 0.0,
+      "scale": 0.29890292973505317,
+      "std": 0.29890292973505317,
+      "variance": 0.08934296140419812
+    },
+    "task/milestone_count": {
+      "count": 44953,
+      "maximum": 1.0,
+      "mean": 0.15527328543145083,
+      "minimum": 0.0,
+      "scale": 0.3086050554226729,
+      "std": 0.3086050554226729,
+      "variance": 0.095237080232431
+    },
+    "task/progress_1": {
+      "count": 44953,
+      "maximum": 1.0,
+      "mean": 0.2696838922829465,
+      "minimum": 0.0,
+      "scale": 0.421586520983169,
+      "std": 0.421586520983169,
+      "variance": 0.17773519467469198
+    },
+    "task/progress_2": {
+      "count": 44953,
+      "maximum": 1.0,
+      "mean": 0.10591840368613913,
+      "minimum": 0.0,
+      "scale": 0.2942560290160703,
+      "std": 0.2942560290160703,
+      "variance": 0.0865866106123064
+    }
+  },
+  "identity_sha256": "193d7863d3c0521d3a56d829f96594481652faef6f5410bd765ce2b4cb487e1f",
+  "input_space": "replay_geometry_normalized_continuous_targets",
+  "provenance": {
+    "accumulation": "chunked_float64_welford_population",
+    "chunk_count": 439,
+    "data_source": "real_environment",
+    "dataset_identity_sha256": "3f41e3da1d092852473970f07c44b8deb76e34e2e260df1a242835f7960b411d",
+    "dataset_manifest_sha256": "7b1f584a4ef3ed7baf8268405449c5335ff8e0756ddd8e756a90a3e50ffd8a92",
+    "excluded_model_diagnostic_episode_count": 19,
+    "fitting_episode_count": 228,
+    "fitting_episode_ids": [
+      "cover-s0-e000000",
+      "cover-s0-e000001",
+      "cover-s0-e000002",
+      "cover-s0-e000003",
+      "cover-s0-e000004",
+      "cover-s0-e000005",
+      "cover-s0-e000006",
+      "cover-s0-e000007",
+      "cover-s0-e000009",
+      "cover-s0-e000010",
+      "cover-s0-e000011",
+      "cover-s0-e000012",
+      "cover-s0-e000013",
+      "cover-s0-e000014",
+      "cover-s0-e000015",
+      "cover-s0-e000016",
+      "cover-s0-e000017",
+      "cover-s0-e000018",
+      "cover-s0-e000019",
+      "cover-s0-e000021",
+      "cover-s0-e000022",
+      "cover-s0-e000023",
+      "cover-s0-e000024",
+      "cover-s0-e000025",
+      "cover-s0-e000026",
+      "cover-s0-e000027",
+      "cover-s0-e000028",
+      "cover-s0-e000029",
+      "cover-s0-e000030",
+      "cover-s0-e000031",
+      "cover-s0-e000034",
+      "cover-s0-e000035",
+      "cover-s0-e000036",
+      "cover-s0-e000037",
+      "cover-s0-e000038",
+      "cover-s0-e000039",
+      "cover-s0-e000040",
+      "cover-s0-e000041",
+      "cover-s0-e000042",
+      "cover-s0-e000043",
+      "cover-s0-e000044",
+      "cover-s0-e000045",
+      "cover-s0-e000046",
+      "cover-s0-e000047",
+      "cover-s0-e000048",
+      "cover-s0-e000049",
+      "cover-s0-e000050",
+      "cover-s0-e000051",
+      "cover-s0-e000052",
+      "cover-s0-e000053",
+      "cover-s0-e000054",
+      "cover-s0-e000055",
+      "cover-s0-e000056",
+      "cover-s0-e000057",
+      "cover-s0-e000058",
+      "cover-s0-e000059",
+      "cover-s0-e000060",
+      "cover-s0-e000061",
+      "cover-s0-e000062",
+      "cover-s0-e000063",
+      "cover-s0-e000064",
+      "cover-s0-e000065",
+      "cover-s0-e000066",
+      "cover-s0-e000067",
+      "cover-s0-e000068",
+      "cover-s0-e000069",
+      "cover-s0-e000071",
+      "cover-s0-e000072",
+      "cover-s0-e000073",
+      "cover-s0-e000074",
+      "cover-s0-e000076",
+      "cover-s0-e000077",
+      "cover-s0-e000079",
+      "cover-s0-e000080",
+      "cover-s0-e000081",
+      "cover-s0-e000082",
+      "cover-s0-e000084",
+      "cover-s0-e000085",
+      "cover-s0-e000086",
+      "cover-s0-e000087",
+      "cover-s0-e000088",
+      "cover-s0-e000090",
+      "cover-s0-e000091",
+      "cover-s0-e000092",
+      "cover-s0-e000093",
+      "cover-s0-e000094",
+      "cover-s0-e000095",
+      "cover-s0-e000096",
+      "cover-s0-e000097",
+      "cover-s0-e000098",
+      "cover-s0-e000099",
+      "cover-s0-e000100",
+      "cover-s0-e000101",
+      "cover-s0-e000102",
+      "cover-s0-e000103",
+      "cover-s0-e000104",
+      "cover-s0-e000105",
+      "cover-s0-e000106",
+      "cover-s0-e000107",
+      "cover-s0-e000108",
+      "cover-s0-e000109",
+      "cover-s0-e000110",
+      "cover-s0-e000111",
+      "cover-s0-e000112",
+      "cover-s0-e000113",
+      "cover-s0-e000114",
+      "cover-s0-e000115",
+      "cover-s0-e000116",
+      "cover-s0-e000117",
+      "cover-s0-e000118",
+      "cover-s0-e000119",
+      "cover-s0-e000120",
+      "cover-s0-e000121",
+      "cover-s0-e000122",
+      "cover-s0-e000123",
+      "cover-s0-e000124",
+      "cover-s0-e000125",
+      "cover-s0-e000126",
+      "cover-s0-e000127",
+      "cover-s0-e000128",
+      "cover-s0-e000129",
+      "cover-s0-e000130",
+      "cover-s0-e000131",
+      "cover-s0-e000132",
+      "cover-s0-e000133",
+      "cover-s0-e000134",
+      "cover-s0-e000135",
+      "cover-s0-e000136",
+      "cover-s0-e000137",
+      "cover-s0-e000138",
+      "cover-s0-e000140",
+      "cover-s0-e000141",
+      "cover-s0-e000142",
+      "cover-s0-e000143",
+      "cover-s0-e000144",
+      "cover-s0-e000145",
+      "cover-s0-e000147",
+      "cover-s0-e000148",
+      "cover-s0-e000149",
+      "cover-s0-e000150",
+      "cover-s0-e000151",
+      "cover-s0-e000152",
+      "cover-s0-e000153",
+      "cover-s0-e000154",
+      "cover-s0-e000155",
+      "cover-s0-e000156",
+      "cover-s0-e000157",
+      "cover-s0-e000158",
+      "cover-s0-e000159",
+      "cover-s0-e000160",
+      "cover-s0-e000162",
+      "cover-s0-e000163",
+      "cover-s0-e000164",
+      "cover-s0-e000165",
+      "cover-s0-e000167",
+      "cover-s0-e000168",
+      "cover-s0-e000169",
+      "cover-s0-e000170",
+      "cover-s0-e000171",
+      "cover-s0-e000172",
+      "cover-s0-e000173",
+      "cover-s0-e000174",
+      "cover-s0-e000175",
+      "cover-s0-e000176",
+      "cover-s0-e000177",
+      "cover-s0-e000178",
+      "cover-s0-e000179",
+      "cover-s0-e000180",
+      "cover-s0-e000181",
+      "cover-s0-e000182",
+      "cover-s0-e000185",
+      "cover-s0-e000186",
+      "cover-s0-e000187",
+      "cover-s0-e000188",
+      "cover-s0-e000189",
+      "cover-s0-e000190",
+      "cover-s0-e000191",
+      "cover-s0-e000192",
+      "cover-s0-e000193",
+      "cover-s0-e000194",
+      "cover-s0-e000195",
+      "cover-s0-e000196",
+      "cover-s0-e000197",
+      "cover-s0-e000198",
+      "cover-s0-e000199",
+      "cover-s0-e000200",
+      "cover-s0-e000201",
+      "cover-s0-e000202",
+      "cover-s0-e000204",
+      "cover-s0-e000205",
+      "cover-s0-e000206",
+      "cover-s0-e000207",
+      "cover-s0-e000208",
+      "cover-s0-e000209",
+      "cover-s0-e000210",
+      "cover-s0-e000211",
+      "cover-s0-e000212",
+      "cover-s0-e000214",
+      "cover-s0-e000215",
+      "cover-s0-e000216",
+      "cover-s0-e000217",
+      "cover-s0-e000218",
+      "cover-s0-e000219",
+      "cover-s0-e000220",
+      "cover-s0-e000221",
+      "cover-s0-e000222",
+      "cover-s0-e000224",
+      "cover-s0-e000226",
+      "cover-s0-e000227",
+      "cover-s0-e000228",
+      "cover-s0-e000229",
+      "cover-s0-e000230",
+      "cover-s0-e000231",
+      "cover-s0-e000232",
+      "cover-s0-e000233",
+      "cover-s0-e000234",
+      "cover-s0-e000235",
+      "cover-s0-e000236",
+      "cover-s0-e000237",
+      "cover-s0-e000238",
+      "cover-s0-e000239",
+      "cover-s0-e000240",
+      "cover-s0-e000241",
+      "cover-s0-e000242",
+      "cover-s0-e000243",
+      "cover-s0-e000244",
+      "cover-s0-e000245",
+      "cover-s0-e000246"
+    ],
+    "fitting_episode_ids_sha256": "ffce42203d76fa179f30f165984729a5891f42a28e146539417c458c0cfa5144",
+    "fitting_transition_count": 44725,
+    "geometry_split": "train",
+    "image_masks_do_not_gate_state_targets": true,
+    "label_profile": {
+      "binary_fields": {
+        "enemy_1/alive": {
+          "alignment": "state",
+          "positive": 25502,
+          "positive_fraction": 0.5673036282339332,
+          "valid": 44953
+        },
+        "enemy_1/spawned": {
+          "alignment": "state",
+          "positive": 44953,
+          "positive_fraction": 1.0,
+          "valid": 44953
+        },
+        "enemy_2/alive": {
+          "alignment": "state",
+          "positive": 8390,
+          "positive_fraction": 0.18663937890685828,
+          "valid": 44953
+        },
+        "enemy_2/spawned": {
+          "alignment": "state",
+          "positive": 10210,
+          "positive_fraction": 0.22712610949213624,
+          "valid": 44953
+        },
+        "event/console_1_completions": {
+          "alignment": "transition",
+          "positive": 129,
+          "positive_fraction": 0.002884292901062046,
+          "valid": 44725
+        },
+        "event/console_2_completions": {
+          "alignment": "transition",
+          "positive": 93,
+          "positive_fraction": 0.0020793739519284517,
+          "valid": 44725
+        },
+        "event/enemy_1_deaths": {
+          "alignment": "transition",
+          "positive": 87,
+          "positive_fraction": 0.0019452207937395193,
+          "valid": 44725
+        },
+        "event/enemy_2_deaths": {
+          "alignment": "transition",
+          "positive": 40,
+          "positive_fraction": 0.0008943543879262158,
+          "valid": 44725
+        },
+        "event/failures": {
+          "alignment": "transition",
+          "positive": 44,
+          "positive_fraction": 0.0009837898267188374,
+          "valid": 44725
+        },
+        "event/player_0_damage_taken": {
+          "alignment": "transition",
+          "positive": 270,
+          "positive_fraction": 0.006036892118501957,
+          "valid": 44725
+        },
+        "event/player_0_damagecount": {
+          "alignment": "transition",
+          "positive": 198,
+          "positive_fraction": 0.004427054220234768,
+          "valid": 44725
+        },
+        "event/player_0_deathcount": {
+          "alignment": "transition",
+          "positive": 1,
+          "positive_fraction": 2.2358859698155395e-05,
+          "valid": 44725
+        },
+        "event/player_0_deaths": {
+          "alignment": "transition",
+          "positive": 1,
+          "positive_fraction": 2.2358859698155395e-05,
+          "valid": 44725
+        },
+        "event/player_0_hitcount": {
+          "alignment": "transition",
+          "positive": 198,
+          "positive_fraction": 0.004427054220234768,
+          "valid": 44725
+        },
+        "event/player_0_hits_taken": {
+          "alignment": "transition",
+          "positive": 270,
+          "positive_fraction": 0.006036892118501957,
+          "valid": 44725
+        },
+        "event/player_0_itemcount": {
+          "alignment": "transition",
+          "positive": 0,
+          "positive_fraction": 0.0,
+          "valid": 44725
+        },
+        "event/player_0_killcount": {
+          "alignment": "transition",
+          "positive": 127,
+          "positive_fraction": 0.002839575181665735,
+          "valid": 44725
+        },
+        "event/player_1_damage_taken": {
+          "alignment": "transition",
+          "positive": 292,
+          "positive_fraction": 0.006528787031861375,
+          "valid": 44725
+        },
+        "event/player_1_damagecount": {
+          "alignment": "transition",
+          "positive": 157,
+          "positive_fraction": 0.003510340972610397,
+          "valid": 44725
+        },
+        "event/player_1_deathcount": {
+          "alignment": "transition",
+          "positive": 1,
+          "positive_fraction": 2.2358859698155395e-05,
+          "valid": 44725
+        },
+        "event/player_1_deaths": {
+          "alignment": "transition",
+          "positive": 1,
+          "positive_fraction": 2.2358859698155395e-05,
+          "valid": 44725
+        },
+        "event/player_1_hitcount": {
+          "alignment": "transition",
+          "positive": 157,
+          "positive_fraction": 0.003510340972610397,
+          "valid": 44725
+        },
+        "event/player_1_hits_taken": {
+          "alignment": "transition",
+          "positive": 292,
+          "positive_fraction": 0.006528787031861375,
+          "valid": 44725
+        },
+        "event/player_1_itemcount": {
+          "alignment": "transition",
+          "positive": 0,
+          "positive_fraction": 0.0,
+          "valid": 44725
+        },
+        "event/player_1_killcount": {
+          "alignment": "transition",
+          "positive": 127,
+          "positive_fraction": 0.002839575181665735,
+          "valid": 44725
+        },
+        "event/successes": {
+          "alignment": "transition",
+          "positive": 88,
+          "positive_fraction": 0.0019675796534376747,
+          "valid": 44725
+        },
+        "player_0/alive": {
+          "alignment": "state",
+          "positive": 44952,
+          "positive_fraction": 0.9999777545436345,
+          "valid": 44953
+        },
+        "player_1/alive": {
+          "alignment": "state",
+          "positive": 44952,
+          "positive_fraction": 0.9999777545436345,
+          "valid": 44953
+        },
+        "task/console_1_complete": {
+          "alignment": "state",
+          "positive": 10210,
+          "positive_fraction": 0.22712610949213624,
+          "valid": 44953
+        },
+        "task/console_2_complete": {
+          "alignment": "state",
+          "positive": 3750,
+          "positive_fraction": 0.08342046137076502,
+          "valid": 44953
+        },
+        "task/extraction_unlocked": {
+          "alignment": "state",
+          "positive": 3750,
+          "positive_fraction": 0.08342046137076502,
+          "valid": 44953
+        },
+        "task/failure": {
+          "alignment": "state",
+          "positive": 44,
+          "positive_fraction": 0.000978800080083643,
+          "valid": 44953
+        },
+        "task/success": {
+          "alignment": "state",
+          "positive": 88,
+          "positive_fraction": 0.001957600160167286,
+          "valid": 44953
+        }
+      },
+      "deadline_transitions": 42,
+      "learned_outcome": {
+        "class_names": [
+          "continue",
+          "success",
+          "failure"
+        ],
+        "counts": [
+          44635,
+          88,
+          2
+        ],
+        "valid": 44725
+      },
+      "nonzero_bonus_transitions": 222,
+      "task_stage": {
+        "counts": [
+          34743,
+          6460,
+          3662,
+          88
+        ],
+        "valid": 44953
+      }
+    },
+    "partition": "fit",
+    "profile_task_spec": {
+      "deadline": 600,
+      "failure_reward": -1.0,
+      "milestone_bonus": 0.05,
+      "milestone_count": 2,
+      "step_cost": -0.001,
+      "success_reward": 1.0,
+      "task_family": "cover"
+    },
+    "run_seed": 0,
+    "shared_by_variants": [
+      "B",
+      "D"
+    ],
+    "task_family": "cover",
+    "unique_state_count": 44953
+  },
+  "schema_version": "fitting-normalization-v1",
+  "task_family": "cover",
+  "variance_reduction": "population"
+}

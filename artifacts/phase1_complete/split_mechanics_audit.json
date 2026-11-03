@@ -1,0 +1,907 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "audited_at_utc": "2026-11-01T08:11:22.640839+00:00",
+  "scope": "Independent read-only audit of all twenty native split mechanics cases and both genuine video-source image sequences. No source edits or native games.",
+  "source_report": {
+    "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics_report.json",
+    "bytes": 449516,
+    "sha256": "0880be3a840c2ef2d282b4e4ccac46b679cc2ce3d06eba6afd0b55a6f961c3e3"
+  },
+  "split_manifest": {
+    "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\split_manifest.json",
+    "bytes": 27981,
+    "sha256": "3f0846776c36ec23fc406d44e88844cf5eda10edc4c6c0a43f6c8d8a2700f15f"
+  },
+  "checks": {
+    "stage_status_and_twenty_cases": true,
+    "exact_template_coverage_no_duplicates": true,
+    "relay_six_two_two": true,
+    "relay_ten_unique_realized_geometries": true,
+    "cover_six_two_two": true,
+    "cover_ten_unique_realized_geometries": true,
+    "all_native_case_checks": true,
+    "four_inactive_player_failures": true,
+    "both_video_exports_valid": true
+  },
+  "cases": [
+    {
+      "template_id": "relay_train_00",
+      "task_family": "relay",
+      "split": "train",
+      "seed": 0,
+      "decisions": 59,
+      "checks": {
+        "published_success_before_deadline": true,
+        "native_trace_hash_matches": true,
+        "native_trace_metadata_matches_case": true,
+        "trace_count_and_success_boundary": true,
+        "diagnostic_origin_learning_ineligible": true,
+        "task_seed_split_template_provenance": true,
+        "declared_geometry_equals_spec_and_realized_cells": true,
+        "geometry_and_fresh_spawn_checks_pass": true,
+        "wad_bytes_hash_matches_native_case_manifest": true,
+        "scenario_manifest_on_disk_matches_native_case": true,
+        "acs_source_hash_matches": true,
+        "wad_acs_source_text_matches": true,
+        "wad_textmap_matches_authored_file": true,
+        "wad_behavior_matches_compiled_object": true,
+        "all_marker_assets_match_actual_wad": true,
+        "zero_initial_events_and_one_final_success": true
+      },
+      "geometry_sha256": "81df990ca1fb7f8460d294379e486849f5ab3e23e24aae9f61df94e6d148cce1",
+      "wad": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\scenarios\\relay_train_00\\relay.wad",
+        "bytes": 83707,
+        "sha256": "f5c90987709d050f0126d71e6a59d630c0c5fc0cc13f6ad9fb0108538b469e01"
+      },
+      "trace": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\relay_train_00\\mechanics_trace.json",
+        "bytes": 1741315,
+        "sha256": "208238f7a91e4c4007281e720f58db5e7872512e32a48a4b3a0d547f571a4db4"
+      }
+    },
+    {
+      "template_id": "relay_train_01",
+      "task_family": "relay",
+      "split": "train",
+      "seed": 0,
+      "decisions": 63,
+      "checks": {
+        "published_success_before_deadline": true,
+        "native_trace_hash_matches": true,
+        "native_trace_metadata_matches_case": true,
+        "trace_count_and_success_boundary": true,
+        "diagnostic_origin_learning_ineligible": true,
+        "task_seed_split_template_provenance": true,
+        "declared_geometry_equals_spec_and_realized_cells": true,
+        "geometry_and_fresh_spawn_checks_pass": true,
+        "wad_bytes_hash_matches_native_case_manifest": true,
+        "scenario_manifest_on_disk_matches_native_case": true,
+        "acs_source_hash_matches": true,
+        "wad_acs_source_text_matches": true,
+        "wad_textmap_matches_authored_file": true,
+        "wad_behavior_matches_compiled_object": true,
+        "all_marker_assets_match_actual_wad": true,
+        "zero_initial_events_and_one_final_success": true
+      },
+      "geometry_sha256": "be2c6ef3dd70530123a33654d984eb4b7f58e15b1200b34cb149786dddfd89fe",
+      "wad": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\scenarios\\relay_train_01\\relay.wad",
+        "bytes": 88833,
+        "sha256": "813db404a7bb86140ee3ee66656b3f345c9f2c908f18b02f216a0a2851a8281f"
+      },
+      "trace": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\relay_train_01\\mechanics_trace.json",
+        "bytes": 1855723,
+        "sha256": "c29edd7c448d2cb3521ef08fdada6b3129ede8cda37891ffa0ad18afc9147fa4"
+      }
+    },
+    {
+      "template_id": "relay_train_02",
+      "task_family": "relay",
+      "split": "train",
+      "seed": 0,
+      "decisions": 64,
+      "checks": {
+        "published_success_before_deadline": true,
+        "native_trace_hash_matches": true,
+        "native_trace_metadata_matches_case": true,
+        "trace_count_and_success_boundary": true,
+        "diagnostic_origin_learning_ineligible": true,
+        "task_seed_split_template_provenance": true,
+        "declared_geometry_equals_spec_and_realized_cells": true,
+        "geometry_and_fresh_spawn_checks_pass": true,
+        "wad_bytes_hash_matches_native_case_manifest": true,
+        "scenario_manifest_on_disk_matches_native_case": true,
+        "acs_source_hash_matches": true,
+        "wad_acs_source_text_matches": true,
+        "wad_textmap_matches_authored_file": true,
+        "wad_behavior_matches_compiled_object": true,
+        "all_marker_assets_match_actual_wad": true,
+        "zero_initial_events_and_one_final_success": true
+      },
+      "geometry_sha256": "c0f83cfbc3ac787cbb343ff145a7f9102bf708fdef43024a3aefd333c97e5686",
+      "wad": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\scenarios\\relay_train_02\\relay.wad",
+        "bytes": 93967,
+        "sha256": "4c127c44d42f9e1fa5560e615d43061c23b3818e29dccb2b9b9ad11d69deab5a"
+      },
+      "trace": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\relay_train_02\\mechanics_trace.json",
+        "bytes": 1885293,
+        "sha256": "f33d4ab48bacd5172367f4a7b47befc3df6394e5712d600a255aea735ae132ec"
+      }
+    },
+    {
+      "template_id": "relay_train_03",
+      "task_family": "relay",
+      "split": "train",
+      "seed": 0,
+      "decisions": 67,
+      "checks": {
+        "published_success_before_deadline": true,
+        "native_trace_hash_matches": true,
+        "native_trace_metadata_matches_case": true,
+        "trace_count_and_success_boundary": true,
+        "diagnostic_origin_learning_ineligible": true,
+        "task_seed_split_template_provenance": true,
+        "declared_geometry_equals_spec_and_realized_cells": true,
+        "geometry_and_fresh_spawn_checks_pass": true,
+        "wad_bytes_hash_matches_native_case_manifest": true,
+        "scenario_manifest_on_disk_matches_native_case": true,
+        "acs_source_hash_matches": true,
+        "wad_acs_source_text_matches": true,
+        "wad_textmap_matches_authored_file": true,
+        "wad_behavior_matches_compiled_object": true,
+        "all_marker_assets_match_actual_wad": true,
+        "zero_initial_events_and_one_final_success": true
+      },
+      "geometry_sha256": "1215c556b7a4a038259511be3cf53247e34e67ae9de0c4dbffca3d10fb7cd932",
+      "wad": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\scenarios\\relay_train_03\\relay.wad",
+        "bytes": 99108,
+        "sha256": "4c8880c64b111a6d8109f2bd17b0b0c240c601167902d077d6d6b33283b595c6"
+      },
+      "trace": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\relay_train_03\\mechanics_trace.json",
+        "bytes": 1973319,
+        "sha256": "9f522f36ca6c66dad1a05290bce1560802a38621196ab02b21fe5d5eb4cfca73"
+      }
+    },
+    {
+      "template_id": "relay_train_04",
+      "task_family": "relay",
+      "split": "train",
+      "seed": 0,
+      "decisions": 71,
+      "checks": {
+        "published_success_before_deadline": true,
+        "native_trace_hash_matches": true,
+        "native_trace_metadata_matches_case": true,
+        "trace_count_and_success_boundary": true,
+        "diagnostic_origin_learning_ineligible": true,
+        "task_seed_split_template_provenance": true,
+        "declared_geometry_equals_spec_and_realized_cells": true,
+        "geometry_and_fresh_spawn_checks_pass": true,
+        "wad_bytes_hash_matches_native_case_manifest": true,
+        "scenario_manifest_on_disk_matches_native_case": true,
+        "acs_source_hash_matches": true,
+        "wad_acs_source_text_matches": true,
+        "wad_textmap_matches_authored_file": true,
+        "wad_behavior_matches_compiled_object": true,
+        "all_marker_assets_match_actual_wad": true,
+        "zero_initial_events_and_one_final_success": true
+      },
+      "geometry_sha256": "e6ffd2166ace2f16300c3d5028e9089443007c05fe6eb702f235546550c56522",
+      "wad": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\scenarios\\relay_train_04\\relay.wad",
+        "bytes": 104265,
+        "sha256": "10a2a1f7d08fff9b1d72364a9abab02fe92199add9b7fd3e89a5b5837afaf18d"
+      },
+      "trace": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\relay_train_04\\mechanics_trace.json",
+        "bytes": 2090804,
+        "sha256": "ec0f795e91ab6fc8faea818444f314cfe8bec747ae8a7435f28f6a30fdf00526"
+      }
+    },
+    {
+      "template_id": "relay_train_05",
+      "task_family": "relay",
+      "split": "train",
+      "seed": 0,
+      "decisions": 76,
+      "checks": {
+        "published_success_before_deadline": true,
+        "native_trace_hash_matches": true,
+        "native_trace_metadata_matches_case": true,
+        "trace_count_and_success_boundary": true,
+        "diagnostic_origin_learning_ineligible": true,
+        "task_seed_split_template_provenance": true,
+        "declared_geometry_equals_spec_and_realized_cells": true,
+        "geometry_and_fresh_spawn_checks_pass": true,
+        "wad_bytes_hash_matches_native_case_manifest": true,
+        "scenario_manifest_on_disk_matches_native_case": true,
+        "acs_source_hash_matches": true,
+        "wad_acs_source_text_matches": true,
+        "wad_textmap_matches_authored_file": true,
+        "wad_behavior_matches_compiled_object": true,
+        "all_marker_assets_match_actual_wad": true,
+        "zero_initial_events_and_one_final_success": true
+      },
+      "geometry_sha256": "a0c231427a074d5c466f8f2f54ca28a936f409e97d73a75f630a5a73f21a57f2",
+      "wad": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\scenarios\\relay_train_05\\relay.wad",
+        "bytes": 109422,
+        "sha256": "3df69a19b3d20edeacdf67a0965e6574288737d9dd7b93ab398dc5c09c1e634a"
+      },
+      "trace": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\relay_train_05\\mechanics_trace.json",
+        "bytes": 2237457,
+        "sha256": "e084d515bf220f73570c8a6d6eef1a8a4f6fcbdb23a2455ddefc569128001211"
+      }
+    },
+    {
+      "template_id": "relay_validation_00",
+      "task_family": "relay",
+      "split": "validation",
+      "seed": 0,
+      "decisions": 80,
+      "checks": {
+        "published_success_before_deadline": true,
+        "native_trace_hash_matches": true,
+        "native_trace_metadata_matches_case": true,
+        "trace_count_and_success_boundary": true,
+        "diagnostic_origin_learning_ineligible": true,
+        "task_seed_split_template_provenance": true,
+        "declared_geometry_equals_spec_and_realized_cells": true,
+        "geometry_and_fresh_spawn_checks_pass": true,
+        "wad_bytes_hash_matches_native_case_manifest": true,
+        "scenario_manifest_on_disk_matches_native_case": true,
+        "acs_source_hash_matches": true,
+        "wad_acs_source_text_matches": true,
+        "wad_textmap_matches_authored_file": true,
+        "wad_behavior_matches_compiled_object": true,
+        "all_marker_assets_match_actual_wad": true,
+        "zero_initial_events_and_one_final_success": true
+      },
+      "geometry_sha256": "1f07d7225d99ab72a9b03335e9d8eed426d08e6dbca0c3dc4c34dbf494057b83",
+      "wad": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\scenarios\\relay_validation_00\\relay.wad",
+        "bytes": 114578,
+        "sha256": "687607e2d45434f5c9c476d34b19c40e70b8a3147bd04b0a7468b8a26322c5b8"
+      },
+      "trace": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\relay_validation_00\\mechanics_trace.json",
+        "bytes": 2358868,
+        "sha256": "3f78845ea7855771e8338f98db7cdde6b5e61770aa852768cf82eafae134cad2"
+      }
+    },
+    {
+      "template_id": "relay_validation_01",
+      "task_family": "relay",
+      "split": "validation",
+      "seed": 0,
+      "decisions": 84,
+      "checks": {
+        "published_success_before_deadline": true,
+        "native_trace_hash_matches": true,
+        "native_trace_metadata_matches_case": true,
+        "trace_count_and_success_boundary": true,
+        "diagnostic_origin_learning_ineligible": true,
+        "task_seed_split_template_provenance": true,
+        "declared_geometry_equals_spec_and_realized_cells": true,
+        "geometry_and_fresh_spawn_checks_pass": true,
+        "wad_bytes_hash_matches_native_case_manifest": true,
+        "scenario_manifest_on_disk_matches_native_case": true,
+        "acs_source_hash_matches": true,
+        "wad_acs_source_text_matches": true,
+        "wad_textmap_matches_authored_file": true,
+        "wad_behavior_matches_compiled_object": true,
+        "all_marker_assets_match_actual_wad": true,
+        "zero_initial_events_and_one_final_success": true
+      },
+      "geometry_sha256": "47f5133e8676d57c33e176cc9772f5a4ca88f96e6f6f1ba727961cba266e27e7",
+      "wad": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\scenarios\\relay_validation_01\\relay.wad",
+        "bytes": 119736,
+        "sha256": "c8603cd91487b3122cc2ee8df003444bab046ba420dc418801635c89f80f5b21"
+      },
+      "trace": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\relay_validation_01\\mechanics_trace.json",
+        "bytes": 2476193,
+        "sha256": "b3e9dcdc20b00481540eb34008b8ae93d153f6b56306e90d60b96cf922ce0e85"
+      }
+    },
+    {
+      "template_id": "relay_test_00",
+      "task_family": "relay",
+      "split": "test",
+      "seed": 0,
+      "decisions": 89,
+      "checks": {
+        "published_success_before_deadline": true,
+        "native_trace_hash_matches": true,
+        "native_trace_metadata_matches_case": true,
+        "trace_count_and_success_boundary": true,
+        "diagnostic_origin_learning_ineligible": true,
+        "task_seed_split_template_provenance": true,
+        "declared_geometry_equals_spec_and_realized_cells": true,
+        "geometry_and_fresh_spawn_checks_pass": true,
+        "wad_bytes_hash_matches_native_case_manifest": true,
+        "scenario_manifest_on_disk_matches_native_case": true,
+        "acs_source_hash_matches": true,
+        "wad_acs_source_text_matches": true,
+        "wad_textmap_matches_authored_file": true,
+        "wad_behavior_matches_compiled_object": true,
+        "all_marker_assets_match_actual_wad": true,
+        "zero_initial_events_and_one_final_success": true
+      },
+      "geometry_sha256": "1a397fb8ac09b9393fa589c557b59d59396d7083d5d37bec75ba50217217beea",
+      "wad": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\scenarios\\relay_test_00\\relay.wad",
+        "bytes": 124892,
+        "sha256": "00a171b99db28f9cc56ac18e292ec8af61fac2e18f73f9e0083351de182508d1"
+      },
+      "trace": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\relay_test_00\\mechanics_trace.json",
+        "bytes": 2619265,
+        "sha256": "335afe17c2c7d453f75267e9d2eb313e670fb28ba17dae432dd1b11a1eaa0118"
+      }
+    },
+    {
+      "template_id": "relay_test_01",
+      "task_family": "relay",
+      "split": "test",
+      "seed": 0,
+      "decisions": 96,
+      "checks": {
+        "published_success_before_deadline": true,
+        "native_trace_hash_matches": true,
+        "native_trace_metadata_matches_case": true,
+        "trace_count_and_success_boundary": true,
+        "diagnostic_origin_learning_ineligible": true,
+        "task_seed_split_template_provenance": true,
+        "declared_geometry_equals_spec_and_realized_cells": true,
+        "geometry_and_fresh_spawn_checks_pass": true,
+        "wad_bytes_hash_matches_native_case_manifest": true,
+        "scenario_manifest_on_disk_matches_native_case": true,
+        "acs_source_hash_matches": true,
+        "wad_acs_source_text_matches": true,
+        "wad_textmap_matches_authored_file": true,
+        "wad_behavior_matches_compiled_object": true,
+        "all_marker_assets_match_actual_wad": true,
+        "zero_initial_events_and_one_final_success": true
+      },
+      "geometry_sha256": "045118992a2af470a45fe270add028cd23f401e988e7dda8861239b55a2a6abd",
+      "wad": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\scenarios\\relay_test_01\\relay.wad",
+        "bytes": 130049,
+        "sha256": "9e293c7c97eefeb96747c9814ca27a3f23bf2366a0eb862070569dc24e61c4b8"
+      },
+      "trace": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\relay_test_01\\mechanics_trace.json",
+        "bytes": 2825205,
+        "sha256": "8baecf2fd5de7c32fcfc1da8bd191a41df17970b8645807534a330e03c39df90"
+      }
+    },
+    {
+      "template_id": "cover_train_00",
+      "task_family": "cover",
+      "split": "train",
+      "seed": 0,
+      "decisions": 107,
+      "checks": {
+        "published_success_before_deadline": true,
+        "native_trace_hash_matches": true,
+        "native_trace_metadata_matches_case": true,
+        "trace_count_and_success_boundary": true,
+        "diagnostic_origin_learning_ineligible": true,
+        "task_seed_split_template_provenance": true,
+        "declared_geometry_equals_spec_and_realized_cells": true,
+        "geometry_and_fresh_spawn_checks_pass": true,
+        "wad_bytes_hash_matches_native_case_manifest": true,
+        "scenario_manifest_on_disk_matches_native_case": true,
+        "acs_source_hash_matches": true,
+        "wad_acs_source_text_matches": true,
+        "wad_textmap_matches_authored_file": true,
+        "wad_behavior_matches_compiled_object": true,
+        "all_marker_assets_match_actual_wad": true,
+        "zero_initial_events_and_one_final_success": true
+      },
+      "geometry_sha256": "0bc73051c80cf651a259b85fb9291edf895b2186304ead4d43cb4a55ec806292",
+      "wad": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\scenarios\\cover_train_00\\cover.wad",
+        "bytes": 157453,
+        "sha256": "57b13cfd9c750b318793d5f19e0c482db86ab8440e1c425f2c700051ba868662"
+      },
+      "trace": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\cover_train_00\\mechanics_trace.json",
+        "bytes": 3412890,
+        "sha256": "cb860ed67b3708702d4b8d7961af9e5754ea2c335dd1126e5287f36082e7e6a5"
+      }
+    },
+    {
+      "template_id": "cover_train_01",
+      "task_family": "cover",
+      "split": "train",
+      "seed": 0,
+      "decisions": 113,
+      "checks": {
+        "published_success_before_deadline": true,
+        "native_trace_hash_matches": true,
+        "native_trace_metadata_matches_case": true,
+        "trace_count_and_success_boundary": true,
+        "diagnostic_origin_learning_ineligible": true,
+        "task_seed_split_template_provenance": true,
+        "declared_geometry_equals_spec_and_realized_cells": true,
+        "geometry_and_fresh_spawn_checks_pass": true,
+        "wad_bytes_hash_matches_native_case_manifest": true,
+        "scenario_manifest_on_disk_matches_native_case": true,
+        "acs_source_hash_matches": true,
+        "wad_acs_source_text_matches": true,
+        "wad_textmap_matches_authored_file": true,
+        "wad_behavior_matches_compiled_object": true,
+        "all_marker_assets_match_actual_wad": true,
+        "zero_initial_events_and_one_final_success": true
+      },
+      "geometry_sha256": "bd95ac442a40e702d68c60ad4b303b5166b5ceb580ad7e29b0d30663e1b738f1",
+      "wad": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\scenarios\\cover_train_01\\cover.wad",
+        "bytes": 166587,
+        "sha256": "4ceece09c4dfd2d64187feee511b09149add2f4d3abb062ae3c85fc89b7d6724"
+      },
+      "trace": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\cover_train_01\\mechanics_trace.json",
+        "bytes": 3609881,
+        "sha256": "2864ab859822e35027e1670c9eb2bfc8cc3ade538755476dbbe5f4dc06ec579b"
+      }
+    },
+    {
+      "template_id": "cover_train_02",
+      "task_family": "cover",
+      "split": "train",
+      "seed": 0,
+      "decisions": 140,
+      "checks": {
+        "published_success_before_deadline": true,
+        "native_trace_hash_matches": true,
+        "native_trace_metadata_matches_case": true,
+        "trace_count_and_success_boundary": true,
+        "diagnostic_origin_learning_ineligible": true,
+        "task_seed_split_template_provenance": true,
+        "declared_geometry_equals_spec_and_realized_cells": true,
+        "geometry_and_fresh_spawn_checks_pass": true,
+        "wad_bytes_hash_matches_native_case_manifest": true,
+        "scenario_manifest_on_disk_matches_native_case": true,
+        "acs_source_hash_matches": true,
+        "wad_acs_source_text_matches": true,
+        "wad_textmap_matches_authored_file": true,
+        "wad_behavior_matches_compiled_object": true,
+        "all_marker_assets_match_actual_wad": true,
+        "zero_initial_events_and_one_final_success": true
+      },
+      "geometry_sha256": "7450bd78c51c0c3b865a72c48369321ed596963434cd0c87ba0345406ddc21e6",
+      "wad": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\scenarios\\cover_train_02\\cover.wad",
+        "bytes": 177192,
+        "sha256": "a7158863d20791c80cc859cdb1cbafb3819618899ae6bab297eea603f9accab7"
+      },
+      "trace": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\cover_train_02\\mechanics_trace.json",
+        "bytes": 4471668,
+        "sha256": "4e70e7817b354307a73a4e019ba7cac0f8d62c18998b8ab74d8bfa57275e47a1"
+      }
+    },
+    {
+      "template_id": "cover_train_03",
+      "task_family": "cover",
+      "split": "train",
+      "seed": 0,
+      "decisions": 121,
+      "checks": {
+        "published_success_before_deadline": true,
+        "native_trace_hash_matches": true,
+        "native_trace_metadata_matches_case": true,
+        "trace_count_and_success_boundary": true,
+        "diagnostic_origin_learning_ineligible": true,
+        "task_seed_split_template_provenance": true,
+        "declared_geometry_equals_spec_and_realized_cells": true,
+        "geometry_and_fresh_spawn_checks_pass": true,
+        "wad_bytes_hash_matches_native_case_manifest": true,
+        "scenario_manifest_on_disk_matches_native_case": true,
+        "acs_source_hash_matches": true,
+        "wad_acs_source_text_matches": true,
+        "wad_textmap_matches_authored_file": true,
+        "wad_behavior_matches_compiled_object": true,
+        "all_marker_assets_match_actual_wad": true,
+        "zero_initial_events_and_one_final_success": true
+      },
+      "geometry_sha256": "225dee12eb331d4ef4f762fbb99cdd19d24d11e962ed618402e1da7da398902a",
+      "wad": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\scenarios\\cover_train_03\\cover.wad",
+        "bytes": 186326,
+        "sha256": "b1894394f42176f8fa3ea1a5da57bb3ee4a1c652ea6c70033d95fd3641b51481"
+      },
+      "trace": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\cover_train_03\\mechanics_trace.json",
+        "bytes": 3868565,
+        "sha256": "301cf4974b71db4f93de444ae55279ee827a7ea7abfb5016d824c72565c566b8"
+      }
+    },
+    {
+      "template_id": "cover_train_04",
+      "task_family": "cover",
+      "split": "train",
+      "seed": 0,
+      "decisions": 147,
+      "checks": {
+        "published_success_before_deadline": true,
+        "native_trace_hash_matches": true,
+        "native_trace_metadata_matches_case": true,
+        "trace_count_and_success_boundary": true,
+        "diagnostic_origin_learning_ineligible": true,
+        "task_seed_split_template_provenance": true,
+        "declared_geometry_equals_spec_and_realized_cells": true,
+        "geometry_and_fresh_spawn_checks_pass": true,
+        "wad_bytes_hash_matches_native_case_manifest": true,
+        "scenario_manifest_on_disk_matches_native_case": true,
+        "acs_source_hash_matches": true,
+        "wad_acs_source_text_matches": true,
+        "wad_textmap_matches_authored_file": true,
+        "wad_behavior_matches_compiled_object": true,
+        "all_marker_assets_match_actual_wad": true,
+        "zero_initial_events_and_one_final_success": true
+      },
+      "geometry_sha256": "98e04ec372ff7bc95474f873496342278894fb69a2a75e43fdd8e632e5972987",
+      "wad": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\scenarios\\cover_train_04\\cover.wad",
+        "bytes": 195459,
+        "sha256": "8f645be84a4c84aae66ad8b0e947827102639f79b5ed9808738c4614bff2c475"
+      },
+      "trace": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\cover_train_04\\mechanics_trace.json",
+        "bytes": 4719366,
+        "sha256": "26ed54128f296145d387a81477d132561532c657ecbe950c88798501fe7646e5"
+      }
+    },
+    {
+      "template_id": "cover_train_05",
+      "task_family": "cover",
+      "split": "train",
+      "seed": 0,
+      "decisions": 127,
+      "checks": {
+        "published_success_before_deadline": true,
+        "native_trace_hash_matches": true,
+        "native_trace_metadata_matches_case": true,
+        "trace_count_and_success_boundary": true,
+        "diagnostic_origin_learning_ineligible": true,
+        "task_seed_split_template_provenance": true,
+        "declared_geometry_equals_spec_and_realized_cells": true,
+        "geometry_and_fresh_spawn_checks_pass": true,
+        "wad_bytes_hash_matches_native_case_manifest": true,
+        "scenario_manifest_on_disk_matches_native_case": true,
+        "acs_source_hash_matches": true,
+        "wad_acs_source_text_matches": true,
+        "wad_textmap_matches_authored_file": true,
+        "wad_behavior_matches_compiled_object": true,
+        "all_marker_assets_match_actual_wad": true,
+        "zero_initial_events_and_one_final_success": true
+      },
+      "geometry_sha256": "7d21455d899e063de84d1cb8d8511c876325f71845a57c042ac041c87d353eca",
+      "wad": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\scenarios\\cover_train_05\\cover.wad",
+        "bytes": 206846,
+        "sha256": "877c755807374958d06c033cdb2dd323c52f4ebbbb738d0fa960f62132a6f77b"
+      },
+      "trace": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\cover_train_05\\mechanics_trace.json",
+        "bytes": 4051199,
+        "sha256": "34a9aaa9096e193ec640aecc94a7abf752bc1bcf8c946782a6ecaa51d48038b7"
+      }
+    },
+    {
+      "template_id": "cover_validation_00",
+      "task_family": "cover",
+      "split": "validation",
+      "seed": 0,
+      "decisions": 131,
+      "checks": {
+        "published_success_before_deadline": true,
+        "native_trace_hash_matches": true,
+        "native_trace_metadata_matches_case": true,
+        "trace_count_and_success_boundary": true,
+        "diagnostic_origin_learning_ineligible": true,
+        "task_seed_split_template_provenance": true,
+        "declared_geometry_equals_spec_and_realized_cells": true,
+        "geometry_and_fresh_spawn_checks_pass": true,
+        "wad_bytes_hash_matches_native_case_manifest": true,
+        "scenario_manifest_on_disk_matches_native_case": true,
+        "acs_source_hash_matches": true,
+        "wad_acs_source_text_matches": true,
+        "wad_textmap_matches_authored_file": true,
+        "wad_behavior_matches_compiled_object": true,
+        "all_marker_assets_match_actual_wad": true,
+        "zero_initial_events_and_one_final_success": true
+      },
+      "geometry_sha256": "3132285bc2f880d242da37effda2de20c275d4950563104b0473e69df431a691",
+      "wad": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\scenarios\\cover_validation_00\\cover.wad",
+        "bytes": 215934,
+        "sha256": "c95a807acbfe028389c212485871bdd0d03c50b5a8b639c3a8180ab8b009e7e0"
+      },
+      "trace": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\cover_validation_00\\mechanics_trace.json",
+        "bytes": 4194486,
+        "sha256": "bc7212b52db4ecfc841563b77ca43f45765d573a6ef4a91c79af81b8ebd56239"
+      }
+    },
+    {
+      "template_id": "cover_validation_01",
+      "task_family": "cover",
+      "split": "validation",
+      "seed": 0,
+      "decisions": 193,
+      "checks": {
+        "published_success_before_deadline": true,
+        "native_trace_hash_matches": true,
+        "native_trace_metadata_matches_case": true,
+        "trace_count_and_success_boundary": true,
+        "diagnostic_origin_learning_ineligible": true,
+        "task_seed_split_template_provenance": true,
+        "declared_geometry_equals_spec_and_realized_cells": true,
+        "geometry_and_fresh_spawn_checks_pass": true,
+        "wad_bytes_hash_matches_native_case_manifest": true,
+        "scenario_manifest_on_disk_matches_native_case": true,
+        "acs_source_hash_matches": true,
+        "wad_acs_source_text_matches": true,
+        "wad_textmap_matches_authored_file": true,
+        "wad_behavior_matches_compiled_object": true,
+        "all_marker_assets_match_actual_wad": true,
+        "zero_initial_events_and_one_final_success": true
+      },
+      "geometry_sha256": "cb25a67783235598f17ead4a652349f45c06f883fe7f5d560535b64dd0f046c4",
+      "wad": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\scenarios\\cover_validation_01\\cover.wad",
+        "bytes": 226579,
+        "sha256": "b2a008af91f4f57b50e141a44e42b81bae94620633f421bdaf559a3b481613dd"
+      },
+      "trace": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\cover_validation_01\\mechanics_trace.json",
+        "bytes": 6184866,
+        "sha256": "1618534ce1946d5fe329a23885287674cb95628ee518a08ae89f971081ee51ce"
+      }
+    },
+    {
+      "template_id": "cover_test_00",
+      "task_family": "cover",
+      "split": "test",
+      "seed": 0,
+      "decisions": 137,
+      "checks": {
+        "published_success_before_deadline": true,
+        "native_trace_hash_matches": true,
+        "native_trace_metadata_matches_case": true,
+        "trace_count_and_success_boundary": true,
+        "diagnostic_origin_learning_ineligible": true,
+        "task_seed_split_template_provenance": true,
+        "declared_geometry_equals_spec_and_realized_cells": true,
+        "geometry_and_fresh_spawn_checks_pass": true,
+        "wad_bytes_hash_matches_native_case_manifest": true,
+        "scenario_manifest_on_disk_matches_native_case": true,
+        "acs_source_hash_matches": true,
+        "wad_acs_source_text_matches": true,
+        "wad_textmap_matches_authored_file": true,
+        "wad_behavior_matches_compiled_object": true,
+        "all_marker_assets_match_actual_wad": true,
+        "zero_initial_events_and_one_final_success": true
+      },
+      "geometry_sha256": "ee3e4e3b7d27eda5867648512b0de3c72e63532df47dbff6f88a89e3baef9935",
+      "wad": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\scenarios\\cover_test_00\\cover.wad",
+        "bytes": 235756,
+        "sha256": "8b64f4d318f0fb53084290c41bf59c9db8df9ee475b687b549f1cf338b27c851"
+      },
+      "trace": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\cover_test_00\\mechanics_trace.json",
+        "bytes": 4379129,
+        "sha256": "61640742a3d9100e3bfba829ae71ecdaeb1de4193665e5f4e64e3e2dfda8dc9c"
+      }
+    },
+    {
+      "template_id": "cover_test_01",
+      "task_family": "cover",
+      "split": "test",
+      "seed": 0,
+      "decisions": 139,
+      "checks": {
+        "published_success_before_deadline": true,
+        "native_trace_hash_matches": true,
+        "native_trace_metadata_matches_case": true,
+        "trace_count_and_success_boundary": true,
+        "diagnostic_origin_learning_ineligible": true,
+        "task_seed_split_template_provenance": true,
+        "declared_geometry_equals_spec_and_realized_cells": true,
+        "geometry_and_fresh_spawn_checks_pass": true,
+        "wad_bytes_hash_matches_native_case_manifest": true,
+        "scenario_manifest_on_disk_matches_native_case": true,
+        "acs_source_hash_matches": true,
+        "wad_acs_source_text_matches": true,
+        "wad_textmap_matches_authored_file": true,
+        "wad_behavior_matches_compiled_object": true,
+        "all_marker_assets_match_actual_wad": true,
+        "zero_initial_events_and_one_final_success": true
+      },
+      "geometry_sha256": "4111efb1b1a579292bf0faa1e125a9fa57706921017a1208d2254c0a27e272d3",
+      "wad": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\scenarios\\cover_test_01\\cover.wad",
+        "bytes": 245674,
+        "sha256": "6717de039cfe8465957a591bad0e7499494cdcbe40e4f8d85e4e3d36a29ebb33"
+      },
+      "trace": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\cover_test_01\\mechanics_trace.json",
+        "bytes": 4443144,
+        "sha256": "ed7ce7b1cf9ed33748b19a0e036ff7143abcb4287dfd8a8e0fb9d1596c5bcf2f"
+      }
+    }
+  ],
+  "videos": [
+    {
+      "task_family": "relay",
+      "video": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\relay_train_00\\video\\relay_mechanics.mp4",
+        "bytes": 1035930,
+        "sha256": "20224549ac7aa18c5cce1fe612e09093cbd3735a30d6c7c507c080861a11f113"
+      },
+      "declared_video_hash_matches": true,
+      "source_images_exact_actor_payloads": true,
+      "decoded_frames": 60,
+      "frame_count_equals_initial_plus_transitions": true,
+      "visual_review": "Assistant individually inspected both players' native 128x96 PNGs at initial, each first milestone, and final frame. These are real engine frames; initial spawn-effect occlusion and close-up/cropped EXIT lettering are retained, not fabricated.",
+      "viewed_frames": [
+        {
+          "frame": 0,
+          "decision": 0,
+          "milestone_count": 0,
+          "images": [
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\relay_train_00\\video\\frame0000_player0.png",
+              "bytes": 23010,
+              "sha256": "f294d0b884531a3c026f9b5b326c2829f3e2191d6b9102fa79dd016009dcbeb9"
+            },
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\relay_train_00\\video\\frame0000_player1.png",
+              "bytes": 23219,
+              "sha256": "0de36a34a17422450268f396907e987ee062919fc8a0cd9d092660fb5a38484d"
+            }
+          ]
+        },
+        {
+          "frame": 26,
+          "decision": 26,
+          "milestone_count": 1,
+          "images": [
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\relay_train_00\\video\\frame0026_player0.png",
+              "bytes": 22670,
+              "sha256": "c5a3aef951c76548ac59ee9df814e797d8a722aa011580840f491f808f46d5a4"
+            },
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\relay_train_00\\video\\frame0026_player1.png",
+              "bytes": 22161,
+              "sha256": "c6f2524034a939baee9dfcc58546ef27b6251015461702833819bb00193819cb"
+            }
+          ]
+        },
+        {
+          "frame": 59,
+          "decision": 59,
+          "milestone_count": 1,
+          "images": [
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\relay_train_00\\video\\frame0059_player0.png",
+              "bytes": 14516,
+              "sha256": "9986e3745316ea28b1781745640b4aa77347897ad0c8f9f531b12a575d29da99"
+            },
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\relay_train_00\\video\\frame0059_player1.png",
+              "bytes": 9892,
+              "sha256": "824f7be5f68a6221686f40f982a3c3232442f24a1a9859e349ac7def7eb3cfd4"
+            }
+          ]
+        }
+      ],
+      "source_image_count": 120
+    },
+    {
+      "task_family": "cover",
+      "video": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\cover_train_00\\video\\cover_mechanics.mp4",
+        "bytes": 1912784,
+        "sha256": "41f8ff9a54641978be10a78deede3d76286d0388103fa375abed780ff1d636ed"
+      },
+      "declared_video_hash_matches": true,
+      "source_images_exact_actor_payloads": true,
+      "decoded_frames": 108,
+      "frame_count_equals_initial_plus_transitions": true,
+      "visual_review": "Assistant individually inspected both players' native 128x96 PNGs at initial, each first milestone, and final frame. These are real engine frames; initial spawn-effect occlusion and close-up/cropped EXIT lettering are retained, not fabricated.",
+      "viewed_frames": [
+        {
+          "frame": 0,
+          "decision": 0,
+          "milestone_count": 0,
+          "images": [
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\cover_train_00\\video\\frame0000_player0.png",
+              "bytes": 21038,
+              "sha256": "870adc62bc475cc1ee42061e9419f772ad493671d7a52f46903d67f4bbf76fb6"
+            },
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\cover_train_00\\video\\frame0000_player1.png",
+              "bytes": 20894,
+              "sha256": "754f58688431231ef30bc2d2a6c19a2b7c7e85d6be97ab80d226e82cd8110faf"
+            }
+          ]
+        },
+        {
+          "frame": 32,
+          "decision": 32,
+          "milestone_count": 1,
+          "images": [
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\cover_train_00\\video\\frame0032_player0.png",
+              "bytes": 22025,
+              "sha256": "a21104618f0dd8735a88e460bf0487645bf7a0b6463165ee4ed3dadf48ab9c11"
+            },
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\cover_train_00\\video\\frame0032_player1.png",
+              "bytes": 21732,
+              "sha256": "1ff93326c3b65ab94bb3dee816ef986f5b7841f06ef8a6aad0f920f365667165"
+            }
+          ]
+        },
+        {
+          "frame": 79,
+          "decision": 79,
+          "milestone_count": 2,
+          "images": [
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\cover_train_00\\video\\frame0079_player0.png",
+              "bytes": 21427,
+              "sha256": "119451560e73ee562e69342d616e17a62755f959585c56cde01246a35da0e5be"
+            },
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\cover_train_00\\video\\frame0079_player1.png",
+              "bytes": 21178,
+              "sha256": "52a8def9cb34675f387725bec8a8364fd40cba6ca8342088c6d09edf093ec229"
+            }
+          ]
+        },
+        {
+          "frame": 107,
+          "decision": 107,
+          "milestone_count": 2,
+          "images": [
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\cover_train_00\\video\\frame0107_player0.png",
+              "bytes": 14289,
+              "sha256": "c897d304c22d7f90c95e478d4483d90f20a1dbbf5425a895b19cc6283c8dfe93"
+            },
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\cover_train_00\\video\\frame0107_player1.png",
+              "bytes": 20409,
+              "sha256": "6b0559a3cb054b842d7bdbbd60ba3b65ac0074f70d5b3eaf82a357aa90a5cf98"
+            }
+          ]
+        }
+      ],
+      "source_image_count": 216
+    }
+  ],
+  "visual_reviewed_source_frame_images": 14,
+  "limitations": [
+    "Native mechanics sampled seed0 per template; other nuisance combinations have static graph/initial-state validation, not a claim of exhaustive native executions.",
+    "Video inspection sampled original PNG stages; encoder's own finish() decoded the full MP4 and verified frame count. No learned navigation or policy performance is claimed."
+  ]
+}

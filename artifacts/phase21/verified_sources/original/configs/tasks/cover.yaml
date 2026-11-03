@@ -1,0 +1,12 @@
+task:
+  name: cover
+  deadline: 600
+  dwell_decisions: 20
+  success_reward: 1.0
+  failure_reward: -1.0
+  step_cost: -0.001
+  milestone_bonus: 0.05
+  milestone_count: 2
+  train_layouts: 6
+  validation_layouts: 2
+  test_layouts: 2

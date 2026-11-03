@@ -1,0 +1,160 @@
+{
+  "schema_version": "p21-historical-resource-telemetry-assessment-v1",
+  "status": "historical_limitations_documented",
+  "recorded_at_utc": "2026-11-02T17:11:51.501325+00:00",
+  "scope": "Assessment of retained historical evidence only; no new process/native probe or data generation.",
+  "evidence": {
+    "original_failed_campaign": {
+      "path": "artifacts/phase21/phase21_acceptance.json",
+      "sha256": "8f5328265361acfe9957d854b0b42f14fff58571949da547154d89a418040733",
+      "bytes": 371128
+    },
+    "original_sdk_startup_failure": {
+      "path": "data/initial_replay/pilot/relay/seed_1/collection_error.json",
+      "sha256": "dc327e8880ed896cd89031527089de0eae60c792e651792ae1a872458540baa2",
+      "bytes": 1080804
+    },
+    "generation_end_verification": {
+      "path": "artifacts/phase21/generation_end_verification.json",
+      "sha256": "22b4a4d1f8e0f096e6d5d8872b697a0e07c8114e784f52f4008de54167c3c989",
+      "bytes": 18783
+    },
+    "point_affinity_observation": {
+      "path": "artifacts/phase21/reviews/ongoing_resource_observation.json",
+      "sha256": "7f7edd1a8b2b4266552247d19d851656bdbd12c8f9a2350fbfd88b645e0160a1",
+      "bytes": 2304
+    },
+    "production_reader_benchmark": {
+      "path": "artifacts/phase21/reviews/production_reader_benchmark.json",
+      "sha256": "747bd63283c3b88206632133bb90b11bae6c3c450ffbb6af18ccaf790725e807",
+      "bytes": 103396
+    },
+    "production_reader_interpretation": {
+      "path": "artifacts/phase21/reviews/production_reader_benchmark_assessment.json",
+      "sha256": "aafb915c9ede6d12a8944c5f1bd7676030e29fd4f8d585ca9ab2b064041fa34e",
+      "bytes": 4347
+    },
+    "original_resource_monitor_source": {
+      "path": "artifacts/phase21/verified_sources/original/src/world_models/data/resources.py",
+      "sha256": "d79d7318af464f95ca3d24ab522af0f614ea9c660014617c3fb4724326c4e752",
+      "bytes": 3654
+    },
+    "original_cpu_budget_source": {
+      "path": "artifacts/phase21/verified_sources/original/src/world_models/env/acceptance_metrics.py",
+      "sha256": "11864e267296ab85cf4fd10ddcb728776b24027e4f2ca170502becadd505ddbd",
+      "bytes": 14283
+    }
+  },
+  "observer_failure": {
+    "original_top_level_status": "failed",
+    "top_level_error": "RuntimeError('collection resource enforcement failed')",
+    "python_exception": "psutil.AccessDenied",
+    "windows_error": 5,
+    "windows_operation": "OpenProcess during Process.cpu_affinity getter",
+    "pid": 25004,
+    "fault_timestamp_retained": false,
+    "fault_timestamp": null,
+    "fault_process_creation_time": null,
+    "fault_process_name": null,
+    "fault_process_executable": null,
+    "process_live_or_exiting_at_fault": "not established by retained evidence",
+    "full_traceback": "Traceback (most recent call last):\n  File \"D:\\world models\\.venv\\Lib\\site-packages\\psutil\\_pswindows.py\", line 666, in wrapper\n    return fun(self, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\world models\\.venv\\Lib\\site-packages\\psutil\\_pswindows.py\", line 1053, in cpu_affinity_get\n    bitmask = cext.proc_cpu_affinity_get(self.pid)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nPermissionError: [WinError 5] Access is denied: '(originated from OpenProcess)'\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"D:\\world models\\src\\world_models\\data\\resources.py\", line 55, in _monitor\n    self.sample()\n  File \"D:\\world models\\src\\world_models\\data\\resources.py\", line 36, in sample\n    affinity = process.cpu_affinity()\n               ^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\world models\\.venv\\Lib\\site-packages\\psutil\\__init__.py\", line 891, in cpu_affinity\n    return sorted(set(self._proc.cpu_affinity_get()))\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\world models\\.venv\\Lib\\site-packages\\psutil\\_pswindows.py\", line 668, in wrapper\n    raise convert_oserror(err, pid=self.pid, name=self._name) from err\npsutil.AccessDenied: (pid=25004)\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"D:\\world models\\scripts\\phase21.py\", line 250, in main\n    with CollectionResources(allocation[\"cpu_ids\"]) as resources:\n  File \"D:\\world models\\src\\world_models\\data\\resources.py\", line 75, in __exit__\n    raise RuntimeError(\"collection resource enforcement failed\") from self.error\nRuntimeError: collection resource enforcement failed\n",
+    "historical_monitor_behavior": "Background monitor retained the exception and stopped sampling. Collection loops did not synchronously check that latched error. __exit__ later raised resource enforcement failed, which can replace an already pending collection exception.",
+    "full_original_initial_collection_resource_summary_available": false
+  },
+  "confirmed_positive_evidence": {
+    "source_budget": {
+      "logical_cpu_count": 4,
+      "parent_cpu_ids": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "numeric_library_thread_environment": 1,
+      "scope": "Frozen cpu_budget code pins the current process before spawning collection workers; monitor code attempts to constrain observed descendants. This is not retrospective continuous observation of every child."
+    },
+    "point_observation": {
+      "recorded_at_utc": "2026-11-02T14:40:10.997597+00:00",
+      "execution_root_pid": 8204,
+      "execution_root_created": 1793620209.625893,
+      "observed_process_count": 9,
+      "all_observed_cpu_ids_within_0_to_3": true,
+      "scope": "Single read-only observation of actual campaign Python root and currently live descendants; not a full-campaign resource measurement. Idle venv launcher is outside the monitored execution root."
+    },
+    "production_reader_measurement": {
+      "status": "passed",
+      "recorded_at_utc": "2026-11-02T16:29:24.199825+00:00",
+      "cpu_ids": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "generation_era_reader_sha256": "5cb3bfb329c924d9b4cf798dd278a1cbd1140b0fa2263a194278b504279f73bc",
+      "contention_scope": "Measured concurrently with the recorded native collection jobs sharing logical CPUs0..3. These are observed contended-host rates, not dedicated-host or OS-cold rates.",
+      "cache_scope": "Selected compressed chunks are deliberately prefetched, intending warm OS cache. OS residency/eviction is not enforced or measured. The production decompressed-chunk LRU is cleared at each workload start, then retains at most four chunks.",
+      "scope": "Separate measured reader window, not a substitute for the missing complete collection resource series."
+    }
+  },
+  "independent_data_generation_facts": {
+    "sealed_pilot_cases": [
+      {
+        "task_family": "relay",
+        "run_seed": 0,
+        "transitions": 50000,
+        "episodes": 349
+      },
+      {
+        "task_family": "relay",
+        "run_seed": 1,
+        "transitions": 50000,
+        "episodes": 350
+      },
+      {
+        "task_family": "cover",
+        "run_seed": 0,
+        "transitions": 50000,
+        "episodes": 247
+      },
+      {
+        "task_family": "cover",
+        "run_seed": 1,
+        "transitions": 50000,
+        "episodes": 246
+      }
+    ],
+    "published_initial_joint_transitions": 200000,
+    "original_generation_source_files_unchanged": 81,
+    "runtime_matches_original_start": true,
+    "recovery_driver_status": "complete_initial_replay",
+    "sdk_failure_is_separate": {
+      "operation": "reset",
+      "published_prefix": 32700,
+      "completed_prefix_episodes": 226,
+      "failed_action_dispatches": 0,
+      "scope": "Per-dataset startup failure preserved separately from the top-level observer error. No causal link to PID25004 is established."
+    },
+    "interpretation": "Sealed replay/source consistency and later independent data audits are separate from telemetry availability. Keep all valid data; this assessment neither substitutes for the final data audits nor justifies recollection."
+  },
+  "unsupported_claims": [
+    "Continuous four-CPU affinity observation/enforcement coverage for every descendant throughout the complete original initial collection.",
+    "The time or duration of the telemetry gap.",
+    "PID25004 was definitely exiting, protected, already dead, or the worker responsible for the separate ViZDoom startup fault.",
+    "A complete original initial-collection CPU-time/utilization or peak-RAM series.",
+    "That a later inheritance probe or corrected monitor retroactively fills the historical measurement gap.",
+    "H200/GPU training utilization or eventual learner input throughput from these development collection measurements."
+  ],
+  "finalizer_wording_assessment": {
+    "frozen_finalizer_source_change_required": false,
+    "reason": "Its existing limitation already discloses the absent original final summary and rejects a complete CPU/RAM time-series claim. README/evidence index should additionally link this assessment and explicitly describe source pinning plus point observations rather than continuous retrospective resource certification.",
+    "required_readme_qualification": "The original main collector resource monitor failed on an AccessDenied affinity query of PID25004 at an unrecorded time. Source-configured parent affinity and separate point/window observations support the four-CPU setup; complete original-run descendant coverage and resource totals are unavailable.",
+    "preserve_original_failed_report_and_receipt": true
+  },
+  "prospective_supporting_probe": {
+    "status": "separate task; not executed by this assessment",
+    "interpretation_if_passed": "Demonstrates current inherited-affinity behavior for its measured process-launch cases; does not prove what every historical process did."
+  },
+  "source_or_data_changed": false,
+  "new_native_actions": 0
+}

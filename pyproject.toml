@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools==80.9.0", "wheel==0.45.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "shared-imagination-research"
+version = "0.1.0"
+description = "Foundations for the paired B/D cooperative visual-control study"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+dependencies = ["PyYAML==6.0.3"]
+
+[project.optional-dependencies]
+phase1 = ["vizdoom==1.3.2", "numpy==2.5.4", "Pillow==13.0.0", "psutil==7.2.2", "imageio-ffmpeg==0.6.0"]
+phase2 = ["torch==2.15.0", "numpy==2.5.4"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

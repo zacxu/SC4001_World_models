@@ -1,0 +1,303 @@
+{
+  "status": "passed",
+  "initial_plate_flag": 0,
+  "final_plate_flag": 0,
+  "cumulative_differences": {
+    "plate_entries": 1,
+    "plate_exits": 1,
+    "gate_opens": 1,
+    "gate_closes": 1,
+    "latch_activations": 0,
+    "console_1_completions": 0,
+    "console_2_completions": 0,
+    "successes": 0,
+    "failures": 0,
+    "player_0_deaths": 0,
+    "player_1_deaths": 0,
+    "enemy_1_deaths": 0,
+    "enemy_2_deaths": 0,
+    "player_0_deathcount": 0,
+    "player_0_hitcount": 0,
+    "player_0_hits_taken": 0,
+    "player_0_damagecount": 0,
+    "player_0_damage_taken": 0,
+    "player_0_killcount": 0,
+    "player_0_itemcount": 0,
+    "player_1_deathcount": 0,
+    "player_1_hitcount": 0,
+    "player_1_hits_taken": 0,
+    "player_1_damagecount": 0,
+    "player_1_damage_taken": 0,
+    "player_1_killcount": 0,
+    "player_1_itemcount": 0
+  },
+  "published_joint_decisions": 27,
+  "scope": "Native events retained between deliberately selected observation endpoints across several decisions; single-decision hidden pulses are also tested at the registry unit boundary.",
+  "stage": "events",
+  "parameters": {},
+  "dependency_fingerprint": "58f4b371422cf403a53696545370411af0b932a160f94172e85e1d2427dda519",
+  "source_sha256": {
+    "configs/base.yaml": "fd7ff75518cf9451bfd6ddc4a3f2ab24070336d4e6f75edfa1676484af4a6099",
+    "configs/environment_splits.yaml": "589551b9d676b3d36587c61b87028f0731acc3391105ff62657ae4db0911cdec",
+    "configs/experiments/final.yaml": "c1242746427d32af878357998d181133d23ad278b70e492377351fbf441adeba",
+    "configs/experiments/pilot.yaml": "68882da53c509476b2fef0f87569cfa13af548120e63ac8873495274e7b9cc5f",
+    "configs/privileged_registry_v1.json": "c18f44850ea014004dc57a8fb74930d6256d7e32ef75eeb11c01e4cc775787f2",
+    "configs/tasks/cover.yaml": "24c54b85c5148cda6e5d60db5dec88e83be7c11ec80b7717340c0803a36ed544",
+    "configs/tasks/relay.yaml": "feb5e8849ad69d277b445cf1b8faeddf6e3155e7ef39ae9fb6602233e1d03580",
+    "configs/variants/B.yaml": "4d9d6e6be699818d733bf6851748f9cdde7219c091a1392c9d09d1a124676af9",
+    "configs/variants/D.yaml": "79c6c6e202b5ab4b2712c25b9b294b263f3f2e9acfbc553857eb2433dee3a796",
+    "pyproject.toml": "5523c9c04eb2812733ece9183f0ad4eb849a0c7638906f2491512d1dd08527aa",
+    "requirements-phase0.lock": "cc0e2d47099633a73fa6b43d4539049c53815b6367ff97dc2b13dc9b94dcb131",
+    "requirements-phase1.lock": "733af0fe79d66ea715a9fe6e9a9b3c9e3ff3612616182cf93c3f5dd9b691eff5",
+    "scenarios/cover/task.acs": "26a348bec6fc341ec7afe8e04e108e23e5c6c4c6d1248603f4640e3bc63a0a1e",
+    "scenarios/relay/task.acs": "96022349fdfba14b72a1920939a63c11263b26ebc01bc16b0262d3258a23469f",
+    "scripts/__init__.py": "e9bce490cbe0589d864499c6f2ad5a2805dcc14f98937814616a47e3760634cc",
+    "scripts/bootstrap_acc.py": "bbb716fb4732730cb814422576d9d7b9b93aa5307f7ee2ca29214b7f5fdd0c85",
+    "scripts/phase0.py": "086f29f436ad41d8ef90b2fbb9f0c3667b362d7f5f4528c5a7867372175cdd86",
+    "scripts/phase1.py": "6e2fd83aab580ca2bb583b4d973e2e9547b25a14ae2abfa9b172d5773634f330",
+    "scripts/phase1_acceptance.py": "6a55906e5cdbd5f5d6da9097553c6d0956ab774cf5f27ba30caef53b0239d3bb",
+    "scripts/probe_multiplayer.py": "257908e6e8e493185825d07a78e9503319f727ab9f61f7da440474fd20fe37c0",
+    "scripts/probe_phase1_runtime.py": "4c6cbdbef22e0f0f1ea98d8df8545c08bbb9808a9586b303dcd115c2c7b4f383",
+    "src/world_models/__init__.py": "e304c6f71067c9303c0ccb5900a9ae3fdd4cf41ef78efeee8164cd78e23b5297",
+    "src/world_models/contracts.py": "0e8ec752304616163a318f9de4057f211b9c23c7d4d08302e97e2611a0b60e35",
+    "src/world_models/data/__init__.py": "9b4506df2f1d7e1215a8c8e84729f0fbfd34db843eebc98ec9825ba0d22cc4fc",
+    "src/world_models/env/__init__.py": "5491c9b54c9845e1b83bbd3f655a06e162c4452b8263773040f7646d3f9b09e4",
+    "src/world_models/env/acceptance.py": "5d4933ec65de3c5120472eab5b6a3c8202788a71f9d47519a26df35c7e0823a7",
+    "src/world_models/env/acceptance_metrics.py": "11864e267296ab85cf4fd10ddcb728776b24027e4f2ca170502becadd505ddbd",
+    "src/world_models/env/actions.py": "7fd19fc174a5a7678667ad110b57b8bf4c0650d4aec14fb76d707e6ed619c1a8",
+    "src/world_models/env/coop.py": "bb4b4e90c1b52045e80551fdcbff2f13895081e6d53efd65a330bc1bec13644d",
+    "src/world_models/env/coordinator.py": "b5932a5ac64e620c86525dff20b13cc03e7b87939606be95f22726cb150d1098",
+    "src/world_models/env/locality.py": "cdd27543e7e2d3b7923bc7f80b8805b00e090eb8ac0284141c666bfb726b21b5",
+    "src/world_models/env/marker_diagnostics.py": "4cd57ec55b239cab35335256d10e8907648c42b5a0e7ca7a733dc7ac2346306e",
+    "src/world_models/env/mechanics_video.py": "d8edc706106652fddd359d3cafd438671cd701f8c7f130da411167c8876900e1",
+    "src/world_models/env/observations.py": "0cad5c1484a7a7f8e2b14fd076cfa092612ba66b090a9e04e61e1b2164e894e4",
+    "src/world_models/env/provenance.py": "a77d4be126f83f32ab50f758c7d3f9a3870264d385492c5cdfafb390bfd02806",
+    "src/world_models/env/replay_diagnostics.py": "3bda78301c3d33e0dc8a54afccb087fad36c66629bc0306b3035d74f21169a50",
+    "src/world_models/env/scenario_builder.py": "1a2c606c8f8d0fe773a433352d65c23acfc697d142f1b2daeb65592ef34d2409",
+    "src/world_models/env/scripted.py": "9e00ed6d84f00c151a9a8bba40e1b3ac8b2e8cce09445a16108376c1ac9ce522",
+    "src/world_models/env/splits.py": "a187936b9448fe5113e2dc014a561f7d21977a77df7819ba289f27df802a8f7c",
+    "src/world_models/env/targets.py": "be4444bfc9141e80ba6d31b24b6694d316f96e3af84e54dbdc470129f67a8ed9",
+    "src/world_models/env/validation_data.py": "955547b1086a847b8b39a56edb0f634c3ae0b6bf665e346710bb208df2216183",
+    "src/world_models/env/workers.py": "560b8929a8549d31f9a38ff287e616752255aeb1a52a5c54af8b489967a08d42",
+    "src/world_models/evaluation/__init__.py": "fc435531e998681fcf12474f5f479cb08f86cf81792d1a2e428514304e03184b",
+    "src/world_models/infrastructure/__init__.py": "7f3a23ed0ae9dca2944afbe5b7b4c57d67f8331d637f1daafdac273a07b47580",
+    "src/world_models/infrastructure/config.py": "004e01c20bc86c57a70ffe099d7158e2bbe4f7153713750ccc5796c98b867958",
+    "src/world_models/infrastructure/inventory.py": "cabae03d2fbe64ed5ac7014c9982473192b4f870d7055653b79847238a2c3c3c",
+    "src/world_models/infrastructure/reproducibility.py": "eaefeaa3003ebce8ef6a4817c2257cc528be5c0823d65694568ae11e285d65d3",
+    "src/world_models/models/__init__.py": "02d96f1fef014a60a6c801a27501165200eff668e9b66a3339b1f98240a3570d",
+    "src/world_models/policies/__init__.py": "cae794398b0ec8b6bcb7394652322ff1f604846c865069bd3eaaa5c56c60c4a5",
+    "src/world_models/training/__init__.py": "25e67fe79423dd7a905dc1af894c031f09664d78c26673a0fc37c430f9fa4abd",
+    "tests/__init__.py": "c8aa6890ca40c8ddcbbe269118a1ed7a30a4a319768d62d55dfbb09ef5f1a934",
+    "tests/test_config.py": "9f596fd858b70760173f4c38503f933b25d07f7fbff09e060ac893cc13da31f5",
+    "tests/test_contracts.py": "8cefd34adc7e6d50ce4563b048d438d5e171c6cc094d191eab1c1498b2f9d7c6",
+    "tests/test_coop_env.py": "4e9580b75b38a8fef01d7ba97d6e21eaa07b897408ff57ae466acc343e173f12",
+    "tests/test_coordinator.py": "d4ead078978f0c2791b360b2edc5d1d7d305c53a657a7b0b4ba2afd6c0d1795c",
+    "tests/test_env_adapters.py": "af403349e4bdad3874517d60c59cff2952f71c354daf399cf97ff6187dbbf30d",
+    "tests/test_inventory.py": "85fc9a2d6e2b9d2accaf3f6f5d7e6d2f7f319e99723eb49a30ea889d1599590e",
+    "tests/test_phase0_cli.py": "79262c6a6bd3c87d1fc435cb2993672a5c93d9d749990fe42a84465f8acf442c",
+    "tests/test_phase1_acceptance.py": "bff343be9f02ddff94bd840e3f1533a703574e10e402790f9a0892def322a59b",
+    "tests/test_replay_diagnostics.py": "7cc39a3ed623a4e65e3c72da8894e7ab52810d6f88d037248c4c6ba173604835",
+    "tests/test_reproducibility.py": "2151e04006c649beb01af8ed04cebad39023edec5088a3892f70dee8c693b7d3",
+    "tests/test_scenarios.py": "1b6ff3a01580fbee22e3fe9cf910ec21fb071f0fb9d0f650f5ff7554eebada8c",
+    "tests/test_scripted.py": "755988ebe711f8f96fb31eb52b9f3443c811f5bdcb13223900c5a46c396b5bea",
+    "tests/test_splits.py": "de32235d6a54a6f06325ed88c6bc86d5859530089f23f23f5b5326ebd8b914d4",
+    "tests/test_targets.py": "86c039dbe99046217d99e78d7b73672c12d3f3d7ee5a1043476e226964e9f17e"
+  },
+  "runtime": {
+    "recorded_at_utc": "2026-11-01T08:11:06.400073+00:00",
+    "scope": "observed_development_simulator_stack; not a CUDA/PyTorch training-host validation",
+    "python": {
+      "version": "3.12.0",
+      "executable": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Scripts\\python.exe"
+    },
+    "platform": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "cloudpickle": {
+        "expected": "3.1.2",
+        "observed": "3.1.2",
+        "matches": true
+      },
+      "Farama-Notifications": {
+        "expected": "0.0.6",
+        "observed": "0.0.6",
+        "matches": true
+      },
+      "gymnasium": {
+        "expected": "1.4.0",
+        "observed": "1.4.0",
+        "matches": true
+      },
+      "imageio-ffmpeg": {
+        "expected": "0.6.0",
+        "observed": "0.6.0",
+        "matches": true
+      },
+      "numpy": {
+        "expected": "2.5.4",
+        "observed": "2.5.4",
+        "matches": true
+      },
+      "pillow": {
+        "expected": "13.0.0",
+        "observed": "13.0.0",
+        "matches": true
+      },
+      "psutil": {
+        "expected": "7.2.2",
+        "observed": "7.2.2",
+        "matches": true
+      },
+      "pygame-ce": {
+        "expected": "2.5.8",
+        "observed": "2.5.8",
+        "matches": true
+      },
+      "PyYAML": {
+        "expected": "6.0.3",
+        "observed": "6.0.3",
+        "matches": true
+      },
+      "setuptools": {
+        "expected": "80.9.0",
+        "observed": "80.9.0",
+        "matches": true
+      },
+      "typing_extensions": {
+        "expected": "4.16.0",
+        "observed": "4.16.0",
+        "matches": true
+      },
+      "vizdoom": {
+        "expected": "1.3.2",
+        "observed": "1.3.2",
+        "matches": true
+      },
+      "wheel": {
+        "expected": "0.45.1",
+        "observed": "0.45.1",
+        "matches": true
+      }
+    },
+    "assets": [
+      {
+        "path": "freedoom1.wad",
+        "bytes": 28795076,
+        "sha256": "7323bcc168c5a45ff10749b339960e98314740a734c30d4b9f3337001f9e703d"
+      },
+      {
+        "path": "freedoom2.wad",
+        "bytes": 28787748,
+        "sha256": "a8772e088847032510d97ba2312406a6998f21cbab44d4ff10696faa9c0ecd4b"
+      },
+      {
+        "path": "libmpg123-0.dll",
+        "bytes": 311700,
+        "sha256": "4247c435d456b9bb801f1e3a69498a9340d7c9a5176bbaed8bbf17adf3baa490"
+      },
+      {
+        "path": "libsndfile-1.dll",
+        "bytes": 1530880,
+        "sha256": "e1d88dfc7a12d12536c2e1f8c304b99bfb811ea9827a5689d6fc71789fb5b5e0"
+      },
+      {
+        "path": "OpenAL32.dll",
+        "bytes": 1795072,
+        "sha256": "396f88738ce20905e933cb7d8c696351e41bd7e72e80b8cfdadf20ab613420b4"
+      },
+      {
+        "path": "vizdoom.cp312-win_amd64.pyd",
+        "bytes": 875520,
+        "sha256": "fb9bcf09cbe82ce6b3333d2bd08cfdb74aa4418966e2abd1e2f9a4a209a1b07f"
+      },
+      {
+        "path": "vizdoom.exe",
+        "bytes": 4981760,
+        "sha256": "6f835a2094e8c593b71c0fd769bef0e6a1a768b4e448ba7c3e8f34ae208f2d82"
+      },
+      {
+        "path": "vizdoom.pk3",
+        "bytes": 631086,
+        "sha256": "fe45d24d7e8d79b51e9619efc93f5d6058331a56312e1ef5ec554cada11ed96d"
+      }
+    ],
+    "selected_iwad": {
+      "path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad",
+      "sha256": "a8772e088847032510d97ba2312406a6998f21cbab44d4ff10696faa9c0ecd4b",
+      "selection": "explicit bundled freedoom2.wad; each worker verifies engine path and hash"
+    },
+    "video_encoder": {
+      "path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\imageio_ffmpeg\\binaries\\ffmpeg-win-x86_64-v7.1.exe",
+      "bytes": 87638016,
+      "sha256": "2ce797a0f88d7f067180338fb227f7b1928ea727bd9a4d7a1d022f7c52af71a3",
+      "version": "7.1-essentials_build-www.gyan.dev",
+      "package": "imageio-ffmpeg==0.6.0",
+      "purpose": "mechanics review videos"
+    },
+    "compiler": {
+      "version": "1.60",
+      "path": "C:\\Users\\Admin\\Desktop\\world models\\.tools\\acc-1.60\\acc.exe",
+      "bytes": 145408,
+      "sha256": "a318f4b45818222dc273a68fab37e393d6881e603816c7317da40d2819fa3ce5",
+      "source": "https://github.com/ZDoom/acc/releases/tag/1.60"
+    },
+    "renderer": {
+      "mode": "PLAYER",
+      "off_screen": true,
+      "sound": false,
+      "format": "CRCGCB",
+      "raw_shape": [
+        3,
+        120,
+        160
+      ],
+      "actor_shape": [
+        3,
+        96,
+        128
+      ],
+      "resize": "Pillow.Resampling.BILINEAR",
+      "buttons": [
+        "MOVE_FORWARD",
+        "MOVE_BACKWARD",
+        "MOVE_LEFT",
+        "MOVE_RIGHT",
+        "TURN_LEFT",
+        "TURN_RIGHT",
+        "ATTACK",
+        "USE"
+      ],
+      "autoaim": false,
+      "friendly_fire": false,
+      "automatic_respawn": false,
+      "client_prediction": false,
+      "native_barrier": "both set_action then shared barrier then advance_action(1); four tics per logical decision",
+      "coordinated_reset": "fresh participant processes and isolated episode working directories"
+    },
+    "license_provenance": {
+      "original_vizdoom_code": "MIT; bundled engine components retain their separate licenses",
+      "vizdoom_source": "https://github.com/Farama-Foundation/ViZDoom/tree/1.3.2",
+      "vizdoom_license_statement": "https://github.com/Farama-Foundation/ViZDoom#license",
+      "freedoom": "https://github.com/freedoom/freedoom/blob/master/COPYING.adoc",
+      "acc": "https://github.com/ZDoom/acc/releases/tag/1.60",
+      "generated_pwads": "Original project geometry and scripts; no copied IWAD sprites/textures in generated PWADs.",
+      "redistribution": "Preserve upstream Freedoom credits/license when distributing the IWAD; do not label the entire engine bundle MIT."
+    }
+  },
+  "wall_seconds": 9.802025600001798,
+  "execution_sources_unchanged": true,
+  "runtime_assets_unchanged": true,
+  "artifact_sha256": {
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\event_probe\\environments\\env-6c410b19d018\\dispatch_ledger.jsonl": "47791226a16bf1907d7b79b27e3624e701e782e3c9d7b6564d151b6f728c2e85",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\event_probe\\environments\\env-6c410b19d018\\episode-0\\player-0\\_vizdoom.ini": "3074e6bc6c7f2b584edf749ebb5a6335606ed2d923e0084a077a8c21514b827f",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\event_probe\\environments\\env-6c410b19d018\\episode-0\\player-1\\_vizdoom.ini": "b425d673e7d5314169bafb9efd50dd887f54fecabce4c15bef8cf4f372c3bb21",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\event_probe\\scenario\\BEHAVIOR.o": "c2dec26419ef3561348a49de991b97abe416a3e93015b0214ecdfa4822278c77",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\event_probe\\scenario\\EXFLOCK.png": "a163e259cbc8467412ea3a8f111ad063f1f432b4cf1ab30c20b8a20811ae041a",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\event_probe\\scenario\\EXFOPEN.png": "4366649b3133ce42ae9672fb7617bdcafb624773c350eb8c2b94832a52b53728",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\event_probe\\scenario\\EXSLOCK.png": "6a2af69fb0eaf2f0aac84c110fa9a8cdf6fca026ac662a2b58317a39e986071d",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\event_probe\\scenario\\EXSOPEN.png": "b60e7251ccdab5f763c8f8feb1b5a7804d68f21cea2da6344f7c7c80bad39cd0",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\event_probe\\scenario\\manifest.json": "a1162f2b0a3709ccb11a16b07bb91228aad0bc48b2b46c75971057bf00b58d8e",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\event_probe\\scenario\\relay.wad": "f5c90987709d050f0126d71e6a59d630c0c5fc0cc13f6ad9fb0108538b469e01",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\event_probe\\scenario\\task.acs": "cfd9ee2b3b5930a022faa52f9220a5f821272e50e14a782b581450aafccbfd48",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\event_probe\\scenario\\TEXTMAP.txt": "e8e2382d2c1e948d82e23f29cf81e07527b77eb7463e285b1fa68ba9de7fbb61"
+  }
+}

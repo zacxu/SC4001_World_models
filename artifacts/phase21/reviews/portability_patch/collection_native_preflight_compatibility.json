@@ -1,0 +1,62 @@
+{
+  "status": "passed",
+  "purpose": "post-campaign collection-report reader compatibility only",
+  "actual_D_execution_source_unchanged": true,
+  "actual_D_collection_py_sha256": "b225a20363ed35f11b71be67a1348fa0d9fe63a67e42f183db643a42f1581f36",
+  "native_preflight_cases": [
+    {
+      "task_family": "relay",
+      "run_seed": 0,
+      "status": "passed",
+      "joint_transitions": 1000,
+      "input_reports_bindings_and_manifest_unchanged": true,
+      "input_sha256": {
+        "D:\\world models\\artifacts\\phase21\\preflight_data\\relay\\seed_0\\collection_report.json": "99d101c096f023f074282c3f09cd84387da721e1fa6507e003f6bd573f865d42",
+        "D:\\world models\\artifacts\\phase21\\preflight_data\\relay\\seed_0\\bindings\\B.json": "bf7296744f5f1f716ad987390f6ad7b2fe36b18ebfe39a2f90105552f5ef92eb",
+        "D:\\world models\\artifacts\\phase21\\preflight_data\\relay\\seed_0\\bindings\\D.json": "58a6527bed9e0d89bcc5cc946a6391e3423b0003da965201ee6eb94cf43ca2fc",
+        "D:\\world models\\artifacts\\phase21\\preflight_data\\relay\\seed_0\\replay\\manifest.json": "4a9e9e7553a97d36cc42039ff7fe3719fc6fca4fe74612c44c60512760cf4db9"
+      }
+    },
+    {
+      "task_family": "relay",
+      "run_seed": 1,
+      "status": "passed",
+      "joint_transitions": 1000,
+      "input_reports_bindings_and_manifest_unchanged": true,
+      "input_sha256": {
+        "D:\\world models\\artifacts\\phase21\\preflight_data\\relay\\seed_1\\collection_report.json": "6d433d10b2b319904516d2fa4283d0ebd682b6919b33d1bd63519cc693dbae1c",
+        "D:\\world models\\artifacts\\phase21\\preflight_data\\relay\\seed_1\\bindings\\B.json": "89fb19bc98138e21274c31e653cc674407fe049f9ca3b051e7b0d1aabc11d39b",
+        "D:\\world models\\artifacts\\phase21\\preflight_data\\relay\\seed_1\\bindings\\D.json": "d0e0fbd692d1d17b6a7b141eba0558875f19ce51c5d274f56a77b4503caad57c",
+        "D:\\world models\\artifacts\\phase21\\preflight_data\\relay\\seed_1\\replay\\manifest.json": "921631a64d6baf56335154bc6138055867fc0874713e6d62b6bea1eb9fedaa4a"
+      }
+    },
+    {
+      "task_family": "cover",
+      "run_seed": 0,
+      "status": "passed",
+      "joint_transitions": 1000,
+      "input_reports_bindings_and_manifest_unchanged": true,
+      "input_sha256": {
+        "D:\\world models\\artifacts\\phase21\\preflight_data\\cover\\seed_0\\collection_report.json": "d2eb22fc67c8876c7abe5b8eef9f5668603dd8b013fc54a4f02e553d16a9a1e9",
+        "D:\\world models\\artifacts\\phase21\\preflight_data\\cover\\seed_0\\bindings\\B.json": "98be24bb39a45570c8c51cf5b659a62324936b15da264b89165ea76a0219f0dd",
+        "D:\\world models\\artifacts\\phase21\\preflight_data\\cover\\seed_0\\bindings\\D.json": "1275ded2aa5cb47fda7e9e6c57c1931a802602eb62a366ff5853fa4f6e1168c2",
+        "D:\\world models\\artifacts\\phase21\\preflight_data\\cover\\seed_0\\replay\\manifest.json": "657e96bf91a38f7e7de0a0be9a541d1628c46d6d66513c99e676c43ffd97d777"
+      }
+    },
+    {
+      "task_family": "cover",
+      "run_seed": 1,
+      "status": "passed",
+      "joint_transitions": 1000,
+      "input_reports_bindings_and_manifest_unchanged": true,
+      "input_sha256": {
+        "D:\\world models\\artifacts\\phase21\\preflight_data\\cover\\seed_1\\collection_report.json": "8ee59ee205c9b90fabaac09bb8253e87f0cc082e01da564d66a9363cf5875ca8",
+        "D:\\world models\\artifacts\\phase21\\preflight_data\\cover\\seed_1\\bindings\\B.json": "b5b5bdb2104f843715024c588a828087bb19afffe8791d548263594c95519be5",
+        "D:\\world models\\artifacts\\phase21\\preflight_data\\cover\\seed_1\\bindings\\D.json": "35ed6fa81eac687313a6bc73488db78ea1a9fed07deb7685f31915f18605cbf5",
+        "D:\\world models\\artifacts\\phase21\\preflight_data\\cover\\seed_1\\replay\\manifest.json": "0a29d75010945ceec600e606de664c98ebcf3f4d0c81d5899df7b7fc01e158f6"
+      }
+    }
+  ],
+  "generation_semantics_changed": false,
+  "evidence_report_and_binding_bytes_rewritten": false
+}

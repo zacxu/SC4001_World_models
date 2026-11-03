@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "datasets": [
+    {
+      "task_family": "relay",
+      "run_seed": 0,
+      "status": "passed",
+      "transitions": 1000
+    },
+    {
+      "task_family": "relay",
+      "run_seed": 1,
+      "status": "passed",
+      "transitions": 1000
+    },
+    {
+      "task_family": "cover",
+      "run_seed": 0,
+      "status": "passed",
+      "transitions": 1000
+    },
+    {
+      "task_family": "cover",
+      "run_seed": 1,
+      "status": "passed",
+      "transitions": 1000
+    }
+  ],
+  "legacy_backslash_bindings_read_without_modification": 8,
+  "original_ordered_archives_verified_without_modification": 48,
+  "elapsed_seconds": 0.9873324999998658,
+  "scope": "Read-only Windows preflight compatibility; POSIX parsing additionally exercised by PurePosixPath unit fixture. No native simulator invocation."
+}

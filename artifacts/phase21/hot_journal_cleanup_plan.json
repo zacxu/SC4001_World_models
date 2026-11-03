@@ -1,0 +1,126 @@
+{
+  "collection_host_os_name": "nt",
+  "deletion_performed_by_this_helper": false,
+  "operator_rule": "After confirming all owned collection/recovery processes stopped, verify each exact absolute root is still the same strict P2.1 temporary child and contains only these matching files; remove that named root. Never delete data directories or mutate historical reports.",
+  "portable_evidence_rule": "Cold copy paths are relative to project root. Absolute hot paths are cleanup instructions for the original collection host only.",
+  "roots": [
+    {
+      "absolute_collection_host_root": "C:\\Users\\Admin\\AppData\\Local\\Temp\\world-models-p21-recovery-n6nlfkxe",
+      "present_when_planned": true,
+      "safe_after_owned_processes_stopped": true,
+      "unknown_files": [],
+      "verified_hot_files": [
+        {
+          "bytes": 35268713,
+          "cold_copy": {
+            "bytes": 35268713,
+            "path": "data/initial_replay/pilot/relay/seed_1/training_interactions.jsonl",
+            "sha256": "96cd879b095d76ae21253b2974344495154fc175c6b49407ce3b140e5fd34c56"
+          },
+          "hot_source_path_on_collection_host": "C:\\Users\\Admin\\AppData\\Local\\Temp\\world-models-p21-recovery-n6nlfkxe\\ledger\\training_interactions.jsonl",
+          "hot_source_present_when_planned": true,
+          "sha256": "96cd879b095d76ae21253b2974344495154fc175c6b49407ce3b140e5fd34c56"
+        }
+      ]
+    },
+    {
+      "absolute_collection_host_root": "C:\\Users\\Admin\\AppData\\Local\\Temp\\world-models-p21-hsog6ztf",
+      "present_when_planned": true,
+      "safe_after_owned_processes_stopped": true,
+      "unknown_files": [],
+      "verified_hot_files": [
+        {
+          "bytes": 35187396,
+          "cold_copy": {
+            "bytes": 35187396,
+            "path": "data/initial_replay/pilot/cover/seed_0/training_interactions.jsonl",
+            "sha256": "e78340439d00dab8a739e3f193438de9f45d464702e48c20a8a80fdb74d255b5"
+          },
+          "hot_source_path_on_collection_host": "C:\\Users\\Admin\\AppData\\Local\\Temp\\world-models-p21-hsog6ztf\\initial\\cover\\seed_0\\ledger\\training_interactions.jsonl",
+          "hot_source_present_when_planned": true,
+          "sha256": "e78340439d00dab8a739e3f193438de9f45d464702e48c20a8a80fdb74d255b5"
+        },
+        {
+          "bytes": 35187280,
+          "cold_copy": {
+            "bytes": 35187280,
+            "path": "data/initial_replay/pilot/cover/seed_1/training_interactions.jsonl",
+            "sha256": "3e7282d0f7d2688c7cd0bdd297504d4c3dc0d6e8d165bed99dcd0090dc4abeb0"
+          },
+          "hot_source_path_on_collection_host": "C:\\Users\\Admin\\AppData\\Local\\Temp\\world-models-p21-hsog6ztf\\initial\\cover\\seed_1\\ledger\\training_interactions.jsonl",
+          "hot_source_present_when_planned": true,
+          "sha256": "3e7282d0f7d2688c7cd0bdd297504d4c3dc0d6e8d165bed99dcd0090dc4abeb0"
+        },
+        {
+          "bytes": 35241531,
+          "cold_copy": {
+            "bytes": 35241531,
+            "path": "data/initial_replay/pilot/relay/seed_0/training_interactions.jsonl",
+            "sha256": "880a80fef1d6b11fb9e958ced5fa4cebab3102dc3cab55df7b8563be52bcae61"
+          },
+          "hot_source_path_on_collection_host": "C:\\Users\\Admin\\AppData\\Local\\Temp\\world-models-p21-hsog6ztf\\initial\\relay\\seed_0\\ledger\\training_interactions.jsonl",
+          "hot_source_present_when_planned": true,
+          "sha256": "880a80fef1d6b11fb9e958ced5fa4cebab3102dc3cab55df7b8563be52bcae61"
+        },
+        {
+          "bytes": 23043422,
+          "cold_copy": {
+            "bytes": 23043422,
+            "path": "data/initial_replay/pilot/relay/seed_1/recovery/startup-continuation-001/before/training_interactions.jsonl",
+            "sha256": "c38aa8abe492148be7376b899dc73b437fe420f6d1e6724ef118b26c515fa9b2"
+          },
+          "hot_source_path_on_collection_host": "C:\\Users\\Admin\\AppData\\Local\\Temp\\world-models-p21-hsog6ztf\\initial\\relay\\seed_1\\ledger\\training_interactions.jsonl",
+          "hot_source_present_when_planned": true,
+          "sha256": "c38aa8abe492148be7376b899dc73b437fe420f6d1e6724ef118b26c515fa9b2"
+        },
+        {
+          "bytes": 704117,
+          "cold_copy": {
+            "bytes": 704117,
+            "path": "artifacts/phase21/preflight_data/cover/seed_0/training_interactions.jsonl",
+            "sha256": "4ec54ed8e0752cc69f54461288272e6457637b22d56e9fb0cf225fd06bf555a6"
+          },
+          "hot_source_path_on_collection_host": "C:\\Users\\Admin\\AppData\\Local\\Temp\\world-models-p21-hsog6ztf\\preflight\\cover\\seed_0\\ledger\\training_interactions.jsonl",
+          "hot_source_present_when_planned": true,
+          "sha256": "4ec54ed8e0752cc69f54461288272e6457637b22d56e9fb0cf225fd06bf555a6"
+        },
+        {
+          "bytes": 704179,
+          "cold_copy": {
+            "bytes": 704179,
+            "path": "artifacts/phase21/preflight_data/cover/seed_1/training_interactions.jsonl",
+            "sha256": "2b5e2a811ab8e3c6175e6a71edc4daa3919aa5ee33b2403a42ca7849c9139741"
+          },
+          "hot_source_path_on_collection_host": "C:\\Users\\Admin\\AppData\\Local\\Temp\\world-models-p21-hsog6ztf\\preflight\\cover\\seed_1\\ledger\\training_interactions.jsonl",
+          "hot_source_present_when_planned": true,
+          "sha256": "2b5e2a811ab8e3c6175e6a71edc4daa3919aa5ee33b2403a42ca7849c9139741"
+        },
+        {
+          "bytes": 705216,
+          "cold_copy": {
+            "bytes": 705216,
+            "path": "artifacts/phase21/preflight_data/relay/seed_0/training_interactions.jsonl",
+            "sha256": "820961c7b4ae5cecf13b9ca54c3f8817c0250cfabeb8d5686e28b06da0f1fce9"
+          },
+          "hot_source_path_on_collection_host": "C:\\Users\\Admin\\AppData\\Local\\Temp\\world-models-p21-hsog6ztf\\preflight\\relay\\seed_0\\ledger\\training_interactions.jsonl",
+          "hot_source_present_when_planned": true,
+          "sha256": "820961c7b4ae5cecf13b9ca54c3f8817c0250cfabeb8d5686e28b06da0f1fce9"
+        },
+        {
+          "bytes": 705216,
+          "cold_copy": {
+            "bytes": 705216,
+            "path": "artifacts/phase21/preflight_data/relay/seed_1/training_interactions.jsonl",
+            "sha256": "015f6785c4f5dcb27d67b01adcc631275405b90464e70ee518000210a9a9b224"
+          },
+          "hot_source_path_on_collection_host": "C:\\Users\\Admin\\AppData\\Local\\Temp\\world-models-p21-hsog6ztf\\preflight\\relay\\seed_1\\ledger\\training_interactions.jsonl",
+          "hot_source_present_when_planned": true,
+          "sha256": "015f6785c4f5dcb27d67b01adcc631275405b90464e70ee518000210a9a9b224"
+        }
+      ]
+    }
+  ],
+  "schema_version": "p21-verified-hot-cleanup-plan-v1",
+  "status": "verified_cold_copies_ready_for_operator_cleanup",
+  "temporary_parent_on_collection_host": "C:\\Users\\Admin\\AppData\\Local\\Temp"
+}

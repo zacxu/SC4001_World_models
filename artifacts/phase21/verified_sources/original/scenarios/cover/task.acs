@@ -1,0 +1,220 @@
+#include "zcommon.acs"
+
+global int 1:stage;
+global int 2:success;
+global int 3:failure;
+global int 4:milestones;
+global int 5:progress1;
+global int 6:progress2;
+global int 7:plate;
+global int 8:latch;
+global int 9:elapsed;
+global int 10:ready;
+global int 11:starttic;
+global int 12:enemyhealth;
+global int 13:enemy1x;
+global int 14:enemy1y;
+global int 15:enemy1health;
+global int 16:enemy1alive;
+global int 17:enemy2x;
+global int 18:enemy2y;
+global int 19:enemy2health;
+global int 20:enemy2alive;
+
+// Only global 0 feeds native ViZDoom reward. Keep it reserved and zero;
+// the coordinator computes the one shared research reward from event deltas.
+global int 0:reservedreward;
+global int 21:plateentries;
+global int 22:plateexits;
+global int 23:gateopens;
+global int 24:gatecloses;
+global int 25:latchcount;
+global int 26:console1count;
+global int 27:console2count;
+global int 28:successcount;
+global int 29:failurecount;
+global int 30:p0deathcount;
+global int 31:p1deathcount;
+global int 32:enemy1deathcount;
+global int 33:enemy2deathcount;
+global int 34:gate1open;
+global int 35:gate2open;
+global int 36:console1complete;
+global int 37:console2complete;
+global int 38:p0alive;
+global int 39:p1alive;
+global int 40:extractionunlocked;
+
+int previousp0alive=1;
+int previousp1alive=1;
+int previousenemy1alive=0;
+int previousenemy2alive=0;
+int previoussuccess=0;
+int previousfailure=0;
+int previousp0plate=0;
+int previousp1plate=0;
+int previousgate1open=0;
+int previousgate2open=0;
+int previousgate1closed=1;
+int previousgate2closed=1;
+int previouslatch=0;
+int previousconsole1=0;
+int previousconsole2=0;
+
+
+int exitunlocked=0;
+
+function int InZone(int tid,int x1,int y1,int x2,int y2)
+{
+    int x=GetActorX(tid)>>16;
+    int y=GetActorY(tid)>>16;
+    return x>=x1 && x<=x2 && y>=y1 && y<=y2;
+}
+
+// Exact fixed-point center containment matches the half-open marked sectors.
+function int InExtraction(int tid)
+{
+    int x=GetActorX(tid);
+    int y=GetActorY(tid);
+    return x>=@EXTRACTION_X1@.0 && x<@EXTRACTION_X2@.0
+        && y>=@EXTRACTION_Y1@.0 && y<@EXTRACTION_Y2@.0;
+}
+
+function void UpdateEnemies(void)
+{
+    enemy1x=GetActorX(200); enemy1y=GetActorY(200);
+    enemy1health=GetActorProperty(200,APROP_Health);
+    if(enemy1health<0) { enemy1health=0; }
+    enemy1alive=enemy1health>0;
+    enemy2x=GetActorX(201); enemy2y=GetActorY(201);
+    enemy2health=GetActorProperty(201,APROP_Health);
+    if(enemy2health<0) { enemy2health=0; }
+    enemy2alive=enemy2health>0;
+    enemyhealth=enemy1health+enemy2health;
+}
+
+
+// Sample every native tic, including after a terminal flag was set. Persistent
+// cumulative counters retain short-lived edges between decision observations.
+function void RecordEvents(void)
+{
+    p0alive=GetActorProperty(100,APROP_Health)>0;
+    p1alive=GetActorProperty(101,APROP_Health)>0;
+    if(previousp0alive && !p0alive) { p0deathcount++; }
+    if(previousp1alive && !p1alive) { p1deathcount++; }
+    previousp0alive=p0alive; previousp1alive=p1alive;
+    if(!previoussuccess && success) { successcount++; }
+    if(!previousfailure && failure) { failurecount++; }
+    previoussuccess=success; previousfailure=failure;
+    extractionunlocked=exitunlocked;
+
+    console1complete=progress1>=@DWELL@;
+    console2complete=progress2>=@DWELL@;
+    if(!previousconsole1 && console1complete) { console1count++; }
+    if(!previousconsole2 && console2complete) { console2count++; }
+    previousconsole1=console1complete; previousconsole2=console2complete;
+    if(previousenemy1alive && !enemy1alive) { enemy1deathcount++; }
+    if(previousenemy2alive && !enemy2alive) { enemy2deathcount++; }
+    previousenemy1alive=enemy1alive; previousenemy2alive=enemy2alive;
+}
+
+script 1 ENTER
+{
+    Thing_ChangeTID(0,100+PlayerNumber());
+    SetActorProperty(0,APROP_Health,100);
+    GiveInventory("Clip",150);
+    GiveInventory("GreenArmor",1);
+    SetWeapon("Pistol");
+}
+
+script 2 OPEN
+{
+    reservedreward=0.0;
+    plateentries=0; plateexits=0; gateopens=0; gatecloses=0;
+    latchcount=0; console1count=0; console2count=0;
+    successcount=0; failurecount=0; p0deathcount=0; p1deathcount=0;
+    enemy1deathcount=0; enemy2deathcount=0;
+    gate1open=0; gate2open=0; console1complete=0; console2complete=0;
+    p0alive=0; p1alive=0; extractionunlocked=0;
+    previousp0alive=1; previousp1alive=1;
+    previousenemy1alive=0; previousenemy2alive=0;
+    previoussuccess=0; previousfailure=0; previousp0plate=0; previousp1plate=0;
+    previousgate1open=0; previousgate2open=0;
+    previousgate1closed=1; previousgate2closed=1;
+    previouslatch=0; previousconsole1=0; previousconsole2=0;
+
+    ready=0; stage=0; success=0; failure=0; milestones=0;
+    progress1=0; progress2=0; plate=0; latch=0; elapsed=0; enemyhealth=0;
+    enemy1x=0; enemy1y=0; enemy1health=0; enemy1alive=0;
+    enemy2x=0; enemy2y=0; enemy2health=0; enemy2alive=0; exitunlocked=0;
+    while(!PlayerInGame(0) || !PlayerInGame(1)) { Delay(1); }
+    while(Timer()<@FRAME_SKIP@ || (Timer()%@FRAME_SKIP@)!=0) { Delay(1); }
+    SetActorPosition(100,@SPAWN0_X@.0,@SPAWN0_Y@.0,0.0,0);
+    SetActorPosition(101,@SPAWN1_X@.0,@SPAWN1_Y@.0,0.0,0);
+    SetActorAngle(100,0.0); SetActorAngle(101,0.0);
+    stage=0; success=0; failure=0; milestones=0;
+    progress1=0; progress2=0;
+    Spawn("ZombieMan",@ENEMY1_X@.0,@ENEMY1_Y@.0,0.0,200,128);
+    UpdateEnemies();
+    previousenemy1alive=enemy1alive;
+    starttic=Timer(); elapsed=0; ready=2;
+    int nextdecision=0;
+    while(1)
+    {
+        if(!success && !failure)
+        {
+            elapsed=(Timer()-starttic)/@FRAME_SKIP@;
+            if(GetActorProperty(100,APROP_Health)<=0 || GetActorProperty(101,APROP_Health)<=0)
+            { failure=1; }
+            if(!failure && elapsed>=nextdecision)
+            {
+                nextdecision=elapsed+1;
+                for(int p=0;p<2;p++)
+                {
+                    if(stage==0 && InZone(100+p,@CONSOLE_1_X1@,@CONSOLE_1_Y1@,@CONSOLE_1_X2@,@CONSOLE_1_Y2@)
+                       && (GetPlayerInput(p,INPUT_BUTTONS)&BT_USE))
+                    {
+                        progress1++;
+                        if(progress1>=@DWELL@)
+                        {
+                            progress1=@DWELL@; stage=1; milestones=1;
+                            // The first threat remains alive unless players kill it.
+                            Spawn("ZombieMan",@ENEMY2_X@.0,@ENEMY2_Y@.0,0.0,201,0);
+                        }
+                        break;
+                    }
+                    else if(stage==1
+                        && InZone(100+p,@CONSOLE_2_X1@,@CONSOLE_2_Y1@,@CONSOLE_2_X2@,@CONSOLE_2_Y2@)
+                        && (GetPlayerInput(p,INPUT_BUTTONS)&BT_USE))
+                    {
+                        progress2++;
+                        if(progress2>=@DWELL@) { progress2=@DWELL@; stage=2; milestones=2; }
+                        break;
+                    }
+                }
+            }
+            if(stage>=2 && !exitunlocked)
+            {
+                ChangeFloor(@EXTRACTION_SECTOR_TAG@,"EXFOPEN");
+                SetLineTexture(@EXTRACTION_WALL_ID@,SIDE_FRONT,TEXTURE_MIDDLE,"EXSOPEN");
+                exitunlocked=1;
+            }
+            if(!failure && stage==2
+               && InExtraction(100) && InExtraction(101))
+            { success=1; stage=3; }
+            if(!success && elapsed>=@DEADLINE@) { failure=1; }
+        }
+        UpdateEnemies();
+        RecordEvents();
+        SetHudSize(160,120,1);
+        SetFont("SMALLFONT");
+        HudMessage(s:"COVER A:",d:progress1,s:" B:",d:progress2,s:" T:",d:(@DEADLINE@-elapsed);
+                   HUDMSG_PLAIN,1,CR_GOLD,80.0,8.0,0.2);
+        if(success) { HudMessage(s:"BOTH EXTRACTED";HUDMSG_PLAIN,2,CR_GREEN,80.0,20.0,0.2); }
+        else if(failure) { HudMessage(s:"TEAM FAILED";HUDMSG_PLAIN,2,CR_RED,80.0,20.0,0.2); }
+        else if(stage==0) { HudMessage(s:"HOLD USE A / COVER";HUDMSG_PLAIN,2,CR_WHITE,80.0,20.0,0.2); }
+        else if(stage==1) { HudMessage(s:"HOLD USE B / COVER";HUDMSG_PLAIN,2,CR_WHITE,80.0,20.0,0.2); }
+        else { HudMessage(s:"BOTH TO EXIT";HUDMSG_PLAIN,2,CR_GREEN,80.0,20.0,0.2); }
+        Delay(1);
+    }
+}

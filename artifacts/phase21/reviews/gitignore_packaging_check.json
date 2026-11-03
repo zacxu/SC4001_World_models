@@ -1,0 +1,17 @@
+{
+  "essential_paths_checked": 91,
+  "git_staging_or_commit_performed": false,
+  "gitignore_sha256": "633e98840c04a83a58f5c30c0ff30220c8d935acab0f90cac1628a28172aeff5",
+  "original_execution_sources_unchanged": 81,
+  "raw_or_private_paths_ignored": [
+    ".venv/pyvenv.cfg",
+    ".tools/acc.exe",
+    "data/initial_replay/pilot/relay/seed_0/replay/manifest.json",
+    "artifacts/phase21/preflight_data/relay/seed_0/collection_report.json",
+    "artifacts/phase21/reviews/startup_crash_evidence/application_event_1000_404441.xml",
+    "artifacts/phase21/reviews/startup_crash_evidence/windows_events.json",
+    "artifacts/phase21/reviews/__pycache__/example.cpython-312.pyc"
+  ],
+  "status": "passed",
+  "verification_protocol": "Git binary NUL-delimited input/output; avoids Windows text-stream CRLF translation."
+}

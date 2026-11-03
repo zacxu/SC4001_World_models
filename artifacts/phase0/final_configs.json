@@ -1,0 +1,900 @@
+{
+  "experiment": "final",
+  "comparison": "B_vs_D",
+  "pairs": [
+    {
+      "task_family": "relay",
+      "B": {
+        "settings": {
+          "schema_version": 1,
+          "study": {
+            "variants": [
+              "B",
+              "D"
+            ],
+            "task_families": [
+              "relay",
+              "cover"
+            ],
+            "separate_family_runs": true,
+            "primary_metric": "normalized_success_auc",
+            "interaction_unit": "joint_transition",
+            "evaluation_enters_replay": false
+          },
+          "environment": {
+            "agents": 2,
+            "image_shape": [
+              3,
+              96,
+              128
+            ],
+            "render_shape": [
+              120,
+              160
+            ],
+            "frame_skip": 4,
+            "action_count": 12,
+            "previous_action_start": 12,
+            "local_actor_inputs": [
+              "local_rgb",
+              "previous_action",
+              "local_hidden"
+            ],
+            "actor_reward_input": false,
+            "actor_global_input": false,
+            "actor_agent_identity": false,
+            "communication": false,
+            "shared_actor_weights": true,
+            "separate_actor_memory": true,
+            "privileged_mode": "auxiliary_targets_only",
+            "prior_future_truth": false,
+            "exact_episode_clock": true
+          },
+          "resources": {
+            "requested_gpu_count": 4,
+            "requested_gpu_model": "H200",
+            "requested_cpu_cores": 4,
+            "initial_collectors": 1,
+            "learners_per_gpu": 1,
+            "data_loader_workers": 0,
+            "cpu_threads": 1,
+            "mixed_precision": "bfloat16",
+            "probability_dtype": "float32",
+            "optimizer_dtype": "float32",
+            "distributed_training": false
+          },
+          "world_model": {
+            "encoder_channels": [
+              32,
+              64,
+              128,
+              256
+            ],
+            "memory_tokens": 16,
+            "width": 256,
+            "transformer_blocks": 4,
+            "attention_heads": 8,
+            "ffn_width": 1024,
+            "latent_variables": 32,
+            "latent_categories": 32,
+            "effective_batch": 32,
+            "sequence_length": 64,
+            "burn_in": 16,
+            "initial_updates": 5000,
+            "online_updates": 500,
+            "learning_rate": 0.0001,
+            "weight_decay": 0.0001,
+            "gradient_clip": 100.0,
+            "free_nats": 1.0,
+            "uniform_mixture": 0.01,
+            "recent_fraction": 0.5,
+            "recent_transitions": 100000,
+            "fitting_episode_fraction": 0.9,
+            "loss_weights": {
+              "rgb": 100.0,
+              "reward": 1.0,
+              "outcome": 1.0,
+              "auxiliary": 1.0,
+              "dynamics_kl": 0.5,
+              "representation_kl": 0.1
+            }
+          },
+          "actor": {
+            "embedding_size": 256,
+            "hidden_size": 256,
+            "dropout": 0.0
+          },
+          "critic": {
+            "hidden_sizes": [
+              512,
+              512
+            ],
+            "actor_memories": true,
+            "remaining_time": true
+          },
+          "mappo": {
+            "horizon": 15,
+            "starts": 256,
+            "epochs": 4,
+            "recurrent_minibatches": 4,
+            "gamma": 0.99,
+            "gae_lambda": 0.95,
+            "clip_epsilon": 0.2,
+            "learning_rate": 0.0003,
+            "optimizer_epsilon": 1e-05,
+            "entropy_coefficient": 0.01,
+            "value_coefficient": 0.5,
+            "value_huber_delta": 1.0,
+            "gradient_clip": 0.5,
+            "initial_local_cycles": 100,
+            "online_local_cycles": 20,
+            "normalize_actor_advantages": true,
+            "normalize_values": false,
+            "differentiate_world_model": false,
+            "frozen_rollout_snapshots": true
+          },
+          "teacher": {
+            "initial_cycles": 100,
+            "online_cycles": 20,
+            "attention_heads": 4,
+            "head_width": 256,
+            "recurrent_input": "local_history"
+          },
+          "distillation": {
+            "target": "soft_action_distribution",
+            "direction": "teacher_to_student_forward_kl",
+            "trajectory_source": "student",
+            "temperature": 1.0,
+            "initial_trajectories": 512,
+            "warm_start_updates": 200,
+            "warm_start_batch_sequences": 64,
+            "initial_weight": 1.0,
+            "decay_fraction": 0.75
+          },
+          "task": {
+            "name": "relay",
+            "deadline": 400,
+            "dwell_decisions": 0,
+            "success_reward": 1.0,
+            "failure_reward": -1.0,
+            "step_cost": -0.001,
+            "milestone_bonus": 0.1,
+            "milestone_count": 1,
+            "train_layouts": 6,
+            "validation_layouts": 2,
+            "test_layouts": 2
+          },
+          "variant": {
+            "name": "B",
+            "teacher_enabled": false,
+            "distillation_enabled": false
+          },
+          "experiment": {
+            "name": "final",
+            "master_seeds": [
+              1001,
+              1002,
+              1003,
+              1004,
+              1005,
+              1006,
+              1007,
+              1008,
+              1009,
+              1010
+            ],
+            "real_budget": 1000000,
+            "initial_transitions": 50000,
+            "collection_block": 25000,
+            "checkpoints": [
+              0,
+              50000,
+              100000,
+              200000,
+              300000,
+              400000,
+              500000,
+              600000,
+              700000,
+              800000,
+              900000,
+              1000000
+            ],
+            "checkpoint_episodes": 50,
+            "final_episodes": 200,
+            "evaluation_split": "test",
+            "bootstrap_replicates": 10000,
+            "practical_auc_effect": 0.02,
+            "initial_scripted_fraction": 0.3
+          }
+        },
+        "derived": {
+          "online_blocks": 38,
+          "local_ppo_cycles": 860,
+          "nominal_local_imagined_joint_steps": 3302400,
+          "guided_local_cycles": 0,
+          "unguided_local_cycles": 860,
+          "teacher_ppo_cycles": 0,
+          "comparison_run_count": 40,
+          "checkpoint_count": 12
+        },
+        "config_hash": "8cae5e5f9e0daa6e84262c211393d42073b92bb52ac4859c30529d443a2030f0",
+        "source_hashes": {
+          "base.yaml": "3153cca71dc261529266b00714c6e367c3f91264bba3c7e2594f9bb7c10a216e",
+          "tasks\\relay.yaml": "feb5e8849ad69d277b445cf1b8faeddf6e3155e7ef39ae9fb6602233e1d03580",
+          "variants\\B.yaml": "4d9d6e6be699818d733bf6851748f9cdde7219c091a1392c9d09d1a124676af9",
+          "experiments\\final.yaml": "c1242746427d32af878357998d181133d23ad278b70e492377351fbf441adeba"
+        }
+      },
+      "D": {
+        "settings": {
+          "schema_version": 1,
+          "study": {
+            "variants": [
+              "B",
+              "D"
+            ],
+            "task_families": [
+              "relay",
+              "cover"
+            ],
+            "separate_family_runs": true,
+            "primary_metric": "normalized_success_auc",
+            "interaction_unit": "joint_transition",
+            "evaluation_enters_replay": false
+          },
+          "environment": {
+            "agents": 2,
+            "image_shape": [
+              3,
+              96,
+              128
+            ],
+            "render_shape": [
+              120,
+              160
+            ],
+            "frame_skip": 4,
+            "action_count": 12,
+            "previous_action_start": 12,
+            "local_actor_inputs": [
+              "local_rgb",
+              "previous_action",
+              "local_hidden"
+            ],
+            "actor_reward_input": false,
+            "actor_global_input": false,
+            "actor_agent_identity": false,
+            "communication": false,
+            "shared_actor_weights": true,
+            "separate_actor_memory": true,
+            "privileged_mode": "auxiliary_targets_only",
+            "prior_future_truth": false,
+            "exact_episode_clock": true
+          },
+          "resources": {
+            "requested_gpu_count": 4,
+            "requested_gpu_model": "H200",
+            "requested_cpu_cores": 4,
+            "initial_collectors": 1,
+            "learners_per_gpu": 1,
+            "data_loader_workers": 0,
+            "cpu_threads": 1,
+            "mixed_precision": "bfloat16",
+            "probability_dtype": "float32",
+            "optimizer_dtype": "float32",
+            "distributed_training": false
+          },
+          "world_model": {
+            "encoder_channels": [
+              32,
+              64,
+              128,
+              256
+            ],
+            "memory_tokens": 16,
+            "width": 256,
+            "transformer_blocks": 4,
+            "attention_heads": 8,
+            "ffn_width": 1024,
+            "latent_variables": 32,
+            "latent_categories": 32,
+            "effective_batch": 32,
+            "sequence_length": 64,
+            "burn_in": 16,
+            "initial_updates": 5000,
+            "online_updates": 500,
+            "learning_rate": 0.0001,
+            "weight_decay": 0.0001,
+            "gradient_clip": 100.0,
+            "free_nats": 1.0,
+            "uniform_mixture": 0.01,
+            "recent_fraction": 0.5,
+            "recent_transitions": 100000,
+            "fitting_episode_fraction": 0.9,
+            "loss_weights": {
+              "rgb": 100.0,
+              "reward": 1.0,
+              "outcome": 1.0,
+              "auxiliary": 1.0,
+              "dynamics_kl": 0.5,
+              "representation_kl": 0.1
+            }
+          },
+          "actor": {
+            "embedding_size": 256,
+            "hidden_size": 256,
+            "dropout": 0.0
+          },
+          "critic": {
+            "hidden_sizes": [
+              512,
+              512
+            ],
+            "actor_memories": true,
+            "remaining_time": true
+          },
+          "mappo": {
+            "horizon": 15,
+            "starts": 256,
+            "epochs": 4,
+            "recurrent_minibatches": 4,
+            "gamma": 0.99,
+            "gae_lambda": 0.95,
+            "clip_epsilon": 0.2,
+            "learning_rate": 0.0003,
+            "optimizer_epsilon": 1e-05,
+            "entropy_coefficient": 0.01,
+            "value_coefficient": 0.5,
+            "value_huber_delta": 1.0,
+            "gradient_clip": 0.5,
+            "initial_local_cycles": 100,
+            "online_local_cycles": 20,
+            "normalize_actor_advantages": true,
+            "normalize_values": false,
+            "differentiate_world_model": false,
+            "frozen_rollout_snapshots": true
+          },
+          "teacher": {
+            "initial_cycles": 100,
+            "online_cycles": 20,
+            "attention_heads": 4,
+            "head_width": 256,
+            "recurrent_input": "local_history"
+          },
+          "distillation": {
+            "target": "soft_action_distribution",
+            "direction": "teacher_to_student_forward_kl",
+            "trajectory_source": "student",
+            "temperature": 1.0,
+            "initial_trajectories": 512,
+            "warm_start_updates": 200,
+            "warm_start_batch_sequences": 64,
+            "initial_weight": 1.0,
+            "decay_fraction": 0.75
+          },
+          "task": {
+            "name": "relay",
+            "deadline": 400,
+            "dwell_decisions": 0,
+            "success_reward": 1.0,
+            "failure_reward": -1.0,
+            "step_cost": -0.001,
+            "milestone_bonus": 0.1,
+            "milestone_count": 1,
+            "train_layouts": 6,
+            "validation_layouts": 2,
+            "test_layouts": 2
+          },
+          "variant": {
+            "name": "D",
+            "teacher_enabled": true,
+            "distillation_enabled": true
+          },
+          "experiment": {
+            "name": "final",
+            "master_seeds": [
+              1001,
+              1002,
+              1003,
+              1004,
+              1005,
+              1006,
+              1007,
+              1008,
+              1009,
+              1010
+            ],
+            "real_budget": 1000000,
+            "initial_transitions": 50000,
+            "collection_block": 25000,
+            "checkpoints": [
+              0,
+              50000,
+              100000,
+              200000,
+              300000,
+              400000,
+              500000,
+              600000,
+              700000,
+              800000,
+              900000,
+              1000000
+            ],
+            "checkpoint_episodes": 50,
+            "final_episodes": 200,
+            "evaluation_split": "test",
+            "bootstrap_replicates": 10000,
+            "practical_auc_effect": 0.02,
+            "initial_scripted_fraction": 0.3
+          }
+        },
+        "derived": {
+          "online_blocks": 38,
+          "local_ppo_cycles": 860,
+          "nominal_local_imagined_joint_steps": 3302400,
+          "guided_local_cycles": 645,
+          "unguided_local_cycles": 215,
+          "teacher_ppo_cycles": 660,
+          "comparison_run_count": 40,
+          "checkpoint_count": 12
+        },
+        "config_hash": "07e7a25ca47eccdaa0848c6dac4f975da7aac3e0f1ae9451228334ae6a8199d9",
+        "source_hashes": {
+          "base.yaml": "3153cca71dc261529266b00714c6e367c3f91264bba3c7e2594f9bb7c10a216e",
+          "tasks\\relay.yaml": "feb5e8849ad69d277b445cf1b8faeddf6e3155e7ef39ae9fb6602233e1d03580",
+          "variants\\D.yaml": "79c6c6e202b5ab4b2712c25b9b294b263f3f2e9acfbc553857eb2433dee3a796",
+          "experiments\\final.yaml": "c1242746427d32af878357998d181133d23ad278b70e492377351fbf441adeba"
+        }
+      }
+    },
+    {
+      "task_family": "cover",
+      "B": {
+        "settings": {
+          "schema_version": 1,
+          "study": {
+            "variants": [
+              "B",
+              "D"
+            ],
+            "task_families": [
+              "relay",
+              "cover"
+            ],
+            "separate_family_runs": true,
+            "primary_metric": "normalized_success_auc",
+            "interaction_unit": "joint_transition",
+            "evaluation_enters_replay": false
+          },
+          "environment": {
+            "agents": 2,
+            "image_shape": [
+              3,
+              96,
+              128
+            ],
+            "render_shape": [
+              120,
+              160
+            ],
+            "frame_skip": 4,
+            "action_count": 12,
+            "previous_action_start": 12,
+            "local_actor_inputs": [
+              "local_rgb",
+              "previous_action",
+              "local_hidden"
+            ],
+            "actor_reward_input": false,
+            "actor_global_input": false,
+            "actor_agent_identity": false,
+            "communication": false,
+            "shared_actor_weights": true,
+            "separate_actor_memory": true,
+            "privileged_mode": "auxiliary_targets_only",
+            "prior_future_truth": false,
+            "exact_episode_clock": true
+          },
+          "resources": {
+            "requested_gpu_count": 4,
+            "requested_gpu_model": "H200",
+            "requested_cpu_cores": 4,
+            "initial_collectors": 1,
+            "learners_per_gpu": 1,
+            "data_loader_workers": 0,
+            "cpu_threads": 1,
+            "mixed_precision": "bfloat16",
+            "probability_dtype": "float32",
+            "optimizer_dtype": "float32",
+            "distributed_training": false
+          },
+          "world_model": {
+            "encoder_channels": [
+              32,
+              64,
+              128,
+              256
+            ],
+            "memory_tokens": 16,
+            "width": 256,
+            "transformer_blocks": 4,
+            "attention_heads": 8,
+            "ffn_width": 1024,
+            "latent_variables": 32,
+            "latent_categories": 32,
+            "effective_batch": 32,
+            "sequence_length": 64,
+            "burn_in": 16,
+            "initial_updates": 5000,
+            "online_updates": 500,
+            "learning_rate": 0.0001,
+            "weight_decay": 0.0001,
+            "gradient_clip": 100.0,
+            "free_nats": 1.0,
+            "uniform_mixture": 0.01,
+            "recent_fraction": 0.5,
+            "recent_transitions": 100000,
+            "fitting_episode_fraction": 0.9,
+            "loss_weights": {
+              "rgb": 100.0,
+              "reward": 1.0,
+              "outcome": 1.0,
+              "auxiliary": 1.0,
+              "dynamics_kl": 0.5,
+              "representation_kl": 0.1
+            }
+          },
+          "actor": {
+            "embedding_size": 256,
+            "hidden_size": 256,
+            "dropout": 0.0
+          },
+          "critic": {
+            "hidden_sizes": [
+              512,
+              512
+            ],
+            "actor_memories": true,
+            "remaining_time": true
+          },
+          "mappo": {
+            "horizon": 15,
+            "starts": 256,
+            "epochs": 4,
+            "recurrent_minibatches": 4,
+            "gamma": 0.99,
+            "gae_lambda": 0.95,
+            "clip_epsilon": 0.2,
+            "learning_rate": 0.0003,
+            "optimizer_epsilon": 1e-05,
+            "entropy_coefficient": 0.01,
+            "value_coefficient": 0.5,
+            "value_huber_delta": 1.0,
+            "gradient_clip": 0.5,
+            "initial_local_cycles": 100,
+            "online_local_cycles": 20,
+            "normalize_actor_advantages": true,
+            "normalize_values": false,
+            "differentiate_world_model": false,
+            "frozen_rollout_snapshots": true
+          },
+          "teacher": {
+            "initial_cycles": 100,
+            "online_cycles": 20,
+            "attention_heads": 4,
+            "head_width": 256,
+            "recurrent_input": "local_history"
+          },
+          "distillation": {
+            "target": "soft_action_distribution",
+            "direction": "teacher_to_student_forward_kl",
+            "trajectory_source": "student",
+            "temperature": 1.0,
+            "initial_trajectories": 512,
+            "warm_start_updates": 200,
+            "warm_start_batch_sequences": 64,
+            "initial_weight": 1.0,
+            "decay_fraction": 0.75
+          },
+          "task": {
+            "name": "cover",
+            "deadline": 600,
+            "dwell_decisions": 20,
+            "success_reward": 1.0,
+            "failure_reward": -1.0,
+            "step_cost": -0.001,
+            "milestone_bonus": 0.05,
+            "milestone_count": 2,
+            "train_layouts": 6,
+            "validation_layouts": 2,
+            "test_layouts": 2
+          },
+          "variant": {
+            "name": "B",
+            "teacher_enabled": false,
+            "distillation_enabled": false
+          },
+          "experiment": {
+            "name": "final",
+            "master_seeds": [
+              1001,
+              1002,
+              1003,
+              1004,
+              1005,
+              1006,
+              1007,
+              1008,
+              1009,
+              1010
+            ],
+            "real_budget": 1000000,
+            "initial_transitions": 50000,
+            "collection_block": 25000,
+            "checkpoints": [
+              0,
+              50000,
+              100000,
+              200000,
+              300000,
+              400000,
+              500000,
+              600000,
+              700000,
+              800000,
+              900000,
+              1000000
+            ],
+            "checkpoint_episodes": 50,
+            "final_episodes": 200,
+            "evaluation_split": "test",
+            "bootstrap_replicates": 10000,
+            "practical_auc_effect": 0.02,
+            "initial_scripted_fraction": 0.3
+          }
+        },
+        "derived": {
+          "online_blocks": 38,
+          "local_ppo_cycles": 860,
+          "nominal_local_imagined_joint_steps": 3302400,
+          "guided_local_cycles": 0,
+          "unguided_local_cycles": 860,
+          "teacher_ppo_cycles": 0,
+          "comparison_run_count": 40,
+          "checkpoint_count": 12
+        },
+        "config_hash": "83aa46b2914c76e84ee233e13e158ebe5c1d34e36040085b7b8f4c95643a2b22",
+        "source_hashes": {
+          "base.yaml": "3153cca71dc261529266b00714c6e367c3f91264bba3c7e2594f9bb7c10a216e",
+          "tasks\\cover.yaml": "24c54b85c5148cda6e5d60db5dec88e83be7c11ec80b7717340c0803a36ed544",
+          "variants\\B.yaml": "4d9d6e6be699818d733bf6851748f9cdde7219c091a1392c9d09d1a124676af9",
+          "experiments\\final.yaml": "c1242746427d32af878357998d181133d23ad278b70e492377351fbf441adeba"
+        }
+      },
+      "D": {
+        "settings": {
+          "schema_version": 1,
+          "study": {
+            "variants": [
+              "B",
+              "D"
+            ],
+            "task_families": [
+              "relay",
+              "cover"
+            ],
+            "separate_family_runs": true,
+            "primary_metric": "normalized_success_auc",
+            "interaction_unit": "joint_transition",
+            "evaluation_enters_replay": false
+          },
+          "environment": {
+            "agents": 2,
+            "image_shape": [
+              3,
+              96,
+              128
+            ],
+            "render_shape": [
+              120,
+              160
+            ],
+            "frame_skip": 4,
+            "action_count": 12,
+            "previous_action_start": 12,
+            "local_actor_inputs": [
+              "local_rgb",
+              "previous_action",
+              "local_hidden"
+            ],
+            "actor_reward_input": false,
+            "actor_global_input": false,
+            "actor_agent_identity": false,
+            "communication": false,
+            "shared_actor_weights": true,
+            "separate_actor_memory": true,
+            "privileged_mode": "auxiliary_targets_only",
+            "prior_future_truth": false,
+            "exact_episode_clock": true
+          },
+          "resources": {
+            "requested_gpu_count": 4,
+            "requested_gpu_model": "H200",
+            "requested_cpu_cores": 4,
+            "initial_collectors": 1,
+            "learners_per_gpu": 1,
+            "data_loader_workers": 0,
+            "cpu_threads": 1,
+            "mixed_precision": "bfloat16",
+            "probability_dtype": "float32",
+            "optimizer_dtype": "float32",
+            "distributed_training": false
+          },
+          "world_model": {
+            "encoder_channels": [
+              32,
+              64,
+              128,
+              256
+            ],
+            "memory_tokens": 16,
+            "width": 256,
+            "transformer_blocks": 4,
+            "attention_heads": 8,
+            "ffn_width": 1024,
+            "latent_variables": 32,
+            "latent_categories": 32,
+            "effective_batch": 32,
+            "sequence_length": 64,
+            "burn_in": 16,
+            "initial_updates": 5000,
+            "online_updates": 500,
+            "learning_rate": 0.0001,
+            "weight_decay": 0.0001,
+            "gradient_clip": 100.0,
+            "free_nats": 1.0,
+            "uniform_mixture": 0.01,
+            "recent_fraction": 0.5,
+            "recent_transitions": 100000,
+            "fitting_episode_fraction": 0.9,
+            "loss_weights": {
+              "rgb": 100.0,
+              "reward": 1.0,
+              "outcome": 1.0,
+              "auxiliary": 1.0,
+              "dynamics_kl": 0.5,
+              "representation_kl": 0.1
+            }
+          },
+          "actor": {
+            "embedding_size": 256,
+            "hidden_size": 256,
+            "dropout": 0.0
+          },
+          "critic": {
+            "hidden_sizes": [
+              512,
+              512
+            ],
+            "actor_memories": true,
+            "remaining_time": true
+          },
+          "mappo": {
+            "horizon": 15,
+            "starts": 256,
+            "epochs": 4,
+            "recurrent_minibatches": 4,
+            "gamma": 0.99,
+            "gae_lambda": 0.95,
+            "clip_epsilon": 0.2,
+            "learning_rate": 0.0003,
+            "optimizer_epsilon": 1e-05,
+            "entropy_coefficient": 0.01,
+            "value_coefficient": 0.5,
+            "value_huber_delta": 1.0,
+            "gradient_clip": 0.5,
+            "initial_local_cycles": 100,
+            "online_local_cycles": 20,
+            "normalize_actor_advantages": true,
+            "normalize_values": false,
+            "differentiate_world_model": false,
+            "frozen_rollout_snapshots": true
+          },
+          "teacher": {
+            "initial_cycles": 100,
+            "online_cycles": 20,
+            "attention_heads": 4,
+            "head_width": 256,
+            "recurrent_input": "local_history"
+          },
+          "distillation": {
+            "target": "soft_action_distribution",
+            "direction": "teacher_to_student_forward_kl",
+            "trajectory_source": "student",
+            "temperature": 1.0,
+            "initial_trajectories": 512,
+            "warm_start_updates": 200,
+            "warm_start_batch_sequences": 64,
+            "initial_weight": 1.0,
+            "decay_fraction": 0.75
+          },
+          "task": {
+            "name": "cover",
+            "deadline": 600,
+            "dwell_decisions": 20,
+            "success_reward": 1.0,
+            "failure_reward": -1.0,
+            "step_cost": -0.001,
+            "milestone_bonus": 0.05,
+            "milestone_count": 2,
+            "train_layouts": 6,
+            "validation_layouts": 2,
+            "test_layouts": 2
+          },
+          "variant": {
+            "name": "D",
+            "teacher_enabled": true,
+            "distillation_enabled": true
+          },
+          "experiment": {
+            "name": "final",
+            "master_seeds": [
+              1001,
+              1002,
+              1003,
+              1004,
+              1005,
+              1006,
+              1007,
+              1008,
+              1009,
+              1010
+            ],
+            "real_budget": 1000000,
+            "initial_transitions": 50000,
+            "collection_block": 25000,
+            "checkpoints": [
+              0,
+              50000,
+              100000,
+              200000,
+              300000,
+              400000,
+              500000,
+              600000,
+              700000,
+              800000,
+              900000,
+              1000000
+            ],
+            "checkpoint_episodes": 50,
+            "final_episodes": 200,
+            "evaluation_split": "test",
+            "bootstrap_replicates": 10000,
+            "practical_auc_effect": 0.02,
+            "initial_scripted_fraction": 0.3
+          }
+        },
+        "derived": {
+          "online_blocks": 38,
+          "local_ppo_cycles": 860,
+          "nominal_local_imagined_joint_steps": 3302400,
+          "guided_local_cycles": 645,
+          "unguided_local_cycles": 215,
+          "teacher_ppo_cycles": 660,
+          "comparison_run_count": 40,
+          "checkpoint_count": 12
+        },
+        "config_hash": "2d5b225b199cbb40f7e3dbf28a2840913b042f23343ddf5ebcae94c3fa05d5ac",
+        "source_hashes": {
+          "base.yaml": "3153cca71dc261529266b00714c6e367c3f91264bba3c7e2594f9bb7c10a216e",
+          "tasks\\cover.yaml": "24c54b85c5148cda6e5d60db5dec88e83be7c11ec80b7717340c0803a36ed544",
+          "variants\\D.yaml": "79c6c6e202b5ab4b2712c25b9b294b263f3f2e9acfbc553857eb2433dee3a796",
+          "experiments\\final.yaml": "c1242746427d32af878357998d181133d23ad278b70e492377351fbf441adeba"
+        }
+      }
+    }
+  ]
+}

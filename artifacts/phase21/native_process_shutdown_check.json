@@ -1,0 +1,8 @@
+{
+  "other_vizdoom_processes_seen_not_modified": 0,
+  "owned_live_native_processes": [],
+  "recorded_at_utc": "2026-11-02T17:11:15.256096+00:00",
+  "scope": "Live ViZDoom executable processes whose working directories are inside the two exact owned P2.1 hot roots; no processes are terminated or modified.",
+  "status": "passed",
+  "uninspectable_vizdoom_pids": []
+}

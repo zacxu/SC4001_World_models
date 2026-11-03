@@ -1,0 +1,9 @@
+# Published evidence, receipts, and source snapshots use exact byte hashes.
+# Keep both original CRLF and LF bytes intact on Windows and Linux.
+artifacts/** -text
+
+# These implementation files are hash-bound by the frozen normalization cache.
+src/world_models/data/replay.py -text
+src/world_models/data/schema.py -text
+src/world_models/models/heads.py -text
+src/world_models/training/normalization.py -text

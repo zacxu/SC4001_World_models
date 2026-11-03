@@ -1,0 +1,54 @@
+{
+  "cases": [
+    {
+      "family": "cover",
+      "path": "cover\\seed_0.json",
+      "seed": 0,
+      "sha256": "b511a0a92ade7d3d9d4aae4e43534090e0c757b60f895709fdad314bf680f0d9",
+      "states": 44953,
+      "transitions": 44725
+    },
+    {
+      "family": "cover",
+      "path": "cover\\seed_1.json",
+      "seed": 1,
+      "sha256": "b5b448138e3baab8b2ef73cf61089ab24dd4f0964081a83f9a89b863a4d09029",
+      "states": 47826,
+      "transitions": 47604
+    },
+    {
+      "family": "relay",
+      "path": "relay\\seed_0.json",
+      "seed": 0,
+      "sha256": "246c177f30c13c7b8655f33225908a1e2c4bd8996b8f54938498d8080f4789b7",
+      "states": 44091,
+      "transitions": 43777
+    },
+    {
+      "family": "relay",
+      "path": "relay\\seed_1.json",
+      "seed": 1,
+      "sha256": "e6020e57dbee23a49ffca80546f71facf699eba7867c3935f39edf9c2c2ca2fe",
+      "states": 47053,
+      "transitions": 46729
+    }
+  ],
+  "cpu_affinity": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "interactions": 0,
+  "source_sha256": {
+    "src/world_models/data/replay.py": "e4006006321a526084bb8fee7e2e5e6c0ce6250b8c538b2ababf42aaaa3327aa",
+    "src/world_models/data/schema.py": "3d68de72f95b666930c128534175529fb3a7fae8956afaa191675c356b8e5f88",
+    "src/world_models/models/heads.py": "9ab30036f46084fc4269e6355b050d076e76c616b1b3118f00e1387544631d70",
+    "src/world_models/training/normalization.py": "3ade5e03070e820fadf49bc3f46fbffae6b2d469dafff82966a761987d9eff80"
+  },
+  "status": "passed",
+  "torch_threads": 1,
+  "updates": 0,
+  "wall_seconds": 35.82709449999675,
+  "workers": 4
+}

@@ -1,0 +1,2767 @@
+{
+  "status": "passed",
+  "reports": [
+    {
+      "schema_version": 1,
+      "kind": "fixed_open_loop_joint_action_replay",
+      "task_family": "relay",
+      "seed": 0,
+      "reset_mode": "fresh_process",
+      "repeats": 3,
+      "actions": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "coordinator_reset_strategy": "fresh_process",
+      "actions_sha256": "5b60483d035f56cbf0dc02b7fa0560bdeddbb440a65eeea3f5e8be23ea1df514",
+      "cases": [
+        {
+          "repeat": 0,
+          "snapshots": 60,
+          "decisions": 59,
+          "trace_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_fresh_process\\repeat_0.json",
+          "trace_sha256": "4c3f462260f70c83602191efe816142cea3db6e9795dabc75c2c624b68a64825",
+          "state_trace_sha256": "f149afe6c27e7083511cf0b1ca4e73539870bad456c73acce40fd76f16daec25",
+          "events_rewards_trace_sha256": "6fbdeb08982e15ec635ec8c4b8bbf1a2df892a2d44568bab1f62ba1e88243b47",
+          "rgb_trace_sha256": "727e6ef1af824ac801e804b9047229f5126dd354a263155f22061059c534899e",
+          "scenario_sha256": "f5c90987709d050f0126d71e6a59d630c0c5fc0cc13f6ad9fb0108538b469e01",
+          "source_sha256": {
+            "env\\__init__.py": "5491c9b54c9845e1b83bbd3f655a06e162c4452b8263773040f7646d3f9b09e4",
+            "env\\acceptance.py": "5d4933ec65de3c5120472eab5b6a3c8202788a71f9d47519a26df35c7e0823a7",
+            "env\\acceptance_metrics.py": "11864e267296ab85cf4fd10ddcb728776b24027e4f2ca170502becadd505ddbd",
+            "env\\actions.py": "7fd19fc174a5a7678667ad110b57b8bf4c0650d4aec14fb76d707e6ed619c1a8",
+            "env\\coop.py": "bb4b4e90c1b52045e80551fdcbff2f13895081e6d53efd65a330bc1bec13644d",
+            "env\\coordinator.py": "b5932a5ac64e620c86525dff20b13cc03e7b87939606be95f22726cb150d1098",
+            "env\\locality.py": "cdd27543e7e2d3b7923bc7f80b8805b00e090eb8ac0284141c666bfb726b21b5",
+            "env\\marker_diagnostics.py": "4cd57ec55b239cab35335256d10e8907648c42b5a0e7ca7a733dc7ac2346306e",
+            "env\\mechanics_video.py": "d8edc706106652fddd359d3cafd438671cd701f8c7f130da411167c8876900e1",
+            "env\\observations.py": "0cad5c1484a7a7f8e2b14fd076cfa092612ba66b090a9e04e61e1b2164e894e4",
+            "env\\provenance.py": "a77d4be126f83f32ab50f758c7d3f9a3870264d385492c5cdfafb390bfd02806",
+            "env\\replay_diagnostics.py": "3bda78301c3d33e0dc8a54afccb087fad36c66629bc0306b3035d74f21169a50",
+            "env\\scenario_builder.py": "1a2c606c8f8d0fe773a433352d65c23acfc697d142f1b2daeb65592ef34d2409",
+            "env\\scripted.py": "9e00ed6d84f00c151a9a8bba40e1b3ac8b2e8cce09445a16108376c1ac9ce522",
+            "env\\splits.py": "a187936b9448fe5113e2dc014a561f7d21977a77df7819ba289f27df802a8f7c",
+            "env\\targets.py": "be4444bfc9141e80ba6d31b24b6694d316f96e3af84e54dbdc470129f67a8ed9",
+            "env\\validation_data.py": "955547b1086a847b8b39a56edb0f634c3ae0b6bf665e346710bb208df2216183",
+            "env\\workers.py": "560b8929a8549d31f9a38ff287e616752255aeb1a52a5c54af8b489967a08d42",
+            "contracts.py": "0e8ec752304616163a318f9de4057f211b9c23c7d4d08302e97e2611a0b60e35"
+          },
+          "episode_id": 0,
+          "native_work_root": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_fresh_process\\environments\\env-bdca41fadf49",
+          "coordinator_ledger_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_fresh_process\\environments\\env-bdca41fadf49\\dispatch_ledger.jsonl",
+          "engine_config_paths": [
+            "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_fresh_process\\environments\\env-bdca41fadf49\\episode-0\\player-0\\_vizdoom.ini",
+            "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_fresh_process\\environments\\env-bdca41fadf49\\episode-0\\player-1\\_vizdoom.ini"
+          ],
+          "worker_instances": [
+            "1LsCFzXw6N",
+            "qonBTA5DUf"
+          ],
+          "rgb_difference_evidence": [],
+          "players_selected_iwads": [
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad",
+              "sha256": "a8772e088847032510d97ba2312406a6998f21cbab44d4ff10696faa9c0ecd4b",
+              "configured_path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad"
+            },
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad",
+              "sha256": "a8772e088847032510d97ba2312406a6998f21cbab44d4ff10696faa9c0ecd4b",
+              "configured_path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad"
+            }
+          ],
+          "consumed_joint_decisions": 60,
+          "consumed_joint_decisions_delta": 60,
+          "initialization_joint_decisions": 1,
+          "initialization_joint_decisions_delta": 1,
+          "published_transitions": 59,
+          "engine_config_readback": [
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_fresh_process\\environments\\env-bdca41fadf49\\episode-0\\player-0\\_vizdoom.ini",
+              "sha256": "b01110d7f65439850516aeaae3c003945978438b3a76ec6e568d622ec6b38257",
+              "cl_noprediction": true,
+              "recognized_section": "GlobalSettings"
+            },
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_fresh_process\\environments\\env-bdca41fadf49\\episode-0\\player-1\\_vizdoom.ini",
+              "sha256": "54d86b3ea4e9ea9fcb619c3570410241b47ea09e6be927c9be6ef17a43b3aaf8",
+              "cl_noprediction": true,
+              "recognized_section": "GlobalSettings"
+            }
+          ]
+        },
+        {
+          "repeat": 1,
+          "snapshots": 60,
+          "decisions": 59,
+          "trace_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_fresh_process\\repeat_1.json",
+          "trace_sha256": "4c3f462260f70c83602191efe816142cea3db6e9795dabc75c2c624b68a64825",
+          "state_trace_sha256": "f149afe6c27e7083511cf0b1ca4e73539870bad456c73acce40fd76f16daec25",
+          "events_rewards_trace_sha256": "6fbdeb08982e15ec635ec8c4b8bbf1a2df892a2d44568bab1f62ba1e88243b47",
+          "rgb_trace_sha256": "727e6ef1af824ac801e804b9047229f5126dd354a263155f22061059c534899e",
+          "scenario_sha256": "f5c90987709d050f0126d71e6a59d630c0c5fc0cc13f6ad9fb0108538b469e01",
+          "source_sha256": {
+            "env\\__init__.py": "5491c9b54c9845e1b83bbd3f655a06e162c4452b8263773040f7646d3f9b09e4",
+            "env\\acceptance.py": "5d4933ec65de3c5120472eab5b6a3c8202788a71f9d47519a26df35c7e0823a7",
+            "env\\acceptance_metrics.py": "11864e267296ab85cf4fd10ddcb728776b24027e4f2ca170502becadd505ddbd",
+            "env\\actions.py": "7fd19fc174a5a7678667ad110b57b8bf4c0650d4aec14fb76d707e6ed619c1a8",
+            "env\\coop.py": "bb4b4e90c1b52045e80551fdcbff2f13895081e6d53efd65a330bc1bec13644d",
+            "env\\coordinator.py": "b5932a5ac64e620c86525dff20b13cc03e7b87939606be95f22726cb150d1098",
+            "env\\locality.py": "cdd27543e7e2d3b7923bc7f80b8805b00e090eb8ac0284141c666bfb726b21b5",
+            "env\\marker_diagnostics.py": "4cd57ec55b239cab35335256d10e8907648c42b5a0e7ca7a733dc7ac2346306e",
+            "env\\mechanics_video.py": "d8edc706106652fddd359d3cafd438671cd701f8c7f130da411167c8876900e1",
+            "env\\observations.py": "0cad5c1484a7a7f8e2b14fd076cfa092612ba66b090a9e04e61e1b2164e894e4",
+            "env\\provenance.py": "a77d4be126f83f32ab50f758c7d3f9a3870264d385492c5cdfafb390bfd02806",
+            "env\\replay_diagnostics.py": "3bda78301c3d33e0dc8a54afccb087fad36c66629bc0306b3035d74f21169a50",
+            "env\\scenario_builder.py": "1a2c606c8f8d0fe773a433352d65c23acfc697d142f1b2daeb65592ef34d2409",
+            "env\\scripted.py": "9e00ed6d84f00c151a9a8bba40e1b3ac8b2e8cce09445a16108376c1ac9ce522",
+            "env\\splits.py": "a187936b9448fe5113e2dc014a561f7d21977a77df7819ba289f27df802a8f7c",
+            "env\\targets.py": "be4444bfc9141e80ba6d31b24b6694d316f96e3af84e54dbdc470129f67a8ed9",
+            "env\\validation_data.py": "955547b1086a847b8b39a56edb0f634c3ae0b6bf665e346710bb208df2216183",
+            "env\\workers.py": "560b8929a8549d31f9a38ff287e616752255aeb1a52a5c54af8b489967a08d42",
+            "contracts.py": "0e8ec752304616163a318f9de4057f211b9c23c7d4d08302e97e2611a0b60e35"
+          },
+          "episode_id": 0,
+          "native_work_root": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_fresh_process\\environments\\env-8fa0c4268c9f",
+          "coordinator_ledger_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_fresh_process\\environments\\env-8fa0c4268c9f\\dispatch_ledger.jsonl",
+          "engine_config_paths": [
+            "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_fresh_process\\environments\\env-8fa0c4268c9f\\episode-0\\player-0\\_vizdoom.ini",
+            "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_fresh_process\\environments\\env-8fa0c4268c9f\\episode-0\\player-1\\_vizdoom.ini"
+          ],
+          "worker_instances": [
+            "mHBym8lOWH",
+            "2cz2ke4L7r"
+          ],
+          "rgb_difference_evidence": [],
+          "players_selected_iwads": [
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad",
+              "sha256": "a8772e088847032510d97ba2312406a6998f21cbab44d4ff10696faa9c0ecd4b",
+              "configured_path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad"
+            },
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad",
+              "sha256": "a8772e088847032510d97ba2312406a6998f21cbab44d4ff10696faa9c0ecd4b",
+              "configured_path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad"
+            }
+          ],
+          "consumed_joint_decisions": 60,
+          "consumed_joint_decisions_delta": 60,
+          "initialization_joint_decisions": 1,
+          "initialization_joint_decisions_delta": 1,
+          "published_transitions": 59,
+          "engine_config_readback": [
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_fresh_process\\environments\\env-8fa0c4268c9f\\episode-0\\player-0\\_vizdoom.ini",
+              "sha256": "7b186c965d6367c8f7d84df6f317ac39540d53c1cec96041218378743fd1df11",
+              "cl_noprediction": true,
+              "recognized_section": "GlobalSettings"
+            },
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_fresh_process\\environments\\env-8fa0c4268c9f\\episode-0\\player-1\\_vizdoom.ini",
+              "sha256": "78e050d31f1687334c62dbc1a5a93ab6e0e2bf6a170a5a54bb0d5b7f1a6c31b7",
+              "cl_noprediction": true,
+              "recognized_section": "GlobalSettings"
+            }
+          ]
+        },
+        {
+          "repeat": 2,
+          "snapshots": 60,
+          "decisions": 59,
+          "trace_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_fresh_process\\repeat_2.json",
+          "trace_sha256": "4c3f462260f70c83602191efe816142cea3db6e9795dabc75c2c624b68a64825",
+          "state_trace_sha256": "f149afe6c27e7083511cf0b1ca4e73539870bad456c73acce40fd76f16daec25",
+          "events_rewards_trace_sha256": "6fbdeb08982e15ec635ec8c4b8bbf1a2df892a2d44568bab1f62ba1e88243b47",
+          "rgb_trace_sha256": "727e6ef1af824ac801e804b9047229f5126dd354a263155f22061059c534899e",
+          "scenario_sha256": "f5c90987709d050f0126d71e6a59d630c0c5fc0cc13f6ad9fb0108538b469e01",
+          "source_sha256": {
+            "env\\__init__.py": "5491c9b54c9845e1b83bbd3f655a06e162c4452b8263773040f7646d3f9b09e4",
+            "env\\acceptance.py": "5d4933ec65de3c5120472eab5b6a3c8202788a71f9d47519a26df35c7e0823a7",
+            "env\\acceptance_metrics.py": "11864e267296ab85cf4fd10ddcb728776b24027e4f2ca170502becadd505ddbd",
+            "env\\actions.py": "7fd19fc174a5a7678667ad110b57b8bf4c0650d4aec14fb76d707e6ed619c1a8",
+            "env\\coop.py": "bb4b4e90c1b52045e80551fdcbff2f13895081e6d53efd65a330bc1bec13644d",
+            "env\\coordinator.py": "b5932a5ac64e620c86525dff20b13cc03e7b87939606be95f22726cb150d1098",
+            "env\\locality.py": "cdd27543e7e2d3b7923bc7f80b8805b00e090eb8ac0284141c666bfb726b21b5",
+            "env\\marker_diagnostics.py": "4cd57ec55b239cab35335256d10e8907648c42b5a0e7ca7a733dc7ac2346306e",
+            "env\\mechanics_video.py": "d8edc706106652fddd359d3cafd438671cd701f8c7f130da411167c8876900e1",
+            "env\\observations.py": "0cad5c1484a7a7f8e2b14fd076cfa092612ba66b090a9e04e61e1b2164e894e4",
+            "env\\provenance.py": "a77d4be126f83f32ab50f758c7d3f9a3870264d385492c5cdfafb390bfd02806",
+            "env\\replay_diagnostics.py": "3bda78301c3d33e0dc8a54afccb087fad36c66629bc0306b3035d74f21169a50",
+            "env\\scenario_builder.py": "1a2c606c8f8d0fe773a433352d65c23acfc697d142f1b2daeb65592ef34d2409",
+            "env\\scripted.py": "9e00ed6d84f00c151a9a8bba40e1b3ac8b2e8cce09445a16108376c1ac9ce522",
+            "env\\splits.py": "a187936b9448fe5113e2dc014a561f7d21977a77df7819ba289f27df802a8f7c",
+            "env\\targets.py": "be4444bfc9141e80ba6d31b24b6694d316f96e3af84e54dbdc470129f67a8ed9",
+            "env\\validation_data.py": "955547b1086a847b8b39a56edb0f634c3ae0b6bf665e346710bb208df2216183",
+            "env\\workers.py": "560b8929a8549d31f9a38ff287e616752255aeb1a52a5c54af8b489967a08d42",
+            "contracts.py": "0e8ec752304616163a318f9de4057f211b9c23c7d4d08302e97e2611a0b60e35"
+          },
+          "episode_id": 0,
+          "native_work_root": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_fresh_process\\environments\\env-2b1e5f79ee0c",
+          "coordinator_ledger_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_fresh_process\\environments\\env-2b1e5f79ee0c\\dispatch_ledger.jsonl",
+          "engine_config_paths": [
+            "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_fresh_process\\environments\\env-2b1e5f79ee0c\\episode-0\\player-0\\_vizdoom.ini",
+            "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_fresh_process\\environments\\env-2b1e5f79ee0c\\episode-0\\player-1\\_vizdoom.ini"
+          ],
+          "worker_instances": [
+            "NTfP8FMjBn",
+            "S2tveAKOaS"
+          ],
+          "rgb_difference_evidence": [],
+          "players_selected_iwads": [
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad",
+              "sha256": "a8772e088847032510d97ba2312406a6998f21cbab44d4ff10696faa9c0ecd4b",
+              "configured_path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad"
+            },
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad",
+              "sha256": "a8772e088847032510d97ba2312406a6998f21cbab44d4ff10696faa9c0ecd4b",
+              "configured_path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad"
+            }
+          ],
+          "consumed_joint_decisions": 60,
+          "consumed_joint_decisions_delta": 60,
+          "initialization_joint_decisions": 1,
+          "initialization_joint_decisions_delta": 1,
+          "published_transitions": 59,
+          "engine_config_readback": [
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_fresh_process\\environments\\env-2b1e5f79ee0c\\episode-0\\player-0\\_vizdoom.ini",
+              "sha256": "fa5f01ad83fa33173c0d0f78d93e9d3ef5259a645b4ab9540293ec9ea1a3c5ea",
+              "cl_noprediction": true,
+              "recognized_section": "GlobalSettings"
+            },
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_fresh_process\\environments\\env-2b1e5f79ee0c\\episode-0\\player-1\\_vizdoom.ini",
+              "sha256": "5231272a6617deeb87a7c3e2612e7a93c781369a2e00bb12975a218e8bea783c",
+              "cl_noprediction": true,
+              "recognized_section": "GlobalSettings"
+            }
+          ]
+        }
+      ],
+      "comparisons": [
+        {
+          "repeat": 1,
+          "state_exact": true,
+          "events_rewards_exact": true,
+          "rgb_exact": true,
+          "first_state_difference": null,
+          "first_events_rewards_difference": null,
+          "first_rgb_difference": null
+        },
+        {
+          "repeat": 2,
+          "state_exact": true,
+          "events_rewards_exact": true,
+          "rgb_exact": true,
+          "first_state_difference": null,
+          "first_events_rewards_difference": null,
+          "first_rgb_difference": null
+        }
+      ],
+      "state_exact": true,
+      "events_rewards_exact": true,
+      "rgb_exact": true,
+      "setup_consistency": {
+        "scenario_bytes_match": true,
+        "selected_iwads_match": true,
+        "sources_unchanged": true,
+        "client_prediction_disabled_readback": true
+      },
+      "status": "passed",
+      "achieved_determinism_level": "state_events_rewards_and_rgb_exact",
+      "comparison_rules": "Exact numeric/state/event/reward equality; RGB byte hashes compared separately. No tolerance or rounding hides differences.",
+      "sources": [
+        "https://vizdoom.farama.org/api/python/doom_game/",
+        "https://raw.githubusercontent.com/Farama-Foundation/ViZDoom/1.3.2/examples/python/multiple_instances.py"
+      ],
+      "report_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_fresh_process\\replay_report.json"
+    },
+    {
+      "schema_version": 1,
+      "kind": "fixed_open_loop_joint_action_replay",
+      "task_family": "relay",
+      "seed": 0,
+      "reset_mode": "coordinated_reset",
+      "repeats": 3,
+      "actions": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "coordinator_reset_strategy": "fresh_process",
+      "actions_sha256": "5b60483d035f56cbf0dc02b7fa0560bdeddbb440a65eeea3f5e8be23ea1df514",
+      "cases": [
+        {
+          "repeat": 0,
+          "snapshots": 60,
+          "decisions": 59,
+          "trace_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_coordinated_reset\\repeat_0.json",
+          "trace_sha256": "4c3f462260f70c83602191efe816142cea3db6e9795dabc75c2c624b68a64825",
+          "state_trace_sha256": "f149afe6c27e7083511cf0b1ca4e73539870bad456c73acce40fd76f16daec25",
+          "events_rewards_trace_sha256": "6fbdeb08982e15ec635ec8c4b8bbf1a2df892a2d44568bab1f62ba1e88243b47",
+          "rgb_trace_sha256": "727e6ef1af824ac801e804b9047229f5126dd354a263155f22061059c534899e",
+          "scenario_sha256": "f5c90987709d050f0126d71e6a59d630c0c5fc0cc13f6ad9fb0108538b469e01",
+          "source_sha256": {
+            "env\\__init__.py": "5491c9b54c9845e1b83bbd3f655a06e162c4452b8263773040f7646d3f9b09e4",
+            "env\\acceptance.py": "5d4933ec65de3c5120472eab5b6a3c8202788a71f9d47519a26df35c7e0823a7",
+            "env\\acceptance_metrics.py": "11864e267296ab85cf4fd10ddcb728776b24027e4f2ca170502becadd505ddbd",
+            "env\\actions.py": "7fd19fc174a5a7678667ad110b57b8bf4c0650d4aec14fb76d707e6ed619c1a8",
+            "env\\coop.py": "bb4b4e90c1b52045e80551fdcbff2f13895081e6d53efd65a330bc1bec13644d",
+            "env\\coordinator.py": "b5932a5ac64e620c86525dff20b13cc03e7b87939606be95f22726cb150d1098",
+            "env\\locality.py": "cdd27543e7e2d3b7923bc7f80b8805b00e090eb8ac0284141c666bfb726b21b5",
+            "env\\marker_diagnostics.py": "4cd57ec55b239cab35335256d10e8907648c42b5a0e7ca7a733dc7ac2346306e",
+            "env\\mechanics_video.py": "d8edc706106652fddd359d3cafd438671cd701f8c7f130da411167c8876900e1",
+            "env\\observations.py": "0cad5c1484a7a7f8e2b14fd076cfa092612ba66b090a9e04e61e1b2164e894e4",
+            "env\\provenance.py": "a77d4be126f83f32ab50f758c7d3f9a3870264d385492c5cdfafb390bfd02806",
+            "env\\replay_diagnostics.py": "3bda78301c3d33e0dc8a54afccb087fad36c66629bc0306b3035d74f21169a50",
+            "env\\scenario_builder.py": "1a2c606c8f8d0fe773a433352d65c23acfc697d142f1b2daeb65592ef34d2409",
+            "env\\scripted.py": "9e00ed6d84f00c151a9a8bba40e1b3ac8b2e8cce09445a16108376c1ac9ce522",
+            "env\\splits.py": "a187936b9448fe5113e2dc014a561f7d21977a77df7819ba289f27df802a8f7c",
+            "env\\targets.py": "be4444bfc9141e80ba6d31b24b6694d316f96e3af84e54dbdc470129f67a8ed9",
+            "env\\validation_data.py": "955547b1086a847b8b39a56edb0f634c3ae0b6bf665e346710bb208df2216183",
+            "env\\workers.py": "560b8929a8549d31f9a38ff287e616752255aeb1a52a5c54af8b489967a08d42",
+            "contracts.py": "0e8ec752304616163a318f9de4057f211b9c23c7d4d08302e97e2611a0b60e35"
+          },
+          "episode_id": 0,
+          "native_work_root": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_coordinated_reset\\environments\\env-9b25a9f96c3a",
+          "coordinator_ledger_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_coordinated_reset\\environments\\env-9b25a9f96c3a\\dispatch_ledger.jsonl",
+          "engine_config_paths": [
+            "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_coordinated_reset\\environments\\env-9b25a9f96c3a\\episode-0\\player-0\\_vizdoom.ini",
+            "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_coordinated_reset\\environments\\env-9b25a9f96c3a\\episode-0\\player-1\\_vizdoom.ini"
+          ],
+          "worker_instances": [
+            "lW6W0uu5Ps",
+            "svfC3ZdEOZ"
+          ],
+          "rgb_difference_evidence": [],
+          "players_selected_iwads": [
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad",
+              "sha256": "a8772e088847032510d97ba2312406a6998f21cbab44d4ff10696faa9c0ecd4b",
+              "configured_path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad"
+            },
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad",
+              "sha256": "a8772e088847032510d97ba2312406a6998f21cbab44d4ff10696faa9c0ecd4b",
+              "configured_path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad"
+            }
+          ],
+          "consumed_joint_decisions": 60,
+          "consumed_joint_decisions_delta": 60,
+          "initialization_joint_decisions": 1,
+          "initialization_joint_decisions_delta": 1,
+          "published_transitions": 59,
+          "engine_config_readback": [
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_coordinated_reset\\environments\\env-9b25a9f96c3a\\episode-0\\player-0\\_vizdoom.ini",
+              "sha256": "c092468c99e7824dedccf66f2a308fa583dff13b7414740a855199f72807d3f1",
+              "cl_noprediction": true,
+              "recognized_section": "GlobalSettings"
+            },
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_coordinated_reset\\environments\\env-9b25a9f96c3a\\episode-0\\player-1\\_vizdoom.ini",
+              "sha256": "abc6f1bc2a8da959523803c41ac9a1d96b7024e5cda80de6ec5332e3b3bee2e8",
+              "cl_noprediction": true,
+              "recognized_section": "GlobalSettings"
+            }
+          ]
+        },
+        {
+          "repeat": 1,
+          "snapshots": 60,
+          "decisions": 59,
+          "trace_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_coordinated_reset\\repeat_1.json",
+          "trace_sha256": "4c3f462260f70c83602191efe816142cea3db6e9795dabc75c2c624b68a64825",
+          "state_trace_sha256": "f149afe6c27e7083511cf0b1ca4e73539870bad456c73acce40fd76f16daec25",
+          "events_rewards_trace_sha256": "6fbdeb08982e15ec635ec8c4b8bbf1a2df892a2d44568bab1f62ba1e88243b47",
+          "rgb_trace_sha256": "727e6ef1af824ac801e804b9047229f5126dd354a263155f22061059c534899e",
+          "scenario_sha256": "f5c90987709d050f0126d71e6a59d630c0c5fc0cc13f6ad9fb0108538b469e01",
+          "source_sha256": {
+            "env\\__init__.py": "5491c9b54c9845e1b83bbd3f655a06e162c4452b8263773040f7646d3f9b09e4",
+            "env\\acceptance.py": "5d4933ec65de3c5120472eab5b6a3c8202788a71f9d47519a26df35c7e0823a7",
+            "env\\acceptance_metrics.py": "11864e267296ab85cf4fd10ddcb728776b24027e4f2ca170502becadd505ddbd",
+            "env\\actions.py": "7fd19fc174a5a7678667ad110b57b8bf4c0650d4aec14fb76d707e6ed619c1a8",
+            "env\\coop.py": "bb4b4e90c1b52045e80551fdcbff2f13895081e6d53efd65a330bc1bec13644d",
+            "env\\coordinator.py": "b5932a5ac64e620c86525dff20b13cc03e7b87939606be95f22726cb150d1098",
+            "env\\locality.py": "cdd27543e7e2d3b7923bc7f80b8805b00e090eb8ac0284141c666bfb726b21b5",
+            "env\\marker_diagnostics.py": "4cd57ec55b239cab35335256d10e8907648c42b5a0e7ca7a733dc7ac2346306e",
+            "env\\mechanics_video.py": "d8edc706106652fddd359d3cafd438671cd701f8c7f130da411167c8876900e1",
+            "env\\observations.py": "0cad5c1484a7a7f8e2b14fd076cfa092612ba66b090a9e04e61e1b2164e894e4",
+            "env\\provenance.py": "a77d4be126f83f32ab50f758c7d3f9a3870264d385492c5cdfafb390bfd02806",
+            "env\\replay_diagnostics.py": "3bda78301c3d33e0dc8a54afccb087fad36c66629bc0306b3035d74f21169a50",
+            "env\\scenario_builder.py": "1a2c606c8f8d0fe773a433352d65c23acfc697d142f1b2daeb65592ef34d2409",
+            "env\\scripted.py": "9e00ed6d84f00c151a9a8bba40e1b3ac8b2e8cce09445a16108376c1ac9ce522",
+            "env\\splits.py": "a187936b9448fe5113e2dc014a561f7d21977a77df7819ba289f27df802a8f7c",
+            "env\\targets.py": "be4444bfc9141e80ba6d31b24b6694d316f96e3af84e54dbdc470129f67a8ed9",
+            "env\\validation_data.py": "955547b1086a847b8b39a56edb0f634c3ae0b6bf665e346710bb208df2216183",
+            "env\\workers.py": "560b8929a8549d31f9a38ff287e616752255aeb1a52a5c54af8b489967a08d42",
+            "contracts.py": "0e8ec752304616163a318f9de4057f211b9c23c7d4d08302e97e2611a0b60e35"
+          },
+          "episode_id": 1,
+          "native_work_root": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_coordinated_reset\\environments\\env-9b25a9f96c3a",
+          "coordinator_ledger_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_coordinated_reset\\environments\\env-9b25a9f96c3a\\dispatch_ledger.jsonl",
+          "engine_config_paths": [
+            "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_coordinated_reset\\environments\\env-9b25a9f96c3a\\episode-1\\player-0\\_vizdoom.ini",
+            "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_coordinated_reset\\environments\\env-9b25a9f96c3a\\episode-1\\player-1\\_vizdoom.ini"
+          ],
+          "worker_instances": [
+            "Qv5xw5WBND",
+            "6NtBrlC23D"
+          ],
+          "rgb_difference_evidence": [],
+          "players_selected_iwads": [
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad",
+              "sha256": "a8772e088847032510d97ba2312406a6998f21cbab44d4ff10696faa9c0ecd4b",
+              "configured_path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad"
+            },
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad",
+              "sha256": "a8772e088847032510d97ba2312406a6998f21cbab44d4ff10696faa9c0ecd4b",
+              "configured_path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad"
+            }
+          ],
+          "consumed_joint_decisions": 120,
+          "consumed_joint_decisions_delta": 60,
+          "initialization_joint_decisions": 2,
+          "initialization_joint_decisions_delta": 1,
+          "published_transitions": 59,
+          "engine_config_readback": [
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_coordinated_reset\\environments\\env-9b25a9f96c3a\\episode-1\\player-0\\_vizdoom.ini",
+              "sha256": "a0606aad092e018d55cfe3b4e07683df269011a1e5f52dc553ba6348a9cfd5ff",
+              "cl_noprediction": true,
+              "recognized_section": "GlobalSettings"
+            },
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_coordinated_reset\\environments\\env-9b25a9f96c3a\\episode-1\\player-1\\_vizdoom.ini",
+              "sha256": "ac3e88d33e7732c00f6ba467c1cc605623d1c746b4354508b4522eef8b176cfa",
+              "cl_noprediction": true,
+              "recognized_section": "GlobalSettings"
+            }
+          ]
+        },
+        {
+          "repeat": 2,
+          "snapshots": 60,
+          "decisions": 59,
+          "trace_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_coordinated_reset\\repeat_2.json",
+          "trace_sha256": "4c3f462260f70c83602191efe816142cea3db6e9795dabc75c2c624b68a64825",
+          "state_trace_sha256": "f149afe6c27e7083511cf0b1ca4e73539870bad456c73acce40fd76f16daec25",
+          "events_rewards_trace_sha256": "6fbdeb08982e15ec635ec8c4b8bbf1a2df892a2d44568bab1f62ba1e88243b47",
+          "rgb_trace_sha256": "727e6ef1af824ac801e804b9047229f5126dd354a263155f22061059c534899e",
+          "scenario_sha256": "f5c90987709d050f0126d71e6a59d630c0c5fc0cc13f6ad9fb0108538b469e01",
+          "source_sha256": {
+            "env\\__init__.py": "5491c9b54c9845e1b83bbd3f655a06e162c4452b8263773040f7646d3f9b09e4",
+            "env\\acceptance.py": "5d4933ec65de3c5120472eab5b6a3c8202788a71f9d47519a26df35c7e0823a7",
+            "env\\acceptance_metrics.py": "11864e267296ab85cf4fd10ddcb728776b24027e4f2ca170502becadd505ddbd",
+            "env\\actions.py": "7fd19fc174a5a7678667ad110b57b8bf4c0650d4aec14fb76d707e6ed619c1a8",
+            "env\\coop.py": "bb4b4e90c1b52045e80551fdcbff2f13895081e6d53efd65a330bc1bec13644d",
+            "env\\coordinator.py": "b5932a5ac64e620c86525dff20b13cc03e7b87939606be95f22726cb150d1098",
+            "env\\locality.py": "cdd27543e7e2d3b7923bc7f80b8805b00e090eb8ac0284141c666bfb726b21b5",
+            "env\\marker_diagnostics.py": "4cd57ec55b239cab35335256d10e8907648c42b5a0e7ca7a733dc7ac2346306e",
+            "env\\mechanics_video.py": "d8edc706106652fddd359d3cafd438671cd701f8c7f130da411167c8876900e1",
+            "env\\observations.py": "0cad5c1484a7a7f8e2b14fd076cfa092612ba66b090a9e04e61e1b2164e894e4",
+            "env\\provenance.py": "a77d4be126f83f32ab50f758c7d3f9a3870264d385492c5cdfafb390bfd02806",
+            "env\\replay_diagnostics.py": "3bda78301c3d33e0dc8a54afccb087fad36c66629bc0306b3035d74f21169a50",
+            "env\\scenario_builder.py": "1a2c606c8f8d0fe773a433352d65c23acfc697d142f1b2daeb65592ef34d2409",
+            "env\\scripted.py": "9e00ed6d84f00c151a9a8bba40e1b3ac8b2e8cce09445a16108376c1ac9ce522",
+            "env\\splits.py": "a187936b9448fe5113e2dc014a561f7d21977a77df7819ba289f27df802a8f7c",
+            "env\\targets.py": "be4444bfc9141e80ba6d31b24b6694d316f96e3af84e54dbdc470129f67a8ed9",
+            "env\\validation_data.py": "955547b1086a847b8b39a56edb0f634c3ae0b6bf665e346710bb208df2216183",
+            "env\\workers.py": "560b8929a8549d31f9a38ff287e616752255aeb1a52a5c54af8b489967a08d42",
+            "contracts.py": "0e8ec752304616163a318f9de4057f211b9c23c7d4d08302e97e2611a0b60e35"
+          },
+          "episode_id": 2,
+          "native_work_root": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_coordinated_reset\\environments\\env-9b25a9f96c3a",
+          "coordinator_ledger_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_coordinated_reset\\environments\\env-9b25a9f96c3a\\dispatch_ledger.jsonl",
+          "engine_config_paths": [
+            "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_coordinated_reset\\environments\\env-9b25a9f96c3a\\episode-2\\player-0\\_vizdoom.ini",
+            "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_coordinated_reset\\environments\\env-9b25a9f96c3a\\episode-2\\player-1\\_vizdoom.ini"
+          ],
+          "worker_instances": [
+            "Kzfh5HH6CY",
+            "6LWLMrIEhz"
+          ],
+          "rgb_difference_evidence": [],
+          "players_selected_iwads": [
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad",
+              "sha256": "a8772e088847032510d97ba2312406a6998f21cbab44d4ff10696faa9c0ecd4b",
+              "configured_path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad"
+            },
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad",
+              "sha256": "a8772e088847032510d97ba2312406a6998f21cbab44d4ff10696faa9c0ecd4b",
+              "configured_path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad"
+            }
+          ],
+          "consumed_joint_decisions": 180,
+          "consumed_joint_decisions_delta": 60,
+          "initialization_joint_decisions": 3,
+          "initialization_joint_decisions_delta": 1,
+          "published_transitions": 59,
+          "engine_config_readback": [
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_coordinated_reset\\environments\\env-9b25a9f96c3a\\episode-2\\player-0\\_vizdoom.ini",
+              "sha256": "1a37e04f15b3b3b754fac4c06fc75f9a48fcd610d24686f6b0bc0e74da0268b4",
+              "cl_noprediction": true,
+              "recognized_section": "GlobalSettings"
+            },
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_coordinated_reset\\environments\\env-9b25a9f96c3a\\episode-2\\player-1\\_vizdoom.ini",
+              "sha256": "663a2b3d2ed872ae1a49e42d1f6bc7a11e3ae005754297a4d2faa2e6375cde6f",
+              "cl_noprediction": true,
+              "recognized_section": "GlobalSettings"
+            }
+          ]
+        }
+      ],
+      "comparisons": [
+        {
+          "repeat": 1,
+          "state_exact": true,
+          "events_rewards_exact": true,
+          "rgb_exact": true,
+          "first_state_difference": null,
+          "first_events_rewards_difference": null,
+          "first_rgb_difference": null
+        },
+        {
+          "repeat": 2,
+          "state_exact": true,
+          "events_rewards_exact": true,
+          "rgb_exact": true,
+          "first_state_difference": null,
+          "first_events_rewards_difference": null,
+          "first_rgb_difference": null
+        }
+      ],
+      "state_exact": true,
+      "events_rewards_exact": true,
+      "rgb_exact": true,
+      "setup_consistency": {
+        "scenario_bytes_match": true,
+        "selected_iwads_match": true,
+        "sources_unchanged": true,
+        "client_prediction_disabled_readback": true
+      },
+      "status": "passed",
+      "achieved_determinism_level": "state_events_rewards_and_rgb_exact",
+      "comparison_rules": "Exact numeric/state/event/reward equality; RGB byte hashes compared separately. No tolerance or rounding hides differences.",
+      "sources": [
+        "https://vizdoom.farama.org/api/python/doom_game/",
+        "https://raw.githubusercontent.com/Farama-Foundation/ViZDoom/1.3.2/examples/python/multiple_instances.py"
+      ],
+      "report_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_coordinated_reset\\replay_report.json"
+    },
+    {
+      "schema_version": 1,
+      "kind": "fixed_open_loop_joint_action_replay",
+      "task_family": "cover",
+      "seed": 0,
+      "reset_mode": "fresh_process",
+      "repeats": 3,
+      "actions": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          8,
+          5
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "coordinator_reset_strategy": "fresh_process",
+      "actions_sha256": "7548c58d632dd1ae39629d9575b418a29d72ad35d4f58d19831a098251db6502",
+      "cases": [
+        {
+          "repeat": 0,
+          "snapshots": 108,
+          "decisions": 107,
+          "trace_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_fresh_process\\repeat_0.json",
+          "trace_sha256": "cd58bd18eb1d6b5a0f43dd2d2ecdf9ff1fc96ba23a4ffcbaf01dc18b89180464",
+          "state_trace_sha256": "ffc95234e8d83454416665b5564f38f526cfcc584704e12bee6b442fe2439eeb",
+          "events_rewards_trace_sha256": "d6dfa62a85518045eec057a17eb2410ac4ec64c6e5694b6e2a3e62181f6c0472",
+          "rgb_trace_sha256": "87121801df9137d5c5e7b53a256ed638315dc93e7c5e13c7360be7e625cc777b",
+          "scenario_sha256": "57b13cfd9c750b318793d5f19e0c482db86ab8440e1c425f2c700051ba868662",
+          "source_sha256": {
+            "env\\__init__.py": "5491c9b54c9845e1b83bbd3f655a06e162c4452b8263773040f7646d3f9b09e4",
+            "env\\acceptance.py": "5d4933ec65de3c5120472eab5b6a3c8202788a71f9d47519a26df35c7e0823a7",
+            "env\\acceptance_metrics.py": "11864e267296ab85cf4fd10ddcb728776b24027e4f2ca170502becadd505ddbd",
+            "env\\actions.py": "7fd19fc174a5a7678667ad110b57b8bf4c0650d4aec14fb76d707e6ed619c1a8",
+            "env\\coop.py": "bb4b4e90c1b52045e80551fdcbff2f13895081e6d53efd65a330bc1bec13644d",
+            "env\\coordinator.py": "b5932a5ac64e620c86525dff20b13cc03e7b87939606be95f22726cb150d1098",
+            "env\\locality.py": "cdd27543e7e2d3b7923bc7f80b8805b00e090eb8ac0284141c666bfb726b21b5",
+            "env\\marker_diagnostics.py": "4cd57ec55b239cab35335256d10e8907648c42b5a0e7ca7a733dc7ac2346306e",
+            "env\\mechanics_video.py": "d8edc706106652fddd359d3cafd438671cd701f8c7f130da411167c8876900e1",
+            "env\\observations.py": "0cad5c1484a7a7f8e2b14fd076cfa092612ba66b090a9e04e61e1b2164e894e4",
+            "env\\provenance.py": "a77d4be126f83f32ab50f758c7d3f9a3870264d385492c5cdfafb390bfd02806",
+            "env\\replay_diagnostics.py": "3bda78301c3d33e0dc8a54afccb087fad36c66629bc0306b3035d74f21169a50",
+            "env\\scenario_builder.py": "1a2c606c8f8d0fe773a433352d65c23acfc697d142f1b2daeb65592ef34d2409",
+            "env\\scripted.py": "9e00ed6d84f00c151a9a8bba40e1b3ac8b2e8cce09445a16108376c1ac9ce522",
+            "env\\splits.py": "a187936b9448fe5113e2dc014a561f7d21977a77df7819ba289f27df802a8f7c",
+            "env\\targets.py": "be4444bfc9141e80ba6d31b24b6694d316f96e3af84e54dbdc470129f67a8ed9",
+            "env\\validation_data.py": "955547b1086a847b8b39a56edb0f634c3ae0b6bf665e346710bb208df2216183",
+            "env\\workers.py": "560b8929a8549d31f9a38ff287e616752255aeb1a52a5c54af8b489967a08d42",
+            "contracts.py": "0e8ec752304616163a318f9de4057f211b9c23c7d4d08302e97e2611a0b60e35"
+          },
+          "episode_id": 0,
+          "native_work_root": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_fresh_process\\environments\\env-97faad58cc30",
+          "coordinator_ledger_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_fresh_process\\environments\\env-97faad58cc30\\dispatch_ledger.jsonl",
+          "engine_config_paths": [
+            "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_fresh_process\\environments\\env-97faad58cc30\\episode-0\\player-0\\_vizdoom.ini",
+            "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_fresh_process\\environments\\env-97faad58cc30\\episode-0\\player-1\\_vizdoom.ini"
+          ],
+          "worker_instances": [
+            "Zs07HSD1v6",
+            "xrbCs756CU"
+          ],
+          "rgb_difference_evidence": [],
+          "players_selected_iwads": [
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad",
+              "sha256": "a8772e088847032510d97ba2312406a6998f21cbab44d4ff10696faa9c0ecd4b",
+              "configured_path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad"
+            },
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad",
+              "sha256": "a8772e088847032510d97ba2312406a6998f21cbab44d4ff10696faa9c0ecd4b",
+              "configured_path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad"
+            }
+          ],
+          "consumed_joint_decisions": 108,
+          "consumed_joint_decisions_delta": 108,
+          "initialization_joint_decisions": 1,
+          "initialization_joint_decisions_delta": 1,
+          "published_transitions": 107,
+          "engine_config_readback": [
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_fresh_process\\environments\\env-97faad58cc30\\episode-0\\player-0\\_vizdoom.ini",
+              "sha256": "c4c0d01f2c545e28efdf8024e226dadb24cc592c58fe5d3272ec64b2faa2b290",
+              "cl_noprediction": true,
+              "recognized_section": "GlobalSettings"
+            },
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_fresh_process\\environments\\env-97faad58cc30\\episode-0\\player-1\\_vizdoom.ini",
+              "sha256": "f9f388877737ed23ca8caa21c5306ae0d3cfc30542bd38c36aca917ba0d4726f",
+              "cl_noprediction": true,
+              "recognized_section": "GlobalSettings"
+            }
+          ]
+        },
+        {
+          "repeat": 1,
+          "snapshots": 108,
+          "decisions": 107,
+          "trace_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_fresh_process\\repeat_1.json",
+          "trace_sha256": "cd58bd18eb1d6b5a0f43dd2d2ecdf9ff1fc96ba23a4ffcbaf01dc18b89180464",
+          "state_trace_sha256": "ffc95234e8d83454416665b5564f38f526cfcc584704e12bee6b442fe2439eeb",
+          "events_rewards_trace_sha256": "d6dfa62a85518045eec057a17eb2410ac4ec64c6e5694b6e2a3e62181f6c0472",
+          "rgb_trace_sha256": "87121801df9137d5c5e7b53a256ed638315dc93e7c5e13c7360be7e625cc777b",
+          "scenario_sha256": "57b13cfd9c750b318793d5f19e0c482db86ab8440e1c425f2c700051ba868662",
+          "source_sha256": {
+            "env\\__init__.py": "5491c9b54c9845e1b83bbd3f655a06e162c4452b8263773040f7646d3f9b09e4",
+            "env\\acceptance.py": "5d4933ec65de3c5120472eab5b6a3c8202788a71f9d47519a26df35c7e0823a7",
+            "env\\acceptance_metrics.py": "11864e267296ab85cf4fd10ddcb728776b24027e4f2ca170502becadd505ddbd",
+            "env\\actions.py": "7fd19fc174a5a7678667ad110b57b8bf4c0650d4aec14fb76d707e6ed619c1a8",
+            "env\\coop.py": "bb4b4e90c1b52045e80551fdcbff2f13895081e6d53efd65a330bc1bec13644d",
+            "env\\coordinator.py": "b5932a5ac64e620c86525dff20b13cc03e7b87939606be95f22726cb150d1098",
+            "env\\locality.py": "cdd27543e7e2d3b7923bc7f80b8805b00e090eb8ac0284141c666bfb726b21b5",
+            "env\\marker_diagnostics.py": "4cd57ec55b239cab35335256d10e8907648c42b5a0e7ca7a733dc7ac2346306e",
+            "env\\mechanics_video.py": "d8edc706106652fddd359d3cafd438671cd701f8c7f130da411167c8876900e1",
+            "env\\observations.py": "0cad5c1484a7a7f8e2b14fd076cfa092612ba66b090a9e04e61e1b2164e894e4",
+            "env\\provenance.py": "a77d4be126f83f32ab50f758c7d3f9a3870264d385492c5cdfafb390bfd02806",
+            "env\\replay_diagnostics.py": "3bda78301c3d33e0dc8a54afccb087fad36c66629bc0306b3035d74f21169a50",
+            "env\\scenario_builder.py": "1a2c606c8f8d0fe773a433352d65c23acfc697d142f1b2daeb65592ef34d2409",
+            "env\\scripted.py": "9e00ed6d84f00c151a9a8bba40e1b3ac8b2e8cce09445a16108376c1ac9ce522",
+            "env\\splits.py": "a187936b9448fe5113e2dc014a561f7d21977a77df7819ba289f27df802a8f7c",
+            "env\\targets.py": "be4444bfc9141e80ba6d31b24b6694d316f96e3af84e54dbdc470129f67a8ed9",
+            "env\\validation_data.py": "955547b1086a847b8b39a56edb0f634c3ae0b6bf665e346710bb208df2216183",
+            "env\\workers.py": "560b8929a8549d31f9a38ff287e616752255aeb1a52a5c54af8b489967a08d42",
+            "contracts.py": "0e8ec752304616163a318f9de4057f211b9c23c7d4d08302e97e2611a0b60e35"
+          },
+          "episode_id": 0,
+          "native_work_root": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_fresh_process\\environments\\env-7c462c9eed30",
+          "coordinator_ledger_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_fresh_process\\environments\\env-7c462c9eed30\\dispatch_ledger.jsonl",
+          "engine_config_paths": [
+            "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_fresh_process\\environments\\env-7c462c9eed30\\episode-0\\player-0\\_vizdoom.ini",
+            "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_fresh_process\\environments\\env-7c462c9eed30\\episode-0\\player-1\\_vizdoom.ini"
+          ],
+          "worker_instances": [
+            "0zewW6CXzQ",
+            "G7X67o4Kv4"
+          ],
+          "rgb_difference_evidence": [],
+          "players_selected_iwads": [
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad",
+              "sha256": "a8772e088847032510d97ba2312406a6998f21cbab44d4ff10696faa9c0ecd4b",
+              "configured_path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad"
+            },
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad",
+              "sha256": "a8772e088847032510d97ba2312406a6998f21cbab44d4ff10696faa9c0ecd4b",
+              "configured_path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad"
+            }
+          ],
+          "consumed_joint_decisions": 108,
+          "consumed_joint_decisions_delta": 108,
+          "initialization_joint_decisions": 1,
+          "initialization_joint_decisions_delta": 1,
+          "published_transitions": 107,
+          "engine_config_readback": [
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_fresh_process\\environments\\env-7c462c9eed30\\episode-0\\player-0\\_vizdoom.ini",
+              "sha256": "3017f2891efa3a4689bdd39a8bfb3b7d7fd7c7a0048e33b9f415aeb8c5b84be4",
+              "cl_noprediction": true,
+              "recognized_section": "GlobalSettings"
+            },
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_fresh_process\\environments\\env-7c462c9eed30\\episode-0\\player-1\\_vizdoom.ini",
+              "sha256": "d3d66a69cb21c010ce5ed29cea9802c8dadeeb52b3b5625af7d9411867834952",
+              "cl_noprediction": true,
+              "recognized_section": "GlobalSettings"
+            }
+          ]
+        },
+        {
+          "repeat": 2,
+          "snapshots": 108,
+          "decisions": 107,
+          "trace_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_fresh_process\\repeat_2.json",
+          "trace_sha256": "cd58bd18eb1d6b5a0f43dd2d2ecdf9ff1fc96ba23a4ffcbaf01dc18b89180464",
+          "state_trace_sha256": "ffc95234e8d83454416665b5564f38f526cfcc584704e12bee6b442fe2439eeb",
+          "events_rewards_trace_sha256": "d6dfa62a85518045eec057a17eb2410ac4ec64c6e5694b6e2a3e62181f6c0472",
+          "rgb_trace_sha256": "87121801df9137d5c5e7b53a256ed638315dc93e7c5e13c7360be7e625cc777b",
+          "scenario_sha256": "57b13cfd9c750b318793d5f19e0c482db86ab8440e1c425f2c700051ba868662",
+          "source_sha256": {
+            "env\\__init__.py": "5491c9b54c9845e1b83bbd3f655a06e162c4452b8263773040f7646d3f9b09e4",
+            "env\\acceptance.py": "5d4933ec65de3c5120472eab5b6a3c8202788a71f9d47519a26df35c7e0823a7",
+            "env\\acceptance_metrics.py": "11864e267296ab85cf4fd10ddcb728776b24027e4f2ca170502becadd505ddbd",
+            "env\\actions.py": "7fd19fc174a5a7678667ad110b57b8bf4c0650d4aec14fb76d707e6ed619c1a8",
+            "env\\coop.py": "bb4b4e90c1b52045e80551fdcbff2f13895081e6d53efd65a330bc1bec13644d",
+            "env\\coordinator.py": "b5932a5ac64e620c86525dff20b13cc03e7b87939606be95f22726cb150d1098",
+            "env\\locality.py": "cdd27543e7e2d3b7923bc7f80b8805b00e090eb8ac0284141c666bfb726b21b5",
+            "env\\marker_diagnostics.py": "4cd57ec55b239cab35335256d10e8907648c42b5a0e7ca7a733dc7ac2346306e",
+            "env\\mechanics_video.py": "d8edc706106652fddd359d3cafd438671cd701f8c7f130da411167c8876900e1",
+            "env\\observations.py": "0cad5c1484a7a7f8e2b14fd076cfa092612ba66b090a9e04e61e1b2164e894e4",
+            "env\\provenance.py": "a77d4be126f83f32ab50f758c7d3f9a3870264d385492c5cdfafb390bfd02806",
+            "env\\replay_diagnostics.py": "3bda78301c3d33e0dc8a54afccb087fad36c66629bc0306b3035d74f21169a50",
+            "env\\scenario_builder.py": "1a2c606c8f8d0fe773a433352d65c23acfc697d142f1b2daeb65592ef34d2409",
+            "env\\scripted.py": "9e00ed6d84f00c151a9a8bba40e1b3ac8b2e8cce09445a16108376c1ac9ce522",
+            "env\\splits.py": "a187936b9448fe5113e2dc014a561f7d21977a77df7819ba289f27df802a8f7c",
+            "env\\targets.py": "be4444bfc9141e80ba6d31b24b6694d316f96e3af84e54dbdc470129f67a8ed9",
+            "env\\validation_data.py": "955547b1086a847b8b39a56edb0f634c3ae0b6bf665e346710bb208df2216183",
+            "env\\workers.py": "560b8929a8549d31f9a38ff287e616752255aeb1a52a5c54af8b489967a08d42",
+            "contracts.py": "0e8ec752304616163a318f9de4057f211b9c23c7d4d08302e97e2611a0b60e35"
+          },
+          "episode_id": 0,
+          "native_work_root": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_fresh_process\\environments\\env-be288ca3f891",
+          "coordinator_ledger_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_fresh_process\\environments\\env-be288ca3f891\\dispatch_ledger.jsonl",
+          "engine_config_paths": [
+            "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_fresh_process\\environments\\env-be288ca3f891\\episode-0\\player-0\\_vizdoom.ini",
+            "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_fresh_process\\environments\\env-be288ca3f891\\episode-0\\player-1\\_vizdoom.ini"
+          ],
+          "worker_instances": [
+            "2ptzK8OVMs",
+            "5sqKUdG0JT"
+          ],
+          "rgb_difference_evidence": [],
+          "players_selected_iwads": [
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad",
+              "sha256": "a8772e088847032510d97ba2312406a6998f21cbab44d4ff10696faa9c0ecd4b",
+              "configured_path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad"
+            },
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad",
+              "sha256": "a8772e088847032510d97ba2312406a6998f21cbab44d4ff10696faa9c0ecd4b",
+              "configured_path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad"
+            }
+          ],
+          "consumed_joint_decisions": 108,
+          "consumed_joint_decisions_delta": 108,
+          "initialization_joint_decisions": 1,
+          "initialization_joint_decisions_delta": 1,
+          "published_transitions": 107,
+          "engine_config_readback": [
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_fresh_process\\environments\\env-be288ca3f891\\episode-0\\player-0\\_vizdoom.ini",
+              "sha256": "297d504ae95ef185e1d742d1d135ed9015646593f9c971a5d11e2f670ec667b4",
+              "cl_noprediction": true,
+              "recognized_section": "GlobalSettings"
+            },
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_fresh_process\\environments\\env-be288ca3f891\\episode-0\\player-1\\_vizdoom.ini",
+              "sha256": "2709379046920e58c2fb561855b64efa8c71f7836a974a2d570d467e7a648431",
+              "cl_noprediction": true,
+              "recognized_section": "GlobalSettings"
+            }
+          ]
+        }
+      ],
+      "comparisons": [
+        {
+          "repeat": 1,
+          "state_exact": true,
+          "events_rewards_exact": true,
+          "rgb_exact": true,
+          "first_state_difference": null,
+          "first_events_rewards_difference": null,
+          "first_rgb_difference": null
+        },
+        {
+          "repeat": 2,
+          "state_exact": true,
+          "events_rewards_exact": true,
+          "rgb_exact": true,
+          "first_state_difference": null,
+          "first_events_rewards_difference": null,
+          "first_rgb_difference": null
+        }
+      ],
+      "state_exact": true,
+      "events_rewards_exact": true,
+      "rgb_exact": true,
+      "setup_consistency": {
+        "scenario_bytes_match": true,
+        "selected_iwads_match": true,
+        "sources_unchanged": true,
+        "client_prediction_disabled_readback": true
+      },
+      "status": "passed",
+      "achieved_determinism_level": "state_events_rewards_and_rgb_exact",
+      "comparison_rules": "Exact numeric/state/event/reward equality; RGB byte hashes compared separately. No tolerance or rounding hides differences.",
+      "sources": [
+        "https://vizdoom.farama.org/api/python/doom_game/",
+        "https://raw.githubusercontent.com/Farama-Foundation/ViZDoom/1.3.2/examples/python/multiple_instances.py"
+      ],
+      "report_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_fresh_process\\replay_report.json"
+    },
+    {
+      "schema_version": 1,
+      "kind": "fixed_open_loop_joint_action_replay",
+      "task_family": "cover",
+      "seed": 0,
+      "reset_mode": "coordinated_reset",
+      "repeats": 3,
+      "actions": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          8,
+          5
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "coordinator_reset_strategy": "fresh_process",
+      "actions_sha256": "7548c58d632dd1ae39629d9575b418a29d72ad35d4f58d19831a098251db6502",
+      "cases": [
+        {
+          "repeat": 0,
+          "snapshots": 108,
+          "decisions": 107,
+          "trace_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_coordinated_reset\\repeat_0.json",
+          "trace_sha256": "cd58bd18eb1d6b5a0f43dd2d2ecdf9ff1fc96ba23a4ffcbaf01dc18b89180464",
+          "state_trace_sha256": "ffc95234e8d83454416665b5564f38f526cfcc584704e12bee6b442fe2439eeb",
+          "events_rewards_trace_sha256": "d6dfa62a85518045eec057a17eb2410ac4ec64c6e5694b6e2a3e62181f6c0472",
+          "rgb_trace_sha256": "87121801df9137d5c5e7b53a256ed638315dc93e7c5e13c7360be7e625cc777b",
+          "scenario_sha256": "57b13cfd9c750b318793d5f19e0c482db86ab8440e1c425f2c700051ba868662",
+          "source_sha256": {
+            "env\\__init__.py": "5491c9b54c9845e1b83bbd3f655a06e162c4452b8263773040f7646d3f9b09e4",
+            "env\\acceptance.py": "5d4933ec65de3c5120472eab5b6a3c8202788a71f9d47519a26df35c7e0823a7",
+            "env\\acceptance_metrics.py": "11864e267296ab85cf4fd10ddcb728776b24027e4f2ca170502becadd505ddbd",
+            "env\\actions.py": "7fd19fc174a5a7678667ad110b57b8bf4c0650d4aec14fb76d707e6ed619c1a8",
+            "env\\coop.py": "bb4b4e90c1b52045e80551fdcbff2f13895081e6d53efd65a330bc1bec13644d",
+            "env\\coordinator.py": "b5932a5ac64e620c86525dff20b13cc03e7b87939606be95f22726cb150d1098",
+            "env\\locality.py": "cdd27543e7e2d3b7923bc7f80b8805b00e090eb8ac0284141c666bfb726b21b5",
+            "env\\marker_diagnostics.py": "4cd57ec55b239cab35335256d10e8907648c42b5a0e7ca7a733dc7ac2346306e",
+            "env\\mechanics_video.py": "d8edc706106652fddd359d3cafd438671cd701f8c7f130da411167c8876900e1",
+            "env\\observations.py": "0cad5c1484a7a7f8e2b14fd076cfa092612ba66b090a9e04e61e1b2164e894e4",
+            "env\\provenance.py": "a77d4be126f83f32ab50f758c7d3f9a3870264d385492c5cdfafb390bfd02806",
+            "env\\replay_diagnostics.py": "3bda78301c3d33e0dc8a54afccb087fad36c66629bc0306b3035d74f21169a50",
+            "env\\scenario_builder.py": "1a2c606c8f8d0fe773a433352d65c23acfc697d142f1b2daeb65592ef34d2409",
+            "env\\scripted.py": "9e00ed6d84f00c151a9a8bba40e1b3ac8b2e8cce09445a16108376c1ac9ce522",
+            "env\\splits.py": "a187936b9448fe5113e2dc014a561f7d21977a77df7819ba289f27df802a8f7c",
+            "env\\targets.py": "be4444bfc9141e80ba6d31b24b6694d316f96e3af84e54dbdc470129f67a8ed9",
+            "env\\validation_data.py": "955547b1086a847b8b39a56edb0f634c3ae0b6bf665e346710bb208df2216183",
+            "env\\workers.py": "560b8929a8549d31f9a38ff287e616752255aeb1a52a5c54af8b489967a08d42",
+            "contracts.py": "0e8ec752304616163a318f9de4057f211b9c23c7d4d08302e97e2611a0b60e35"
+          },
+          "episode_id": 0,
+          "native_work_root": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_coordinated_reset\\environments\\env-c30a48d65bbd",
+          "coordinator_ledger_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_coordinated_reset\\environments\\env-c30a48d65bbd\\dispatch_ledger.jsonl",
+          "engine_config_paths": [
+            "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_coordinated_reset\\environments\\env-c30a48d65bbd\\episode-0\\player-0\\_vizdoom.ini",
+            "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_coordinated_reset\\environments\\env-c30a48d65bbd\\episode-0\\player-1\\_vizdoom.ini"
+          ],
+          "worker_instances": [
+            "czOFNkiVza",
+            "mzWaPiQckT"
+          ],
+          "rgb_difference_evidence": [],
+          "players_selected_iwads": [
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad",
+              "sha256": "a8772e088847032510d97ba2312406a6998f21cbab44d4ff10696faa9c0ecd4b",
+              "configured_path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad"
+            },
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad",
+              "sha256": "a8772e088847032510d97ba2312406a6998f21cbab44d4ff10696faa9c0ecd4b",
+              "configured_path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad"
+            }
+          ],
+          "consumed_joint_decisions": 108,
+          "consumed_joint_decisions_delta": 108,
+          "initialization_joint_decisions": 1,
+          "initialization_joint_decisions_delta": 1,
+          "published_transitions": 107,
+          "engine_config_readback": [
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_coordinated_reset\\environments\\env-c30a48d65bbd\\episode-0\\player-0\\_vizdoom.ini",
+              "sha256": "61dbcae66edeaf54e99c5cf32d0b1d446dbd377639fe9c9217888eb7d2eea9b6",
+              "cl_noprediction": true,
+              "recognized_section": "GlobalSettings"
+            },
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_coordinated_reset\\environments\\env-c30a48d65bbd\\episode-0\\player-1\\_vizdoom.ini",
+              "sha256": "6358cd2e666646867d827fdf043cbc59298174ac2e3e5cc78e18e13880090225",
+              "cl_noprediction": true,
+              "recognized_section": "GlobalSettings"
+            }
+          ]
+        },
+        {
+          "repeat": 1,
+          "snapshots": 108,
+          "decisions": 107,
+          "trace_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_coordinated_reset\\repeat_1.json",
+          "trace_sha256": "cd58bd18eb1d6b5a0f43dd2d2ecdf9ff1fc96ba23a4ffcbaf01dc18b89180464",
+          "state_trace_sha256": "ffc95234e8d83454416665b5564f38f526cfcc584704e12bee6b442fe2439eeb",
+          "events_rewards_trace_sha256": "d6dfa62a85518045eec057a17eb2410ac4ec64c6e5694b6e2a3e62181f6c0472",
+          "rgb_trace_sha256": "87121801df9137d5c5e7b53a256ed638315dc93e7c5e13c7360be7e625cc777b",
+          "scenario_sha256": "57b13cfd9c750b318793d5f19e0c482db86ab8440e1c425f2c700051ba868662",
+          "source_sha256": {
+            "env\\__init__.py": "5491c9b54c9845e1b83bbd3f655a06e162c4452b8263773040f7646d3f9b09e4",
+            "env\\acceptance.py": "5d4933ec65de3c5120472eab5b6a3c8202788a71f9d47519a26df35c7e0823a7",
+            "env\\acceptance_metrics.py": "11864e267296ab85cf4fd10ddcb728776b24027e4f2ca170502becadd505ddbd",
+            "env\\actions.py": "7fd19fc174a5a7678667ad110b57b8bf4c0650d4aec14fb76d707e6ed619c1a8",
+            "env\\coop.py": "bb4b4e90c1b52045e80551fdcbff2f13895081e6d53efd65a330bc1bec13644d",
+            "env\\coordinator.py": "b5932a5ac64e620c86525dff20b13cc03e7b87939606be95f22726cb150d1098",
+            "env\\locality.py": "cdd27543e7e2d3b7923bc7f80b8805b00e090eb8ac0284141c666bfb726b21b5",
+            "env\\marker_diagnostics.py": "4cd57ec55b239cab35335256d10e8907648c42b5a0e7ca7a733dc7ac2346306e",
+            "env\\mechanics_video.py": "d8edc706106652fddd359d3cafd438671cd701f8c7f130da411167c8876900e1",
+            "env\\observations.py": "0cad5c1484a7a7f8e2b14fd076cfa092612ba66b090a9e04e61e1b2164e894e4",
+            "env\\provenance.py": "a77d4be126f83f32ab50f758c7d3f9a3870264d385492c5cdfafb390bfd02806",
+            "env\\replay_diagnostics.py": "3bda78301c3d33e0dc8a54afccb087fad36c66629bc0306b3035d74f21169a50",
+            "env\\scenario_builder.py": "1a2c606c8f8d0fe773a433352d65c23acfc697d142f1b2daeb65592ef34d2409",
+            "env\\scripted.py": "9e00ed6d84f00c151a9a8bba40e1b3ac8b2e8cce09445a16108376c1ac9ce522",
+            "env\\splits.py": "a187936b9448fe5113e2dc014a561f7d21977a77df7819ba289f27df802a8f7c",
+            "env\\targets.py": "be4444bfc9141e80ba6d31b24b6694d316f96e3af84e54dbdc470129f67a8ed9",
+            "env\\validation_data.py": "955547b1086a847b8b39a56edb0f634c3ae0b6bf665e346710bb208df2216183",
+            "env\\workers.py": "560b8929a8549d31f9a38ff287e616752255aeb1a52a5c54af8b489967a08d42",
+            "contracts.py": "0e8ec752304616163a318f9de4057f211b9c23c7d4d08302e97e2611a0b60e35"
+          },
+          "episode_id": 1,
+          "native_work_root": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_coordinated_reset\\environments\\env-c30a48d65bbd",
+          "coordinator_ledger_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_coordinated_reset\\environments\\env-c30a48d65bbd\\dispatch_ledger.jsonl",
+          "engine_config_paths": [
+            "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_coordinated_reset\\environments\\env-c30a48d65bbd\\episode-1\\player-0\\_vizdoom.ini",
+            "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_coordinated_reset\\environments\\env-c30a48d65bbd\\episode-1\\player-1\\_vizdoom.ini"
+          ],
+          "worker_instances": [
+            "B5iMzBbW6Y",
+            "X0tAkI0ldB"
+          ],
+          "rgb_difference_evidence": [],
+          "players_selected_iwads": [
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad",
+              "sha256": "a8772e088847032510d97ba2312406a6998f21cbab44d4ff10696faa9c0ecd4b",
+              "configured_path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad"
+            },
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad",
+              "sha256": "a8772e088847032510d97ba2312406a6998f21cbab44d4ff10696faa9c0ecd4b",
+              "configured_path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad"
+            }
+          ],
+          "consumed_joint_decisions": 216,
+          "consumed_joint_decisions_delta": 108,
+          "initialization_joint_decisions": 2,
+          "initialization_joint_decisions_delta": 1,
+          "published_transitions": 107,
+          "engine_config_readback": [
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_coordinated_reset\\environments\\env-c30a48d65bbd\\episode-1\\player-0\\_vizdoom.ini",
+              "sha256": "35f4fd1ce1498aa9b63ee8affbc08088d102b9ed00d763cff345540367fc20e7",
+              "cl_noprediction": true,
+              "recognized_section": "GlobalSettings"
+            },
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_coordinated_reset\\environments\\env-c30a48d65bbd\\episode-1\\player-1\\_vizdoom.ini",
+              "sha256": "a80b937d64d83d703e5ffabea43da51f7ad7a5baa1777112eeec2baf851bdfca",
+              "cl_noprediction": true,
+              "recognized_section": "GlobalSettings"
+            }
+          ]
+        },
+        {
+          "repeat": 2,
+          "snapshots": 108,
+          "decisions": 107,
+          "trace_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_coordinated_reset\\repeat_2.json",
+          "trace_sha256": "cd58bd18eb1d6b5a0f43dd2d2ecdf9ff1fc96ba23a4ffcbaf01dc18b89180464",
+          "state_trace_sha256": "ffc95234e8d83454416665b5564f38f526cfcc584704e12bee6b442fe2439eeb",
+          "events_rewards_trace_sha256": "d6dfa62a85518045eec057a17eb2410ac4ec64c6e5694b6e2a3e62181f6c0472",
+          "rgb_trace_sha256": "87121801df9137d5c5e7b53a256ed638315dc93e7c5e13c7360be7e625cc777b",
+          "scenario_sha256": "57b13cfd9c750b318793d5f19e0c482db86ab8440e1c425f2c700051ba868662",
+          "source_sha256": {
+            "env\\__init__.py": "5491c9b54c9845e1b83bbd3f655a06e162c4452b8263773040f7646d3f9b09e4",
+            "env\\acceptance.py": "5d4933ec65de3c5120472eab5b6a3c8202788a71f9d47519a26df35c7e0823a7",
+            "env\\acceptance_metrics.py": "11864e267296ab85cf4fd10ddcb728776b24027e4f2ca170502becadd505ddbd",
+            "env\\actions.py": "7fd19fc174a5a7678667ad110b57b8bf4c0650d4aec14fb76d707e6ed619c1a8",
+            "env\\coop.py": "bb4b4e90c1b52045e80551fdcbff2f13895081e6d53efd65a330bc1bec13644d",
+            "env\\coordinator.py": "b5932a5ac64e620c86525dff20b13cc03e7b87939606be95f22726cb150d1098",
+            "env\\locality.py": "cdd27543e7e2d3b7923bc7f80b8805b00e090eb8ac0284141c666bfb726b21b5",
+            "env\\marker_diagnostics.py": "4cd57ec55b239cab35335256d10e8907648c42b5a0e7ca7a733dc7ac2346306e",
+            "env\\mechanics_video.py": "d8edc706106652fddd359d3cafd438671cd701f8c7f130da411167c8876900e1",
+            "env\\observations.py": "0cad5c1484a7a7f8e2b14fd076cfa092612ba66b090a9e04e61e1b2164e894e4",
+            "env\\provenance.py": "a77d4be126f83f32ab50f758c7d3f9a3870264d385492c5cdfafb390bfd02806",
+            "env\\replay_diagnostics.py": "3bda78301c3d33e0dc8a54afccb087fad36c66629bc0306b3035d74f21169a50",
+            "env\\scenario_builder.py": "1a2c606c8f8d0fe773a433352d65c23acfc697d142f1b2daeb65592ef34d2409",
+            "env\\scripted.py": "9e00ed6d84f00c151a9a8bba40e1b3ac8b2e8cce09445a16108376c1ac9ce522",
+            "env\\splits.py": "a187936b9448fe5113e2dc014a561f7d21977a77df7819ba289f27df802a8f7c",
+            "env\\targets.py": "be4444bfc9141e80ba6d31b24b6694d316f96e3af84e54dbdc470129f67a8ed9",
+            "env\\validation_data.py": "955547b1086a847b8b39a56edb0f634c3ae0b6bf665e346710bb208df2216183",
+            "env\\workers.py": "560b8929a8549d31f9a38ff287e616752255aeb1a52a5c54af8b489967a08d42",
+            "contracts.py": "0e8ec752304616163a318f9de4057f211b9c23c7d4d08302e97e2611a0b60e35"
+          },
+          "episode_id": 2,
+          "native_work_root": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_coordinated_reset\\environments\\env-c30a48d65bbd",
+          "coordinator_ledger_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_coordinated_reset\\environments\\env-c30a48d65bbd\\dispatch_ledger.jsonl",
+          "engine_config_paths": [
+            "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_coordinated_reset\\environments\\env-c30a48d65bbd\\episode-2\\player-0\\_vizdoom.ini",
+            "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_coordinated_reset\\environments\\env-c30a48d65bbd\\episode-2\\player-1\\_vizdoom.ini"
+          ],
+          "worker_instances": [
+            "JpTiOs9WpV",
+            "DM6AuURGT0"
+          ],
+          "rgb_difference_evidence": [],
+          "players_selected_iwads": [
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad",
+              "sha256": "a8772e088847032510d97ba2312406a6998f21cbab44d4ff10696faa9c0ecd4b",
+              "configured_path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad"
+            },
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad",
+              "sha256": "a8772e088847032510d97ba2312406a6998f21cbab44d4ff10696faa9c0ecd4b",
+              "configured_path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad"
+            }
+          ],
+          "consumed_joint_decisions": 324,
+          "consumed_joint_decisions_delta": 108,
+          "initialization_joint_decisions": 3,
+          "initialization_joint_decisions_delta": 1,
+          "published_transitions": 107,
+          "engine_config_readback": [
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_coordinated_reset\\environments\\env-c30a48d65bbd\\episode-2\\player-0\\_vizdoom.ini",
+              "sha256": "b0cf17e2cdb3256b83315c81a7197bc1d454f269501ca8c7938427b6a22bb85e",
+              "cl_noprediction": true,
+              "recognized_section": "GlobalSettings"
+            },
+            {
+              "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_coordinated_reset\\environments\\env-c30a48d65bbd\\episode-2\\player-1\\_vizdoom.ini",
+              "sha256": "cd4edbb1f910ff0c8464a4e4071b1707feed55d99da36e6eb571d349d9987fec",
+              "cl_noprediction": true,
+              "recognized_section": "GlobalSettings"
+            }
+          ]
+        }
+      ],
+      "comparisons": [
+        {
+          "repeat": 1,
+          "state_exact": true,
+          "events_rewards_exact": true,
+          "rgb_exact": true,
+          "first_state_difference": null,
+          "first_events_rewards_difference": null,
+          "first_rgb_difference": null
+        },
+        {
+          "repeat": 2,
+          "state_exact": true,
+          "events_rewards_exact": true,
+          "rgb_exact": true,
+          "first_state_difference": null,
+          "first_events_rewards_difference": null,
+          "first_rgb_difference": null
+        }
+      ],
+      "state_exact": true,
+      "events_rewards_exact": true,
+      "rgb_exact": true,
+      "setup_consistency": {
+        "scenario_bytes_match": true,
+        "selected_iwads_match": true,
+        "sources_unchanged": true,
+        "client_prediction_disabled_readback": true
+      },
+      "status": "passed",
+      "achieved_determinism_level": "state_events_rewards_and_rgb_exact",
+      "comparison_rules": "Exact numeric/state/event/reward equality; RGB byte hashes compared separately. No tolerance or rounding hides differences.",
+      "sources": [
+        "https://vizdoom.farama.org/api/python/doom_game/",
+        "https://raw.githubusercontent.com/Farama-Foundation/ViZDoom/1.3.2/examples/python/multiple_instances.py"
+      ],
+      "report_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_coordinated_reset\\replay_report.json"
+    }
+  ],
+  "all_state_events_rewards_exact": true,
+  "all_rgb_exact": true,
+  "scope": "Exact fixed joint-action replay on the pinned development platform, both families and both restart/reset paths. This does not assert cross-platform determinism.",
+  "stage": "replay",
+  "parameters": {
+    "repeats": 3,
+    "mechanics_traces": [
+      "208238f7a91e4c4007281e720f58db5e7872512e32a48a4b3a0d547f571a4db4",
+      "c29edd7c448d2cb3521ef08fdada6b3129ede8cda37891ffa0ad18afc9147fa4",
+      "f33d4ab48bacd5172367f4a7b47befc3df6394e5712d600a255aea735ae132ec",
+      "9f522f36ca6c66dad1a05290bce1560802a38621196ab02b21fe5d5eb4cfca73",
+      "ec0f795e91ab6fc8faea818444f314cfe8bec747ae8a7435f28f6a30fdf00526",
+      "e084d515bf220f73570c8a6d6eef1a8a4f6fcbdb23a2455ddefc569128001211",
+      "3f78845ea7855771e8338f98db7cdde6b5e61770aa852768cf82eafae134cad2",
+      "b3e9dcdc20b00481540eb34008b8ae93d153f6b56306e90d60b96cf922ce0e85",
+      "335afe17c2c7d453f75267e9d2eb313e670fb28ba17dae432dd1b11a1eaa0118",
+      "8baecf2fd5de7c32fcfc1da8bd191a41df17970b8645807534a330e03c39df90",
+      "cb860ed67b3708702d4b8d7961af9e5754ea2c335dd1126e5287f36082e7e6a5",
+      "2864ab859822e35027e1670c9eb2bfc8cc3ade538755476dbbe5f4dc06ec579b",
+      "4e70e7817b354307a73a4e019ba7cac0f8d62c18998b8ab74d8bfa57275e47a1",
+      "301cf4974b71db4f93de444ae55279ee827a7ea7abfb5016d824c72565c566b8",
+      "26ed54128f296145d387a81477d132561532c657ecbe950c88798501fe7646e5",
+      "34a9aaa9096e193ec640aecc94a7abf752bc1bcf8c946782a6ecaa51d48038b7",
+      "bc7212b52db4ecfc841563b77ca43f45765d573a6ef4a91c79af81b8ebd56239",
+      "1618534ce1946d5fe329a23885287674cb95628ee518a08ae89f971081ee51ce",
+      "61640742a3d9100e3bfba829ae71ecdaeb1de4193665e5f4e64e3e2dfda8dc9c",
+      "ed7ce7b1cf9ed33748b19a0e036ff7143abcb4287dfd8a8e0fb9d1596c5bcf2f"
+    ]
+  },
+  "dependency_fingerprint": "9f8c0ff2e6ef960fb15cf390bfdd5b3e637e12e5cd81b81b5fa9534329130b5f",
+  "source_sha256": {
+    "configs/base.yaml": "fd7ff75518cf9451bfd6ddc4a3f2ab24070336d4e6f75edfa1676484af4a6099",
+    "configs/environment_splits.yaml": "589551b9d676b3d36587c61b87028f0731acc3391105ff62657ae4db0911cdec",
+    "configs/experiments/final.yaml": "c1242746427d32af878357998d181133d23ad278b70e492377351fbf441adeba",
+    "configs/experiments/pilot.yaml": "68882da53c509476b2fef0f87569cfa13af548120e63ac8873495274e7b9cc5f",
+    "configs/privileged_registry_v1.json": "c18f44850ea014004dc57a8fb74930d6256d7e32ef75eeb11c01e4cc775787f2",
+    "configs/tasks/cover.yaml": "24c54b85c5148cda6e5d60db5dec88e83be7c11ec80b7717340c0803a36ed544",
+    "configs/tasks/relay.yaml": "feb5e8849ad69d277b445cf1b8faeddf6e3155e7ef39ae9fb6602233e1d03580",
+    "configs/variants/B.yaml": "4d9d6e6be699818d733bf6851748f9cdde7219c091a1392c9d09d1a124676af9",
+    "configs/variants/D.yaml": "79c6c6e202b5ab4b2712c25b9b294b263f3f2e9acfbc553857eb2433dee3a796",
+    "pyproject.toml": "5523c9c04eb2812733ece9183f0ad4eb849a0c7638906f2491512d1dd08527aa",
+    "requirements-phase0.lock": "cc0e2d47099633a73fa6b43d4539049c53815b6367ff97dc2b13dc9b94dcb131",
+    "requirements-phase1.lock": "733af0fe79d66ea715a9fe6e9a9b3c9e3ff3612616182cf93c3f5dd9b691eff5",
+    "scenarios/cover/task.acs": "26a348bec6fc341ec7afe8e04e108e23e5c6c4c6d1248603f4640e3bc63a0a1e",
+    "scenarios/relay/task.acs": "96022349fdfba14b72a1920939a63c11263b26ebc01bc16b0262d3258a23469f",
+    "scripts/__init__.py": "e9bce490cbe0589d864499c6f2ad5a2805dcc14f98937814616a47e3760634cc",
+    "scripts/bootstrap_acc.py": "bbb716fb4732730cb814422576d9d7b9b93aa5307f7ee2ca29214b7f5fdd0c85",
+    "scripts/phase0.py": "086f29f436ad41d8ef90b2fbb9f0c3667b362d7f5f4528c5a7867372175cdd86",
+    "scripts/phase1.py": "6e2fd83aab580ca2bb583b4d973e2e9547b25a14ae2abfa9b172d5773634f330",
+    "scripts/phase1_acceptance.py": "6a55906e5cdbd5f5d6da9097553c6d0956ab774cf5f27ba30caef53b0239d3bb",
+    "scripts/probe_multiplayer.py": "257908e6e8e493185825d07a78e9503319f727ab9f61f7da440474fd20fe37c0",
+    "scripts/probe_phase1_runtime.py": "4c6cbdbef22e0f0f1ea98d8df8545c08bbb9808a9586b303dcd115c2c7b4f383",
+    "src/world_models/__init__.py": "e304c6f71067c9303c0ccb5900a9ae3fdd4cf41ef78efeee8164cd78e23b5297",
+    "src/world_models/contracts.py": "0e8ec752304616163a318f9de4057f211b9c23c7d4d08302e97e2611a0b60e35",
+    "src/world_models/data/__init__.py": "9b4506df2f1d7e1215a8c8e84729f0fbfd34db843eebc98ec9825ba0d22cc4fc",
+    "src/world_models/env/__init__.py": "5491c9b54c9845e1b83bbd3f655a06e162c4452b8263773040f7646d3f9b09e4",
+    "src/world_models/env/acceptance.py": "5d4933ec65de3c5120472eab5b6a3c8202788a71f9d47519a26df35c7e0823a7",
+    "src/world_models/env/acceptance_metrics.py": "11864e267296ab85cf4fd10ddcb728776b24027e4f2ca170502becadd505ddbd",
+    "src/world_models/env/actions.py": "7fd19fc174a5a7678667ad110b57b8bf4c0650d4aec14fb76d707e6ed619c1a8",
+    "src/world_models/env/coop.py": "bb4b4e90c1b52045e80551fdcbff2f13895081e6d53efd65a330bc1bec13644d",
+    "src/world_models/env/coordinator.py": "b5932a5ac64e620c86525dff20b13cc03e7b87939606be95f22726cb150d1098",
+    "src/world_models/env/locality.py": "cdd27543e7e2d3b7923bc7f80b8805b00e090eb8ac0284141c666bfb726b21b5",
+    "src/world_models/env/marker_diagnostics.py": "4cd57ec55b239cab35335256d10e8907648c42b5a0e7ca7a733dc7ac2346306e",
+    "src/world_models/env/mechanics_video.py": "d8edc706106652fddd359d3cafd438671cd701f8c7f130da411167c8876900e1",
+    "src/world_models/env/observations.py": "0cad5c1484a7a7f8e2b14fd076cfa092612ba66b090a9e04e61e1b2164e894e4",
+    "src/world_models/env/provenance.py": "a77d4be126f83f32ab50f758c7d3f9a3870264d385492c5cdfafb390bfd02806",
+    "src/world_models/env/replay_diagnostics.py": "3bda78301c3d33e0dc8a54afccb087fad36c66629bc0306b3035d74f21169a50",
+    "src/world_models/env/scenario_builder.py": "1a2c606c8f8d0fe773a433352d65c23acfc697d142f1b2daeb65592ef34d2409",
+    "src/world_models/env/scripted.py": "9e00ed6d84f00c151a9a8bba40e1b3ac8b2e8cce09445a16108376c1ac9ce522",
+    "src/world_models/env/splits.py": "a187936b9448fe5113e2dc014a561f7d21977a77df7819ba289f27df802a8f7c",
+    "src/world_models/env/targets.py": "be4444bfc9141e80ba6d31b24b6694d316f96e3af84e54dbdc470129f67a8ed9",
+    "src/world_models/env/validation_data.py": "955547b1086a847b8b39a56edb0f634c3ae0b6bf665e346710bb208df2216183",
+    "src/world_models/env/workers.py": "560b8929a8549d31f9a38ff287e616752255aeb1a52a5c54af8b489967a08d42",
+    "src/world_models/evaluation/__init__.py": "fc435531e998681fcf12474f5f479cb08f86cf81792d1a2e428514304e03184b",
+    "src/world_models/infrastructure/__init__.py": "7f3a23ed0ae9dca2944afbe5b7b4c57d67f8331d637f1daafdac273a07b47580",
+    "src/world_models/infrastructure/config.py": "004e01c20bc86c57a70ffe099d7158e2bbe4f7153713750ccc5796c98b867958",
+    "src/world_models/infrastructure/inventory.py": "cabae03d2fbe64ed5ac7014c9982473192b4f870d7055653b79847238a2c3c3c",
+    "src/world_models/infrastructure/reproducibility.py": "eaefeaa3003ebce8ef6a4817c2257cc528be5c0823d65694568ae11e285d65d3",
+    "src/world_models/models/__init__.py": "02d96f1fef014a60a6c801a27501165200eff668e9b66a3339b1f98240a3570d",
+    "src/world_models/policies/__init__.py": "cae794398b0ec8b6bcb7394652322ff1f604846c865069bd3eaaa5c56c60c4a5",
+    "src/world_models/training/__init__.py": "25e67fe79423dd7a905dc1af894c031f09664d78c26673a0fc37c430f9fa4abd",
+    "tests/__init__.py": "c8aa6890ca40c8ddcbbe269118a1ed7a30a4a319768d62d55dfbb09ef5f1a934",
+    "tests/test_config.py": "9f596fd858b70760173f4c38503f933b25d07f7fbff09e060ac893cc13da31f5",
+    "tests/test_contracts.py": "8cefd34adc7e6d50ce4563b048d438d5e171c6cc094d191eab1c1498b2f9d7c6",
+    "tests/test_coop_env.py": "4e9580b75b38a8fef01d7ba97d6e21eaa07b897408ff57ae466acc343e173f12",
+    "tests/test_coordinator.py": "d4ead078978f0c2791b360b2edc5d1d7d305c53a657a7b0b4ba2afd6c0d1795c",
+    "tests/test_env_adapters.py": "af403349e4bdad3874517d60c59cff2952f71c354daf399cf97ff6187dbbf30d",
+    "tests/test_inventory.py": "85fc9a2d6e2b9d2accaf3f6f5d7e6d2f7f319e99723eb49a30ea889d1599590e",
+    "tests/test_phase0_cli.py": "79262c6a6bd3c87d1fc435cb2993672a5c93d9d749990fe42a84465f8acf442c",
+    "tests/test_phase1_acceptance.py": "bff343be9f02ddff94bd840e3f1533a703574e10e402790f9a0892def322a59b",
+    "tests/test_replay_diagnostics.py": "7cc39a3ed623a4e65e3c72da8894e7ab52810d6f88d037248c4c6ba173604835",
+    "tests/test_reproducibility.py": "2151e04006c649beb01af8ed04cebad39023edec5088a3892f70dee8c693b7d3",
+    "tests/test_scenarios.py": "1b6ff3a01580fbee22e3fe9cf910ec21fb071f0fb9d0f650f5ff7554eebada8c",
+    "tests/test_scripted.py": "755988ebe711f8f96fb31eb52b9f3443c811f5bdcb13223900c5a46c396b5bea",
+    "tests/test_splits.py": "de32235d6a54a6f06325ed88c6bc86d5859530089f23f23f5b5326ebd8b914d4",
+    "tests/test_targets.py": "86c039dbe99046217d99e78d7b73672c12d3f3d7ee5a1043476e226964e9f17e"
+  },
+  "runtime": {
+    "recorded_at_utc": "2026-11-01T08:14:45.652132+00:00",
+    "scope": "observed_development_simulator_stack; not a CUDA/PyTorch training-host validation",
+    "python": {
+      "version": "3.12.0",
+      "executable": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Scripts\\python.exe"
+    },
+    "platform": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "cloudpickle": {
+        "expected": "3.1.2",
+        "observed": "3.1.2",
+        "matches": true
+      },
+      "Farama-Notifications": {
+        "expected": "0.0.6",
+        "observed": "0.0.6",
+        "matches": true
+      },
+      "gymnasium": {
+        "expected": "1.4.0",
+        "observed": "1.4.0",
+        "matches": true
+      },
+      "imageio-ffmpeg": {
+        "expected": "0.6.0",
+        "observed": "0.6.0",
+        "matches": true
+      },
+      "numpy": {
+        "expected": "2.5.4",
+        "observed": "2.5.4",
+        "matches": true
+      },
+      "pillow": {
+        "expected": "13.0.0",
+        "observed": "13.0.0",
+        "matches": true
+      },
+      "psutil": {
+        "expected": "7.2.2",
+        "observed": "7.2.2",
+        "matches": true
+      },
+      "pygame-ce": {
+        "expected": "2.5.8",
+        "observed": "2.5.8",
+        "matches": true
+      },
+      "PyYAML": {
+        "expected": "6.0.3",
+        "observed": "6.0.3",
+        "matches": true
+      },
+      "setuptools": {
+        "expected": "80.9.0",
+        "observed": "80.9.0",
+        "matches": true
+      },
+      "typing_extensions": {
+        "expected": "4.16.0",
+        "observed": "4.16.0",
+        "matches": true
+      },
+      "vizdoom": {
+        "expected": "1.3.2",
+        "observed": "1.3.2",
+        "matches": true
+      },
+      "wheel": {
+        "expected": "0.45.1",
+        "observed": "0.45.1",
+        "matches": true
+      }
+    },
+    "assets": [
+      {
+        "path": "freedoom1.wad",
+        "bytes": 28795076,
+        "sha256": "7323bcc168c5a45ff10749b339960e98314740a734c30d4b9f3337001f9e703d"
+      },
+      {
+        "path": "freedoom2.wad",
+        "bytes": 28787748,
+        "sha256": "a8772e088847032510d97ba2312406a6998f21cbab44d4ff10696faa9c0ecd4b"
+      },
+      {
+        "path": "libmpg123-0.dll",
+        "bytes": 311700,
+        "sha256": "4247c435d456b9bb801f1e3a69498a9340d7c9a5176bbaed8bbf17adf3baa490"
+      },
+      {
+        "path": "libsndfile-1.dll",
+        "bytes": 1530880,
+        "sha256": "e1d88dfc7a12d12536c2e1f8c304b99bfb811ea9827a5689d6fc71789fb5b5e0"
+      },
+      {
+        "path": "OpenAL32.dll",
+        "bytes": 1795072,
+        "sha256": "396f88738ce20905e933cb7d8c696351e41bd7e72e80b8cfdadf20ab613420b4"
+      },
+      {
+        "path": "vizdoom.cp312-win_amd64.pyd",
+        "bytes": 875520,
+        "sha256": "fb9bcf09cbe82ce6b3333d2bd08cfdb74aa4418966e2abd1e2f9a4a209a1b07f"
+      },
+      {
+        "path": "vizdoom.exe",
+        "bytes": 4981760,
+        "sha256": "6f835a2094e8c593b71c0fd769bef0e6a1a768b4e448ba7c3e8f34ae208f2d82"
+      },
+      {
+        "path": "vizdoom.pk3",
+        "bytes": 631086,
+        "sha256": "fe45d24d7e8d79b51e9619efc93f5d6058331a56312e1ef5ec554cada11ed96d"
+      }
+    ],
+    "selected_iwad": {
+      "path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad",
+      "sha256": "a8772e088847032510d97ba2312406a6998f21cbab44d4ff10696faa9c0ecd4b",
+      "selection": "explicit bundled freedoom2.wad; each worker verifies engine path and hash"
+    },
+    "video_encoder": {
+      "path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\imageio_ffmpeg\\binaries\\ffmpeg-win-x86_64-v7.1.exe",
+      "bytes": 87638016,
+      "sha256": "2ce797a0f88d7f067180338fb227f7b1928ea727bd9a4d7a1d022f7c52af71a3",
+      "version": "7.1-essentials_build-www.gyan.dev",
+      "package": "imageio-ffmpeg==0.6.0",
+      "purpose": "mechanics review videos"
+    },
+    "compiler": {
+      "version": "1.60",
+      "path": "C:\\Users\\Admin\\Desktop\\world models\\.tools\\acc-1.60\\acc.exe",
+      "bytes": 145408,
+      "sha256": "a318f4b45818222dc273a68fab37e393d6881e603816c7317da40d2819fa3ce5",
+      "source": "https://github.com/ZDoom/acc/releases/tag/1.60"
+    },
+    "renderer": {
+      "mode": "PLAYER",
+      "off_screen": true,
+      "sound": false,
+      "format": "CRCGCB",
+      "raw_shape": [
+        3,
+        120,
+        160
+      ],
+      "actor_shape": [
+        3,
+        96,
+        128
+      ],
+      "resize": "Pillow.Resampling.BILINEAR",
+      "buttons": [
+        "MOVE_FORWARD",
+        "MOVE_BACKWARD",
+        "MOVE_LEFT",
+        "MOVE_RIGHT",
+        "TURN_LEFT",
+        "TURN_RIGHT",
+        "ATTACK",
+        "USE"
+      ],
+      "autoaim": false,
+      "friendly_fire": false,
+      "automatic_respawn": false,
+      "client_prediction": false,
+      "native_barrier": "both set_action then shared barrier then advance_action(1); four tics per logical decision",
+      "coordinated_reset": "fresh participant processes and isolated episode working directories"
+    },
+    "license_provenance": {
+      "original_vizdoom_code": "MIT; bundled engine components retain their separate licenses",
+      "vizdoom_source": "https://github.com/Farama-Foundation/ViZDoom/tree/1.3.2",
+      "vizdoom_license_statement": "https://github.com/Farama-Foundation/ViZDoom#license",
+      "freedoom": "https://github.com/freedoom/freedoom/blob/master/COPYING.adoc",
+      "acc": "https://github.com/ZDoom/acc/releases/tag/1.60",
+      "generated_pwads": "Original project geometry and scripts; no copied IWAD sprites/textures in generated PWADs.",
+      "redistribution": "Preserve upstream Freedoom credits/license when distributing the IWAD; do not label the entire engine bundle MIT."
+    }
+  },
+  "wall_seconds": 215.00646380000398,
+  "execution_sources_unchanged": true,
+  "runtime_assets_unchanged": true,
+  "artifact_sha256": {
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_coordinated_reset\\environments\\env-c30a48d65bbd\\dispatch_ledger.jsonl": "0aa8eee7be4edb95db36dc83d4567d156aee37bc5a28554bfe6ffe8b90305c02",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_coordinated_reset\\environments\\env-c30a48d65bbd\\episode-0\\player-0\\_vizdoom.ini": "61dbcae66edeaf54e99c5cf32d0b1d446dbd377639fe9c9217888eb7d2eea9b6",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_coordinated_reset\\environments\\env-c30a48d65bbd\\episode-0\\player-1\\_vizdoom.ini": "6358cd2e666646867d827fdf043cbc59298174ac2e3e5cc78e18e13880090225",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_coordinated_reset\\environments\\env-c30a48d65bbd\\episode-1\\player-0\\_vizdoom.ini": "35f4fd1ce1498aa9b63ee8affbc08088d102b9ed00d763cff345540367fc20e7",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_coordinated_reset\\environments\\env-c30a48d65bbd\\episode-1\\player-1\\_vizdoom.ini": "a80b937d64d83d703e5ffabea43da51f7ad7a5baa1777112eeec2baf851bdfca",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_coordinated_reset\\environments\\env-c30a48d65bbd\\episode-2\\player-0\\_vizdoom.ini": "b0cf17e2cdb3256b83315c81a7197bc1d454f269501ca8c7938427b6a22bb85e",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_coordinated_reset\\environments\\env-c30a48d65bbd\\episode-2\\player-1\\_vizdoom.ini": "cd4edbb1f910ff0c8464a4e4071b1707feed55d99da36e6eb571d349d9987fec",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_coordinated_reset\\repeat_0.json": "cd58bd18eb1d6b5a0f43dd2d2ecdf9ff1fc96ba23a4ffcbaf01dc18b89180464",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_coordinated_reset\\repeat_1.json": "cd58bd18eb1d6b5a0f43dd2d2ecdf9ff1fc96ba23a4ffcbaf01dc18b89180464",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_coordinated_reset\\repeat_2.json": "cd58bd18eb1d6b5a0f43dd2d2ecdf9ff1fc96ba23a4ffcbaf01dc18b89180464",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_coordinated_reset\\replay_report.json": "2819223df2d50b318962dc1924f00aa76895e65f638d772ee1d0ce525a227979",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_fresh_process\\environments\\env-7c462c9eed30\\dispatch_ledger.jsonl": "a1900bd5f95adc3a8a35b6c58e02370684fe53e909907f60e792589a11f63e80",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_fresh_process\\environments\\env-7c462c9eed30\\episode-0\\player-0\\_vizdoom.ini": "3017f2891efa3a4689bdd39a8bfb3b7d7fd7c7a0048e33b9f415aeb8c5b84be4",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_fresh_process\\environments\\env-7c462c9eed30\\episode-0\\player-1\\_vizdoom.ini": "d3d66a69cb21c010ce5ed29cea9802c8dadeeb52b3b5625af7d9411867834952",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_fresh_process\\environments\\env-97faad58cc30\\dispatch_ledger.jsonl": "14311ffd73753d8954159e90a555e7475b80d468e785322ea5e2256d8258baf3",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_fresh_process\\environments\\env-97faad58cc30\\episode-0\\player-0\\_vizdoom.ini": "c4c0d01f2c545e28efdf8024e226dadb24cc592c58fe5d3272ec64b2faa2b290",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_fresh_process\\environments\\env-97faad58cc30\\episode-0\\player-1\\_vizdoom.ini": "f9f388877737ed23ca8caa21c5306ae0d3cfc30542bd38c36aca917ba0d4726f",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_fresh_process\\environments\\env-be288ca3f891\\dispatch_ledger.jsonl": "38cdc8c033f7a5e14da05e9c0af56dfdb51da18afb42fc3fc96326057065be11",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_fresh_process\\environments\\env-be288ca3f891\\episode-0\\player-0\\_vizdoom.ini": "297d504ae95ef185e1d742d1d135ed9015646593f9c971a5d11e2f670ec667b4",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_fresh_process\\environments\\env-be288ca3f891\\episode-0\\player-1\\_vizdoom.ini": "2709379046920e58c2fb561855b64efa8c71f7836a974a2d570d467e7a648431",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_fresh_process\\repeat_0.json": "cd58bd18eb1d6b5a0f43dd2d2ecdf9ff1fc96ba23a4ffcbaf01dc18b89180464",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_fresh_process\\repeat_1.json": "cd58bd18eb1d6b5a0f43dd2d2ecdf9ff1fc96ba23a4ffcbaf01dc18b89180464",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_fresh_process\\repeat_2.json": "cd58bd18eb1d6b5a0f43dd2d2ecdf9ff1fc96ba23a4ffcbaf01dc18b89180464",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\cover_0_fresh_process\\replay_report.json": "e610633db7f871ccde7e124279234cef91c023b2a0b5b5084ffac7f378f89f22",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_coordinated_reset\\environments\\env-9b25a9f96c3a\\dispatch_ledger.jsonl": "e070da20592a198f13249505c80f75e75d6646c74c0b982fafeaf9e298703c2b",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_coordinated_reset\\environments\\env-9b25a9f96c3a\\episode-0\\player-0\\_vizdoom.ini": "c092468c99e7824dedccf66f2a308fa583dff13b7414740a855199f72807d3f1",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_coordinated_reset\\environments\\env-9b25a9f96c3a\\episode-0\\player-1\\_vizdoom.ini": "abc6f1bc2a8da959523803c41ac9a1d96b7024e5cda80de6ec5332e3b3bee2e8",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_coordinated_reset\\environments\\env-9b25a9f96c3a\\episode-1\\player-0\\_vizdoom.ini": "a0606aad092e018d55cfe3b4e07683df269011a1e5f52dc553ba6348a9cfd5ff",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_coordinated_reset\\environments\\env-9b25a9f96c3a\\episode-1\\player-1\\_vizdoom.ini": "ac3e88d33e7732c00f6ba467c1cc605623d1c746b4354508b4522eef8b176cfa",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_coordinated_reset\\environments\\env-9b25a9f96c3a\\episode-2\\player-0\\_vizdoom.ini": "1a37e04f15b3b3b754fac4c06fc75f9a48fcd610d24686f6b0bc0e74da0268b4",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_coordinated_reset\\environments\\env-9b25a9f96c3a\\episode-2\\player-1\\_vizdoom.ini": "663a2b3d2ed872ae1a49e42d1f6bc7a11e3ae005754297a4d2faa2e6375cde6f",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_coordinated_reset\\repeat_0.json": "4c3f462260f70c83602191efe816142cea3db6e9795dabc75c2c624b68a64825",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_coordinated_reset\\repeat_1.json": "4c3f462260f70c83602191efe816142cea3db6e9795dabc75c2c624b68a64825",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_coordinated_reset\\repeat_2.json": "4c3f462260f70c83602191efe816142cea3db6e9795dabc75c2c624b68a64825",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_coordinated_reset\\replay_report.json": "4d2fef831698d9d276a1f0ec8331a314c0a7273fc4a292a3a613564a0c22996c",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_fresh_process\\environments\\env-2b1e5f79ee0c\\dispatch_ledger.jsonl": "c04104e759ef1de65c7c34f4a67af55ba0b9c61293eab9b5489bd0445cac6b93",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_fresh_process\\environments\\env-2b1e5f79ee0c\\episode-0\\player-0\\_vizdoom.ini": "fa5f01ad83fa33173c0d0f78d93e9d3ef5259a645b4ab9540293ec9ea1a3c5ea",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_fresh_process\\environments\\env-2b1e5f79ee0c\\episode-0\\player-1\\_vizdoom.ini": "5231272a6617deeb87a7c3e2612e7a93c781369a2e00bb12975a218e8bea783c",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_fresh_process\\environments\\env-8fa0c4268c9f\\dispatch_ledger.jsonl": "57813b1636db2454d39b1b46d735f4d6431f19876cdf0b3b6b21722d0da444e2",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_fresh_process\\environments\\env-8fa0c4268c9f\\episode-0\\player-0\\_vizdoom.ini": "7b186c965d6367c8f7d84df6f317ac39540d53c1cec96041218378743fd1df11",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_fresh_process\\environments\\env-8fa0c4268c9f\\episode-0\\player-1\\_vizdoom.ini": "78e050d31f1687334c62dbc1a5a93ab6e0e2bf6a170a5a54bb0d5b7f1a6c31b7",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_fresh_process\\environments\\env-bdca41fadf49\\dispatch_ledger.jsonl": "6943584b7fbbc1bf219cc57ebcbcd98e8d30d0a2673c26f19b238227f39934c3",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_fresh_process\\environments\\env-bdca41fadf49\\episode-0\\player-0\\_vizdoom.ini": "b01110d7f65439850516aeaae3c003945978438b3a76ec6e568d622ec6b38257",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_fresh_process\\environments\\env-bdca41fadf49\\episode-0\\player-1\\_vizdoom.ini": "54d86b3ea4e9ea9fcb619c3570410241b47ea09e6be927c9be6ef17a43b3aaf8",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_fresh_process\\repeat_0.json": "4c3f462260f70c83602191efe816142cea3db6e9795dabc75c2c624b68a64825",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_fresh_process\\repeat_1.json": "4c3f462260f70c83602191efe816142cea3db6e9795dabc75c2c624b68a64825",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_fresh_process\\repeat_2.json": "4c3f462260f70c83602191efe816142cea3db6e9795dabc75c2c624b68a64825",
+    "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\replay\\relay_0_fresh_process\\replay_report.json": "6d2fd1cd288772b22f8c9fbaa9c29e99ec622f15dfc85e416f187e2d2f1a88df"
+  }
+}

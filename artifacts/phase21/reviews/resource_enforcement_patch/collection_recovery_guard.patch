@@ -1,0 +1,354 @@
+--- a/src/world_models/data/collection.py
++++ b/src/world_models/data/collection.py
+@@ -157,13 +157,17 @@
+     journal_root: str | Path | None = None,
+     journal_spool_max_bytes: int = 512 * 1024 * 1024,
+     origin_provenance: dict | None = None,
++    resource_guard: Callable[[], None] | None = None,
+ ) -> dict:
+     """Collect and seal one physically shared B/D dataset, or fail closed.
+ 
+     Existing output directories are rejected. An interrupted/failed dataset keeps
+     its ledger, partial chunks, coordinator journals, and error record; restarting
+     it must not silently erase already consumed interactions.
++    An optional resource guard must pass immediately before every reset/step.
+     """
++    if resource_guard is not None and not callable(resource_guard):
++        raise ValueError("resource guard must be callable")
+     config_dir = Path(config_dir or ROOT / "configs")
+     left = resolve_config(task_family, "B", profile, config_dir)
+     right = resolve_config(task_family, "D", profile, config_dir)
+@@ -328,6 +332,9 @@
+                 env = create_env(task_family, seed=layout_seed, scenario_manifest=scenario,
+                                  work_root=runtime_root / "environments" / current_episode,
+                                  frame_skip=settings["environment"]["frame_skip"])
++                operation = "resource_enforcement"
++                if resource_guard is not None:
++                    resource_guard()
+                 operation = "reset"
+                 reset = env.reset(seed=engine_seed)
+                 ledger.record_reset(env, current_episode)
+@@ -359,6 +366,9 @@
+                 try:
+                     while episode_length < episode_limit:
+                         actions = policy.actions() if kind == "random" else policy.actions(result.training_only_info)
++                        operation = "resource_enforcement"
++                        if resource_guard is not None:
++                            resource_guard()
+                         operation = "step"
+                         step = env.step(*actions, collection_cutoff=episode_length + 1 == episode_limit)
+                         # Debit real work before any storage/metadata operation.
+@@ -452,6 +462,8 @@
+             failure = {"error": repr(exc), "episode_id": current_episode,
+                        "operation": operation, "unreconciled": False,
+                        "interaction_accounting": ledger.manifest()}
++        if hasattr(exc, "collection_resource_report"):
++            failure["collection_resource_report"] = exc.collection_resource_report
+         closed = env is None
+         if env is not None:
+             try:
+--- a/src/world_models/data/recovery.py
++++ b/src/world_models/data/recovery.py
+@@ -21,6 +21,7 @@
+ import shutil
+ import time
+ import traceback
++from typing import Callable
+ 
+ if __name__ == "__main__":
+     for _thread_variable in ("OMP_NUM_THREADS", "MKL_NUM_THREADS", "OPENBLAS_NUM_THREADS", "NUMEXPR_NUM_THREADS"):
+@@ -291,12 +292,14 @@
+                            failure_report=None, origin_project_root=None, max_startup_attempts=2,
+                            journal_spool_max_bytes=512 * 1024 * 1024, progress_callback=None,
+                            env_factory=None, scenario_builder=None, config_dir=None,
+-                           recovery_origin_provenance=None):
++                           recovery_origin_provenance=None,
++                           resource_guard: Callable[[], None] | None = None):
+     """Continue the same seed/config sequence, retrying only zero-physics startups.
+ 
+     Every prefix payload is verified before mutation. Original error, manifest,
+     progress, and exact ledger snapshots survive any subsequent continuation.
+     A physics-step failure never receives an automatic retry.
++    A resource-guard failure is recorded separately and never retried as startup.
+     """
+     continuation_started = time.perf_counter()
+     if (not isinstance(recovery_id, str) or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_.-]{0,63}", recovery_id)
+@@ -304,6 +307,8 @@
+         raise ValueError("name a safe recovery ID and at most two fresh startup attempts")
+     if type(journal_spool_max_bytes) is not int or journal_spool_max_bytes <= 0:
+         raise ValueError("hot journal spool needs a positive finite limit")
++    if resource_guard is not None and not callable(resource_guard):
++        raise ValueError("resource guard must be callable")
+     if recovery_origin_provenance is not None and not isinstance(recovery_origin_provenance, dict):
+         raise ValueError("recovery implementation provenance must be a JSON dictionary")
+     json.dumps(recovery_origin_provenance or {}, allow_nan=False)
+@@ -490,6 +495,9 @@
+                     env = create_env(family, seed=layout_seed, scenario_manifest=scenario,
+                         work_root=hot / "runtime" / f"attempt-{attempt:03d}" / "environments" / current_episode,
+                         frame_skip=settings["environment"]["frame_skip"])
++                    operation = "resource_enforcement"
++                    if resource_guard is not None:
++                        resource_guard()
+                     operation = "reset"
+                     try:
+                         reset = env.reset(seed=engine_seed)
+@@ -530,6 +538,9 @@
+                 try:
+                     while episode_length < limit:
+                         actions = policy.actions() if kind == "random" else policy.actions(result.training_only_info)
++                        operation = "resource_enforcement"
++                        if resource_guard is not None:
++                            resource_guard()
+                         operation = "step"
+                         step = env.step(*actions, collection_cutoff=episode_length + 1 == limit)
+                         ledger.record_transition(env, current_episode, kind, step)
+@@ -616,6 +627,8 @@
+             "published_joint_transitions": published, "completed_episodes": episodes,
+             "recovery_id": recovery_id, "traceback": traceback.format_exc(),
+             "retry_rule": "No physics-step retry; another explicit continuation requires a verified boundary/budget decision."}
++        if hasattr(error, "collection_resource_report"):
++            details["collection_resource_report"] = error.collection_resource_report
+         try:
+             ledger.record_failure(env, current_episode, operation, error)
+             details["interaction_accounting"] = ledger.manifest()
+@@ -688,7 +701,8 @@
+     try:
+         with cpu_budget(4) as budget:
+             report["cpu_budget"] = budget
+-            with CollectionResources(budget["cpu_ids"]) as resources:
++            resources = CollectionResources(budget["cpu_ids"])
++            with resources:
+                 if args.inspect_only:
+                     prefix = inspect_recoverable_prefix(args.dataset,
+                         expected_failure_sha256=args.failure_sha256, failure_report=args.failure_report,
+@@ -704,7 +718,8 @@
+                         recovery_id=args.recovery_id, expected_failure_sha256=args.failure_sha256,
+                         failure_report=args.failure_report, origin_project_root=args.origin_project,
+                         config_dir=args.origin_project / "configs", max_startup_attempts=args.max_startup_attempts,
+-                        progress_callback=progress, recovery_origin_provenance={
++                        progress_callback=progress, resource_guard=resources.check_health,
++                        recovery_origin_provenance={
+                             "entrypoint": report["entrypoint"], "implementation_sha256": report["implementation_sha256"]})
+                     report["interaction_accounting"] = result["interaction_accounting"]
+                     report["published_joint_transitions"] = result["published_joint_transitions"]
+@@ -716,7 +731,9 @@
+         report["status"] = "passed_inspection" if args.inspect_only else "complete_initial_replay"
+     except BaseException as error:
+         report.update(status="failed", error=repr(error), traceback=traceback.format_exc())
+-    if resources is not None and hasattr(resources, "elapsed"):
++        if hasattr(error, "collection_resource_report"):
++            report["collection_resource_report"] = error.collection_resource_report
++    if resources is not None:
+         try:
+             report["continuation_resource_measurements"] = resources.report()
+         except BaseException as resource_error:
+--- a/tests/test_replay_collection.py
++++ b/tests/test_replay_collection.py
+@@ -7,7 +7,7 @@
+ from pathlib import Path, PurePosixPath
+ import tempfile
+ import unittest
+-from unittest.mock import patch
++from unittest.mock import Mock, patch
+ 
+ from world_models.data.collection import (
+     CorrelatedRandomPolicy, ScriptedExplorationPolicy, collect_initial_dataset,
+@@ -251,6 +251,67 @@
+             self.assertEqual(accounting["physical_joint_decisions_including_initialization"],2)
+             self.assertFalse((output/"collection_report.json").exists())
+ 
++    def test_resource_guard_stops_before_reset_or_step_and_keeps_prior_real_work(self):
++        for failed_check, resets, steps, committed in ((1, 0, 0, 0), (3, 1, 1, 0), (6, 1, 4, 4)):
++            with self.subTest(failed_check=failed_check), tempfile.TemporaryDirectory() as directory:
++                output = Path(directory) / "initial"
++                environments = []
++
++                def factory(family, **kwargs):
++                    env = environment_fixture(family, **kwargs)
++                    env.reset = Mock(wraps=env.reset)
++                    env.step = Mock(wraps=env.step)
++                    environments.append(env)
++                    return env
++
++                checks = []
++                resource_report = {"status": "failed", "enforcement_errors": [{"stage": "affinity"}]}
++                error = RuntimeError("collection resource enforcement failed")
++                error.collection_resource_report = resource_report
++
++                def guard():
++                    checks.append(True)
++                    if len(checks) == failed_check:
++                        raise error
++
++                with self.assertRaises(RuntimeError) as caught:
++                    collect_initial_dataset("relay", 0, output, total_transitions=100,
++                        env_factory=factory, scenario_builder=scenario_fixture, resource_guard=guard,
++                        chunk_transitions=3)
++                self.assertIs(caught.exception, error)
++                self.assertEqual(len(checks), failed_check)
++                self.assertEqual(sum(env.reset.call_count for env in environments), resets)
++                self.assertEqual(sum(env.step.call_count for env in environments), steps)
++                failure = json.loads((output / "collection_error.json").read_text())
++                self.assertEqual(failure["operation"], "resource_enforcement")
++                self.assertEqual(failure["collection_resource_report"], resource_report)
++                accounting = failure["interaction_accounting"]
++                self.assertEqual(accounting["published_real_joint_transitions"], steps)
++                self.assertEqual(accounting["replay_committed_joint_transitions"], committed)
++                self.assertEqual(accounting["physical_joint_decisions_including_initialization"], steps + resets)
++                self.assertEqual(accounting["failed_dispatch_attempts"], 0)
++                rows = [json.loads(line) for line in (output / "training_interactions.jsonl").read_text().splitlines()]
++                self.assertEqual(rows[-1]["operation"], "resource_enforcement")
++                self.assertEqual(rows[-1]["physical_delta"], 0)
++                self.assertEqual(sum(row.get("published_delta", 0) for row in rows), steps)
++                self.assertFalse((output / "replay/manifest.json").exists())
++                self.assertFalse((output / "collection_report.json").exists())
++
++    def test_passing_resource_guard_keeps_collection_actions_and_seed_sequence(self):
++        with tempfile.TemporaryDirectory() as directory:
++            baseline, guarded = Path(directory) / "baseline", Path(directory) / "guarded"
++            self.collect(baseline)
++            guard = Mock()
++            report = self.collect(guarded, resource_guard=guard)
++            self.assertEqual(guard.call_count, 100 + report["completed_episodes"])
++            first, second = ReplayDataset(baseline / "replay"), ReplayDataset(guarded / "replay")
++            for left, right in zip(first.episodes, second.episodes):
++                self.assertEqual(left["episode_id"], right["episode_id"])
++                self.assertEqual(left["environment_seed"], right["environment_seed"])
++                self.assertEqual(left["collector_seed"], right["collector_seed"])
++                self.assertEqual(first.load_episode(left["episode_id"]).arrays()["actions"].tolist(),
++                                 second.load_episode(right["episode_id"]).arrays()["actions"].tolist())
++
+     def test_bounded_hot_spool_archives_runtime_and_ledger_but_not_rgb(self):
+         with tempfile.TemporaryDirectory() as directory:
+             output,hot=Path(directory)/"cold",Path(directory)/"hot"
+--- a/tests/test_replay_recovery.py
++++ b/tests/test_replay_recovery.py
+@@ -8,7 +8,7 @@
+ from pathlib import Path
+ import tempfile
+ import unittest
+-from unittest.mock import MagicMock, patch
++from unittest.mock import MagicMock, Mock, patch
+ 
+ import numpy as np
+ 
+@@ -193,6 +193,73 @@
+             self.assertEqual(failure["interaction_accounting"]["failed_dispatch_attempts"], 1)
+             self.assertIsNotNone(json.loads((output / "replay/manifest.partial.json").read_text())["active_episode"])
+ 
++    def test_resource_guard_never_retries_or_dispatches_after_failed_check(self):
++        for failed_check, resets, steps, committed in ((1, 0, 0, 4), (3, 1, 1, 4), (6, 1, 4, 8)):
++            with self.subTest(failed_check=failed_check), tempfile.TemporaryDirectory() as directory:
++                output = Path(directory) / "initial"
++                expected = make_prefix(output)
++                original_error = (output / "collection_error.json").read_bytes()
++                original_ledger = (output / "training_interactions.jsonl").read_bytes()
++                environments = []
++
++                def factory(family, **kwargs):
++                    env = spooled_environment_fixture(family, **kwargs)
++                    env.reset = Mock(wraps=env.reset)
++                    env.step = Mock(wraps=env.step)
++                    environments.append(env)
++                    return env
++
++                # Even a CoordinatorError raised by the guard must bypass the
++                # explicitly bounded SDK startup retry, because reset never ran.
++                error = CoordinatorError("resource guard rejected dispatch", {})
++                resource_report = {"status": "failed", "coverage_gaps": [{"stage": "sample"}]}
++                error.collection_resource_report = resource_report
++                checks = []
++
++                def guard():
++                    checks.append(True)
++                    if len(checks) == failed_check:
++                        raise error
++
++                with self.assertRaises(CoordinatorError) as caught:
++                    self.recover(output, expected, env_factory=factory, resource_guard=guard)
++                self.assertIs(caught.exception, error)
++                self.assertEqual(len(checks), failed_check)
++                self.assertEqual(sum(env.reset.call_count for env in environments), resets)
++                self.assertEqual(sum(env.step.call_count for env in environments), steps)
++                self.assertEqual(len(environments), 2 if failed_check == 6 else 1)
++                failure = json.loads((output / "recovery/resume-001/continuation_error.json").read_text())
++                self.assertEqual(failure["operation"], "resource_enforcement")
++                self.assertEqual(failure["collection_resource_report"], resource_report)
++                accounting = failure["interaction_accounting"]
++                self.assertEqual(accounting["published_real_joint_transitions"], 4 + steps)
++                self.assertEqual(accounting["replay_committed_joint_transitions"], committed)
++                self.assertEqual(accounting["physical_joint_decisions_including_initialization"], 5 + steps + resets)
++                self.assertEqual(accounting["failed_dispatch_attempts"], 0)
++                self.assertEqual((output / "collection_error.json").read_bytes(), original_error)
++                self.assertTrue((output / "training_interactions.jsonl").read_bytes().startswith(original_ledger))
++                rows = [json.loads(line) for line in (output / "training_interactions.jsonl").read_text().splitlines()]
++                self.assertEqual(rows[-1]["operation"], "resource_enforcement")
++                self.assertEqual(rows[-1]["physical_delta"], 0)
++                self.assertFalse((output / "replay/manifest.json").exists())
++
++    def test_passing_resource_guard_keeps_resumed_actions_and_seed_sequence(self):
++        with tempfile.TemporaryDirectory() as directory:
++            baseline = Path(directory) / "baseline/initial"
++            guarded = Path(directory) / "guarded/initial"
++            first_hash, second_hash = make_prefix(baseline), make_prefix(guarded)
++            self.recover(baseline, first_hash, journal_root=baseline.parent / "baseline-hot")
++            guard = Mock()
++            report = self.recover(guarded, second_hash, resource_guard=guard)
++            self.assertEqual(guard.call_count, 96 + report["completed_episodes"] - 1)
++            first, second = ReplayDataset(baseline / "replay"), ReplayDataset(guarded / "replay")
++            self.assertEqual(len(first.episodes), len(second.episodes))
++            for left, right in zip(first.episodes, second.episodes):
++                for name in ("episode_id", "environment_seed", "collector_seed"):
++                    self.assertEqual(left[name], right[name])
++                np.testing.assert_array_equal(first.load_episode(left["episode_id"]).arrays()["actions"],
++                                              second.load_episode(right["episode_id"]).arrays()["actions"])
++
+     def test_wrong_failure_hash_or_corrupt_prefix_is_rejected_before_new_append(self):
+         with tempfile.TemporaryDirectory() as directory:
+             output = Path(directory) / "initial"
+@@ -299,6 +366,45 @@
+             self.assertEqual(report["status"], "failed")
+             self.assertIn("invalid immutable prefix", report["error"])
+ 
++    def test_native_cli_passes_the_live_resource_health_guard(self):
++        with tempfile.TemporaryDirectory() as directory:
++            root = Path(directory)
++            resources = MagicMock()
++            resources.__enter__.return_value = resources
++            resources.report.return_value = {"status": "passed", "logical_cpu_limit": 4}
++            result = {"interaction_accounting": {}, "published_joint_transitions": 100,
++                      **{name: 1.0 for name in ("original_prefix_elapsed_seconds",
++                          "original_failed_collection_attempt_elapsed_seconds", "original_failed_startup_elapsed_seconds",
++                          "continuation_elapsed_seconds", "total_collection_attempt_elapsed_seconds")}}
++            with patch("world_models.data.recovery.resume_initial_dataset", return_value=result) as resume, \
++                    patch("world_models.data.resources.CollectionResources", return_value=resources), \
++                    patch("world_models.env.acceptance_metrics.cpu_budget", return_value=nullcontext({"cpu_ids": [0,1,2,3]})), \
++                    redirect_stdout(io.StringIO()):
++                self.assertEqual(main(self.arguments(root, ("--journal-root", str(root / "hot")))), 0)
++            self.assertIs(resume.call_args.kwargs["resource_guard"], resources.check_health)
++            report = json.loads((root / "cli-report.json").read_text())
++            self.assertEqual(report["continuation_resource_measurements"], resources.report.return_value)
++
++    def test_failed_resource_enter_exports_report_and_never_starts_native_collection(self):
++        with tempfile.TemporaryDirectory() as directory:
++            root = Path(directory)
++            resources = MagicMock()
++            resource_report = {"status": "failed", "elapsed_seconds": 0, "enforcement_errors": [{"stage": "enter"}]}
++            error = RuntimeError("collection resource enforcement failed")
++            error.collection_resource_report = resource_report
++            resources.__enter__.side_effect = error
++            resources.report.return_value = resource_report
++            with patch("world_models.data.recovery.resume_initial_dataset") as resume, \
++                    patch("world_models.data.resources.CollectionResources", return_value=resources), \
++                    patch("world_models.env.acceptance_metrics.cpu_budget", return_value=nullcontext({"cpu_ids": [0,1,2,3]})), \
++                    redirect_stdout(io.StringIO()):
++                self.assertEqual(main(self.arguments(root, ("--journal-root", str(root / "hot")))), 1)
++            resume.assert_not_called()
++            report = json.loads((root / "cli-report.json").read_text())
++            self.assertEqual(report["status"], "failed")
++            self.assertEqual(report["continuation_resource_measurements"], resource_report)
++            self.assertEqual(report["collection_resource_report"], resource_report)
++
+ 
+ if __name__ == "__main__":
+     unittest.main()

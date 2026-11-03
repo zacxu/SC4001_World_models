@@ -1,0 +1,18 @@
+{
+  "cpu_ids": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "errors": 0,
+  "failures": 0,
+  "helper_sha256": "0259413ea3699d49fa3e229cc677c1ccd2c7b97f81499adf89761190a97474b1",
+  "output": "test_an_undeclared_zero_debit_error_is_still_rejected (__main__.RecoveryAuditTests.test_an_undeclared_zero_debit_error_is_still_rejected) ... ok\ntest_bounded_second_start_requires_both_verified_failure_archives_and_intents (__main__.RecoveryAuditTests.test_bounded_second_start_requires_both_verified_failure_archives_and_intents) ... ok\ntest_full_native_payload_reconciles_with_explicit_synthetic_zero_startup (__main__.RecoveryAuditTests.test_full_native_payload_reconciles_with_explicit_synthetic_zero_startup) ... ok\ntest_original_hot_prefix_must_match_its_own_snapshot_not_final_ledger (__main__.RecoveryAuditTests.test_original_hot_prefix_must_match_its_own_snapshot_not_final_ledger) ... ok\ntest_original_prefix_payload_is_hash_protected (__main__.RecoveryAuditTests.test_original_prefix_payload_is_hash_protected) ... ok\ntest_recovery_marker_cannot_reference_another_lineage_hash (__main__.RecoveryAuditTests.test_recovery_marker_cannot_reference_another_lineage_hash) ... ok\ntest_startup_intent_cannot_change_a_seed (__main__.RecoveryAuditTests.test_startup_intent_cannot_change_a_seed) ... ok\ntest_zero_startup_validator_rejects_ack_or_action_even_with_zero_debits (__main__.RecoveryAuditTests.test_zero_startup_validator_rejects_ack_or_action_even_with_zero_debits) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 10.799s\n\nOK\n",
+  "recorded_at_utc": "2026-11-02T14:53:38.512342+00:00",
+  "scope": "Copied real preflight payloads plus explicitly synthetic recovery bookkeeping; no simulator interactions or D: dataset/source writes.",
+  "source_preflight_report_sha256": "99d101c096f023f074282c3f09cd84387da721e1fa6507e003f6bd573f865d42",
+  "status": "passed",
+  "test_helper_sha256": "8b278a0e79336fedc092d57debd8543ae746f1618907a6c711a5e7bcdcce3e87",
+  "tests_run": 8
+}

@@ -1,0 +1,1784 @@
+{
+  "schema_version": 1,
+  "kind": "independent_readonly_privileged_target_and_event_trace_audit",
+  "audited_at_utc": "2026-11-01T08:45:01.507551+00:00",
+  "campaign_status_observed": "complete_phase1",
+  "registry_file": {
+    "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\privileged_registry.json",
+    "sha256": "c18f44850ea014004dc57a8fb74930d6256d7e32ef75eeb11c01e4cc775787f2",
+    "canonical_registry_sha256": "27c28797bb1d0e20409e45ae7dafa93f354e7b71f4cd340e5141d85e347639b5"
+  },
+  "audit_program_sha256": "9d6d01d4e3b8da0f10cb66382c8da00be66f7ca96f3371208f6ab2de1b19ac6b",
+  "mechanics": [
+    {
+      "rows_audited": 600,
+      "checks_evaluated": 281398,
+      "failed_checks": 0,
+      "first_failures": [],
+      "boundary_counts": {
+        "continue": 599,
+        "deadline": 1
+      },
+      "missing_image_slots": 0,
+      "fractional_npc_coordinate_rows": 566,
+      "episode_ids": [
+        0
+      ],
+      "counter_positive_deltas": {
+        "console_1_completions": 1,
+        "player_1_hitcount": 5,
+        "player_1_damagecount": 45,
+        "enemy_2_deaths": 1,
+        "player_0_killcount": 2,
+        "player_1_killcount": 2,
+        "enemy_1_deaths": 1,
+        "failures": 1
+      },
+      "max_once_counter": {
+        "latch_activations": 0,
+        "console_1_completions": 1,
+        "console_2_completions": 0,
+        "successes": 0,
+        "failures": 1,
+        "player_0_deaths": 0,
+        "player_1_deaths": 0,
+        "enemy_1_deaths": 1,
+        "enemy_2_deaths": 1
+      },
+      "episode_resets_in_trace": 0,
+      "status": "passed",
+      "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\cover_inactive0\\mechanics_trace.json",
+      "sha256": "83c4fad00118d6134d35fc36f9d47e92c48056b8171bac1cfa49cad7c4fc6fa3",
+      "task_family": "cover",
+      "template_id": "cover_train_00",
+      "expected_rows": 600,
+      "sampling": "all persisted mechanics rows",
+      "locality": null
+    },
+    {
+      "rows_audited": 600,
+      "checks_evaluated": 281398,
+      "failed_checks": 0,
+      "first_failures": [],
+      "boundary_counts": {
+        "continue": 599,
+        "deadline": 1
+      },
+      "missing_image_slots": 0,
+      "fractional_npc_coordinate_rows": 569,
+      "episode_ids": [
+        0
+      ],
+      "counter_positive_deltas": {
+        "player_0_hitcount": 2,
+        "player_0_damagecount": 25,
+        "enemy_1_deaths": 1,
+        "player_0_killcount": 1,
+        "player_1_killcount": 1,
+        "failures": 1
+      },
+      "max_once_counter": {
+        "latch_activations": 0,
+        "console_1_completions": 0,
+        "console_2_completions": 0,
+        "successes": 0,
+        "failures": 1,
+        "player_0_deaths": 0,
+        "player_1_deaths": 0,
+        "enemy_1_deaths": 1,
+        "enemy_2_deaths": 0
+      },
+      "episode_resets_in_trace": 0,
+      "status": "passed",
+      "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\cover_inactive1\\mechanics_trace.json",
+      "sha256": "4e3f1779fb9a23f0fd7accd8f2b9d2e2c160e89f2da55eb255b95cbc35279dae",
+      "task_family": "cover",
+      "template_id": "cover_train_00",
+      "expected_rows": 600,
+      "sampling": "all persisted mechanics rows",
+      "locality": null
+    },
+    {
+      "rows_audited": 137,
+      "checks_evaluated": 64251,
+      "failed_checks": 0,
+      "first_failures": [],
+      "boundary_counts": {
+        "continue": 136,
+        "success": 1
+      },
+      "missing_image_slots": 0,
+      "fractional_npc_coordinate_rows": 106,
+      "episode_ids": [
+        0
+      ],
+      "counter_positive_deltas": {
+        "console_1_completions": 1,
+        "player_0_hitcount": 1,
+        "player_0_damagecount": 15,
+        "player_1_hits_taken": 1,
+        "player_1_damage_taken": 4,
+        "player_1_hitcount": 2,
+        "player_1_damagecount": 15,
+        "console_2_completions": 1,
+        "successes": 1
+      },
+      "max_once_counter": {
+        "latch_activations": 0,
+        "console_1_completions": 1,
+        "console_2_completions": 1,
+        "successes": 1,
+        "failures": 0,
+        "player_0_deaths": 0,
+        "player_1_deaths": 0,
+        "enemy_1_deaths": 0,
+        "enemy_2_deaths": 0
+      },
+      "episode_resets_in_trace": 0,
+      "status": "passed",
+      "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\cover_test_00\\mechanics_trace.json",
+      "sha256": "61640742a3d9100e3bfba829ae71ecdaeb1de4193665e5f4e64e3e2dfda8dc9c",
+      "task_family": "cover",
+      "template_id": "cover_test_00",
+      "expected_rows": 137,
+      "sampling": "all persisted mechanics rows",
+      "locality": null
+    },
+    {
+      "rows_audited": 139,
+      "checks_evaluated": 65189,
+      "failed_checks": 0,
+      "first_failures": [],
+      "boundary_counts": {
+        "continue": 138,
+        "success": 1
+      },
+      "missing_image_slots": 0,
+      "fractional_npc_coordinate_rows": 108,
+      "episode_ids": [
+        0
+      ],
+      "counter_positive_deltas": {
+        "console_1_completions": 1,
+        "player_0_hitcount": 1,
+        "player_0_damagecount": 15,
+        "player_1_hits_taken": 1,
+        "player_1_damage_taken": 4,
+        "player_1_hitcount": 2,
+        "player_1_damagecount": 15,
+        "console_2_completions": 1,
+        "successes": 1
+      },
+      "max_once_counter": {
+        "latch_activations": 0,
+        "console_1_completions": 1,
+        "console_2_completions": 1,
+        "successes": 1,
+        "failures": 0,
+        "player_0_deaths": 0,
+        "player_1_deaths": 0,
+        "enemy_1_deaths": 0,
+        "enemy_2_deaths": 0
+      },
+      "episode_resets_in_trace": 0,
+      "status": "passed",
+      "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\cover_test_01\\mechanics_trace.json",
+      "sha256": "ed7ce7b1cf9ed33748b19a0e036ff7143abcb4287dfd8a8e0fb9d1596c5bcf2f",
+      "task_family": "cover",
+      "template_id": "cover_test_01",
+      "expected_rows": 139,
+      "sampling": "all persisted mechanics rows",
+      "locality": null
+    },
+    {
+      "rows_audited": 107,
+      "checks_evaluated": 50181,
+      "failed_checks": 0,
+      "first_failures": [],
+      "boundary_counts": {
+        "continue": 106,
+        "success": 1
+      },
+      "missing_image_slots": 0,
+      "fractional_npc_coordinate_rows": 76,
+      "episode_ids": [
+        0
+      ],
+      "counter_positive_deltas": {
+        "console_1_completions": 1,
+        "player_0_hitcount": 1,
+        "player_0_damagecount": 15,
+        "player_1_hits_taken": 1,
+        "player_1_damage_taken": 4,
+        "player_1_hitcount": 2,
+        "player_1_damagecount": 20,
+        "console_2_completions": 1,
+        "enemy_2_deaths": 1,
+        "player_0_killcount": 1,
+        "player_1_killcount": 1,
+        "successes": 1
+      },
+      "max_once_counter": {
+        "latch_activations": 0,
+        "console_1_completions": 1,
+        "console_2_completions": 1,
+        "successes": 1,
+        "failures": 0,
+        "player_0_deaths": 0,
+        "player_1_deaths": 0,
+        "enemy_1_deaths": 0,
+        "enemy_2_deaths": 1
+      },
+      "episode_resets_in_trace": 0,
+      "status": "passed",
+      "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\cover_train_00\\mechanics_trace.json",
+      "sha256": "cb860ed67b3708702d4b8d7961af9e5754ea2c335dd1126e5287f36082e7e6a5",
+      "task_family": "cover",
+      "template_id": "cover_train_00",
+      "expected_rows": 107,
+      "sampling": "all persisted mechanics rows",
+      "locality": {
+        "status": "passed",
+        "players": [
+          {
+            "player": 0,
+            "history_length": 6,
+            "image_sha256": [
+              "8933138ea766b9b79093c722b82c3d8a20c837329b4e0de1a68af637e90d4674",
+              "8b05638f1658b858c13a10fc8887fe0c82b66a8cd05158e6b8ebdcf75b502cfb",
+              "39b6dc0dd2c19143c6d002235a3a427b053c488c807a8ea4fb6a6494f91299e1",
+              "7e30ffc9dd264df28deeeabc0952e0b83c21ab3416268e3becab864a86a7a425",
+              "5734624b4f980ae955291759c2ca715df187da2771726e0e437d58ef58f82bcc",
+              "a03050221a89f6ef81a0187d0bc4593d155b4691532f7be5b09b5f36392866b7"
+            ],
+            "executed_previous_action_history": [
+              12,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "outputs_equal_after_global_and_teammate_changes": true,
+            "own_image_change_changes_output": true,
+            "final_memories_equal": true
+          },
+          {
+            "player": 1,
+            "history_length": 6,
+            "image_sha256": [
+              "8f8f66e1122af9c10d76bc2b3896da234e69dff5b2634ff47fa5f498ece1acbd",
+              "c213343ab7dff30e1eaacfa2f47c251a4518ac93d900f5dea4a423c69b66394c",
+              "9f54ab1013b7e5146efb8a330921c6252ab52f630c8b113409903abc3a154cbe",
+              "71d8223f4c65564525f7707086715f5eed0732a3af28ec16a958b0c3b8da224b",
+              "eaab4f55c86b65daf9665cd12bfde009e24a9e682e6bfcf91a42b73f84ac041b",
+              "0413b7273f2de508c0d5924ca65f6258d96dcbe461d2545151f435fd8582e1a7"
+            ],
+            "executed_previous_action_history": [
+              12,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "outputs_equal_after_global_and_teammate_changes": true,
+            "own_image_change_changes_output": true,
+            "final_memories_equal": true
+          }
+        ],
+        "actor": "LocalContractProbe",
+        "scope": "Phase 1 adapter/contract isolation using a pixel/action/memory-dependent probe. No trained B/D actor exists yet; rerun with deployment actors in Phase 3."
+      }
+    },
+    {
+      "rows_audited": 113,
+      "checks_evaluated": 52995,
+      "failed_checks": 0,
+      "first_failures": [],
+      "boundary_counts": {
+        "continue": 112,
+        "success": 1
+      },
+      "missing_image_slots": 0,
+      "fractional_npc_coordinate_rows": 82,
+      "episode_ids": [
+        0
+      ],
+      "counter_positive_deltas": {
+        "console_1_completions": 1,
+        "player_0_hitcount": 1,
+        "player_0_damagecount": 15,
+        "player_1_hits_taken": 1,
+        "player_1_damage_taken": 4,
+        "player_1_hitcount": 2,
+        "player_1_damagecount": 15,
+        "console_2_completions": 1,
+        "successes": 1
+      },
+      "max_once_counter": {
+        "latch_activations": 0,
+        "console_1_completions": 1,
+        "console_2_completions": 1,
+        "successes": 1,
+        "failures": 0,
+        "player_0_deaths": 0,
+        "player_1_deaths": 0,
+        "enemy_1_deaths": 0,
+        "enemy_2_deaths": 0
+      },
+      "episode_resets_in_trace": 0,
+      "status": "passed",
+      "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\cover_train_01\\mechanics_trace.json",
+      "sha256": "2864ab859822e35027e1670c9eb2bfc8cc3ade538755476dbbe5f4dc06ec579b",
+      "task_family": "cover",
+      "template_id": "cover_train_01",
+      "expected_rows": 113,
+      "sampling": "all persisted mechanics rows",
+      "locality": null
+    },
+    {
+      "rows_audited": 140,
+      "checks_evaluated": 65658,
+      "failed_checks": 0,
+      "first_failures": [],
+      "boundary_counts": {
+        "continue": 139,
+        "success": 1
+      },
+      "missing_image_slots": 0,
+      "fractional_npc_coordinate_rows": 138,
+      "episode_ids": [
+        0
+      ],
+      "counter_positive_deltas": {
+        "console_1_completions": 1,
+        "player_0_hitcount": 1,
+        "player_0_damagecount": 15,
+        "player_0_hits_taken": 3,
+        "player_0_damage_taken": 14,
+        "player_1_hits_taken": 2,
+        "player_1_damage_taken": 8,
+        "player_1_hitcount": 3,
+        "player_1_damagecount": 30,
+        "enemy_2_deaths": 1,
+        "player_0_killcount": 1,
+        "player_1_killcount": 1,
+        "console_2_completions": 1,
+        "successes": 1
+      },
+      "max_once_counter": {
+        "latch_activations": 0,
+        "console_1_completions": 1,
+        "console_2_completions": 1,
+        "successes": 1,
+        "failures": 0,
+        "player_0_deaths": 0,
+        "player_1_deaths": 0,
+        "enemy_1_deaths": 0,
+        "enemy_2_deaths": 1
+      },
+      "episode_resets_in_trace": 0,
+      "status": "passed",
+      "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\cover_train_02\\mechanics_trace.json",
+      "sha256": "4e70e7817b354307a73a4e019ba7cac0f8d62c18998b8ab74d8bfa57275e47a1",
+      "task_family": "cover",
+      "template_id": "cover_train_02",
+      "expected_rows": 140,
+      "sampling": "all persisted mechanics rows",
+      "locality": null
+    },
+    {
+      "rows_audited": 121,
+      "checks_evaluated": 56747,
+      "failed_checks": 0,
+      "first_failures": [],
+      "boundary_counts": {
+        "continue": 120,
+        "success": 1
+      },
+      "missing_image_slots": 0,
+      "fractional_npc_coordinate_rows": 90,
+      "episode_ids": [
+        0
+      ],
+      "counter_positive_deltas": {
+        "console_1_completions": 1,
+        "player_0_hitcount": 1,
+        "player_0_damagecount": 15,
+        "player_1_hits_taken": 1,
+        "player_1_damage_taken": 4,
+        "player_1_hitcount": 2,
+        "player_1_damagecount": 15,
+        "console_2_completions": 1,
+        "successes": 1
+      },
+      "max_once_counter": {
+        "latch_activations": 0,
+        "console_1_completions": 1,
+        "console_2_completions": 1,
+        "successes": 1,
+        "failures": 0,
+        "player_0_deaths": 0,
+        "player_1_deaths": 0,
+        "enemy_1_deaths": 0,
+        "enemy_2_deaths": 0
+      },
+      "episode_resets_in_trace": 0,
+      "status": "passed",
+      "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\cover_train_03\\mechanics_trace.json",
+      "sha256": "301cf4974b71db4f93de444ae55279ee827a7ea7abfb5016d824c72565c566b8",
+      "task_family": "cover",
+      "template_id": "cover_train_03",
+      "expected_rows": 121,
+      "sampling": "all persisted mechanics rows",
+      "locality": null
+    },
+    {
+      "rows_audited": 147,
+      "checks_evaluated": 68941,
+      "failed_checks": 0,
+      "first_failures": [],
+      "boundary_counts": {
+        "continue": 146,
+        "success": 1
+      },
+      "missing_image_slots": 0,
+      "fractional_npc_coordinate_rows": 145,
+      "episode_ids": [
+        0
+      ],
+      "counter_positive_deltas": {
+        "console_1_completions": 1,
+        "player_0_hitcount": 1,
+        "player_0_damagecount": 15,
+        "player_0_hits_taken": 3,
+        "player_0_damage_taken": 14,
+        "player_1_hits_taken": 2,
+        "player_1_damage_taken": 8,
+        "player_1_hitcount": 3,
+        "player_1_damagecount": 30,
+        "enemy_2_deaths": 1,
+        "player_0_killcount": 1,
+        "player_1_killcount": 1,
+        "console_2_completions": 1,
+        "successes": 1
+      },
+      "max_once_counter": {
+        "latch_activations": 0,
+        "console_1_completions": 1,
+        "console_2_completions": 1,
+        "successes": 1,
+        "failures": 0,
+        "player_0_deaths": 0,
+        "player_1_deaths": 0,
+        "enemy_1_deaths": 0,
+        "enemy_2_deaths": 1
+      },
+      "episode_resets_in_trace": 0,
+      "status": "passed",
+      "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\cover_train_04\\mechanics_trace.json",
+      "sha256": "26ed54128f296145d387a81477d132561532c657ecbe950c88798501fe7646e5",
+      "task_family": "cover",
+      "template_id": "cover_train_04",
+      "expected_rows": 147,
+      "sampling": "all persisted mechanics rows",
+      "locality": null
+    },
+    {
+      "rows_audited": 127,
+      "checks_evaluated": 59561,
+      "failed_checks": 0,
+      "first_failures": [],
+      "boundary_counts": {
+        "continue": 126,
+        "success": 1
+      },
+      "missing_image_slots": 0,
+      "fractional_npc_coordinate_rows": 96,
+      "episode_ids": [
+        0
+      ],
+      "counter_positive_deltas": {
+        "console_1_completions": 1,
+        "player_0_hitcount": 1,
+        "player_0_damagecount": 15,
+        "player_1_hits_taken": 1,
+        "player_1_damage_taken": 4,
+        "player_1_hitcount": 2,
+        "player_1_damagecount": 15,
+        "console_2_completions": 1,
+        "successes": 1
+      },
+      "max_once_counter": {
+        "latch_activations": 0,
+        "console_1_completions": 1,
+        "console_2_completions": 1,
+        "successes": 1,
+        "failures": 0,
+        "player_0_deaths": 0,
+        "player_1_deaths": 0,
+        "enemy_1_deaths": 0,
+        "enemy_2_deaths": 0
+      },
+      "episode_resets_in_trace": 0,
+      "status": "passed",
+      "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\cover_train_05\\mechanics_trace.json",
+      "sha256": "34a9aaa9096e193ec640aecc94a7abf752bc1bcf8c946782a6ecaa51d48038b7",
+      "task_family": "cover",
+      "template_id": "cover_train_05",
+      "expected_rows": 127,
+      "sampling": "all persisted mechanics rows",
+      "locality": null
+    },
+    {
+      "rows_audited": 131,
+      "checks_evaluated": 61437,
+      "failed_checks": 0,
+      "first_failures": [],
+      "boundary_counts": {
+        "continue": 130,
+        "success": 1
+      },
+      "missing_image_slots": 0,
+      "fractional_npc_coordinate_rows": 100,
+      "episode_ids": [
+        0
+      ],
+      "counter_positive_deltas": {
+        "console_1_completions": 1,
+        "player_0_hitcount": 1,
+        "player_0_damagecount": 15,
+        "player_1_hits_taken": 1,
+        "player_1_damage_taken": 4,
+        "player_1_hitcount": 2,
+        "player_1_damagecount": 15,
+        "console_2_completions": 1,
+        "successes": 1
+      },
+      "max_once_counter": {
+        "latch_activations": 0,
+        "console_1_completions": 1,
+        "console_2_completions": 1,
+        "successes": 1,
+        "failures": 0,
+        "player_0_deaths": 0,
+        "player_1_deaths": 0,
+        "enemy_1_deaths": 0,
+        "enemy_2_deaths": 0
+      },
+      "episode_resets_in_trace": 0,
+      "status": "passed",
+      "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\cover_validation_00\\mechanics_trace.json",
+      "sha256": "bc7212b52db4ecfc841563b77ca43f45765d573a6ef4a91c79af81b8ebd56239",
+      "task_family": "cover",
+      "template_id": "cover_validation_00",
+      "expected_rows": 131,
+      "sampling": "all persisted mechanics rows",
+      "locality": null
+    },
+    {
+      "rows_audited": 193,
+      "checks_evaluated": 90515,
+      "failed_checks": 0,
+      "first_failures": [],
+      "boundary_counts": {
+        "continue": 192,
+        "success": 1
+      },
+      "missing_image_slots": 0,
+      "fractional_npc_coordinate_rows": 191,
+      "episode_ids": [
+        0
+      ],
+      "counter_positive_deltas": {
+        "console_1_completions": 1,
+        "player_1_hits_taken": 2,
+        "player_1_damage_taken": 10,
+        "player_1_hitcount": 4,
+        "player_1_damagecount": 40,
+        "enemy_2_deaths": 1,
+        "player_0_killcount": 2,
+        "player_1_killcount": 2,
+        "enemy_1_deaths": 1,
+        "console_2_completions": 1,
+        "successes": 1
+      },
+      "max_once_counter": {
+        "latch_activations": 0,
+        "console_1_completions": 1,
+        "console_2_completions": 1,
+        "successes": 1,
+        "failures": 0,
+        "player_0_deaths": 0,
+        "player_1_deaths": 0,
+        "enemy_1_deaths": 1,
+        "enemy_2_deaths": 1
+      },
+      "episode_resets_in_trace": 0,
+      "status": "passed",
+      "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\cover_validation_01\\mechanics_trace.json",
+      "sha256": "1618534ce1946d5fe329a23885287674cb95628ee518a08ae89f971081ee51ce",
+      "task_family": "cover",
+      "template_id": "cover_validation_01",
+      "expected_rows": 193,
+      "sampling": "all persisted mechanics rows",
+      "locality": null
+    },
+    {
+      "rows_audited": 400,
+      "checks_evaluated": 179598,
+      "failed_checks": 0,
+      "first_failures": [],
+      "boundary_counts": {
+        "continue": 399,
+        "deadline": 1
+      },
+      "missing_image_slots": 0,
+      "fractional_npc_coordinate_rows": 0,
+      "episode_ids": [
+        0
+      ],
+      "counter_positive_deltas": {
+        "failures": 1
+      },
+      "max_once_counter": {
+        "latch_activations": 0,
+        "console_1_completions": 0,
+        "console_2_completions": 0,
+        "successes": 0,
+        "failures": 1,
+        "player_0_deaths": 0,
+        "player_1_deaths": 0,
+        "enemy_1_deaths": 0,
+        "enemy_2_deaths": 0
+      },
+      "episode_resets_in_trace": 0,
+      "status": "passed",
+      "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\relay_inactive0\\mechanics_trace.json",
+      "sha256": "d6aa9fba05080402633823b6994c48cdc8b49e12b6d86ccd893bc92db02efef8",
+      "task_family": "relay",
+      "template_id": "relay_train_00",
+      "expected_rows": 400,
+      "sampling": "all persisted mechanics rows",
+      "locality": null
+    },
+    {
+      "rows_audited": 400,
+      "checks_evaluated": 179598,
+      "failed_checks": 0,
+      "first_failures": [],
+      "boundary_counts": {
+        "continue": 399,
+        "deadline": 1
+      },
+      "missing_image_slots": 0,
+      "fractional_npc_coordinate_rows": 0,
+      "episode_ids": [
+        0
+      ],
+      "counter_positive_deltas": {
+        "plate_entries": 1,
+        "gate_opens": 1,
+        "failures": 1
+      },
+      "max_once_counter": {
+        "latch_activations": 0,
+        "console_1_completions": 0,
+        "console_2_completions": 0,
+        "successes": 0,
+        "failures": 1,
+        "player_0_deaths": 0,
+        "player_1_deaths": 0,
+        "enemy_1_deaths": 0,
+        "enemy_2_deaths": 0
+      },
+      "episode_resets_in_trace": 0,
+      "status": "passed",
+      "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\relay_inactive1\\mechanics_trace.json",
+      "sha256": "e6f6ef38e002fd65ffee7b2b6d5b959bf5d33bce0887a9c3a648a108eefa71de",
+      "task_family": "relay",
+      "template_id": "relay_train_00",
+      "expected_rows": 400,
+      "sampling": "all persisted mechanics rows",
+      "locality": null
+    },
+    {
+      "rows_audited": 89,
+      "checks_evaluated": 39959,
+      "failed_checks": 0,
+      "first_failures": [],
+      "boundary_counts": {
+        "continue": 88,
+        "success": 1
+      },
+      "missing_image_slots": 0,
+      "fractional_npc_coordinate_rows": 0,
+      "episode_ids": [
+        0
+      ],
+      "counter_positive_deltas": {
+        "plate_entries": 1,
+        "gate_opens": 2,
+        "latch_activations": 1,
+        "plate_exits": 1,
+        "successes": 1
+      },
+      "max_once_counter": {
+        "latch_activations": 1,
+        "console_1_completions": 0,
+        "console_2_completions": 0,
+        "successes": 1,
+        "failures": 0,
+        "player_0_deaths": 0,
+        "player_1_deaths": 0,
+        "enemy_1_deaths": 0,
+        "enemy_2_deaths": 0
+      },
+      "episode_resets_in_trace": 0,
+      "status": "passed",
+      "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\relay_test_00\\mechanics_trace.json",
+      "sha256": "335afe17c2c7d453f75267e9d2eb313e670fb28ba17dae432dd1b11a1eaa0118",
+      "task_family": "relay",
+      "template_id": "relay_test_00",
+      "expected_rows": 89,
+      "sampling": "all persisted mechanics rows",
+      "locality": null
+    },
+    {
+      "rows_audited": 96,
+      "checks_evaluated": 43102,
+      "failed_checks": 0,
+      "first_failures": [],
+      "boundary_counts": {
+        "continue": 95,
+        "success": 1
+      },
+      "missing_image_slots": 0,
+      "fractional_npc_coordinate_rows": 0,
+      "episode_ids": [
+        0
+      ],
+      "counter_positive_deltas": {
+        "plate_entries": 1,
+        "gate_opens": 2,
+        "latch_activations": 1,
+        "plate_exits": 1,
+        "successes": 1
+      },
+      "max_once_counter": {
+        "latch_activations": 1,
+        "console_1_completions": 0,
+        "console_2_completions": 0,
+        "successes": 1,
+        "failures": 0,
+        "player_0_deaths": 0,
+        "player_1_deaths": 0,
+        "enemy_1_deaths": 0,
+        "enemy_2_deaths": 0
+      },
+      "episode_resets_in_trace": 0,
+      "status": "passed",
+      "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\relay_test_01\\mechanics_trace.json",
+      "sha256": "8baecf2fd5de7c32fcfc1da8bd191a41df17970b8645807534a330e03c39df90",
+      "task_family": "relay",
+      "template_id": "relay_test_01",
+      "expected_rows": 96,
+      "sampling": "all persisted mechanics rows",
+      "locality": null
+    },
+    {
+      "rows_audited": 59,
+      "checks_evaluated": 26489,
+      "failed_checks": 0,
+      "first_failures": [],
+      "boundary_counts": {
+        "continue": 58,
+        "success": 1
+      },
+      "missing_image_slots": 0,
+      "fractional_npc_coordinate_rows": 0,
+      "episode_ids": [
+        0
+      ],
+      "counter_positive_deltas": {
+        "plate_entries": 1,
+        "gate_opens": 2,
+        "latch_activations": 1,
+        "plate_exits": 1,
+        "successes": 1
+      },
+      "max_once_counter": {
+        "latch_activations": 1,
+        "console_1_completions": 0,
+        "console_2_completions": 0,
+        "successes": 1,
+        "failures": 0,
+        "player_0_deaths": 0,
+        "player_1_deaths": 0,
+        "enemy_1_deaths": 0,
+        "enemy_2_deaths": 0
+      },
+      "episode_resets_in_trace": 0,
+      "status": "passed",
+      "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\relay_train_00\\mechanics_trace.json",
+      "sha256": "208238f7a91e4c4007281e720f58db5e7872512e32a48a4b3a0d547f571a4db4",
+      "task_family": "relay",
+      "template_id": "relay_train_00",
+      "expected_rows": 59,
+      "sampling": "all persisted mechanics rows",
+      "locality": {
+        "status": "passed",
+        "players": [
+          {
+            "player": 0,
+            "history_length": 6,
+            "image_sha256": [
+              "5d63e6f69bf706d30ce654be2c89e3fe62ee9b3f02b3ffcb54f23cd40abcf389",
+              "efc07a6e81b599268c0b2105d4f87472e64059bfb56d68cc195c3978311b54d2",
+              "fd60dccaf60574fd3af69e12bb7474fcf5fee485bedb960868cf96d62916826f",
+              "ac3b621bfe49e21073462545dafa8a6e7eedb53b16e7718e10ced0713d6b8201",
+              "2a21a2fc8fc2dd860900d05b7d82cbae409ce7e1e4a4ff7d169c7bcf43d07952",
+              "3916be57dbc0d68c2c6a67d4c152175c347a402af213969ee27c01728a9789c2"
+            ],
+            "executed_previous_action_history": [
+              12,
+              1,
+              1,
+              1,
+              1,
+              2
+            ],
+            "outputs_equal_after_global_and_teammate_changes": true,
+            "own_image_change_changes_output": true,
+            "final_memories_equal": true
+          },
+          {
+            "player": 1,
+            "history_length": 6,
+            "image_sha256": [
+              "375ed6b98203bfd58131ff3f0d881ccc966c675e0d74bec0e1f6f36bd2838ebd",
+              "51b07914c8b119aa20b86158b6ffdba5668e8ff8faa99f74eaf150181b189a0c",
+              "9c89ec1d6127c909e2a110b126b9799e642d8ebe838a5b3e10c54d6b14933721",
+              "219a3c9b6c847c7811ca56eb0f4283ebc5c8887562bb714628a184d6545f281b",
+              "baf172cc560568234e98e05d80b9cc193790029d90def0c3d13c4697111dc161",
+              "4d5e489b555e704b431ca16d638d43406de1c7e2712da51554c18df47d5fd744"
+            ],
+            "executed_previous_action_history": [
+              12,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "outputs_equal_after_global_and_teammate_changes": true,
+            "own_image_change_changes_output": true,
+            "final_memories_equal": true
+          }
+        ],
+        "actor": "LocalContractProbe",
+        "scope": "Phase 1 adapter/contract isolation using a pixel/action/memory-dependent probe. No trained B/D actor exists yet; rerun with deployment actors in Phase 3."
+      }
+    },
+    {
+      "rows_audited": 63,
+      "checks_evaluated": 28285,
+      "failed_checks": 0,
+      "first_failures": [],
+      "boundary_counts": {
+        "continue": 62,
+        "success": 1
+      },
+      "missing_image_slots": 0,
+      "fractional_npc_coordinate_rows": 0,
+      "episode_ids": [
+        0
+      ],
+      "counter_positive_deltas": {
+        "plate_entries": 1,
+        "gate_opens": 2,
+        "latch_activations": 1,
+        "plate_exits": 1,
+        "successes": 1
+      },
+      "max_once_counter": {
+        "latch_activations": 1,
+        "console_1_completions": 0,
+        "console_2_completions": 0,
+        "successes": 1,
+        "failures": 0,
+        "player_0_deaths": 0,
+        "player_1_deaths": 0,
+        "enemy_1_deaths": 0,
+        "enemy_2_deaths": 0
+      },
+      "episode_resets_in_trace": 0,
+      "status": "passed",
+      "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\relay_train_01\\mechanics_trace.json",
+      "sha256": "c29edd7c448d2cb3521ef08fdada6b3129ede8cda37891ffa0ad18afc9147fa4",
+      "task_family": "relay",
+      "template_id": "relay_train_01",
+      "expected_rows": 63,
+      "sampling": "all persisted mechanics rows",
+      "locality": null
+    },
+    {
+      "rows_audited": 64,
+      "checks_evaluated": 28734,
+      "failed_checks": 0,
+      "first_failures": [],
+      "boundary_counts": {
+        "continue": 63,
+        "success": 1
+      },
+      "missing_image_slots": 0,
+      "fractional_npc_coordinate_rows": 0,
+      "episode_ids": [
+        0
+      ],
+      "counter_positive_deltas": {
+        "plate_entries": 1,
+        "gate_opens": 2,
+        "latch_activations": 1,
+        "plate_exits": 1,
+        "successes": 1
+      },
+      "max_once_counter": {
+        "latch_activations": 1,
+        "console_1_completions": 0,
+        "console_2_completions": 0,
+        "successes": 1,
+        "failures": 0,
+        "player_0_deaths": 0,
+        "player_1_deaths": 0,
+        "enemy_1_deaths": 0,
+        "enemy_2_deaths": 0
+      },
+      "episode_resets_in_trace": 0,
+      "status": "passed",
+      "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\relay_train_02\\mechanics_trace.json",
+      "sha256": "f33d4ab48bacd5172367f4a7b47befc3df6394e5712d600a255aea735ae132ec",
+      "task_family": "relay",
+      "template_id": "relay_train_02",
+      "expected_rows": 64,
+      "sampling": "all persisted mechanics rows",
+      "locality": null
+    },
+    {
+      "rows_audited": 67,
+      "checks_evaluated": 30081,
+      "failed_checks": 0,
+      "first_failures": [],
+      "boundary_counts": {
+        "continue": 66,
+        "success": 1
+      },
+      "missing_image_slots": 0,
+      "fractional_npc_coordinate_rows": 0,
+      "episode_ids": [
+        0
+      ],
+      "counter_positive_deltas": {
+        "plate_entries": 1,
+        "gate_opens": 2,
+        "latch_activations": 1,
+        "plate_exits": 1,
+        "successes": 1
+      },
+      "max_once_counter": {
+        "latch_activations": 1,
+        "console_1_completions": 0,
+        "console_2_completions": 0,
+        "successes": 1,
+        "failures": 0,
+        "player_0_deaths": 0,
+        "player_1_deaths": 0,
+        "enemy_1_deaths": 0,
+        "enemy_2_deaths": 0
+      },
+      "episode_resets_in_trace": 0,
+      "status": "passed",
+      "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\relay_train_03\\mechanics_trace.json",
+      "sha256": "9f522f36ca6c66dad1a05290bce1560802a38621196ab02b21fe5d5eb4cfca73",
+      "task_family": "relay",
+      "template_id": "relay_train_03",
+      "expected_rows": 67,
+      "sampling": "all persisted mechanics rows",
+      "locality": null
+    },
+    {
+      "rows_audited": 71,
+      "checks_evaluated": 31877,
+      "failed_checks": 0,
+      "first_failures": [],
+      "boundary_counts": {
+        "continue": 70,
+        "success": 1
+      },
+      "missing_image_slots": 0,
+      "fractional_npc_coordinate_rows": 0,
+      "episode_ids": [
+        0
+      ],
+      "counter_positive_deltas": {
+        "plate_entries": 1,
+        "gate_opens": 2,
+        "latch_activations": 1,
+        "plate_exits": 1,
+        "successes": 1
+      },
+      "max_once_counter": {
+        "latch_activations": 1,
+        "console_1_completions": 0,
+        "console_2_completions": 0,
+        "successes": 1,
+        "failures": 0,
+        "player_0_deaths": 0,
+        "player_1_deaths": 0,
+        "enemy_1_deaths": 0,
+        "enemy_2_deaths": 0
+      },
+      "episode_resets_in_trace": 0,
+      "status": "passed",
+      "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\relay_train_04\\mechanics_trace.json",
+      "sha256": "ec0f795e91ab6fc8faea818444f314cfe8bec747ae8a7435f28f6a30fdf00526",
+      "task_family": "relay",
+      "template_id": "relay_train_04",
+      "expected_rows": 71,
+      "sampling": "all persisted mechanics rows",
+      "locality": null
+    },
+    {
+      "rows_audited": 76,
+      "checks_evaluated": 34122,
+      "failed_checks": 0,
+      "first_failures": [],
+      "boundary_counts": {
+        "continue": 75,
+        "success": 1
+      },
+      "missing_image_slots": 0,
+      "fractional_npc_coordinate_rows": 0,
+      "episode_ids": [
+        0
+      ],
+      "counter_positive_deltas": {
+        "plate_entries": 1,
+        "gate_opens": 2,
+        "latch_activations": 1,
+        "plate_exits": 1,
+        "successes": 1
+      },
+      "max_once_counter": {
+        "latch_activations": 1,
+        "console_1_completions": 0,
+        "console_2_completions": 0,
+        "successes": 1,
+        "failures": 0,
+        "player_0_deaths": 0,
+        "player_1_deaths": 0,
+        "enemy_1_deaths": 0,
+        "enemy_2_deaths": 0
+      },
+      "episode_resets_in_trace": 0,
+      "status": "passed",
+      "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\relay_train_05\\mechanics_trace.json",
+      "sha256": "e084d515bf220f73570c8a6d6eef1a8a4f6fcbdb23a2455ddefc569128001211",
+      "task_family": "relay",
+      "template_id": "relay_train_05",
+      "expected_rows": 76,
+      "sampling": "all persisted mechanics rows",
+      "locality": null
+    },
+    {
+      "rows_audited": 80,
+      "checks_evaluated": 35918,
+      "failed_checks": 0,
+      "first_failures": [],
+      "boundary_counts": {
+        "continue": 79,
+        "success": 1
+      },
+      "missing_image_slots": 0,
+      "fractional_npc_coordinate_rows": 0,
+      "episode_ids": [
+        0
+      ],
+      "counter_positive_deltas": {
+        "plate_entries": 1,
+        "gate_opens": 2,
+        "latch_activations": 1,
+        "plate_exits": 1,
+        "successes": 1
+      },
+      "max_once_counter": {
+        "latch_activations": 1,
+        "console_1_completions": 0,
+        "console_2_completions": 0,
+        "successes": 1,
+        "failures": 0,
+        "player_0_deaths": 0,
+        "player_1_deaths": 0,
+        "enemy_1_deaths": 0,
+        "enemy_2_deaths": 0
+      },
+      "episode_resets_in_trace": 0,
+      "status": "passed",
+      "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\relay_validation_00\\mechanics_trace.json",
+      "sha256": "3f78845ea7855771e8338f98db7cdde6b5e61770aa852768cf82eafae134cad2",
+      "task_family": "relay",
+      "template_id": "relay_validation_00",
+      "expected_rows": 80,
+      "sampling": "all persisted mechanics rows",
+      "locality": null
+    },
+    {
+      "rows_audited": 84,
+      "checks_evaluated": 37714,
+      "failed_checks": 0,
+      "first_failures": [],
+      "boundary_counts": {
+        "continue": 83,
+        "success": 1
+      },
+      "missing_image_slots": 0,
+      "fractional_npc_coordinate_rows": 0,
+      "episode_ids": [
+        0
+      ],
+      "counter_positive_deltas": {
+        "plate_entries": 1,
+        "gate_opens": 2,
+        "latch_activations": 1,
+        "plate_exits": 1,
+        "successes": 1
+      },
+      "max_once_counter": {
+        "latch_activations": 1,
+        "console_1_completions": 0,
+        "console_2_completions": 0,
+        "successes": 1,
+        "failures": 0,
+        "player_0_deaths": 0,
+        "player_1_deaths": 0,
+        "enemy_1_deaths": 0,
+        "enemy_2_deaths": 0
+      },
+      "episode_resets_in_trace": 0,
+      "status": "passed",
+      "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\mechanics\\relay_validation_01\\mechanics_trace.json",
+      "sha256": "b3e9dcdc20b00481540eb34008b8ae93d153f6b56306e90d60b96cf922ce0e85",
+      "task_family": "relay",
+      "template_id": "relay_validation_01",
+      "expected_rows": 84,
+      "sampling": "all persisted mechanics rows",
+      "locality": null
+    }
+  ],
+  "stress": [
+    {
+      "rows_audited": 5000,
+      "checks_evaluated": 2244999,
+      "failed_checks": 0,
+      "first_failures": [],
+      "boundary_counts": {
+        "continue": 4950,
+        "collection_cutoff": 50
+      },
+      "missing_image_slots": 0,
+      "fractional_npc_coordinate_rows": 0,
+      "episode_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50
+      ],
+      "counter_positive_deltas": {
+        "plate_entries": 80,
+        "plate_exits": 76,
+        "gate_opens": 74,
+        "gate_closes": 72
+      },
+      "max_once_counter": {
+        "latch_activations": 0,
+        "console_1_completions": 0,
+        "console_2_completions": 0,
+        "successes": 0,
+        "failures": 0,
+        "player_0_deaths": 0,
+        "player_1_deaths": 0,
+        "enemy_1_deaths": 0,
+        "enemy_2_deaths": 0
+      },
+      "episode_resets_in_trace": 49,
+      "status": "passed",
+      "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\stress\\relay_decisions.jsonl",
+      "sha256": "7fbe35e9f0c77781003524ac176fa9faa27630959f6c7af3e2d3e6adeececca4",
+      "task_family": "relay",
+      "expected_rows": 5000,
+      "sampling": "all persisted stress rows; read only after benchmark completed"
+    },
+    {
+      "rows_audited": 5000,
+      "checks_evaluated": 2344999,
+      "failed_checks": 0,
+      "first_failures": [],
+      "boundary_counts": {
+        "continue": 4950,
+        "collection_cutoff": 50
+      },
+      "missing_image_slots": 0,
+      "fractional_npc_coordinate_rows": 4639,
+      "episode_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50
+      ],
+      "counter_positive_deltas": {
+        "player_0_hits_taken": 14,
+        "player_0_damage_taken": 64,
+        "player_1_hitcount": 49,
+        "player_1_damagecount": 470,
+        "player_1_hits_taken": 36,
+        "player_1_damage_taken": 210,
+        "enemy_1_deaths": 15,
+        "player_0_killcount": 15,
+        "player_1_killcount": 15,
+        "player_0_hitcount": 9,
+        "player_0_damagecount": 100
+      },
+      "max_once_counter": {
+        "latch_activations": 0,
+        "console_1_completions": 0,
+        "console_2_completions": 0,
+        "successes": 0,
+        "failures": 0,
+        "player_0_deaths": 0,
+        "player_1_deaths": 0,
+        "enemy_1_deaths": 1,
+        "enemy_2_deaths": 0
+      },
+      "episode_resets_in_trace": 49,
+      "status": "passed",
+      "path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\stress\\cover_decisions.jsonl",
+      "sha256": "7f05d3613b26d620cdadb2151ff9c54fecd08bfb4aa5363f241e00b88fc379da",
+      "task_family": "cover",
+      "expected_rows": 5000,
+      "sampling": "all persisted stress rows; read only after benchmark completed"
+    }
+  ],
+  "boundaries": [
+    {
+      "rows_audited": 1,
+      "checks_evaluated": 448,
+      "failed_checks": 0,
+      "first_failures": [],
+      "boundary_counts": {
+        "collection_cutoff": 1
+      },
+      "missing_image_slots": 0,
+      "fractional_npc_coordinate_rows": 0,
+      "episode_ids": [
+        0
+      ],
+      "counter_positive_deltas": {},
+      "max_once_counter": {
+        "latch_activations": 0,
+        "console_1_completions": 0,
+        "console_2_completions": 0,
+        "successes": 0,
+        "failures": 0,
+        "player_0_deaths": 0,
+        "player_1_deaths": 0,
+        "enemy_1_deaths": 0,
+        "enemy_2_deaths": 0
+      },
+      "episode_resets_in_trace": 0,
+      "status": "passed",
+      "path": "collection_cutoff",
+      "sampling": "one persisted final boundary transition; preceding event counts reconstructed from the retained delta, not independently replayed history"
+    },
+    {
+      "rows_audited": 1,
+      "checks_evaluated": 447,
+      "failed_checks": 0,
+      "first_failures": [],
+      "boundary_counts": {
+        "deadline": 1
+      },
+      "missing_image_slots": 0,
+      "fractional_npc_coordinate_rows": 0,
+      "episode_ids": [
+        0
+      ],
+      "counter_positive_deltas": {
+        "failures": 1
+      },
+      "max_once_counter": {
+        "latch_activations": 0,
+        "console_1_completions": 0,
+        "console_2_completions": 0,
+        "successes": 0,
+        "failures": 1,
+        "player_0_deaths": 0,
+        "player_1_deaths": 0,
+        "enemy_1_deaths": 0,
+        "enemy_2_deaths": 0
+      },
+      "episode_resets_in_trace": 0,
+      "status": "passed",
+      "path": "deadline",
+      "sampling": "one persisted final boundary transition; preceding event counts reconstructed from the retained delta, not independently replayed history"
+    },
+    {
+      "rows_audited": 1,
+      "checks_evaluated": 467,
+      "failed_checks": 0,
+      "first_failures": [],
+      "boundary_counts": {
+        "death": 1
+      },
+      "missing_image_slots": 0,
+      "fractional_npc_coordinate_rows": 1,
+      "episode_ids": [
+        0
+      ],
+      "counter_positive_deltas": {
+        "failures": 1,
+        "player_1_deaths": 1,
+        "player_1_deathcount": 1,
+        "player_1_hits_taken": 1,
+        "player_1_damage_taken": 6
+      },
+      "max_once_counter": {
+        "latch_activations": 0,
+        "console_1_completions": 0,
+        "console_2_completions": 0,
+        "successes": 0,
+        "failures": 1,
+        "player_0_deaths": 0,
+        "player_1_deaths": 1,
+        "enemy_1_deaths": 0,
+        "enemy_2_deaths": 0
+      },
+      "episode_resets_in_trace": 0,
+      "status": "passed",
+      "path": "death",
+      "sampling": "one persisted final boundary transition; preceding event counts reconstructed from the retained delta, not independently replayed history"
+    }
+  ],
+  "event_probe_reported_result": {
+    "status": "passed",
+    "initial_plate_flag": 0,
+    "final_plate_flag": 0,
+    "cumulative_differences": {
+      "plate_entries": 1,
+      "plate_exits": 1,
+      "gate_opens": 1,
+      "gate_closes": 1,
+      "latch_activations": 0,
+      "console_1_completions": 0,
+      "console_2_completions": 0,
+      "successes": 0,
+      "failures": 0,
+      "player_0_deaths": 0,
+      "player_1_deaths": 0,
+      "enemy_1_deaths": 0,
+      "enemy_2_deaths": 0,
+      "player_0_deathcount": 0,
+      "player_0_hitcount": 0,
+      "player_0_hits_taken": 0,
+      "player_0_damagecount": 0,
+      "player_0_damage_taken": 0,
+      "player_0_killcount": 0,
+      "player_0_itemcount": 0,
+      "player_1_deathcount": 0,
+      "player_1_hitcount": 0,
+      "player_1_hits_taken": 0,
+      "player_1_damagecount": 0,
+      "player_1_damage_taken": 0,
+      "player_1_killcount": 0,
+      "player_1_itemcount": 0
+    },
+    "published_joint_decisions": 27,
+    "scope": "Native events retained between deliberately selected observation endpoints across several decisions; single-decision hidden pulses are also tested at the registry unit boundary.",
+    "stage": "events",
+    "parameters": {},
+    "dependency_fingerprint": "58f4b371422cf403a53696545370411af0b932a160f94172e85e1d2427dda519",
+    "source_sha256": {
+      "configs/base.yaml": "fd7ff75518cf9451bfd6ddc4a3f2ab24070336d4e6f75edfa1676484af4a6099",
+      "configs/environment_splits.yaml": "589551b9d676b3d36587c61b87028f0731acc3391105ff62657ae4db0911cdec",
+      "configs/experiments/final.yaml": "c1242746427d32af878357998d181133d23ad278b70e492377351fbf441adeba",
+      "configs/experiments/pilot.yaml": "68882da53c509476b2fef0f87569cfa13af548120e63ac8873495274e7b9cc5f",
+      "configs/privileged_registry_v1.json": "c18f44850ea014004dc57a8fb74930d6256d7e32ef75eeb11c01e4cc775787f2",
+      "configs/tasks/cover.yaml": "24c54b85c5148cda6e5d60db5dec88e83be7c11ec80b7717340c0803a36ed544",
+      "configs/tasks/relay.yaml": "feb5e8849ad69d277b445cf1b8faeddf6e3155e7ef39ae9fb6602233e1d03580",
+      "configs/variants/B.yaml": "4d9d6e6be699818d733bf6851748f9cdde7219c091a1392c9d09d1a124676af9",
+      "configs/variants/D.yaml": "79c6c6e202b5ab4b2712c25b9b294b263f3f2e9acfbc553857eb2433dee3a796",
+      "pyproject.toml": "5523c9c04eb2812733ece9183f0ad4eb849a0c7638906f2491512d1dd08527aa",
+      "requirements-phase0.lock": "cc0e2d47099633a73fa6b43d4539049c53815b6367ff97dc2b13dc9b94dcb131",
+      "requirements-phase1.lock": "733af0fe79d66ea715a9fe6e9a9b3c9e3ff3612616182cf93c3f5dd9b691eff5",
+      "scenarios/cover/task.acs": "26a348bec6fc341ec7afe8e04e108e23e5c6c4c6d1248603f4640e3bc63a0a1e",
+      "scenarios/relay/task.acs": "96022349fdfba14b72a1920939a63c11263b26ebc01bc16b0262d3258a23469f",
+      "scripts/__init__.py": "e9bce490cbe0589d864499c6f2ad5a2805dcc14f98937814616a47e3760634cc",
+      "scripts/bootstrap_acc.py": "bbb716fb4732730cb814422576d9d7b9b93aa5307f7ee2ca29214b7f5fdd0c85",
+      "scripts/phase0.py": "086f29f436ad41d8ef90b2fbb9f0c3667b362d7f5f4528c5a7867372175cdd86",
+      "scripts/phase1.py": "6e2fd83aab580ca2bb583b4d973e2e9547b25a14ae2abfa9b172d5773634f330",
+      "scripts/phase1_acceptance.py": "6a55906e5cdbd5f5d6da9097553c6d0956ab774cf5f27ba30caef53b0239d3bb",
+      "scripts/probe_multiplayer.py": "257908e6e8e493185825d07a78e9503319f727ab9f61f7da440474fd20fe37c0",
+      "scripts/probe_phase1_runtime.py": "4c6cbdbef22e0f0f1ea98d8df8545c08bbb9808a9586b303dcd115c2c7b4f383",
+      "src/world_models/__init__.py": "e304c6f71067c9303c0ccb5900a9ae3fdd4cf41ef78efeee8164cd78e23b5297",
+      "src/world_models/contracts.py": "0e8ec752304616163a318f9de4057f211b9c23c7d4d08302e97e2611a0b60e35",
+      "src/world_models/data/__init__.py": "9b4506df2f1d7e1215a8c8e84729f0fbfd34db843eebc98ec9825ba0d22cc4fc",
+      "src/world_models/env/__init__.py": "5491c9b54c9845e1b83bbd3f655a06e162c4452b8263773040f7646d3f9b09e4",
+      "src/world_models/env/acceptance.py": "5d4933ec65de3c5120472eab5b6a3c8202788a71f9d47519a26df35c7e0823a7",
+      "src/world_models/env/acceptance_metrics.py": "11864e267296ab85cf4fd10ddcb728776b24027e4f2ca170502becadd505ddbd",
+      "src/world_models/env/actions.py": "7fd19fc174a5a7678667ad110b57b8bf4c0650d4aec14fb76d707e6ed619c1a8",
+      "src/world_models/env/coop.py": "bb4b4e90c1b52045e80551fdcbff2f13895081e6d53efd65a330bc1bec13644d",
+      "src/world_models/env/coordinator.py": "b5932a5ac64e620c86525dff20b13cc03e7b87939606be95f22726cb150d1098",
+      "src/world_models/env/locality.py": "cdd27543e7e2d3b7923bc7f80b8805b00e090eb8ac0284141c666bfb726b21b5",
+      "src/world_models/env/marker_diagnostics.py": "4cd57ec55b239cab35335256d10e8907648c42b5a0e7ca7a733dc7ac2346306e",
+      "src/world_models/env/mechanics_video.py": "d8edc706106652fddd359d3cafd438671cd701f8c7f130da411167c8876900e1",
+      "src/world_models/env/observations.py": "0cad5c1484a7a7f8e2b14fd076cfa092612ba66b090a9e04e61e1b2164e894e4",
+      "src/world_models/env/provenance.py": "a77d4be126f83f32ab50f758c7d3f9a3870264d385492c5cdfafb390bfd02806",
+      "src/world_models/env/replay_diagnostics.py": "3bda78301c3d33e0dc8a54afccb087fad36c66629bc0306b3035d74f21169a50",
+      "src/world_models/env/scenario_builder.py": "1a2c606c8f8d0fe773a433352d65c23acfc697d142f1b2daeb65592ef34d2409",
+      "src/world_models/env/scripted.py": "9e00ed6d84f00c151a9a8bba40e1b3ac8b2e8cce09445a16108376c1ac9ce522",
+      "src/world_models/env/splits.py": "a187936b9448fe5113e2dc014a561f7d21977a77df7819ba289f27df802a8f7c",
+      "src/world_models/env/targets.py": "be4444bfc9141e80ba6d31b24b6694d316f96e3af84e54dbdc470129f67a8ed9",
+      "src/world_models/env/validation_data.py": "955547b1086a847b8b39a56edb0f634c3ae0b6bf665e346710bb208df2216183",
+      "src/world_models/env/workers.py": "560b8929a8549d31f9a38ff287e616752255aeb1a52a5c54af8b489967a08d42",
+      "src/world_models/evaluation/__init__.py": "fc435531e998681fcf12474f5f479cb08f86cf81792d1a2e428514304e03184b",
+      "src/world_models/infrastructure/__init__.py": "7f3a23ed0ae9dca2944afbe5b7b4c57d67f8331d637f1daafdac273a07b47580",
+      "src/world_models/infrastructure/config.py": "004e01c20bc86c57a70ffe099d7158e2bbe4f7153713750ccc5796c98b867958",
+      "src/world_models/infrastructure/inventory.py": "cabae03d2fbe64ed5ac7014c9982473192b4f870d7055653b79847238a2c3c3c",
+      "src/world_models/infrastructure/reproducibility.py": "eaefeaa3003ebce8ef6a4817c2257cc528be5c0823d65694568ae11e285d65d3",
+      "src/world_models/models/__init__.py": "02d96f1fef014a60a6c801a27501165200eff668e9b66a3339b1f98240a3570d",
+      "src/world_models/policies/__init__.py": "cae794398b0ec8b6bcb7394652322ff1f604846c865069bd3eaaa5c56c60c4a5",
+      "src/world_models/training/__init__.py": "25e67fe79423dd7a905dc1af894c031f09664d78c26673a0fc37c430f9fa4abd",
+      "tests/__init__.py": "c8aa6890ca40c8ddcbbe269118a1ed7a30a4a319768d62d55dfbb09ef5f1a934",
+      "tests/test_config.py": "9f596fd858b70760173f4c38503f933b25d07f7fbff09e060ac893cc13da31f5",
+      "tests/test_contracts.py": "8cefd34adc7e6d50ce4563b048d438d5e171c6cc094d191eab1c1498b2f9d7c6",
+      "tests/test_coop_env.py": "4e9580b75b38a8fef01d7ba97d6e21eaa07b897408ff57ae466acc343e173f12",
+      "tests/test_coordinator.py": "d4ead078978f0c2791b360b2edc5d1d7d305c53a657a7b0b4ba2afd6c0d1795c",
+      "tests/test_env_adapters.py": "af403349e4bdad3874517d60c59cff2952f71c354daf399cf97ff6187dbbf30d",
+      "tests/test_inventory.py": "85fc9a2d6e2b9d2accaf3f6f5d7e6d2f7f319e99723eb49a30ea889d1599590e",
+      "tests/test_phase0_cli.py": "79262c6a6bd3c87d1fc435cb2993672a5c93d9d749990fe42a84465f8acf442c",
+      "tests/test_phase1_acceptance.py": "bff343be9f02ddff94bd840e3f1533a703574e10e402790f9a0892def322a59b",
+      "tests/test_replay_diagnostics.py": "7cc39a3ed623a4e65e3c72da8894e7ab52810d6f88d037248c4c6ba173604835",
+      "tests/test_reproducibility.py": "2151e04006c649beb01af8ed04cebad39023edec5088a3892f70dee8c693b7d3",
+      "tests/test_scenarios.py": "1b6ff3a01580fbee22e3fe9cf910ec21fb071f0fb9d0f650f5ff7554eebada8c",
+      "tests/test_scripted.py": "755988ebe711f8f96fb31eb52b9f3443c811f5bdcb13223900c5a46c396b5bea",
+      "tests/test_splits.py": "de32235d6a54a6f06325ed88c6bc86d5859530089f23f23f5b5326ebd8b914d4",
+      "tests/test_targets.py": "86c039dbe99046217d99e78d7b73672c12d3f3d7ee5a1043476e226964e9f17e"
+    },
+    "runtime": {
+      "recorded_at_utc": "2026-11-01T08:11:06.400073+00:00",
+      "scope": "observed_development_simulator_stack; not a CUDA/PyTorch training-host validation",
+      "python": {
+        "version": "3.12.0",
+        "executable": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Scripts\\python.exe"
+      },
+      "platform": "Windows-11-10.0.26200-SP0",
+      "packages": {
+        "cloudpickle": {
+          "expected": "3.1.2",
+          "observed": "3.1.2",
+          "matches": true
+        },
+        "Farama-Notifications": {
+          "expected": "0.0.6",
+          "observed": "0.0.6",
+          "matches": true
+        },
+        "gymnasium": {
+          "expected": "1.4.0",
+          "observed": "1.4.0",
+          "matches": true
+        },
+        "imageio-ffmpeg": {
+          "expected": "0.6.0",
+          "observed": "0.6.0",
+          "matches": true
+        },
+        "numpy": {
+          "expected": "2.5.4",
+          "observed": "2.5.4",
+          "matches": true
+        },
+        "pillow": {
+          "expected": "13.0.0",
+          "observed": "13.0.0",
+          "matches": true
+        },
+        "psutil": {
+          "expected": "7.2.2",
+          "observed": "7.2.2",
+          "matches": true
+        },
+        "pygame-ce": {
+          "expected": "2.5.8",
+          "observed": "2.5.8",
+          "matches": true
+        },
+        "PyYAML": {
+          "expected": "6.0.3",
+          "observed": "6.0.3",
+          "matches": true
+        },
+        "setuptools": {
+          "expected": "80.9.0",
+          "observed": "80.9.0",
+          "matches": true
+        },
+        "typing_extensions": {
+          "expected": "4.16.0",
+          "observed": "4.16.0",
+          "matches": true
+        },
+        "vizdoom": {
+          "expected": "1.3.2",
+          "observed": "1.3.2",
+          "matches": true
+        },
+        "wheel": {
+          "expected": "0.45.1",
+          "observed": "0.45.1",
+          "matches": true
+        }
+      },
+      "assets": [
+        {
+          "path": "freedoom1.wad",
+          "bytes": 28795076,
+          "sha256": "7323bcc168c5a45ff10749b339960e98314740a734c30d4b9f3337001f9e703d"
+        },
+        {
+          "path": "freedoom2.wad",
+          "bytes": 28787748,
+          "sha256": "a8772e088847032510d97ba2312406a6998f21cbab44d4ff10696faa9c0ecd4b"
+        },
+        {
+          "path": "libmpg123-0.dll",
+          "bytes": 311700,
+          "sha256": "4247c435d456b9bb801f1e3a69498a9340d7c9a5176bbaed8bbf17adf3baa490"
+        },
+        {
+          "path": "libsndfile-1.dll",
+          "bytes": 1530880,
+          "sha256": "e1d88dfc7a12d12536c2e1f8c304b99bfb811ea9827a5689d6fc71789fb5b5e0"
+        },
+        {
+          "path": "OpenAL32.dll",
+          "bytes": 1795072,
+          "sha256": "396f88738ce20905e933cb7d8c696351e41bd7e72e80b8cfdadf20ab613420b4"
+        },
+        {
+          "path": "vizdoom.cp312-win_amd64.pyd",
+          "bytes": 875520,
+          "sha256": "fb9bcf09cbe82ce6b3333d2bd08cfdb74aa4418966e2abd1e2f9a4a209a1b07f"
+        },
+        {
+          "path": "vizdoom.exe",
+          "bytes": 4981760,
+          "sha256": "6f835a2094e8c593b71c0fd769bef0e6a1a768b4e448ba7c3e8f34ae208f2d82"
+        },
+        {
+          "path": "vizdoom.pk3",
+          "bytes": 631086,
+          "sha256": "fe45d24d7e8d79b51e9619efc93f5d6058331a56312e1ef5ec554cada11ed96d"
+        }
+      ],
+      "selected_iwad": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\vizdoom\\freedoom2.wad",
+        "sha256": "a8772e088847032510d97ba2312406a6998f21cbab44d4ff10696faa9c0ecd4b",
+        "selection": "explicit bundled freedoom2.wad; each worker verifies engine path and hash"
+      },
+      "video_encoder": {
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\.venv\\Lib\\site-packages\\imageio_ffmpeg\\binaries\\ffmpeg-win-x86_64-v7.1.exe",
+        "bytes": 87638016,
+        "sha256": "2ce797a0f88d7f067180338fb227f7b1928ea727bd9a4d7a1d022f7c52af71a3",
+        "version": "7.1-essentials_build-www.gyan.dev",
+        "package": "imageio-ffmpeg==0.6.0",
+        "purpose": "mechanics review videos"
+      },
+      "compiler": {
+        "version": "1.60",
+        "path": "C:\\Users\\Admin\\Desktop\\world models\\.tools\\acc-1.60\\acc.exe",
+        "bytes": 145408,
+        "sha256": "a318f4b45818222dc273a68fab37e393d6881e603816c7317da40d2819fa3ce5",
+        "source": "https://github.com/ZDoom/acc/releases/tag/1.60"
+      },
+      "renderer": {
+        "mode": "PLAYER",
+        "off_screen": true,
+        "sound": false,
+        "format": "CRCGCB",
+        "raw_shape": [
+          3,
+          120,
+          160
+        ],
+        "actor_shape": [
+          3,
+          96,
+          128
+        ],
+        "resize": "Pillow.Resampling.BILINEAR",
+        "buttons": [
+          "MOVE_FORWARD",
+          "MOVE_BACKWARD",
+          "MOVE_LEFT",
+          "MOVE_RIGHT",
+          "TURN_LEFT",
+          "TURN_RIGHT",
+          "ATTACK",
+          "USE"
+        ],
+        "autoaim": false,
+        "friendly_fire": false,
+        "automatic_respawn": false,
+        "client_prediction": false,
+        "native_barrier": "both set_action then shared barrier then advance_action(1); four tics per logical decision",
+        "coordinated_reset": "fresh participant processes and isolated episode working directories"
+      },
+      "license_provenance": {
+        "original_vizdoom_code": "MIT; bundled engine components retain their separate licenses",
+        "vizdoom_source": "https://github.com/Farama-Foundation/ViZDoom/tree/1.3.2",
+        "vizdoom_license_statement": "https://github.com/Farama-Foundation/ViZDoom#license",
+        "freedoom": "https://github.com/freedoom/freedoom/blob/master/COPYING.adoc",
+        "acc": "https://github.com/ZDoom/acc/releases/tag/1.60",
+        "generated_pwads": "Original project geometry and scripts; no copied IWAD sprites/textures in generated PWADs.",
+        "redistribution": "Preserve upstream Freedoom credits/license when distributing the IWAD; do not label the entire engine bundle MIT."
+      }
+    },
+    "wall_seconds": 9.802025600001798,
+    "execution_sources_unchanged": true,
+    "runtime_assets_unchanged": true,
+    "artifact_sha256": {
+      "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\event_probe\\environments\\env-6c410b19d018\\dispatch_ledger.jsonl": "47791226a16bf1907d7b79b27e3624e701e782e3c9d7b6564d151b6f728c2e85",
+      "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\event_probe\\environments\\env-6c410b19d018\\episode-0\\player-0\\_vizdoom.ini": "3074e6bc6c7f2b584edf749ebb5a6335606ed2d923e0084a077a8c21514b827f",
+      "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\event_probe\\environments\\env-6c410b19d018\\episode-0\\player-1\\_vizdoom.ini": "b425d673e7d5314169bafb9efd50dd887f54fecabce4c15bef8cf4f372c3bb21",
+      "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\event_probe\\scenario\\BEHAVIOR.o": "c2dec26419ef3561348a49de991b97abe416a3e93015b0214ecdfa4822278c77",
+      "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\event_probe\\scenario\\EXFLOCK.png": "a163e259cbc8467412ea3a8f111ad063f1f432b4cf1ab30c20b8a20811ae041a",
+      "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\event_probe\\scenario\\EXFOPEN.png": "4366649b3133ce42ae9672fb7617bdcafb624773c350eb8c2b94832a52b53728",
+      "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\event_probe\\scenario\\EXSLOCK.png": "6a2af69fb0eaf2f0aac84c110fa9a8cdf6fca026ac662a2b58317a39e986071d",
+      "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\event_probe\\scenario\\EXSOPEN.png": "b60e7251ccdab5f763c8f8feb1b5a7804d68f21cea2da6344f7c7c80bad39cd0",
+      "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\event_probe\\scenario\\manifest.json": "a1162f2b0a3709ccb11a16b07bb91228aad0bc48b2b46c75971057bf00b58d8e",
+      "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\event_probe\\scenario\\relay.wad": "f5c90987709d050f0126d71e6a59d630c0c5fc0cc13f6ad9fb0108538b469e01",
+      "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\event_probe\\scenario\\task.acs": "cfd9ee2b3b5930a022faa52f9220a5f821272e50e14a782b581450aafccbfd48",
+      "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_complete\\event_probe\\scenario\\TEXTMAP.txt": "e8e2382d2c1e948d82e23f29cf81e07527b77eb7463e285b1fa68ba9de7fbb61"
+    }
+  },
+  "sampling": "All rows of completed mechanics traces. All stress rows only once the final benchmark and parent campaign have completed.",
+  "limits": [
+    "Alive labels are cross-checked with retained health; raw is_player_dead booleans are not separately serialized in these traces.",
+    "Native engine reward scalar is guarded against nonzero by the wrapper before publication, but that scalar is not retained in row JSON.",
+    "Reconstruction float-mask property is exercised by the native checker and unit tests; persisted JSON independently retains RGB hashes and boolean validity.",
+    "Locality evidence uses LocalContractProbe on actual image/action histories. It is not a trained B/D actor or a model-training result.",
+    "The dedicated native event probe retains reported selected endpoints/counter differences, not a complete independent per-step trace."
+  ],
+  "status": "passed",
+  "totals": {
+    "mechanics_rows": 4104,
+    "stress_rows": 10000,
+    "final_boundary_rows": 3,
+    "checks_evaluated": 6485108,
+    "failed_checks": 0,
+    "missing_image_slots_observed": 0
+  }
+}

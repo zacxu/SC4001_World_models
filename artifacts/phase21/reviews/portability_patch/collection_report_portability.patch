@@ -1,0 +1,113 @@
+--- a/src/world_models/data/collection.py
++++ b/src/world_models/data/collection.py
+@@ -11,7 +11,7 @@
+ from copy import deepcopy
+ import importlib.metadata
+ import json
+-from pathlib import Path
++from pathlib import Path, PurePosixPath, PureWindowsPath
+ import random
+ import shutil
+ import time
+@@ -419,7 +419,7 @@
+             binding_path = binding_dir / f"{variant}.json"
+             reader.bind_variant(binding_path, variant)
+             bindings[variant] = {
+-                "path": str(binding_path.relative_to(output)),
++                "path": binding_path.relative_to(output).as_posix(),
+                 "sha256": file_sha256(binding_path),
+                 "attributed_initial_joint_transitions": total,
+             }
+@@ -481,6 +481,18 @@
+         raise
+ 
+ 
++def _portable_report_relative_path(encoded: str) -> PurePosixPath:
++    """Decode old Windows report members in memory without rewriting evidence."""
++    if not isinstance(encoded, str) or not encoded.strip() or "\0" in encoded:
++        raise ValueError("report member path must be a nonempty relative string")
++    normalized = encoded.replace("\\", "/")
++    relative = PurePosixPath(normalized)
++    if (relative.is_absolute() or PureWindowsPath(encoded).drive
++            or PureWindowsPath(encoded).root or ".." in relative.parts):
++        raise ValueError("report member path escapes the dataset directory")
++    return relative
++
++
+ def verify_initial_collection(output_dir: str | Path) -> dict:
+     """Verify sealed data, ledger conservation, mixture, and both branch bindings."""
+     output = Path(output_dir)
+@@ -536,7 +548,10 @@
+             verify_archive_tree(path, expected_receipt_sha256=archive["receipt_sha256"])
+             seen_archives.add(relative)
+     for variant in ("B", "D"):
+-        binding = output / report["bindings"][variant]["path"]
++        relative = _portable_report_relative_path(report["bindings"][variant]["path"])
++        binding = (output / Path(*relative.parts)).resolve()
++        if not binding.is_relative_to(output.resolve()):
++            raise ValueError("shared initialization binding path escapes the dataset directory")
+         if file_sha256(binding) != report["bindings"][variant]["sha256"]:
+             raise ValueError("variant initialization binding changed")
+         linked = ReplayDataset.from_binding(binding, variant=variant, verify=True)
+--- a/tests/test_replay_collection.py
++++ b/tests/test_replay_collection.py
+@@ -4,14 +4,14 @@
+ 
+ from copy import deepcopy
+ import json
+-from pathlib import Path
++from pathlib import Path, PurePosixPath
+ import tempfile
+ import unittest
+ from unittest.mock import patch
+ 
+ from world_models.data.collection import (
+     CorrelatedRandomPolicy, ScriptedExplorationPolicy, collect_initial_dataset,
+-    mixture_segments, verify_initial_collection,
++    mixture_segments, verify_initial_collection, _portable_report_relative_path,
+ )
+ from world_models.data.ledger import TrainingInteractionLedger, file_sha256
+ from world_models.data.replay import ReplayDataset, ReplayDatasetWriter
+@@ -143,6 +143,42 @@
+             for profiles in coverage.values():
+                 self.assertEqual(profiles,set(ScriptedExplorationPolicy.PROFILES))
+ 
++    def test_report_bindings_are_posix_and_legacy_windows_bytes_stay_unchanged(self):
++        with tempfile.TemporaryDirectory() as directory:
++            output=Path(directory)/"initial"
++            report=self.collect(output)
++            self.assertEqual(report["bindings"]["B"]["path"],"bindings/B.json")
++            self.assertEqual(report["bindings"]["D"]["path"],"bindings/D.json")
++            self.assertEqual(_portable_report_relative_path("bindings\\B.json"),
++                             PurePosixPath("bindings/B.json"))
++            for entry in report["bindings"].values():
++                entry["path"]=entry["path"].replace("/","\\")
++            path=output/"collection_report.json"
++            path.write_text(json.dumps(report,indent=2),encoding="utf-8")
++            original=path.read_bytes()
++            binding_bytes={variant:(output/"bindings"/f"{variant}.json").read_bytes()
++                           for variant in ("B","D")}
++            self.assertEqual(verify_initial_collection(output)["joint_transitions"],100)
++            self.assertEqual(path.read_bytes(),original)
++            for variant,data in binding_bytes.items():
++                self.assertEqual((output/"bindings"/f"{variant}.json").read_bytes(),data)
++
++    def test_binding_report_paths_reject_cross_platform_escapes(self):
++        for encoded in ("../outside.json","bindings/../../outside.json",
++                        "..\\outside.json","/outside.json",
++                        "C:\\outside.json","C:outside.json",
++                        "\\\\server\\share\\outside.json","",None,"bad\0path"):
++            with self.subTest(path=encoded):
++                with self.assertRaises(ValueError):
++                    _portable_report_relative_path(encoded)
++        with tempfile.TemporaryDirectory() as directory:
++            output=Path(directory)/"initial"
++            report=self.collect(output)
++            report["bindings"]["B"]["path"]="../outside.json"
++            (output/"collection_report.json").write_text(json.dumps(report))
++            with self.assertRaisesRegex(ValueError,"escapes"):
++                verify_initial_collection(output)
++
+     def test_deterministic_collection_ids_streams_and_partitions(self):
+         with tempfile.TemporaryDirectory() as directory:
+             outputs=[Path(directory)/"a",Path(directory)/"b"]

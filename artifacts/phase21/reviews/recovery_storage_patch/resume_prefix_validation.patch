@@ -1,0 +1,114 @@
+--- a/src/world_models/data/replay.py
++++ b/src/world_models/data/replay.py
+@@ -172,6 +172,8 @@
+         if not path.is_file():
+             raise ValueError("no resumable replay manifest")
+         saved = json.loads(path.read_text(encoding="utf-8"))
++        if saved.get("dataset_version") != DATASET_VERSION or saved.get("status") != "collecting":
++            raise ValueError("unsupported or non-collecting replay prefix")
+         if saved["metadata"] != self.metadata or saved["storage"] != {
+                 "format": "npz-typed-chunks-v1", "compression": self.compression,
+                 "compression_level": self.compression_level, "chunk_transitions": self.chunk_transitions}:
+@@ -180,12 +182,41 @@
+             raise ValueError("interrupted active episode requires explicit accounting/recovery; refusing silent data loss")
+         self._episodes, self._count = saved["episodes"], saved["transition_count"]
+         self._event_fields = tuple(saved["schema"]["event_fields"]) or None
++        if type(self._count) is not int or self._count < 0 or saved["schema"] != field_manifest(self._event_fields or ()):
++            raise ValueError("resume prefix count or typed target schema is invalid")
++        target = self.metadata.get("target_transitions")
++        if target is not None and self._count > target:
++            raise ValueError("resume prefix exceeds its declared real-transition budget")
++        # Use the existing read-only chunk validator without publishing or
++        # fabricating a sealed manifest for this fully committed prefix.
++        validator = object.__new__(ReplayDataset)
++        validator.path, validator._cache, validator.cache_chunks = self.path, OrderedDict(), 2
++        validator._array_specs = array_specs(self._event_fields or ())
++        expected_transition, episode_ids = 0, set()
+         for episode in self._episodes:
+-            if sha256_file(_safe_member(self.path, episode["manifest_path"])) != episode["manifest_sha256"]:
+-                raise ValueError("completed episode changed before resume")
+-            for chunk in episode["chunks"]:
+-                if sha256_file(_safe_member(self.path, chunk["path"])) != chunk["sha256"]:
+-                    raise ValueError("completed replay chunk changed before resume")
++            identifier = episode["episode_id"]
++            if identifier in episode_ids or episode["partition"] != episode_partition(identifier):
++                raise ValueError("resume prefix has duplicate episodes or changed episode partitions")
++            episode_ids.add(identifier)
++            length = episode["valid_length"]
++            if (type(length) is not int or length <= 0 or episode["observation_count"] != length + 1
++                    or episode["transition_id_start"] != expected_transition):
++                raise ValueError("resume prefix episode lengths/global transition IDs do not reconcile")
++            if (episode["task_family"] != self.metadata["task_family"] or episode["run_seed"] != self.metadata["run_seed"]
++                    or episode["data_source"] != "real_environment" or episode["learning_eligible"] != self.metadata["learning_eligible"]
++                    or episode["split"] != "train" or episode["split_provenance"].get("purpose") != "training"
++                    or episode["split_provenance"].get("learning_eligible") is not True):
++                raise ValueError("resume prefix contains incompatible collection identity/provenance")
++            validator._verify_episode_manifest(episode)
++            validator._verify_episode(episode)
++            expected_transition += length
++        if expected_transition != self._count or saved["partition_transition_counts"] != {
++                part: sum(episode["valid_length"] for episode in self._episodes if episode["partition"] == part)
++                for part in ("fit", "diagnostic")}:
++            raise ValueError("resume prefix transition/partition conservation failed")
++        episodes_root = self.path / "episodes"
++        if episodes_root.exists() and {entry.name for entry in episodes_root.iterdir()} != episode_ids:
++            raise ValueError("resume prefix has orphaned or unaccounted episode storage")
+ 
+     def start_episode(self, metadata: dict, reset) -> None:
+         if self._sealed or self._active:
+--- a/tests/test_replay_storage.py
++++ b/tests/test_replay_storage.py
+@@ -388,13 +388,52 @@
+     def test_completed_episodes_resume_and_global_transition_ids_are_unique(self):
+         with tempfile.TemporaryDirectory() as directory:
+             writer = self.make_writer(directory, target=10)
+-            write_episode(writer, episode_fixture())
++            prefix = write_episode(writer, episode_fixture())
++            prefix_paths = [prefix["manifest_path"], *(chunk["path"] for chunk in prefix["chunks"])]
++            prefix_bytes = {relative: (writer.path/relative).read_bytes() for relative in prefix_paths}
+             resumed = self.make_writer(directory, target=10, resume=True)
++            self.assertEqual(resumed.transition_count, 5)
+             write_episode(resumed, episode_fixture(), episode_id="episode-1")
+             resumed.seal()
++            for relative, expected in prefix_bytes.items():
++                self.assertEqual((writer.path/relative).read_bytes(), expected)
+             dataset = ReplayDataset(resumed.path)
+             values = np.concatenate([view.arrays()["transition_id"] for view in dataset.iter_episodes(purpose="diagnostic")])
+             np.testing.assert_array_equal(values, np.arange(10))
++
++    def test_resume_rejects_nonconserved_prefix_counts_duplicates_and_orphans(self):
++        for damage in ("count", "partition_count", "duplicate_episode", "orphan"):
++            with self.subTest(damage=damage), tempfile.TemporaryDirectory() as directory:
++                writer = self.make_writer(directory, target=10)
++                write_episode(writer, episode_fixture())
++                path = writer.path/"manifest.partial.json"
++                saved = json.loads(path.read_text())
++                if damage == "count": saved["transition_count"] += 1
++                elif damage == "partition_count": saved["partition_transition_counts"]["fit"] += 1
++                elif damage == "duplicate_episode": saved["episodes"].append(deepcopy(saved["episodes"][0]))
++                else: (writer.path/"episodes/unaccounted").mkdir()
++                path.write_text(json.dumps(saved), encoding="utf-8")
++                before = {p.relative_to(writer.path).as_posix():p.read_bytes() for p in writer.path.rglob("*") if p.is_file()}
++                with self.assertRaises(ValueError): self.make_writer(directory, target=10, resume=True)
++                self.assertEqual(before, {p.relative_to(writer.path).as_posix():p.read_bytes() for p in writer.path.rglob("*") if p.is_file()})
++
++    def test_resume_checks_completed_prefix_payload_semantics_even_when_hashes_match(self):
++        with tempfile.TemporaryDirectory() as directory:
++            writer = self.make_writer(directory, target=10)
++            write_episode(writer, episode_fixture())
++            path = writer.path/"manifest.partial.json"
++            saved = json.loads(path.read_text())
++            episode = saved["episodes"][0]
++            chunk = episode["chunks"][0]
++            arrays = {name: value.copy() for name,value in read_npz(writer.path/chunk["path"]).items()}
++            arrays["actions"][0,0] = 12
++            chunk.update(write_npz(writer.path/chunk["path"], arrays))
++            manifest_path = writer.path/episode["manifest_path"]
++            manifest_path.write_text(json.dumps({key:value for key,value in episode.items() if key not in ("manifest_path","manifest_sha256")}), encoding="utf-8")
++            episode["manifest_sha256"] = hashlib.sha256(manifest_path.read_bytes()).hexdigest()
++            path.write_text(json.dumps(saved), encoding="utf-8")
++            with self.assertRaisesRegex(ValueError, "invalid action"):
++                self.make_writer(directory, target=10, resume=True)
+ 
+     def test_dataset_target_count_is_enforced(self):
+         with tempfile.TemporaryDirectory() as directory:

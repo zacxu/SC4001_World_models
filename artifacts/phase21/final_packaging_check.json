@@ -1,0 +1,54 @@
+{
+  "current_execution_source_count": 85,
+  "current_sources_match_passed_verification": true,
+  "dataset_metadata_and_binding_hashes_unchanged": 24,
+  "documents": [
+    {
+      "path": "README.md",
+      "sha256": "5bb40321b88af0436a5fb318cf1b3960a5f4e17ac2ca94d06a17ec624c7a2804"
+    },
+    {
+      "path": "docs/phase21_replay.md",
+      "sha256": "aa1956e14b89eecc30da3afa5b2841ac96d49e2ef89224b3ccaf6a67349afc4d"
+    },
+    {
+      "path": "artifacts/phase21/README.md",
+      "sha256": "748f1e9d3b7d606e29c7c4613ebf0a7655d7111a6e09672a8c3ccdd45b2abaed"
+    },
+    {
+      "path": "artifacts/phase21/reviews/README.md",
+      "sha256": "59e03903f29ab2d73cd5c4889ffd968410717878ec067884a1f55c0d1f0c2f17"
+    },
+    {
+      "path": "artifacts/phase21/reviews/FINALIZATION.md",
+      "sha256": "bad7e8583a65e65623c7fc54783d07aac1f3904892a9e9eb4da64034c7b3c20a"
+    },
+    {
+      "path": "artifacts/phase21/reviews/resource_telemetry_review.md",
+      "sha256": "16bf0378feaff287d0b3083469f50bdaeb3b639a4f713f6447b5c4b29f575163"
+    },
+    {
+      "path": "artifacts/phase21/reviews/backup_capacity_runbook.md",
+      "sha256": "c8961bbc0d60e8c960aa1dcc4fa5e1a06b3b61c509cbe08f14cffe8e89c49239"
+    }
+  ],
+  "essential_paths_trackable": 178,
+  "git_diff_check_passed": true,
+  "git_staging_commit_push_performed": false,
+  "local_document_links_checked": 58,
+  "missing_local_links": [],
+  "optional_hot_cleanup": "retained_pending_explicit_approval",
+  "raw_private_cache_paths_ignored": 8,
+  "receipt_hashes_verified": [
+    "phase21_acceptance_finalized.json",
+    "phase21_acceptance.json",
+    "verification/verify_report.json",
+    "final_validation/unit_tests_report.json",
+    "storage_benchmark/storage_benchmark.json",
+    "storage_inventory.json",
+    "generation_end_verification.json",
+    "hot_journal_cleanup_plan.json",
+    "hot_journal_retention.json"
+  ],
+  "status": "passed_final_packaging_and_unchanged_data_checks"
+}

@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "tests_run": 34,
+  "failures": 0,
+  "errors": 0,
+  "elapsed_seconds": 67.03249579999829,
+  "cpu_ids": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "native_calls": false,
+  "log": "collection_recovery_tests.log",
+  "src": "C:\\Users\\Admin\\AppData\\Local\\Temp\\world-models-phase21-6cbe97ffad1a4038bd78d0873ead1a54\\src"
+}

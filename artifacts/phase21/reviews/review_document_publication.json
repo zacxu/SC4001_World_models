@@ -1,0 +1,36 @@
+{
+  "changes": "Correct local promoted-artifact paths and ASCII range punctuation. Preserve original draft hashes and frozen execution/data records.",
+  "documents": [
+    {
+      "path": "artifacts/phase21/reviews/resource_telemetry_review.md",
+      "sha256": "16bf0378feaff287d0b3083469f50bdaeb3b639a4f713f6447b5c4b29f575163"
+    },
+    {
+      "path": "artifacts/phase21/reviews/backup_capacity_runbook.md",
+      "sha256": "c8961bbc0d60e8c960aa1dcc4fa5e1a06b3b61c509cbe08f14cffe8e89c49239"
+    }
+  ],
+  "original_drafts_retained_exactly": [
+    {
+      "path": "artifacts/phase21/reviews/resource_enforcement_patch/archived_assessment_drafts/resource_telemetry_assessment.json",
+      "sha256": "b0be46a9ea8be68d3099c32b20945157be13a510c7fe52a4e9ab25094dc4dcbd"
+    },
+    {
+      "path": "artifacts/phase21/reviews/resource_enforcement_patch/archived_assessment_drafts/resource_telemetry_assessment.md",
+      "sha256": "2359a92e4a0257de2c1c2196408754bd240aa847ef759851fb7c4ccacf714d85"
+    },
+    {
+      "path": "artifacts/phase21/reviews/resource_enforcement_patch/archived_assessment_drafts/backup_capacity_assessment.json",
+      "sha256": "57000de56bb0f89678c7c7d7c8720bd9e7e0aa447670720a44a562fe6a8dc4db"
+    },
+    {
+      "path": "artifacts/phase21/reviews/resource_enforcement_patch/archived_assessment_drafts/backup_capacity_runbook_notes.md",
+      "sha256": "aed2efe5a23ad806eb243a0eaa4be5edaf57d442b7e37230f544263616d9dece"
+    },
+    {
+      "path": "artifacts/phase21/reviews/resource_enforcement_patch/archived_assessment_drafts/telemetry_capacity_draft_manifest.json",
+      "sha256": "e5e605baf6c23fbd88149e5f348328c2f871dc80d0666d8862a7578b8ac7680c"
+    }
+  ],
+  "status": "published_corrected_review_documents"
+}

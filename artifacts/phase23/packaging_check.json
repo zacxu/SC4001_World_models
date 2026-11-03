@@ -1,0 +1,235 @@
+{
+  "acceptance_sha256": "de5ea5841231d0e27cdbdf633ba968b990d98a656c4392c5c6061c273845ef9b",
+  "all_json_sha_receipts_verified": [
+    "artifacts/phase23/normalization_bindings.sha256",
+    "artifacts/phase23/phase23_acceptance.sha256",
+    "artifacts/phase23/regression_tests.sha256",
+    "artifacts/phase23/statistics_generation.sha256",
+    "artifacts/phase23/normalization/generation.sha256",
+    "artifacts/phase23/normalization/cover/seed_0.sha256",
+    "artifacts/phase23/normalization/cover/seed_1.sha256",
+    "artifacts/phase23/normalization/relay/seed_0.sha256",
+    "artifacts/phase23/normalization/relay/seed_1.sha256"
+  ],
+  "checked_at_utc": "2026-11-03T05:03:50.240891+00:00",
+  "documentation_links_valid": [
+    {
+      "file": "README.md",
+      "target": "research_implementation_proposal.md"
+    },
+    {
+      "file": "README.md",
+      "target": "detailed_research_implementation_plan.md"
+    },
+    {
+      "file": "README.md",
+      "target": "docs/research_contract.md"
+    },
+    {
+      "file": "README.md",
+      "target": "docs/runbook.md"
+    },
+    {
+      "file": "README.md",
+      "target": "artifacts/phase0_acceptance.json"
+    },
+    {
+      "file": "README.md",
+      "target": "docs/phase1_complete.md"
+    },
+    {
+      "file": "README.md",
+      "target": "configs/privileged_registry_v1.json"
+    },
+    {
+      "file": "README.md",
+      "target": "configs/environment_splits.yaml"
+    },
+    {
+      "file": "README.md",
+      "target": "artifacts/phase1_complete/phase1_acceptance.json"
+    },
+    {
+      "file": "README.md",
+      "target": "artifacts/phase1_complete/README.md"
+    },
+    {
+      "file": "README.md",
+      "target": "docs/phase1_steps1_4.md"
+    },
+    {
+      "file": "README.md",
+      "target": "artifacts/phase1_requested_fixes/acceptance.json"
+    },
+    {
+      "file": "README.md",
+      "target": "artifacts/README.md"
+    },
+    {
+      "file": "README.md",
+      "target": "artifacts/phase21/README.md"
+    },
+    {
+      "file": "README.md",
+      "target": "docs/phase21_replay.md"
+    },
+    {
+      "file": "README.md",
+      "target": "docs/phase22_architecture.md"
+    },
+    {
+      "file": "README.md",
+      "target": "artifacts/phase22/phase22_acceptance.json"
+    },
+    {
+      "file": "README.md",
+      "target": "docs/phase23_objectives.md"
+    },
+    {
+      "file": "README.md",
+      "target": "artifacts/phase23/phase23_acceptance.json"
+    },
+    {
+      "file": "docs/phase23_objectives.md",
+      "target": "../artifacts/phase23/phase23_acceptance.json"
+    },
+    {
+      "file": "docs/phase23_objectives.md",
+      "target": "../artifacts/phase23/regression_tests.json"
+    },
+    {
+      "file": "docs/phase23_objectives.md",
+      "target": "../artifacts/phase23/README.md"
+    },
+    {
+      "file": "docs/phase23_objectives.md",
+      "target": "../src/world_models/training/objective_batch.py"
+    },
+    {
+      "file": "docs/phase23_objectives.md",
+      "target": "../artifacts/phase23/normalization_bindings.json"
+    },
+    {
+      "file": "docs/phase23_objectives.md",
+      "target": "../requirements-phase2-cpu.lock"
+    },
+    {
+      "file": "docs/phase22_architecture.md",
+      "target": "phase23_objectives.md"
+    },
+    {
+      "file": "docs/phase22_architecture.md",
+      "target": "../artifacts/phase22/phase22_acceptance.json"
+    },
+    {
+      "file": "docs/phase22_architecture.md",
+      "target": "../artifacts/phase22/regression_tests.json"
+    },
+    {
+      "file": "docs/phase22_architecture.md",
+      "target": "phase23_objectives.md"
+    },
+    {
+      "file": "docs/phase22_architecture.md",
+      "target": "../src/world_models/models/core.py"
+    },
+    {
+      "file": "docs/phase22_architecture.md",
+      "target": "../src/world_models/models/heads.py"
+    },
+    {
+      "file": "docs/phase22_architecture.md",
+      "target": "../src/world_models/models/world_model.py"
+    },
+    {
+      "file": "artifacts/README.md",
+      "target": "../docs/phase22_architecture.md"
+    },
+    {
+      "file": "artifacts/README.md",
+      "target": "../docs/phase23_objectives.md"
+    },
+    {
+      "file": "artifacts/phase23/README.md",
+      "target": "../../docs/phase23_objectives.md"
+    },
+    {
+      "file": "artifacts/phase23/README.md",
+      "target": "phase23_acceptance.json"
+    },
+    {
+      "file": "artifacts/phase23/README.md",
+      "target": "regression_tests.json"
+    },
+    {
+      "file": "artifacts/phase23/README.md",
+      "target": "normalization_bindings.json"
+    }
+  ],
+  "essential_paths_trackable": [
+    ".gitignore",
+    ".gitattributes",
+    "README.md",
+    "detailed_research_implementation_plan.md",
+    "docs/phase22_architecture.md",
+    "docs/phase23_objectives.md",
+    "artifacts/README.md",
+    "scripts/phase23.py",
+    "src/world_models/training/losses.py",
+    "src/world_models/training/normalization.py",
+    "src/world_models/training/diagnostics.py",
+    "src/world_models/training/objective.py",
+    "src/world_models/training/objective_batch.py",
+    "tests/test_model_loss_primitives.py",
+    "tests/test_model_normalization.py",
+    "tests/test_model_objective_diagnostics.py",
+    "tests/test_model_objective.py",
+    "tests/test_model_objective_accumulation.py",
+    "artifacts/phase23/normalization_bindings.json",
+    "artifacts/phase23/normalization_bindings.sha256",
+    "artifacts/phase23/objective_tests.txt",
+    "artifacts/phase23/phase23_acceptance.json",
+    "artifacts/phase23/phase23_acceptance.sha256",
+    "artifacts/phase23/README.md",
+    "artifacts/phase23/regression_tests.json",
+    "artifacts/phase23/regression_tests.sha256",
+    "artifacts/phase23/regression_tests.txt",
+    "artifacts/phase23/statistics_generation.json",
+    "artifacts/phase23/statistics_generation.sha256",
+    "artifacts/phase23/normalization/generation.json",
+    "artifacts/phase23/normalization/generation.sha256",
+    "artifacts/phase23/normalization/cover/seed_0.json",
+    "artifacts/phase23/normalization/cover/seed_0.sha256",
+    "artifacts/phase23/normalization/cover/seed_1.json",
+    "artifacts/phase23/normalization/cover/seed_1.sha256",
+    "artifacts/phase23/normalization/relay/seed_0.json",
+    "artifacts/phase23/normalization/relay/seed_0.sha256",
+    "artifacts/phase23/normalization/relay/seed_1.json",
+    "artifacts/phase23/normalization/relay/seed_1.sha256",
+    "artifacts/phase23/packaging_check.json",
+    "artifacts/phase23/packaging_check.sha256"
+  ],
+  "git_diff_check_passed": true,
+  "git_staged_or_committed": false,
+  "new_tests_passed": 62,
+  "normalization_shared_B_D": true,
+  "raw_data_and_caches_ignored": [
+    "data/initial_replay/pilot/relay/seed_0/replay/manifest.json",
+    ".venv/pyvenv.cfg",
+    "src/world_models/training/__pycache__/objective.cpython-312.pyc"
+  ],
+  "regression_sha256": "9aae5d1ad0ec0ba7b1435ec25ec04f8b2e1a4edc482c071c4a1f56e81a2c9035",
+  "regression_tests_passed": 388,
+  "regression_tests_run": 389,
+  "replay_and_prior_acceptance_unchanged": {
+    "artifacts/phase21/phase21_acceptance_finalized.json": "051836598b2dff87d1679552e8911fc0c607db662f7d517f180b3116167b18cc",
+    "artifacts/phase22/phase22_acceptance.json": "1a9c44df3a7acd28a78d4882c2f41908c473d2872da329f81fd166e13d33e38c",
+    "data/initial_replay/pilot/cover/seed_0/replay/manifest.json": "7b1f584a4ef3ed7baf8268405449c5335ff8e0756ddd8e756a90a3e50ffd8a92",
+    "data/initial_replay/pilot/cover/seed_1/replay/manifest.json": "d03af4cd0f78656f2f468952443807ef8fb8aa5d678b4ea8eae6ab873ee4d108",
+    "data/initial_replay/pilot/relay/seed_0/replay/manifest.json": "98e9b59ed3825ee4662ed267fa2505caf0daaa1ee49dc43446d96a3b88464893",
+    "data/initial_replay/pilot/relay/seed_1/replay/manifest.json": "ade2770436fa7578d213cec9da5c8a5a0dbd0710941d16ae79853d1f6d303e88"
+  },
+  "source_files": 28,
+  "source_hashes_match": true,
+  "status": "passed"
+}

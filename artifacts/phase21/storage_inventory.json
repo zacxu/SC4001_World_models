@@ -1,0 +1,135 @@
+{
+  "archiving_policy": "Keep sealed full case directories, ledgers, runtime receipts, recovery lineage and binding files together. Data remains ignored by Git; restore verified backups before rerunning integrity checks. Provision final-campaign archival storage after pilot measurements, before final seeds are started.",
+  "cases": [
+    {
+      "categories": {
+        "recovery_evidence": {
+          "bytes": 0,
+          "files": 0
+        },
+        "replay": {
+          "bytes": 1862629166,
+          "files": 950
+        },
+        "runtime": {
+          "bytes": 183967996,
+          "files": 4886
+        }
+      },
+      "collector_counts": {
+        "random": 35000,
+        "scripted": 15000
+      },
+      "elapsed_seconds": 9237.013837900002,
+      "episodes": 349,
+      "initialization_joint_decisions": 349,
+      "joint_observation_slots": 50349,
+      "run_seed": 0,
+      "task_family": "relay",
+      "total_bytes": 2085173224,
+      "transitions": 50000
+    },
+    {
+      "categories": {
+        "recovery_evidence": {
+          "bytes": 26112952,
+          "files": 7
+        },
+        "replay": {
+          "bytes": 1927095814,
+          "files": 952
+        },
+        "runtime": {
+          "bytes": 184521421,
+          "files": 4914
+        }
+      },
+      "collector_counts": {
+        "random": 35000,
+        "scripted": 15000
+      },
+      "elapsed_seconds": 8721.2944416,
+      "episodes": 350,
+      "initialization_joint_decisions": 350,
+      "joint_observation_slots": 50350,
+      "run_seed": 1,
+      "task_family": "relay",
+      "total_bytes": 2177490614,
+      "transitions": 50000
+    },
+    {
+      "categories": {
+        "recovery_evidence": {
+          "bytes": 0,
+          "files": 0
+        },
+        "replay": {
+          "bytes": 1900597414,
+          "files": 735
+        },
+        "runtime": {
+          "bytes": 204912603,
+          "files": 3458
+        }
+      },
+      "collector_counts": {
+        "random": 35000,
+        "scripted": 15000
+      },
+      "elapsed_seconds": 9232.930182299999,
+      "episodes": 247,
+      "initialization_joint_decisions": 247,
+      "joint_observation_slots": 50247,
+      "run_seed": 0,
+      "task_family": "cover",
+      "total_bytes": 2143066099,
+      "transitions": 50000
+    },
+    {
+      "categories": {
+        "recovery_evidence": {
+          "bytes": 0,
+          "files": 0
+        },
+        "replay": {
+          "bytes": 1840610699,
+          "files": 735
+        },
+        "runtime": {
+          "bytes": 204548635,
+          "files": 3444
+        }
+      },
+      "collector_counts": {
+        "random": 35000,
+        "scripted": 15000
+      },
+      "elapsed_seconds": 8617.5676606,
+      "episodes": 246,
+      "initialization_joint_decisions": 246,
+      "joint_observation_slots": 50246,
+      "run_seed": 1,
+      "task_family": "cover",
+      "total_bytes": 2082705812,
+      "transitions": 50000
+    }
+  ],
+  "data_drive": {
+    "free_bytes_at_measurement": 849923350528,
+    "total_bytes": 2000381014016
+  },
+  "full_case_bytes_per_joint_transition": 42442.178745,
+  "full_case_directories_bytes_including_archives_and_recovery_evidence": 8488435749,
+  "joint_transitions": 200000,
+  "projection_40000000_transitions": {
+    "full_case_bytes_at_observed_rate": 1697687149800,
+    "note": "Extrapolation from pilot behavior and archives; image entropy and episode lengths can change. Shared-initialization savings, further model checkpoints, final evaluation data, and backups need separate provisioning before the final campaign.",
+    "raw_rgb_nominal_bytes_without_episode_padding": 2949120000000,
+    "replay_bytes_at_observed_rate": 1506186618600
+  },
+  "raw_rgb_slot_bytes_before_compression": 14833483776,
+  "recorded_at_utc": "2026-11-02T17:02:12.363308+00:00",
+  "replay_bytes": 7530933093,
+  "replay_bytes_per_joint_transition": 37654.665465,
+  "status": "measured_complete_pilot_storage"
+}

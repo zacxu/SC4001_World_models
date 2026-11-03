@@ -1,0 +1,29 @@
+{
+  "status": "passed_prepared_finalizer_validation",
+  "finalizer_sha256": "cd42ee9bab395a15fe4fce389ff4263afa001aa723ebca9906c9afcbc606f353",
+  "tests": {
+    "artifact_synthetic_contract_cases": 5,
+    "passed": 5,
+    "latest_run_seconds": 7.269,
+    "scope": "Synthetic evidence aggregation and fail-closed guard fixtures only; no simulated collection or D: writes."
+  },
+  "actual_readonly_source_index_checks": {
+    "original_frozen_execution_index": {
+      "path": "artifacts/phase21/verified_sources/source_index.json",
+      "sha256": "5010e18b576cd378535b5f9bb3e1d9aef035c0decdaa06168dec74f8d6948fd5",
+      "bytes": 30256,
+      "verified_files": 81,
+      "matched_execution_files": 81
+    },
+    "recovery_overlay_index": {
+      "path": "artifacts/phase21_review/recovery_support/frozen_source_index.json",
+      "sha256": "63afb0acb7d00d9b0872eb393c5a394bf3a58879b32106a0dc2c59010abcdf12",
+      "bytes": 1161,
+      "verified_files": 5,
+      "matched_execution_files": 3
+    }
+  },
+  "source_or_raw_data_mutated": false,
+  "acceptance_finalized": false,
+  "reason_not_finalized_yet": "Finalizer must wait for actual four complete datasets, successful continuation, full audits, and production verification."
+}

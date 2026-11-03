@@ -1,0 +1,13 @@
+experiment:
+  name: final
+  master_seeds: [1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010]
+  real_budget: 1000000
+  initial_transitions: 50000
+  collection_block: 25000
+  checkpoints: [0, 50000, 100000, 200000, 300000, 400000, 500000, 600000, 700000, 800000, 900000, 1000000]
+  checkpoint_episodes: 50
+  final_episodes: 200
+  evaluation_split: test
+  bootstrap_replicates: 10000
+  practical_auc_effect: 0.02
+  initial_scripted_fraction: 0.3

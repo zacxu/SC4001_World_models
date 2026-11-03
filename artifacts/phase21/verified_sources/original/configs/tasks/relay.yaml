@@ -1,0 +1,12 @@
+task:
+  name: relay
+  deadline: 400
+  dwell_decisions: 0
+  success_reward: 1.0
+  failure_reward: -1.0
+  step_cost: -0.001
+  milestone_bonus: 0.1
+  milestone_count: 1
+  train_layouts: 6
+  validation_layouts: 2
+  test_layouts: 2

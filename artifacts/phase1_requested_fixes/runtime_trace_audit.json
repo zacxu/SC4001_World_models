@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "audited_at_utc": "2026-10-31T20:01:48.768326+00:00",
+  "status": "passed",
+  "scope": "Independent read-only runtime source and existing native recovery trace audit; no additional native jobs or source changes.",
+  "evidence_progress_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\verification_progress.json",
+  "evidence_report_status_at_audit": "failed",
+  "checks": {
+    "native_smoke_passed": true,
+    "error_json_equals_report_and_ledger": true,
+    "one_durable_error_and_one_recovery": true,
+    "dispatches_contiguous_and_acknowledged": true,
+    "no_dispatch_between_error_and_recovery": true,
+    "fault_consumed_exactly_one_logical_decision": true,
+    "blocked_retry_consumed_zero": true,
+    "all_dispatch_counts_match_logical_attempts": true,
+    "recovery_preserved_count": true,
+    "one_recovery_warmup_and_one_valid_step": true,
+    "fresh_episode_and_both_new_worker_instances": true,
+    "actor_memory_reset_signaled": true,
+    "every_ack_has_matching_player_tics": true,
+    "native_barriers_advance_one_tic": true,
+    "iwad_actual_bytes_hash_and_engine_paths_match": true,
+    "runtime_sources_match_verification_start": true,
+    "main_report_unit_tests_passed": true
+  },
+  "observed": {
+    "dispatches": 22,
+    "acknowledgements": 22,
+    "logical_attempts_including_warmups_and_invalid_attempt": 5,
+    "old_episode_id": 0,
+    "new_episode_id": 1,
+    "fault_dispatch_id": 13,
+    "fault_consumed_count": 3,
+    "count_after_recovery_warmup": 4,
+    "count_after_valid_step": 5,
+    "old_worker_instances": [
+      "I7dPYUDmJ3",
+      "oTez6VjBZm"
+    ],
+    "new_worker_instances": [
+      "xxXiH1vEOq",
+      "Y9W6MsrMWo"
+    ],
+    "iwad_sha256": "a8772e088847032510d97ba2312406a6998f21cbab44d4ff10696faa9c0ecd4b"
+  },
+  "files": {
+    "ledger_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\recovery\\environments\\env-9969db74c000\\dispatch_ledger.jsonl",
+    "ledger_sha256": "41bfa08f0f81650e7335247237dfebc1250830a01e4334115cdfbabc31be8246",
+    "error_path": "C:\\Users\\Admin\\Desktop\\world models\\artifacts\\phase1_requested_fixes\\recovery\\environments\\env-9969db74c000\\last_error.json",
+    "error_sha256": "230addc70c823a5919fd00efc2f7917c38e605df9e0a00fd7b45dffb85e9ab19"
+  },
+  "runtime_source_sha256": {
+    "src/world_models/env/coop.py": "8e17ae63a101cf237efeadf5fd7454f55e69bd602e104eb24499eb60a5ea1ae3",
+    "src/world_models/env/coordinator.py": "f817257df7d8c5a59b0636e37a8691290779fb7e4808efca281daab668e3a9ed",
+    "src/world_models/env/workers.py": "9bea4dc51e6c0cbfca1a3cae01e1f572d30a740cc1958363887bd336910efe57"
+  },
+  "source_review": {
+    "atomic_publication": "All flags, raw progression, clocks, boundary, reward, metadata, RGB and info conversions precede wrapper state commit.",
+    "failure_behavior": "Public invalidate marks coordinator broken and records durable typed error; wrapper enters NEEDS_RECOVERY before recording; step/reset retries reject before dispatch.",
+    "recovery_behavior": "Both workers stop and restart, new episode validated before commit; counters persist and actor-memory reset signal is explicit.",
+    "iwad_behavior": "Explicit selection with pinned hash; path readback before and after init, rehash after init and provenance returned from worker snapshots.",
+    "port_behavior": "Cross-process advisory lease held for engine lifetime, actual UDP availability checked before releasing bind socket; fixed-port collision fails and recognized automatic-port collision retries are bounded.",
+    "remaining_serious_findings": []
+  },
+  "limits": [
+    "Live trace audits one injected RGB-conversion failure; other failure classes are covered by the recorded unit suite.",
+    "Worker instance identities come from native get_instance_id values recorded by recovery smoke; they are not independently logged in each acknowledgement.",
+    "Native ledger does not record chosen network port numbers; real occupied-port and cross-process exclusion are covered by the recorded coordinator unit tests.",
+    "Full acceptance campaign was still in progress when this runtime-only audit was written."
+  ],
+  "evidence_report_status_at_audit_note": "The parent verification was still in progress; its conservative initial status is failed until every gate completes. This was not a completed failed run.",
+  "parent_verification_final_status": "complete_P1.1_to_P1.4"
+}

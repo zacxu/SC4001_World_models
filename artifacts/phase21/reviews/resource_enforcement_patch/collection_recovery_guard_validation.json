@@ -1,0 +1,93 @@
+{
+  "status": "passed",
+  "scope": "C scratch collector/recovery resource guard wiring only",
+  "before": [
+    {
+      "path": "src/world_models/data/collection.py",
+      "sha256": "44ea91460efcaa9a82558bbcc3247ffdcfdec262e71d2793df594694448b76ba"
+    },
+    {
+      "path": "src/world_models/data/recovery.py",
+      "sha256": "7332c3c8a703e8f4c262d8033786cbcc6e9282002e3fdb075d1ea407f2dfaeda"
+    },
+    {
+      "path": "tests/test_replay_collection.py",
+      "sha256": "6772c73d261a5b5ac1e1e252be4bc7d6ad68f7728295c5abf53530ea6aed6c44"
+    },
+    {
+      "path": "tests/test_replay_recovery.py",
+      "sha256": "288201b1da3fb46e9ba2463a51499ac08979280287b94af7333c3f8457085825"
+    }
+  ],
+  "after": [
+    {
+      "path": "src/world_models/data/collection.py",
+      "sha256": "0263aa554c3e81255d68bf8ced20c9e02c9cb666d557fd1aa5c691e4b14d8a17",
+      "bytes": 31956
+    },
+    {
+      "path": "src/world_models/data/recovery.py",
+      "sha256": "a7bef0c4f3864a001eb620eaa4ca448cf79887aab3cbf329f7381dde1052977e",
+      "bytes": 46725
+    },
+    {
+      "path": "tests/test_replay_collection.py",
+      "sha256": "181933e32811587ba40c8fc6d95ce9fcd617343e62a16737e008838224f34b50",
+      "bytes": 23502
+    },
+    {
+      "path": "tests/test_replay_recovery.py",
+      "sha256": "f28f6db32a2a029d7f94ddf37ee2b66b564e3eb7126252b0926f4b033c381949",
+      "bytes": 25194
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "tests_run": 34,
+    "failures": 0,
+    "errors": 0,
+    "elapsed_seconds": 67.03249579999829,
+    "cpu_ids": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "native_calls": false,
+    "log": "collection_recovery_tests.log",
+    "src": "C:\\Users\\Admin\\AppData\\Local\\Temp\\world-models-phase21-6cbe97ffad1a4038bd78d0873ead1a54\\src"
+  },
+  "frozen_D_support_index_sha256": "63afb0acb7d00d9b0872eb393c5a394bf3a58879b32106a0dc2c59010abcdf12",
+  "frozen_D_support_files": [
+    {
+      "path": "src/world_models/data/ledger.py",
+      "sha256": "2ff34557c20eff96d4e0be31f790fee3ccaa5ebdee1f5f13c7f5306361f9ef4e",
+      "unchanged": true
+    },
+    {
+      "path": "src/world_models/data/replay.py",
+      "sha256": "e4006006321a526084bb8fee7e2e5e6c0ce6250b8c538b2ababf42aaaa3327aa",
+      "unchanged": true
+    },
+    {
+      "path": "src/world_models/data/recovery.py",
+      "sha256": "7332c3c8a703e8f4c262d8033786cbcc6e9282002e3fdb075d1ea407f2dfaeda",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_replay_recovery.py",
+      "sha256": "288201b1da3fb46e9ba2463a51499ac08979280287b94af7333c3f8457085825",
+      "unchanged": true
+    },
+    {
+      "path": "artifacts/phase21_review/recovery_driver.py",
+      "sha256": "d02f2971b6ea73dac8937051a2308d9b19f88ff6370e7914477072cb05e53ba9",
+      "unchanged": true
+    }
+  ],
+  "frozen_D_driver_sha256": "d02f2971b6ea73dac8937051a2308d9b19f88ff6370e7914477072cb05e53ba9",
+  "D_edits": false,
+  "native_actions": false,
+  "methodology": "Guard calls add no RNG draws/actions/task rules; passing guarded and unguarded fixture seed/action sequences agree; failed guards produce zero additional reset/step calls and preserve physical accounting.",
+  "early_import_setup_error": "Initial standalone artifact runner lacked C src override and selected installed D modules; corrected by inserting explicit scratch/src before imports. Failure log retained as initial_import_setup_collection_recovery_tests.log."
+}

@@ -1,0 +1,345 @@
+{
+  "cache_scope": "Ordinary filesystem caching remains enabled. Each append requests fsync; no direct-I/O or power-loss test is claimed.",
+  "cpu_budget": {
+    "cpu_ids": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "host_logical_cores": 12,
+    "library_threads": 1,
+    "logical_core_budget": 4
+  },
+  "interpretation": "Measures this small durable-journal workload at the recorded directories. It does not change storage settings, move learning data, reduce fsync frequency, or benchmark the full collector.",
+  "locations": {
+    "cold_replay": {
+      "appended_bytes_sha256": "34740e7c4eb11e14a16ff4f896ad6ad14fb35ec1106531e74c2ac75f1a547395",
+      "directory": "D:\\world models\\data\\initial_replay\\pilot",
+      "maximum_latency_seconds": 0.04334960000051069,
+      "median_latency_seconds": 0.025543499999912456,
+      "minimum_latency_seconds": 0.021380000000135624,
+      "p95_latency_seconds": 0.033230210000010627,
+      "path_anchor": "D:\\",
+      "payload_bytes_per_write": 4096,
+      "payload_roundtrip_exact": true,
+      "sample_count": 24,
+      "samples": [
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.021380000000135624,
+          "payload_sha256": "cb45c27455e9e7e38996ff69531e311365c09fbe7c5c9d01835d2e7fde3e3dc5",
+          "write_index": 0
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.024962499999674037,
+          "payload_sha256": "6027394904a71a0db7c9d1d8af56dac4a0a6631ae1603d25cd0650dadf391952",
+          "write_index": 1
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.022246800000175426,
+          "payload_sha256": "b437ad0e34eec8e6a6325805b59cfd0b1109a51c026ff6b9bec69ee0aecc146f",
+          "write_index": 2
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.03268599999955768,
+          "payload_sha256": "733229ae80c5913f43444353fda4f942e8b85a31736fcd055c45f015cc30ac31",
+          "write_index": 3
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.02318809999997029,
+          "payload_sha256": "1c6de05d2ba22b80031c79c3dd85b05e4617130ed8817ccf9a43e0fb6292eba2",
+          "write_index": 4
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.033271700000113924,
+          "payload_sha256": "150edb2f8d977cd17ae45ac2243ff5417ed6136978499d41d9f3040ac758dd4e",
+          "write_index": 5
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.022075900000345428,
+          "payload_sha256": "22a2fc0efaa20a38793ae72561a7efb7bdef5f049b51d2ed92ffdf2a3fdde68a",
+          "write_index": 6
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.032895499999540334,
+          "payload_sha256": "d6d00577987c454c35da6707b724ce5cbcc3045892493f0edd7b5489446e23cb",
+          "write_index": 7
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.02361289999953442,
+          "payload_sha256": "ccd582c2bcec50973958544604d184e0d870d209cac1e0cda43ce6fb4ce83fcf",
+          "write_index": 8
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.03299509999942529,
+          "payload_sha256": "e49db3d8b1a5111dfcf33e1b6f8ce568b75744552b630d32dc9dea04b49b4894",
+          "write_index": 9
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.030913300000065647,
+          "payload_sha256": "48b659cbe0873a40437a80cacbe157179598fa0d45d2ae987b74681e34a47c06",
+          "write_index": 10
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.025015400000484078,
+          "payload_sha256": "9b4199780cc211b85169329a6b295adb30aee560d2ea11179b01320087308047",
+          "write_index": 11
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.030345500000294123,
+          "payload_sha256": "64bf9eec856d1e661542573b93eb5d3f15f2ef73cbc652a28e3aae9c5dde5857",
+          "write_index": 12
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.024902600000132225,
+          "payload_sha256": "b4620a714069419e0d59f228c8702e9acc03c5622c71e831ed8b01de570d947a",
+          "write_index": 13
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.02806030000010651,
+          "payload_sha256": "b670b1979e6c22217b8a380c53772077efab0651af1f768d236162d2d1772746",
+          "write_index": 14
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.02537549999942712,
+          "payload_sha256": "cb9956ca2e58f5f91a17c2bf67f7b30293bda894af840db3f93b15e19193b65d",
+          "write_index": 15
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.04334960000051069,
+          "payload_sha256": "091b81e7e840f5e6adf66724a31c938725b72396481e3ebbdf0a112cb92dc9a1",
+          "write_index": 16
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.024946700000327837,
+          "payload_sha256": "6c6db2cd292c1a987b67b8441833598c5a8d69d10a7ea71d933bdb3c9edfce6a",
+          "write_index": 17
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.030778299999838055,
+          "payload_sha256": "54bd253a46316d7ee03d0dba55efd685b67bbfc768b5fd5e7205ff36eb4b258c",
+          "write_index": 18
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.0248223999997208,
+          "payload_sha256": "7b375d38da86288a4491bf37ab00722c1906082f8f3d7b974283c7d5eee62bed",
+          "write_index": 19
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.02322100000037608,
+          "payload_sha256": "3ee187edf5fdd79b2a6542235f82a780be3735d6aa2a15cfaf32ba9a9aeb5d46",
+          "write_index": 20
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.02660129999912897,
+          "payload_sha256": "c4f86b444af240fde720f95362d7bd6167a9ab2455c8afcbec546a24128b19f6",
+          "write_index": 21
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.029849800000192772,
+          "payload_sha256": "4e618479c512b4f6e5ba4a975f0ff068479998021d2097eb8d5d473808ce8344",
+          "write_index": 22
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.02571150000039779,
+          "payload_sha256": "f46f0323dac83818b7a12baee494650965f69dd9638e8afbe33e0bf40c5a8e3e",
+          "write_index": 23
+        }
+      ],
+      "total_fsynced_write_operations": 26,
+      "total_verified_bytes": 106496,
+      "warmup_writes": 2
+    },
+    "hot_journals": {
+      "appended_bytes_sha256": "31a2be76f6434d0fc02ce112f721fcae76da9ec90c53bb26f43ca9ccea14d356",
+      "directory": "C:\\Users\\Admin\\AppData\\Local\\Temp\\world-models-p21-hsog6ztf",
+      "maximum_latency_seconds": 0.006014699999468576,
+      "median_latency_seconds": 0.0018848499998966872,
+      "minimum_latency_seconds": 0.0007982000006450107,
+      "p95_latency_seconds": 0.005933900000309222,
+      "path_anchor": "C:\\",
+      "payload_bytes_per_write": 4096,
+      "payload_roundtrip_exact": true,
+      "sample_count": 24,
+      "samples": [
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.0014251999991756747,
+          "payload_sha256": "53371f5ff04c9c755025251e6f04a563e03da3cbe344f6e0640ca77d70bba87a",
+          "write_index": 0
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.00149280000005092,
+          "payload_sha256": "099c83b52ab9a8b83396b19b7086f8d6412960127790a594b1f9ff7a22863bbd",
+          "write_index": 1
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.0017895000000862638,
+          "payload_sha256": "00efe5d5f30535dc26e5cceccd14420dea6529635a0b3e26ce09e57c85103038",
+          "write_index": 2
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.003733200000169745,
+          "payload_sha256": "742c7071903d030e83347b943a0f64443bce7ca66d5d1544eaffb4e1873a52ab",
+          "write_index": 3
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.005576100000325823,
+          "payload_sha256": "7e9f4226649d9464b33d8f1e95d1b028a12071964c292b41f21a06f930d53e40",
+          "write_index": 4
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.0047778999996808125,
+          "payload_sha256": "e80f3a7a68d63c7cef06b43f7efa5dd499157a50113712cfb737d1c2c930df08",
+          "write_index": 5
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.005969300000288058,
+          "payload_sha256": "6d2c2bc086571b02ff2d207fe6f6fbd7d8782ca3920c94803aa5f8ba3db6f9cd",
+          "write_index": 6
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.006014699999468576,
+          "payload_sha256": "5ee20751211fc9876e4f1ca6740760d4d5013e56cf10eee2458e7d7ab543c968",
+          "write_index": 7
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.0030680999998367042,
+          "payload_sha256": "4abf186d8b70babe2713ba48a0a19dc215b9ff7783074b63e2abdbac263df2f2",
+          "write_index": 8
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.0057333000004291534,
+          "payload_sha256": "fe55a8bfb77ca98e31f9b12b0f675ff80a45eb97c6d26c9473adec3ff600aab4",
+          "write_index": 9
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.00331590000041615,
+          "payload_sha256": "2d9b217edd305218a2edb69f61780a0a312a670f5c4b4f85f281ec5378fedfab",
+          "write_index": 10
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.0015327000000979751,
+          "payload_sha256": "da4767027623265cb57c3f8c105a77e3de7a7a1c1327fc581882fd6a569da2ac",
+          "write_index": 11
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.0013986999992994242,
+          "payload_sha256": "c2ffacd9f37110024217712ba3f8cb935b87716261fab8f7db2c3285f120fe7b",
+          "write_index": 12
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.0028654000007009017,
+          "payload_sha256": "6d5f3908258b31d58caacb3e91c08f2ea01c455fd8d246b4212e47890ba35e82",
+          "write_index": 13
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.0019801999997071107,
+          "payload_sha256": "75b3ec2699be402252b216d9019324fa013ac408e9094b9f77938fc0369ee97f",
+          "write_index": 14
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.0026409000001876848,
+          "payload_sha256": "f0a401961d15466647c97a356ea6dc77ae3f0f39e58aa1750573661b343fa578",
+          "write_index": 15
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.002136899999641173,
+          "payload_sha256": "dd90c453804afa850fab3e4457fde3fe377c6a969659ed80b6193b7da376c83e",
+          "write_index": 16
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.0011666000000332133,
+          "payload_sha256": "a4f5db69f94d00b66b42a3ad4f66fee31a44fd0ceb3eebfea04b51842d5225ab",
+          "write_index": 17
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.0012897999995402643,
+          "payload_sha256": "f11dff6cee2566323f1ce0368d9525d5a62586d54bb1ef7907e324ab99c5d1a3",
+          "write_index": 18
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.0009393000000272878,
+          "payload_sha256": "61779b040cb118b9691388227cfa8c7460cd70056d817336678321eb0c06a2fc",
+          "write_index": 19
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.0007982000006450107,
+          "payload_sha256": "36fdd4f0cbf975a4c1c41a936b5546062d0fd48553d866addf5d57c8e4c16f16",
+          "write_index": 20
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.0008858999999574735,
+          "payload_sha256": "5f27382b9ee1fbab544fb6892daf65b5549e7a8a4547f32e6c4456cc1c5c7079",
+          "write_index": 21
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.0008680999999342021,
+          "payload_sha256": "6f789a04d33e81949835fba8cfbf0458b8094198906d9a76eac6ca44296e3af1",
+          "write_index": 22
+        },
+        {
+          "bytes": 4096,
+          "elapsed_seconds": 0.0013864000002286048,
+          "payload_sha256": "493fde62a109d1584b14a8d01678dc968186878292809cb251c0b66e084bf82a",
+          "write_index": 23
+        }
+      ],
+      "total_fsynced_write_operations": 26,
+      "total_verified_bytes": 106496,
+      "warmup_writes": 2
+    }
+  },
+  "ordering": "location order alternates each repetition; 21721 deterministic PRNG, fresh payload per append",
+  "owned_probe_files_removed": true,
+  "schema_version": "durable-journal-io-probe-v1",
+  "simulator_interactions": 0,
+  "status": "passed",
+  "timing_scope": "Open append stream, write bytes, flush, request os.fsync, and close; warmup, directory creation, verification, cleanup and report writes excluded."
+}

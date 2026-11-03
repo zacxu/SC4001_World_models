@@ -1,0 +1,24 @@
+{
+  "status": "measured_pilot_capacity_and_unprovisioned_final_archive_gate",
+  "storage_inventory": {
+    "path": "artifacts/phase21/storage_inventory.json",
+    "sha256": "2316e2ab1c6f949be2eb1224dcd3e1a7a0231507a5bdd8d76734721eb68668ab",
+    "bytes": 4066
+  },
+  "pilot_replay_GiB": 7.013727997429669,
+  "pilot_full_case_GiB": 7.905471836216748,
+  "D_free_GiB_at_inventory": 791.5528030395508,
+  "full_case_projection_40M_decimal_TB": 1.6976871498,
+  "projection_excludes": [
+    "checkpoints",
+    "final_evaluation",
+    "independent_backups",
+    "working_copies",
+    "entropy_or_episode_length_changes"
+  ],
+  "external_archive_target_authorized": false,
+  "external_backup_verified": false,
+  "archive_provisioning_required_before_final_seeds": true,
+  "valid_data_discarded": 0,
+  "source_or_data_changed": false
+}

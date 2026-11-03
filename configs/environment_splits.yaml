@@ -1,0 +1,116 @@
+schema_version: 1
+version: cooperative-layout-splits-v1
+randomization_version: cooperative-randomization-banks-v1
+geometry_scope: >-
+  Held-out corridor and arena lengths, gate locations, and pillar arrangements
+  within the authored relay/two-console task topologies. Test geometry is not
+  sampled from training templates. This is not arbitrary-map, new-topology,
+  new-weapon, or new-enemy-class generalization.
+split_counts: {train: 6, validation: 2, test: 2}
+banks:
+  relay-shared-v1:
+    version: relay-randomization-v1
+    task_family: relay
+    role_assignment: seeded_swap
+    spawn_pairs:
+      - {operator: [64, 96], runner: [64, 352]}
+      - {operator: [80, 96], runner: [80, 352]}
+      - {operator: [96, 96], runner: [96, 352]}
+    wall_textures: [STARTAN3, BROWN1, STONE2]
+    enemy_positions: [[]]
+  cover-shared-v1:
+    version: cover-randomization-v1
+    task_family: cover
+    role_assignment: seeded_swap
+    spawn_pairs:
+      - {operator: [192, 192], runner: [192, 352]}
+      - {operator: [160, 192], runner: [160, 352]}
+      - {operator: [224, 192], runner: [224, 352]}
+    wall_textures: [STARTAN3, BROWN1, STONE2]
+    enemy_positions:
+      - [[704, 192], [256, 576]]
+      - [[736, 192], [224, 576]]
+      - [[768, 192], [288, 576]]
+templates:
+  relay:
+    - id: relay_train_00
+      split: train
+      bank: relay-shared-v1
+      geometry: {common_x: 768, gate_x: 256, obstacles: [[384, 128], [448, 256]]}
+    - id: relay_train_01
+      split: train
+      bank: relay-shared-v1
+      geometry: {common_x: 832, gate_x: 320, obstacles: [[448, 128], [512, 256]]}
+    - id: relay_train_02
+      split: train
+      bank: relay-shared-v1
+      geometry: {common_x: 896, gate_x: 384, obstacles: [[512, 128], [576, 256]]}
+    - id: relay_train_03
+      split: train
+      bank: relay-shared-v1
+      geometry: {common_x: 960, gate_x: 256, obstacles: [[448, 128], [640, 256]]}
+    - id: relay_train_04
+      split: train
+      bank: relay-shared-v1
+      geometry: {common_x: 1024, gate_x: 320, obstacles: [[576, 128], [704, 256]]}
+    - id: relay_train_05
+      split: train
+      bank: relay-shared-v1
+      geometry: {common_x: 1088, gate_x: 384, obstacles: [[640, 128], [768, 256]]}
+    - id: relay_validation_00
+      split: validation
+      bank: relay-shared-v1
+      geometry: {common_x: 1152, gate_x: 448, obstacles: [[704, 128], [832, 256]]}
+    - id: relay_validation_01
+      split: validation
+      bank: relay-shared-v1
+      geometry: {common_x: 1216, gate_x: 512, obstacles: [[768, 128], [896, 256]]}
+    - id: relay_test_00
+      split: test
+      bank: relay-shared-v1
+      geometry: {common_x: 1280, gate_x: 576, obstacles: [[832, 128], [960, 256]]}
+    - id: relay_test_01
+      split: test
+      bank: relay-shared-v1
+      geometry: {common_x: 1344, gate_x: 640, obstacles: [[896, 128], [1024, 256]]}
+  cover:
+    - id: cover_train_00
+      split: train
+      bank: cover-shared-v1
+      geometry: {width: 960, pillars: [[448, 256], [512, 256], [448, 448], [512, 448]]}
+    - id: cover_train_01
+      split: train
+      bank: cover-shared-v1
+      geometry: {width: 1024, pillars: [[448, 256], [512, 256], [576, 256], [448, 448], [512, 448]]}
+    - id: cover_train_02
+      split: train
+      bank: cover-shared-v1
+      geometry: {width: 1088, pillars: [[448, 320], [512, 320], [448, 448], [512, 448]]}
+    - id: cover_train_03
+      split: train
+      bank: cover-shared-v1
+      geometry: {width: 1152, pillars: [[448, 256], [512, 256], [448, 384], [512, 384], [576, 384]]}
+    - id: cover_train_04
+      split: train
+      bank: cover-shared-v1
+      geometry: {width: 1216, pillars: [[448, 320], [512, 320], [576, 320], [448, 448], [512, 448], [576, 448]]}
+    - id: cover_train_05
+      split: train
+      bank: cover-shared-v1
+      geometry: {width: 1280, pillars: [[448, 256], [512, 320], [448, 448], [512, 448]]}
+    - id: cover_validation_00
+      split: validation
+      bank: cover-shared-v1
+      geometry: {width: 1344, pillars: [[448, 256], [448, 320], [512, 256], [512, 448], [576, 448]]}
+    - id: cover_validation_01
+      split: validation
+      bank: cover-shared-v1
+      geometry: {width: 1408, pillars: [[512, 256], [576, 256], [448, 384], [448, 448]]}
+    - id: cover_test_00
+      split: test
+      bank: cover-shared-v1
+      geometry: {width: 1472, pillars: [[448, 256], [512, 256], [576, 256], [448, 320], [576, 448]]}
+    - id: cover_test_01
+      split: test
+      bank: cover-shared-v1
+      geometry: {width: 1536, pillars: [[448, 256], [448, 320], [448, 384], [512, 448], [576, 448]]}

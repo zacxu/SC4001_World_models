@@ -1,0 +1,14 @@
+# Ubuntu GPU installation recipe for Python 3.12.
+# Matches the development package pins, with the CUDA variant of torch 2.15.0.
+# Requires a CUDA 13.2-compatible NVIDIA driver; validate on the actual server.
+# This recipe is not a measured Linux-runtime acceptance record.
+-r requirements-phase1.lock
+--extra-index-url https://download.pytorch.org/whl/cu132
+torch==2.15.0+cu132
+filelock==4.2.4
+fsspec==2026.9.0
+Jinja2==3.1.6
+MarkupSafe==3.0.3
+mpmath==1.3.0
+networkx==3.7
+sympy==1.14.0

@@ -1,0 +1,97 @@
+{
+  "status": "passed",
+  "source_state": "frozen pending explicitly scheduled continuation; D: project and actual replay unchanged",
+  "tests": {
+    "combined_recovery_storage_collection": {
+      "count": 53,
+      "status": "OK",
+      "wall_seconds": 56.774
+    },
+    "final_public_CLI_no_action_tests": {
+      "count": 5,
+      "status": "OK",
+      "wall_seconds": 0.046
+    }
+  },
+  "read_only_actual_prefix_inspection": {
+    "status": "passed_inspection",
+    "wall_seconds": 25.150492400000076,
+    "prefix": {
+      "episodes": 226,
+      "generation_proof": {
+        "actual_authored_generation_inputs_verified": 11,
+        "actual_loaded_generation_modules_verified": 14,
+        "identical_compiler_relocation": null,
+        "origin_project_root": "D:\\world models",
+        "original_execution_sources_verified": 81,
+        "unchanged_generation_definitions": [
+          "_stream_seed",
+          "mixture_segments",
+          "CorrelatedRandomPolicy",
+          "ScriptedExplorationPolicy"
+        ]
+      },
+      "native_zero_physics_failure_checked": true,
+      "next_episode": "relay-s1-e000226",
+      "next_segment": [
+        65,
+        "scripted",
+        300
+      ],
+      "published": 32700,
+      "remaining_transitions": 17300
+    },
+    "original_execution_sources_unchanged": true,
+    "overlay_sources_unchanged": true,
+    "driver_source_unchanged": true,
+    "report_path": "../recovery_minimal_overlay_inspection.json",
+    "report_sha256": "b3bd3ab68d77e430f3dae691e7cdae988505cdd93435620fbcff4be0a186116e"
+  },
+  "existing_ledger_methods_AST_unchanged": [
+    "__init__",
+    "_append",
+    "_deltas",
+    "_snapshot",
+    "archive_to",
+    "commit_episode",
+    "manifest",
+    "record_failure",
+    "record_reset",
+    "record_transition"
+  ],
+  "new_ledger_methods": [
+    "note",
+    "resume_from_verified"
+  ],
+  "public_entrypoint": "python -m world_models.data.recovery",
+  "overlay_driver": "../recovery_driver.py",
+  "original_metadata_preserved": true,
+  "no_game_initialization_or_collection_executed_by_this_review": true,
+  "files": [
+    {
+      "path": "src/world_models/data/ledger.py",
+      "sha256": "2ff34557c20eff96d4e0be31f790fee3ccaa5ebdee1f5f13c7f5306361f9ef4e",
+      "snapshot": "frozen_sources/src/world_models/data/ledger.py"
+    },
+    {
+      "path": "src/world_models/data/replay.py",
+      "sha256": "e4006006321a526084bb8fee7e2e5e6c0ce6250b8c538b2ababf42aaaa3327aa",
+      "snapshot": "frozen_sources/src/world_models/data/replay.py"
+    },
+    {
+      "path": "src/world_models/data/recovery.py",
+      "sha256": "7332c3c8a703e8f4c262d8033786cbcc6e9282002e3fdb075d1ea407f2dfaeda",
+      "snapshot": "frozen_sources/src/world_models/data/recovery.py"
+    },
+    {
+      "path": "tests/test_replay_recovery.py",
+      "sha256": "288201b1da3fb46e9ba2463a51499ac08979280287b94af7333c3f8457085825",
+      "snapshot": "frozen_sources/tests/test_replay_recovery.py"
+    },
+    {
+      "path": "artifacts/phase21_review/recovery_driver.py",
+      "sha256": "d02f2971b6ea73dac8937051a2308d9b19f88ff6370e7914477072cb05e53ba9",
+      "snapshot": "frozen_sources/artifacts/phase21_review/recovery_driver.py"
+    }
+  ]
+}

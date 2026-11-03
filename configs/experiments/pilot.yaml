@@ -1,0 +1,13 @@
+experiment:
+  name: pilot
+  master_seeds: [0, 1]
+  real_budget: 200000
+  initial_transitions: 50000
+  collection_block: 25000
+  checkpoints: [0, 50000, 100000, 200000]
+  checkpoint_episodes: 50
+  final_episodes: 200
+  evaluation_split: validation
+  bootstrap_replicates: 10000
+  practical_auc_effect: 0.02
+  initial_scripted_fraction: 0.3

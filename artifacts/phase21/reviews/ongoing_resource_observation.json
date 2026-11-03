@@ -1,0 +1,118 @@
+{
+  "status": "passed",
+  "recorded_at_utc": "2026-11-02T14:40:10.997597+00:00",
+  "scope": "Single read-only observation of actual campaign Python root and currently live descendants; not a full-campaign resource measurement. Idle venv launcher is outside the monitored execution root.",
+  "execution_root_pid": 8204,
+  "execution_root_created": 1793620209.625893,
+  "logical_cpu_limit": 4,
+  "processes": [
+    {
+      "pid": 8204,
+      "created": 1793620209.625893,
+      "name": "python.exe",
+      "cpu_ids": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rss_bytes": 83771392
+    },
+    {
+      "pid": 13904,
+      "created": 1793630321.1152496,
+      "name": "python.exe",
+      "cpu_ids": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rss_bytes": 41730048
+    },
+    {
+      "pid": 13264,
+      "created": 1793630321.1182745,
+      "name": "python.exe",
+      "cpu_ids": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rss_bytes": 41807872
+    },
+    {
+      "pid": 19748,
+      "created": 1793630390.504546,
+      "name": "python.exe",
+      "cpu_ids": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rss_bytes": 41533440
+    },
+    {
+      "pid": 26464,
+      "created": 1793630390.5074751,
+      "name": "python.exe",
+      "cpu_ids": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rss_bytes": 41598976
+    },
+    {
+      "pid": 24652,
+      "created": 1793630390.928206,
+      "name": "vizdoom.exe",
+      "cpu_ids": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rss_bytes": 56909824
+    },
+    {
+      "pid": 1356,
+      "created": 1793630390.9282207,
+      "name": "vizdoom.exe",
+      "cpu_ids": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rss_bytes": 57602048
+    },
+    {
+      "pid": 20068,
+      "created": 1793630321.5222516,
+      "name": "vizdoom.exe",
+      "cpu_ids": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rss_bytes": 57851904
+    },
+    {
+      "pid": 26112,
+      "created": 1793630321.5222523,
+      "name": "vizdoom.exe",
+      "cpu_ids": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "rss_bytes": 57356288
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "core_autocrlf_tested": true,
+  "gitattributes_sha256": "d9854a37cfbbb7fbb60e6461833e357fb3483b1939af4789cd8491e460b314c8",
+  "original_execution_sources_unchanged": 81,
+  "samples": [
+    {
+      "git_clean_filter_preserves_exact_bytes": true,
+      "path": "artifacts/phase21/verified_sources/source_index.json",
+      "sha256": "5010e18b576cd378535b5f9bb3e1d9aef035c0decdaa06168dec74f8d6948fd5",
+      "text_attribute": "unset"
+    },
+    {
+      "git_clean_filter_preserves_exact_bytes": true,
+      "path": "artifacts/phase21/verified_sources/original/src/world_models/env/coop.py",
+      "sha256": "bb4b4e90c1b52045e80551fdcbff2f13895081e6d53efd65a330bc1bec13644d",
+      "text_attribute": "unset"
+    },
+    {
+      "git_clean_filter_preserves_exact_bytes": true,
+      "path": "artifacts/phase21/verified_sources/original/scenarios/cover/task.acs",
+      "sha256": "26a348bec6fc341ec7afe8e04e108e23e5c6c4c6d1248603f4640e3bc63a0a1e",
+      "text_attribute": "unset"
+    },
+    {
+      "git_clean_filter_preserves_exact_bytes": true,
+      "path": "artifacts/phase21/reviews/recovery_support/frozen_source_index.json",
+      "sha256": "63afb0acb7d00d9b0872eb393c5a394bf3a58879b32106a0dc2c59010abcdf12",
+      "text_attribute": "unset"
+    },
+    {
+      "git_clean_filter_preserves_exact_bytes": true,
+      "path": "artifacts/phase21/reviews/recovery_support/frozen_sources/src/world_models/data/replay.py",
+      "sha256": "e4006006321a526084bb8fee7e2e5e6c0ce6250b8c538b2ababf42aaaa3327aa",
+      "text_attribute": "unset"
+    },
+    {
+      "git_clean_filter_preserves_exact_bytes": true,
+      "path": "artifacts/phase21/reviews/production_reader_benchmark.json",
+      "sha256": "747bd63283c3b88206632133bb90b11bae6c3c450ffbb6af18ccaf790725e807",
+      "text_attribute": "unset"
+    },
+    {
+      "git_clean_filter_preserves_exact_bytes": true,
+      "path": "artifacts/phase21/storage_benchmark/storage_benchmark.json",
+      "sha256": "800fd37ea262309fcb5859115b7a8ec7a69170fe2a35670f14d3809737e87e57",
+      "text_attribute": "unset"
+    },
+    {
+      "git_clean_filter_preserves_exact_bytes": true,
+      "path": "artifacts/phase21/native_preflight_report.json",
+      "sha256": "80e1e2b4ca2f66753af58e9bb0ee5cd96fcb2086056dfc4f2d2a93238c42e78d",
+      "text_attribute": "unset"
+    },
+    {
+      "git_clean_filter_preserves_exact_bytes": true,
+      "path": "artifacts/phase21_slow_d_journal_preflight/aborted_preflight.json",
+      "sha256": "d58f34604badaff1e6d0a3e0085174aaa592e4556d4b0347385b6ec1ccd1e304",
+      "text_attribute": "unset"
+    }
+  ],
+  "scope": "P2.1 artifact byte preservation under Git attributes and clean-filter checks; no staging, commit, checkout, object writes or source changes performed.",
+  "status": "passed"
+}

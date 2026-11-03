@@ -1,0 +1,969 @@
+{
+  "schema_version": 1,
+  "version": "cooperative-layout-splits-v1",
+  "sha256": "86d3bdbff43cbff91915c43accae61263f14f2520d39bca5d0045108e901cb86",
+  "specification_path": "C:\\Users\\Admin\\Desktop\\world models\\configs\\environment_splits.yaml",
+  "specification": {
+    "schema_version": 1,
+    "version": "cooperative-layout-splits-v1",
+    "randomization_version": "cooperative-randomization-banks-v1",
+    "geometry_scope": "Held-out corridor and arena lengths, gate locations, and pillar arrangements within the authored relay/two-console task topologies. Test geometry is not sampled from training templates. This is not arbitrary-map, new-topology, new-weapon, or new-enemy-class generalization.",
+    "split_counts": {
+      "train": 6,
+      "validation": 2,
+      "test": 2
+    },
+    "banks": {
+      "relay-shared-v1": {
+        "version": "relay-randomization-v1",
+        "task_family": "relay",
+        "role_assignment": "seeded_swap",
+        "spawn_pairs": [
+          {
+            "operator": [
+              64,
+              96
+            ],
+            "runner": [
+              64,
+              352
+            ]
+          },
+          {
+            "operator": [
+              80,
+              96
+            ],
+            "runner": [
+              80,
+              352
+            ]
+          },
+          {
+            "operator": [
+              96,
+              96
+            ],
+            "runner": [
+              96,
+              352
+            ]
+          }
+        ],
+        "wall_textures": [
+          "STARTAN3",
+          "BROWN1",
+          "STONE2"
+        ],
+        "enemy_positions": [
+          []
+        ]
+      },
+      "cover-shared-v1": {
+        "version": "cover-randomization-v1",
+        "task_family": "cover",
+        "role_assignment": "seeded_swap",
+        "spawn_pairs": [
+          {
+            "operator": [
+              192,
+              192
+            ],
+            "runner": [
+              192,
+              352
+            ]
+          },
+          {
+            "operator": [
+              160,
+              192
+            ],
+            "runner": [
+              160,
+              352
+            ]
+          },
+          {
+            "operator": [
+              224,
+              192
+            ],
+            "runner": [
+              224,
+              352
+            ]
+          }
+        ],
+        "wall_textures": [
+          "STARTAN3",
+          "BROWN1",
+          "STONE2"
+        ],
+        "enemy_positions": [
+          [
+            [
+              704,
+              192
+            ],
+            [
+              256,
+              576
+            ]
+          ],
+          [
+            [
+              736,
+              192
+            ],
+            [
+              224,
+              576
+            ]
+          ],
+          [
+            [
+              768,
+              192
+            ],
+            [
+              288,
+              576
+            ]
+          ]
+        ]
+      }
+    },
+    "templates": {
+      "relay": [
+        {
+          "id": "relay_train_00",
+          "split": "train",
+          "bank": "relay-shared-v1",
+          "geometry": {
+            "common_x": 768,
+            "gate_x": 256,
+            "obstacles": [
+              [
+                384,
+                128
+              ],
+              [
+                448,
+                256
+              ]
+            ]
+          }
+        },
+        {
+          "id": "relay_train_01",
+          "split": "train",
+          "bank": "relay-shared-v1",
+          "geometry": {
+            "common_x": 832,
+            "gate_x": 320,
+            "obstacles": [
+              [
+                448,
+                128
+              ],
+              [
+                512,
+                256
+              ]
+            ]
+          }
+        },
+        {
+          "id": "relay_train_02",
+          "split": "train",
+          "bank": "relay-shared-v1",
+          "geometry": {
+            "common_x": 896,
+            "gate_x": 384,
+            "obstacles": [
+              [
+                512,
+                128
+              ],
+              [
+                576,
+                256
+              ]
+            ]
+          }
+        },
+        {
+          "id": "relay_train_03",
+          "split": "train",
+          "bank": "relay-shared-v1",
+          "geometry": {
+            "common_x": 960,
+            "gate_x": 256,
+            "obstacles": [
+              [
+                448,
+                128
+              ],
+              [
+                640,
+                256
+              ]
+            ]
+          }
+        },
+        {
+          "id": "relay_train_04",
+          "split": "train",
+          "bank": "relay-shared-v1",
+          "geometry": {
+            "common_x": 1024,
+            "gate_x": 320,
+            "obstacles": [
+              [
+                576,
+                128
+              ],
+              [
+                704,
+                256
+              ]
+            ]
+          }
+        },
+        {
+          "id": "relay_train_05",
+          "split": "train",
+          "bank": "relay-shared-v1",
+          "geometry": {
+            "common_x": 1088,
+            "gate_x": 384,
+            "obstacles": [
+              [
+                640,
+                128
+              ],
+              [
+                768,
+                256
+              ]
+            ]
+          }
+        },
+        {
+          "id": "relay_validation_00",
+          "split": "validation",
+          "bank": "relay-shared-v1",
+          "geometry": {
+            "common_x": 1152,
+            "gate_x": 448,
+            "obstacles": [
+              [
+                704,
+                128
+              ],
+              [
+                832,
+                256
+              ]
+            ]
+          }
+        },
+        {
+          "id": "relay_validation_01",
+          "split": "validation",
+          "bank": "relay-shared-v1",
+          "geometry": {
+            "common_x": 1216,
+            "gate_x": 512,
+            "obstacles": [
+              [
+                768,
+                128
+              ],
+              [
+                896,
+                256
+              ]
+            ]
+          }
+        },
+        {
+          "id": "relay_test_00",
+          "split": "test",
+          "bank": "relay-shared-v1",
+          "geometry": {
+            "common_x": 1280,
+            "gate_x": 576,
+            "obstacles": [
+              [
+                832,
+                128
+              ],
+              [
+                960,
+                256
+              ]
+            ]
+          }
+        },
+        {
+          "id": "relay_test_01",
+          "split": "test",
+          "bank": "relay-shared-v1",
+          "geometry": {
+            "common_x": 1344,
+            "gate_x": 640,
+            "obstacles": [
+              [
+                896,
+                128
+              ],
+              [
+                1024,
+                256
+              ]
+            ]
+          }
+        }
+      ],
+      "cover": [
+        {
+          "id": "cover_train_00",
+          "split": "train",
+          "bank": "cover-shared-v1",
+          "geometry": {
+            "width": 960,
+            "pillars": [
+              [
+                448,
+                256
+              ],
+              [
+                512,
+                256
+              ],
+              [
+                448,
+                448
+              ],
+              [
+                512,
+                448
+              ]
+            ]
+          }
+        },
+        {
+          "id": "cover_train_01",
+          "split": "train",
+          "bank": "cover-shared-v1",
+          "geometry": {
+            "width": 1024,
+            "pillars": [
+              [
+                448,
+                256
+              ],
+              [
+                512,
+                256
+              ],
+              [
+                576,
+                256
+              ],
+              [
+                448,
+                448
+              ],
+              [
+                512,
+                448
+              ]
+            ]
+          }
+        },
+        {
+          "id": "cover_train_02",
+          "split": "train",
+          "bank": "cover-shared-v1",
+          "geometry": {
+            "width": 1088,
+            "pillars": [
+              [
+                448,
+                320
+              ],
+              [
+                512,
+                320
+              ],
+              [
+                448,
+                448
+              ],
+              [
+                512,
+                448
+              ]
+            ]
+          }
+        },
+        {
+          "id": "cover_train_03",
+          "split": "train",
+          "bank": "cover-shared-v1",
+          "geometry": {
+            "width": 1152,
+            "pillars": [
+              [
+                448,
+                256
+              ],
+              [
+                512,
+                256
+              ],
+              [
+                448,
+                384
+              ],
+              [
+                512,
+                384
+              ],
+              [
+                576,
+                384
+              ]
+            ]
+          }
+        },
+        {
+          "id": "cover_train_04",
+          "split": "train",
+          "bank": "cover-shared-v1",
+          "geometry": {
+            "width": 1216,
+            "pillars": [
+              [
+                448,
+                320
+              ],
+              [
+                512,
+                320
+              ],
+              [
+                576,
+                320
+              ],
+              [
+                448,
+                448
+              ],
+              [
+                512,
+                448
+              ],
+              [
+                576,
+                448
+              ]
+            ]
+          }
+        },
+        {
+          "id": "cover_train_05",
+          "split": "train",
+          "bank": "cover-shared-v1",
+          "geometry": {
+            "width": 1280,
+            "pillars": [
+              [
+                448,
+                256
+              ],
+              [
+                512,
+                320
+              ],
+              [
+                448,
+                448
+              ],
+              [
+                512,
+                448
+              ]
+            ]
+          }
+        },
+        {
+          "id": "cover_validation_00",
+          "split": "validation",
+          "bank": "cover-shared-v1",
+          "geometry": {
+            "width": 1344,
+            "pillars": [
+              [
+                448,
+                256
+              ],
+              [
+                448,
+                320
+              ],
+              [
+                512,
+                256
+              ],
+              [
+                512,
+                448
+              ],
+              [
+                576,
+                448
+              ]
+            ]
+          }
+        },
+        {
+          "id": "cover_validation_01",
+          "split": "validation",
+          "bank": "cover-shared-v1",
+          "geometry": {
+            "width": 1408,
+            "pillars": [
+              [
+                512,
+                256
+              ],
+              [
+                576,
+                256
+              ],
+              [
+                448,
+                384
+              ],
+              [
+                448,
+                448
+              ]
+            ]
+          }
+        },
+        {
+          "id": "cover_test_00",
+          "split": "test",
+          "bank": "cover-shared-v1",
+          "geometry": {
+            "width": 1472,
+            "pillars": [
+              [
+                448,
+                256
+              ],
+              [
+                512,
+                256
+              ],
+              [
+                576,
+                256
+              ],
+              [
+                448,
+                320
+              ],
+              [
+                576,
+                448
+              ]
+            ]
+          }
+        },
+        {
+          "id": "cover_test_01",
+          "split": "test",
+          "bank": "cover-shared-v1",
+          "geometry": {
+            "width": 1536,
+            "pillars": [
+              [
+                448,
+                256
+              ],
+              [
+                448,
+                320
+              ],
+              [
+                448,
+                384
+              ],
+              [
+                512,
+                448
+              ],
+              [
+                576,
+                448
+              ]
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "templates": [
+    {
+      "task_family": "relay",
+      "template_id": "relay_train_00",
+      "split": "train",
+      "geometry_sha256": "81df990ca1fb7f8460d294379e486849f5ab3e23e24aae9f61df94e6d148cce1",
+      "checks": {
+        "both_spawn_points_on_floor": true,
+        "fresh_spawns_outside_task_zones": true,
+        "operator_can_reach_plate": true,
+        "runner_blocked_before_plate": true,
+        "runner_can_pass_when_plate_opens_gate": true,
+        "plate_holder_cannot_do_runner_role_before_latch": true,
+        "both_can_extract_after_latch": true,
+        "marked_extraction_matches_success_rectangle": true
+      },
+      "randomization_bank": "relay-shared-v1",
+      "all_spawn_role_enemy_bank_combinations_validated": 6
+    },
+    {
+      "task_family": "relay",
+      "template_id": "relay_train_01",
+      "split": "train",
+      "geometry_sha256": "be2c6ef3dd70530123a33654d984eb4b7f58e15b1200b34cb149786dddfd89fe",
+      "checks": {
+        "both_spawn_points_on_floor": true,
+        "fresh_spawns_outside_task_zones": true,
+        "operator_can_reach_plate": true,
+        "runner_blocked_before_plate": true,
+        "runner_can_pass_when_plate_opens_gate": true,
+        "plate_holder_cannot_do_runner_role_before_latch": true,
+        "both_can_extract_after_latch": true,
+        "marked_extraction_matches_success_rectangle": true
+      },
+      "randomization_bank": "relay-shared-v1",
+      "all_spawn_role_enemy_bank_combinations_validated": 6
+    },
+    {
+      "task_family": "relay",
+      "template_id": "relay_train_02",
+      "split": "train",
+      "geometry_sha256": "c0f83cfbc3ac787cbb343ff145a7f9102bf708fdef43024a3aefd333c97e5686",
+      "checks": {
+        "both_spawn_points_on_floor": true,
+        "fresh_spawns_outside_task_zones": true,
+        "operator_can_reach_plate": true,
+        "runner_blocked_before_plate": true,
+        "runner_can_pass_when_plate_opens_gate": true,
+        "plate_holder_cannot_do_runner_role_before_latch": true,
+        "both_can_extract_after_latch": true,
+        "marked_extraction_matches_success_rectangle": true
+      },
+      "randomization_bank": "relay-shared-v1",
+      "all_spawn_role_enemy_bank_combinations_validated": 6
+    },
+    {
+      "task_family": "relay",
+      "template_id": "relay_train_03",
+      "split": "train",
+      "geometry_sha256": "1215c556b7a4a038259511be3cf53247e34e67ae9de0c4dbffca3d10fb7cd932",
+      "checks": {
+        "both_spawn_points_on_floor": true,
+        "fresh_spawns_outside_task_zones": true,
+        "operator_can_reach_plate": true,
+        "runner_blocked_before_plate": true,
+        "runner_can_pass_when_plate_opens_gate": true,
+        "plate_holder_cannot_do_runner_role_before_latch": true,
+        "both_can_extract_after_latch": true,
+        "marked_extraction_matches_success_rectangle": true
+      },
+      "randomization_bank": "relay-shared-v1",
+      "all_spawn_role_enemy_bank_combinations_validated": 6
+    },
+    {
+      "task_family": "relay",
+      "template_id": "relay_train_04",
+      "split": "train",
+      "geometry_sha256": "e6ffd2166ace2f16300c3d5028e9089443007c05fe6eb702f235546550c56522",
+      "checks": {
+        "both_spawn_points_on_floor": true,
+        "fresh_spawns_outside_task_zones": true,
+        "operator_can_reach_plate": true,
+        "runner_blocked_before_plate": true,
+        "runner_can_pass_when_plate_opens_gate": true,
+        "plate_holder_cannot_do_runner_role_before_latch": true,
+        "both_can_extract_after_latch": true,
+        "marked_extraction_matches_success_rectangle": true
+      },
+      "randomization_bank": "relay-shared-v1",
+      "all_spawn_role_enemy_bank_combinations_validated": 6
+    },
+    {
+      "task_family": "relay",
+      "template_id": "relay_train_05",
+      "split": "train",
+      "geometry_sha256": "a0c231427a074d5c466f8f2f54ca28a936f409e97d73a75f630a5a73f21a57f2",
+      "checks": {
+        "both_spawn_points_on_floor": true,
+        "fresh_spawns_outside_task_zones": true,
+        "operator_can_reach_plate": true,
+        "runner_blocked_before_plate": true,
+        "runner_can_pass_when_plate_opens_gate": true,
+        "plate_holder_cannot_do_runner_role_before_latch": true,
+        "both_can_extract_after_latch": true,
+        "marked_extraction_matches_success_rectangle": true
+      },
+      "randomization_bank": "relay-shared-v1",
+      "all_spawn_role_enemy_bank_combinations_validated": 6
+    },
+    {
+      "task_family": "relay",
+      "template_id": "relay_validation_00",
+      "split": "validation",
+      "geometry_sha256": "1f07d7225d99ab72a9b03335e9d8eed426d08e6dbca0c3dc4c34dbf494057b83",
+      "checks": {
+        "both_spawn_points_on_floor": true,
+        "fresh_spawns_outside_task_zones": true,
+        "operator_can_reach_plate": true,
+        "runner_blocked_before_plate": true,
+        "runner_can_pass_when_plate_opens_gate": true,
+        "plate_holder_cannot_do_runner_role_before_latch": true,
+        "both_can_extract_after_latch": true,
+        "marked_extraction_matches_success_rectangle": true
+      },
+      "randomization_bank": "relay-shared-v1",
+      "all_spawn_role_enemy_bank_combinations_validated": 6
+    },
+    {
+      "task_family": "relay",
+      "template_id": "relay_validation_01",
+      "split": "validation",
+      "geometry_sha256": "47f5133e8676d57c33e176cc9772f5a4ca88f96e6f6f1ba727961cba266e27e7",
+      "checks": {
+        "both_spawn_points_on_floor": true,
+        "fresh_spawns_outside_task_zones": true,
+        "operator_can_reach_plate": true,
+        "runner_blocked_before_plate": true,
+        "runner_can_pass_when_plate_opens_gate": true,
+        "plate_holder_cannot_do_runner_role_before_latch": true,
+        "both_can_extract_after_latch": true,
+        "marked_extraction_matches_success_rectangle": true
+      },
+      "randomization_bank": "relay-shared-v1",
+      "all_spawn_role_enemy_bank_combinations_validated": 6
+    },
+    {
+      "task_family": "relay",
+      "template_id": "relay_test_00",
+      "split": "test",
+      "geometry_sha256": "1a397fb8ac09b9393fa589c557b59d59396d7083d5d37bec75ba50217217beea",
+      "checks": {
+        "both_spawn_points_on_floor": true,
+        "fresh_spawns_outside_task_zones": true,
+        "operator_can_reach_plate": true,
+        "runner_blocked_before_plate": true,
+        "runner_can_pass_when_plate_opens_gate": true,
+        "plate_holder_cannot_do_runner_role_before_latch": true,
+        "both_can_extract_after_latch": true,
+        "marked_extraction_matches_success_rectangle": true
+      },
+      "randomization_bank": "relay-shared-v1",
+      "all_spawn_role_enemy_bank_combinations_validated": 6
+    },
+    {
+      "task_family": "relay",
+      "template_id": "relay_test_01",
+      "split": "test",
+      "geometry_sha256": "045118992a2af470a45fe270add028cd23f401e988e7dda8861239b55a2a6abd",
+      "checks": {
+        "both_spawn_points_on_floor": true,
+        "fresh_spawns_outside_task_zones": true,
+        "operator_can_reach_plate": true,
+        "runner_blocked_before_plate": true,
+        "runner_can_pass_when_plate_opens_gate": true,
+        "plate_holder_cannot_do_runner_role_before_latch": true,
+        "both_can_extract_after_latch": true,
+        "marked_extraction_matches_success_rectangle": true
+      },
+      "randomization_bank": "relay-shared-v1",
+      "all_spawn_role_enemy_bank_combinations_validated": 6
+    },
+    {
+      "task_family": "cover",
+      "template_id": "cover_train_00",
+      "split": "train",
+      "geometry_sha256": "0bc73051c80cf651a259b85fb9291edf895b2186304ead4d43cb4a55ec806292",
+      "checks": {
+        "both_spawn_points_on_floor": true,
+        "fresh_spawns_outside_task_zones": true,
+        "all_consoles_reachable": true,
+        "both_can_reach_extraction": true,
+        "authored_enemies_on_reachable_floor": true,
+        "marked_extraction_matches_success_rectangle": true
+      },
+      "randomization_bank": "cover-shared-v1",
+      "all_spawn_role_enemy_bank_combinations_validated": 18
+    },
+    {
+      "task_family": "cover",
+      "template_id": "cover_train_01",
+      "split": "train",
+      "geometry_sha256": "bd95ac442a40e702d68c60ad4b303b5166b5ceb580ad7e29b0d30663e1b738f1",
+      "checks": {
+        "both_spawn_points_on_floor": true,
+        "fresh_spawns_outside_task_zones": true,
+        "all_consoles_reachable": true,
+        "both_can_reach_extraction": true,
+        "authored_enemies_on_reachable_floor": true,
+        "marked_extraction_matches_success_rectangle": true
+      },
+      "randomization_bank": "cover-shared-v1",
+      "all_spawn_role_enemy_bank_combinations_validated": 18
+    },
+    {
+      "task_family": "cover",
+      "template_id": "cover_train_02",
+      "split": "train",
+      "geometry_sha256": "7450bd78c51c0c3b865a72c48369321ed596963434cd0c87ba0345406ddc21e6",
+      "checks": {
+        "both_spawn_points_on_floor": true,
+        "fresh_spawns_outside_task_zones": true,
+        "all_consoles_reachable": true,
+        "both_can_reach_extraction": true,
+        "authored_enemies_on_reachable_floor": true,
+        "marked_extraction_matches_success_rectangle": true
+      },
+      "randomization_bank": "cover-shared-v1",
+      "all_spawn_role_enemy_bank_combinations_validated": 18
+    },
+    {
+      "task_family": "cover",
+      "template_id": "cover_train_03",
+      "split": "train",
+      "geometry_sha256": "225dee12eb331d4ef4f762fbb99cdd19d24d11e962ed618402e1da7da398902a",
+      "checks": {
+        "both_spawn_points_on_floor": true,
+        "fresh_spawns_outside_task_zones": true,
+        "all_consoles_reachable": true,
+        "both_can_reach_extraction": true,
+        "authored_enemies_on_reachable_floor": true,
+        "marked_extraction_matches_success_rectangle": true
+      },
+      "randomization_bank": "cover-shared-v1",
+      "all_spawn_role_enemy_bank_combinations_validated": 18
+    },
+    {
+      "task_family": "cover",
+      "template_id": "cover_train_04",
+      "split": "train",
+      "geometry_sha256": "98e04ec372ff7bc95474f873496342278894fb69a2a75e43fdd8e632e5972987",
+      "checks": {
+        "both_spawn_points_on_floor": true,
+        "fresh_spawns_outside_task_zones": true,
+        "all_consoles_reachable": true,
+        "both_can_reach_extraction": true,
+        "authored_enemies_on_reachable_floor": true,
+        "marked_extraction_matches_success_rectangle": true
+      },
+      "randomization_bank": "cover-shared-v1",
+      "all_spawn_role_enemy_bank_combinations_validated": 18
+    },
+    {
+      "task_family": "cover",
+      "template_id": "cover_train_05",
+      "split": "train",
+      "geometry_sha256": "7d21455d899e063de84d1cb8d8511c876325f71845a57c042ac041c87d353eca",
+      "checks": {
+        "both_spawn_points_on_floor": true,
+        "fresh_spawns_outside_task_zones": true,
+        "all_consoles_reachable": true,
+        "both_can_reach_extraction": true,
+        "authored_enemies_on_reachable_floor": true,
+        "marked_extraction_matches_success_rectangle": true
+      },
+      "randomization_bank": "cover-shared-v1",
+      "all_spawn_role_enemy_bank_combinations_validated": 18
+    },
+    {
+      "task_family": "cover",
+      "template_id": "cover_validation_00",
+      "split": "validation",
+      "geometry_sha256": "3132285bc2f880d242da37effda2de20c275d4950563104b0473e69df431a691",
+      "checks": {
+        "both_spawn_points_on_floor": true,
+        "fresh_spawns_outside_task_zones": true,
+        "all_consoles_reachable": true,
+        "both_can_reach_extraction": true,
+        "authored_enemies_on_reachable_floor": true,
+        "marked_extraction_matches_success_rectangle": true
+      },
+      "randomization_bank": "cover-shared-v1",
+      "all_spawn_role_enemy_bank_combinations_validated": 18
+    },
+    {
+      "task_family": "cover",
+      "template_id": "cover_validation_01",
+      "split": "validation",
+      "geometry_sha256": "cb25a67783235598f17ead4a652349f45c06f883fe7f5d560535b64dd0f046c4",
+      "checks": {
+        "both_spawn_points_on_floor": true,
+        "fresh_spawns_outside_task_zones": true,
+        "all_consoles_reachable": true,
+        "both_can_reach_extraction": true,
+        "authored_enemies_on_reachable_floor": true,
+        "marked_extraction_matches_success_rectangle": true
+      },
+      "randomization_bank": "cover-shared-v1",
+      "all_spawn_role_enemy_bank_combinations_validated": 18
+    },
+    {
+      "task_family": "cover",
+      "template_id": "cover_test_00",
+      "split": "test",
+      "geometry_sha256": "ee3e4e3b7d27eda5867648512b0de3c72e63532df47dbff6f88a89e3baef9935",
+      "checks": {
+        "both_spawn_points_on_floor": true,
+        "fresh_spawns_outside_task_zones": true,
+        "all_consoles_reachable": true,
+        "both_can_reach_extraction": true,
+        "authored_enemies_on_reachable_floor": true,
+        "marked_extraction_matches_success_rectangle": true
+      },
+      "randomization_bank": "cover-shared-v1",
+      "all_spawn_role_enemy_bank_combinations_validated": 18
+    },
+    {
+      "task_family": "cover",
+      "template_id": "cover_test_01",
+      "split": "test",
+      "geometry_sha256": "4111efb1b1a579292bf0faa1e125a9fa57706921017a1208d2254c0a27e272d3",
+      "checks": {
+        "both_spawn_points_on_floor": true,
+        "fresh_spawns_outside_task_zones": true,
+        "all_consoles_reachable": true,
+        "both_can_reach_extraction": true,
+        "authored_enemies_on_reachable_floor": true,
+        "marked_extraction_matches_success_rectangle": true
+      },
+      "randomization_bank": "cover-shared-v1",
+      "all_spawn_role_enemy_bank_combinations_validated": 18
+    }
+  ],
+  "geometry_disjoint_across_splits": true,
+  "nuisance_distribution": "same versioned spawn/texture/enemy banks across geometry splits",
+  "scope": "Held-out corridor and arena lengths, gate locations, and pillar arrangements within the authored relay/two-console task topologies. Test geometry is not sampled from training templates. This is not arbitrary-map, new-topology, new-weapon, or new-enemy-class generalization.",
+  "evaluation_data_enters_replay": false,
+  "diagnostic_import_requires_training_ledger": true
+}

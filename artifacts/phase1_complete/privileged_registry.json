@@ -1,0 +1,452 @@
+{
+  "schema_version": "privileged-targets-v1",
+  "actor_access": "forbidden; training_only_info only",
+  "normalization_clipping": "none except negative health/armor clamp to zero; raw values retained",
+  "fields": [
+    {
+      "scope": "player",
+      "name": "position_x",
+      "source": "POSITION_X",
+      "units": "map_units",
+      "encoding": "native_ViZDoom_float",
+      "normalization": "2*x/map_extent_x-1",
+      "validity": "finite source present; ammo >= 0; native state remains valid independently of terminal RGB"
+    },
+    {
+      "scope": "player",
+      "name": "position_y",
+      "source": "POSITION_Y",
+      "units": "map_units",
+      "encoding": "native_ViZDoom_float",
+      "normalization": "2*y/map_extent_y-1",
+      "validity": "finite source present; ammo >= 0; native state remains valid independently of terminal RGB"
+    },
+    {
+      "scope": "player",
+      "name": "position_z",
+      "source": "POSITION_Z",
+      "units": "map_units",
+      "encoding": "native_ViZDoom_float",
+      "normalization": "z/128",
+      "validity": "finite source present; ammo >= 0; native state remains valid independently of terminal RGB"
+    },
+    {
+      "scope": "player",
+      "name": "velocity_x",
+      "source": "VELOCITY_X",
+      "units": "map_units_per_tic",
+      "encoding": "native_ViZDoom_float",
+      "normalization": "value/32",
+      "validity": "finite source present; ammo >= 0; native state remains valid independently of terminal RGB"
+    },
+    {
+      "scope": "player",
+      "name": "velocity_y",
+      "source": "VELOCITY_Y",
+      "units": "map_units_per_tic",
+      "encoding": "native_ViZDoom_float",
+      "normalization": "value/32",
+      "validity": "finite source present; ammo >= 0; native state remains valid independently of terminal RGB"
+    },
+    {
+      "scope": "player",
+      "name": "health",
+      "source": "HEALTH",
+      "units": "hit_points",
+      "encoding": "native_ViZDoom_float",
+      "normalization": "max(value,0)/100",
+      "validity": "finite source present; ammo >= 0; native state remains valid independently of terminal RGB"
+    },
+    {
+      "scope": "player",
+      "name": "armor",
+      "source": "ARMOR",
+      "units": "hit_points",
+      "encoding": "native_ViZDoom_float",
+      "normalization": "max(value,0)/100",
+      "validity": "finite source present; ammo >= 0; native state remains valid independently of terminal RGB"
+    },
+    {
+      "scope": "player",
+      "name": "ammo",
+      "source": "SELECTED_WEAPON_AMMO",
+      "units": "pistol_rounds",
+      "encoding": "native_ViZDoom_float",
+      "normalization": "value/200",
+      "validity": "finite source present; ammo >= 0; native state remains valid independently of terminal RGB"
+    },
+    {
+      "scope": "player",
+      "name": "heading_sin",
+      "source": "ANGLE",
+      "units": "unitless",
+      "encoding": "sin(degrees*pi/180)",
+      "normalization": "identity",
+      "validity": "finite ANGLE"
+    },
+    {
+      "scope": "player",
+      "name": "heading_cos",
+      "source": "ANGLE",
+      "units": "unitless",
+      "encoding": "cos(degrees*pi/180)",
+      "normalization": "identity",
+      "validity": "finite ANGLE"
+    },
+    {
+      "scope": "player",
+      "name": "alive",
+      "source": "DoomGame.is_player_dead",
+      "units": "boolean",
+      "encoding": "0/1",
+      "normalization": "identity",
+      "validity": "native boolean always required"
+    },
+    {
+      "scope": "task",
+      "name": "stage",
+      "source": "ACS USER registry",
+      "units": "integer_or_boolean",
+      "encoding": "ACS integer",
+      "normalization": "progress/dwell; elapsed/deadline; stage/(milestone_count_max+1); milestones/milestone_count_max; booleans identity",
+      "validity": "declared field and applicable family; plate/gates/latch only relay; consoles only cover"
+    },
+    {
+      "scope": "task",
+      "name": "plate_active",
+      "source": "ACS USER registry",
+      "units": "integer_or_boolean",
+      "encoding": "ACS integer",
+      "normalization": "progress/dwell; elapsed/deadline; stage/(milestone_count_max+1); milestones/milestone_count_max; booleans identity",
+      "validity": "declared field and applicable family; plate/gates/latch only relay; consoles only cover"
+    },
+    {
+      "scope": "task",
+      "name": "latch_active",
+      "source": "ACS USER registry",
+      "units": "integer_or_boolean",
+      "encoding": "ACS integer",
+      "normalization": "progress/dwell; elapsed/deadline; stage/(milestone_count_max+1); milestones/milestone_count_max; booleans identity",
+      "validity": "declared field and applicable family; plate/gates/latch only relay; consoles only cover"
+    },
+    {
+      "scope": "task",
+      "name": "gate_1_open",
+      "source": "ACS USER registry",
+      "units": "integer_or_boolean",
+      "encoding": "ACS integer",
+      "normalization": "progress/dwell; elapsed/deadline; stage/(milestone_count_max+1); milestones/milestone_count_max; booleans identity",
+      "validity": "declared field and applicable family; plate/gates/latch only relay; consoles only cover"
+    },
+    {
+      "scope": "task",
+      "name": "gate_2_open",
+      "source": "ACS USER registry",
+      "units": "integer_or_boolean",
+      "encoding": "ACS integer",
+      "normalization": "progress/dwell; elapsed/deadline; stage/(milestone_count_max+1); milestones/milestone_count_max; booleans identity",
+      "validity": "declared field and applicable family; plate/gates/latch only relay; consoles only cover"
+    },
+    {
+      "scope": "task",
+      "name": "progress_1",
+      "source": "ACS USER registry",
+      "units": "decisions",
+      "encoding": "ACS integer",
+      "normalization": "progress/dwell; elapsed/deadline; stage/(milestone_count_max+1); milestones/milestone_count_max; booleans identity",
+      "validity": "declared field and applicable family; plate/gates/latch only relay; consoles only cover"
+    },
+    {
+      "scope": "task",
+      "name": "progress_2",
+      "source": "ACS USER registry",
+      "units": "decisions",
+      "encoding": "ACS integer",
+      "normalization": "progress/dwell; elapsed/deadline; stage/(milestone_count_max+1); milestones/milestone_count_max; booleans identity",
+      "validity": "declared field and applicable family; plate/gates/latch only relay; consoles only cover"
+    },
+    {
+      "scope": "task",
+      "name": "console_1_complete",
+      "source": "ACS USER registry",
+      "units": "integer_or_boolean",
+      "encoding": "ACS integer",
+      "normalization": "progress/dwell; elapsed/deadline; stage/(milestone_count_max+1); milestones/milestone_count_max; booleans identity",
+      "validity": "declared field and applicable family; plate/gates/latch only relay; consoles only cover"
+    },
+    {
+      "scope": "task",
+      "name": "console_2_complete",
+      "source": "ACS USER registry",
+      "units": "integer_or_boolean",
+      "encoding": "ACS integer",
+      "normalization": "progress/dwell; elapsed/deadline; stage/(milestone_count_max+1); milestones/milestone_count_max; booleans identity",
+      "validity": "declared field and applicable family; plate/gates/latch only relay; consoles only cover"
+    },
+    {
+      "scope": "task",
+      "name": "extraction_unlocked",
+      "source": "ACS USER registry",
+      "units": "integer_or_boolean",
+      "encoding": "ACS integer",
+      "normalization": "progress/dwell; elapsed/deadline; stage/(milestone_count_max+1); milestones/milestone_count_max; booleans identity",
+      "validity": "declared field and applicable family; plate/gates/latch only relay; consoles only cover"
+    },
+    {
+      "scope": "task",
+      "name": "success",
+      "source": "ACS USER registry",
+      "units": "integer_or_boolean",
+      "encoding": "ACS integer",
+      "normalization": "progress/dwell; elapsed/deadline; stage/(milestone_count_max+1); milestones/milestone_count_max; booleans identity",
+      "validity": "declared field and applicable family; plate/gates/latch only relay; consoles only cover"
+    },
+    {
+      "scope": "task",
+      "name": "failure",
+      "source": "ACS USER registry",
+      "units": "integer_or_boolean",
+      "encoding": "ACS integer",
+      "normalization": "progress/dwell; elapsed/deadline; stage/(milestone_count_max+1); milestones/milestone_count_max; booleans identity",
+      "validity": "declared field and applicable family; plate/gates/latch only relay; consoles only cover"
+    },
+    {
+      "scope": "task",
+      "name": "milestone_count",
+      "source": "ACS USER registry",
+      "units": "integer_or_boolean",
+      "encoding": "ACS integer",
+      "normalization": "progress/dwell; elapsed/deadline; stage/(milestone_count_max+1); milestones/milestone_count_max; booleans identity",
+      "validity": "declared field and applicable family; plate/gates/latch only relay; consoles only cover"
+    },
+    {
+      "scope": "task",
+      "name": "elapsed_decisions",
+      "source": "ACS USER registry",
+      "units": "decisions",
+      "encoding": "ACS integer",
+      "normalization": "progress/dwell; elapsed/deadline; stage/(milestone_count_max+1); milestones/milestone_count_max; booleans identity",
+      "validity": "declared field and applicable family; plate/gates/latch only relay; consoles only cover"
+    },
+    {
+      "scope": "enemy",
+      "name": "enemy_1_x",
+      "source": "ACS GetActorX/Y of stable TID",
+      "units": "map_units",
+      "encoding": "signed_ACS_16_16",
+      "normalization": "2*coordinate/map_extent-1",
+      "validity": "cover; enemy spawned and alive"
+    },
+    {
+      "scope": "enemy",
+      "name": "enemy_1_y",
+      "source": "ACS GetActorX/Y of stable TID",
+      "units": "map_units",
+      "encoding": "signed_ACS_16_16",
+      "normalization": "2*coordinate/map_extent-1",
+      "validity": "cover; enemy spawned and alive"
+    },
+    {
+      "scope": "enemy",
+      "name": "enemy_2_x",
+      "source": "ACS GetActorX/Y of stable TID",
+      "units": "map_units",
+      "encoding": "signed_ACS_16_16",
+      "normalization": "2*coordinate/map_extent-1",
+      "validity": "cover; enemy spawned and alive"
+    },
+    {
+      "scope": "enemy",
+      "name": "enemy_2_y",
+      "source": "ACS GetActorX/Y of stable TID",
+      "units": "map_units",
+      "encoding": "signed_ACS_16_16",
+      "normalization": "2*coordinate/map_extent-1",
+      "validity": "cover; enemy spawned and alive"
+    },
+    {
+      "scope": "enemy",
+      "name": "health",
+      "source": "ACS GetActorProperty(TID, APROP_Health)",
+      "units": "hit_points",
+      "encoding": "ACS integer clamped to nonnegative",
+      "normalization": "health/20",
+      "validity": "cover; enemy spawned, including dead health=0"
+    },
+    {
+      "scope": "enemy",
+      "name": "alive",
+      "source": "ACS health > 0",
+      "units": "boolean",
+      "encoding": "0/1",
+      "normalization": "identity",
+      "validity": "cover; stable enemy slot, unspawned means alive=0"
+    },
+    {
+      "scope": "enemy",
+      "name": "spawned",
+      "source": "authored stage schedule",
+      "units": "boolean",
+      "encoding": "0/1",
+      "normalization": "identity",
+      "validity": "cover; enemy1 at reset, enemy2 after console1"
+    }
+  ],
+  "user_variables": {
+    "stage": 1,
+    "success": 2,
+    "failure": 3,
+    "milestone_count": 4,
+    "progress_1": 5,
+    "progress_2": 6,
+    "plate_active": 7,
+    "latch_active": 8,
+    "elapsed_decisions": 9,
+    "registered_players": 10,
+    "start_tic": 11,
+    "enemy_health": 12,
+    "enemy_1_x": 13,
+    "enemy_1_y": 14,
+    "enemy_1_health": 15,
+    "enemy_1_alive": 16,
+    "enemy_2_x": 17,
+    "enemy_2_y": 18,
+    "enemy_2_health": 19,
+    "enemy_2_alive": 20,
+    "plate_entry_count": 21,
+    "plate_exit_count": 22,
+    "gate_open_count": 23,
+    "gate_close_count": 24,
+    "latch_activation_count": 25,
+    "console_1_completion_count": 26,
+    "console_2_completion_count": 27,
+    "success_count": 28,
+    "failure_count": 29,
+    "player_0_death_count": 30,
+    "player_1_death_count": 31,
+    "enemy_1_death_count": 32,
+    "enemy_2_death_count": 33,
+    "gate_1_open": 34,
+    "gate_2_open": 35,
+    "console_1_complete": 36,
+    "console_2_complete": 37,
+    "player_0_alive": 38,
+    "player_1_alive": 39,
+    "extraction_unlocked": 40
+  },
+  "events": [
+    {
+      "name": "plate_entries",
+      "source": "plate_entry_count",
+      "units": "episode_cumulative_count",
+      "validity": "nonnegative integral, nondecreasing within episode",
+      "normalization": "raw integer; divide by deadline*frame_skip*2 for generic bounded auxiliary scaling"
+    },
+    {
+      "name": "plate_exits",
+      "source": "plate_exit_count",
+      "units": "episode_cumulative_count",
+      "validity": "nonnegative integral, nondecreasing within episode",
+      "normalization": "raw integer; divide by deadline*frame_skip*2 for generic bounded auxiliary scaling"
+    },
+    {
+      "name": "gate_opens",
+      "source": "gate_open_count",
+      "units": "episode_cumulative_count",
+      "validity": "nonnegative integral, nondecreasing within episode",
+      "normalization": "raw integer; divide by deadline*frame_skip*2 for generic bounded auxiliary scaling"
+    },
+    {
+      "name": "gate_closes",
+      "source": "gate_close_count",
+      "units": "episode_cumulative_count",
+      "validity": "nonnegative integral, nondecreasing within episode",
+      "normalization": "raw integer; divide by deadline*frame_skip*2 for generic bounded auxiliary scaling"
+    },
+    {
+      "name": "latch_activations",
+      "source": "latch_activation_count",
+      "units": "episode_cumulative_count",
+      "validity": "nonnegative integral, nondecreasing within episode",
+      "normalization": "raw integer; divide by deadline*frame_skip*2 for generic bounded auxiliary scaling"
+    },
+    {
+      "name": "console_1_completions",
+      "source": "console_1_completion_count",
+      "units": "episode_cumulative_count",
+      "validity": "nonnegative integral, nondecreasing within episode",
+      "normalization": "raw integer; divide by deadline*frame_skip*2 for generic bounded auxiliary scaling"
+    },
+    {
+      "name": "console_2_completions",
+      "source": "console_2_completion_count",
+      "units": "episode_cumulative_count",
+      "validity": "nonnegative integral, nondecreasing within episode",
+      "normalization": "raw integer; divide by deadline*frame_skip*2 for generic bounded auxiliary scaling"
+    },
+    {
+      "name": "successes",
+      "source": "success_count",
+      "units": "episode_cumulative_count",
+      "validity": "nonnegative integral, nondecreasing within episode",
+      "normalization": "raw integer; divide by deadline*frame_skip*2 for generic bounded auxiliary scaling"
+    },
+    {
+      "name": "failures",
+      "source": "failure_count",
+      "units": "episode_cumulative_count",
+      "validity": "nonnegative integral, nondecreasing within episode",
+      "normalization": "raw integer; divide by deadline*frame_skip*2 for generic bounded auxiliary scaling"
+    },
+    {
+      "name": "player_0_deaths",
+      "source": "player_0_death_count",
+      "units": "episode_cumulative_count",
+      "validity": "nonnegative integral, nondecreasing within episode",
+      "normalization": "raw integer; divide by deadline*frame_skip*2 for generic bounded auxiliary scaling"
+    },
+    {
+      "name": "player_1_deaths",
+      "source": "player_1_death_count",
+      "units": "episode_cumulative_count",
+      "validity": "nonnegative integral, nondecreasing within episode",
+      "normalization": "raw integer; divide by deadline*frame_skip*2 for generic bounded auxiliary scaling"
+    },
+    {
+      "name": "enemy_1_deaths",
+      "source": "enemy_1_death_count",
+      "units": "episode_cumulative_count",
+      "validity": "nonnegative integral, nondecreasing within episode",
+      "normalization": "raw integer; divide by deadline*frame_skip*2 for generic bounded auxiliary scaling"
+    },
+    {
+      "name": "enemy_2_deaths",
+      "source": "enemy_2_death_count",
+      "units": "episode_cumulative_count",
+      "validity": "nonnegative integral, nondecreasing within episode",
+      "normalization": "raw integer; divide by deadline*frame_skip*2 for generic bounded auxiliary scaling"
+    }
+  ],
+  "native_counters": [
+    "DEATHCOUNT",
+    "HITCOUNT",
+    "HITS_TAKEN",
+    "DAMAGECOUNT",
+    "DAMAGE_TAKEN",
+    "KILLCOUNT",
+    "ITEMCOUNT"
+  ],
+  "native_counter_baseline": "Raw native counters are baselined at every validated episode reset; ACS task counters must reset to zero. Deltas are differences of episode-relative cumulative values.",
+  "reward_reservation": {
+    "acs_global": 0,
+    "encoding": "signed_16_16",
+    "value": 0.0,
+    "purpose": "reserved engine reward, intentionally zero; one shared reward computed centrally"
+  },
+  "sources": [
+    "https://vizdoom.farama.org/environments/creating_custom/",
+    "https://vizdoom.farama.org/api/python/enums/",
+    "https://vizdoom.farama.org/api/python/utils/"
+  ],
+  "sha256": "27c28797bb1d0e20409e45ae7dafa93f354e7b71f4cd340e5141d85e347639b5"
+}

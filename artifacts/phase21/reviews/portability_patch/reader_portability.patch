@@ -1,0 +1,185 @@
+--- a/src/world_models/data/replay.py
++++ b/src/world_models/data/replay.py
+@@ -599,7 +599,7 @@
+         path = Path(path)
+         if path.exists():
+             raise FileExistsError("branch binding already exists")
+-        value = {"variant": variant, "dataset_path": os.path.relpath(self.path, path.parent.resolve()), "manifest_sha256": self.manifest_sha256,
++        value = {"variant": variant, "dataset_path": os.path.relpath(self.path, path.parent.resolve()).replace("\\", "/"), "manifest_sha256": self.manifest_sha256,
+                  "dataset_identity_sha256": self.manifest["dataset_identity_sha256"],
+                  "attributed_initial_joint_transitions": self.manifest["transition_count"],
+                  "physical_collection_shared": True, "new_physical_transitions": 0}
+@@ -611,9 +611,16 @@
+     def from_binding(cls, path: str | Path, *, variant: str | None = None, **kwargs) -> "ReplayDataset":
+         path = Path(path)
+         value = json.loads(path.read_text(encoding="utf-8"))
++        if not isinstance(value, dict):
++            raise ValueError("shared initialization binding must be a JSON object")
+         if value.get("variant") not in ("B", "D") or variant is not None and value["variant"] != variant:
+             raise ValueError("shared initialization binding belongs to another variant")
+-        dataset_path = Path(value["dataset_path"])
++        encoded_path = value.get("dataset_path")
++        if not isinstance(encoded_path, str) or not encoded_path.strip() or "\0" in encoded_path:
++            raise ValueError("shared initialization binding needs a nonempty dataset_path string")
++        # Old Windows bindings are hash-bound evidence. Normalize only the
++        # in-memory path so they work on POSIX without rewriting their bytes.
++        dataset_path = Path(encoded_path.replace("\\", "/"))
+         if not dataset_path.is_absolute():
+             dataset_path = path.parent / dataset_path
+         dataset = cls(dataset_path, **kwargs)
+--- a/src/world_models/data/spool.py
++++ b/src/world_models/data/spool.py
+@@ -210,7 +210,14 @@
+         member = Path(relative)
+         if member.is_absolute() or member.drive or ".." in member.parts:
+             raise ValueError("journal archive receipt contains an escaping member path")
+-    if inventory != expected or receipt["content_sha256"] != _canonical(expected):
++    # WindowsPath and PosixPath enumerate mixed-case members in different
++    # orders. Compare exact names/bytes/hashes independently of that ordering,
++    # while checking the ORIGINAL ordered receipt for its historical identity.
++    canonical_members = lambda value: {
++        "directories": sorted(value["directories"]),
++        "files": sorted(value["files"], key=lambda record: record["path"]),
++    }
++    if canonical_members(inventory) != canonical_members(expected) or receipt["content_sha256"] != _canonical(expected):
+         raise ValueError("closed journal archive member bytes or inventory changed")
+     if receipt["file_count"] != len(expected["files"]) or receipt["total_bytes"] != sum(record["bytes"] for record in expected["files"]):
+         raise ValueError("closed journal archive totals disagree")
+--- a/tests/test_replay_storage.py
++++ b/tests/test_replay_storage.py
+@@ -4,10 +4,11 @@
+ from dataclasses import replace
+ import hashlib
+ import json
+-from pathlib import Path
++from pathlib import Path, PurePosixPath
+ import shutil
+ import tempfile
+ import unittest
++from unittest.mock import patch
+ 
+ import numpy as np
+ 
+@@ -198,11 +199,57 @@
+             dataset = ReplayDataset(writer.path)
+             binding = dataset.bind_variant(original/"branches/B.json", "B")
+             self.assertFalse(Path(binding["dataset_path"]).is_absolute())
++            self.assertEqual(binding["dataset_path"], "../real")
++            self.assertNotIn("\\", binding["dataset_path"])
+             destination = Path(directory)/"relocated"
+             shutil.copytree(original, destination)
+             relocated = ReplayDataset.from_binding(destination/"branches/B.json", variant="B")
+             self.assertEqual(relocated.manifest_sha256, dataset.manifest_sha256)
+             self.assertEqual(relocated.load_episode("episode-0").observation(1, 0), episode_fixture()[1].observations[0])
++
++    def test_legacy_windows_binding_is_normalized_before_posix_path_parsing(self):
++        value = {"variant": "B", "dataset_path": "..\\replay", "manifest_sha256": "a"*64,
++                 "dataset_identity_sha256": "b"*64, "attributed_initial_joint_transitions": 5}
++        class BindingPath:
++            parent = PurePosixPath("/relocated/branches")
++            def read_text(self, **kwargs): return json.dumps(value)
++        class CapturingDataset(ReplayDataset):
++            def __init__(self, path, **kwargs):
++                self.received_path = path
++                self.manifest = {"dataset_identity_sha256": "b"*64, "transition_count": 5}
++            @property
++            def manifest_sha256(self): return "a"*64
++        sentinel = object()
++        def posix_paths(argument):
++            return BindingPath() if argument is sentinel else PurePosixPath(argument)
++        with patch("world_models.data.replay.Path", side_effect=posix_paths):
++            dataset = CapturingDataset.from_binding(sentinel, variant="B")
++        self.assertEqual(dataset.received_path, PurePosixPath("/relocated/branches/../replay"))
++        self.assertNotIn("\\", str(dataset.received_path))
++
++    def test_legacy_windows_binding_reads_without_modifying_pointer_bytes(self):
++        with tempfile.TemporaryDirectory() as directory:
++            writer = self.make_writer(directory)
++            write_episode(writer, episode_fixture())
++            writer.seal()
++            dataset = ReplayDataset(writer.path)
++            path = Path(directory)/"branches/B.json"
++            value = dataset.bind_variant(path, "B")
++            value["dataset_path"] = "..\\real"
++            path.write_text(json.dumps(value), encoding="utf-8")
++            before = path.read_bytes()
++            reader = ReplayDataset.from_binding(path, variant="B")
++            self.assertEqual(reader.manifest_sha256, dataset.manifest_sha256)
++            self.assertEqual(path.read_bytes(), before)
++
++    def test_binding_path_requires_a_nonempty_string(self):
++        with tempfile.TemporaryDirectory() as directory:
++            path = Path(directory)/"binding.json"
++            for value in (None, "", "   ", 0, [], {}, "bad\0path"):
++                with self.subTest(value=value):
++                    path.write_text(json.dumps({"variant": "B", "dataset_path": value}), encoding="utf-8")
++                    with self.assertRaisesRegex(ValueError, "nonempty dataset_path string"):
++                        ReplayDataset.from_binding(path)
+ 
+     def test_anchor_selection_excludes_diagnostic_episodes_and_final_state(self):
+         with tempfile.TemporaryDirectory() as directory:
+--- a/tests/test_replay_spool.py
++++ b/tests/test_replay_spool.py
+@@ -13,6 +13,7 @@
+ from world_models.data.spool import (
+     ArchiveCleanupError, archive_closed_file, archive_closed_tree, verify_archive_tree,
+ )
++from world_models.data import spool as spool_module
+ 
+ 
+ class ReplaySpoolTests(unittest.TestCase):
+@@ -142,6 +143,54 @@
+                 with self.assertRaises(ValueError):
+                     verify_archive_tree(destination, expected_receipt_sha256=receipt["receipt_sha256"])
+ 
++    def test_platform_enumeration_order_does_not_change_original_receipt_identity(self):
++        with tempfile.TemporaryDirectory() as directory:
++            spool, source, destination = self.fixture(directory)
++            (source/"ZUPPER.txt").write_bytes(b"uppercase")
++            (source/"lower.txt").write_bytes(b"lowercase")
++            receipt = archive_closed_tree(source, destination, spool_root=spool)
++            original_bytes = (destination/"archive_receipt.json").read_bytes()
++            real_inventory = spool_module._inventory
++            def opposite_order(root):
++                inventory = real_inventory(root)
++                return {"files": list(reversed(inventory["files"])), "directories": list(reversed(inventory["directories"]))}
++            with patch.object(spool_module, "_inventory", side_effect=opposite_order):
++                verified = verify_archive_tree(destination, expected_receipt_sha256=receipt["receipt_sha256"])
++            self.assertEqual(verified["content_sha256"], receipt["content_sha256"])
++            self.assertEqual((destination/"archive_receipt.json").read_bytes(), original_bytes)
++
++    def test_shuffled_receipt_order_keeps_its_original_ordered_content_hash(self):
++        with tempfile.TemporaryDirectory() as directory:
++            spool, source, destination = self.fixture(directory)
++            (source/"ZUPPER.txt").write_bytes(b"uppercase")
++            archive_closed_tree(source, destination, spool_root=spool)
++            path = destination/"archive_receipt.json"
++            receipt = json.loads(path.read_text())
++            receipt["files"].reverse()
++            receipt["directories"].reverse()
++            original_ordered_members = {key: receipt[key] for key in ("directories", "files")}
++            receipt["content_sha256"] = spool_module._canonical(original_ordered_members)
++            path.write_text(json.dumps(receipt), encoding="utf-8")
++            before = path.read_bytes()
++            receipt_sha = spool_module._sha(path)
++            verified = verify_archive_tree(destination, expected_receipt_sha256=receipt_sha)
++            self.assertEqual(verified["content_sha256"], spool_module._canonical(original_ordered_members))
++            self.assertEqual(path.read_bytes(), before)
++            # Sorting is a comparison-only operation; a different ordered hash
++            # must not be accepted as the identity of these existing bytes.
++            receipt["content_sha256"] = "f"*64
++            path.write_text(json.dumps(receipt), encoding="utf-8")
++            with self.assertRaisesRegex(ValueError, "member bytes or inventory changed"):
++                verify_archive_tree(destination)
++
++    def test_order_independent_archive_comparison_still_rejects_payload_tampering(self):
++        with tempfile.TemporaryDirectory() as directory:
++            spool, source, destination = self.fixture(directory)
++            archive_closed_tree(source, destination, spool_root=spool)
++            (destination/"worker0/state.json").write_bytes(b"tampered")
++            with self.assertRaisesRegex(ValueError, "member bytes or inventory changed"):
++                verify_archive_tree(destination)
++
+     def test_closed_ledger_copy_preserves_source_by_default_and_never_overwrites(self):
+         with tempfile.TemporaryDirectory() as directory:
+             spool, source, destination = self.fixture(directory)

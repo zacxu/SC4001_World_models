@@ -1,0 +1,12 @@
+[
+  {
+    "path": "src/world_models/data/replay.py",
+    "before_resume_patch_sha256": "7d81f5cd5fdb9d4ea4dd419165b669af3cd411e3709cd12dc12b1bd887a4b026",
+    "frozen_D_sha256": "5cb3bfb329c924d9b4cf798dd278a1cbd1140b0fa2263a194278b504279f73bc"
+  },
+  {
+    "path": "tests/test_replay_storage.py",
+    "before_resume_patch_sha256": "d9c9e81b4fcfb54fcf325211440e2e5248c8d964bcb24c744118d969e762443f",
+    "frozen_D_sha256": "e51ef5c79361aec6e381dcd88dfd0eb5ae01cbbf3d7a04280f5ddcdd7debcd70"
+  }
+]
