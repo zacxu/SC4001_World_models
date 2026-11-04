@@ -207,3 +207,14 @@ Desktop.ini
 /artifacts/phase23/normalization/cover/*
 !/artifacts/phase23/normalization/cover/*.json
 !/artifacts/phase23/normalization/cover/*.sha256
+
+# P2.4 implementation checks only; server runs/checkpoints stay ignored.
+!/artifacts/phase24/
+/artifacts/phase24/*
+!/artifacts/phase24/*.md
+!/artifacts/phase24/phase24_acceptance.json
+!/artifacts/phase24/phase24_acceptance.sha256
+!/artifacts/phase24/regression_tests.json
+!/artifacts/phase24/regression_tests.sha256
+!/artifacts/phase24/tests.txt
+!/artifacts/phase24/regression_tests.txt

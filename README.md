@@ -77,7 +77,15 @@ and loss/gradient/event diagnostics are implemented and verified. See the
 [objectives and usage](docs/phase23_objectives.md) and
 [verification report](artifacts/phase23/phase23_acceptance.json).
 The four frozen pilot normalization files are shared by B/D within each
-task/seed pair. Next is **P2.4: train, validate, and refresh the model**.
+task/seed pair.
+
+**P2.4 implementation is completed; server training is pending.** Recurrent
+sampling/burn-in, exact microbatch accumulation, AdamW fitting, checkpoint/resume,
+held-out diagnostics, validation banks and branch refresh are implemented.
+The default launcher starts **four parallel workers sharing one GPU**, one for
+each pilot task/seed. See the [GPU training runbook](docs/phase24_training.md)
+and [implementation evidence](artifacts/phase24/README.md). No research fitting
+run was executed locally. P2.5 predictive-quality acceptance remains pending.
 
 Edit shared defaults in `configs/base.yaml`. Task and experiment files own their
 respective settings; variant overlays can only enable the teacher/distillation

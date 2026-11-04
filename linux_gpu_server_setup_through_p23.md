@@ -237,4 +237,8 @@ export IMAGEIO_FFMPEG_EXE="$(command -v ffmpeg)"
 ```
 
 Keep the original Windows research archive. The Linux reconstruction uses the
-GitHub checkout plus the transferred pilot folder. **P2.4 has not started.**
+GitHub checkout plus the transferred pilot folder. P2.4 fitting is now
+implemented; after these setup checks continue with the
+[GPU training runbook](docs/phase24_training.md). Its default is four parallel
+workers sharing one GPU. Research fitting and P2.5 quality acceptance remain
+separate user-run server work.

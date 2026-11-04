@@ -310,6 +310,17 @@ Inspect component losses, gradient norms, latent entropy, posterior/prior gap, a
 
 ### P2.4 Train, validate, and refresh the model
 
+**Implementation status:** completed; research training is left to the GPU
+server operator. See the [training and recovery runbook](docs/phase24_training.md)
+and [CPU implementation checks](artifacts/phase24/README.md). The user-selected
+launch layout is four independent parallel workers sharing one GPU, with one
+task/seed per worker. Each effective batch uses exact component/per-field
+denominators across memory-saving microbatches. Fitting-only frozen normalizers,
+versioned checkpoint/RNG recovery, held-out diagnostic evaluation, separate real
+validation-geometry banks, 16/32/64-step burn-in comparison and later branch
+refresh are implemented. The default 5,000-update fits and P2.5 quality gate have
+not been run locally; no usable learned model is claimed by implementation tests.
+
 | Setting | Pilot default |
 |---|---:|
 | Optimizer | AdamW |
