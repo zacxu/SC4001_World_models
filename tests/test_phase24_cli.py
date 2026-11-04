@@ -229,6 +229,52 @@ class LaunchTests(unittest.TestCase):
         self.assertFalse(report["gpu_training_measured"])
 
 
+class VerificationSourceTests(unittest.TestCase):
+    def setUp(self):
+        self.directory = tempfile.TemporaryDirectory()
+        self.addCleanup(self.directory.cleanup)
+        self.root = Path(self.directory.name)
+        self.output = self.root / "evidence"
+        self.test_names = ("test_model_sampling", "test_model_checkpoints", "test_model_fitting",
+                           "test_model_validation_bank", "test_phase24_cli", "test_replay_storage",
+                           "test_targets", "test_model_objective_accumulation")
+        (self.root / "tests").mkdir()
+        for name in ("__init__", *self.test_names):
+            (self.root / "tests" / f"{name}.py").write_text("")
+
+    def test_missing_transferred_test_or_shared_fixture_fails_before_loading(self):
+        for name in ("test_model_sampling", "test_replay_storage"):
+            with self.subTest(name=name):
+                path = self.root / "tests" / f"{name}.py"
+                path.unlink()
+                try:
+                    with patch.object(cli, "ROOT", self.root), \
+                         patch.object(cli.unittest.defaultTestLoader, "loadTestsFromName") as load, \
+                         self.assertRaisesRegex(FileNotFoundError, name):
+                        cli.verify(self.output)
+                    load.assert_not_called()
+                    self.assertFalse(self.output.exists())
+                finally:
+                    path.write_text("")
+
+    def test_missing_package_initializer_reports_complete_tests_transfer(self):
+        (self.root / "tests/__init__.py").unlink()
+        with patch.object(cli, "ROOT", self.root), \
+             self.assertRaisesRegex(FileNotFoundError, "including tests/__init__.py"):
+            cli.verify(self.output)
+        self.assertFalse(self.output.exists())
+
+    def test_foreign_tests_package_reports_origin_instead_of_import_placeholders(self):
+        origin = self.root / "site-packages/tests/__init__.py"
+        with patch.object(cli, "ROOT", self.root), \
+             patch.object(cli.importlib.util, "find_spec", return_value=SimpleNamespace(origin=str(origin))), \
+             patch.object(cli.unittest.defaultTestLoader, "loadTestsFromName") as load, \
+             self.assertRaisesRegex(ImportError, "resolved 'tests'.*site-packages"):
+            cli.verify(self.output)
+        load.assert_not_called()
+        self.assertFalse(self.output.exists())
+
+
 class ToyModel(nn.Linear):
     def __init__(self):
         super().__init__(2, 1)

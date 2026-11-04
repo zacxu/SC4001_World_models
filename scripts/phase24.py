@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 from dataclasses import asdict
+import importlib.util
 import json
 import os
 from pathlib import Path
@@ -224,13 +225,34 @@ def launch(args):
         return {"status": "complete_fit_stages", "workers": codes, "P2.5_quality_acceptance": False}
 
 
+def _verification_modules():
+    names = ("tests.test_model_sampling", "tests.test_model_checkpoints", "tests.test_model_fitting",
+             "tests.test_model_validation_bank", "tests.test_phase24_cli")
+    fixtures = ("tests.test_replay_storage", "tests.test_targets", "tests.test_model_objective_accumulation")
+    required = [ROOT / "tests/__init__.py", *(ROOT / (name.replace(".", "/") + ".py")
+                                            for name in (*names, *fixtures))]
+    missing = [str(path.relative_to(ROOT)) for path in required if not path.is_file()]
+    context = f"Checkout: {ROOT}; working directory: {Path.cwd()}; Python: {sys.executable}."
+    if missing:
+        raise FileNotFoundError("P2.4 verification source is incomplete. Transfer the complete project tests/ "
+                                "directory, including tests/__init__.py and shared fixtures. "
+                                f"Missing: {', '.join(missing)}. {context}")
+    spec = importlib.util.find_spec("tests")
+    origin = Path(spec.origin).resolve() if spec is not None and spec.origin else None
+    expected = (ROOT / "tests/__init__.py").resolve()
+    if origin != expected:
+        raise ImportError(f"P2.4 verification resolved 'tests' to {origin}, expected {expected}. "
+                          "Run from this checkout's root with the existing project environment activated; "
+                          f"preserve the complete tests/ directory. {context}")
+    return names
+
+
 def verify(output):
     output = Path(output)
     if output.exists():
         raise FileExistsError("verification requires a fresh evidence directory")
+    names = _verification_modules()
     output.mkdir(parents=True)
-    names = ("tests.test_model_sampling", "tests.test_model_checkpoints", "tests.test_model_fitting",
-             "tests.test_model_validation_bank", "tests.test_phase24_cli")
     suite = unittest.TestSuite(unittest.defaultTestLoader.loadTestsFromName(name) for name in names)
     with (output / "tests.txt").open("w", encoding="utf-8") as stream:
         result = unittest.TextTestRunner(stream=stream, verbosity=2).run(suite)
