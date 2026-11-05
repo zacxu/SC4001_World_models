@@ -1,6 +1,7 @@
-# Ubuntu GPU installation recipe for Python 3.12.
+# Linux GPU installation recipe for Python 3.12.
 # Matches the development package pins, with the CUDA variant of torch 2.15.0.
-# Requires a CUDA 13.2-compatible NVIDIA driver; validate on the actual server.
+# Requires native CUDA 13.2 driver support or supported forward-compat libraries.
+# ASPIRE2A A100/R570: source scripts/aspire2a_cuda.sh after the setup guide's install step.
 # This recipe is not a measured Linux-runtime acceptance record.
 -r requirements-phase1.lock
 --extra-index-url https://download.pytorch.org/whl/cu132

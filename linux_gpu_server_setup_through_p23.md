@@ -1,199 +1,268 @@
-# GitHub + pilot-data transfer to an Ubuntu GPU server
+# ASPIRE2A setup through P2.3
 
-Use **GitHub for the runnable project and small research artifacts**. Transfer
-**only `data/initial_replay/pilot/` separately**. Recreate the Linux environment
-and tools, then verify through **P2.3**. P2.4 training remains a separate step.
+Use these **Bash commands on ASPIRE2A**, then continue your existing P2.4
+checkpoints with [the training guide](docs/phase24_training.md).
+The supplied [quickstart PDF](ASPIRE2A-General-Quickstart-Guide.pdf), especially
+pages 2, 3, 7, 8 and 11, describes RHEL 8, PBS and A100 40 GB GPUs.
+Current [NSCC specifications](https://nsccsg.github.io/systems/aspire2a/system-specifications/)
+and [job guidance](https://nsccsg.github.io/quickstart/submit-a-batch-job/)
+were also checked for this update.
 
-| Through GitHub | Separate data transfer | Reinstall on Ubuntu |
-|---|---|---|
-| Source, tests, configs, scenario sources, plans/docs, requirements, selected reports, frozen normalization files | Entire `data/initial_replay/pilot/` folder: about **7.91 GiB** | Python environment, CUDA-enabled PyTorch, Linux ACC |
+**Login nodes:** transfer files, edit scripts and submit jobs.
+**Allocated compute nodes:** install/build software, run checks and train.
+Production training uses PBS batch jobs, which continue after SSH disconnects.
 
-The repository contents are about **16 MiB**, with no file near GitHub's 100 MiB
-limit. The updated `.gitignore` excludes data, venvs, tools, transfer archives,
-and generated outputs. It keeps `src/world_models/data/` and the frozen P2.3
-normalizers included. The original Windows folder can remain unchanged.
+## 1. Create WM1 in your scratch directory
 
-This recreates the runnable project and initial datasets. Ignored historical
-videos, screenshots, and long diagnostic traces remain in your Windows archive;
-they are not needed for these setup checks.
+You are already connected. Run on the login node:
 
-## 1. Upload the latest project files to GitHub
-
-Create an **empty GitHub repository**. In Windows PowerShell:
-
-```powershell
-Set-Location -LiteralPath 'D:\world models'
-if (-not (Test-Path -LiteralPath '.git')) { git init -b main }
-git add --all
-git status --short
+```bash
+export WM_ROOT=/home/users/create/smrksun/scratch/WM1
+mkdir -p "$WM_ROOT"
+cd "$WM_ROOT"
+myprojects
+myquota
 ```
 
-Check that source/configuration files, this guide, `requirements-linux-gpu.txt`,
-`.gitignore`, `.gitattributes`, and `artifacts/phase23/normalization/` are included.
-`data/`, `.venv/`, `.tools/`, and transfer ZIPs should not appear as added files.
-Do not force-add ignored data.
+Use this same `WM_ROOT` for every job and after reconnecting. Put the source,
+environment, replay and runs directly inside `WM1`, without an extra
+`MAPPO_wm` subfolder. Your PBS project ID is **`11704278`**; the submission
+commands below use this allocation.
 
-Then commit and inspect the repository address:
+Scratch is temporary and subject to purge. Keep backups of replay, frozen
+statistics and checkpoint/receipt pairs on your PC or other durable storage.
+See [NSCC storage details](https://nsccsg.github.io/systems/aspire2a/system-specifications/#storage).
 
-```powershell
-git commit -m "Project ready through P2.3"
-git remote -v
-```
+## 2. Upload your files with WinSCP
 
-If there is **no `origin` remote**, add yours, replacing the placeholder URL:
+**Do this after Step 1 creates `WM1`, before requesting a compute session in
+Step 3.** You can upload now; environment installation comes after the transfer.
 
-```powershell
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
-```
+On the **old server**, press **Ctrl+C** in the training terminal and wait for
+the launcher and all workers to exit. This preserves the last committed
+checkpoints; it does not force a new save.
 
-If an origin already exists, confirm it points to the repository you want to
-use. Once the address is correct, upload:
+If the old server's latest checkpoints are not on your PC yet, download the
+stopped run first. Your local code checkout alone may not contain them.
 
-```powershell
-git push -u origin HEAD
-```
+In WinSCP:
 
-Keep `.gitattributes` in the same commit. It preserves the exact bytes of
-published evidence and the four source files referenced by frozen statistics,
-so their SHA receipts remain valid after cloning on Linux. Do not run line-ending
-conversion tools on those files or rewrite old receipts.
+1. Open your ASPIRE2A SFTP connection using your approved access route.
+2. In the **right-hand remote pane**, open this destination:
 
-## 2. Put only the pilot data on the external disk
+   ```text
+   /home/users/create/smrksun/scratch/WM1/
+   ```
 
-Create **`pilot.zip`** from this folder itself:
+3. In the **left-hand local pane**, open your project snapshot. Upload its
+   **contents directly into `WM1`**, using **binary transfer mode**.
+
+The resulting layout should look like this (using `pilot_v1` as the example
+old run):
 
 ```text
-D:\world models\data\initial_replay\pilot
+WM1/
+  pyproject.toml
+  src/
+  scripts/
+  tests/
+  configs/
+  docs/
+    research_contract.md
+    interface_contract.md
+    phase0_status.md
+    runbook.md
+  data/initial_replay/pilot/
+  artifacts/phase23/normalization/
+  artifacts/phase24_runs/pilot_v1/
 ```
 
-Keep every file within all four complete case folders, including replay,
-bindings, ledgers, collection reports, runtime archives, and recovery provenance:
+Transfer all the required contents below, retaining their relative paths:
 
-```text
-pilot/
-  relay/seed_0/
-  relay/seed_1/
-  cover/seed_0/
-  cover/seed_1/
-```
+| Transfer | Required contents |
+|---|---|
+| Project source | Complete `src/`, `scripts/`, `tests/`, `configs/`, `scenarios/`, requirements, `pyproject.toml` and `.gitattributes` |
+| Documentation | Entire `docs/` folder, including `research_contract.md`, `interface_contract.md`, `phase0_status.md` and `runbook.md`; Phase 0 requires these files |
+| Initial replay | Entire `data/initial_replay/pilot/`: four task/seed folders, including replay, bindings and provenance |
+| Frozen P2.3 statistics | Entire `artifacts/phase23/normalization/`, including generation receipts |
+| Existing P2.4 run | Entire actual run folder, such as `artifacts/phase24_runs/pilot_v1/`, including `launch_plan.json`, every case manifest, checkpoints and SHA receipts |
 
-Each case contains 50,000 joint transitions, totaling **200,000**. Copy this ZIP
-to the external disk. Use **NTFS or exFAT**, because the ZIP will exceed 4 GB.
-There is no need to copy the Windows `.venv`, compiler, or whole project folder.
+Recreate the environment on ASPIRE2A; exclude old `.venv/`, `.envs/`, package
+caches and platform-specific tool binaries. Keep the old server's source bytes
+and configurations exactly as used by its checkpoints. Retain `.gitattributes`;
+avoid line-ending conversion and a checkout of a different fitting revision.
 
-## 3. Clone the project and restore the data on Ubuntu
+Also transfer the new `scripts/phase24_import.py` and its dependency
+`scripts/phase24_relocate.py` from this checkout, plus
+`scripts/aspire2a_cuda.sh` for CUDA compatibility on ASPIRE2A. These work
+alongside the existing fitting code. Transfer the corresponding tests if
+running the full suite.
 
-The server needs Internet access for GitHub and package downloads, a compatible
-NVIDIA driver, and enough local storage for the data and new environment.
-If you lack sudo access, ask the administrator to provide these system packages:
+Keep the old run folder as the import source. The new ASPIRE2A continuation
+will use a **different output folder**. Finish synchronization before importing;
+do not synchronize old results over that new folder later.
+
+## 3. Request a compute session for setup
+
+**Continue only after the WinSCP upload in Step 2 has finished.** From
+`WM_ROOT` on the login node:
 
 ```bash
-sudo apt-get update
-sudo apt-get install -y git unzip curl libopenal1 libsdl2-2.0-0 libgl1 ffmpeg
-mkdir -p "$HOME/projects"
-git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git "$HOME/projects/world-models"
-cd "$HOME/projects/world-models"
+export PROJECT_ID=11704278
+qsub -I -P "$PROJECT_ID" -q normal \
+  -l select=1:ngpus=1 -l walltime=02:00:00
 ```
 
-Connect the external disk. Replace the ZIP path below with its actual location:
+Wait for the allocated compute shell, then set the working path in that shell:
 
 ```bash
-mkdir -p data/initial_replay
-test ! -e data/initial_replay/pilot
-unzip "/path/to/pilot.zip" -d data/initial_replay
+export WM_ROOT=/home/users/create/smrksun/scratch/WM1
+cd "$WM_ROOT"
+module load miniforge3
+source "$(conda info --base)/etc/profile.d/conda.sh"
+export CONDA_PKGS_DIRS="$WM_ROOT/.cache/conda"
+export PIP_CACHE_DIR="$WM_ROOT/.cache/pip"
+nvidia-smi
 ```
 
-The resulting paths must be `data/initial_replay/pilot/relay/seed_0/replay/`,
-and the equivalent seed/task paths above. The guard stops accidental merging
-with an existing dataset. Keep the restored data and frozen normalizers unchanged.
+If the previous command reported `qsub: cannot send environment with the job`,
+retry the submission above without `-v WM_ROOT`. That option requires `WM_ROOT`
+to be exported in the submitting terminal; a new SSH session may not have it.
+Setting the path inside the compute shell avoids that dependency.
 
-## 4. Create the Linux environment and install dependencies
+PBS chooses the GPU and assigns CPU/RAM automatically. Keep its
+`CUDA_VISIBLE_DEVICES` assignment. See [interactive jobs](https://nsccsg.github.io/quickstart/launch-an-interactive-job/).
 
-Use **Python 3.12**. On Ubuntu 24.04, install it if needed:
+Your allocated A100 node reported driver **570.124.06**, which exposes CUDA
+driver API **12.8**. The project's PyTorch **2.15.0+cu132** uses CUDA **13.2**,
+so it needs the compatibility-library step below on this node.
+NVIDIA lists `cuda-compat-13-2` as compatible with A100-class data-center GPUs
+on supported R570 drivers. The helper installs these libraries under `WM1`
+and activates them for your processes; it does not change the host driver.
+[NVIDIA forward compatibility](https://docs.nvidia.com/deploy/cuda-compatibility/forward-compatibility.html).
+
+Keep PyTorch 2.15 when continuing these checkpoints. Its published CUDA builds
+use CUDA 13.x, and the checkpoint importer checks the PyTorch release.
+[PyTorch packaging notice](https://dev-discuss.pytorch.org/t/notice-cuda-12-6-wheels-will-no-longer-be-published-from-pytorch-2-15-drops-maxwell-pascal-volta/3432).
+
+## 4. Recreate the environment
+
+Run once in the allocated compute shell:
 
 ```bash
-sudo apt-get install -y python3.12 python3.12-venv
-```
-
-On older Ubuntu, ask for Python 3.12 or use an existing Conda installation:
-
-```bash
-conda create -n wm312 python=3.12 -y
-conda activate wm312
-```
-
-Once Python 3.12 is available, run from the cloned project folder:
-
-```bash
-python3.12 -m venv .venv
-source .venv/bin/activate
+conda create -y -p "$WM_ROOT/.envs/wm312" -c conda-forge \
+  python=3.12 pip ffmpeg openal-soft sdl2 libgl
+conda activate "$WM_ROOT/.envs/wm312"
 python -m pip install --upgrade pip
 python -m pip install -r requirements-linux-gpu.txt
 python -m pip install --no-build-isolation -e .
 python -m pip check
+export LD_LIBRARY_PATH="$CONDA_PREFIX/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+export OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1
+export CUBLAS_WORKSPACE_CONFIG=:4096:8
 ```
 
-The GPU recipe keeps the project package pins and selects **torch 2.15.0+cu132**.
-Do not install `requirements-phase2-cpu.lock` on this server: it selects CPU-only
-torch. CUDA runtime dependencies come with the wheel installation.
+For an already-created environment, activate it and skip creation/install.
+The import step checks Python major/minor, NumPy and the PyTorch release against
+the old checkpoint. A Python patch, CUDA build or GPU change is recorded as a
+runtime migration; numerical equivalence across H200 and A100 is unmeasured.
 
-Check the driver and GPU access. Driver **595.71.05 or newer** is the conservative
-baseline for this CUDA 13.2 recipe; ask the administrator about compatibility if
-the server's driver is older. On a cluster, use your assigned GPU session.
-[CUDA driver reference](https://docs.nvidia.com/cuda/archive/13.2.2/cuda-toolkit-release-notes/index.html)
+If package downloads are blocked, use NSCC's supported network route or transfer
+Linux CPython 3.12/x86-64 wheels and ACC from a connected Linux machine.
+Retain the versions in the requirements. Do not copy a Windows environment.
+
+**If the environment is already installed, start here.** Upload
+`scripts/aspire2a_cuda.sh` from this checkout to `WM1/scripts/` using WinSCP.
+In the allocated compute shell, with `wm312` active, run:
 
 ```bash
-nvidia-smi
+source scripts/aspire2a_cuda.sh --install
+```
+
+This downloads NVIDIA's approximately 92 MiB compatibility archive, checks its
+pinned SHA256, and activates its libraries. The archive and checksum come from
+[NVIDIA's CUDA 13.2.2 manifest](https://developer.download.nvidia.com/compute/cuda/redist/redistrib_13.2.2.json).
+In later compute sessions, activate the environment and run
+`source scripts/aspire2a_cuda.sh` before starting Python; no download is needed.
+The P2.4/P2.5 guides include this activation.
+
+Confirm CUDA and bfloat16 on the allocated GPU:
+
+```bash
 python - <<'PY'
 import torch
-print("PyTorch:", torch.__version__)
-assert torch.cuda.is_available(), "Check the GPU allocation, driver, and torch installation."
-for index in range(torch.cuda.device_count()):
-    assert torch.ones(8, device=f"cuda:{index}").sum().item() == 8
-    print(index, torch.cuda.get_device_name(index))
+print("PyTorch:", torch.__version__, "CUDA:", torch.version.cuda)
+assert torch.cuda.is_available(), "CUDA allocation/driver check failed"
+assert torch.cuda.is_bf16_supported(), "P2.4 requires bfloat16 support"
+x = torch.ones((16, 16), device="cuda:0", dtype=torch.bfloat16)
+assert (x @ x).float().sum().item() == 4096
+print(torch.cuda.get_device_name(0))
 PY
 ```
 
-## 5. Install the Linux scenario compiler
+Continue only after this succeeds. `nvidia-smi` can still report the host's
+CUDA 12.8 support. If the fresh Python check reports error 803/804 or unsupported
+driver features, retain the output and ask NSCC about the compatibility setup.
+The test and checkpoint import still need to pass on the allocated hardware.
 
-Download Linux ACC **1.60** and extract the whole archive, including its `.acs`
-include files. Existing scenario sources are already in the repository.
+## 5. Install Linux ACC for scenario checks
+
+On these x86-64 nodes, install ACC **1.60**, including its include files:
 
 ```bash
-case "$(uname -m)" in
-  x86_64) acc_archive='acc-1.60-linux64.zip' ;;
-  aarch64) acc_archive='acc-1.60-linuxarm64.zip' ;;
-  *) echo 'Unsupported CPU architecture'; exit 1 ;;
-esac
 mkdir -p .tools/acc-linux
-curl --fail --location "https://github.com/ZDoom/acc/releases/download/1.60/$acc_archive" -o ".tools/$acc_archive"
-unzip -o -q ".tools/$acc_archive" -d .tools/acc-linux
+curl --fail --location \
+  https://github.com/ZDoom/acc/releases/download/1.60/acc-1.60-linux64.zip \
+  -o .tools/acc-1.60-linux64.zip
+python -m zipfile -e .tools/acc-1.60-linux64.zip .tools/acc-linux
 chmod +x .tools/acc-linux/acc
-export WORLD_MODELS_ACC="$PWD/.tools/acc-linux/acc"
+export WORLD_MODELS_ACC="$WM_ROOT/.tools/acc-linux/acc"
 export IMAGEIO_FFMPEG_EXE="$(command -v ffmpeg)"
 ```
 
-ViZDoom's Linux package supplies the engine and bundled base assets. Generated
-maps are rebuilt from the scenario sources; the Windows tool binaries are not
-needed on this server.
+If a simulator shared library is still unavailable, retain the error and ask
+NSCC for the supported library/module. Scenario compilation is needed for the
+full simulator checks and later collection; P2.4 fitting itself reads replay.
 
-## 6. Verify the restored project through P2.3
+## 6. Verify the transferred project through P2.3
 
-Run from the project folder with `.venv` active:
+Run these checks in the compute session with the environment active. Proceed
+only after each command succeeds:
 
 ```bash
-set -e
-export OMP_NUM_THREADS=1
-export MKL_NUM_THREADS=1
-export OPENBLAS_NUM_THREADS=1
-CHECK_DIR="artifacts/server_check_$(date +%Y%m%d_%H%M%S)"
+CHECK_DIR="artifacts/aspire2a_check_$(date +%Y%m%d_%H%M%S)"
 mkdir -p "$CHECK_DIR"
-
+module list > "$CHECK_DIR/modules.txt" 2>&1
+nvidia-smi > "$CHECK_DIR/nvidia-smi.txt"
+python -m pip freeze > "$CHECK_DIR/pip-freeze.txt"
 python -m scripts.phase0 check --output "$CHECK_DIR/phase0_acceptance.json"
+```
+
+Expect `"status": "passed"`. If Phase 0 reports `failed`, display its actual
+failed package pins, missing documents and unit-test output before continuing:
+
+```bash
+python - "$CHECK_DIR/phase0_acceptance.json" <<'PY'
+import json, sys
+from pathlib import Path
+report = json.loads(Path(sys.argv[1]).read_text())
+print("Package mismatches:", {name: item for name, item in report["bootstrap_lock"].items() if not item["matches"]})
+print("Missing documents:", [name for name, exists in report["documents"].items() if not exists])
+tests = report["tests"]
+print("Test exit code:", tests["exit_code"])
+if tests["exit_code"]:
+    print(tests["stdout"])
+    print(tests["stderr"])
+PY
+```
+
+After Phase 0 passes, run the full suite:
+
+```bash
 python -m unittest discover -s tests -q
 ```
 
-Check the full replay data, B/D bindings, and frozen normalization metadata:
+Verify all 200,000 joint transitions, paired B/D bindings and frozen statistics:
 
 ```bash
 python - <<'PY'
@@ -219,26 +288,16 @@ python -m scripts.phase23 verify \
   --statistics-dir artifacts/phase23/normalization
 ```
 
-The tests should pass; inspect any skipped scenario-compilation tests. The last
-two commands should report **`complete_p22`** and **`complete_p23`**. They run CPU
-implementation checks, including gradients, without optimizer updates. The
-earlier GPU check separately confirms CUDA access.
+Expect **`complete_p22`** and **`complete_p23`**. Inspect simulator-test skips;
+retain failures in this new check directory. Preserve the transferred
+normalizers and receipts rather than regenerating them to bypass a mismatch.
 
-Stop on errors and retain their output. Existing Windows report paths are
-historical; do not replace them with Linux paths or edit receipts to bypass a
-failure. New reports go into `CHECK_DIR`, leaving the original reports intact.
-
-For a new terminal, return to the cloned folder and run:
+When finished, release the interactive allocation:
 
 ```bash
-source .venv/bin/activate
-export WORLD_MODELS_ACC="$PWD/.tools/acc-linux/acc"
-export IMAGEIO_FFMPEG_EXE="$(command -v ffmpeg)"
+exit
 ```
 
-Keep the original Windows research archive. The Linux reconstruction uses the
-GitHub checkout plus the transferred pilot folder. P2.4 fitting is now
-implemented; after these setup checks continue with the
-[GPU training runbook](docs/phase24_training.md). Its default is four parallel
-workers sharing one GPU. Research fitting and P2.5 quality acceptance remain
-separate user-run server work.
+Back on the login node, continue with [P2.4 checkpoint import and PBS training](docs/phase24_training.md).
+You can disconnect after batch submission. Keep the original server snapshot
+and back up new ASPIRE2A checkpoints outside scratch.

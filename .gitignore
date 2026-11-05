@@ -1,6 +1,7 @@
 # Local Python environments and downloaded scenario compiler.
 /.venv/
 /.venv-*/
+/.envs/
 /venv/
 /env/
 /.tools/

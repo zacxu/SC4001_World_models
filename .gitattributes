@@ -7,3 +7,6 @@ src/world_models/data/replay.py -text
 src/world_models/data/schema.py -text
 src/world_models/models/heads.py -text
 src/world_models/training/normalization.py -text
+
+# Keep the sourced cluster environment helper executable by Linux Bash.
+scripts/aspire2a_cuda.sh text eol=lf

@@ -41,6 +41,11 @@ python -m venv .venv
 
 ## Set up on Linux
 
+For ASPIRE2A, use the [cluster setup guide](linux_gpu_server_setup_through_p23.md)
+and [P2.4 checkpoint continuation guide](docs/phase24_training.md). The working
+directory is `/home/users/create/smrksun/scratch/WM1`, and the PBS project ID is
+`11704278`. The commands below provide the generic Phase 0 setup.
+
 ```bash
 python3 -m venv .venv
 .venv/bin/python -m pip install -r requirements-phase0.lock
@@ -83,8 +88,8 @@ task/seed pair.
 **P2.4 implementation is completed; research training runs on the server.** Recurrent
 sampling/burn-in, exact microbatch accumulation, AdamW fitting, checkpoint/resume,
 held-out diagnostics, validation banks and branch refresh are implemented.
-The default launcher starts **four parallel workers sharing one GPU**, one for
-each pilot task/seed. See the [GPU training runbook](docs/phase24_training.md)
+The ASPIRE2A workflow continues **four parallel workers, one per allocated GPU**,
+one for each pilot task/seed. See the [GPU training runbook](docs/phase24_training.md)
 and [implementation evidence](artifacts/phase24/README.md). No research fitting
 run was executed locally.
 

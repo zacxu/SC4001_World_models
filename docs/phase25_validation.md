@@ -6,16 +6,9 @@ acceptance. Keep both relay and cover, seeds 0 and 1: four shared models, each
 evaluated once. No research training or simulator collection occurs here.
 
 Use the [existing P2.4 environment](phase24_training.md), source, fitting replay
-and frozen normalization. Optionally enter `tmux new-session -A -s wm-p25`.
-For manual GPU selection, set this inside the session before starting Python:
-
-```bash
-export CUDA_DEVICE_ORDER=PCI_BUS_ID
-export CUDA_VISIBLE_DEVICES=0  # Change to the server GPU you want.
-```
-
-For GPU 2, set the mask to `2` and keep `--device cuda:0`. Preserve a scheduler's
-existing GPU mask/order instead of replacing them.
+and frozen normalization in `/home/users/create/smrksun/scratch/WM1` on ASPIRE2A.
+Run evaluation in a PBS compute allocation; preserve its GPU mask/order and
+keep `--device cuda:0` for the allocated GPU.
 
 P2.4 can keep training. Sync the new P2.5 code/tests and documentation while
 preserving the server's existing P2.4 source and configs. Local checkpoint
@@ -23,11 +16,29 @@ copies may be stale. Screen on a free GPU, or wait for the training allocation.
 
 ## 1. Verify the evaluation implementation
 
-Use a fresh evidence directory:
+On the login node, request one GPU using project **`11704278`**:
 
 ```bash
-cd /home/zixuan/projects/MAPPO_wm
-source .venv/bin/activate
+export PROJECT_ID=11704278
+export WM_ROOT=/home/users/create/smrksun/scratch/WM1
+cd "$WM_ROOT"
+qsub -I -P "$PROJECT_ID" -q normal \
+  -l select=1:ngpus=1 -l walltime=02:00:00
+```
+
+In the allocated compute shell, activate the environment and use a fresh
+evidence directory. Keep this shell open through the evaluation:
+
+```bash
+export WM_ROOT=/home/users/create/smrksun/scratch/WM1
+cd "$WM_ROOT"
+module load miniforge3
+source "$(conda info --base)/etc/profile.d/conda.sh"
+conda activate "$WM_ROOT/.envs/wm312"
+export LD_LIBRARY_PATH="$CONDA_PREFIX/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+source scripts/aspire2a_cuda.sh
+export OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1
+export CUBLAS_WORKSPACE_CONFIG=:4096:8
 set +e
 P25_VERIFY="artifacts/server_p25_verify_$(date +%Y%m%d_%H%M%S)"
 python -m scripts.phase25 verify --output-dir "$P25_VERIFY"
@@ -46,7 +57,7 @@ default cadence, updates 3,000 and 4,000 both have numbered checkpoint pairs.
 ```bash
 P25_RUN="artifacts/phase25_runs/screen_$(date +%Y%m%d_%H%M%S)"
 python -m scripts.phase25 evaluate \
-  --checkpoint artifacts/phase24_runs/pilot_v1/relay/seed_0/checkpoints/update_00003000.pt \
+  --checkpoint artifacts/phase24_runs/aspire2a_v1/relay/seed_0/checkpoints/update_00003000.pt \
   --output-dir "$P25_RUN/timing_relay_seed_0" \
   --device cuda:0 --windows 8 --seed 0 \
   --verification-report "$P25_VERIFY/implementation_checks.json"
@@ -63,7 +74,7 @@ does not automatically choose a model's best checkpoint:
 
 ```bash
 python -m scripts.phase25 campaign \
-  --run-root artifacts/phase24_runs/pilot_v1 --checkpoint-update 3000 \
+  --run-root artifacts/phase24_runs/aspire2a_v1 --checkpoint-update 3000 \
   --output-dir "$P25_RUN/campaign" \
   --device cuda:0 --windows 64 --seed 0 \
   --verification-report "$P25_VERIFY/implementation_checks.json"
@@ -71,7 +82,9 @@ python -m scripts.phase25 campaign \
 
 Four cases run sequentially to bound GPU memory. Use `--windows 8` for a smaller
 first campaign; the cap is 64 per model. Nondefault paths use `--data-dir` and
-`--statistics-dir`.
+`--statistics-dir`. Change `aspire2a_v1` if your P2.4 continuation uses another
+run folder. Exit the compute shell with `exit` when finished. Copy the reports
+and selected checkpoint pairs to durable storage; scratch is temporary.
 
 Screening an intermediate checkpoint does not finalize P2.4, change its update
 target or B/D bindings, or make it eligible for refresh.
