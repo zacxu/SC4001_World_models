@@ -70,7 +70,8 @@ remain later steps. Raw data stays outside Git; preserve a separate verified bac
 encoder/decoder, supervised heads, and prior-only imagination interface are
 implemented and verified. See the [architecture and API](docs/phase22_architecture.md)
 and [verification report](artifacts/phase22/phase22_acceptance.json).
-The model is untrained; P2.4 fitting and P2.5 model-quality acceptance remain pending.
+These checks used untrained models. Trained predictive quality is assessed
+after the server's P2.4 fit.
 
 **P2.3 is completed:** the reduced model objective, fitting-only normalization,
 and loss/gradient/event diagnostics are implemented and verified. See the
@@ -79,13 +80,23 @@ and loss/gradient/event diagnostics are implemented and verified. See the
 The four frozen pilot normalization files are shared by B/D within each
 task/seed pair.
 
-**P2.4 implementation is completed; server training is pending.** Recurrent
+**P2.4 implementation is completed; research training runs on the server.** Recurrent
 sampling/burn-in, exact microbatch accumulation, AdamW fitting, checkpoint/resume,
 held-out diagnostics, validation banks and branch refresh are implemented.
 The default launcher starts **four parallel workers sharing one GPU**, one for
 each pilot task/seed. See the [GPU training runbook](docs/phase24_training.md)
 and [implementation evidence](artifacts/phase24/README.md). No research fitting
-run was executed locally. P2.5 predictive-quality acceptance remains pending.
+run was executed locally.
+
+**P2.5 uses a compact pilot engineering gate:** screen the four shared initial
+models once each, first with a small timing sample and then up to 64 windows per
+model. Prior-only rollouts provide 1/5/10/15-step diagnostics and simple baseline
+comparisons. See the [compact validation guide](docs/phase25_validation.md).
+The campaign's `pilot_model_selection.json` records four explicit checkpoint
+identities and provisional readiness; it does not replace P2.4's B/D bindings.
+Readiness for a small Phase 3 pilot is separate from formal P2.5 acceptance;
+training-geometry diagnostic episodes do not establish held-out geometry or
+final-test performance. No trained-model acceptance result is claimed here.
 
 Edit shared defaults in `configs/base.yaml`. Task and experiment files own their
 respective settings; variant overlays can only enable the teacher/distillation

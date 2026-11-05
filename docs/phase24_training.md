@@ -108,3 +108,6 @@ For the short check, repeat its full command with `--resume` added.
 **Ctrl+C does not force a save**: updates after the last saved checkpoint repeat.
 Resume requires a saved checkpoint for each started case; verification alone
 creates no training checkpoints.
+
+After fitting, use the [compact P2.5 engineering screen](phase25_validation.md)
+before expanding Phase 3 policy experiments.

@@ -218,3 +218,17 @@ Desktop.ini
 !/artifacts/phase24/regression_tests.sha256
 !/artifacts/phase24/tests.txt
 !/artifacts/phase24/regression_tests.txt
+
+# P2.5 implementation/source-cohort evidence only; server model runs stay local.
+!/artifacts/phase25/
+/artifacts/phase25/*
+!/artifacts/phase25/README.md
+!/artifacts/phase25/implementation_v1/
+/artifacts/phase25/implementation_v1/*
+!/artifacts/phase25/implementation_v1/*.json
+!/artifacts/phase25/implementation_v1/*.sha256
+!/artifacts/phase25/implementation_v1/tests.txt
+!/artifacts/phase25/cohort_review_v1/
+/artifacts/phase25/cohort_review_v1/*
+!/artifacts/phase25/cohort_review_v1/*.json
+!/artifacts/phase25/cohort_review_v1/*.sha256

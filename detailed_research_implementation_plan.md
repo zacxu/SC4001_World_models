@@ -321,6 +321,11 @@ validation-geometry banks, 16/32/64-step burn-in comparison and later branch
 refresh are implemented. The default 5,000-update fits and P2.5 quality gate have
 not been run locally; no usable learned model is claimed by implementation tests.
 
+**Server status (user report, 2026-11-05):** P2.4 training is still running.
+The local checkout/checkpoint copies may not be synchronized with the server;
+actual optimizer counts, preserved checkpoints and completion remain unverified
+here. P2.5 implementation work does not require stopping that training.
+
 | Setting | Pilot default |
 |---|---:|
 | Optimizer | AdamW |
@@ -338,17 +343,104 @@ Use gradient accumulation if microbatches are necessary; preserve effective batc
 
 ### P2.5 Model validation and acceptance gate
 
-1. Verify transition indexing using a deterministic action-effect fixture: action at t changes observations and labels at t+1.
-2. Fit a tiny fixed dataset containing both ordinary frames and task events. Require a clear loss decrease and the ability to reproduce those events before scaling.
-3. Compare held-out one-step image prediction with persistence and reward/event prediction with constant-frequency predictors. These are model diagnostics, not additional policy variants.
-4. Evaluate fixed-action free-running rollouts at horizons 1, 5, 10, and 15 from held-out real prefixes. Report image error, reward MAE, termination calibration, stage/event accuracy, and player-state error. Inspect rare events separately from class-dominated averages.
-5. For the first simple fixtures, use provisional debugging targets of event/terminal F1 ≥0.9 and cumulative reward error ≤0.1 over a five-step rollout where those labels occur. These are diagnostic targets, not universal research benchmarks. Revise them only during pilots based on task scales and event counts.
-6. Choose a common operating imagination horizon, starting at 15. Shorten it if free-running predictions lose action/event fidelity; freeze the choice for both variants before final runs.
-7. Run shared-sample and future-leakage checks: both views/reward must use the same world-step sample; changing future real observations must not alter an autonomous rollout with fixed seed/actions.
+**Implementation complete locally:** compact evaluator, source/provenance
+checks, baseline metrics and reports are implemented. CPU verification passes
+55 targeted tests; the existing four replay cohorts are audited separately.
+See [implementation evidence](artifacts/phase25/README.md). Trained-checkpoint
+quality, server timing and exploratory readiness still require the server run.
 
-**Outputs:** model implementation, loss/shape specification, real replay pipeline, common initial checkpoint, training diagnostics, qualitative rollouts, and `phase2_acceptance.json`. Passing this phase requires usable autonomous rollouts and correct interfaces; visual reconstruction alone is insufficient evidence for policy learning.
+**Approved pilot scope:** use a compact engineering gate before expanding policy
+experiments. This checks the common world-model foundation for B and D; it is
+not another experimental arm. Retain **relay and cover, seeds 0 and 1**: evaluate
+the four shared initial checkpoints once each, rather than separately for B/D.
+See the [compact validation guide](docs/phase25_validation.md).
+
+1. Reuse recorded transition-indexing, action-identity, shared-sample,
+   future-leakage and optimizer/overfit checks where available. A structural
+   action path does not by itself establish learned action-effect accuracy.
+2. Select the same explicit optimizer update for all four models before
+   examining their scores. Intermediate checkpoints may be screened; screening
+   does not finalize an unfinished P2.4 schedule or create B/D bindings.
+3. Time four to eight windows on one checkpoint first, including replay I/O,
+   complete-prefix reconstruction and inference. Then evaluate **at most 64
+   windows per model**: up to 32 uniform and up to 32 distinct event-targeted
+   anchors. Preserve the sampling seed and report the actual selected cohort.
+   No half-day or shorter runtime has been measured or guaranteed.
+4. Reconstruct each anchor from its complete real prefix without gradients.
+   Reuse prefix states only under their exact checkpoint, replay/episode,
+   prefix and sampling identities. From each anchor, run one **prior-only,
+   recorded-action rollout up to 15 steps** and extract metrics at 1, 5, 10 and
+   15 steps. Future real observations and privileged labels are scoring targets
+   only; never correct the autonomous rollout with them.
+5. Compare RGB predictions with image persistence, outcomes/milestones with
+   fitting-only frequencies, and reward with their task-rule baseline, including
+   the exact deadline. Report reward error, outcome/termination behavior,
+   stage/milestone prediction and image error. Player-state errors remain
+   deferred formal validation work. Keep uniform and event-targeted strata
+   separate; report valid support, unique episodes and distinct positive event
+   instances. Overlapping windows are not independent trials. Missing terminal
+   RGB does not remove valid reward/outcome supervision. Early model termination
+   must appear in termination/error/coverage diagnostics, not be hidden by
+   dropping the difficult rows or forcing the model to continue.
+6. Inspect sparse latch/console/success/death labels explicitly. Zero held-out
+   death examples means **death prediction is not validated**, not a pass.
+   Low reconstruction loss and majority-class accuracy are insufficient.
+7. Record `pilot_readiness` separately from `P2.5_quality_acceptance: false`.
+   Existing model-diagnostic episodes are held out from fitting but use training
+   geometry; this engineering screen cannot establish held-out geometry or
+   final-test performance. Agree on a supported operating horizon shared by
+   B/D before policy pilots; any change from the configured 15 is an explicit
+   common pilot change, not an automatic configuration edit.
+
+Initially defer new simulator collection, burn-in sweeps, videos, ablations and
+broad tuning. Existing overfit evidence can be reused instead of repeating
+training. Record absent evidence and unsupported classes as unresolved. The
+earlier fixture targets of event/terminal F1 ≥0.9 and five-step cumulative
+reward error ≤0.1 remain provisional debugging references, not universal pass
+thresholds for this small screen.
+
+**Outputs:** verified source/checkpoint/replay/normalizer identities, selected
+windows and support, timing, baselines, separate-stratum rollout diagnostics and
+an explicit pilot-readiness recommendation. A ready engineering screen permits
+small exploratory Phase 3 integration work. Reports distinguish
+`ready_for_exploratory_phase3`, `needs_review` and `failed`; four or eight timing
+windows alone are not sufficient for advancement. A completed four-model
+campaign also writes a receipt-bound `pilot_model_selection.json`, retaining
+all four checkpoint identities and readiness even when review is needed. It
+does not finalize an unfinished P2.4 run or replace its B/D bindings.
+Treat the final campaign report and its SHA receipt as the completion marker;
+check its selection receipt before using that separate pilot selection.
+
+The provisional 15-step readiness checks are fixed in `compact.PILOT_THRESHOLDS`:
+at least 16 uniform windows and 8 full-length uniform suffixes; at least 75%
+prediction coverage and at most 25% false-early-termination windows in each
+stratum; coverage-adjusted RGB MSE within persistence +0.02 and outcome Brier
+within fitting baseline +0.05; both final cumulative and cumulative-path reward
+MAE no greater than 1.25 × their respective baselines +0.05. In the event stratum,
+each task milestone needs at least five distinct positives, recall ≥0.5,
+precision ≥0.25 and coverage-adjusted Brier within its fitting baseline +0.02.
+There must also be five distinct successes, success argmax recall ≥0.5 and
+sampled-terminal recall ≥0.5 in that stratum. All four models must meet these
+engineering alarms; no statistically calibrated quality acceptance is implied.
+
+**Deferred formal acceptance:** retain the full requirement for transition and
+action-effect correctness, overfit task-event reproduction, held-out
+validation-geometry comparisons with persistence/constant predictors, autonomous
+1/5/10/15-step image/player-state fidelity with supported rare-event/termination diagnostics, and
+shared-sample/future-leakage checks. Freeze the supported common B/D operating
+horizon before final experiments. Complete training diagnostics, appropriate
+qualitative rollout evidence and `phase2_acceptance.json` remain required before
+expanding beyond exploratory policy work or making confirmatory B/D claims.
+Do not choose checkpoints or tune the horizon using final-test data.
 
 ## Phase 3 — Implement variant B: local MAPPO in imagination
+
+Begin with a small end-to-end pilot after the compact P2.5 engineering screen
+supports proceeding. Verify real-environment local-policy behavior before
+expanding training; screen readiness is not evidence of policy competence.
+Keep the common foundation and local MAPPO opportunities matched across B/D.
+Phase 3 implementation and runtime are additional work, not included in the
+P2.5 timing measurement.
 
 ### P3.1 Implement local actors and the centralized critic
 

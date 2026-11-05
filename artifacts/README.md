@@ -61,3 +61,9 @@ metadata under `artifacts/phase23/`. Each B/D task/seed pair references the same
 statistics file. These metadata contain counts, field moments, episode IDs,
 and hashes; replay RGB and model checkpoints remain excluded. See the
 [objective runbook](../docs/phase23_objectives.md) to regenerate or recheck them.
+
+P2.5 keeps compact engineering implementation and frozen replay-cohort evidence
+under `artifacts/phase25/`. These are CPU/source checks, separate from trained
+checkpoint quality and formal Phase 2 acceptance. Server evaluation reports,
+model-selection receipts and weights remain local; preserve a separate backup.
+See the [compact validation guide](../docs/phase25_validation.md).
