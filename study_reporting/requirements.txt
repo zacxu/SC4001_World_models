@@ -1,0 +1,2 @@
+# Reporting-only dependency; original training requirements remain unchanged.
+matplotlib==3.11.2

@@ -1,0 +1,2 @@
+# Saved-record reaggregation only; current Windows environment already has this.
+PyYAML==6.0.3

@@ -1,0 +1,295 @@
+{
+  "created_at_utc": "2026-11-04T07:37:51.705244+00:00",
+  "metadata": {
+    "common_config_sha256": "172e7ed1b8c01921385702e093692e31f0185157a52f28c1920040bf5d1952f8",
+    "cuda_visible_devices": "7",
+    "device": "cuda:0",
+    "device_type": "cuda",
+    "fitting_seed": 3276331622,
+    "initial_normalization": {
+      "file_sha256": "b5b448138e3baab8b2ef73cf61089ab24dd4f0964081a83f9a89b863a4d09029",
+      "identity_sha256": "44428b6c6e7f836fe8127dadaa8ebbd180658b6eab78fea836879c27b792e79e"
+    },
+    "normalization_policy": "frozen initial fitting statistics; no updates from diagnostics or refresh",
+    "precision": "bfloat16",
+    "profile": "pilot",
+    "replays": [
+      {
+        "dataset_identity_sha256": "385fdf4479a47323041c0ccd4c535aba3713f92138892e0f7bc9efa1d3e138f4",
+        "manifest_sha256": "d03af4cd0f78656f2f468952443807ef8fb8aa5d678b4ea8eae6ab873ee4d108",
+        "transitions": 50000
+      }
+    ],
+    "run_seed": 1,
+    "runtime_contract": {
+      "cuda_runtime": "13.2",
+      "cudnn": 92600,
+      "gpu_capability": [
+        9,
+        0
+      ],
+      "gpu_name": "NVIDIA H200",
+      "numpy": "2.5.4",
+      "python": "3.12.3",
+      "torch": "2.15.0+cu132"
+    },
+    "settings": {
+      "burn_in": 16,
+      "checkpoint_every": 250,
+      "effective_batch": 32,
+      "gradient_clip": 100.0,
+      "learning_rate": 0.0001,
+      "log_every": 10,
+      "loss_steps": 48,
+      "microbatch": 4,
+      "precision": "bfloat16",
+      "validate_every": 250,
+      "validation_windows": 16,
+      "weight_decay": 0.0001
+    },
+    "source_sha256": {
+      "scripts/phase24.py": "40eeb7736eb8a95d01e48068cd31feade640209966b53308c7d4820d9a1caeef",
+      "src/world_models/data/replay.py": "e4006006321a526084bb8fee7e2e5e6c0ce6250b8c538b2ababf42aaaa3327aa",
+      "src/world_models/data/schema.py": "3d68de72f95b666930c128534175529fb3a7fae8956afaa191675c356b8e5f88",
+      "src/world_models/infrastructure/config.py": "4e43fde458e13b74166282f85a988a81ea174faa6b5bb2517e504d25f90a71cd",
+      "src/world_models/infrastructure/reproducibility.py": "4667d44c461ecd98c5838c560dec27e1708930e2ca90410e84b791e0277bb4be",
+      "src/world_models/models/__init__.py": "ce1bfc1cfcd29f37cd99045ce774ac669737fc0eaffcb7e125303091c288c5ea",
+      "src/world_models/models/core.py": "4efa9d638bc5645fa6d9476f8f60a3e8116ed780f3b1da64c5a87b32fbebeb9e",
+      "src/world_models/models/heads.py": "9ab30036f46084fc4269e6355b050d076e76c616b1b3118f00e1387544631d70",
+      "src/world_models/models/world_model.py": "25f9ef42357d90ea06c3a94821135ab897b3610232776839ed744e1be15982c4",
+      "src/world_models/training/checkpoints.py": "f03eb288734f7557a51c633b48123801505f75bf87b79c92f87cbaf3b25ca311",
+      "src/world_models/training/diagnostics.py": "dadab0dfd21fe1b435fecb8e266e2c09748b05832466dd2bcf5e3c31062cc89b",
+      "src/world_models/training/fitting.py": "feb680515514b38ea898466bf0f70c0d58ee965213ec4551d38e9ca81d455d93",
+      "src/world_models/training/losses.py": "18222dd71c08509df1ee9d97d8bba7afc12c1b13d2e5fa5926f9d0e2e78c0044",
+      "src/world_models/training/normalization.py": "3ade5e03070e820fadf49bc3f46fbffae6b2d469dafff82966a761987d9eff80",
+      "src/world_models/training/objective.py": "91fb91b5c0aa8aa0ecc3d7042356d2ed659ebbc24efe55d4fc2d7af52a637483",
+      "src/world_models/training/objective_batch.py": "698cf289925c785d735586034621e13aca7bae76a2fcd9cf4936ace5bceb3773",
+      "src/world_models/training/runner.py": "b8c7f9091c2cb0e9b93603b625a137fe93ffcaac5d7f9a20de68d858123b29c8",
+      "src/world_models/training/sampling.py": "95eeab790196472634e5cef2bced8502576c42e70f98a58d41077cc51cbe1f18",
+      "src/world_models/training/validation.py": "7a894abf9e3ce33bc8062988c5bc2486e6848bdc42c4f06be2ea7380194c8fad"
+    },
+    "stage": "initial",
+    "target_stage_updates": 5000,
+    "task_family": "cover",
+    "variant": "shared_initial:B,D"
+  },
+  "resolved_config": {
+    "config_hash": "1ab3653406cbbfe6741d9ee579628f6cd9267ee57f118904d26c473677c9c1f1",
+    "derived": {
+      "checkpoint_count": 4,
+      "comparison_run_count": 8,
+      "guided_local_cycles": 0,
+      "local_ppo_cycles": 220,
+      "nominal_local_imagined_joint_steps": 844800,
+      "online_blocks": 6,
+      "teacher_ppo_cycles": 0,
+      "unguided_local_cycles": 220
+    },
+    "settings": {
+      "actor": {
+        "dropout": 0.0,
+        "embedding_size": 256,
+        "hidden_size": 256
+      },
+      "critic": {
+        "actor_memories": true,
+        "hidden_sizes": [
+          512,
+          512
+        ],
+        "remaining_time": true
+      },
+      "distillation": {
+        "decay_fraction": 0.75,
+        "direction": "teacher_to_student_forward_kl",
+        "initial_trajectories": 512,
+        "initial_weight": 1.0,
+        "target": "soft_action_distribution",
+        "temperature": 1.0,
+        "trajectory_source": "student",
+        "warm_start_batch_sequences": 64,
+        "warm_start_updates": 200
+      },
+      "environment": {
+        "action_count": 12,
+        "actor_agent_identity": false,
+        "actor_global_input": false,
+        "actor_reward_input": false,
+        "agents": 2,
+        "communication": false,
+        "exact_episode_clock": true,
+        "frame_skip": 4,
+        "image_shape": [
+          3,
+          96,
+          128
+        ],
+        "local_actor_inputs": [
+          "local_rgb",
+          "previous_action",
+          "local_hidden"
+        ],
+        "previous_action_start": 12,
+        "prior_future_truth": false,
+        "privileged_mode": "auxiliary_targets_only",
+        "render_shape": [
+          120,
+          160
+        ],
+        "separate_actor_memory": true,
+        "shared_actor_weights": true
+      },
+      "experiment": {
+        "bootstrap_replicates": 10000,
+        "checkpoint_episodes": 50,
+        "checkpoints": [
+          0,
+          50000,
+          100000,
+          200000
+        ],
+        "collection_block": 25000,
+        "evaluation_split": "validation",
+        "final_episodes": 200,
+        "initial_scripted_fraction": 0.3,
+        "initial_transitions": 50000,
+        "master_seeds": [
+          0,
+          1
+        ],
+        "name": "pilot",
+        "practical_auc_effect": 0.02,
+        "real_budget": 200000
+      },
+      "mappo": {
+        "clip_epsilon": 0.2,
+        "differentiate_world_model": false,
+        "entropy_coefficient": 0.01,
+        "epochs": 4,
+        "frozen_rollout_snapshots": true,
+        "gae_lambda": 0.95,
+        "gamma": 0.99,
+        "gradient_clip": 0.5,
+        "horizon": 15,
+        "initial_local_cycles": 100,
+        "learning_rate": 0.0003,
+        "normalize_actor_advantages": true,
+        "normalize_values": false,
+        "online_local_cycles": 20,
+        "optimizer_epsilon": 1e-05,
+        "recurrent_minibatches": 4,
+        "starts": 256,
+        "value_coefficient": 0.5,
+        "value_huber_delta": 1.0
+      },
+      "resources": {
+        "cpu_threads": 1,
+        "data_loader_workers": 0,
+        "distributed_training": false,
+        "initial_collectors": 2,
+        "learners_per_gpu": 1,
+        "mixed_precision": "bfloat16",
+        "optimizer_dtype": "float32",
+        "probability_dtype": "float32",
+        "requested_cpu_cores": 4,
+        "requested_gpu_count": 4,
+        "requested_gpu_model": "H200"
+      },
+      "schema_version": 1,
+      "study": {
+        "evaluation_enters_replay": false,
+        "interaction_unit": "joint_transition",
+        "primary_metric": "normalized_success_auc",
+        "separate_family_runs": true,
+        "task_families": [
+          "relay",
+          "cover"
+        ],
+        "variants": [
+          "B",
+          "D"
+        ]
+      },
+      "task": {
+        "deadline": 600,
+        "dwell_decisions": 20,
+        "failure_reward": -1.0,
+        "milestone_bonus": 0.05,
+        "milestone_count": 2,
+        "name": "cover",
+        "step_cost": -0.001,
+        "success_reward": 1.0,
+        "test_layouts": 2,
+        "train_layouts": 6,
+        "validation_layouts": 2
+      },
+      "teacher": {
+        "attention_heads": 4,
+        "head_width": 256,
+        "initial_cycles": 100,
+        "online_cycles": 20,
+        "recurrent_input": "local_history"
+      },
+      "variant": {
+        "distillation_enabled": false,
+        "name": "B",
+        "teacher_enabled": false
+      },
+      "world_model": {
+        "attention_heads": 8,
+        "burn_in": 16,
+        "effective_batch": 32,
+        "encoder_channels": [
+          32,
+          64,
+          128,
+          256
+        ],
+        "ffn_width": 1024,
+        "fitting_episode_fraction": 0.9,
+        "free_nats": 1.0,
+        "gradient_clip": 100.0,
+        "initial_updates": 5000,
+        "latent_categories": 32,
+        "latent_variables": 32,
+        "learning_rate": 0.0001,
+        "loss_weights": {
+          "auxiliary": 1.0,
+          "dynamics_kl": 0.5,
+          "outcome": 1.0,
+          "representation_kl": 0.1,
+          "reward": 1.0,
+          "rgb": 100.0
+        },
+        "memory_tokens": 16,
+        "online_updates": 500,
+        "recent_fraction": 0.5,
+        "recent_transitions": 100000,
+        "sequence_length": 64,
+        "transformer_blocks": 4,
+        "uniform_mixture": 0.01,
+        "weight_decay": 0.0001,
+        "width": 256
+      }
+    },
+    "source_hashes": {
+      "base.yaml": "8173b27a37b136080af868f92b12d6d528347841feb61041e89ecd5d56e65662",
+      "experiments/pilot.yaml": "865bf43869b4fb75fa8ea9cf1f9e324090d88eb1abdf5d2d995bf4ccda984239",
+      "tasks/cover.yaml": "e2c2dcf330ae1155b8219f49017973485d2d158ddfd4adcf6bfb9c3f83687ec2",
+      "variants/B.yaml": "07b3481a905a5b7cca085935e57b5222527ec29f949937809a534ed6cacf745d"
+    }
+  },
+  "runtime": {
+    "cpu_threads": 1,
+    "cuda_runtime": "13.2",
+    "cuda_visible_devices": "7",
+    "device": "cuda:0",
+    "gpu_name": "NVIDIA H200",
+    "numpy": "2.5.4",
+    "pid": 1093797,
+    "python": "3.12.3",
+    "torch": "2.15.0+cu132"
+  },
+  "schema_version": "p24-run-v1",
+  "training_budget_interactions_added": 0
+}

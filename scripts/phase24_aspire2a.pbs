@@ -1,0 +1,54 @@
+#!/bin/bash -l
+#PBS -N wm-p24
+#PBS -P 11704278
+#PBS -q normal
+#PBS -l select=1:ngpus=2:ncpus=32:mem=220gb
+#PBS -l walltime=24:00:00
+#PBS -j oe
+
+# Fitting was stopped for the shortened pilot on 2026-11-08. This legacy
+# continuation script is opt-in; the current workflow freezes saved checkpoints.
+if [[ "${WM_P24_CONTINUE_TRAINING:-0}" != "1" ]]; then
+    printf '%s\n' 'P2.4 fitting is stopped for the shortened pilot. Follow docs/phase24_training.md to freeze the saved checkpoints.' >&2
+    exit 2
+fi
+
+# Two allocated GPUs, with two independent training workers sharing each GPU.
+# NSCC assigns 16 CPUs and 110 GB RAM per GPU; normal routes this job to g2.
+set -e
+: "${PBS_JOBID:?Submit this script using qsub from a login node}"
+export WM_ROOT=/home/users/create/smrksun/scratch/WM1
+cd "$WM_ROOT"
+mkdir -p artifacts/pbs
+exec > "artifacts/pbs/p24_${PBS_JOBID}.log" 2>&1
+
+SOURCE=artifacts/phase24_runs/aspire2a_v1
+RUN=artifacts/phase24_runs/aspire2a_2gpu_v1
+test -f "$SOURCE/launch_plan.json"
+if [[ -e "$RUN" ]]; then
+    echo "Destination already exists: $RUN. Preserve it and choose a fresh RUN."
+    exit 1
+fi
+
+module load miniforge3
+source "$(conda info --base)/etc/profile.d/conda.sh"
+conda activate "$WM_ROOT/.envs/wm312"
+export LD_LIBRARY_PATH="$CONDA_PREFIX/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+source scripts/aspire2a_cuda.sh
+export OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1
+export CUBLAS_WORKSPACE_CONFIG=:4096:8 PYTHONUNBUFFERED=1
+
+# Keep PBS's CUDA_VISIBLE_DEVICES and CUDA_DEVICE_ORDER unchanged.
+python - <<'PY'
+import torch
+assert torch.cuda.is_available() and torch.cuda.device_count() == 2, "Expected two allocated GPUs"
+for index in range(2):
+    with torch.cuda.device(index):
+        assert torch.cuda.is_bf16_supported(), "bfloat16 GPU support required"
+        x = torch.ones((16, 16), device=f"cuda:{index}", dtype=torch.bfloat16)
+        assert (x @ x).float().sum().item() == 4096
+PY
+
+python -m scripts.phase24_import prepare \
+  --source-dir "$SOURCE" --output-dir "$RUN" --gpus 0,1 --workers-per-gpu 2
+exec python -m scripts.phase24_import resume --output-dir "$RUN"

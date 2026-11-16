@@ -26,6 +26,22 @@ NEW_RUNTIME = {"python": "3.12.11", "torch": "2.5.1+cu121", "numpy": "2.0.0",
                "gpu_capability": [8, 0]}
 
 
+class GPUInventoryTests(unittest.TestCase):
+    def test_two_visible_devices_keep_scheduler_masks_and_distinct_physical_identities(self):
+        tokens = ["GPU-pbs-5", "GPU-pbs-2"]
+        with patch.dict(os.environ, {"CUDA_VISIBLE_DEVICES": ",".join(tokens)}), \
+             patch.object(torch.cuda, "is_available", return_value=True), \
+             patch.object(torch.cuda, "device_count", return_value=2), \
+             patch.object(torch.cuda, "get_device_properties", side_effect=lambda device:
+                 SimpleNamespace(uuid=tokens[device.index])), \
+             patch.object(runner, "runtime_contract", return_value=deepcopy(NEW_RUNTIME)):
+            inventory = importer._inventory([0, 1])
+        self.assertEqual([row["logical_gpu"] for row in inventory], [0, 1])
+        self.assertEqual([row["mask_token"] for row in inventory], tokens)
+        self.assertEqual([row["uuid"] for row in inventory], tokens)
+        self.assertEqual([row["runtime_contract"] for row in inventory], [NEW_RUNTIME] * 2)
+
+
 class CrossServerImportTests(unittest.TestCase):
     # Reuse realistic model, AdamW moments, four named RNG/sampler states and
     # unequal saved update counts from the existing relocation fixture.
@@ -57,7 +73,7 @@ class CrossServerImportTests(unittest.TestCase):
                 command[command.index(option) + 1] = value
         baseline.json_write(path, plan)
 
-    def patches(self, inventory=None, load_case=None):
+    def patches(self, inventory=None, load_case=None, visible="0,1,2,3"):
         stack = ExitStack()
         stack.enter_context(patch.object(importer, "_gpu_inventory", return_value=deepcopy(
             self.inventory if inventory is None else inventory)))
@@ -65,7 +81,7 @@ class CrossServerImportTests(unittest.TestCase):
         stack.enter_context(patch.object(cli, "load_case", side_effect=load_case or self.load_case))
         if hasattr(importer, "load_case"):
             stack.enter_context(patch.object(importer, "load_case", side_effect=load_case or self.load_case))
-        stack.enter_context(patch.dict(os.environ, {"CUDA_VISIBLE_DEVICES": "0,1,2,3"}))
+        stack.enter_context(patch.dict(os.environ, {"CUDA_VISIBLE_DEVICES": visible}))
         return stack
 
     def prepare(self):
@@ -121,6 +137,94 @@ class CrossServerImportTests(unittest.TestCase):
             self.assertTrue(parsed.resume)
             self.assertEqual(parsed.updates, 5000)
 
+    def test_two_gpu_import_preserves_all_four_states_and_records_round_robin_slots(self):
+        inventory = deepcopy(self.inventory[:2])
+        for row, token in zip(inventory, ("GPU-allocation-5", "GPU-allocation-2")):
+            row["mask_token"] = token
+        visible = ",".join(row["mask_token"] for row in inventory)
+        source = self.snapshot()
+        before = (random.getstate(), np.random.get_state(), torch.get_rng_state())
+        with self.patches(inventory, visible=visible), patch.object(cli.subprocess, "Popen") as spawn:
+            report = importer.prepare(self.source, self.output, gpus="0,1", workers_per_gpu=2,
+                data_dir=self.data, statistics_dir=self.statistics, config_dir=self.config)
+        spawn.assert_not_called()
+        self.assertEqual(self.snapshot(), source)
+        self.assertEqual(random.getstate(), before[0])
+        self.assertTrue(np.array_equal(np.random.get_state()[1], before[1][1]))
+        self.assertTrue(torch.equal(torch.get_rng_state(), before[2]))
+        self.assertEqual(report["gpus"], inventory)
+        self.assertEqual(report["workers_per_gpu"], 2)
+        self.assertEqual(report["optimizer_updates_executed"], 0)
+        self.assertTrue(report["training_state_preserved"])
+        plan = json.loads((self.output / "launch_plan.json").read_text())
+        self.assertEqual(plan["gpus"], [0, 1])
+        self.assertEqual(plan["workers_per_gpu"], 2)
+        self.assertEqual(plan["worker_count"], 4)
+        self.assertEqual([job["logical_gpu"] for job in plan["jobs"]], [0, 1, 0, 1])
+        for index, ((task, seed), count, checkpoint, row) in enumerate(zip(
+                runner.CASES, self.counts, self.source_checkpoints, report["cases"])):
+            expected = read_checkpoint(checkpoint)
+            expected["metadata"]["cuda_visible_devices"] = inventory[index % 2]["mask_token"]
+            expected["metadata"]["runtime_contract"] = deepcopy(NEW_RUNTIME)
+            actual = read_checkpoint(row["checkpoint"])
+            self.assert_tree_equal(expected, actual)
+            self.assertEqual(actual["update"], count)
+            self.assertEqual(actual["metadata"]["target_stage_updates"], 5000)
+            self.assertEqual((row["task"], row["seed"]), (task, seed))
+            self.assertEqual(row["gpu"], inventory[index % 2])
+            self.assertEqual(json.loads(Path(row["manifest"]).read_text())["metadata"], actual["metadata"])
+
+    def test_two_gpu_resume_launches_four_workers_before_waiting_with_single_device_masks(self):
+        inventory = deepcopy(self.inventory[:2])
+        for row, token in zip(inventory, ("GPU-pbs-5", "GPU-pbs-2")):
+            row["mask_token"] = token
+        visible = ",".join(row["mask_token"] for row in inventory)
+        spawned = []
+
+        def spawn(command, **kwargs):
+            args = cli.parser().parse_args(command[3:])
+            index = len(spawned)
+            self.assertEqual((args.task, args.seed), runner.CASES[index])
+            self.assertTrue(args.resume)
+            self.assertEqual(args.device, "cuda:0")
+            self.assertEqual(args.updates, 5000)
+            self.assertEqual(kwargs["env"]["CUDA_VISIBLE_DEVICES"], inventory[index % 2]["mask_token"])
+            spawned.append(command)
+
+            def poll():
+                self.assertEqual(len(spawned), 4, "all workers must start before waiting")
+                return 0
+
+            return SimpleNamespace(pid=100 + index, returncode=0, poll=poll)
+
+        with self.patches(inventory, visible=visible):
+            importer.prepare(self.source, self.output, gpus="0,1", workers_per_gpu=2,
+                data_dir=self.data, statistics_dir=self.statistics, config_dir=self.config)
+            with patch.object(torch.cuda, "is_available", return_value=True), \
+                 patch.object(torch.cuda, "device_count", return_value=2), \
+                 patch.object(cli.subprocess, "Popen", side_effect=spawn) as launch, \
+                 patch.object(cli.time, "sleep", side_effect=AssertionError("unexpected wait")):
+                self.assertEqual(importer.resume(self.output), 0)
+        self.assertEqual(launch.call_count, 4)
+        status = json.loads((self.output / "launch_status.json").read_text())
+        self.assertEqual(status["status"], "complete_fit_stages")
+
+    def test_import_prepared_by_an_older_helper_can_be_source_for_fresh_two_gpu_import(self):
+        old_report = self.prepare()
+        old_report["helper_sha256"] = "legacy-helper-sha256"
+        baseline.json_write(self.output / "import.json", old_report)
+        (self.output / "import.sha256").write_text(
+            f"{importer.sha256_file(self.output / 'import.json')}  import.json\n", encoding="ascii")
+        destination = self.root / "two_gpus"
+        with self.patches(self.inventory[:2], visible="0,1"):
+            report = importer.prepare(self.output, destination, gpus="0,1", workers_per_gpu=2,
+                data_dir=self.data, statistics_dir=self.statistics, config_dir=self.config)
+        self.assertEqual([row["model_updates"] for row in report["cases"]], self.counts)
+        for index, (old, new) in enumerate(zip(old_report["cases"], report["cases"])):
+            expected = read_checkpoint(old["checkpoint"])
+            expected["metadata"]["cuda_visible_devices"] = str(index % 2)
+            self.assert_tree_equal(expected, read_checkpoint(new["checkpoint"]))
+
     def test_incompatible_python_minor_numpy_or_torch_base_fails_before_destination(self):
         for field, value in (("python", "3.13.0"), ("numpy", "2.1.0"), ("torch", "2.6.0+cu124")):
             inventory = deepcopy(self.inventory)
@@ -137,16 +241,23 @@ class CrossServerImportTests(unittest.TestCase):
                 statistics_dir=self.statistics, config_dir=self.config)
         self.assert_not_prepared()
 
-    def test_duplicate_gpu_uuid_and_nonfour_gpu_layout_are_rejected(self):
-        inventory = deepcopy(self.inventory)
-        inventory[3]["uuid"] = inventory[0]["uuid"]
-        with self.patches(inventory), self.assertRaises(ValueError):
-            importer.prepare(self.source, self.output, data_dir=self.data,
-                statistics_dir=self.statistics, config_dir=self.config)
-        self.assert_not_prepared()
+    def test_duplicate_gpu_uuid_or_mask_is_rejected_even_with_multiple_workers(self):
+        for field in ("uuid", "mask_token"):
+            inventory = deepcopy(self.inventory[:2])
+            inventory[1][field] = inventory[0][field]
+            with self.subTest(field=field), self.patches(inventory), self.assertRaisesRegex(ValueError, "distinct"):
+                importer.prepare(self.source, self.output, gpus="0,1", workers_per_gpu=2,
+                    data_dir=self.data, statistics_dir=self.statistics, config_dir=self.config)
+            self.assert_not_prepared()
+
+    def test_insufficient_capacity_invalid_indices_or_worker_counts_are_rejected(self):
         for gpus in ("0", "0,1,2", "0,1,2,3,4", "0,0,1,2"):
             with self.subTest(gpus=gpus), self.patches(), self.assertRaises(ValueError):
                 importer.prepare(self.source, self.output, gpus=gpus)
+            self.assert_not_prepared()
+        for workers in (0, -1, True, 1.5, "2", 1):
+            with self.subTest(workers=workers), self.patches(), self.assertRaises(ValueError):
+                importer.prepare(self.source, self.output, gpus="0,1", workers_per_gpu=workers)
             self.assert_not_prepared()
 
     def test_import_requires_fresh_nonoverlapping_destination(self):
@@ -285,6 +396,15 @@ class CrossServerImportTests(unittest.TestCase):
         with self.patches(inventory), patch.object(cli, "main", return_value=0) as launch:
             self.assertEqual(importer.resume(self.output), 0)
         launch.assert_called_once()
+
+    def test_resume_rejects_aliased_physical_gpus_before_launch(self):
+        self.prepare()
+        inventory = deepcopy(self.inventory)
+        inventory[1]["uuid"] = inventory[0]["uuid"]
+        with self.patches(inventory), patch.object(cli, "main") as launch, \
+             self.assertRaisesRegex(ValueError, "distinct"):
+            importer.resume(self.output)
+        launch.assert_not_called()
 
     def test_source_and_imported_checkpoint_receipt_corruption_prevents_resume(self):
         self.prepare()

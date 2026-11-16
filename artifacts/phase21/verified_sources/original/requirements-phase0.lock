@@ -1,4 +1,0 @@
-# Tested Phase 0 tooling. Training-host runtime lock is produced in Phase 1.
-PyYAML==6.0.3
-setuptools==80.9.0
-wheel==0.45.1

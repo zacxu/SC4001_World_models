@@ -1,6 +1,0 @@
-{
-  "selected_collectors": 2,
-  "source": "measured benchmark policy; common to B and D",
-  "note": "No learner overlap was benchmarked; remeasure when the training host/learner load changes.",
-  "configured_initial_collectors": 2
-}

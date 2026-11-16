@@ -1,0 +1,22 @@
+{
+  "data_source": "training_controller_state",
+  "learning_eligible_for_world_model": false,
+  "metadata": {
+    "mode": "adopted_development",
+    "new_environment_interactions": 0,
+    "new_model_updates": 0,
+    "phase": "complete",
+    "run_identity": "81a587320036a61b25130b7358cdaf850b925be6b21b8f330f1325e052543a1c",
+    "schema_version": "p44-d-campaign-checkpoint-v1",
+    "sequence": 2,
+    "units_completed": 274
+  },
+  "payload": {
+    "bytes": 182637,
+    "path": "state.pt",
+    "sha256": "d6ca6e1268f60accfd049acd1ec927cfdd26b4b3bdb93e53956f8a6ec8a2fe50"
+  },
+  "schema_version": "real-model-policy-cycle-checkpoint-v1",
+  "status": "complete",
+  "tensor_specs": []
+}

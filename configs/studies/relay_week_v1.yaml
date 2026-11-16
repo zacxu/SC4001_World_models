@@ -1,0 +1,61 @@
+# Additive amendment; the original P2.4 configurations remain immutable.
+schema_version: 1
+name: relay_week_v1
+parent_profile: pilot
+scope: exploratory_relay_two_seed
+task_families: [relay]
+master_seeds: [0, 1]
+overrides:
+  experiment:
+    real_budget: 100000
+    checkpoints: [0, 50000, 75000, 100000]
+    checkpoint_episodes: 20
+    final_episodes: 20
+  world_model:
+    online_updates: 250
+  mappo:
+    initial_local_cycles: 40
+    online_local_cycles: 20
+# This declaration is a Phase 4 implementation target, not a runnable D learner.
+planned_d_treatment:
+  name: teacher_warm_start_only
+  implementation_status: pending_phase4
+  teacher_initial_cycles: 50
+  teacher_online_cycles: 0
+  initial_trajectories: 128
+  warm_start_updates: 100
+  warm_start_batch_sequences: 32
+  trajectory_source: teacher
+  temperature: 1.0
+  distillation_optimizer:
+    name: Adam
+    learning_rate: 0.0003
+    epsilon: 0.00001
+    betas: [0.9, 0.999]
+    weight_decay: 0.0
+    gradient_clip: 0.5
+  ppo_optimizer_reset_after_distillation: true
+  auxiliary_kl_weight: 0.0
+  guided_local_cycles: 0
+  unguided_local_cycles: 80
+# Existing P3.6 checks use validation layouts. The final study evaluator and
+# analysis remain Phase 5 work and must consume these declarations explicitly.
+planned_evaluation:
+  implementation_status: pending_phase5
+  split: test
+  bank_seed: 5600
+  checkpoint_episodes: 20
+  episodes_per_layout: 10
+  checkpoints: [0, 50000, 75000, 100000]
+  mode: stochastic
+  temperature: 1.0
+  evaluation_enters_replay: false
+planned_analysis:
+  implementation_status: pending_phase5
+  primary_metric: normalized_success_auc
+  normalization_budget: 100000
+  training_seed_pairs: 2
+  summaries: [paired_values, mean, range]
+  bootstrap_replicates: 0
+  confidence_intervals: false
+  statistical_significance_claim: false

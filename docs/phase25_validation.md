@@ -1,136 +1,105 @@
-# P2.5: compact engineering screen
+# P2.5: screen the frozen pilot checkpoints
 
-This checks whether the shared world model is usable for a **small exploratory
-Phase 3 pilot**. It is not an additional B/D experiment or formal model-quality
-acceptance. Keep both relay and cover, seeds 0 and 1: four shared models, each
-evaluated once. No research training or simulator collection occurs here.
+**Current result:** the [2026-11-09 screen](../artifacts/phase25_runs/shortened_20261109_100750/campaign/report.json)
+is complete. Both Relay cases are ready for exploratory Phase 3; Cover keeps the
+overall campaign at `needs_review`. The one-week study uses Relay only. Reuse
+this evidence when selection/data are unchanged, then run the
+[bounded B check](phase36_acceptance.md) with `relay_week_v1`. The commands below
+remain the reproducible screening procedure; another identical screen is not
+required merely because later policy budgets changed.
 
-Use the [existing P2.4 environment](phase24_training.md), source, fitting replay
-and frozen normalization in `/home/users/create/smrksun/scratch/WM1` on ASPIRE2A.
-Run evaluation in a PBS compute allocation; preserve its GPU mask/order and
-keep `--device cuda:0` for the allocated GPU.
+Use the four checkpoints frozen in [P2.4](phase24_training.md).
+They may have different saved update counts; the campaign records those counts
+and original targets. **Do not wait for 5,000 updates.** Keep the earlier
+3,750/4,000-update reports as historical results.
 
-P2.4 can keep training. Sync the new P2.5 code/tests and documentation while
-preserving the server's existing P2.4 source and configs. Local checkpoint
-copies may be stale. Screen on a free GPU, or wait for the training allocation.
+The screen evaluates each shared B/D model once, using up to 64 windows and the
+same sampling seed. The default runs four workers in parallel on **four GPUs,
+one worker per GPU**; a two-GPU alternative is below.
+It performs no model training or new simulator collection.
 
-## 1. Verify the evaluation implementation
+## 1. Start tmux and activate the server environment
 
-On the login node, request one GPU using project **`11704278`**:
+Complete the [new server setup](../linux_gpu_server_setup.md), including the
+checkpoint inspection. From an SSH shell, start a persistent terminal:
 
 ```bash
-export PROJECT_ID=11704278
-export WM_ROOT=/home/users/create/smrksun/scratch/WM1
+cd /home/zixuan/projects/WM1
+source scripts/gpu_server_env.sh
+tmux new -s wm-p25
+```
+
+Inside tmux, choose the available **physical GPU IDs** in the last line:
+
+```bash
+export WM_ROOT=/home/zixuan/projects/WM1
 cd "$WM_ROOT"
-qsub -I -P "$PROJECT_ID" -q normal \
-  -l select=1:ngpus=1 -l walltime=02:00:00
+source scripts/gpu_server_env.sh
+export CUDA_VISIBLE_DEVICES=0,1,2,3
 ```
 
-In the allocated compute shell, activate the environment and use a fresh
-evidence directory. Keep this shell open through the evaluation:
+For example, selecting physical GPUs `1,3,4,6` still gives the Python workers
+logical GPUs `0,1,2,3`. Detach with **Ctrl+B, then D**; reconnect using
+`tmux attach -t wm-p25`. In a new SSH shell, change to the project and source
+`scripts/gpu_server_env.sh` before reconnecting. No queue submission is needed.
+
+## 2. Optional timing check
+
+Skip this if you have already measured runtime. For a new measurement, use the
+campaign command in step 3 with `--windows 8` and a fresh output directory.
+This times eight windows **per model**, 32 total. Such a small sample cannot
+establish readiness. No fixed runtime is guaranteed.
+
+## 3. Screen the four selected checkpoints
+
+Run this entire block in the activated tmux terminal:
 
 ```bash
-export WM_ROOT=/home/users/create/smrksun/scratch/WM1
-cd "$WM_ROOT"
-module load miniforge3
-source "$(conda info --base)/etc/profile.d/conda.sh"
-conda activate "$WM_ROOT/.envs/wm312"
-export LD_LIBRARY_PATH="$CONDA_PREFIX/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
-source scripts/aspire2a_cuda.sh
-export OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1
-export CUBLAS_WORKSPACE_CONFIG=:4096:8
-set +e
-P25_VERIFY="artifacts/server_p25_verify_$(date +%Y%m%d_%H%M%S)"
-python -m scripts.phase25 verify --output-dir "$P25_VERIFY"
-```
-
-Continue after successful verification. It writes `implementation_checks.json`,
-its SHA receipt and `tests.txt`. Reuse existing structural/overfit evidence where
-available; synthetic tests do not validate trained-checkpoint event behavior.
-
-## 2. Time eight windows on one checkpoint
-
-Choose a common checkpoint update before inspecting scores. The example uses
-3,000 for all four models; use the update you actually preserved. With P2.4's
-default cadence, updates 3,000 and 4,000 both have numbered checkpoint pairs.
-
-```bash
-P25_RUN="artifacts/phase25_runs/screen_$(date +%Y%m%d_%H%M%S)"
-python -m scripts.phase25 evaluate \
-  --checkpoint artifacts/phase24_runs/aspire2a_v1/relay/seed_0/checkpoints/update_00003000.pt \
-  --output-dir "$P25_RUN/timing_relay_seed_0" \
-  --device cuda:0 --windows 8 --seed 0 \
-  --verification-report "$P25_VERIFY/implementation_checks.json"
-```
-
-Inspect timing, event support and predictions before scaling. Time includes
-complete prefixes and I/O; extrapolation to four models is approximate. No
-half-day runtime is guaranteed. Eight timing windows do not establish readiness.
-
-## 3. Screen the four shared checkpoints
-
-Use the same sampling seed and the same explicit checkpoint update. The campaign
-does not automatically choose a model's best checkpoint:
-
-```bash
+cd /home/zixuan/projects/WM1
+P25_RUN="artifacts/phase25_runs/shortened_$(date +%Y%m%d_%H%M%S)"
 python -m scripts.phase25 campaign \
-  --run-root artifacts/phase24_runs/aspire2a_v1 --checkpoint-update 3000 \
+  --selection artifacts/phase24_selection/shortened_v1/selection.json \
   --output-dir "$P25_RUN/campaign" \
-  --device cuda:0 --windows 64 --seed 0 \
-  --verification-report "$P25_VERIFY/implementation_checks.json"
+  --gpus 0,1,2,3 --workers-per-gpu 1 --windows 64 --seed 0
 ```
 
-Four cases run sequentially to bound GPU memory. Use `--windows 8` for a smaller
-first campaign; the cap is 64 per model. Nondefault paths use `--data-dir` and
-`--statistics-dir`. Change `aspire2a_v1` if your P2.4 continuation uses another
-run folder. Exit the compute shell with `exit` when finished. Copy the reports
-and selected checkpoint pairs to durable storage; scratch is temporary.
+For **two GPUs**, expose two physical IDs and use
+`--gpus 0,1 --workers-per-gpu 2`. This still starts all four workers in parallel;
+check GPU memory if sharing a device. Set the mask before starting Python.
 
-Screening an intermediate checkpoint does not finalize P2.4, change its update
-target or B/D bindings, or make it eligible for refresh.
+Required CPU implementation checks run automatically before inference. All four
+selected checkpoint/receipt pairs are verified; newer saves or validation scores
+cannot change the selection. Use a fresh output directory for every attempt.
 
-## What the screen measures
+If you see `Permission denied: '/campaign'`, rerun the complete block so
+`P25_RUN` is assigned. Per-worker logs are in
+`$P25_RUN/campaign/worker_logs/`. Check these logs if a worker fails or runs out
+of GPU memory. For sequential local CPU evaluation, replace both GPU flags with
+`--device cpu`; retain the same selection, replay and normalization files.
 
-- Up to 32 uniform anchors plus up to 32 distinct event-targeted anchors from
-  existing **diagnostic episodes**. Report the actual sample and positive support.
-- Complete real prefixes followed by one prior-only, recorded-action rollout
-  up to 15 steps; report horizons 1, 5, 10 and 15 from that same rollout.
-- RGB versus persistence, learned outcomes and milestones versus fitting-only
-  frequencies, and reward versus their task-rule baseline with exact deadlines.
-  Stage accuracy is also reported; player-state error is not part of this screen.
-- Separate uniform and event-targeted results, unique episodes and distinct
-  positive events. Overlapping windows are not independent trials. Model
-  termination errors and unavailable terminal RGB need explicit validity rules.
+## 4. Read the result
 
-Prefix caches must match the exact model, replay/episode, prefix and sampling
-identity. No future image or privileged target may enter an imagined step.
-Early model termination cannot be hidden by discarding rows or forcing continue.
-If held-out death positives are absent, death prediction remains **unvalidated**.
+Read `$P25_RUN/campaign/report.json` and `pilot_model_selection.json`.
+Both need matching SHA receipts. They record the frozen selection identity,
+actual per-model update counts, shortened-budget reason and readiness:
 
-Evaluation and campaign directories contain `report.json` and its SHA receipt.
-A completed campaign also writes `pilot_model_selection.json` and its receipt:
-all four shared checkpoint identities plus the campaign readiness, including
-`needs_review` when appropriate. This is separate pilot evidence; it does not
-rewrite P2.4's completion status or B/D bindings. Require the final campaign
-`report.json` and both SHA receipts before using the selection; an interrupted
-campaign can leave a selection file without a completed report.
-Read `pilot_readiness.status`: `ready_for_exploratory_phase3`, `needs_review` or
-`failed`, with its reasons, unchecked classes and support. A ready screen permits
-a small Phase 3 integration pilot followed by real local-policy checks, not a
-B/D efficacy claim. Agree on the same supported horizon for both arms; no
-configuration changes automatically.
+- `ready_for_exploratory_phase3`: supports a small integration pilot, followed
+  by the [real-policy acceptance check](phase36_acceptance.md).
+- `needs_review`: inspect the listed event, success, termination or image
+  alarms before expanding policy training.
+- `failed`: resolve the reported failure before proceeding.
 
-Provisional alarms are fixed in `compact.PILOT_THRESHOLDS` and documented in the
-[P2.5 plan](../detailed_research_implementation_plan.md#p25-model-validation-and-acceptance-gate).
-All four models must satisfy the support, coverage, baseline-error and event
-checks. Missing predictions are penalized. An eight-window timing sample cannot
-satisfy the uniform-support requirement. These are engineering alarms, not
-calibrated research acceptance thresholds.
+The earlier 4,000-update screen was `needs_review`; a shortened budget does not
+clear its warnings. Every compact screen keeps `P2.5_quality_acceptance: false`:
+diagnostic episodes use training geometry, so formal held-out-geometry acceptance
+remains separate.
 
-Every report keeps `P2.5_quality_acceptance: false`. These diagnostic episodes
-use **training geometry**, despite being excluded from fitting. Formal held-out
-geometry evidence and untouched final tests remain separate requirements.
+Metrics remain unchanged: up to 32 uniform and 32 event-targeted windows,
+complete-prefix reconstruction, autonomous recorded-action rollouts at horizons
+1/5/10/15, RGB versus persistence, reward and event/termination predictions.
+Missing rare-event positives remain unvalidated. Acceptance thresholds are unchanged.
 
-Defer new collection, burn-in sweeps, videos, ablations and broad tuning.
-Preserve reports, identities, timing and available overfit evidence. No P2.5
-server runtime or learned-quality result has been measured locally.
+Use the **original P2.4 `selection.json`** for Phase 3's
+`--initial-selection`; P2.5's `pilot_model_selection.json` records evaluation
+evidence and is not a replacement input. Back up both reports and all checkpoint
+pairs in durable storage.

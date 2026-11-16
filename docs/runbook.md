@@ -1,5 +1,35 @@
 # Foundation runbook
 
+The active four-day fixed-data protocol is described in the
+[detailed plan](../detailed_research_implementation_plan.md). Standalone
+[teacher](phase41_teacher.md), [distillation](phase42_distillation.md) and
+[local refinement](phase43_refinement.md) stages are implemented; their training
+is operator-controlled. The [P4.4 integrated D guide](phase44_integration.md)
+connects the stages and can register a completed P4.3 history without retraining.
+The [P4.5 guide](phase45_acceptance.md) verifies on CPU during training and audits
+the completed campaign afterward, without optimization or native evaluation.
+The [P5.2 guide](phase52_training.md) supplies the matching reduced B controller,
+fresh D adapter and paired candidate matrix. The
+[P5.1 guide](phase51_protocol.md) freezes the static endpoint protocol and binds
+its inputs on CPU. Its candidate registration does not make the comparison
+execution-ready. The [complete Phase 5 guide](phase5_study.md) now supplies the
+combined verification and separate prospective freeze, all four fresh learners,
+ledger, final actor-only test evaluator and paired analysis. Start there after
+the P5.2 candidate registration; no previous registration is rewritten.
+After all four final evaluations, use the [server completion guide](phase5_completion.md)
+for P5.6-P5.8. Its separate reporting package keeps the 296 frozen sources
+unchanged and runs saved-record accounting, figures and acceptance on server CPU.
+It neither reruns scientific episodes nor starts a learner.
+After that gate passes, follow the [P6.1-P6.2 server guide](phase6_release.md)
+for fixed native-trace diagnosis, a sealed release and portable six-table/two-figure
+reproduction. These commands use CPU and saved records. Keep the new
+`study_release` namespace separate from both prior source freezes; leave
+P6.3's manuscript and claim acceptance for the subsequent step.
+The [P3.5 guide](phase35_training.md) with `--study-profile relay_week_v1` retains the
+earlier online development schedule. The Phase 0 commands below validate the
+original foundation profiles; their pilot/final matrices are historical.
+Preserve those configuration files for P2.4 provenance.
+
 Run commands from the project root after the README's environment setup. On
 Windows use `.\.venv\Scripts\python.exe`; on Linux replace that executable with
 `.venv/bin/python`.
@@ -26,9 +56,10 @@ verification command runs the complete installed test suite.
 Configuration composition is `base.yaml` plus one task, one variant, and one
 experiment profile. Unknown keys, duplicate YAML keys, wrong types, invalid
 checkpoint grids, and overlays that change another section fail validation.
-Change common settings in the common file so B and D remain comparable. Numerical
-pilot changes must be documented; substantive post-freeze changes require a new
-protocol and consistent reruns.
+For new policy work, use the explicit `configs/studies/relay_week_v1.yaml`
+amendment instead of editing the common files bound to saved P2.4 checkpoints.
+It keeps common B/D settings matched. Substantive post-freeze changes require a
+new protocol and consistent reruns.
 
 The Phase 0 lock pins only the tooling actually exercised now. Phase 1 will choose
 and pin Python/PyTorch/CUDA/ViZDoom/scenario-compiler versions after a two-player

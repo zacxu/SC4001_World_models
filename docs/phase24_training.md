@@ -1,185 +1,104 @@
-# P2.4: continue old checkpoints on ASPIRE2A
+# P2.4: use the last saved checkpoints
 
-Complete [ASPIRE2A setup through P2.3](../linux_gpu_server_setup_through_p23.md)
-and finish synchronizing the **stopped old run** first. These Bash commands
-continue its four models in parallel, **one worker per allocated A100 GPU**.
-Saved optimizer updates count toward the original total; training does not
-restart from zero. Keep the source snapshot until the continuation is complete.
+**The shortened exploratory pilot no longer requires 5,000 updates.** Use the
+existing frozen selection after transferring the project to your GPU server.
+Create a selection only if you have not already frozen the four models.
+Counts may differ between task/seed cases; B and D must use the same selected
+checkpoint within each case. Original targets and checkpoint contents stay intact.
 
-ASPIRE2A uses [PBS batch jobs](https://nsccsg.github.io/quickstart/submit-a-batch-job/).
-Once submitted, training continues after SSH disconnects; tmux is optional for
-the login terminal. Run all training and GPU checks inside the allocation.
+The existing selection contains Relay 4,500/4,500 and Cover 5,000/5,000 updates.
+Its latest P2.5 screen is complete; the active `relay_week_v1` study reuses the
+two Relay cases. Preserve the entire four-case selection. The later reduction
+to 250 model updates per online block is a separate Phase 3 study amendment,
+not a change to these initial checkpoints.
 
-## 1. Create the batch script on the login node
+Complete the [new GPU server setup](../linux_gpu_server_setup.md) first. Keep the
+existing run folder names, even when they contain `aspire2a`; paths inside the
+project must retain their relative layout.
 
-Use project **`11704278`**, then enter the transferred project:
+## Windows PowerShell: freeze locally
+
+After the training job has stopped and its latest files are synchronized, run
+these commands from your Windows project **only if the selection does not exist**.
+No GPU or environment activation is
+needed when using the project's Python executable directly. Each Python command
+below is **one line**; Bash's trailing `\` does not continue a PowerShell command.
+
+```powershell
+Set-Location "C:\Users\willi\Desktop\SC4001_World_models"
+.\.venv\Scripts\python.exe -m scripts.phase24_freeze --run-root artifacts/phase24_runs/aspire2a_2gpu_v1 --output-dir artifacts/phase24_selection/shortened_v1 --reason "Time-limited exploratory pilot; use latest committed checkpoints"
+```
+
+After creation succeeds, verify the selection and display the saved counts:
+
+```powershell
+.\.venv\Scripts\python.exe -m scripts.phase24_freeze --inspect artifacts/phase24_selection/shortened_v1/selection.json
+```
+
+`--inspect` reads an existing selection; it does not create one. If the selection
+already exists, inspect it instead of rerunning creation. Transfer its folder
+and the referenced source run, replay and normalization together to your GPU
+server, keeping the same project-relative layout. Continue with P2.5 there.
+
+The remaining commands use **Bash on your Linux GPU server**.
+
+## 1. Transfer and inspect the existing selection
+
+Stop any remaining old P2.4 training before the final synchronization. Use
+WinSCP in binary mode to transfer the project into
+`/home/zixuan/projects/WM1/`, including the selection and referenced run,
+checkpoint/receipt pairs, replay and normalization. Recreate Python using the
+setup guide; do not copy an old environment.
+
+No GPU is needed to inspect or freeze checkpoints. In your server terminal:
 
 ```bash
-export PROJECT_ID=11704278
-export WM_ROOT=/home/users/create/smrksun/scratch/WM1
+export WM_ROOT=/home/zixuan/projects/WM1
 cd "$WM_ROOT"
+source scripts/gpu_server_env.sh
+
+python -m scripts.phase24_freeze \
+  --inspect artifacts/phase24_selection/shortened_v1/selection.json
 ```
 
-Repeat this block after reconnecting. `PROJECT_ID` is your PBS allocation ID,
-not the directory name or username.
+If this succeeds, **skip creation** and continue to P2.5. The selection is
+immutable; newer source checkpoints cannot silently replace its chosen weights.
 
-Create the script below. Set `SOURCE` to the run folder you actually transferred
-(`pilot_v1` or `pilot_4gpu_v1`, for example). `RUN` must be a fresh destination
-for the first import. Preserve both paths for subsequent submissions.
+## 2. Create a selection only if missing
+
+In the same activated terminal, run this only when no selection exists:
 
 ```bash
-cat > p24_aspire2a.pbs <<'PBS'
-#!/bin/bash -l
-#PBS -N wm-p24
-#PBS -q normal
-#PBS -l select=1:ngpus=4
-#PBS -l walltime=24:00:00
-#PBS -j oe
-
-set -e
-export WM_ROOT=/home/users/create/smrksun/scratch/WM1
-cd "$WM_ROOT"
-mkdir -p artifacts/pbs
-exec > "artifacts/pbs/p24_${PBS_JOBID}.log" 2>&1
-module load miniforge3
-source "$(conda info --base)/etc/profile.d/conda.sh"
-conda activate "$WM_ROOT/.envs/wm312"
-export LD_LIBRARY_PATH="$CONDA_PREFIX/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
-source scripts/aspire2a_cuda.sh
-export OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1
-export CUBLAS_WORKSPACE_CONFIG=:4096:8 PYTHONUNBUFFERED=1
-
-SOURCE=artifacts/phase24_runs/pilot_v1
-RUN=artifacts/phase24_runs/aspire2a_v1
-
-# PBS assigns physical GPUs. Leave its CUDA_VISIBLE_DEVICES unchanged.
-python - <<'PY'
-import torch
-assert torch.cuda.is_available() and torch.cuda.device_count() == 4, "Expected four allocated GPUs"
-for index in range(4):
-    with torch.cuda.device(index):
-        assert torch.cuda.is_bf16_supported(), "bfloat16 GPU support required"
-        x = torch.ones((16, 16), device=f"cuda:{index}", dtype=torch.bfloat16)
-        assert (x @ x).float().sum().item() == 4096
-PY
-
-if [[ "${P24_RESUME:-0}" == 0 ]]; then
-    python -m scripts.phase24 verify \
-      --output-dir "artifacts/aspire2a_p24_check_${PBS_JOBID}"
-    python -m scripts.phase24_import prepare \
-      --source-dir "$SOURCE" --output-dir "$RUN" --gpus 0,1,2,3
-fi
-
-exec python -m scripts.phase24_import resume --output-dir "$RUN"
-PBS
+python -m scripts.phase24_freeze \
+  --run-root artifacts/phase24_runs/aspire2a_2gpu_v1 \
+  --output-dir artifacts/phase24_selection/shortened_v1 \
+  --reason "Time-limited exploratory pilot; use latest committed checkpoints"
 ```
 
-This requests **one node with four GPUs**, with CPU/RAM assigned by PBS.
-The [supplied guide](../ASPIRE2A-General-Quickstart-Guide.pdf), pages 3 and 8,
-identifies these as A100 40 GB GPUs. Use `normal`; switch to `ai` only if your
-project has access. Leave `CUDA_VISIBLE_DEVICES` and `CUDA_DEVICE_ORDER` as
-provided by the cluster. Logical indices `0,1,2,3` map to the assigned GPUs;
-each worker sees its own GPU as `cuda:0`.
+Use your actual latest stopped run for `--run-root` if different.
+The output directory must be new. The command verifies all four checkpoint
+receipts, configuration, source, replay and normalization before writing
+`selection.json` and its SHA receipt. It performs no optimizer updates.
 
-Install the CUDA compatibility libraries once in setup Step 4 before submitting
-this job. Its activation line above is required for the reported R570 driver;
-recreate the PBS script if you generated it before this update.
-
-The import preserves weights, Adam state, sampler, random streams and each
-model's latest committed update. It checks source/configuration/data identities
-and compatible software, and records path/GPU/runtime changes in
-`RUN/import.json` with a SHA receipt. H200-to-A100 numerical equivalence is
-unmeasured. Original batch settings and the original **5,000-update target**
-remain in force; A100 memory fit and speed must be checked on the cluster.
-
-## 2. Submit and disconnect
-
-From the same project directory on the login node:
+## 3. Confirm the saved counts and proceed to P2.5
 
 ```bash
-P24_JOB=$(qsub -P "$PROJECT_ID" p24_aspire2a.pbs)
-printf '%s\n' "$P24_JOB" | tee p24_job.id
-qstat "$P24_JOB"
+python -m scripts.phase24_freeze \
+  --inspect artifacts/phase24_selection/shortened_v1/selection.json
 ```
 
-`Q` means queued; `R` means running. You can now disconnect.
-The 24-hour walltime is an allocation limit, not an estimated training duration.
-Controller output is in `artifacts/pbs/p24_JOBID.log`; worker errors/logs are
-under `artifacts/phase24_runs/aspire2a_v1/worker_logs/`.
-If verification/import fails, read the controller log before resubmitting.
+This shows the **saved optimizer updates** and original target for each model.
+A live `status.json` count can be ahead of the last saved checkpoint.
 
-Check the training job with:
-```bash
-qstat 26122087.pbs101
-```
+Review the existing [P2.5 validation](phase25_validation.md) for this exact selection;
+rerun it only when new evidence is needed. Then follow the
+[bounded Relay policy check](phase36_acceptance.md).
+Phase 3 also uses it through `--initial-selection`; no checkpoint renaming,
+configuration edits or fabricated 5,000-update completion are needed.
+Freezing records the shortened budget; model-quality and real-policy checks
+still apply.
 
-## 3. Check optimizer updates
-
-From a login terminal, print each worker's **completed optimizer updates / total
-target**:
-
-```bash
-cd /home/users/create/smrksun/scratch/WM1
-python3 - <<'PY'
-import json
-from pathlib import Path
-root = Path("artifacts/phase24_runs/aspire2a_v1")
-for task in ("relay", "cover"):
-    for seed in (0, 1):
-        path = root / task / f"seed_{seed}" / "status.json"
-        if not path.is_file():
-            print(f"{task}/seed_{seed}: status file not created yet")
-            continue
-        status = json.loads(path.read_text())
-        progress = f"{status['model_updates']}/{status['target_stage_updates']}"
-        print(f"{task}/seed_{seed}: {progress} optimizer updates")
-PY
-```
-
-`status file not created yet` (`--/--` in the older command) means there is no
-progress file at that path. Check `qstat -u "$USER"`: when `wm-p24` is `Q`, it
-has not started. Once `R`, it verifies and imports the checkpoints before
-training; successful import creates the status files with the saved counts.
-If they remain missing, inspect the controller log from Step 2. Keep the
-existing queued job; do not submit a duplicate.
-
-`model_updates` includes the imported checkpoint's saved updates. For example,
-1,500 saved updates plus 100 new updates displays `1600/5000 optimizer updates`.
-The target is read from the run's status rather than hardcoded.
-
-Change the root if you chose another `RUN`. `import.json` records the imported
-count for each case in `cases[].model_updates`; compare it with the current
-count if progress looks too low. Updates after the old server's last saved
-checkpoint repeat and are not added twice.
-
-## 4. Stop and continue in another PBS job
-
-To stop the submitted job, on the login node:
-
-```bash
-qdel "$(cat p24_job.id)"
-qstat -u "$USER"
-```
-
-Wait until the old job has exited before submitting another. Checkpoints save
-at update 0, every **250 updates**, and completion; both `.pt` and `.sha256`
-files are required. A stop or walltime expiry does not force a save, so work
-since the last committed checkpoint repeats.
-
-To continue the **ASPIRE2A run**, submit the same script with import skipped:
-
-```bash
-P24_JOB=$(qsub -P "$PROJECT_ID" -v P24_RESUME=1 p24_aspire2a.pbs)
-printf '%s\n' "$P24_JOB" | tee p24_job.id
-```
-
-Keep the code, environment, paths, batch settings, update target and per-worker
-GPU-mask mapping fixed. Another physical A100 node is allowed when these match.
-If PBS supplies different mask tokens, resume will reject the allocation:
-import the latest ASPIRE2A run into a **new destination** in that allocation,
-using it as `SOURCE`, rather than editing manifests or SHA receipts.
-Keep the working run under `WM1`. Scratch is temporary: copy checkpoint/receipt
-pairs and import reports to your PC or other durable storage regularly.
-
-After fitting, use the [compact P2.5 engineering screen](phase25_validation.md)
-before expanding Phase 3 experiments.
+Keep the selection, its source run and checkpoint/receipt pairs together when
+backing up or transferring the project. It references the weights without
+duplicating them. Later saves cannot change this selection.
+No further initial P2.4 fitting or cluster submission is required.

@@ -33,7 +33,19 @@ _require_hash = relocate._require_hash
 
 
 def _gpu_inventory(indices):
-    return relocate._inventory(indices)
+    if not torch.cuda.is_available() or max(indices) >= torch.cuda.device_count():
+        raise ValueError("selected allocated CUDA GPUs must be visible in this environment")
+    return relocate._gpu_inventory(indices)
+
+
+def _inventory(indices):
+    """Inventory physical devices once, independently of workers sharing them."""
+    inventory = _gpu_inventory(indices)
+    if (len(inventory) != len(indices) or [row["logical_gpu"] for row in inventory] != indices
+            or len({row["uuid"] for row in inventory}) != len(indices)
+            or len({row["mask_token"] for row in inventory}) != len(indices)):
+        raise ValueError("import requires distinct allocated GPUs for the selected indices")
+    return inventory
 
 
 def _runtime_compatible(original, current):
@@ -169,30 +181,32 @@ def _inspect_case(source, job, args, gpu, plan_settings):
         "gpu": gpu, "runtime_changes": changes, "ignored_uncommitted_files": ignored}
 
 
-def prepare(source_dir, output_dir, *, gpus="0,1,2,3", data_dir=None, statistics_dir=None, config_dir=None):
+def prepare(source_dir, output_dir, *, gpus="0,1,2,3", workers_per_gpu=1,
+            data_dir=None, statistics_dir=None, config_dir=None):
     source, output = Path(source_dir).resolve(), Path(output_dir).resolve()
     if source == output or source in output.parents or output in source.parents:
         raise ValueError("source and destination must be separate, non-overlapping run directories")
     if output.exists():
         raise FileExistsError("choose a fresh output directory; original and partial runs are preserved")
     indices = cli.gpu_indices(gpus)
-    if len(indices) != 4:
-        raise ValueError("provide exactly four allocated visible logical GPU indices")
+    if len(indices) > len(runner.CASES):
+        raise ValueError("select at most four allocated visible logical GPU indices")
+    if type(workers_per_gpu) is not int or workers_per_gpu < 1:
+        raise ValueError("workers-per-gpu must be a positive integer")
+    if len(indices) * workers_per_gpu < len(runner.CASES):
+        raise ValueError("four initial fits need at least four parallel worker slots")
     with ExitStack() as stack:
         _source_locks(stack, source)
         plan, original_args = _source_plan(source)
-        inventory = _gpu_inventory(indices)
-        if (len(inventory) != 4 or [row["logical_gpu"] for row in inventory] != indices
-                or len({row["uuid"] for row in inventory}) != 4
-                or len({row["mask_token"] for row in inventory}) != 4):
-            raise ValueError("import requires four distinct allocated GPUs")
+        inventory = _inventory(indices)
+        slots = inventory * workers_per_gpu
         for args in original_args:
             args.data_dir = Path(data_dir or "data/initial_replay/pilot").resolve()
             args.statistics_dir = Path(statistics_dir or "artifacts/phase23/normalization").resolve()
             args.config_dir = Path(config_dir or runner.ROOT / "configs").resolve()
         rows = [_inspect_case(source, job, args, gpu, plan["settings"])
-                for job, args, gpu in zip(plan["jobs"], original_args, inventory)]
-        arguments = relocate._launch_arguments(original_args[0], output, gpus, 1)
+                for job, args, gpu in zip(plan["jobs"], original_args, slots)]
+        arguments = relocate._launch_arguments(original_args[0], output, gpus, workers_per_gpu)
         output.mkdir(parents=True, exist_ok=False)
         stack.enter_context(runner.run_lock(output))
         runner.write_report(output / "import_pending.json", {"source_dir": str(source)})
@@ -222,7 +236,8 @@ def prepare(source_dir, output_dir, *, gpus="0,1,2,3", data_dir=None, statistics
         runner.write_report(output / "launch_plan.json", new_plan)
         report = {"schema_version": SCHEMA, "status": "ready_to_resume", "source_dir": str(source),
             "output_dir": str(output), "created_at_utc": datetime.now(timezone.utc).isoformat(),
-            "allocation": _allocation(), "gpus": inventory, "resume_arguments": arguments, "cases": rows,
+            "allocation": _allocation(), "gpus": inventory, "workers_per_gpu": workers_per_gpu,
+            "resume_arguments": arguments, "cases": rows,
             "source_plan_sha256": sha256_file(source / "launch_plan.json"),
             "launch_plan_sha256": sha256_file(output / "launch_plan.json"),
             "helper_sha256": sha256_file(Path(__file__)), "relocation_helper_sha256": sha256_file(Path(relocate.__file__)),
@@ -256,7 +271,7 @@ def resume(output_dir):
         raise ValueError("import source/environment/allocation changed; preserve the prepared run")
     _require_hash(Path(__file__), report["helper_sha256"])
     _require_hash(Path(relocate.__file__), report["relocation_helper_sha256"])
-    inventory = _gpu_inventory([gpu["logical_gpu"] for gpu in report["gpus"]])
+    inventory = _inventory([gpu["logical_gpu"] for gpu in report["gpus"]])
     def without_uuid(gpus):
         return [{key: value for key, value in gpu.items() if key != "uuid"} for gpu in gpus]
     if without_uuid(inventory) != without_uuid(report["gpus"]):
@@ -288,7 +303,9 @@ def main(argv=None):
     item = commands.add_parser("prepare", help="import all four stopped initial fits; no training")
     item.add_argument("--source-dir", type=Path, required=True)
     item.add_argument("--output-dir", type=Path, required=True)
-    item.add_argument("--gpus", default="0,1,2,3")
+    item.add_argument("--gpus", default="0,1,2,3", help="distinct indices within CUDA_VISIBLE_DEVICES")
+    item.add_argument("--workers-per-gpu", type=int, default=1,
+                      help="parallel workers per selected GPU; four worker slots are required")
     item.add_argument("--data-dir", type=Path)
     item.add_argument("--statistics-dir", type=Path)
     item.add_argument("--config-dir", type=Path)
@@ -303,7 +320,8 @@ def main(argv=None):
     try:
         if args.command == "resume":
             return resume(args.output_dir)
-        report = prepare(args.source_dir, args.output_dir, gpus=args.gpus, data_dir=args.data_dir,
+        report = prepare(args.source_dir, args.output_dir, gpus=args.gpus,
+                         workers_per_gpu=args.workers_per_gpu, data_dir=args.data_dir,
                          statistics_dir=args.statistics_dir, config_dir=args.config_dir)
         for row in report["cases"]:
             print(f"{row['task']}/seed_{row['seed']}: {row['model_updates']} / {row['target_stage_updates']}"

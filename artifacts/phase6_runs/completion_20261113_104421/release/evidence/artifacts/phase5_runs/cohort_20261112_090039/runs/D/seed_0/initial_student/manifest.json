@@ -1,0 +1,1686 @@
+{
+  "data_source": "training_controller_state",
+  "learning_eligible_for_world_model": false,
+  "metadata": {
+    "actor_config": {
+      "action_count": 12,
+      "critic_hidden_sizes": [
+        512,
+        512
+      ],
+      "embedding_size": 256,
+      "encoder_channels": [
+        32,
+        64,
+        128,
+        256
+      ],
+      "hidden_size": 256,
+      "image_shape": [
+        3,
+        96,
+        128
+      ],
+      "value_huber_delta": 1.0,
+      "world_tokens": 48,
+      "world_width": 256
+    },
+    "actor_optimizer_steps": 0,
+    "critic_optimizer_steps": 0,
+    "initialization_seeds": {
+      "local_actor_initialization": 2136173318,
+      "local_critic_initialization": 2575056127
+    },
+    "input_binding": {
+      "normalization": {
+        "constant_scale_rule": "std if std >= threshold, otherwise 1.0; unobserved fields remain unavailable",
+        "constant_threshold": 1e-06,
+        "fields": {
+          "player_0/ammo": {
+            "count": 44091,
+            "maximum": 0.25,
+            "mean": 0.18289276713147196,
+            "minimum": 0.0,
+            "scale": 0.06993238242931439,
+            "std": 0.06993238242931439,
+            "variance": 0.00489053811223988
+          },
+          "player_0/armor": {
+            "count": 44091,
+            "maximum": 0.0,
+            "mean": 0.0,
+            "minimum": 0.0,
+            "scale": 1.0,
+            "std": 0.0,
+            "variance": 0.0
+          },
+          "player_0/heading_cos": {
+            "count": 44091,
+            "maximum": 1.0,
+            "mean": 0.36191206199896614,
+            "minimum": -0.9999247193336487,
+            "scale": 0.7313845299797829,
+            "std": 0.7313845299797829,
+            "variance": 0.5349233306937479
+          },
+          "player_0/heading_sin": {
+            "count": 44091,
+            "maximum": 1.0,
+            "mean": 0.004716850718908859,
+            "minimum": -1.0,
+            "scale": 0.5779914194885405,
+            "std": 0.5779914194885405,
+            "variance": 0.334074081002378
+          },
+          "player_0/health": {
+            "count": 44091,
+            "maximum": 1.0,
+            "mean": 1.0,
+            "minimum": 1.0,
+            "scale": 1.0,
+            "std": 0.0,
+            "variance": 0.0
+          },
+          "player_0/position_x": {
+            "count": 44091,
+            "maximum": 0.964280903339386,
+            "mean": -0.3224219894949494,
+            "minimum": -0.9736824631690979,
+            "scale": 0.6022477926685602,
+            "std": 0.6022477926685602,
+            "variance": 0.3627024037741531
+          },
+          "player_0/position_y": {
+            "count": 44091,
+            "maximum": 0.9285699129104614,
+            "mean": 0.05874972072920234,
+            "minimum": -0.9285690188407898,
+            "scale": 0.6198060089966387,
+            "std": 0.6198060089966387,
+            "variance": 0.3841594887883414
+          },
+          "player_0/position_z": {
+            "count": 44091,
+            "maximum": 0.0,
+            "mean": 0.0,
+            "minimum": 0.0,
+            "scale": 1.0,
+            "std": 0.0,
+            "variance": 0.0
+          },
+          "player_0/velocity_x": {
+            "count": 44091,
+            "maximum": 0.23599767684936523,
+            "mean": 0.032793405740525125,
+            "minimum": -0.2258143424987793,
+            "scale": 0.09621343168502298,
+            "std": 0.09621343168502298,
+            "variance": 0.009257024436608585
+          },
+          "player_0/velocity_y": {
+            "count": 44091,
+            "maximum": 0.22099971771240234,
+            "mean": 0.003007462808169885,
+            "minimum": -0.22097396850585938,
+            "scale": 0.05774397544776988,
+            "std": 0.05774397544776988,
+            "variance": 0.003334366700512651
+          },
+          "player_1/ammo": {
+            "count": 44091,
+            "maximum": 0.25,
+            "mean": 0.1822475107688213,
+            "minimum": 0.0,
+            "scale": 0.07011531679548684,
+            "std": 0.07011531679548684,
+            "variance": 0.004916157649331478
+          },
+          "player_1/armor": {
+            "count": 44091,
+            "maximum": 0.0,
+            "mean": 0.0,
+            "minimum": 0.0,
+            "scale": 1.0,
+            "std": 0.0,
+            "variance": 0.0
+          },
+          "player_1/heading_cos": {
+            "count": 44091,
+            "maximum": 1.0,
+            "mean": 0.42094256006804637,
+            "minimum": -0.9999247193336487,
+            "scale": 0.7110048606000086,
+            "std": 0.7110048606000086,
+            "variance": 0.5055279117968375
+          },
+          "player_1/heading_sin": {
+            "count": 44091,
+            "maximum": 1.0,
+            "mean": 0.021518086037745573,
+            "minimum": -1.0,
+            "scale": 0.5628644774910186,
+            "std": 0.5628644774910186,
+            "variance": 0.31681642002123744
+          },
+          "player_1/health": {
+            "count": 44091,
+            "maximum": 1.0,
+            "mean": 1.0,
+            "minimum": 1.0,
+            "scale": 1.0,
+            "std": 0.0,
+            "variance": 0.0
+          },
+          "player_1/position_x": {
+            "count": 44091,
+            "maximum": 0.9642488956451416,
+            "mean": -0.36179026450003704,
+            "minimum": -0.9736809134483337,
+            "scale": 0.5758316213069542,
+            "std": 0.5758316213069542,
+            "variance": 0.33158205609699554
+          },
+          "player_1/position_y": {
+            "count": 44091,
+            "maximum": 0.928571343421936,
+            "mean": -0.026315609860165935,
+            "minimum": -0.9285712242126465,
+            "scale": 0.6249589046952455,
+            "std": 0.6249589046952455,
+            "variance": 0.390573632557881
+          },
+          "player_1/position_z": {
+            "count": 44091,
+            "maximum": 0.0,
+            "mean": 0.0,
+            "minimum": 0.0,
+            "scale": 1.0,
+            "std": 0.0,
+            "variance": 0.0
+          },
+          "player_1/velocity_x": {
+            "count": 44091,
+            "maximum": 0.23599767684936523,
+            "mean": 0.03201909223251412,
+            "minimum": -0.23444747924804688,
+            "scale": 0.09634291713417968,
+            "std": 0.09634291713417968,
+            "variance": 0.009281957681923414
+          },
+          "player_1/velocity_y": {
+            "count": 44091,
+            "maximum": 0.21944904327392578,
+            "mean": 0.0032316536527133045,
+            "minimum": -0.22493743896484375,
+            "scale": 0.05702762931848418,
+            "std": 0.05702762931848418,
+            "variance": 0.0032521505056864364
+          },
+          "task/elapsed_decisions": {
+            "count": 44091,
+            "maximum": 1.0,
+            "mean": 0.32855628128714265,
+            "minimum": 0.0,
+            "scale": 0.277126680350059,
+            "std": 0.277126680350059,
+            "variance": 0.07679919696184377
+          },
+          "task/milestone_count": {
+            "count": 44091,
+            "maximum": 1.0,
+            "mean": 0.1756367512644303,
+            "minimum": 0.0,
+            "scale": 0.38051081833465256,
+            "std": 0.38051081833465256,
+            "variance": 0.14478848286970697
+          }
+        },
+        "identity_sha256": "7c0c49a3723eb21d4a44ddf973f6ed2598860ac9d063e2eea7fe591ca38c4db8",
+        "input_space": "replay_geometry_normalized_continuous_targets",
+        "provenance": {
+          "accumulation": "chunked_float64_welford_population",
+          "chunk_count": 528,
+          "data_source": "real_environment",
+          "dataset_identity_sha256": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+          "dataset_manifest_sha256": "98e9b59ed3825ee4662ed267fa2505caf0daaa1ee49dc43446d96a3b88464893",
+          "excluded_model_diagnostic_episode_count": 35,
+          "fitting_episode_count": 314,
+          "fitting_episode_ids": [
+            "relay-s0-e000000",
+            "relay-s0-e000001",
+            "relay-s0-e000002",
+            "relay-s0-e000003",
+            "relay-s0-e000004",
+            "relay-s0-e000005",
+            "relay-s0-e000006",
+            "relay-s0-e000008",
+            "relay-s0-e000009",
+            "relay-s0-e000010",
+            "relay-s0-e000011",
+            "relay-s0-e000012",
+            "relay-s0-e000013",
+            "relay-s0-e000014",
+            "relay-s0-e000015",
+            "relay-s0-e000016",
+            "relay-s0-e000017",
+            "relay-s0-e000018",
+            "relay-s0-e000019",
+            "relay-s0-e000020",
+            "relay-s0-e000021",
+            "relay-s0-e000022",
+            "relay-s0-e000023",
+            "relay-s0-e000024",
+            "relay-s0-e000025",
+            "relay-s0-e000026",
+            "relay-s0-e000027",
+            "relay-s0-e000029",
+            "relay-s0-e000030",
+            "relay-s0-e000031",
+            "relay-s0-e000032",
+            "relay-s0-e000033",
+            "relay-s0-e000034",
+            "relay-s0-e000036",
+            "relay-s0-e000037",
+            "relay-s0-e000038",
+            "relay-s0-e000039",
+            "relay-s0-e000040",
+            "relay-s0-e000041",
+            "relay-s0-e000042",
+            "relay-s0-e000043",
+            "relay-s0-e000044",
+            "relay-s0-e000045",
+            "relay-s0-e000046",
+            "relay-s0-e000047",
+            "relay-s0-e000048",
+            "relay-s0-e000049",
+            "relay-s0-e000050",
+            "relay-s0-e000053",
+            "relay-s0-e000054",
+            "relay-s0-e000055",
+            "relay-s0-e000056",
+            "relay-s0-e000057",
+            "relay-s0-e000058",
+            "relay-s0-e000059",
+            "relay-s0-e000060",
+            "relay-s0-e000061",
+            "relay-s0-e000062",
+            "relay-s0-e000063",
+            "relay-s0-e000064",
+            "relay-s0-e000065",
+            "relay-s0-e000067",
+            "relay-s0-e000069",
+            "relay-s0-e000070",
+            "relay-s0-e000071",
+            "relay-s0-e000072",
+            "relay-s0-e000073",
+            "relay-s0-e000074",
+            "relay-s0-e000075",
+            "relay-s0-e000076",
+            "relay-s0-e000077",
+            "relay-s0-e000078",
+            "relay-s0-e000079",
+            "relay-s0-e000080",
+            "relay-s0-e000081",
+            "relay-s0-e000082",
+            "relay-s0-e000083",
+            "relay-s0-e000085",
+            "relay-s0-e000086",
+            "relay-s0-e000087",
+            "relay-s0-e000089",
+            "relay-s0-e000090",
+            "relay-s0-e000091",
+            "relay-s0-e000093",
+            "relay-s0-e000094",
+            "relay-s0-e000095",
+            "relay-s0-e000096",
+            "relay-s0-e000097",
+            "relay-s0-e000098",
+            "relay-s0-e000099",
+            "relay-s0-e000100",
+            "relay-s0-e000101",
+            "relay-s0-e000105",
+            "relay-s0-e000106",
+            "relay-s0-e000107",
+            "relay-s0-e000108",
+            "relay-s0-e000109",
+            "relay-s0-e000111",
+            "relay-s0-e000112",
+            "relay-s0-e000113",
+            "relay-s0-e000114",
+            "relay-s0-e000115",
+            "relay-s0-e000116",
+            "relay-s0-e000118",
+            "relay-s0-e000120",
+            "relay-s0-e000121",
+            "relay-s0-e000122",
+            "relay-s0-e000123",
+            "relay-s0-e000124",
+            "relay-s0-e000125",
+            "relay-s0-e000126",
+            "relay-s0-e000127",
+            "relay-s0-e000128",
+            "relay-s0-e000129",
+            "relay-s0-e000130",
+            "relay-s0-e000131",
+            "relay-s0-e000133",
+            "relay-s0-e000134",
+            "relay-s0-e000135",
+            "relay-s0-e000136",
+            "relay-s0-e000137",
+            "relay-s0-e000138",
+            "relay-s0-e000139",
+            "relay-s0-e000140",
+            "relay-s0-e000141",
+            "relay-s0-e000142",
+            "relay-s0-e000143",
+            "relay-s0-e000144",
+            "relay-s0-e000145",
+            "relay-s0-e000146",
+            "relay-s0-e000147",
+            "relay-s0-e000148",
+            "relay-s0-e000149",
+            "relay-s0-e000150",
+            "relay-s0-e000151",
+            "relay-s0-e000152",
+            "relay-s0-e000153",
+            "relay-s0-e000155",
+            "relay-s0-e000156",
+            "relay-s0-e000157",
+            "relay-s0-e000158",
+            "relay-s0-e000160",
+            "relay-s0-e000161",
+            "relay-s0-e000162",
+            "relay-s0-e000163",
+            "relay-s0-e000164",
+            "relay-s0-e000165",
+            "relay-s0-e000166",
+            "relay-s0-e000168",
+            "relay-s0-e000169",
+            "relay-s0-e000170",
+            "relay-s0-e000171",
+            "relay-s0-e000172",
+            "relay-s0-e000173",
+            "relay-s0-e000174",
+            "relay-s0-e000175",
+            "relay-s0-e000176",
+            "relay-s0-e000177",
+            "relay-s0-e000178",
+            "relay-s0-e000179",
+            "relay-s0-e000180",
+            "relay-s0-e000181",
+            "relay-s0-e000183",
+            "relay-s0-e000184",
+            "relay-s0-e000185",
+            "relay-s0-e000186",
+            "relay-s0-e000187",
+            "relay-s0-e000188",
+            "relay-s0-e000189",
+            "relay-s0-e000190",
+            "relay-s0-e000191",
+            "relay-s0-e000192",
+            "relay-s0-e000193",
+            "relay-s0-e000194",
+            "relay-s0-e000195",
+            "relay-s0-e000196",
+            "relay-s0-e000197",
+            "relay-s0-e000198",
+            "relay-s0-e000199",
+            "relay-s0-e000200",
+            "relay-s0-e000201",
+            "relay-s0-e000202",
+            "relay-s0-e000203",
+            "relay-s0-e000204",
+            "relay-s0-e000206",
+            "relay-s0-e000207",
+            "relay-s0-e000208",
+            "relay-s0-e000210",
+            "relay-s0-e000212",
+            "relay-s0-e000213",
+            "relay-s0-e000214",
+            "relay-s0-e000215",
+            "relay-s0-e000216",
+            "relay-s0-e000217",
+            "relay-s0-e000218",
+            "relay-s0-e000219",
+            "relay-s0-e000220",
+            "relay-s0-e000221",
+            "relay-s0-e000222",
+            "relay-s0-e000223",
+            "relay-s0-e000225",
+            "relay-s0-e000226",
+            "relay-s0-e000227",
+            "relay-s0-e000228",
+            "relay-s0-e000229",
+            "relay-s0-e000230",
+            "relay-s0-e000231",
+            "relay-s0-e000232",
+            "relay-s0-e000233",
+            "relay-s0-e000234",
+            "relay-s0-e000235",
+            "relay-s0-e000236",
+            "relay-s0-e000237",
+            "relay-s0-e000238",
+            "relay-s0-e000240",
+            "relay-s0-e000241",
+            "relay-s0-e000242",
+            "relay-s0-e000243",
+            "relay-s0-e000244",
+            "relay-s0-e000245",
+            "relay-s0-e000246",
+            "relay-s0-e000247",
+            "relay-s0-e000248",
+            "relay-s0-e000249",
+            "relay-s0-e000250",
+            "relay-s0-e000251",
+            "relay-s0-e000252",
+            "relay-s0-e000254",
+            "relay-s0-e000255",
+            "relay-s0-e000256",
+            "relay-s0-e000257",
+            "relay-s0-e000258",
+            "relay-s0-e000259",
+            "relay-s0-e000260",
+            "relay-s0-e000261",
+            "relay-s0-e000262",
+            "relay-s0-e000264",
+            "relay-s0-e000265",
+            "relay-s0-e000266",
+            "relay-s0-e000267",
+            "relay-s0-e000268",
+            "relay-s0-e000269",
+            "relay-s0-e000270",
+            "relay-s0-e000271",
+            "relay-s0-e000272",
+            "relay-s0-e000273",
+            "relay-s0-e000274",
+            "relay-s0-e000275",
+            "relay-s0-e000276",
+            "relay-s0-e000278",
+            "relay-s0-e000279",
+            "relay-s0-e000280",
+            "relay-s0-e000282",
+            "relay-s0-e000283",
+            "relay-s0-e000284",
+            "relay-s0-e000285",
+            "relay-s0-e000286",
+            "relay-s0-e000287",
+            "relay-s0-e000288",
+            "relay-s0-e000289",
+            "relay-s0-e000290",
+            "relay-s0-e000291",
+            "relay-s0-e000292",
+            "relay-s0-e000293",
+            "relay-s0-e000294",
+            "relay-s0-e000295",
+            "relay-s0-e000296",
+            "relay-s0-e000297",
+            "relay-s0-e000298",
+            "relay-s0-e000299",
+            "relay-s0-e000300",
+            "relay-s0-e000301",
+            "relay-s0-e000302",
+            "relay-s0-e000303",
+            "relay-s0-e000304",
+            "relay-s0-e000305",
+            "relay-s0-e000306",
+            "relay-s0-e000307",
+            "relay-s0-e000308",
+            "relay-s0-e000310",
+            "relay-s0-e000311",
+            "relay-s0-e000312",
+            "relay-s0-e000313",
+            "relay-s0-e000314",
+            "relay-s0-e000315",
+            "relay-s0-e000316",
+            "relay-s0-e000317",
+            "relay-s0-e000318",
+            "relay-s0-e000319",
+            "relay-s0-e000320",
+            "relay-s0-e000322",
+            "relay-s0-e000323",
+            "relay-s0-e000324",
+            "relay-s0-e000325",
+            "relay-s0-e000326",
+            "relay-s0-e000327",
+            "relay-s0-e000328",
+            "relay-s0-e000329",
+            "relay-s0-e000330",
+            "relay-s0-e000331",
+            "relay-s0-e000332",
+            "relay-s0-e000334",
+            "relay-s0-e000336",
+            "relay-s0-e000337",
+            "relay-s0-e000338",
+            "relay-s0-e000339",
+            "relay-s0-e000340",
+            "relay-s0-e000342",
+            "relay-s0-e000343",
+            "relay-s0-e000344",
+            "relay-s0-e000345",
+            "relay-s0-e000346",
+            "relay-s0-e000347",
+            "relay-s0-e000348"
+          ],
+          "fitting_episode_ids_sha256": "bdf80b759e839fb96c183d328ff8629a9df317543da33bc1b5e362f0a82fd315",
+          "fitting_transition_count": 43777,
+          "geometry_split": "train",
+          "image_masks_do_not_gate_state_targets": true,
+          "label_profile": {
+            "binary_fields": {
+              "event/failures": {
+                "alignment": "transition",
+                "positive": 40,
+                "positive_fraction": 0.0009137218173926948,
+                "valid": 43777
+              },
+              "event/gate_closes": {
+                "alignment": "transition",
+                "positive": 224,
+                "positive_fraction": 0.005116842177399091,
+                "valid": 43777
+              },
+              "event/gate_opens": {
+                "alignment": "transition",
+                "positive": 643,
+                "positive_fraction": 0.014688078214587568,
+                "valid": 43777
+              },
+              "event/latch_activations": {
+                "alignment": "transition",
+                "positive": 196,
+                "positive_fraction": 0.0044772369052242045,
+                "valid": 43777
+              },
+              "event/plate_entries": {
+                "alignment": "transition",
+                "positive": 458,
+                "positive_fraction": 0.010462114809146356,
+                "valid": 43777
+              },
+              "event/plate_exits": {
+                "alignment": "transition",
+                "positive": 420,
+                "positive_fraction": 0.009594079082623296,
+                "valid": 43777
+              },
+              "event/player_0_damage_taken": {
+                "alignment": "transition",
+                "positive": 0,
+                "positive_fraction": 0.0,
+                "valid": 43777
+              },
+              "event/player_0_damagecount": {
+                "alignment": "transition",
+                "positive": 0,
+                "positive_fraction": 0.0,
+                "valid": 43777
+              },
+              "event/player_0_deathcount": {
+                "alignment": "transition",
+                "positive": 0,
+                "positive_fraction": 0.0,
+                "valid": 43777
+              },
+              "event/player_0_deaths": {
+                "alignment": "transition",
+                "positive": 0,
+                "positive_fraction": 0.0,
+                "valid": 43777
+              },
+              "event/player_0_hitcount": {
+                "alignment": "transition",
+                "positive": 0,
+                "positive_fraction": 0.0,
+                "valid": 43777
+              },
+              "event/player_0_hits_taken": {
+                "alignment": "transition",
+                "positive": 0,
+                "positive_fraction": 0.0,
+                "valid": 43777
+              },
+              "event/player_0_itemcount": {
+                "alignment": "transition",
+                "positive": 0,
+                "positive_fraction": 0.0,
+                "valid": 43777
+              },
+              "event/player_0_killcount": {
+                "alignment": "transition",
+                "positive": 0,
+                "positive_fraction": 0.0,
+                "valid": 43777
+              },
+              "event/player_1_damage_taken": {
+                "alignment": "transition",
+                "positive": 0,
+                "positive_fraction": 0.0,
+                "valid": 43777
+              },
+              "event/player_1_damagecount": {
+                "alignment": "transition",
+                "positive": 0,
+                "positive_fraction": 0.0,
+                "valid": 43777
+              },
+              "event/player_1_deathcount": {
+                "alignment": "transition",
+                "positive": 0,
+                "positive_fraction": 0.0,
+                "valid": 43777
+              },
+              "event/player_1_deaths": {
+                "alignment": "transition",
+                "positive": 0,
+                "positive_fraction": 0.0,
+                "valid": 43777
+              },
+              "event/player_1_hitcount": {
+                "alignment": "transition",
+                "positive": 0,
+                "positive_fraction": 0.0,
+                "valid": 43777
+              },
+              "event/player_1_hits_taken": {
+                "alignment": "transition",
+                "positive": 0,
+                "positive_fraction": 0.0,
+                "valid": 43777
+              },
+              "event/player_1_itemcount": {
+                "alignment": "transition",
+                "positive": 0,
+                "positive_fraction": 0.0,
+                "valid": 43777
+              },
+              "event/player_1_killcount": {
+                "alignment": "transition",
+                "positive": 0,
+                "positive_fraction": 0.0,
+                "valid": 43777
+              },
+              "event/successes": {
+                "alignment": "transition",
+                "positive": 182,
+                "positive_fraction": 0.004157434269136761,
+                "valid": 43777
+              },
+              "player_0/alive": {
+                "alignment": "state",
+                "positive": 44091,
+                "positive_fraction": 1.0,
+                "valid": 44091
+              },
+              "player_1/alive": {
+                "alignment": "state",
+                "positive": 44091,
+                "positive_fraction": 1.0,
+                "valid": 44091
+              },
+              "task/extraction_unlocked": {
+                "alignment": "state",
+                "positive": 7744,
+                "positive_fraction": 0.17563675126443037,
+                "valid": 44091
+              },
+              "task/failure": {
+                "alignment": "state",
+                "positive": 40,
+                "positive_fraction": 0.0009072146242997437,
+                "valid": 44091
+              },
+              "task/gate_1_open": {
+                "alignment": "state",
+                "positive": 12846,
+                "positive_fraction": 0.2913519765938627,
+                "valid": 44091
+              },
+              "task/gate_2_open": {
+                "alignment": "state",
+                "positive": 7081,
+                "positive_fraction": 0.16059966886666213,
+                "valid": 44091
+              },
+              "task/latch_active": {
+                "alignment": "state",
+                "positive": 7744,
+                "positive_fraction": 0.17563675126443037,
+                "valid": 44091
+              },
+              "task/plate_active": {
+                "alignment": "state",
+                "positive": 7234,
+                "positive_fraction": 0.16406976480460864,
+                "valid": 44091
+              },
+              "task/success": {
+                "alignment": "state",
+                "positive": 182,
+                "positive_fraction": 0.0041278265405638335,
+                "valid": 44091
+              }
+            },
+            "deadline_transitions": 40,
+            "learned_outcome": {
+              "class_names": [
+                "continue",
+                "success",
+                "failure"
+              ],
+              "counts": [
+                43595,
+                182,
+                0
+              ],
+              "valid": 43777
+            },
+            "nonzero_bonus_transitions": 196,
+            "task_stage": {
+              "counts": [
+                36347,
+                7562,
+                182
+              ],
+              "valid": 44091
+            }
+          },
+          "partition": "fit",
+          "profile_task_spec": {
+            "deadline": 400,
+            "failure_reward": -1.0,
+            "milestone_bonus": 0.1,
+            "milestone_count": 1,
+            "step_cost": -0.001,
+            "success_reward": 1.0,
+            "task_family": "relay"
+          },
+          "run_seed": 0,
+          "shared_by_variants": [
+            "B",
+            "D"
+          ],
+          "task_family": "relay",
+          "unique_state_count": 44091
+        },
+        "schema_version": "fitting-normalization-v1",
+        "task_family": "relay",
+        "variance_reduction": "population"
+      },
+      "provenance": {
+        "initial_normalization": {
+          "file_sha256": "246c177f30c13c7b8655f33225908a1e2c4bd8996b8f54938498d8080f4789b7",
+          "identity_sha256": "7c0c49a3723eb21d4a44ddf973f6ed2598860ac9d063e2eea7fe591ca38c4db8"
+        },
+        "replays": [
+          {
+            "dataset_identity_sha256": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+            "manifest_sha256": "98e9b59ed3825ee4662ed267fa2505caf0daaa1ee49dc43446d96a3b88464893",
+            "transitions": 50000
+          }
+        ]
+      },
+      "replay_path": "/home/zixuan/projects/WM1/data/initial_replay/pilot/relay/seed_0/replay",
+      "selection": {
+        "checkpoint_path": "/home/zixuan/projects/WM1/artifacts/phase24_runs/aspire2a_2gpu_v1/relay/seed_0/checkpoints/update_00004500.pt",
+        "checkpoint_sha256": "a05b98512b7c2657483105b500e38791672c81f5988c6e3e28ae2d1f1497b4f3",
+        "common_config_sha256": "3f8889deedad530079031940d0f4834b114819568a23d837b000d10e00a7f6cf",
+        "initial_normalization": {
+          "file_sha256": "246c177f30c13c7b8655f33225908a1e2c4bd8996b8f54938498d8080f4789b7",
+          "identity_sha256": "7c0c49a3723eb21d4a44ddf973f6ed2598860ac9d063e2eea7fe591ca38c4db8"
+        },
+        "model_updates": 4500,
+        "original_target_stage_updates": 5000,
+        "replays": [
+          {
+            "dataset_identity_sha256": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+            "manifest_sha256": "98e9b59ed3825ee4662ed267fa2505caf0daaa1ee49dc43446d96a3b88464893",
+            "transitions": 50000
+          }
+        ],
+        "run_manifest_path": "/home/zixuan/projects/WM1/artifacts/phase24_runs/aspire2a_2gpu_v1/relay/seed_0/run_manifest.json",
+        "run_manifest_sha256": "cd747d3e8543b20d86b8f648e2cbc688f3598a7bed3e4b3e12505c8807b088b6",
+        "seed": 0,
+        "selection_path": "/home/zixuan/projects/WM1/artifacts/phase24_selection/shortened_v1/selection.json",
+        "selection_sha256": "8afaa4c9c737f0b7d207346842d11da13b1220ec06e2060aa219bbb6dfa6e6a1",
+        "shared_initial_variants": [
+          "B",
+          "D"
+        ],
+        "source_sha256": {
+          "scripts/phase24.py": "40eeb7736eb8a95d01e48068cd31feade640209966b53308c7d4820d9a1caeef",
+          "src/world_models/data/replay.py": "e4006006321a526084bb8fee7e2e5e6c0ce6250b8c538b2ababf42aaaa3327aa",
+          "src/world_models/data/schema.py": "3d68de72f95b666930c128534175529fb3a7fae8956afaa191675c356b8e5f88",
+          "src/world_models/infrastructure/config.py": "4e43fde458e13b74166282f85a988a81ea174faa6b5bb2517e504d25f90a71cd",
+          "src/world_models/infrastructure/reproducibility.py": "4667d44c461ecd98c5838c560dec27e1708930e2ca90410e84b791e0277bb4be",
+          "src/world_models/models/__init__.py": "ce1bfc1cfcd29f37cd99045ce774ac669737fc0eaffcb7e125303091c288c5ea",
+          "src/world_models/models/core.py": "4efa9d638bc5645fa6d9476f8f60a3e8116ed780f3b1da64c5a87b32fbebeb9e",
+          "src/world_models/models/heads.py": "9ab30036f46084fc4269e6355b050d076e76c616b1b3118f00e1387544631d70",
+          "src/world_models/models/world_model.py": "25f9ef42357d90ea06c3a94821135ab897b3610232776839ed744e1be15982c4",
+          "src/world_models/training/checkpoints.py": "f03eb288734f7557a51c633b48123801505f75bf87b79c92f87cbaf3b25ca311",
+          "src/world_models/training/diagnostics.py": "dadab0dfd21fe1b435fecb8e266e2c09748b05832466dd2bcf5e3c31062cc89b",
+          "src/world_models/training/fitting.py": "feb680515514b38ea898466bf0f70c0d58ee965213ec4551d38e9ca81d455d93",
+          "src/world_models/training/losses.py": "18222dd71c08509df1ee9d97d8bba7afc12c1b13d2e5fa5926f9d0e2e78c0044",
+          "src/world_models/training/normalization.py": "3ade5e03070e820fadf49bc3f46fbffae6b2d469dafff82966a761987d9eff80",
+          "src/world_models/training/objective.py": "91fb91b5c0aa8aa0ecc3d7042356d2ed659ebbc24efe55d4fc2d7af52a637483",
+          "src/world_models/training/objective_batch.py": "698cf289925c785d735586034621e13aca7bae76a2fcd9cf4936ace5bceb3773",
+          "src/world_models/training/runner.py": "b8c7f9091c2cb0e9b93603b625a137fe93ffcaac5d7f9a20de68d858123b29c8",
+          "src/world_models/training/sampling.py": "95eeab790196472634e5cef2bced8502576c42e70f98a58d41077cc51cbe1f18",
+          "src/world_models/training/validation.py": "7a894abf9e3ce33bc8062988c5bc2486e6848bdc42c4f06be2ea7380194c8fad"
+        },
+        "task": "relay"
+      },
+      "settings": {
+        "actor": {
+          "dropout": 0.0,
+          "embedding_size": 256,
+          "hidden_size": 256
+        },
+        "critic": {
+          "actor_memories": true,
+          "hidden_sizes": [
+            512,
+            512
+          ],
+          "remaining_time": true
+        },
+        "distillation": {
+          "decay_fraction": 0.75,
+          "direction": "teacher_to_student_forward_kl",
+          "initial_trajectories": 512,
+          "initial_weight": 1.0,
+          "target": "soft_action_distribution",
+          "temperature": 1.0,
+          "trajectory_source": "student",
+          "warm_start_batch_sequences": 64,
+          "warm_start_updates": 200
+        },
+        "environment": {
+          "action_count": 12,
+          "actor_agent_identity": false,
+          "actor_global_input": false,
+          "actor_reward_input": false,
+          "agents": 2,
+          "communication": false,
+          "exact_episode_clock": true,
+          "frame_skip": 4,
+          "image_shape": [
+            3,
+            96,
+            128
+          ],
+          "local_actor_inputs": [
+            "local_rgb",
+            "previous_action",
+            "local_hidden"
+          ],
+          "previous_action_start": 12,
+          "prior_future_truth": false,
+          "privileged_mode": "auxiliary_targets_only",
+          "render_shape": [
+            120,
+            160
+          ],
+          "separate_actor_memory": true,
+          "shared_actor_weights": true
+        },
+        "experiment": {
+          "bootstrap_replicates": 10000,
+          "checkpoint_episodes": 50,
+          "checkpoints": [
+            0,
+            50000,
+            100000,
+            200000
+          ],
+          "collection_block": 25000,
+          "evaluation_split": "validation",
+          "final_episodes": 200,
+          "initial_scripted_fraction": 0.3,
+          "initial_transitions": 50000,
+          "master_seeds": [
+            0,
+            1
+          ],
+          "name": "pilot",
+          "practical_auc_effect": 0.02,
+          "real_budget": 200000
+        },
+        "mappo": {
+          "clip_epsilon": 0.2,
+          "differentiate_world_model": false,
+          "entropy_coefficient": 0.01,
+          "epochs": 4,
+          "frozen_rollout_snapshots": true,
+          "gae_lambda": 0.95,
+          "gamma": 0.99,
+          "gradient_clip": 0.5,
+          "horizon": 15,
+          "initial_local_cycles": 100,
+          "learning_rate": 0.0003,
+          "normalize_actor_advantages": true,
+          "normalize_values": false,
+          "online_local_cycles": 20,
+          "optimizer_epsilon": 1e-05,
+          "recurrent_minibatches": 4,
+          "starts": 256,
+          "value_coefficient": 0.5,
+          "value_huber_delta": 1.0
+        },
+        "resources": {
+          "cpu_threads": 1,
+          "data_loader_workers": 0,
+          "distributed_training": false,
+          "initial_collectors": 2,
+          "learners_per_gpu": 1,
+          "mixed_precision": "bfloat16",
+          "optimizer_dtype": "float32",
+          "probability_dtype": "float32",
+          "requested_cpu_cores": 4,
+          "requested_gpu_count": 4,
+          "requested_gpu_model": "H200"
+        },
+        "schema_version": 1,
+        "study": {
+          "evaluation_enters_replay": false,
+          "interaction_unit": "joint_transition",
+          "primary_metric": "normalized_success_auc",
+          "separate_family_runs": true,
+          "task_families": [
+            "relay",
+            "cover"
+          ],
+          "variants": [
+            "B",
+            "D"
+          ]
+        },
+        "task": {
+          "deadline": 400,
+          "dwell_decisions": 0,
+          "failure_reward": -1.0,
+          "milestone_bonus": 0.1,
+          "milestone_count": 1,
+          "name": "relay",
+          "step_cost": -0.001,
+          "success_reward": 1.0,
+          "test_layouts": 2,
+          "train_layouts": 6,
+          "validation_layouts": 2
+        },
+        "teacher": {
+          "attention_heads": 4,
+          "head_width": 256,
+          "initial_cycles": 100,
+          "online_cycles": 20,
+          "recurrent_input": "local_history"
+        },
+        "variant": {
+          "distillation_enabled": true,
+          "name": "D",
+          "teacher_enabled": true
+        },
+        "world_model": {
+          "attention_heads": 8,
+          "burn_in": 16,
+          "effective_batch": 32,
+          "encoder_channels": [
+            32,
+            64,
+            128,
+            256
+          ],
+          "ffn_width": 1024,
+          "fitting_episode_fraction": 0.9,
+          "free_nats": 1.0,
+          "gradient_clip": 100.0,
+          "initial_updates": 5000,
+          "latent_categories": 32,
+          "latent_variables": 32,
+          "learning_rate": 0.0001,
+          "loss_weights": {
+            "auxiliary": 1.0,
+            "dynamics_kl": 0.5,
+            "outcome": 1.0,
+            "representation_kl": 0.1,
+            "reward": 1.0,
+            "rgb": 100.0
+          },
+          "memory_tokens": 16,
+          "online_updates": 500,
+          "recent_fraction": 0.5,
+          "recent_transitions": 100000,
+          "sequence_length": 64,
+          "transformer_blocks": 4,
+          "uniform_mixture": 0.01,
+          "weight_decay": 0.0001,
+          "width": 256
+        }
+      }
+    },
+    "inputs": {
+      "config_root": "/home/zixuan/projects/WM1/configs",
+      "data_root": "/home/zixuan/projects/WM1/data/initial_replay/pilot",
+      "initial_selection": "/home/zixuan/projects/WM1/artifacts/phase24_selection/shortened_v1/selection.json",
+      "master_seed": 0,
+      "statistics_root": "/home/zixuan/projects/WM1/artifacts/phase23/normalization"
+    },
+    "master_seed": 0,
+    "new_environment_interactions": 0,
+    "new_model_updates": 0,
+    "paired_versions_cpu": {
+      "actor": "3279b352b2f8048df0f42eecb0f95827facfddf0461314e8458e1e3c099b89b0",
+      "critic": "129d4453bd6594dc332daf85b25262d52a2aab73b2f41ec9e15f3f9b7c57094c"
+    },
+    "provenance": {
+      "chronology": "fresh_before_teacher",
+      "mode": "fresh",
+      "saved_before_teacher_training": true
+    },
+    "schema_version": "p44-paired-initial-student-v1"
+  },
+  "payload": {
+    "bytes": 19908099,
+    "path": "state.pt",
+    "sha256": "015f98773fb61892422cc15ee1a19100958431aa099ff76313d53eceb62ffa83"
+  },
+  "schema_version": "real-model-policy-cycle-checkpoint-v1",
+  "status": "complete",
+  "tensor_specs": [
+    {
+      "bytes": 6144,
+      "dtype": "torch.float32",
+      "elements": 1536,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.0.weight"
+        ]
+      ],
+      "shape": [
+        32,
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 128,
+      "dtype": "torch.float32",
+      "elements": 32,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.0.bias"
+        ]
+      ],
+      "shape": [
+        32
+      ]
+    },
+    {
+      "bytes": 128,
+      "dtype": "torch.float32",
+      "elements": 32,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.1.weight"
+        ]
+      ],
+      "shape": [
+        32
+      ]
+    },
+    {
+      "bytes": 128,
+      "dtype": "torch.float32",
+      "elements": 32,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.1.bias"
+        ]
+      ],
+      "shape": [
+        32
+      ]
+    },
+    {
+      "bytes": 131072,
+      "dtype": "torch.float32",
+      "elements": 32768,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.3.weight"
+        ]
+      ],
+      "shape": [
+        64,
+        32,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 256,
+      "dtype": "torch.float32",
+      "elements": 64,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.3.bias"
+        ]
+      ],
+      "shape": [
+        64
+      ]
+    },
+    {
+      "bytes": 256,
+      "dtype": "torch.float32",
+      "elements": 64,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.4.weight"
+        ]
+      ],
+      "shape": [
+        64
+      ]
+    },
+    {
+      "bytes": 256,
+      "dtype": "torch.float32",
+      "elements": 64,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.4.bias"
+        ]
+      ],
+      "shape": [
+        64
+      ]
+    },
+    {
+      "bytes": 524288,
+      "dtype": "torch.float32",
+      "elements": 131072,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.6.weight"
+        ]
+      ],
+      "shape": [
+        128,
+        64,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 512,
+      "dtype": "torch.float32",
+      "elements": 128,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.6.bias"
+        ]
+      ],
+      "shape": [
+        128
+      ]
+    },
+    {
+      "bytes": 512,
+      "dtype": "torch.float32",
+      "elements": 128,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.7.weight"
+        ]
+      ],
+      "shape": [
+        128
+      ]
+    },
+    {
+      "bytes": 512,
+      "dtype": "torch.float32",
+      "elements": 128,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.7.bias"
+        ]
+      ],
+      "shape": [
+        128
+      ]
+    },
+    {
+      "bytes": 2097152,
+      "dtype": "torch.float32",
+      "elements": 524288,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.9.weight"
+        ]
+      ],
+      "shape": [
+        256,
+        128,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.9.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.10.weight"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.10.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 12582912,
+      "dtype": "torch.float32",
+      "elements": 3145728,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "projection.1.weight"
+        ]
+      ],
+      "shape": [
+        256,
+        12288
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "projection.1.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 826368,
+      "dtype": "torch.float32",
+      "elements": 206592,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "gru.weight_ih"
+        ]
+      ],
+      "shape": [
+        768,
+        269
+      ]
+    },
+    {
+      "bytes": 786432,
+      "dtype": "torch.float32",
+      "elements": 196608,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "gru.weight_hh"
+        ]
+      ],
+      "shape": [
+        768,
+        256
+      ]
+    },
+    {
+      "bytes": 3072,
+      "dtype": "torch.float32",
+      "elements": 768,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "gru.bias_ih"
+        ]
+      ],
+      "shape": [
+        768
+      ]
+    },
+    {
+      "bytes": 3072,
+      "dtype": "torch.float32",
+      "elements": 768,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "gru.bias_hh"
+        ]
+      ],
+      "shape": [
+        768
+      ]
+    },
+    {
+      "bytes": 262144,
+      "dtype": "torch.float32",
+      "elements": 65536,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "action_head.0.weight"
+        ]
+      ],
+      "shape": [
+        256,
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "action_head.0.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 12288,
+      "dtype": "torch.float32",
+      "elements": 3072,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "action_head.2.weight"
+        ]
+      ],
+      "shape": [
+        12,
+        256
+      ]
+    },
+    {
+      "bytes": 48,
+      "dtype": "torch.float32",
+      "elements": 12,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "action_head.2.bias"
+        ]
+      ],
+      "shape": [
+        12
+      ]
+    },
+    {
+      "bytes": 1574912,
+      "dtype": "torch.float32",
+      "elements": 393728,
+      "path": [
+        [
+          "key",
+          "critic"
+        ],
+        [
+          "key",
+          "mlp.0.weight"
+        ]
+      ],
+      "shape": [
+        512,
+        769
+      ]
+    },
+    {
+      "bytes": 2048,
+      "dtype": "torch.float32",
+      "elements": 512,
+      "path": [
+        [
+          "key",
+          "critic"
+        ],
+        [
+          "key",
+          "mlp.0.bias"
+        ]
+      ],
+      "shape": [
+        512
+      ]
+    },
+    {
+      "bytes": 1048576,
+      "dtype": "torch.float32",
+      "elements": 262144,
+      "path": [
+        [
+          "key",
+          "critic"
+        ],
+        [
+          "key",
+          "mlp.2.weight"
+        ]
+      ],
+      "shape": [
+        512,
+        512
+      ]
+    },
+    {
+      "bytes": 2048,
+      "dtype": "torch.float32",
+      "elements": 512,
+      "path": [
+        [
+          "key",
+          "critic"
+        ],
+        [
+          "key",
+          "mlp.2.bias"
+        ]
+      ],
+      "shape": [
+        512
+      ]
+    },
+    {
+      "bytes": 2048,
+      "dtype": "torch.float32",
+      "elements": 512,
+      "path": [
+        [
+          "key",
+          "critic"
+        ],
+        [
+          "key",
+          "mlp.4.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        512
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "critic"
+        ],
+        [
+          "key",
+          "mlp.4.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    }
+  ]
+}

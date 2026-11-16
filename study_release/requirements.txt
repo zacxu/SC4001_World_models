@@ -1,0 +1,3 @@
+# CPU-only saved-record reproduction; no simulator or training dependencies.
+PyYAML==6.0.3
+matplotlib==3.11.2

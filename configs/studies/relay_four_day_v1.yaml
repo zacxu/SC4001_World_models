@@ -1,0 +1,29 @@
+schema_version: p44-fixed-data-study-v1
+study_profile: relay_four_day_v1
+task_family: relay
+master_seeds: [0, 1]
+variants: [B, D]
+initial_transitions: 50000
+initial_model_updates: 4500
+new_environment_interactions: 0
+new_model_updates: 0
+local_cycles: 20
+starts: 256
+horizon: 15
+epochs: 4
+minibatches: 4
+teacher_cycles: 25
+trajectories: 128
+distillation_updates: 100
+distillation_sequences_per_update: 32
+teacher_kl_weight: 0.0
+teacher_refresh_cycles: 0
+guidance_decay_enabled: false
+local_ppo_optimizer_initialization: fresh_after_distillation
+evaluation_episodes_per_actor: 20
+evaluation_bank_seed: 5600
+evaluation_split: test
+primary_metric: final_success_rate
+training_matrix_runs: 4
+shared_initial_replay_per_seed: true
+model_and_normalization_frozen: true

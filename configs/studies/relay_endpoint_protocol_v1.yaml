@@ -1,0 +1,106 @@
+schema_version: p51-exploratory-endpoint-protocol-v1
+study_profile: relay_endpoint_protocol_v1
+parent_study_profile: relay_four_day_v1
+parent_profile_path: configs/studies/relay_four_day_v1.yaml
+parent_profile_sha256: a10c1d3688943c88f34cad3a6447fcd287e68615028739db42bea3551e4e5b6a
+task_family: relay
+master_seeds: [0, 1]
+variants: [B, D]
+training_matrix_runs: 4
+initial_transitions: 50000
+initial_model_updates: 4500
+shared_initial_replay_per_seed: true
+model_and_normalization_frozen: true
+new_environment_interactions: 0
+new_model_updates: 0
+local_cycles: 20
+starts: 256
+horizon: 15
+epochs: 4
+minibatches: 4
+teacher_cycles: 25
+trajectories: 128
+distillation_updates: 100
+distillation_sequences_per_update: 32
+distillation_temperature: 1.0
+distillation_loss: forward_kl_teacher_to_student
+distillation_trajectory_source: teacher
+local_actor_compute_precision: float32
+teacher_policy_compute_precision: float32
+world_model_compute_precision: bfloat16
+distillation_optimizer:
+  kind: Adam
+  learning_rate: 0.0003
+  epsilon: 0.00001
+  betas: [0.9, 0.999]
+  weight_decay: 0.0
+  gradient_clip: 0.5
+teacher_kl_weight: 0.0
+teacher_refresh_cycles: 0
+guidance_decay_enabled: false
+local_ppo_optimizer_initialization:
+  B: fresh_from_paired_initialization
+  D: fresh_after_distillation
+evaluation_episodes_per_actor: 20
+evaluation_bank_seed: 5600
+evaluation_split: test
+evaluation_mode: stochastic
+evaluation_temperature: 1.0
+evaluation_actor_precision: float32
+evaluation_frame_skip: 4
+evaluation_deadline: 400
+evaluation_layouts: [relay_test_00, relay_test_01]
+evaluation_episodes_per_layout: 10
+evaluation_actor_only: true
+evaluation_final_local_cycles: 20
+evaluation_data_enters_training: false
+evaluation_seed_policy: shared_scenarios_across_all_runs_actions_paired_by_master_seed_and_player_excluding_branch
+primary_metric: final_success_rate
+analysis:
+  primary_effect: final_success_rate_D_minus_B
+  secondary_effects: [mean_return_D_minus_B, latch_episode_rate_D_minus_B]
+  latch_definition: at_least_one_latch_activation_in_the_episode
+  summaries: [all_arm_success_counts_and_rates, each_seed_paired_difference, descriptive_mean, observed_min_max, per_layout, termination_counts, completion_length_given_success]
+  no_success_completion_length: null_with_zero_denominator
+  confidence_intervals: false
+  p_values: false
+  bootstrap: false
+  auc: false
+  superiority_claim: false
+  equivalence_claim: false
+  seed_is_replication_unit: true
+  missing_evidence_imputation: forbidden
+retry_policy:
+  infrastructure_retries_max: 2
+  same_seed_configuration_and_artifact_identity: true
+  restore_exact_committed_optimizer_rng_and_stage: true
+  retain_failed_attempts_and_physical_compute: true
+  retry_valid_poor_results: false
+  retry_numerical_failures: false
+  seed_replacement: false
+  checkpoint_selection_from_test_results: false
+  evaluation_retry_selects_first_valid_episode_attempt: true
+fallback_policy:
+  default_master_seeds: [0, 1]
+  single_pair_seed: 0
+  requires_predeclared_cutoff_and_explicit_deviation: true
+  decision_before_test_outcomes: true
+  decision_before_comparative_training_and_outcome_inspection: true
+  automatic_fallback: false
+disclosures:
+  exploratory_pilot: true
+  seeds_and_task_already_used_in_development: true
+  adopted_development_work_is_not_a_fresh_cohort: true
+  long_online_B_development_run_is_not_a_matched_B_arm: true
+  D_extra_compute_is_not_compute_matched: true
+  generalization_scope: two_authored_unseen_relay_layouts
+  low_distillation_kl_does_not_establish_real_cooperation: true
+  test_bank_reserved_for_final_endpoint: true
+  historical_costs_and_unsuccessful_runs_remain_visible: true
+capabilities:
+  candidate_registration_only: true
+  matched_reduced_B_runner_implemented: false
+  endpoint_evaluator_implemented: false
+  paired_endpoint_reader_implemented: false
+  execution_ready: false
+  cohort_frozen: false

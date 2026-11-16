@@ -1,0 +1,532 @@
+{
+  "data_source": "training_controller_state",
+  "learning_eligible_for_world_model": false,
+  "metadata": {
+    "actor_config": {
+      "action_count": 12,
+      "critic_hidden_sizes": [
+        32,
+        32
+      ],
+      "embedding_size": 32,
+      "encoder_channels": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "hidden_size": 32,
+      "image_shape": [
+        3,
+        96,
+        128
+      ],
+      "value_huber_delta": 1.0,
+      "world_tokens": 48,
+      "world_width": 256
+    },
+    "actor_version": "14785efd73a3d73e0e0d88c03a61968bd56d4c245b179a4c543072e1194899fb",
+    "engineering_only": true,
+    "evaluation_executed": true,
+    "label": "after",
+    "phase3_acceptance": false,
+    "real_joint_transitions": 0,
+    "schema_version": "p36-mechanics-actor-v1",
+    "task_family": "analytic_local_color_cue",
+    "world_model_version": "153195f5a5dc82afa431f40fd2371bbe3ae1787bfb3f611cd5868fbdd4bc3587"
+  },
+  "payload": {
+    "bytes": 108117,
+    "path": "state.pt",
+    "sha256": "0249c241ac9726e913734d05f1aa52f040feabdbdcbb6404cabae800abaa69ca"
+  },
+  "schema_version": "real-model-policy-cycle-checkpoint-v1",
+  "status": "complete",
+  "tensor_specs": [
+    {
+      "bytes": 1536,
+      "dtype": "torch.float32",
+      "elements": 384,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.0.weight"
+        ]
+      ],
+      "shape": [
+        8,
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 32,
+      "dtype": "torch.float32",
+      "elements": 8,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.0.bias"
+        ]
+      ],
+      "shape": [
+        8
+      ]
+    },
+    {
+      "bytes": 32,
+      "dtype": "torch.float32",
+      "elements": 8,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.1.weight"
+        ]
+      ],
+      "shape": [
+        8
+      ]
+    },
+    {
+      "bytes": 32,
+      "dtype": "torch.float32",
+      "elements": 8,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.1.bias"
+        ]
+      ],
+      "shape": [
+        8
+      ]
+    },
+    {
+      "bytes": 4096,
+      "dtype": "torch.float32",
+      "elements": 1024,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.3.weight"
+        ]
+      ],
+      "shape": [
+        8,
+        8,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 32,
+      "dtype": "torch.float32",
+      "elements": 8,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.3.bias"
+        ]
+      ],
+      "shape": [
+        8
+      ]
+    },
+    {
+      "bytes": 32,
+      "dtype": "torch.float32",
+      "elements": 8,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.4.weight"
+        ]
+      ],
+      "shape": [
+        8
+      ]
+    },
+    {
+      "bytes": 32,
+      "dtype": "torch.float32",
+      "elements": 8,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.4.bias"
+        ]
+      ],
+      "shape": [
+        8
+      ]
+    },
+    {
+      "bytes": 4096,
+      "dtype": "torch.float32",
+      "elements": 1024,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.6.weight"
+        ]
+      ],
+      "shape": [
+        8,
+        8,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 32,
+      "dtype": "torch.float32",
+      "elements": 8,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.6.bias"
+        ]
+      ],
+      "shape": [
+        8
+      ]
+    },
+    {
+      "bytes": 32,
+      "dtype": "torch.float32",
+      "elements": 8,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.7.weight"
+        ]
+      ],
+      "shape": [
+        8
+      ]
+    },
+    {
+      "bytes": 32,
+      "dtype": "torch.float32",
+      "elements": 8,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.7.bias"
+        ]
+      ],
+      "shape": [
+        8
+      ]
+    },
+    {
+      "bytes": 4096,
+      "dtype": "torch.float32",
+      "elements": 1024,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.9.weight"
+        ]
+      ],
+      "shape": [
+        8,
+        8,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 32,
+      "dtype": "torch.float32",
+      "elements": 8,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.9.bias"
+        ]
+      ],
+      "shape": [
+        8
+      ]
+    },
+    {
+      "bytes": 32,
+      "dtype": "torch.float32",
+      "elements": 8,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.10.weight"
+        ]
+      ],
+      "shape": [
+        8
+      ]
+    },
+    {
+      "bytes": 32,
+      "dtype": "torch.float32",
+      "elements": 8,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.10.bias"
+        ]
+      ],
+      "shape": [
+        8
+      ]
+    },
+    {
+      "bytes": 49152,
+      "dtype": "torch.float32",
+      "elements": 12288,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "projection.1.weight"
+        ]
+      ],
+      "shape": [
+        32,
+        384
+      ]
+    },
+    {
+      "bytes": 128,
+      "dtype": "torch.float32",
+      "elements": 32,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "projection.1.bias"
+        ]
+      ],
+      "shape": [
+        32
+      ]
+    },
+    {
+      "bytes": 17280,
+      "dtype": "torch.float32",
+      "elements": 4320,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "gru.weight_ih"
+        ]
+      ],
+      "shape": [
+        96,
+        45
+      ]
+    },
+    {
+      "bytes": 12288,
+      "dtype": "torch.float32",
+      "elements": 3072,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "gru.weight_hh"
+        ]
+      ],
+      "shape": [
+        96,
+        32
+      ]
+    },
+    {
+      "bytes": 384,
+      "dtype": "torch.float32",
+      "elements": 96,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "gru.bias_ih"
+        ]
+      ],
+      "shape": [
+        96
+      ]
+    },
+    {
+      "bytes": 384,
+      "dtype": "torch.float32",
+      "elements": 96,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "gru.bias_hh"
+        ]
+      ],
+      "shape": [
+        96
+      ]
+    },
+    {
+      "bytes": 4096,
+      "dtype": "torch.float32",
+      "elements": 1024,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "action_head.0.weight"
+        ]
+      ],
+      "shape": [
+        32,
+        32
+      ]
+    },
+    {
+      "bytes": 128,
+      "dtype": "torch.float32",
+      "elements": 32,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "action_head.0.bias"
+        ]
+      ],
+      "shape": [
+        32
+      ]
+    },
+    {
+      "bytes": 1536,
+      "dtype": "torch.float32",
+      "elements": 384,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "action_head.2.weight"
+        ]
+      ],
+      "shape": [
+        12,
+        32
+      ]
+    },
+    {
+      "bytes": 48,
+      "dtype": "torch.float32",
+      "elements": 12,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "action_head.2.bias"
+        ]
+      ],
+      "shape": [
+        12
+      ]
+    }
+  ]
+}

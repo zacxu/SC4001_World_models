@@ -1,0 +1,9043 @@
+{
+  "data_source": "training_controller_state",
+  "learning_eligible_for_world_model": false,
+  "metadata": {
+    "frozen_for_distillation": false,
+    "initial_model_version": "186f5099c3c0e132f1a6bd985bf604743b02284b5b7b6c2c43277ab1a622884f",
+    "local_student_optimizer_steps": 0,
+    "model_updates": 4500,
+    "new_environment_interactions": 0,
+    "new_model_updates": 0,
+    "phase": "teacher",
+    "policy_role": "global_teacher",
+    "real_joint_transitions": 50000,
+    "run_identity": "c0e0fc4ae876bf5f37a4d068a87a8c1e01d475eb65287890b50d3995cb194f23",
+    "schema_version": "p41-teacher-checkpoint-v1",
+    "sequence": 13,
+    "teacher_actor_optimizer_steps": 192,
+    "teacher_critic_optimizer_steps": 192,
+    "teacher_cycles_completed": 12
+  },
+  "payload": {
+    "bytes": 108993853,
+    "path": "state.pt",
+    "sha256": "35c9b465e474bc2245dd6e1fa548dab62073a7eabe235ff34543b2832dbd2b11"
+  },
+  "schema_version": "real-model-policy-cycle-checkpoint-v1",
+  "status": "complete",
+  "tensor_specs": [
+    {
+      "bytes": 16384,
+      "dtype": "torch.float32",
+      "elements": 4096,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.reset_memory"
+        ]
+      ],
+      "shape": [
+        16,
+        256
+      ]
+    },
+    {
+      "bytes": 32768,
+      "dtype": "torch.float32",
+      "elements": 8192,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.variable_embedding"
+        ]
+      ],
+      "shape": [
+        32,
+        256
+      ]
+    },
+    {
+      "bytes": 49152,
+      "dtype": "torch.float32",
+      "elements": 12288,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.encoder.spatial_embedding"
+        ]
+      ],
+      "shape": [
+        48,
+        256
+      ]
+    },
+    {
+      "bytes": 2048,
+      "dtype": "torch.float32",
+      "elements": 512,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.encoder.agent_embedding"
+        ]
+      ],
+      "shape": [
+        2,
+        256
+      ]
+    },
+    {
+      "bytes": 6144,
+      "dtype": "torch.float32",
+      "elements": 1536,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.encoder.cnn.0.weight"
+        ]
+      ],
+      "shape": [
+        32,
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 128,
+      "dtype": "torch.float32",
+      "elements": 32,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.encoder.cnn.0.bias"
+        ]
+      ],
+      "shape": [
+        32
+      ]
+    },
+    {
+      "bytes": 128,
+      "dtype": "torch.float32",
+      "elements": 32,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.encoder.cnn.1.weight"
+        ]
+      ],
+      "shape": [
+        32
+      ]
+    },
+    {
+      "bytes": 128,
+      "dtype": "torch.float32",
+      "elements": 32,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.encoder.cnn.1.bias"
+        ]
+      ],
+      "shape": [
+        32
+      ]
+    },
+    {
+      "bytes": 131072,
+      "dtype": "torch.float32",
+      "elements": 32768,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.encoder.cnn.3.weight"
+        ]
+      ],
+      "shape": [
+        64,
+        32,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 256,
+      "dtype": "torch.float32",
+      "elements": 64,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.encoder.cnn.3.bias"
+        ]
+      ],
+      "shape": [
+        64
+      ]
+    },
+    {
+      "bytes": 256,
+      "dtype": "torch.float32",
+      "elements": 64,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.encoder.cnn.4.weight"
+        ]
+      ],
+      "shape": [
+        64
+      ]
+    },
+    {
+      "bytes": 256,
+      "dtype": "torch.float32",
+      "elements": 64,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.encoder.cnn.4.bias"
+        ]
+      ],
+      "shape": [
+        64
+      ]
+    },
+    {
+      "bytes": 524288,
+      "dtype": "torch.float32",
+      "elements": 131072,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.encoder.cnn.6.weight"
+        ]
+      ],
+      "shape": [
+        128,
+        64,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 512,
+      "dtype": "torch.float32",
+      "elements": 128,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.encoder.cnn.6.bias"
+        ]
+      ],
+      "shape": [
+        128
+      ]
+    },
+    {
+      "bytes": 512,
+      "dtype": "torch.float32",
+      "elements": 128,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.encoder.cnn.7.weight"
+        ]
+      ],
+      "shape": [
+        128
+      ]
+    },
+    {
+      "bytes": 512,
+      "dtype": "torch.float32",
+      "elements": 128,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.encoder.cnn.7.bias"
+        ]
+      ],
+      "shape": [
+        128
+      ]
+    },
+    {
+      "bytes": 2097152,
+      "dtype": "torch.float32",
+      "elements": 524288,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.encoder.cnn.9.weight"
+        ]
+      ],
+      "shape": [
+        256,
+        128,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.encoder.cnn.9.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.encoder.cnn.10.weight"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.encoder.cnn.10.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 16777216,
+      "dtype": "torch.float32",
+      "elements": 4194304,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.latent_projection.weight"
+        ]
+      ],
+      "shape": [
+        4096,
+        1024
+      ]
+    },
+    {
+      "bytes": 16384,
+      "dtype": "torch.float32",
+      "elements": 4096,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.latent_projection.bias"
+        ]
+      ],
+      "shape": [
+        4096
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.progress_embedding.0.weight"
+        ]
+      ],
+      "shape": [
+        256,
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.progress_embedding.0.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 262144,
+      "dtype": "torch.float32",
+      "elements": 65536,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.progress_embedding.2.weight"
+        ]
+      ],
+      "shape": [
+        256,
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.progress_embedding.2.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 12288,
+      "dtype": "torch.float32",
+      "elements": 3072,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.action_embedding.weight"
+        ]
+      ],
+      "shape": [
+        12,
+        256
+      ]
+    },
+    {
+      "bytes": 2048,
+      "dtype": "torch.float32",
+      "elements": 512,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.action_agent_embedding.weight"
+        ]
+      ],
+      "shape": [
+        2,
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.action_query_norm.weight"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.action_query_norm.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.action_key_norm.weight"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.action_key_norm.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 786432,
+      "dtype": "torch.float32",
+      "elements": 196608,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.action_attention.in_proj_weight"
+        ]
+      ],
+      "shape": [
+        768,
+        256
+      ]
+    },
+    {
+      "bytes": 3072,
+      "dtype": "torch.float32",
+      "elements": 768,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.action_attention.in_proj_bias"
+        ]
+      ],
+      "shape": [
+        768
+      ]
+    },
+    {
+      "bytes": 262144,
+      "dtype": "torch.float32",
+      "elements": 65536,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.action_attention.out_proj.weight"
+        ]
+      ],
+      "shape": [
+        256,
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.action_attention.out_proj.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 786432,
+      "dtype": "torch.float32",
+      "elements": 196608,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.0.self_attn.in_proj_weight"
+        ]
+      ],
+      "shape": [
+        768,
+        256
+      ]
+    },
+    {
+      "bytes": 3072,
+      "dtype": "torch.float32",
+      "elements": 768,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.0.self_attn.in_proj_bias"
+        ]
+      ],
+      "shape": [
+        768
+      ]
+    },
+    {
+      "bytes": 262144,
+      "dtype": "torch.float32",
+      "elements": 65536,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.0.self_attn.out_proj.weight"
+        ]
+      ],
+      "shape": [
+        256,
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.0.self_attn.out_proj.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1048576,
+      "dtype": "torch.float32",
+      "elements": 262144,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.0.linear1.weight"
+        ]
+      ],
+      "shape": [
+        1024,
+        256
+      ]
+    },
+    {
+      "bytes": 4096,
+      "dtype": "torch.float32",
+      "elements": 1024,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.0.linear1.bias"
+        ]
+      ],
+      "shape": [
+        1024
+      ]
+    },
+    {
+      "bytes": 1048576,
+      "dtype": "torch.float32",
+      "elements": 262144,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.0.linear2.weight"
+        ]
+      ],
+      "shape": [
+        256,
+        1024
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.0.linear2.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.0.norm1.weight"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.0.norm1.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.0.norm2.weight"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.0.norm2.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 786432,
+      "dtype": "torch.float32",
+      "elements": 196608,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.1.self_attn.in_proj_weight"
+        ]
+      ],
+      "shape": [
+        768,
+        256
+      ]
+    },
+    {
+      "bytes": 3072,
+      "dtype": "torch.float32",
+      "elements": 768,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.1.self_attn.in_proj_bias"
+        ]
+      ],
+      "shape": [
+        768
+      ]
+    },
+    {
+      "bytes": 262144,
+      "dtype": "torch.float32",
+      "elements": 65536,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.1.self_attn.out_proj.weight"
+        ]
+      ],
+      "shape": [
+        256,
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.1.self_attn.out_proj.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1048576,
+      "dtype": "torch.float32",
+      "elements": 262144,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.1.linear1.weight"
+        ]
+      ],
+      "shape": [
+        1024,
+        256
+      ]
+    },
+    {
+      "bytes": 4096,
+      "dtype": "torch.float32",
+      "elements": 1024,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.1.linear1.bias"
+        ]
+      ],
+      "shape": [
+        1024
+      ]
+    },
+    {
+      "bytes": 1048576,
+      "dtype": "torch.float32",
+      "elements": 262144,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.1.linear2.weight"
+        ]
+      ],
+      "shape": [
+        256,
+        1024
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.1.linear2.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.1.norm1.weight"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.1.norm1.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.1.norm2.weight"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.1.norm2.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 786432,
+      "dtype": "torch.float32",
+      "elements": 196608,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.2.self_attn.in_proj_weight"
+        ]
+      ],
+      "shape": [
+        768,
+        256
+      ]
+    },
+    {
+      "bytes": 3072,
+      "dtype": "torch.float32",
+      "elements": 768,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.2.self_attn.in_proj_bias"
+        ]
+      ],
+      "shape": [
+        768
+      ]
+    },
+    {
+      "bytes": 262144,
+      "dtype": "torch.float32",
+      "elements": 65536,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.2.self_attn.out_proj.weight"
+        ]
+      ],
+      "shape": [
+        256,
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.2.self_attn.out_proj.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1048576,
+      "dtype": "torch.float32",
+      "elements": 262144,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.2.linear1.weight"
+        ]
+      ],
+      "shape": [
+        1024,
+        256
+      ]
+    },
+    {
+      "bytes": 4096,
+      "dtype": "torch.float32",
+      "elements": 1024,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.2.linear1.bias"
+        ]
+      ],
+      "shape": [
+        1024
+      ]
+    },
+    {
+      "bytes": 1048576,
+      "dtype": "torch.float32",
+      "elements": 262144,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.2.linear2.weight"
+        ]
+      ],
+      "shape": [
+        256,
+        1024
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.2.linear2.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.2.norm1.weight"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.2.norm1.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.2.norm2.weight"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.2.norm2.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 786432,
+      "dtype": "torch.float32",
+      "elements": 196608,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.3.self_attn.in_proj_weight"
+        ]
+      ],
+      "shape": [
+        768,
+        256
+      ]
+    },
+    {
+      "bytes": 3072,
+      "dtype": "torch.float32",
+      "elements": 768,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.3.self_attn.in_proj_bias"
+        ]
+      ],
+      "shape": [
+        768
+      ]
+    },
+    {
+      "bytes": 262144,
+      "dtype": "torch.float32",
+      "elements": 65536,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.3.self_attn.out_proj.weight"
+        ]
+      ],
+      "shape": [
+        256,
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.3.self_attn.out_proj.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1048576,
+      "dtype": "torch.float32",
+      "elements": 262144,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.3.linear1.weight"
+        ]
+      ],
+      "shape": [
+        1024,
+        256
+      ]
+    },
+    {
+      "bytes": 4096,
+      "dtype": "torch.float32",
+      "elements": 1024,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.3.linear1.bias"
+        ]
+      ],
+      "shape": [
+        1024
+      ]
+    },
+    {
+      "bytes": 1048576,
+      "dtype": "torch.float32",
+      "elements": 262144,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.3.linear2.weight"
+        ]
+      ],
+      "shape": [
+        256,
+        1024
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.3.linear2.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.3.norm1.weight"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.3.norm1.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.3.norm2.weight"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.blocks.3.norm2.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.dynamics_norm.weight"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.dynamics_norm.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.prior_head.0.weight"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.prior_head.0.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 262144,
+      "dtype": "torch.float32",
+      "elements": 65536,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.prior_head.1.weight"
+        ]
+      ],
+      "shape": [
+        256,
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.prior_head.1.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1048576,
+      "dtype": "torch.float32",
+      "elements": 262144,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.prior_head.3.weight"
+        ]
+      ],
+      "shape": [
+        1024,
+        256
+      ]
+    },
+    {
+      "bytes": 4096,
+      "dtype": "torch.float32",
+      "elements": 1024,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.prior_head.3.bias"
+        ]
+      ],
+      "shape": [
+        1024
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.posterior_query_norm.weight"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.posterior_query_norm.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.posterior_key_norm.weight"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.posterior_key_norm.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 786432,
+      "dtype": "torch.float32",
+      "elements": 196608,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.posterior_attention.in_proj_weight"
+        ]
+      ],
+      "shape": [
+        768,
+        256
+      ]
+    },
+    {
+      "bytes": 3072,
+      "dtype": "torch.float32",
+      "elements": 768,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.posterior_attention.in_proj_bias"
+        ]
+      ],
+      "shape": [
+        768
+      ]
+    },
+    {
+      "bytes": 262144,
+      "dtype": "torch.float32",
+      "elements": 65536,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.posterior_attention.out_proj.weight"
+        ]
+      ],
+      "shape": [
+        256,
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.posterior_attention.out_proj.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.posterior_head.0.weight"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.posterior_head.0.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 262144,
+      "dtype": "torch.float32",
+      "elements": 65536,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.posterior_head.1.weight"
+        ]
+      ],
+      "shape": [
+        256,
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.posterior_head.1.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1048576,
+      "dtype": "torch.float32",
+      "elements": 262144,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.posterior_head.3.weight"
+        ]
+      ],
+      "shape": [
+        1024,
+        256
+      ]
+    },
+    {
+      "bytes": 4096,
+      "dtype": "torch.float32",
+      "elements": 1024,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.posterior_head.3.bias"
+        ]
+      ],
+      "shape": [
+        1024
+      ]
+    },
+    {
+      "bytes": 32768,
+      "dtype": "torch.float32",
+      "elements": 8192,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "core.latent_embedding.weight"
+        ]
+      ],
+      "shape": [
+        256,
+        32
+      ]
+    },
+    {
+      "bytes": 49152,
+      "dtype": "torch.float32",
+      "elements": 12288,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "decoder.spatial_queries"
+        ]
+      ],
+      "shape": [
+        48,
+        256
+      ]
+    },
+    {
+      "bytes": 2048,
+      "dtype": "torch.float32",
+      "elements": 512,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "decoder.agent_queries"
+        ]
+      ],
+      "shape": [
+        2,
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "decoder.query_norm.weight"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "decoder.query_norm.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "decoder.state_norm.weight"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "decoder.state_norm.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 786432,
+      "dtype": "torch.float32",
+      "elements": 196608,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "decoder.attention.in_proj_weight"
+        ]
+      ],
+      "shape": [
+        768,
+        256
+      ]
+    },
+    {
+      "bytes": 3072,
+      "dtype": "torch.float32",
+      "elements": 768,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "decoder.attention.in_proj_bias"
+        ]
+      ],
+      "shape": [
+        768
+      ]
+    },
+    {
+      "bytes": 262144,
+      "dtype": "torch.float32",
+      "elements": 65536,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "decoder.attention.out_proj.weight"
+        ]
+      ],
+      "shape": [
+        256,
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "decoder.attention.out_proj.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 2097152,
+      "dtype": "torch.float32",
+      "elements": 524288,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "decoder.cnn.0.weight"
+        ]
+      ],
+      "shape": [
+        256,
+        128,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 512,
+      "dtype": "torch.float32",
+      "elements": 128,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "decoder.cnn.0.bias"
+        ]
+      ],
+      "shape": [
+        128
+      ]
+    },
+    {
+      "bytes": 512,
+      "dtype": "torch.float32",
+      "elements": 128,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "decoder.cnn.1.weight"
+        ]
+      ],
+      "shape": [
+        128
+      ]
+    },
+    {
+      "bytes": 512,
+      "dtype": "torch.float32",
+      "elements": 128,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "decoder.cnn.1.bias"
+        ]
+      ],
+      "shape": [
+        128
+      ]
+    },
+    {
+      "bytes": 524288,
+      "dtype": "torch.float32",
+      "elements": 131072,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "decoder.cnn.3.weight"
+        ]
+      ],
+      "shape": [
+        128,
+        64,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 256,
+      "dtype": "torch.float32",
+      "elements": 64,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "decoder.cnn.3.bias"
+        ]
+      ],
+      "shape": [
+        64
+      ]
+    },
+    {
+      "bytes": 256,
+      "dtype": "torch.float32",
+      "elements": 64,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "decoder.cnn.4.weight"
+        ]
+      ],
+      "shape": [
+        64
+      ]
+    },
+    {
+      "bytes": 256,
+      "dtype": "torch.float32",
+      "elements": 64,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "decoder.cnn.4.bias"
+        ]
+      ],
+      "shape": [
+        64
+      ]
+    },
+    {
+      "bytes": 131072,
+      "dtype": "torch.float32",
+      "elements": 32768,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "decoder.cnn.6.weight"
+        ]
+      ],
+      "shape": [
+        64,
+        32,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 128,
+      "dtype": "torch.float32",
+      "elements": 32,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "decoder.cnn.6.bias"
+        ]
+      ],
+      "shape": [
+        32
+      ]
+    },
+    {
+      "bytes": 128,
+      "dtype": "torch.float32",
+      "elements": 32,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "decoder.cnn.7.weight"
+        ]
+      ],
+      "shape": [
+        32
+      ]
+    },
+    {
+      "bytes": 128,
+      "dtype": "torch.float32",
+      "elements": 32,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "decoder.cnn.7.bias"
+        ]
+      ],
+      "shape": [
+        32
+      ]
+    },
+    {
+      "bytes": 6144,
+      "dtype": "torch.float32",
+      "elements": 1536,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "decoder.cnn.9.weight"
+        ]
+      ],
+      "shape": [
+        32,
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 12,
+      "dtype": "torch.float32",
+      "elements": 3,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "decoder.cnn.9.bias"
+        ]
+      ],
+      "shape": [
+        3
+      ]
+    },
+    {
+      "bytes": 524288,
+      "dtype": "torch.float32",
+      "elements": 131072,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "joint_action_projection.0.weight"
+        ]
+      ],
+      "shape": [
+        256,
+        512
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "joint_action_projection.0.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 786432,
+      "dtype": "torch.float32",
+      "elements": 196608,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "transition_heads.trunk.0.weight"
+        ]
+      ],
+      "shape": [
+        256,
+        768
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "transition_heads.trunk.0.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 262144,
+      "dtype": "torch.float32",
+      "elements": 65536,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "transition_heads.trunk.2.weight"
+        ]
+      ],
+      "shape": [
+        256,
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "transition_heads.trunk.2.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "transition_heads.bonus_head.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "transition_heads.bonus_head.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 3072,
+      "dtype": "torch.float32",
+      "elements": 768,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "transition_heads.outcome_head.weight"
+        ]
+      ],
+      "shape": [
+        3,
+        256
+      ]
+    },
+    {
+      "bytes": 12,
+      "dtype": "torch.float32",
+      "elements": 3,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "transition_heads.outcome_head.bias"
+        ]
+      ],
+      "shape": [
+        3
+      ]
+    },
+    {
+      "bytes": 262144,
+      "dtype": "torch.float32",
+      "elements": 65536,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.state_trunk.0.weight"
+        ]
+      ],
+      "shape": [
+        256,
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.state_trunk.0.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 262144,
+      "dtype": "torch.float32",
+      "elements": 65536,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.state_trunk.2.weight"
+        ]
+      ],
+      "shape": [
+        256,
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.state_trunk.2.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 786432,
+      "dtype": "torch.float32",
+      "elements": 196608,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.transition_trunk.0.weight"
+        ]
+      ],
+      "shape": [
+        256,
+        768
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.transition_trunk.0.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 262144,
+      "dtype": "torch.float32",
+      "elements": 65536,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.transition_trunk.2.weight"
+        ]
+      ],
+      "shape": [
+        256,
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.transition_trunk.2.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_0/position_x.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_0/position_x.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_0/position_y.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_0/position_y.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_0/position_z.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_0/position_z.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_0/velocity_x.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_0/velocity_x.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_0/velocity_y.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_0/velocity_y.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_0/health.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_0/health.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_0/armor.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_0/armor.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_0/ammo.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_0/ammo.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_0/heading_sin.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_0/heading_sin.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_0/heading_cos.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_0/heading_cos.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_0/alive.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_0/alive.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_1/position_x.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_1/position_x.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_1/position_y.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_1/position_y.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_1/position_z.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_1/position_z.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_1/velocity_x.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_1/velocity_x.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_1/velocity_y.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_1/velocity_y.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_1/health.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_1/health.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_1/armor.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_1/armor.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_1/ammo.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_1/ammo.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_1/heading_sin.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_1/heading_sin.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_1/heading_cos.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_1/heading_cos.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_1/alive.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.player_1/alive.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 3072,
+      "dtype": "torch.float32",
+      "elements": 768,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.task/stage.weight"
+        ]
+      ],
+      "shape": [
+        3,
+        256
+      ]
+    },
+    {
+      "bytes": 12,
+      "dtype": "torch.float32",
+      "elements": 3,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.task/stage.bias"
+        ]
+      ],
+      "shape": [
+        3
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.task/plate_active.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.task/plate_active.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.task/latch_active.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.task/latch_active.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.task/gate_1_open.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.task/gate_1_open.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.task/gate_2_open.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.task/gate_2_open.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.task/extraction_unlocked.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.task/extraction_unlocked.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.task/success.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.task/success.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.task/failure.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.task/failure.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.task/milestone_count.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.task/milestone_count.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.task/elapsed_decisions.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.task/elapsed_decisions.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/failures.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/failures.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/gate_closes.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/gate_closes.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/gate_opens.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/gate_opens.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/latch_activations.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/latch_activations.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/plate_entries.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/plate_entries.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/plate_exits.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/plate_exits.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/player_0_damage_taken.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/player_0_damage_taken.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/player_0_damagecount.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/player_0_damagecount.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/player_0_deathcount.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/player_0_deathcount.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/player_0_deaths.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/player_0_deaths.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/player_0_hitcount.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/player_0_hitcount.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/player_0_hits_taken.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/player_0_hits_taken.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/player_0_itemcount.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/player_0_itemcount.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/player_0_killcount.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/player_0_killcount.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/player_1_damage_taken.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/player_1_damage_taken.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/player_1_damagecount.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/player_1_damagecount.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/player_1_deathcount.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/player_1_deathcount.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/player_1_deaths.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/player_1_deaths.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/player_1_hitcount.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/player_1_hitcount.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/player_1_hits_taken.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/player_1_hits_taken.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/player_1_itemcount.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/player_1_itemcount.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/player_1_killcount.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/player_1_killcount.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/successes.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "model"
+        ],
+        [
+          "key",
+          "auxiliary_heads.heads.event/successes.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 6144,
+      "dtype": "torch.float32",
+      "elements": 1536,
+      "path": [
+        [
+          "key",
+          "teacher"
+        ],
+        [
+          "key",
+          "encoder.0.weight"
+        ]
+      ],
+      "shape": [
+        32,
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 128,
+      "dtype": "torch.float32",
+      "elements": 32,
+      "path": [
+        [
+          "key",
+          "teacher"
+        ],
+        [
+          "key",
+          "encoder.0.bias"
+        ]
+      ],
+      "shape": [
+        32
+      ]
+    },
+    {
+      "bytes": 128,
+      "dtype": "torch.float32",
+      "elements": 32,
+      "path": [
+        [
+          "key",
+          "teacher"
+        ],
+        [
+          "key",
+          "encoder.1.weight"
+        ]
+      ],
+      "shape": [
+        32
+      ]
+    },
+    {
+      "bytes": 128,
+      "dtype": "torch.float32",
+      "elements": 32,
+      "path": [
+        [
+          "key",
+          "teacher"
+        ],
+        [
+          "key",
+          "encoder.1.bias"
+        ]
+      ],
+      "shape": [
+        32
+      ]
+    },
+    {
+      "bytes": 131072,
+      "dtype": "torch.float32",
+      "elements": 32768,
+      "path": [
+        [
+          "key",
+          "teacher"
+        ],
+        [
+          "key",
+          "encoder.3.weight"
+        ]
+      ],
+      "shape": [
+        64,
+        32,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 256,
+      "dtype": "torch.float32",
+      "elements": 64,
+      "path": [
+        [
+          "key",
+          "teacher"
+        ],
+        [
+          "key",
+          "encoder.3.bias"
+        ]
+      ],
+      "shape": [
+        64
+      ]
+    },
+    {
+      "bytes": 256,
+      "dtype": "torch.float32",
+      "elements": 64,
+      "path": [
+        [
+          "key",
+          "teacher"
+        ],
+        [
+          "key",
+          "encoder.4.weight"
+        ]
+      ],
+      "shape": [
+        64
+      ]
+    },
+    {
+      "bytes": 256,
+      "dtype": "torch.float32",
+      "elements": 64,
+      "path": [
+        [
+          "key",
+          "teacher"
+        ],
+        [
+          "key",
+          "encoder.4.bias"
+        ]
+      ],
+      "shape": [
+        64
+      ]
+    },
+    {
+      "bytes": 524288,
+      "dtype": "torch.float32",
+      "elements": 131072,
+      "path": [
+        [
+          "key",
+          "teacher"
+        ],
+        [
+          "key",
+          "encoder.6.weight"
+        ]
+      ],
+      "shape": [
+        128,
+        64,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 512,
+      "dtype": "torch.float32",
+      "elements": 128,
+      "path": [
+        [
+          "key",
+          "teacher"
+        ],
+        [
+          "key",
+          "encoder.6.bias"
+        ]
+      ],
+      "shape": [
+        128
+      ]
+    },
+    {
+      "bytes": 512,
+      "dtype": "torch.float32",
+      "elements": 128,
+      "path": [
+        [
+          "key",
+          "teacher"
+        ],
+        [
+          "key",
+          "encoder.7.weight"
+        ]
+      ],
+      "shape": [
+        128
+      ]
+    },
+    {
+      "bytes": 512,
+      "dtype": "torch.float32",
+      "elements": 128,
+      "path": [
+        [
+          "key",
+          "teacher"
+        ],
+        [
+          "key",
+          "encoder.7.bias"
+        ]
+      ],
+      "shape": [
+        128
+      ]
+    },
+    {
+      "bytes": 2097152,
+      "dtype": "torch.float32",
+      "elements": 524288,
+      "path": [
+        [
+          "key",
+          "teacher"
+        ],
+        [
+          "key",
+          "encoder.9.weight"
+        ]
+      ],
+      "shape": [
+        256,
+        128,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "teacher"
+        ],
+        [
+          "key",
+          "encoder.9.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "teacher"
+        ],
+        [
+          "key",
+          "encoder.10.weight"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "teacher"
+        ],
+        [
+          "key",
+          "encoder.10.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 12582912,
+      "dtype": "torch.float32",
+      "elements": 3145728,
+      "path": [
+        [
+          "key",
+          "teacher"
+        ],
+        [
+          "key",
+          "projection.1.weight"
+        ]
+      ],
+      "shape": [
+        256,
+        12288
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "teacher"
+        ],
+        [
+          "key",
+          "projection.1.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 826368,
+      "dtype": "torch.float32",
+      "elements": 206592,
+      "path": [
+        [
+          "key",
+          "teacher"
+        ],
+        [
+          "key",
+          "gru.weight_ih"
+        ]
+      ],
+      "shape": [
+        768,
+        269
+      ]
+    },
+    {
+      "bytes": 786432,
+      "dtype": "torch.float32",
+      "elements": 196608,
+      "path": [
+        [
+          "key",
+          "teacher"
+        ],
+        [
+          "key",
+          "gru.weight_hh"
+        ]
+      ],
+      "shape": [
+        768,
+        256
+      ]
+    },
+    {
+      "bytes": 3072,
+      "dtype": "torch.float32",
+      "elements": 768,
+      "path": [
+        [
+          "key",
+          "teacher"
+        ],
+        [
+          "key",
+          "gru.bias_ih"
+        ]
+      ],
+      "shape": [
+        768
+      ]
+    },
+    {
+      "bytes": 3072,
+      "dtype": "torch.float32",
+      "elements": 768,
+      "path": [
+        [
+          "key",
+          "teacher"
+        ],
+        [
+          "key",
+          "gru.bias_hh"
+        ]
+      ],
+      "shape": [
+        768
+      ]
+    },
+    {
+      "bytes": 264192,
+      "dtype": "torch.float32",
+      "elements": 66048,
+      "path": [
+        [
+          "key",
+          "teacher"
+        ],
+        [
+          "key",
+          "query.weight"
+        ]
+      ],
+      "shape": [
+        256,
+        258
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "teacher"
+        ],
+        [
+          "key",
+          "query.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 786432,
+      "dtype": "torch.float32",
+      "elements": 196608,
+      "path": [
+        [
+          "key",
+          "teacher"
+        ],
+        [
+          "key",
+          "cross_attention.in_proj_weight"
+        ]
+      ],
+      "shape": [
+        768,
+        256
+      ]
+    },
+    {
+      "bytes": 3072,
+      "dtype": "torch.float32",
+      "elements": 768,
+      "path": [
+        [
+          "key",
+          "teacher"
+        ],
+        [
+          "key",
+          "cross_attention.in_proj_bias"
+        ]
+      ],
+      "shape": [
+        768
+      ]
+    },
+    {
+      "bytes": 262144,
+      "dtype": "torch.float32",
+      "elements": 65536,
+      "path": [
+        [
+          "key",
+          "teacher"
+        ],
+        [
+          "key",
+          "cross_attention.out_proj.weight"
+        ]
+      ],
+      "shape": [
+        256,
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "teacher"
+        ],
+        [
+          "key",
+          "cross_attention.out_proj.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 524288,
+      "dtype": "torch.float32",
+      "elements": 131072,
+      "path": [
+        [
+          "key",
+          "teacher"
+        ],
+        [
+          "key",
+          "action_head.0.weight"
+        ]
+      ],
+      "shape": [
+        256,
+        512
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "teacher"
+        ],
+        [
+          "key",
+          "action_head.0.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 12288,
+      "dtype": "torch.float32",
+      "elements": 3072,
+      "path": [
+        [
+          "key",
+          "teacher"
+        ],
+        [
+          "key",
+          "action_head.2.weight"
+        ]
+      ],
+      "shape": [
+        12,
+        256
+      ]
+    },
+    {
+      "bytes": 48,
+      "dtype": "torch.float32",
+      "elements": 12,
+      "path": [
+        [
+          "key",
+          "teacher"
+        ],
+        [
+          "key",
+          "action_head.2.bias"
+        ]
+      ],
+      "shape": [
+        12
+      ]
+    },
+    {
+      "bytes": 1574912,
+      "dtype": "torch.float32",
+      "elements": 393728,
+      "path": [
+        [
+          "key",
+          "critic"
+        ],
+        [
+          "key",
+          "mlp.0.weight"
+        ]
+      ],
+      "shape": [
+        512,
+        769
+      ]
+    },
+    {
+      "bytes": 2048,
+      "dtype": "torch.float32",
+      "elements": 512,
+      "path": [
+        [
+          "key",
+          "critic"
+        ],
+        [
+          "key",
+          "mlp.0.bias"
+        ]
+      ],
+      "shape": [
+        512
+      ]
+    },
+    {
+      "bytes": 1048576,
+      "dtype": "torch.float32",
+      "elements": 262144,
+      "path": [
+        [
+          "key",
+          "critic"
+        ],
+        [
+          "key",
+          "mlp.2.weight"
+        ]
+      ],
+      "shape": [
+        512,
+        512
+      ]
+    },
+    {
+      "bytes": 2048,
+      "dtype": "torch.float32",
+      "elements": 512,
+      "path": [
+        [
+          "key",
+          "critic"
+        ],
+        [
+          "key",
+          "mlp.2.bias"
+        ]
+      ],
+      "shape": [
+        512
+      ]
+    },
+    {
+      "bytes": 2048,
+      "dtype": "torch.float32",
+      "elements": 512,
+      "path": [
+        [
+          "key",
+          "critic"
+        ],
+        [
+          "key",
+          "mlp.4.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        512
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "critic"
+        ],
+        [
+          "key",
+          "mlp.4.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 5056,
+      "dtype": "torch.uint8",
+      "elements": 5056,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "shuffle_rng"
+        ]
+      ],
+      "shape": [
+        5056
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          0
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 6144,
+      "dtype": "torch.float32",
+      "elements": 1536,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          0
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        32,
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 6144,
+      "dtype": "torch.float32",
+      "elements": 1536,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          0
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        32,
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          1
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 128,
+      "dtype": "torch.float32",
+      "elements": 32,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          1
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        32
+      ]
+    },
+    {
+      "bytes": 128,
+      "dtype": "torch.float32",
+      "elements": 32,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          1
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        32
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          2
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 128,
+      "dtype": "torch.float32",
+      "elements": 32,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          2
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        32
+      ]
+    },
+    {
+      "bytes": 128,
+      "dtype": "torch.float32",
+      "elements": 32,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          2
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        32
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          3
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 128,
+      "dtype": "torch.float32",
+      "elements": 32,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          3
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        32
+      ]
+    },
+    {
+      "bytes": 128,
+      "dtype": "torch.float32",
+      "elements": 32,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          3
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        32
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          4
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 131072,
+      "dtype": "torch.float32",
+      "elements": 32768,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          4
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        64,
+        32,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 131072,
+      "dtype": "torch.float32",
+      "elements": 32768,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          4
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        64,
+        32,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          5
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 256,
+      "dtype": "torch.float32",
+      "elements": 64,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          5
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        64
+      ]
+    },
+    {
+      "bytes": 256,
+      "dtype": "torch.float32",
+      "elements": 64,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          5
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        64
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          6
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 256,
+      "dtype": "torch.float32",
+      "elements": 64,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          6
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        64
+      ]
+    },
+    {
+      "bytes": 256,
+      "dtype": "torch.float32",
+      "elements": 64,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          6
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        64
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          7
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 256,
+      "dtype": "torch.float32",
+      "elements": 64,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          7
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        64
+      ]
+    },
+    {
+      "bytes": 256,
+      "dtype": "torch.float32",
+      "elements": 64,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          7
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        64
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          8
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 524288,
+      "dtype": "torch.float32",
+      "elements": 131072,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          8
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        128,
+        64,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 524288,
+      "dtype": "torch.float32",
+      "elements": 131072,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          8
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        128,
+        64,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          9
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 512,
+      "dtype": "torch.float32",
+      "elements": 128,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          9
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        128
+      ]
+    },
+    {
+      "bytes": 512,
+      "dtype": "torch.float32",
+      "elements": 128,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          9
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        128
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          10
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 512,
+      "dtype": "torch.float32",
+      "elements": 128,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          10
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        128
+      ]
+    },
+    {
+      "bytes": 512,
+      "dtype": "torch.float32",
+      "elements": 128,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          10
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        128
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          11
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 512,
+      "dtype": "torch.float32",
+      "elements": 128,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          11
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        128
+      ]
+    },
+    {
+      "bytes": 512,
+      "dtype": "torch.float32",
+      "elements": 128,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          11
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        128
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          12
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 2097152,
+      "dtype": "torch.float32",
+      "elements": 524288,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          12
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        256,
+        128,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 2097152,
+      "dtype": "torch.float32",
+      "elements": 524288,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          12
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        256,
+        128,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          13
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          13
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          13
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          14
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          14
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          14
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          15
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          15
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          15
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          16
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 12582912,
+      "dtype": "torch.float32",
+      "elements": 3145728,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          16
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        256,
+        12288
+      ]
+    },
+    {
+      "bytes": 12582912,
+      "dtype": "torch.float32",
+      "elements": 3145728,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          16
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        256,
+        12288
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          17
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          17
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          17
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          18
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 826368,
+      "dtype": "torch.float32",
+      "elements": 206592,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          18
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        768,
+        269
+      ]
+    },
+    {
+      "bytes": 826368,
+      "dtype": "torch.float32",
+      "elements": 206592,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          18
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        768,
+        269
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          19
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 786432,
+      "dtype": "torch.float32",
+      "elements": 196608,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          19
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        768,
+        256
+      ]
+    },
+    {
+      "bytes": 786432,
+      "dtype": "torch.float32",
+      "elements": 196608,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          19
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        768,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          20
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 3072,
+      "dtype": "torch.float32",
+      "elements": 768,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          20
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        768
+      ]
+    },
+    {
+      "bytes": 3072,
+      "dtype": "torch.float32",
+      "elements": 768,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          20
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        768
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          21
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 3072,
+      "dtype": "torch.float32",
+      "elements": 768,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          21
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        768
+      ]
+    },
+    {
+      "bytes": 3072,
+      "dtype": "torch.float32",
+      "elements": 768,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          21
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        768
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          22
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 264192,
+      "dtype": "torch.float32",
+      "elements": 66048,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          22
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        256,
+        258
+      ]
+    },
+    {
+      "bytes": 264192,
+      "dtype": "torch.float32",
+      "elements": 66048,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          22
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        256,
+        258
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          23
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          23
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          23
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          24
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 786432,
+      "dtype": "torch.float32",
+      "elements": 196608,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          24
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        768,
+        256
+      ]
+    },
+    {
+      "bytes": 786432,
+      "dtype": "torch.float32",
+      "elements": 196608,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          24
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        768,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          25
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 3072,
+      "dtype": "torch.float32",
+      "elements": 768,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          25
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        768
+      ]
+    },
+    {
+      "bytes": 3072,
+      "dtype": "torch.float32",
+      "elements": 768,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          25
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        768
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          26
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 262144,
+      "dtype": "torch.float32",
+      "elements": 65536,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          26
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        256,
+        256
+      ]
+    },
+    {
+      "bytes": 262144,
+      "dtype": "torch.float32",
+      "elements": 65536,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          26
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        256,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          27
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          27
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          27
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          28
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 524288,
+      "dtype": "torch.float32",
+      "elements": 131072,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          28
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        256,
+        512
+      ]
+    },
+    {
+      "bytes": 524288,
+      "dtype": "torch.float32",
+      "elements": 131072,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          28
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        256,
+        512
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          29
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          29
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          29
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          30
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 12288,
+      "dtype": "torch.float32",
+      "elements": 3072,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          30
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        12,
+        256
+      ]
+    },
+    {
+      "bytes": 12288,
+      "dtype": "torch.float32",
+      "elements": 3072,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          30
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        12,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          31
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 48,
+      "dtype": "torch.float32",
+      "elements": 12,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          31
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        12
+      ]
+    },
+    {
+      "bytes": 48,
+      "dtype": "torch.float32",
+      "elements": 12,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          31
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        12
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "critic_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          0
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 1574912,
+      "dtype": "torch.float32",
+      "elements": 393728,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "critic_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          0
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        512,
+        769
+      ]
+    },
+    {
+      "bytes": 1574912,
+      "dtype": "torch.float32",
+      "elements": 393728,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "critic_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          0
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        512,
+        769
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "critic_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          1
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 2048,
+      "dtype": "torch.float32",
+      "elements": 512,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "critic_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          1
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        512
+      ]
+    },
+    {
+      "bytes": 2048,
+      "dtype": "torch.float32",
+      "elements": 512,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "critic_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          1
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        512
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "critic_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          2
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 1048576,
+      "dtype": "torch.float32",
+      "elements": 262144,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "critic_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          2
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        512,
+        512
+      ]
+    },
+    {
+      "bytes": 1048576,
+      "dtype": "torch.float32",
+      "elements": 262144,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "critic_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          2
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        512,
+        512
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "critic_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          3
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 2048,
+      "dtype": "torch.float32",
+      "elements": 512,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "critic_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          3
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        512
+      ]
+    },
+    {
+      "bytes": 2048,
+      "dtype": "torch.float32",
+      "elements": 512,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "critic_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          3
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        512
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "critic_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          4
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 2048,
+      "dtype": "torch.float32",
+      "elements": 512,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "critic_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          4
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        1,
+        512
+      ]
+    },
+    {
+      "bytes": 2048,
+      "dtype": "torch.float32",
+      "elements": 512,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "critic_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          4
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        1,
+        512
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "critic_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          5
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "critic_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          5
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "critic_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          5
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 16,
+      "dtype": "torch.uint8",
+      "elements": 16,
+      "path": [
+        [
+          "key",
+          "streams"
+        ],
+        [
+          "key",
+          "world"
+        ],
+        [
+          "key",
+          "prior"
+        ]
+      ],
+      "shape": [
+        16
+      ]
+    },
+    {
+      "bytes": 16,
+      "dtype": "torch.uint8",
+      "elements": 16,
+      "path": [
+        [
+          "key",
+          "streams"
+        ],
+        [
+          "key",
+          "world"
+        ],
+        [
+          "key",
+          "posterior"
+        ]
+      ],
+      "shape": [
+        16
+      ]
+    },
+    {
+      "bytes": 16,
+      "dtype": "torch.uint8",
+      "elements": 16,
+      "path": [
+        [
+          "key",
+          "streams"
+        ],
+        [
+          "key",
+          "world"
+        ],
+        [
+          "key",
+          "outcome"
+        ]
+      ],
+      "shape": [
+        16
+      ]
+    },
+    {
+      "bytes": 16,
+      "dtype": "torch.uint8",
+      "elements": 16,
+      "path": [
+        [
+          "key",
+          "streams"
+        ],
+        [
+          "key",
+          "actors"
+        ],
+        [
+          "key",
+          "0"
+        ]
+      ],
+      "shape": [
+        16
+      ]
+    },
+    {
+      "bytes": 16,
+      "dtype": "torch.uint8",
+      "elements": 16,
+      "path": [
+        [
+          "key",
+          "streams"
+        ],
+        [
+          "key",
+          "actors"
+        ],
+        [
+          "key",
+          "1"
+        ]
+      ],
+      "shape": [
+        16
+      ]
+    }
+  ]
+}

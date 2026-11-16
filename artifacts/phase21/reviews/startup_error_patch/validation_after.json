@@ -1,7 +1,0 @@
-{
-  "tests_run": 6,
-  "failures": 0,
-  "errors": 0,
-  "successful": true,
-  "output": "test_backend_broken_pipe_is_reported_as_backend_failure (tests.test_worker_startup_errors.WorkerStartupErrorTests.test_backend_broken_pipe_is_reported_as_backend_failure) ... ok\ntest_backend_construction_eof_is_reported_without_unconstructed_cleanup (tests.test_worker_startup_errors.WorkerStartupErrorTests.test_backend_construction_eof_is_reported_without_unconstructed_cleanup) ... ok\ntest_reply_pipe_closure_still_closes_backend_without_retrying_send (tests.test_worker_startup_errors.WorkerStartupErrorTests.test_reply_pipe_closure_still_closes_backend_without_retrying_send) ... ok\ntest_startup_backend_eof_is_typed_error_with_traceback (tests.test_worker_startup_errors.WorkerStartupErrorTests.test_startup_backend_eof_is_typed_error_with_traceback) ... ok\ntest_step_and_reset_backend_eof_are_not_silently_swallowed (tests.test_worker_startup_errors.WorkerStartupErrorTests.test_step_and_reset_backend_eof_are_not_silently_swallowed) ... ok\ntest_true_control_eof_and_explicit_close_are_clean_shutdown (tests.test_worker_startup_errors.WorkerStartupErrorTests.test_true_control_eof_and_explicit_close_are_clean_shutdown) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.012s\n\nOK\n"
-}

@@ -1,25 +1,74 @@
-# Local Python environments and downloaded scenario compiler.
+# Ignore local dependencies, datasets, generated runtime files and caches.
+# Model weights/checkpoints stay included and use Git LFS through .gitattributes.
+
+# Papers and generated research reports stay local.
+/paper/
+/papers/
+/reports/
+/research_reports/
+/results/
+
+# Local research plan and server setup guides.
+/detailed_research_implementation_plan.md
+/linux_gpu_server_setup.md
+/linux_gpu_server_setup_through_p23.md
+
+# Exclude artifact reports, results, figures and source/evidence snapshots.
+# Traverse directories so model payloads and their required metadata can remain.
+/artifacts/**
+!/artifacts/**/
+!/artifacts/.gitkeep
+!/artifacts/README.md
+!/artifacts/**/*.pt
+!/artifacts/**/*.pth
+!/artifacts/**/*.ckpt
+!/artifacts/**/*.safetensors
+!/artifacts/**/*.onnx
+!/artifacts/**/*.bin
+!/artifacts/**/checkpoints/**/manifest.json
+!/artifacts/**/checkpoints/**/manifest.sha256
+!/artifacts/**/checkpoints/update_*.sha256
+!/artifacts/**/actor_*/manifest.json
+!/artifacts/**/actor_*/manifest.sha256
+!/artifacts/**/initial_student/manifest.json
+!/artifacts/**/initial_student/manifest.sha256
+!/artifacts/**/evaluation/real_*/manifest.json
+!/artifacts/**/evaluation/real_*/manifest.sha256
+!/artifacts/**/run_manifest.json
+!/artifacts/**/run_manifest.sha256
+!/artifacts/**/launch_plan.json
+!/artifacts/**/launch_plan.sha256
+!/artifacts/phase24_selection/**/selection.json
+!/artifacts/phase24_selection/**/selection.sha256
+!/artifacts/phase23/normalization/**/*.json
+!/artifacts/phase23/normalization/**/*.sha256
+!/artifacts/**/normalization_bindings.json
+!/artifacts/**/normalization_bindings.sha256
+
+# Local environments, installed tools and downloaded dependencies.
 /.venv/
 /.venv-*/
 /.envs/
 /venv/
 /env/
 /.tools/
-
-# Transfer bundles and Linux dependency downloads stay outside Git.
-/transfer/
-/transfers/
+.build_deps/
 /wheelhouse/
 /wheelhouse-*/
-/*.zip
-/*.zip.sha256
-/*.tar
-/*.tar.gz
-/*.tgz
-/*.7z
-/*.whl
 
-# Python caches, package metadata, builds, and coverage.
+# Transfer bundles and downloaded archives (not model weights).
+/transfer/
+/transfers/
+*.zip
+*.zip.sha256
+*.tar
+*.tar.gz
+*.tar.xz
+*.tgz
+*.7z
+*.whl
+
+# Python caches, build products and coverage.
 __pycache__/
 *.py[cod]
 *.egg-info/
@@ -34,8 +83,9 @@ htmlcov/
 /build/
 /dist/
 .ipynb_checkpoints/
+*.o
 
-# Local credentials and machine/editor settings.
+# Credentials and local editor settings.
 .env
 .env.*
 !.env.example
@@ -56,16 +106,45 @@ htmlcov/
 Thumbs.db
 Desktop.ini
 
-# Generated collection/training outputs; root anchors preserve src/world_models/data.
+# Datasets: real replay and synthetic distillation trajectories.
+# Apply after the model allowances: dataset shards can also have a .pt suffix.
+# Root anchors preserve authored src/world_models/data modules.
 /data/
+/dataset/
 /datasets/
 /replay/
 /replay_buffer/
-/checkpoints/
-/weights/
-/outputs/
-/results/
-/runs/
+/buffer/
+/buffers/
+/artifacts/**/real_replay/
+/artifacts/**/replay/episodes/
+/artifacts/**/buffer/
+/artifacts/**/buffers/
+/artifacts/**/replay_buffer/
+/artifacts/**/synthetic_rollouts/
+*.npz
+*.npy
+*.hdf5
+*.h5
+*.parquet
+*.arrow
+*.tfrecord
+*.tfrecords
+
+# Generated native runtime assets and raw visual recordings.
+# Authored ACS/config/source remains included in its normal source directories.
+/artifacts/**/runtime/
+/artifacts/**/frames/
+/artifacts/**/screenshots/
+/artifacts/**/videos/
+*.wad
+*.pk3
+*.lmp
+*.mp4
+*.avi
+*.webm
+
+# Disposable logs, profiling caches, transfer/job state and temporary files.
 /logs/
 /tensorboard/
 /wandb/
@@ -73,163 +152,13 @@ Desktop.ini
 /tmp/
 /temp/
 /.cache/
+/artifacts/**/.cache/
 *.log
+*.tmp
+*.partial
+*.pid
+/p24_job.id
+/p36_job.id
+/artifacts/repository_audit/inventory.json
 
-# Keep authored source, ACS scripts, configs, locks, plans, and docs versioned.
-# Default to excluding artifacts; retain only the report files listed below.
-# See artifacts/README.md for the publication and regeneration policy.
-/artifacts/*
-!/artifacts/.gitkeep
-!/artifacts/README.md
-!/artifacts/phase0_acceptance.json
-
-!/artifacts/phase0/
-/artifacts/phase0/*
-!/artifacts/phase0/*.json
-
-!/artifacts/phase1_steps1_4/
-/artifacts/phase1_steps1_4/*
-!/artifacts/phase1_steps1_4/*.json
-
-!/artifacts/phase1_requested_fixes/
-/artifacts/phase1_requested_fixes/*
-!/artifacts/phase1_requested_fixes/*.json
-!/artifacts/phase1_requested_fixes/*.sha256
-!/artifacts/phase1_requested_fixes/README.md
-!/artifacts/phase1_requested_fixes/make_marker_review_sheets.py
-/artifacts/phase1_requested_fixes/verification_progress.json
-
-!/artifacts/phase1_complete/
-/artifacts/phase1_complete/*
-!/artifacts/phase1_complete/*.json
-!/artifacts/phase1_complete/*.sha256
-!/artifacts/phase1_complete/README.md
-!/artifacts/phase1_complete/validation_interactions.jsonl
-!/artifacts/phase1_complete/audit_targets_readonly.py
-!/artifacts/phase1_complete/split_mechanics_audit_driver.py
-
-!/artifacts/phase1_complete_retry/
-/artifacts/phase1_complete_retry/*
-!/artifacts/phase1_complete_retry/*.json
-!/artifacts/phase1_complete_retry/*.sha256
-!/artifacts/phase1_complete_retry/validation_interactions.jsonl
-
-# P2.1 summaries; collected replay and native runtime trees remain local.
-!/artifacts/phase21/
-/artifacts/phase21/*
-!/artifacts/phase21/*.json
-!/artifacts/phase21/*.sha256
-!/artifacts/phase21/README.md
-!/artifacts/phase21/storage_benchmark/
-/artifacts/phase21/storage_benchmark/*
-!/artifacts/phase21/storage_benchmark/storage_benchmark.json
-!/artifacts/phase21/storage_benchmark/storage_benchmark.sha256
-!/artifacts/phase21/journal_io_probe/
-/artifacts/phase21/journal_io_probe/*
-!/artifacts/phase21/journal_io_probe/durable_journal_io_probe.json
-!/artifacts/phase21/journal_io_probe/durable_journal_io_probe.sha256
-!/artifacts/phase21/reviews/
-/artifacts/phase21/reviews/*
-!/artifacts/phase21/reviews/*.json
-!/artifacts/phase21/reviews/*.sha256
-!/artifacts/phase21/reviews/*.py
-!/artifacts/phase21/reviews/README.md
-!/artifacts/phase21_slow_d_journal_preflight/
-/artifacts/phase21_slow_d_journal_preflight/*
-!/artifacts/phase21_slow_d_journal_preflight/aborted_preflight.json
-
-# P2.1 verified source snapshots and reproducible review support.
-!/artifacts/phase21/verified_sources/
-!/artifacts/phase21/verified_sources/**
-!/artifacts/phase21/verification/
-/artifacts/phase21/verification/*
-!/artifacts/phase21/verification/*.json
-!/artifacts/phase21/verification/*.sha256
-!/artifacts/phase21/final_validation/
-/artifacts/phase21/final_validation/*
-!/artifacts/phase21/final_validation/*.json
-!/artifacts/phase21/final_validation/*.sha256
-!/artifacts/phase21/reviews/FINALIZATION.md
-!/artifacts/phase21/reviews/*.patch
-!/artifacts/phase21/reviews/recovery_support/
-!/artifacts/phase21/reviews/recovery_support/**
-!/artifacts/phase21/reviews/portability_patch/
-!/artifacts/phase21/reviews/portability_patch/**
-!/artifacts/phase21/reviews/recovery_storage_patch/
-!/artifacts/phase21/reviews/recovery_storage_patch/**
-!/artifacts/phase21/reviews/recovery_prefix_validation/
-!/artifacts/phase21/reviews/recovery_prefix_validation/**
-!/artifacts/phase21/reviews/startup_error_patch/
-!/artifacts/phase21/reviews/startup_error_patch/**
-!/artifacts/phase21/reviews/future_resource_report_patch/
-!/artifacts/phase21/reviews/future_resource_report_patch/**
-!/artifacts/phase21/reviews/full_staged_tests/
-!/artifacts/phase21/reviews/full_staged_tests/**
-!/artifacts/phase21/reviews/previous_review_artifacts/
-!/artifacts/phase21/reviews/previous_review_artifacts/**
-!/artifacts/phase21/reviews/startup_crash_evidence/
-/artifacts/phase21/reviews/startup_crash_evidence/*
-!/artifacts/phase21/reviews/startup_crash_evidence/assessment.json
-!/artifacts/phase21/reviews/startup_crash_evidence/evidence_sha256.json
-
-# Preserve post-run resource fixes and exact source before-copies.
-!/artifacts/phase21/reviews/resource_enforcement_patch/
-!/artifacts/phase21/reviews/resource_enforcement_patch/**
-!/artifacts/phase21/reviews/post_collection_source_promotion_before/
-!/artifacts/phase21/reviews/post_collection_source_promotion_before/**
-!/artifacts/phase21/reviews/resource_telemetry_review.md
-!/artifacts/phase21/reviews/backup_capacity_runbook.md
-/artifacts/phase21/**/__pycache__/
-/artifacts/phase21/**/*.py[cod]
-
-# P2.2 untrained architecture verification; no model weights or raw RGB.
-!/artifacts/phase22/
-/artifacts/phase22/*
-!/artifacts/phase22/*.json
-!/artifacts/phase22/*.sha256
-!/artifacts/phase22/*.txt
-
-# P2.3 objectives, frozen fitting statistics, and measured diagnostics.
-!/artifacts/phase23/
-/artifacts/phase23/*
-!/artifacts/phase23/*.json
-!/artifacts/phase23/*.sha256
-!/artifacts/phase23/*.txt
-!/artifacts/phase23/*.md
-!/artifacts/phase23/normalization/
-/artifacts/phase23/normalization/*
-!/artifacts/phase23/normalization/*.json
-!/artifacts/phase23/normalization/*.sha256
-!/artifacts/phase23/normalization/relay/
-/artifacts/phase23/normalization/relay/*
-!/artifacts/phase23/normalization/relay/*.json
-!/artifacts/phase23/normalization/relay/*.sha256
-!/artifacts/phase23/normalization/cover/
-/artifacts/phase23/normalization/cover/*
-!/artifacts/phase23/normalization/cover/*.json
-!/artifacts/phase23/normalization/cover/*.sha256
-
-# P2.4 implementation checks only; server runs/checkpoints stay ignored.
-!/artifacts/phase24/
-/artifacts/phase24/*
-!/artifacts/phase24/*.md
-!/artifacts/phase24/phase24_acceptance.json
-!/artifacts/phase24/phase24_acceptance.sha256
-!/artifacts/phase24/regression_tests.json
-!/artifacts/phase24/regression_tests.sha256
-!/artifacts/phase24/tests.txt
-!/artifacts/phase24/regression_tests.txt
-
-# P2.5 implementation/source-cohort evidence only; server model runs stay local.
-!/artifacts/phase25/
-/artifacts/phase25/*
-!/artifacts/phase25/README.md
-!/artifacts/phase25/implementation_v1/
-/artifacts/phase25/implementation_v1/*
-!/artifacts/phase25/implementation_v1/*.json
-!/artifacts/phase25/implementation_v1/*.sha256
-!/artifacts/phase25/implementation_v1/tests.txt
-!/artifacts/phase25/cohort_review_v1/
-/artifacts/phase25/cohort_review_v1/*
-!/artifacts/phase25/cohort_review_v1/*.json
-!/artifacts/phase25/cohort_review_v1/*.sha256
+# Root weights/ and checkpoints/ remain included; model binaries use Git LFS.

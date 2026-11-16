@@ -1,0 +1,1093 @@
+{
+  "created_at": "2026-11-11T11:52:29.530654+00:00",
+  "fresh_ppo_optimizer_required_after_warm_start": true,
+  "frozen_versions": {
+    "model": "186f5099c3c0e132f1a6bd985bf604743b02284b5b7b6c2c43277ab1a622884f",
+    "student_critic": "2ca90868843be2c8b56b95a4432c0c0838fd4ac26211af56dbbfc58366d25a31",
+    "teacher": "f9f71e3a2d8aab297b3cd66ef5f3486b81c2f4ece10a52680111e143000d479d",
+    "teacher_critic": "7c5054b99f26bf0e943bb2811679d52304d111c8d546eb5923a041fb85489342"
+  },
+  "full_d_pipeline_implemented": false,
+  "master_seed": 0,
+  "paired_initial_versions": {
+    "actor": "aaebb0ac4ad04f7e965dc2cda9b395c1fb098037254c9fd4d520021920b42f02",
+    "critic": "2ca90868843be2c8b56b95a4432c0c0838fd4ac26211af56dbbfc58366d25a31"
+  },
+  "phase4_acceptance": false,
+  "precision": "bfloat16",
+  "protocol": {
+    "adam_betas": [
+      0.9,
+      0.999
+    ],
+    "adam_epsilon": 1e-05,
+    "critic_updates": 0,
+    "full_d_pipeline_implemented": false,
+    "gradient_clip": 0.5,
+    "horizon": 15,
+    "imagined_previous_actions": "executed_teacher_actions",
+    "initial_model_updates": 4500,
+    "initial_transitions": 50000,
+    "learning_rate": 0.0003,
+    "master_seeds": [
+      0,
+      1
+    ],
+    "new_environment_interactions": 0,
+    "new_model_updates": 0,
+    "next_local_ppo_optimizer": "fresh",
+    "objective": "valid_player_mean_forward_kl",
+    "objective_weight": 1.0,
+    "prefix": "complete_real_history_recomputed_with_current_student_each_minibatch",
+    "schema_version": "p42-distillation-protocol-v1",
+    "sequences_per_update": 32,
+    "stage": "student_warm_start",
+    "study_profile": "relay_four_day_v1",
+    "target_dtype": "float32",
+    "task_family": "relay",
+    "teacher_cycles": 25,
+    "teacher_updates": 0,
+    "temperature": 1.0,
+    "trajectories": 128,
+    "updates": 100,
+    "weight_decay": 0.0
+  },
+  "protocol_sha256": "32195ba3f1d5522ff89d4ef230bb658c58f14ecae755f707e77789c8c2767b07",
+  "references": [
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 148,
+      "episode_id": "relay-s0-e000091"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 206,
+      "episode_id": "relay-s0-e000064"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 17,
+      "episode_id": "relay-s0-e000308"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 2,
+      "episode_id": "relay-s0-e000270"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 128,
+      "episode_id": "relay-s0-e000300"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 350,
+      "episode_id": "relay-s0-e000070"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 35,
+      "episode_id": "relay-s0-e000080"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 78,
+      "episode_id": "relay-s0-e000155"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 128,
+      "episode_id": "relay-s0-e000127"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 68,
+      "episode_id": "relay-s0-e000147"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 22,
+      "episode_id": "relay-s0-e000261"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 294,
+      "episode_id": "relay-s0-e000140"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 19,
+      "episode_id": "relay-s0-e000220"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 159,
+      "episode_id": "relay-s0-e000112"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 91,
+      "episode_id": "relay-s0-e000113"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 22,
+      "episode_id": "relay-s0-e000089"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 288,
+      "episode_id": "relay-s0-e000155"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 190,
+      "episode_id": "relay-s0-e000336"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 57,
+      "episode_id": "relay-s0-e000196"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 36,
+      "episode_id": "relay-s0-e000191"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 166,
+      "episode_id": "relay-s0-e000329"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 34,
+      "episode_id": "relay-s0-e000191"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 131,
+      "episode_id": "relay-s0-e000127"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 31,
+      "episode_id": "relay-s0-e000229"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 161,
+      "episode_id": "relay-s0-e000133"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 236,
+      "episode_id": "relay-s0-e000232"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 363,
+      "episode_id": "relay-s0-e000168"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 319,
+      "episode_id": "relay-s0-e000189"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 88,
+      "episode_id": "relay-s0-e000078"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 52,
+      "episode_id": "relay-s0-e000210"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 67,
+      "episode_id": "relay-s0-e000039"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 17,
+      "episode_id": "relay-s0-e000210"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 157,
+      "episode_id": "relay-s0-e000293"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 14,
+      "episode_id": "relay-s0-e000314"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 221,
+      "episode_id": "relay-s0-e000133"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 270,
+      "episode_id": "relay-s0-e000078"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 384,
+      "episode_id": "relay-s0-e000070"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 52,
+      "episode_id": "relay-s0-e000289"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 78,
+      "episode_id": "relay-s0-e000109"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 45,
+      "episode_id": "relay-s0-e000241"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 220,
+      "episode_id": "relay-s0-e000077"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 67,
+      "episode_id": "relay-s0-e000042"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 225,
+      "episode_id": "relay-s0-e000056"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 115,
+      "episode_id": "relay-s0-e000155"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 3,
+      "episode_id": "relay-s0-e000050"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 37,
+      "episode_id": "relay-s0-e000180"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 43,
+      "episode_id": "relay-s0-e000176"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 9,
+      "episode_id": "relay-s0-e000190"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 16,
+      "episode_id": "relay-s0-e000223"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 102,
+      "episode_id": "relay-s0-e000218"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 253,
+      "episode_id": "relay-s0-e000120"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 284,
+      "episode_id": "relay-s0-e000105"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 60,
+      "episode_id": "relay-s0-e000339"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 52,
+      "episode_id": "relay-s0-e000019"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 55,
+      "episode_id": "relay-s0-e000329"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 50,
+      "episode_id": "relay-s0-e000227"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 58,
+      "episode_id": "relay-s0-e000288"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 196,
+      "episode_id": "relay-s0-e000210"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 297,
+      "episode_id": "relay-s0-e000315"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 67,
+      "episode_id": "relay-s0-e000177"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 242,
+      "episode_id": "relay-s0-e000064"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 284,
+      "episode_id": "relay-s0-e000245"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 75,
+      "episode_id": "relay-s0-e000261"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 57,
+      "episode_id": "relay-s0-e000101"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 57,
+      "episode_id": "relay-s0-e000191"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 29,
+      "episode_id": "relay-s0-e000270"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 221,
+      "episode_id": "relay-s0-e000176"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 305,
+      "episode_id": "relay-s0-e000314"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 57,
+      "episode_id": "relay-s0-e000098"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 43,
+      "episode_id": "relay-s0-e000124"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 396,
+      "episode_id": "relay-s0-e000231"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 5,
+      "episode_id": "relay-s0-e000145"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 76,
+      "episode_id": "relay-s0-e000134"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 253,
+      "episode_id": "relay-s0-e000343"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 73,
+      "episode_id": "relay-s0-e000043"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 31,
+      "episode_id": "relay-s0-e000071"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 173,
+      "episode_id": "relay-s0-e000231"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 2,
+      "episode_id": "relay-s0-e000328"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 167,
+      "episode_id": "relay-s0-e000042"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 259,
+      "episode_id": "relay-s0-e000029"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 32,
+      "episode_id": "relay-s0-e000171"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 0,
+      "episode_id": "relay-s0-e000121"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 27,
+      "episode_id": "relay-s0-e000049"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 26,
+      "episode_id": "relay-s0-e000011"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 4,
+      "episode_id": "relay-s0-e000087"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 29,
+      "episode_id": "relay-s0-e000178"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 49,
+      "episode_id": "relay-s0-e000176"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 199,
+      "episode_id": "relay-s0-e000183"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 56,
+      "episode_id": "relay-s0-e000000"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 77,
+      "episode_id": "relay-s0-e000091"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 53,
+      "episode_id": "relay-s0-e000295"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 236,
+      "episode_id": "relay-s0-e000014"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 37,
+      "episode_id": "relay-s0-e000127"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 182,
+      "episode_id": "relay-s0-e000336"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 59,
+      "episode_id": "relay-s0-e000217"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 124,
+      "episode_id": "relay-s0-e000273"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 287,
+      "episode_id": "relay-s0-e000000"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 230,
+      "episode_id": "relay-s0-e000301"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 199,
+      "episode_id": "relay-s0-e000127"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 27,
+      "episode_id": "relay-s0-e000248"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 104,
+      "episode_id": "relay-s0-e000279"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 290,
+      "episode_id": "relay-s0-e000175"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 286,
+      "episode_id": "relay-s0-e000329"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 116,
+      "episode_id": "relay-s0-e000000"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 30,
+      "episode_id": "relay-s0-e000096"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 55,
+      "episode_id": "relay-s0-e000345"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 190,
+      "episode_id": "relay-s0-e000176"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 304,
+      "episode_id": "relay-s0-e000112"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 122,
+      "episode_id": "relay-s0-e000315"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 141,
+      "episode_id": "relay-s0-e000294"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 82,
+      "episode_id": "relay-s0-e000000"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 29,
+      "episode_id": "relay-s0-e000094"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 56,
+      "episode_id": "relay-s0-e000279"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 45,
+      "episode_id": "relay-s0-e000106"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 70,
+      "episode_id": "relay-s0-e000189"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 58,
+      "episode_id": "relay-s0-e000184"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 116,
+      "episode_id": "relay-s0-e000280"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 353,
+      "episode_id": "relay-s0-e000175"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 160,
+      "episode_id": "relay-s0-e000217"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 65,
+      "episode_id": "relay-s0-e000173"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 276,
+      "episode_id": "relay-s0-e000112"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 4,
+      "episode_id": "relay-s0-e000286"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 27,
+      "episode_id": "relay-s0-e000217"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 120,
+      "episode_id": "relay-s0-e000126"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 292,
+      "episode_id": "relay-s0-e000225"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 128,
+      "episode_id": "relay-s0-e000231"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 41,
+      "episode_id": "relay-s0-e000169"
+    },
+    {
+      "cohort_identity": "0a6f2e30e65a154bf7785ca8a0d5c6e0bf776aa68ef3cb2be8878b70db351c79",
+      "dataset_identity": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+      "dataset_index": 0,
+      "decision_index": 68,
+      "episode_id": "relay-s0-e000016"
+    }
+  ],
+  "rng_namespaces": {
+    "distillation_anchors": 3338989866,
+    "distillation_prefix": 2690095185,
+    "distillation_rollouts": 3005617247,
+    "distillation_updates": 442827773
+  },
+  "rollout_stream_identity": {
+    "device": "cuda:0",
+    "schema_version": "p33-rollout-streams-v1",
+    "seeds": {
+      "actor_0": 6892562142820567874,
+      "actor_1": 8831192330020628343,
+      "outcome": 3181035560254635209,
+      "posterior": 7976470266493196668,
+      "prior": 2997270088979745557,
+      "world": 2571614699360167464
+    }
+  },
+  "runtime": {
+    "cpu_threads": 1,
+    "cublas_workspace_config": ":4096:8",
+    "cuda_runtime": "13.2",
+    "cudnn": 92600,
+    "cudnn_benchmark": false,
+    "deterministic_algorithms": true,
+    "gpu_capability": [
+      9,
+      0
+    ],
+    "gpu_name": "NVIDIA H200",
+    "logical_device": "cuda:0",
+    "numpy": "2.5.4",
+    "python": "3.12.16",
+    "torch": "2.15.0+cu132"
+  },
+  "sampling_rule": "one common uniform/recent quota draw; no reward/event filtering",
+  "schema_version": "p42-distillation-run-v1",
+  "source_sha256": {
+    "scripts/phase41.py": "3f79e6555526a64d6a9b6ea475d3e72af444b7f4495a00e639f6f92528ce4979",
+    "scripts/phase42.py": "b78b6fa8abd7ff59989d787e4ac345d21dddeaae4073b67ae1752b6c72d31e47",
+    "src/world_models/__init__.py": "a9f08fbd05cbe4e766827dfee9d04e7ff48056887127e8b78c436e294bb10f9a",
+    "src/world_models/contracts.py": "e751564f3d0f7087234663e5e0133bd2c1811ffe5811173d3a2c446e74e1cd84",
+    "src/world_models/cycle/__init__.py": "9979b79efbcc489f8518d2a2fdfb578e3a83a2f3a0a82bef42d31aacfd8ba994",
+    "src/world_models/cycle/checkpoints.py": "de0db9b42b5a988dec9ec1710728195be07fb8e3ffcc8884ec337b5965e22ed9",
+    "src/world_models/cycle/collection.py": "56e68f4b61edcad8ef52caf678469198ebf9a16b668ed3680635746d08fdce9a",
+    "src/world_models/cycle/controller.py": "0e1d879467f32ce3dcea3358227ec6b519eaa7ec2142a21658fe1ebdb11324d0",
+    "src/world_models/cycle/provenance.py": "4256d4dc962c9dcdcbcfd6d1bb83743fae696ae97ce122f77b0f39dd6a3a69eb",
+    "src/world_models/cycle/recovery.py": "2308778cd1d8b57a009c8a7779cdeb4ae02e427e4b964bf576e3d0040a84ad8a",
+    "src/world_models/cycle/refresh.py": "929da740a00657ee4d59ea2b1a245639b2da2bd927edfbac232117f8e08484f4",
+    "src/world_models/cycle/schedule.py": "50b4f272d4e2f21ef2249e2d3ee58a6ac4711e0cb32220a4ab4666c7832c3873",
+    "src/world_models/cycle/study.py": "2b87e3f671fc18d9f88a2a43a029c6ec8c77c010edbc4ab3fa2ca77c4c4549ae",
+    "src/world_models/data/__init__.py": "100c8630d44dc3eac2419c8bc9b19034322c57c3d0bd2876ba463c2a3116a80b",
+    "src/world_models/data/audit.py": "0ac471a49b0fe3f802401c9aa7f67c118a3c246d68a0d8b7efa716432714eecd",
+    "src/world_models/data/benchmark.py": "259424b85ca49d2a495e9633fce4830b0732d178db289a774432c3e71653d593",
+    "src/world_models/data/collection.py": "6b9435f2b8cebb8eea38e0f98592cd8ef9ba1070ffa87c6d52122ef0caefac5a",
+    "src/world_models/data/ledger.py": "d185997f16f08db58ffb3aac9231fc2da30b2b200cace92e664c9aecd6149507",
+    "src/world_models/data/recovery.py": "01790809c2f8112d6d83f4b0c1ce6e39f6d7e1cd5a98a95d49935d4933ca5b00",
+    "src/world_models/data/replay.py": "e4006006321a526084bb8fee7e2e5e6c0ce6250b8c538b2ababf42aaaa3327aa",
+    "src/world_models/data/resources.py": "c6439c9fc17a368023783f9577cefc566254e94316fc8822ffc7e6a59040b07d",
+    "src/world_models/data/schema.py": "3d68de72f95b666930c128534175529fb3a7fae8956afaa191675c356b8e5f88",
+    "src/world_models/data/spool.py": "465843014a3d7c152660838b4a805133cd7ba0a35906f2960957ca05a8314b52",
+    "src/world_models/distillation/__init__.py": "1a1365e2b5f1cc39f810b95020ba95d0af2c5800d56da8686797c40a43909ea2",
+    "src/world_models/distillation/buffer.py": "053b3c1fba4930e1f5cb7bfdceb73a8668b00beb07efb99abb107363fbc0d827",
+    "src/world_models/distillation/handoff.py": "05ca02819157f9fb52a9f76140253c24a1a2588f2b93fd528d64a10f70659bb5",
+    "src/world_models/distillation/learning.py": "9808662b7dcef839c5d9176adcf260f766dd70ab83b0624d959a52a952813be2",
+    "src/world_models/distillation/protocol.py": "58850d9d778fc9d45a861d897f157671818c5a9fda16b23cc7df44c32d538158",
+    "src/world_models/distillation/runner.py": "c55ff3ea78fe22b30bc071faa61ed9e877c42b2c283185e69520a1a7c8a914cc",
+    "src/world_models/distillation/versions.py": "eddfee8d13b1d097b04aa6cd413619f0971aee4ee6ee9ffe8bdf5e2d760fb556",
+    "src/world_models/env/__init__.py": "ac27e8fc9f1e58c924ebff8976f906580f9d43623121b688fda786f4554b84af",
+    "src/world_models/env/acceptance.py": "fa8951ef05d63fd412d27dd574a238d4a6af2f3b19174e92045f63100eb74ba5",
+    "src/world_models/env/acceptance_metrics.py": "355a4d862f91abbe1b6ced085f3aeb755aaf81cf3d6ae7c9d2cc85edd6d7eaf1",
+    "src/world_models/env/actions.py": "58a94c50070d0cd5f0dd3f6775a65018100f17533eff14d1e350c01c93ec8b8d",
+    "src/world_models/env/coop.py": "0c46811a31ed9ec92143cb82c23648f6a3a7b386ba7d5bf2295fc311cfc895d8",
+    "src/world_models/env/coordinator.py": "ab4f58fad33409763459eab484e21630a619e0de04e298dbe5c92ef4acda8808",
+    "src/world_models/env/locality.py": "cbacd94e6d3dd4e56d7ef812abdae83fa695ea6baa4035d8f69c270a751e767b",
+    "src/world_models/env/marker_diagnostics.py": "d8a81ead76a7388cf298bd7a5c69e05108601b32428cae28184d771c323d5db7",
+    "src/world_models/env/mechanics_video.py": "633d09a1227d92021d0753cc3cfd0afddd62139325ad47e71eb64bc8a640805b",
+    "src/world_models/env/observations.py": "cb5b031e1061edfaaff1f1fd5b0e664db9a3517b2755b9a597303adcd0b9266e",
+    "src/world_models/env/provenance.py": "971ccfb0bea730d7d0115313d751e22f7daf9b7213c27c4f6c53526f45df8500",
+    "src/world_models/env/replay_diagnostics.py": "497e2b7fcee3b78d7c0dcbe4868eec5a989d0adda4b686ce6d6f2cc5ec5a145e",
+    "src/world_models/env/scenario_builder.py": "641492ba510dd6d82483402fc102ad157d17ade1ece9edcd2235e9c215f8c241",
+    "src/world_models/env/scripted.py": "50e7038b33bfcc271542bf651af994c895383875b77059b32326854d92abc549",
+    "src/world_models/env/splits.py": "282f4edb9b414b6eeb90abe8cc0b17f521d45b8841ec03820676fc820c0d1c11",
+    "src/world_models/env/targets.py": "d6ec7f8cfcab2203496cb9f23106ff099c06a4159b75b32eb7495530d7284e01",
+    "src/world_models/env/validation_data.py": "ac7ef5bd909953497ea068baf477c2dcda2793923553221784c976b4f029dfd6",
+    "src/world_models/env/workers.py": "e35625ad195f213545a2437fae503ea1eaf1be93fb60ebd931165b323f7db6f9",
+    "src/world_models/evaluation/__init__.py": "1340c59397c099a84b839cdf424063f83f1433f211bea0d69e4eb604111a5baa",
+    "src/world_models/evaluation/compact.py": "1954984be609b4365a0ec21eb66c62db9dde4d10f47f1f432dafd0ecc96db932",
+    "src/world_models/evaluation/metrics.py": "d5f1f65788a27a6f6a9444440ca522f07fec5bb9b8be70ea76608def67b89f23",
+    "src/world_models/evaluation/selection.py": "aa9109a891cad9fc7f99887f22eb59e8d9cb6ee3bd31c571271e80184ea91c40",
+    "src/world_models/evaluation/verification.py": "26eb792d1f1518e199ab7102714baf27ddb5b267ab10d0653f9f00c6d5ca2b5f",
+    "src/world_models/imagination/__init__.py": "3d8db7e6719b0ed9ac3990770ea084c5dc5f0b5690d85d99d5b495a1a2c0f4b5",
+    "src/world_models/imagination/anchors.py": "cd66cd967e674068b19de1393eb805242dbcc9752606d1ad12c723d5657e5d6b",
+    "src/world_models/imagination/replay.py": "87fdf61facdfb088f8e68c84d32e3cc945a9f8bcbdf15dd0e0256de22f08a2b5",
+    "src/world_models/imagination/versions.py": "16f15630eed839860fe4a763f2774482a99d250a02e8e99cb09ba21aeb11e070",
+    "src/world_models/infrastructure/__init__.py": "912be893007858f1c9bbcef48cf3ec050e84c130b24dde1b1b2d4274a2786a95",
+    "src/world_models/infrastructure/config.py": "4e43fde458e13b74166282f85a988a81ea174faa6b5bb2517e504d25f90a71cd",
+    "src/world_models/infrastructure/inventory.py": "bbbdbd4481dc7319199737ebfd7a089e61540b05454fefdddf5ad91e00e83553",
+    "src/world_models/infrastructure/reproducibility.py": "4667d44c461ecd98c5838c560dec27e1708930e2ca90410e84b791e0277bb4be",
+    "src/world_models/mappo/__init__.py": "efa87070de97b07a5d934cbc3682c4fd660d6c9cdabeb6f13e8ede7e3781ece4",
+    "src/world_models/mappo/config.py": "3af4f76da52e9729faca920f15ecdc5ad376b82950f5ff1dc195879518770bb3",
+    "src/world_models/mappo/objectives.py": "f5bd2c125e96767d2334a1bd7d51ce85b5757d3a575b487e29b56913f44af448",
+    "src/world_models/mappo/recurrent.py": "d15aa799c970d9a95fa433100af712f37d3b1226b5f2818ad1117a6ac254c304",
+    "src/world_models/mappo/updater.py": "d35f0484c971bb274b2081241cb648f0bbe013c8d7504cd3a56af1b307510ab5",
+    "src/world_models/models/__init__.py": "ce1bfc1cfcd29f37cd99045ce774ac669737fc0eaffcb7e125303091c288c5ea",
+    "src/world_models/models/core.py": "4efa9d638bc5645fa6d9476f8f60a3e8116ed780f3b1da64c5a87b32fbebeb9e",
+    "src/world_models/models/heads.py": "9ab30036f46084fc4269e6355b050d076e76c616b1b3118f00e1387544631d70",
+    "src/world_models/models/world_model.py": "25f9ef42357d90ea06c3a94821135ab897b3610232776839ed744e1be15982c4",
+    "src/world_models/policies/__init__.py": "3a6c30681133952c8863c91ec6f6750cbfa8464469c3c869711e941c3c88bc2d",
+    "src/world_models/policies/actor.py": "47886733655981b07fcec85835d370b7abf40f99bae28a6a9397f8544503af6c",
+    "src/world_models/policies/config.py": "680dbc764bfc3bc87de0b32738b8aedd0a61c4a599b8a53d80f19082fba49f47",
+    "src/world_models/policies/critic.py": "4d784f709200bee322b98afd00669d77ccd514dce2af2eb55ed11989ec414f60",
+    "src/world_models/policies/initialization.py": "e17b2b873d661857df3abc4fc3f8f211f7abd36f0715e3dcf73d18e859da40b0",
+    "src/world_models/policies/teacher.py": "2e38c1353eaa1d021a78210ee0a022fa726f4d40ea2a13e0ca6bdc78ba6db8d1",
+    "src/world_models/rollouts/__init__.py": "9e65b15f0467c9b0a08031a651a24544d05a6dff14b329701557c1c3b6bd454c",
+    "src/world_models/rollouts/generator.py": "d09b883a15200a2a8fc8e9376dc121a38c403f51abf2f47e4bc84a003fd7ea7c",
+    "src/world_models/rollouts/schema.py": "be3a995396cc37e3d42bcf11025ba56f00723a784cefbe0e1fa210b167c2cf70",
+    "src/world_models/rollouts/storage.py": "a138e6530548616d0abdebe82c7e097ad7993eb7a0c9cecbbeed172f8c8d4583",
+    "src/world_models/rollouts/streams.py": "f98294aa56c39371e8b8988c61fabd7f41c87ac8c23a4c6f3ea2fb9cd7a82e8a",
+    "src/world_models/teacher/__init__.py": "e15ee46e8c7c4134244411867de3295ddd8f9d592038e874fde75414cda876dc",
+    "src/world_models/teacher/learning.py": "267e9307edd3db4b590dae63117b83d4d401963a2eff6336f2c072e743fd022d",
+    "src/world_models/teacher/protocol.py": "7d3c2fd6509e64a80f5fd074c7d68108fb5e0135f1fb7ea384a4a2be3d3dc514",
+    "src/world_models/teacher/runner.py": "f969bda7c726bf6b7bf3829725e08e73732df8a673faac61c64000eb8a2f05e3",
+    "src/world_models/training/__init__.py": "4db8ffc0c1f8a1641c1667cd12f064e065ca87fdfd4f493f0415bef0f986d81b",
+    "src/world_models/training/checkpoints.py": "f03eb288734f7557a51c633b48123801505f75bf87b79c92f87cbaf3b25ca311",
+    "src/world_models/training/diagnostics.py": "dadab0dfd21fe1b435fecb8e266e2c09748b05832466dd2bcf5e3c31062cc89b",
+    "src/world_models/training/fitting.py": "feb680515514b38ea898466bf0f70c0d58ee965213ec4551d38e9ca81d455d93",
+    "src/world_models/training/losses.py": "18222dd71c08509df1ee9d97d8bba7afc12c1b13d2e5fa5926f9d0e2e78c0044",
+    "src/world_models/training/normalization.py": "3ade5e03070e820fadf49bc3f46fbffae6b2d469dafff82966a761987d9eff80",
+    "src/world_models/training/objective.py": "91fb91b5c0aa8aa0ecc3d7042356d2ed659ebbc24efe55d4fc2d7af52a637483",
+    "src/world_models/training/objective_batch.py": "698cf289925c785d735586034621e13aca7bae76a2fcd9cf4936ace5bceb3773",
+    "src/world_models/training/runner.py": "b8c7f9091c2cb0e9b93603b625a137fe93ffcaac5d7f9a20de68d858123b29c8",
+    "src/world_models/training/sampling.py": "95eeab790196472634e5cef2bced8502576c42e70f98a58d41077cc51cbe1f18",
+    "src/world_models/training/selection.py": "b861a10a717e96e7ca6bfbb0076dc098e3804c278d9605f6d7d68e5c21feda60",
+    "src/world_models/training/validation.py": "7a894abf9e3ce33bc8062988c5bc2486e6848bdc42c4f06be2ea7380194c8fad"
+  },
+  "teacher_input_identity": "692603b060c0bc7a543bf58f16d925ae015d9cad0bb2515561fb2581303f9f74",
+  "teacher_run": "/home/zixuan/projects/WM1/artifacts/phase41_runs/teacher_four_day_v1/relay/seed_0",
+  "training_executed_at_prepare": false
+}

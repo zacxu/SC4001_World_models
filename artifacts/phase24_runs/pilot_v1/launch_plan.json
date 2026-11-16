@@ -1,0 +1,278 @@
+{
+  "gpus": [
+    0
+  ],
+  "jobs": [
+    {
+      "command": [
+        "/home/zixuan/projects/MAPPO_wm/.venv/bin/python",
+        "-m",
+        "scripts.phase24",
+        "initial",
+        "--task",
+        "relay",
+        "--seed",
+        "0",
+        "--output-dir",
+        "/home/zixuan/projects/MAPPO_wm/artifacts/phase24_runs/pilot_v1/relay/seed_0",
+        "--data-dir",
+        "/home/zixuan/projects/MAPPO_wm/data/initial_replay/pilot",
+        "--statistics-dir",
+        "/home/zixuan/projects/MAPPO_wm/artifacts/phase23/normalization",
+        "--config-dir",
+        "/home/zixuan/projects/MAPPO_wm/configs",
+        "--profile",
+        "pilot",
+        "--device",
+        "cuda:0",
+        "--microbatch",
+        "4",
+        "--effective-batch",
+        "32",
+        "--burn-in",
+        "16",
+        "--loss-steps",
+        "48",
+        "--precision",
+        "bfloat16",
+        "--checkpoint-every",
+        "250",
+        "--validate-every",
+        "250",
+        "--validation-windows",
+        "16",
+        "--log-every",
+        "10",
+        "--updates",
+        "5000"
+      ],
+      "data": {
+        "initial_normalization": {
+          "file_sha256": "246c177f30c13c7b8655f33225908a1e2c4bd8996b8f54938498d8080f4789b7",
+          "identity_sha256": "7c0c49a3723eb21d4a44ddf973f6ed2598860ac9d063e2eea7fe591ca38c4db8"
+        },
+        "replays": [
+          {
+            "dataset_identity_sha256": "6443cb0a4f97b69bfa9110c020c2189df7f0fe646086be6ebc46f382958dc11a",
+            "manifest_sha256": "98e9b59ed3825ee4662ed267fa2505caf0daaa1ee49dc43446d96a3b88464893",
+            "transitions": 50000
+          }
+        ]
+      },
+      "logical_gpu": 0,
+      "output_dir": "/home/zixuan/projects/MAPPO_wm/artifacts/phase24_runs/pilot_v1/relay/seed_0",
+      "seed": 0,
+      "target_stage_updates": 5000,
+      "task": "relay"
+    },
+    {
+      "command": [
+        "/home/zixuan/projects/MAPPO_wm/.venv/bin/python",
+        "-m",
+        "scripts.phase24",
+        "initial",
+        "--task",
+        "relay",
+        "--seed",
+        "1",
+        "--output-dir",
+        "/home/zixuan/projects/MAPPO_wm/artifacts/phase24_runs/pilot_v1/relay/seed_1",
+        "--data-dir",
+        "/home/zixuan/projects/MAPPO_wm/data/initial_replay/pilot",
+        "--statistics-dir",
+        "/home/zixuan/projects/MAPPO_wm/artifacts/phase23/normalization",
+        "--config-dir",
+        "/home/zixuan/projects/MAPPO_wm/configs",
+        "--profile",
+        "pilot",
+        "--device",
+        "cuda:0",
+        "--microbatch",
+        "4",
+        "--effective-batch",
+        "32",
+        "--burn-in",
+        "16",
+        "--loss-steps",
+        "48",
+        "--precision",
+        "bfloat16",
+        "--checkpoint-every",
+        "250",
+        "--validate-every",
+        "250",
+        "--validation-windows",
+        "16",
+        "--log-every",
+        "10",
+        "--updates",
+        "5000"
+      ],
+      "data": {
+        "initial_normalization": {
+          "file_sha256": "e6020e57dbee23a49ffca80546f71facf699eba7867c3935f39edf9c2c2ca2fe",
+          "identity_sha256": "abf54a3953f1a85e4b1fc22aa8ee885e580fc8f5adb86afddaf9d8b084522555"
+        },
+        "replays": [
+          {
+            "dataset_identity_sha256": "d3f959e428485eff98aaee16fa582e75aab7967f493b6f8d07d46226c7321b78",
+            "manifest_sha256": "ade2770436fa7578d213cec9da5c8a5a0dbd0710941d16ae79853d1f6d303e88",
+            "transitions": 50000
+          }
+        ]
+      },
+      "logical_gpu": 0,
+      "output_dir": "/home/zixuan/projects/MAPPO_wm/artifacts/phase24_runs/pilot_v1/relay/seed_1",
+      "seed": 1,
+      "target_stage_updates": 5000,
+      "task": "relay"
+    },
+    {
+      "command": [
+        "/home/zixuan/projects/MAPPO_wm/.venv/bin/python",
+        "-m",
+        "scripts.phase24",
+        "initial",
+        "--task",
+        "cover",
+        "--seed",
+        "0",
+        "--output-dir",
+        "/home/zixuan/projects/MAPPO_wm/artifacts/phase24_runs/pilot_v1/cover/seed_0",
+        "--data-dir",
+        "/home/zixuan/projects/MAPPO_wm/data/initial_replay/pilot",
+        "--statistics-dir",
+        "/home/zixuan/projects/MAPPO_wm/artifacts/phase23/normalization",
+        "--config-dir",
+        "/home/zixuan/projects/MAPPO_wm/configs",
+        "--profile",
+        "pilot",
+        "--device",
+        "cuda:0",
+        "--microbatch",
+        "4",
+        "--effective-batch",
+        "32",
+        "--burn-in",
+        "16",
+        "--loss-steps",
+        "48",
+        "--precision",
+        "bfloat16",
+        "--checkpoint-every",
+        "250",
+        "--validate-every",
+        "250",
+        "--validation-windows",
+        "16",
+        "--log-every",
+        "10",
+        "--updates",
+        "5000"
+      ],
+      "data": {
+        "initial_normalization": {
+          "file_sha256": "b511a0a92ade7d3d9d4aae4e43534090e0c757b60f895709fdad314bf680f0d9",
+          "identity_sha256": "193d7863d3c0521d3a56d829f96594481652faef6f5410bd765ce2b4cb487e1f"
+        },
+        "replays": [
+          {
+            "dataset_identity_sha256": "3f41e3da1d092852473970f07c44b8deb76e34e2e260df1a242835f7960b411d",
+            "manifest_sha256": "7b1f584a4ef3ed7baf8268405449c5335ff8e0756ddd8e756a90a3e50ffd8a92",
+            "transitions": 50000
+          }
+        ]
+      },
+      "logical_gpu": 0,
+      "output_dir": "/home/zixuan/projects/MAPPO_wm/artifacts/phase24_runs/pilot_v1/cover/seed_0",
+      "seed": 0,
+      "target_stage_updates": 5000,
+      "task": "cover"
+    },
+    {
+      "command": [
+        "/home/zixuan/projects/MAPPO_wm/.venv/bin/python",
+        "-m",
+        "scripts.phase24",
+        "initial",
+        "--task",
+        "cover",
+        "--seed",
+        "1",
+        "--output-dir",
+        "/home/zixuan/projects/MAPPO_wm/artifacts/phase24_runs/pilot_v1/cover/seed_1",
+        "--data-dir",
+        "/home/zixuan/projects/MAPPO_wm/data/initial_replay/pilot",
+        "--statistics-dir",
+        "/home/zixuan/projects/MAPPO_wm/artifacts/phase23/normalization",
+        "--config-dir",
+        "/home/zixuan/projects/MAPPO_wm/configs",
+        "--profile",
+        "pilot",
+        "--device",
+        "cuda:0",
+        "--microbatch",
+        "4",
+        "--effective-batch",
+        "32",
+        "--burn-in",
+        "16",
+        "--loss-steps",
+        "48",
+        "--precision",
+        "bfloat16",
+        "--checkpoint-every",
+        "250",
+        "--validate-every",
+        "250",
+        "--validation-windows",
+        "16",
+        "--log-every",
+        "10",
+        "--updates",
+        "5000"
+      ],
+      "data": {
+        "initial_normalization": {
+          "file_sha256": "b5b448138e3baab8b2ef73cf61089ab24dd4f0964081a83f9a89b863a4d09029",
+          "identity_sha256": "44428b6c6e7f836fe8127dadaa8ebbd180658b6eab78fea836879c27b792e79e"
+        },
+        "replays": [
+          {
+            "dataset_identity_sha256": "385fdf4479a47323041c0ccd4c535aba3713f92138892e0f7bc9efa1d3e138f4",
+            "manifest_sha256": "d03af4cd0f78656f2f468952443807ef8fb8aa5d678b4ea8eae6ab873ee4d108",
+            "transitions": 50000
+          }
+        ]
+      },
+      "logical_gpu": 0,
+      "output_dir": "/home/zixuan/projects/MAPPO_wm/artifacts/phase24_runs/pilot_v1/cover/seed_1",
+      "seed": 1,
+      "target_stage_updates": 5000,
+      "task": "cover"
+    }
+  ],
+  "memory_note": "microbatch controls each worker's memory; aggregate GPU memory is measured on the server",
+  "mode": "parallel independent workers",
+  "new_environment_interactions": 0,
+  "optimizer_updates_executed": 0,
+  "schema_version": "p24-launch-plan-v1",
+  "settings": {
+    "burn_in": 16,
+    "checkpoint_every": 250,
+    "effective_batch": 32,
+    "gradient_clip": 100.0,
+    "learning_rate": 0.0001,
+    "log_every": 10,
+    "loss_steps": 48,
+    "microbatch": 4,
+    "precision": "bfloat16",
+    "validate_every": 250,
+    "validation_windows": 16,
+    "weight_decay": 0.0001
+  },
+  "stage": "initial",
+  "training_executed": false,
+  "worker_count": 4,
+  "workers_per_gpu": 4
+}

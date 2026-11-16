@@ -1,0 +1,2491 @@
+{
+  "created_at": "2026-11-12T13:43:10.655496+00:00",
+  "distillation_run": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation",
+  "fresh_local_ppo_optimizers": true,
+  "full_d_pipeline_implemented": false,
+  "initial_imported_versions": {
+    "actor": "51cde6fb174cb6b82b5999097ee4b3fb6754a1f7aa243df62fc9d0cba0fb3fb5",
+    "critic": "2ca90868843be2c8b56b95a4432c0c0838fd4ac26211af56dbbfc58366d25a31",
+    "model": "186f5099c3c0e132f1a6bd985bf604743b02284b5b7b6c2c43277ab1a622884f"
+  },
+  "input_provenance": {
+    "bound_files": [
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/run_manifest.json",
+        "sha256": "d27acc058b5b324db9b41dfd372347e6f293cb53689b9034f49451d86f8e2d58"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/run_manifest.sha256",
+        "sha256": "a979540345e94044099b210d3b778d2cf63396467d99807355e4ae7c3943ee9c"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/warm_started_student.json",
+        "sha256": "7fbbd682b118dae0d0dff2d4f6024d50941ab96a5134f104270066ba87e46b9d"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/warm_started_student.sha256",
+        "sha256": "e827d8e48f2bb9610f8f4f035f124d4c83f803a3fbe2e002d248cd246f25df9a"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/teacher/run_manifest.json",
+        "sha256": "50b9a112b9fb1afea346fd492a14906a0f88dbc4c9dd9fa691e66ce0579a9a36"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/teacher/run_manifest.sha256",
+        "sha256": "f9505c4ccc72d6d09cf30acff9b40d85498c6194d582df56bf7cc6c35d51202c"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/teacher/frozen_teacher.json",
+        "sha256": "09e2ffcfc16d9fc4b82f82ecfc59bfb616f8fda4046edd0fc7668fc2f7fb8508"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/teacher/frozen_teacher.sha256",
+        "sha256": "96a67046c21561d8de251bd0776953548af91f3e24010ee88b5d90564fd6a169"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/checkpoints/state_00000229_f1405adb/manifest.json",
+        "sha256": "c5eefd91229b0aebe91d6515621406039876e09753d2759a14ac1169ed77e7e8"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/checkpoints/state_00000229_f1405adb/manifest.sha256",
+        "sha256": "1ff8c84758c8c372da906d4e8a05bae222e923c1f6567828afadec71bb7369df"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/checkpoints/state_00000229_f1405adb/state.pt",
+        "sha256": "d4e39710125081153ca74114656c04a3d43abea2de478ee471872c7c6a7e054e"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/checkpoints/state_00000001_004a354a/manifest.json",
+        "sha256": "1484fc2e3fc0436a215f524b42abc8e344881cf6406ea0976c5e20eeb0128427"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/checkpoints/state_00000001_004a354a/manifest.sha256",
+        "sha256": "638c845b559c7ae766989126e52d9667da422e62e62319a40fe11812475e5e5b"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/checkpoints/state_00000001_004a354a/state.pt",
+        "sha256": "2364d1cf0be1ae0d5ca794443e50b10e09b0660c0ae2d155d2a7d246ce76ec7c"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/teacher/checkpoints/state_00000026_3c8100d6/manifest.json",
+        "sha256": "e0a7d738cae4edc15af95cc2f0d2bdf639728ecc04fff959453c69ee6c03f26f"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/teacher/checkpoints/state_00000026_3c8100d6/manifest.sha256",
+        "sha256": "5d4b3a2ee5fb22f232f333d5e0cf40548a9f841b8bca8b029e2edce321ba34ae"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/teacher/checkpoints/state_00000026_3c8100d6/state.pt",
+        "sha256": "64b4d33470b9621e6f6d6df1ac3a67a6e2aeb6815f3f1d8cfb5e4610c0be0770"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/teacher/checkpoints/state_00000001_1e921978/manifest.json",
+        "sha256": "2d6c6544a2e6884205fd2dde432951179194e5419b1b2d7d0e7fdfc9c7778a4f"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/teacher/checkpoints/state_00000001_1e921978/manifest.sha256",
+        "sha256": "e97ba62e539a8da5b796bef0be787cc0a5785f48aacaca962652a767b340c632"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/teacher/checkpoints/state_00000001_1e921978/state.pt",
+        "sha256": "fdf24589e71ad4b6cf03c16b026ffb1c446ec3493ab674a7ed9ecf00600e91f5"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0000_001d8f12/manifest.json",
+        "sha256": "1d3e2b52a6b01d5151ddfa14108f4b130a7fb967c73fb6dae3e8ae5c912c22d0"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0000_001d8f12/manifest.sha256",
+        "sha256": "76a09fba33ecd503a29f68073afd0e82b0d4af4791f637052438212ddf5febc7"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0000_001d8f12/state.pt",
+        "sha256": "46026e49d983a1972c14c6ade4e1d6d93261ae5f2dce8f23120fba1f20009101"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0001_ae6395d0/manifest.json",
+        "sha256": "e05d89c2e7b499838ab5d29dde8d85b91a65bc8645cc91e0040d512481f511b1"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0001_ae6395d0/manifest.sha256",
+        "sha256": "19fde6ef952a436ced3971abe98289b968dd85cad89b163af9516c183acb70ac"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0001_ae6395d0/state.pt",
+        "sha256": "2b7e9e5315907bc7f8496a7c14e24963fcf68f97f1c7e303572581956a24b1d2"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0002_7827e7e5/manifest.json",
+        "sha256": "4b69d8f5e5ec2fc92806bbc95d4fabccd56e41e37742b5777d26f59aa79f361d"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0002_7827e7e5/manifest.sha256",
+        "sha256": "2b9c0902119d30f493c4ffc14988c250fa999eb0d4133298e30abfebdc28ac30"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0002_7827e7e5/state.pt",
+        "sha256": "ec0ed190dc59f9aa5cf6855a895be0429467d1bd5d40e9e371391ae758939c3c"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0003_9eabbde6/manifest.json",
+        "sha256": "8ef27cd277c2df240ae087c5f015d75a3bcdfb6540f4e65cb17828823a510a4d"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0003_9eabbde6/manifest.sha256",
+        "sha256": "4a7d97726c60c37fc5e400f6c70acc98d45928b59a62db594c2625c7ded1c3db"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0003_9eabbde6/state.pt",
+        "sha256": "e309f2784e09302cabe69f5c07dcaac9de76d2f58474f1ee8251d0d570671eec"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0004_5465bc74/manifest.json",
+        "sha256": "1d9d3b0d34e65cdad43f831bb610a694421bf5b957d30d3be0247281430692a9"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0004_5465bc74/manifest.sha256",
+        "sha256": "3d19f4c362cf5f2fcb39ad5005418d11ae496d7dd15eae06f313d13e24c783ad"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0004_5465bc74/state.pt",
+        "sha256": "79efe131cc428b01ab336ab61ce5e55edee6dda43773d629a165d5edf958d2f5"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0005_60de7fdf/manifest.json",
+        "sha256": "af49f271586b9893a89431fa7ded30c089771ed9cd83df2c07b5652cbd37b500"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0005_60de7fdf/manifest.sha256",
+        "sha256": "31db74b74b7c2dfd7ba655a722a87eee7b656829544d7dba33024a8c379e1f18"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0005_60de7fdf/state.pt",
+        "sha256": "6e640c2e5f6291039ada015b87ade193e98bc82f45f30174795439db454bdb9e"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0006_eb7c3c86/manifest.json",
+        "sha256": "ba36c93dc2046de9f73531e02007094260096b30010817f91a79ed45a80172aa"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0006_eb7c3c86/manifest.sha256",
+        "sha256": "5067ae9711c749a82a92442f9deaf8ce58813906bd7348db2fe644a5fe4e8477"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0006_eb7c3c86/state.pt",
+        "sha256": "0404f97d510556fdbb23418693ebedcf30443aaa509c9e097a51911bc4ed7eb9"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0007_dd854c46/manifest.json",
+        "sha256": "dc0110a2d5367152bb4908635ef94b12ab6fca6cabbe9f5b6053cb7abc9a8905"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0007_dd854c46/manifest.sha256",
+        "sha256": "5bef3f10ac5ac9f12f831f7e009eeed7f35c972df7e572eb6d3ffe20d6c6844f"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0007_dd854c46/state.pt",
+        "sha256": "cc82037e0a8fad1d62dcb5036ef00e67c811c156ba78a4b7965c034a7a1fa425"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0008_981a0c4a/manifest.json",
+        "sha256": "46179118ac1cb4529324db68769e9d18f9d1a03e1bb32802a08761aad1582edf"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0008_981a0c4a/manifest.sha256",
+        "sha256": "e8d6f67ebd949abf962f98de15cd29dad798cc566964ea0e17097ca94d883e34"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0008_981a0c4a/state.pt",
+        "sha256": "e56b68abccb10cf61997ffedc81aa513d80321472c950490e7d44407a11df6e0"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0009_398875ac/manifest.json",
+        "sha256": "c60577cdfa4deb30ea99b910fcfea765b67590865139a9cfbaf87487e3e078f5"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0009_398875ac/manifest.sha256",
+        "sha256": "90d2dd8e118f80d421f045aec9e219a1c170da1cfc5f290659c4f098bf181574"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0009_398875ac/state.pt",
+        "sha256": "9855d3ea3ee72a7d180ed4e7c11be280f8c3c2e33b4c299e9def280e969c2f78"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0010_aa2ae682/manifest.json",
+        "sha256": "51b1c0b27a0cdd5caf7d0bdb3afa58152f72f6c5acdc703cd6b321d7cd1c1b28"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0010_aa2ae682/manifest.sha256",
+        "sha256": "d9f76e20d1ea3d793c47fddc550606b95442a80367b7942a765bb8121bbe69ff"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0010_aa2ae682/state.pt",
+        "sha256": "285f62c61c13922d31ef826d729467d5e91076ac27b93bf81749e9990119fa81"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0011_c90263f1/manifest.json",
+        "sha256": "5f6d4445ff759e47ee6aaccf47ec3a2b1925e8bf1cf1735f9a62afaacd51b8b6"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0011_c90263f1/manifest.sha256",
+        "sha256": "821e0b23149fea7fc250ac41988169551dfa493627f2e32376acd507dbacf36c"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0011_c90263f1/state.pt",
+        "sha256": "2533f722b57c293d1ec656182c328eecc52866d2bd0135cc2897e414706c0046"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0012_87c404e7/manifest.json",
+        "sha256": "38904664a91303b5d16916b31ff310aed9320ca435b011d73bfcbd3bc1d2edc3"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0012_87c404e7/manifest.sha256",
+        "sha256": "83a57688625166e07ae3759b8add646c881556b865b895f75779fc5265bbcde1"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0012_87c404e7/state.pt",
+        "sha256": "da60aa358c4eab8051b00c2a66f486c6cc8799754be761fde3104bd885efb1f6"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0013_e37d1183/manifest.json",
+        "sha256": "1cdb561d6d14c5de6c60ad984fbbee79f0e1b548b04c188aa21674fcb29220c9"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0013_e37d1183/manifest.sha256",
+        "sha256": "aeb9adbc8e318f6de9e97d78e0b92741b8748864eb2460fa85415e45a473060b"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0013_e37d1183/state.pt",
+        "sha256": "60f3fd58c64f7068e39e7abfac0f7838c1b89d7ca82233c2fd8bcb8f5e62d18a"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0014_563ccdf6/manifest.json",
+        "sha256": "5e4ef63f11db1dbc723164c70132a283b2f63f7ce5def71f72766802a9efc865"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0014_563ccdf6/manifest.sha256",
+        "sha256": "38808b8f70ce2772b99abb80ca2db3d59818cacd226efabb876fcf532e80404c"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0014_563ccdf6/state.pt",
+        "sha256": "804fb7f152346dd6486ce1aca6116009f482676c8b5891b2d46b5bac7cffeb48"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0015_220165c3/manifest.json",
+        "sha256": "1d6d5025cfb2dda20419acaecce2cd64d3610696e054c35612f255e0e065cc30"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0015_220165c3/manifest.sha256",
+        "sha256": "f849f981caa21ac308ae0da0f0186a7a2b3a36c25d9587813819ed15fac45173"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0015_220165c3/state.pt",
+        "sha256": "d909c7087f3ffde3c6c7488c6033bfcf5dcaa84bd128614a9a79ffbfbd808244"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0016_61f255c5/manifest.json",
+        "sha256": "66cf75c5643122e72019dd82fa7f5ff008641e437372728ef90c84b63ad8b172"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0016_61f255c5/manifest.sha256",
+        "sha256": "53da62f7ba6203621c17890d75781e747d87b0decd5b3c49d0e1c7199d234e84"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0016_61f255c5/state.pt",
+        "sha256": "815c221063af00710c1b7a67863152cdfd5376ee14d7306b50c0021490965d74"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0017_d59a4434/manifest.json",
+        "sha256": "4a7c9208df498b6cc818be8e5e36bfb87b9a7d9a0d1c0081eef05ab25387a5bd"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0017_d59a4434/manifest.sha256",
+        "sha256": "7034ab8608bae4dc0ececc6840a29ee3d5dce96f5676958161a0fef6cdf041fb"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0017_d59a4434/state.pt",
+        "sha256": "2b71b64450f72ffbf805c7e24abc7c4801b294cc05136f902e4cd4cb9731d476"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0018_acd8ce10/manifest.json",
+        "sha256": "5384ae1aa10712a969a3752c66617fe60163346190f60ef4cff0cbd6295dc7b8"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0018_acd8ce10/manifest.sha256",
+        "sha256": "9a260fe77885678d8dc0472a6b21bd4067109a186816c266991feef1739b92bb"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0018_acd8ce10/state.pt",
+        "sha256": "58ea5c5b08767256073aab844223221e6f7474ab15448f778e498a854da1aa21"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0019_3459c4d6/manifest.json",
+        "sha256": "217739135b629390e7625e0b5cc0b8b649b206e9010534254a772ffcafe2da2a"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0019_3459c4d6/manifest.sha256",
+        "sha256": "e0401d7aca6de280c2601e55bb633f19287abfddb09c3f767ad48918ca6fb96a"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0019_3459c4d6/state.pt",
+        "sha256": "ced1622c777bf980ea283bc99d54c41d606b15c10808d041a0c75ba08506af8e"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0020_ca095386/manifest.json",
+        "sha256": "68e5c207e8e0912e4d499ff23e33db3a82d955e93270ffe585eea16dd9eaf7d1"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0020_ca095386/manifest.sha256",
+        "sha256": "ca1812fadfcef6e042b93b52bf5324a48c8b6aefc198d6f555997e585d5a3126"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0020_ca095386/state.pt",
+        "sha256": "dd1eeb14b5b4e7d1f28940c06f4334ad6ce7d26f84f8ced375b66a3444c6e3a9"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0021_093dfac4/manifest.json",
+        "sha256": "63d526c5e6fbf6c0204a93a1594463a96aa845fcd4730ae9c22940138a54ab33"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0021_093dfac4/manifest.sha256",
+        "sha256": "fe55e55c56e48082c115d4ec1b02646e74aa561814bdf159c4de15ef37b76ab0"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0021_093dfac4/state.pt",
+        "sha256": "8b811e03b35af838b4f5802e2c49c3f251e836a4856b8039bc27cb6ba436bf88"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0022_8d2cdb79/manifest.json",
+        "sha256": "9d40fef1b80a01c0e14d4582a2700d43e4cdcb4f802b5c8282869ebe08860a96"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0022_8d2cdb79/manifest.sha256",
+        "sha256": "2891994c9ed180a00061d2c5907f25b5e91850e65d8ff12bb2d5e518241c9ecc"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0022_8d2cdb79/state.pt",
+        "sha256": "0614f680a7e33d5d3f4a0f74f2ab5ff1bf03fcdcdefbef1939b4d2f44ea48acb"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0023_079636bd/manifest.json",
+        "sha256": "b3bb69e9aa3f92e231228bdf859fe6d1ebe3b90f007db6468c3426abf501e81d"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0023_079636bd/manifest.sha256",
+        "sha256": "b6a4d57d17c1bdf52b258422d172dfa4519bbfc2f0fd288a38730167db409be5"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0023_079636bd/state.pt",
+        "sha256": "80042174c5ae4e6f78d3c7cb1544a5faffc17caf9025bbcb92593834f79e1d03"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0024_a3979950/manifest.json",
+        "sha256": "e6e2c905a2975308ad51a42a28254250034a81ad867063eefff615e090a9b37e"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0024_a3979950/manifest.sha256",
+        "sha256": "6d57a45b622d9aa83c8cfe19d05d18d95927af68fe138b534c6adc7161bc6c33"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0024_a3979950/state.pt",
+        "sha256": "4ab3b4212280ef073cfc1e6d0c8e9c34fc17964db3ab029ae0c9fc0f51facdd7"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0025_2d0b7e77/manifest.json",
+        "sha256": "80d5e193a42c9887d7361703ce4e6a19d568161e85ea61942e3640e1cf716ab3"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0025_2d0b7e77/manifest.sha256",
+        "sha256": "165b49a2d26909addba03febd6520c6d1be470e5308590dc272853d4a4c0334c"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0025_2d0b7e77/state.pt",
+        "sha256": "14cb4c437f49561802c8cf94673ccdba0dfb33b60e57ff63b06f2592ac21593e"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0026_a2eafab4/manifest.json",
+        "sha256": "9cce963bc01fe87fa3ed667c738de76db23b6ad99c144d236eb18a038746c5d0"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0026_a2eafab4/manifest.sha256",
+        "sha256": "390f79ea8d36f3873fc19376eaf3f8b770f80d509c191a63d33536064aec2c7d"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0026_a2eafab4/state.pt",
+        "sha256": "eeea1d8522c52cb1fd60eb7d71a241c59d2c2c54025d2eca7903c50d48134ebd"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0027_1a3d2bfc/manifest.json",
+        "sha256": "d4ac2c4bbd2baeb2137421105ff336721e8dd02477ff9449655fe859223c661f"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0027_1a3d2bfc/manifest.sha256",
+        "sha256": "7cc090636f82e79164b0d8cb902bd26442b3551dc882ade3e9c91a0433db10e9"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0027_1a3d2bfc/state.pt",
+        "sha256": "fdd96813de8c55d5ba2c0630f66a809737acd877def3050a4f9b2f2220e0a28f"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0028_8e36f8c4/manifest.json",
+        "sha256": "18e3f64dd01ccdebda49854fec02e73730cdbb1bc951812c07730aeeab187bf5"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0028_8e36f8c4/manifest.sha256",
+        "sha256": "f269d7e2ae66242cb0ac0aa775494fe101a8c015a919cb0131ecdd8aca1335ac"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0028_8e36f8c4/state.pt",
+        "sha256": "ddc49b7b3e53fbbced2494856e2a846efbcb941ef0e879bb4ce88d36920d3243"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0029_aebacd3b/manifest.json",
+        "sha256": "7017697bb9e118726a92a073567b1115343c50ae5cc06906d8ced3f2f4106355"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0029_aebacd3b/manifest.sha256",
+        "sha256": "b35f70c80599355a1892da06fe2563f5821a7f626005919dcc24942486b0c54f"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0029_aebacd3b/state.pt",
+        "sha256": "77c3fd8baf0af832897e7e8fc711cc5ee918d59d7665cc5ebd1f2f3601a67824"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0030_ce3e6e1d/manifest.json",
+        "sha256": "d5d4a1e90affd70605c29a26746f8a7faa0175b86537e6c592add54cd1dbf095"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0030_ce3e6e1d/manifest.sha256",
+        "sha256": "4ee1917a7bed1ad7d0cf9afa3e8a1fd796b41b3afcf465e8e2ed750fe79ea98e"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0030_ce3e6e1d/state.pt",
+        "sha256": "ee2dc83da7520df88087aba0dbf836047569c361c5ed6cb3cbe62112d9f1fbe1"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0031_321fda58/manifest.json",
+        "sha256": "3adb1f82e173f7073b65bca1ee52e17e665ae8ccb033736690d3216f48d0c493"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0031_321fda58/manifest.sha256",
+        "sha256": "c26fffc3f5f91fee78ce9224a689a54b369ac479fbe08c2104dc8ca8727c54f4"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0031_321fda58/state.pt",
+        "sha256": "9fb1866c54bf7062b9f0bedb3b3626f3b64330a895fdfe9e6b6e7db252f38525"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0032_88d30bc7/manifest.json",
+        "sha256": "fa0ae352abacae0792a0047a7f2fd0ab64db358339f266e6da1af4ea15150223"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0032_88d30bc7/manifest.sha256",
+        "sha256": "e1ff97483f8f65d6ec4d0914044a36ce91fe916e7d7d975da25538ecac887658"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0032_88d30bc7/state.pt",
+        "sha256": "564a2696a05f0fa800b74c1f020f9727121bdf494ed64c56fd349afeb6ddcaf0"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0033_a2ce7355/manifest.json",
+        "sha256": "eeb1b31ab7267da0efce96cb576f1adce21e858a211f2c6fd4502c1db59cbdb7"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0033_a2ce7355/manifest.sha256",
+        "sha256": "d499064b9fb4d853c1556b0dda70fe911c7e14cbaecd1e30e6d8ec66bf2bcdbe"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0033_a2ce7355/state.pt",
+        "sha256": "c4a50935a2fa0fe5d108eb270f265ce5b865baaae03d00c3505d31101c0df8ad"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0034_b4cec50b/manifest.json",
+        "sha256": "27867c826f495fba267daed9ea185d7012c32df8778b8e1ef1cbcccc39bc9cab"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0034_b4cec50b/manifest.sha256",
+        "sha256": "ead6a91cfd50160054dff36950cd13d79fb6560d980eb5979526fec34c4331b9"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0034_b4cec50b/state.pt",
+        "sha256": "f72b40f4de134c02e1195a683d3515cdf5f9c030a1e4bcbaf1f538f2057f6628"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0035_44499442/manifest.json",
+        "sha256": "9c262e81ea659d95b1f828ff012486ecb6cbd85dc093404869a18a4d1176eeb1"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0035_44499442/manifest.sha256",
+        "sha256": "8b76eab747804f82e2c66f0cbd8c1303c28ac9d2ee2149ed49aeeb394ef86777"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0035_44499442/state.pt",
+        "sha256": "ce1c4d858665cfe65b33fc90a2d0c32687a85294c50acb9ad185156e6ac8a8a3"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0036_58271843/manifest.json",
+        "sha256": "dc4fad82ec0020373427e787c1871679957a8f1b1fe8f631503c0a618dbdc4e0"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0036_58271843/manifest.sha256",
+        "sha256": "8f0e18e5e789ae9fd7d594dd5fc9d8ffed6a511157ff9fc5f571cc26ed00c67e"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0036_58271843/state.pt",
+        "sha256": "d311dae423628b712e88e80dd7926ac821e41f42c1cfec79667ed9c37d215fb1"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0037_21c98000/manifest.json",
+        "sha256": "ac906f64e7b33e491b1eba0eb7b3c27991173f772bad254643f87eefbb644f1f"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0037_21c98000/manifest.sha256",
+        "sha256": "d33e675c27bf963c4b1c556f69bf8e57471dca967fdf58183a6f74ccf3e61f70"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0037_21c98000/state.pt",
+        "sha256": "08eb7c1fedd12f21d6b8510daece92307d1ce2223a17ee9beba71710da048ca2"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0038_bf075e4c/manifest.json",
+        "sha256": "aedd0ec0aa28b24d9ed8c81dd33a0bcb69e45828a21b4318b066f6eaad0272b5"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0038_bf075e4c/manifest.sha256",
+        "sha256": "096646b5c3b7af608f6a164b422d2a7320ac90646dfa9095520eaee7553e26e2"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0038_bf075e4c/state.pt",
+        "sha256": "960bb4db00871049a30d05d1aa05dd4858805970829c92be82bbd1b102364964"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0039_3fcb44b7/manifest.json",
+        "sha256": "e7f2345e040f848bdf7e32038713c1c3341047d7b4590dc43602a70f013637eb"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0039_3fcb44b7/manifest.sha256",
+        "sha256": "9f381a516b409ed2be054aa5b3d23564ac4b60d14b7d2b16b528abf8c53bd0e9"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0039_3fcb44b7/state.pt",
+        "sha256": "3be9104bb73f560c2e78db32afd300f3200b2cfb642211e760e2084ec5eccb27"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0040_10f776b5/manifest.json",
+        "sha256": "7db2ca57f3126a281b2ca4f700d592839e213a362d97d1b5b6c19c322e50fa48"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0040_10f776b5/manifest.sha256",
+        "sha256": "1846677d12f10b7d084ce371f8a737669c517cc79ff926100901cabf65b41ee3"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0040_10f776b5/state.pt",
+        "sha256": "d947526b717a9fccd4e72fc7fe497a20e01a7afc1c2b6f66d1da2045c3e879fb"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0041_562daf29/manifest.json",
+        "sha256": "730d8d96773e21c6321e8098eede8d0796247144a4c739999c8aad187de6b437"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0041_562daf29/manifest.sha256",
+        "sha256": "7c792f71760d284be5eb0d6aa9e043444af522c6a3fa5124ab8f49023d5d284f"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0041_562daf29/state.pt",
+        "sha256": "eb1e51bdb5695ce54c61051e0445645c32906181ad8c364b97dae0a03f599b2f"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0042_815cd280/manifest.json",
+        "sha256": "6f307546df24f9d043ee8792d87eccc9b196057bba7b099240d5b84b7c13f78a"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0042_815cd280/manifest.sha256",
+        "sha256": "ea757fcb17a71f1f59241a966ec4412bb58a39baacba0a2b51bd3750c2c9a9a8"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0042_815cd280/state.pt",
+        "sha256": "a47a8a8787931a2c47e44e7b833880b0d886ca931523d6f54e0cdba35a565ef9"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0043_8ce3a258/manifest.json",
+        "sha256": "958c9b52bd2e0690352d16dbdef9032336d914384b72450d5f312cfba162f542"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0043_8ce3a258/manifest.sha256",
+        "sha256": "18c4ffed7ad235ea7c6b3872d6f1c312344760b9ba3542ff24e88a937a99a3b8"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0043_8ce3a258/state.pt",
+        "sha256": "243ebba6f293b6bfe23893df7c1a9bb10672a116acb2280515ae2820db07b3b8"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0044_0c9d5d0a/manifest.json",
+        "sha256": "f941b770eea9bc9f26eb239e9c7bc0dc9ed5099d71868b0eb6de41be0bdb0b72"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0044_0c9d5d0a/manifest.sha256",
+        "sha256": "327eb0bd4cb5164c5aae73c42076ce42a3a271398c96efeb979ef0af06b1a31b"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0044_0c9d5d0a/state.pt",
+        "sha256": "88c724b1f0152fa11d6714f975db42fe1d35b489d5fd644e2b5a0f099b75756c"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0045_12208c22/manifest.json",
+        "sha256": "cbed2941ea9b1ebe447122c0005c08f0fd887fa6b19379d5d86107ec3a2b973a"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0045_12208c22/manifest.sha256",
+        "sha256": "3eec79a7e7cbd825cd153f9e10a59854359249984d9c7971da1268961a7004d8"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0045_12208c22/state.pt",
+        "sha256": "ec50d0f277083ee3b49ac18338b14b38b368d6f8ade43b6ecdcf903170eb490f"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0046_81a00b50/manifest.json",
+        "sha256": "ca5d91a75441bf99690eb7e805480bf7ff813c624cd481cf25d589cd828d2507"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0046_81a00b50/manifest.sha256",
+        "sha256": "c3a888ed8223fc90615016c94055365836e6609d0b1a04d215ec1eb53af660ac"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0046_81a00b50/state.pt",
+        "sha256": "77eaf11e1bde1710b100d3045bd4444cd1c090f3b8708b9ffe310191176d97a4"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0047_9b4202ef/manifest.json",
+        "sha256": "2efb3db0ba322555d6c05c70c8166052fa21074623743e1dded04e71ad698bea"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0047_9b4202ef/manifest.sha256",
+        "sha256": "9183ee1453d48d143c3d90256fe9b2d0aac46089ba0ae594dc311c3e72ddf790"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0047_9b4202ef/state.pt",
+        "sha256": "dfeff7d90f0de373037aef5e5d761b511505df577a0cf78c5ea0a22c3142c698"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0048_c4880d4a/manifest.json",
+        "sha256": "42e72316f49b65c8ba298efc68fc69c51eccf610e4481f8f2a31afddc036fafe"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0048_c4880d4a/manifest.sha256",
+        "sha256": "43051e852d93f8018237d4d4c8513c664dec689832ebc849b406518ee36ed32c"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0048_c4880d4a/state.pt",
+        "sha256": "0235b01287ca7ace7370b217adac05c8032d6d0cb77a73cb1dbe3bbf4b4c82c6"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0049_2cdf7b99/manifest.json",
+        "sha256": "6ea63ccf73ac5d6a5f549311373ec4a5ff4d88336fcda0283167f26de0a0fb4e"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0049_2cdf7b99/manifest.sha256",
+        "sha256": "30683e52a850782efd7683dfa1c1241cb00705e5fbc1e83f0ae62f095aad5e3a"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0049_2cdf7b99/state.pt",
+        "sha256": "161c2e615e1facec781fb2d58cc0efbcdb5c7ebcdca9c542252b9fd3860c97a9"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0050_8f7a9367/manifest.json",
+        "sha256": "020cc68feec682e60e298506457e85ac1f152c605cbf2719d4726c38c1f57fc1"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0050_8f7a9367/manifest.sha256",
+        "sha256": "337f9ed5184488e62cb6d700f1502e61773170bdaba4ac8cd45066bc45eae865"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0050_8f7a9367/state.pt",
+        "sha256": "e062b109cc8e4339e94aadb7130a981ed11367d9564fe53561de2b36fa7b17e3"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0051_7e9e281e/manifest.json",
+        "sha256": "64927107e3fe3cfd15011772d66d9a2e3f3ec310c056c9b2e5565808f59d4dd3"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0051_7e9e281e/manifest.sha256",
+        "sha256": "4dfaf5805495e0cd3831f4e9620168a8041af626e22cf973ad0b126b660ca79f"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0051_7e9e281e/state.pt",
+        "sha256": "bf7aba87b2c5b5079bc5f54a6a09fd01dfaecce8780b5eb400baf9830bf630ba"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0052_6b6cc086/manifest.json",
+        "sha256": "fb16f5e6555c4d0bcfd6f5d8747a92a317fe6cd800691a08c9eb3b4ded7b672a"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0052_6b6cc086/manifest.sha256",
+        "sha256": "7f55b258f8534ee40a6a15a8c5e0d0d1101f4a38dfb1c87d253c3d906b29def9"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0052_6b6cc086/state.pt",
+        "sha256": "d577c1a6bf7ebf3cde1781e7c0340d4cc4d32a128ba3093969b96afd5c567073"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0053_9cb42896/manifest.json",
+        "sha256": "478a7c83d316e372b6e12986f5f60efa0adcb257d59f24bb7c58113f1ee7f29d"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0053_9cb42896/manifest.sha256",
+        "sha256": "8c2bbbc75b45524c9fe818e34960eedec56b86b8b1e6f6d689be30fae5080ac1"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0053_9cb42896/state.pt",
+        "sha256": "44008658c7326a1438cf8a6065fbdf4d778e49e9b1270983469825d57c86d9b6"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0054_49f538f4/manifest.json",
+        "sha256": "b816f82491bce44aa8b3e2fc5a02566a62b015565208a9744e3a6d750109f634"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0054_49f538f4/manifest.sha256",
+        "sha256": "53b7d38d86bf45945ceef665d0f807a690e9df8300f298f7194d6ab5bf5b53e3"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0054_49f538f4/state.pt",
+        "sha256": "4514ffc8ece66801740e489290a50860d6d5ad817940de2d4bf35072b93c0444"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0055_8c7590d2/manifest.json",
+        "sha256": "74e8d60bcd6ae9c55f9c63d3508c19b09fb71118541c1fd61aeb0bec7db45077"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0055_8c7590d2/manifest.sha256",
+        "sha256": "78f16fa7f6987e25245686992559e585874e847f1cecb1cd0d0f6126696a2e7c"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0055_8c7590d2/state.pt",
+        "sha256": "22a10e8845125772fc039af65d8762b2a92bc3996855e503bf745cb41ff68a62"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0056_98310415/manifest.json",
+        "sha256": "c892121ebb96fcbd74611f712f2246a703d6f64aefe9054441366255885ee751"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0056_98310415/manifest.sha256",
+        "sha256": "8f83f8bec5916bac06ad30f874d720e1f06e2a1f6af4f0e7e9828e924b4fb72f"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0056_98310415/state.pt",
+        "sha256": "af6f0348c215db656cb2dcb5dd0f2308d8f8a2ae282079516d3ac850c211c370"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0057_36f89b7e/manifest.json",
+        "sha256": "b8c87c5ab0f17d8737bcffecd482e811d7025c7dc23e0a2d7d0fee37a2d1414c"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0057_36f89b7e/manifest.sha256",
+        "sha256": "211e702628acfbf9d5fee505c7c96ff4b78dcad87d6f70aa2a501d5a6c4000a7"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0057_36f89b7e/state.pt",
+        "sha256": "b53c3800d976f9cbbdad4703071cd79f2006bcf8beda0f0183f34562a87bcf22"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0058_3b331267/manifest.json",
+        "sha256": "688a0f428ac4b1eb7333560b4293e31776779b8600bcbf5b826eb80e6459b8a9"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0058_3b331267/manifest.sha256",
+        "sha256": "745d6ae0a5b0649752e04ca199b54495cd9261094754459c523863dfd36f1ff5"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0058_3b331267/state.pt",
+        "sha256": "c7edd7c20f0126514a44d48da3a28f1660146b9c8bff794c6e12f32390b6a2ba"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0059_4ee0966d/manifest.json",
+        "sha256": "7b1606b5bf862123434116aa4b52e8c21b4a98241cd19b03965f5b3b5d05fa50"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0059_4ee0966d/manifest.sha256",
+        "sha256": "9388961dd59e6be6737f97ecaf0dc9c067258e720ae95421cf562fdef1203160"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0059_4ee0966d/state.pt",
+        "sha256": "c02c46d668f11f7f97ea87536bc3c7243b2de2d69b4f3d12f14fc3ab6bd1d52e"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0060_fcdb7b32/manifest.json",
+        "sha256": "8714d1bf2825f381cc3f92d0c38c8cf1ab1543a2883445190282d13053f3aaea"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0060_fcdb7b32/manifest.sha256",
+        "sha256": "542eea7d633e3bf5571acd08b3d3d2aa513c82622c07c28f82c67d606a965d0a"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0060_fcdb7b32/state.pt",
+        "sha256": "a6ee08e76ab4973359bd3a56adf76556f91d7023d623388b89d08a04b4664608"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0061_fab5d8c3/manifest.json",
+        "sha256": "c695e25ab5dee148a5a2f831ef65363938abe20278267fd22fb2cd6bb8ee1ee4"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0061_fab5d8c3/manifest.sha256",
+        "sha256": "0f5f38ff59227d8c178091e82960c31aadeb977579b6c428cd2fbc2ff4a7cc7a"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0061_fab5d8c3/state.pt",
+        "sha256": "c60693b6ca7c9bc2ce932acd50a4d78feab70ddcdfdc3d2324f354ddd9f56b49"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0062_409d9b69/manifest.json",
+        "sha256": "f6e636e0ba7a90595f2abb33f090d048d92a9ee7bdfb249bad882432239c1d77"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0062_409d9b69/manifest.sha256",
+        "sha256": "556fb320c337409b90a63330916bc6c7e8b14fbaca035fe90e3376f272a87172"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0062_409d9b69/state.pt",
+        "sha256": "54adfa37c6d589989f26c781c1f80311bd4a9990ddae943f1fdcf953eb1e39f1"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0063_a985dba9/manifest.json",
+        "sha256": "b775e850a91bc919118437345feb0b909339b86156c6d2060bc4617901fefb71"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0063_a985dba9/manifest.sha256",
+        "sha256": "852a80ff75278d917f3701ec2945b284dab88872fe0f541ca087d8a2978553a6"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0063_a985dba9/state.pt",
+        "sha256": "db286632cf0badd90d085487d944f42cd58865495458d0fab9f33b8d2028f781"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0064_a56fac83/manifest.json",
+        "sha256": "3544672ef21a51e8b2124904bceea3e9d32c206f1ed653a22aef6a00401c6544"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0064_a56fac83/manifest.sha256",
+        "sha256": "fda1f0a7d0eb973e33a51c4b9b5d838cc01823e5525de497acb9e4321e24e4f6"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0064_a56fac83/state.pt",
+        "sha256": "97be6ecd95315f3059e370f25be56a24b835916fa82c24a7ece19799f5800e8a"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0065_5e82087a/manifest.json",
+        "sha256": "951542d74caf7d8aa446d7209317d3c2aebf62c3769959b41a578bedb10713e3"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0065_5e82087a/manifest.sha256",
+        "sha256": "0c791290263c017d2fdf4eff821819df189a98e5514f31bfa9028af59d3d32e5"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0065_5e82087a/state.pt",
+        "sha256": "35b1f407190fd3341c2e05b98cdf0d6c5750d41daf4001045b26118bc2fdf528"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0066_0d0b99cd/manifest.json",
+        "sha256": "61b801fa796c83108a76420f7d8285e5d0a28425065c08b1c0aab2ecd3ca310e"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0066_0d0b99cd/manifest.sha256",
+        "sha256": "4c0a320e277d3d2f8254437850e86887134cc54c5bf92d6fafbdfb275a8cde47"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0066_0d0b99cd/state.pt",
+        "sha256": "4f30b792d5cd4b54210b7f5d99752428859ea94d76522a0d9224782336261675"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0067_55b52e2b/manifest.json",
+        "sha256": "74e5661e6d3406ac61685b23d438b6f9d3fe6b9909169d0787a55ac76102379b"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0067_55b52e2b/manifest.sha256",
+        "sha256": "4e50828659b28f6821094b94fd784087f8f38c70e9d5ff6211f8731298ba18fd"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0067_55b52e2b/state.pt",
+        "sha256": "b6a46d989e03a11972c31ee3e4ca7cf15fd2a398ea838a1a6e1708d97a768af7"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0068_11d2f6fc/manifest.json",
+        "sha256": "b3b9fcd6bffb77deb7297046530d09d251107f992d59f58630bbf45dbf707274"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0068_11d2f6fc/manifest.sha256",
+        "sha256": "5226603e87109264b7ba4cf18de2dc2763cf53fec86b7dd03b211d00c3d4d7f4"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0068_11d2f6fc/state.pt",
+        "sha256": "a6fb415eb89fa7590ca1878509eb62169d9309dacada15b284a53517204c4e02"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0069_6397d3ec/manifest.json",
+        "sha256": "47f964fb160f02d41a1e8446ac039cf98bc06a2687dad963fed8ef42b9c32fc2"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0069_6397d3ec/manifest.sha256",
+        "sha256": "165640bdd15153ad64c72dbd03a1207f597f7650350335a7e488f843278ef2e6"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0069_6397d3ec/state.pt",
+        "sha256": "5ee0a47011f540758272871e9e00622d7b31fe5a524ae73c45db4b62c2734256"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0070_6f50e64a/manifest.json",
+        "sha256": "bf2ddbbf9d37f0ec9ff8f59587e738ddc1f3009a36e95ece63de295c7a2b15a6"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0070_6f50e64a/manifest.sha256",
+        "sha256": "013d96a30624695a5636c6117dcc83a4b5fe605fff255fb4710ef22c4f03495e"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0070_6f50e64a/state.pt",
+        "sha256": "2d41f7ac0b9f6ddb3298d9cc1e53ec3e62100f62afa81bc03cbd0b99be994783"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0071_9b49da17/manifest.json",
+        "sha256": "c294c257784bbe04254a0ad1d651d03849b16c9f9fec40ae2fc592dcef14785e"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0071_9b49da17/manifest.sha256",
+        "sha256": "506d85a517d694100e38a5906c1d6dff3043569fd70f62c5274b9ebedb775cc4"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0071_9b49da17/state.pt",
+        "sha256": "dd7fd10b3fe9cb19f2894dd81f5154b89812a02980d282185e02fde42e316dc6"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0072_aac4af5c/manifest.json",
+        "sha256": "ca88d6cafbed484e4d980132efdcfe64a42642e43b4178195dc22bdc8d062734"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0072_aac4af5c/manifest.sha256",
+        "sha256": "9ec386badde7970f786f3b752839f5c91e4668fcc5d3c22ed0d6e2840c47663d"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0072_aac4af5c/state.pt",
+        "sha256": "e851bee083a7382df330b54711cd4e8aef875c156b1375343bc0451a38684556"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0073_f48936c2/manifest.json",
+        "sha256": "54bc0c50a5363556259b53b83d68f7b9353fcc294a3c09bb1a38abf5fa1a3b26"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0073_f48936c2/manifest.sha256",
+        "sha256": "7fd80e3892cd2b59e3008052a3f4f55953d6a4a4ca05de0a2ce8bbcca8f6bb44"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0073_f48936c2/state.pt",
+        "sha256": "376938827db73600fb3791296c87fcc4aee526432ed284e28c0e533d64d9db3c"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0074_1adb2444/manifest.json",
+        "sha256": "3f64a7bd04230f8fa96c5253abc23bcfef06a9e1f59d4ced81a3198ec17d67e0"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0074_1adb2444/manifest.sha256",
+        "sha256": "147e5e2d36106a8e91b76e815dbd5d3f914cabcc54d992f01fdabfd2eca63a22"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0074_1adb2444/state.pt",
+        "sha256": "d22802d2794cd8c0fa1f7a044d3a981161541ff1c9788710d91dca909ac83762"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0075_7c6b4e8e/manifest.json",
+        "sha256": "46cf71a7d994ee716d30c3223d61157455b1759d0e6fbec7dc72a7cee27492b8"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0075_7c6b4e8e/manifest.sha256",
+        "sha256": "716e41a43865440aa7e393b770dd18421be18c5779f424c139dfa9b5a2a8df69"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0075_7c6b4e8e/state.pt",
+        "sha256": "5c06c42362c1db580cdd7563f666ea2e1a83434986d1f76b8b18ad38f5c200e6"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0076_eedf280e/manifest.json",
+        "sha256": "0709b392fc10f0c6f14a072ea620244d5b32be1545b9df35af15bade5b5658b6"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0076_eedf280e/manifest.sha256",
+        "sha256": "3b43fef3feeedc13d8ac8209cb292234ef9d5f4d0a0b2afa4b8001de0ae9de57"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0076_eedf280e/state.pt",
+        "sha256": "c6ff9f72d084a6c5d70d82076c640fad6c11bfecc4a1b3334550ef83d3a02999"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0077_39e9921c/manifest.json",
+        "sha256": "ade2f589f74f116858bf4dba6faed1edf338df448c864758b5e051e75c5092b1"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0077_39e9921c/manifest.sha256",
+        "sha256": "10014750a649da7165b2a4f0e1128d43e397441674a324ee8b401809b02bfc01"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0077_39e9921c/state.pt",
+        "sha256": "375f5e87a6005297bcd8475744adabaa20cbea48caa430efd6a14bffa4e27bb9"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0078_c8c89d96/manifest.json",
+        "sha256": "888582654c76f436dfd7a62bccb6a7fea518c851ab53c699c3876799439f9138"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0078_c8c89d96/manifest.sha256",
+        "sha256": "5d466c62cf6d2fe288041cee21f60f32864b209f3dec7042a00b6dc1c4a07b5a"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0078_c8c89d96/state.pt",
+        "sha256": "17c599761d8647c05dd88cfd2686bdb7fc79e93ef7e482567c2128f13f16b221"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0079_ddd2c9b6/manifest.json",
+        "sha256": "c65bf87c65ecd81f7d0b7393daeca09f6a3c32b0b1f13ab59d4cf8a1c0f7d141"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0079_ddd2c9b6/manifest.sha256",
+        "sha256": "05ee0e7861cf5716ccc3b48906197051d86aa4c3f57e91284e9f91f45ec0fb5d"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0079_ddd2c9b6/state.pt",
+        "sha256": "beb36c6f7299317fd396a5b3c9f604569207f2cc52a70057c0966d774de1084e"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0080_2d082ad5/manifest.json",
+        "sha256": "784da87114af9a6b73d5b16713844c5005ee9fc6d39a8ff2416313499f9e5534"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0080_2d082ad5/manifest.sha256",
+        "sha256": "764d4210bc8554692761dd181d759647694198697b7d315acad8e8863aa8caa6"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0080_2d082ad5/state.pt",
+        "sha256": "545dc49e0e339298580adf051f81ffe332eb3ca42e12f4319177ecc287cebfe3"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0081_1f001f6e/manifest.json",
+        "sha256": "90537872989fa241a3a187753576b3307c38b2403a3e966705776972a11555dd"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0081_1f001f6e/manifest.sha256",
+        "sha256": "74466251768656d69252f3f0e6c1253332987d4817122f393b98504e5d8bbdf6"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0081_1f001f6e/state.pt",
+        "sha256": "faa2616a89b94a48f46e00dcbc4a2479e3814159f526d4b2ba0c2fec68920ffa"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0082_62b5adf3/manifest.json",
+        "sha256": "e09a66aa0525fc5c0674684d717b3c8ce03096b2723cda9a619a9f760670fb0f"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0082_62b5adf3/manifest.sha256",
+        "sha256": "33c25a6caa9fff33e5cff5a0fae1ddfbc0f4424e156392ee555d178d4fdde9b3"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0082_62b5adf3/state.pt",
+        "sha256": "11cac5c04c2205790882145af2966ff0f913e166e68d9afa615f1f9e506e83ec"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0083_a36e3f88/manifest.json",
+        "sha256": "70287c91c9daa9c1aea0846e4a74dac88d4cd641244360617e05b1386ebfcf9b"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0083_a36e3f88/manifest.sha256",
+        "sha256": "eee23848c4792d609c9aa0246dae22a3cbc2b18bade49bf12a74ba89fd046351"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0083_a36e3f88/state.pt",
+        "sha256": "a27b4497c0c121e93640177e7014296afaa73f1efe02f5ca248476cf3f7a7248"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0084_b20d71a1/manifest.json",
+        "sha256": "bcd53b430dcaa0ff98c07ebe4a29091494f8baaa9836df7cf60215fc4bee7fee"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0084_b20d71a1/manifest.sha256",
+        "sha256": "a89045791f51a3707e8d3f2c2e2053992d5889eeb77de70f2271bba0a14d0ffc"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0084_b20d71a1/state.pt",
+        "sha256": "d1978395802d70cfd40361d721768b90a91c6b8c2cd99f2cf5dc528db3699ff9"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0085_f7874b1c/manifest.json",
+        "sha256": "e771b54a0466bd9d03dcfdb0ae754f3db98d0ef8bfde3978ca5a160a7b87ddda"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0085_f7874b1c/manifest.sha256",
+        "sha256": "ad90a88aa33601e7623684601ff075eb6c150642e6edcce944a44c56c4ebcc35"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0085_f7874b1c/state.pt",
+        "sha256": "70471c7f43d3aa63041b5185c19973995560c5ee68dbb0b119d7cd74eae76902"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0086_f1109a5d/manifest.json",
+        "sha256": "672a415ca9c2593930930b4be3b3d5e7d3852f753d01cf9da9ebd4b3bcfe6d69"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0086_f1109a5d/manifest.sha256",
+        "sha256": "0957754f1298d962554b39005b309ad9ed46e8971770f184b34e45cd8df2c99e"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0086_f1109a5d/state.pt",
+        "sha256": "24e3a1ea69a27722a87c82517ab46f8af9ca060de17608682d22a4d88c3ea115"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0087_b04f2b42/manifest.json",
+        "sha256": "c672c024a9be1a1ebb7a0d8e6b1598a2b1963a44d05e2da0358d83a04af9689a"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0087_b04f2b42/manifest.sha256",
+        "sha256": "a7d57f017b1ebac1e572e9ef072c4b89210d279d1d789d6f39e9be74b3dc6ff8"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0087_b04f2b42/state.pt",
+        "sha256": "991478a6ec779c830b285078bc303281fadc0aad46823ead995a8beda8d11ec8"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0088_3c1fb4ed/manifest.json",
+        "sha256": "9ed1392b442cf3eeb13cfe283d5f4aae101f2b18c9bcf6f93b0a7796b228b20b"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0088_3c1fb4ed/manifest.sha256",
+        "sha256": "25083cb92536d38d46d447888f3c6b6b45a9cfd231f2792f98d5e57614d5f448"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0088_3c1fb4ed/state.pt",
+        "sha256": "a288c3df8c9691135144698b451a146869fecaa26a8cc11dd1ba9fb2a230c94e"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0089_aa3ab98e/manifest.json",
+        "sha256": "ddf6ba5afbd52b8be7441bafdc1509d64ddf22d02d2a743fadc57f0d84247172"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0089_aa3ab98e/manifest.sha256",
+        "sha256": "3f20499463fabc31aa268fb0a29cd580a3e03c7475b4c3a6962249612eaedc1d"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0089_aa3ab98e/state.pt",
+        "sha256": "2025dc29aabc4fc31bdf839e8f0888c8e88079ebe40bf8cbcc99bfa8d700bcdd"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0090_f733d0bd/manifest.json",
+        "sha256": "75bc429b788ecc3aadbbd86cc1c40dc2f6fc701a826d4919757c22cbc70ac058"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0090_f733d0bd/manifest.sha256",
+        "sha256": "8434b0480aed42a088f616d4374cc554b1c938be05b32639a121d6a8429b1cc9"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0090_f733d0bd/state.pt",
+        "sha256": "62c16680d3a92e5f5494e3fa5bbacf52d793ce56e9f4033b0a9e53fd8600c420"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0091_6f292500/manifest.json",
+        "sha256": "a77616dea01e100fc9bbfacfed00f33550d51c1c4d8339690b2630ff6b9dfe31"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0091_6f292500/manifest.sha256",
+        "sha256": "aeb8a89f4f9381fa43254fc0b9b1f9206406ebe7a52daaee60ea38974d14d72c"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0091_6f292500/state.pt",
+        "sha256": "1750b09e13769bd1745010242e567af6e4ec56393196b5df37e184b63cb6f5a8"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0092_db459bcb/manifest.json",
+        "sha256": "eb09970c545e6e3109d4d2ac02bc6214337c0dc90c007a2243fa7bdfbc1a7654"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0092_db459bcb/manifest.sha256",
+        "sha256": "912dacb5411e04a9a452c58071e61d95e7aecd80f7d7589c1dd0775a6bf150d0"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0092_db459bcb/state.pt",
+        "sha256": "c20f7ffce95671524dabb640406ce0db0f243cb0ef395eb5559b2633bba51337"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0093_57a0b814/manifest.json",
+        "sha256": "c947b265adc95e9c38d788fe33bd23ec6e6aec301e50f4c3b8e7077b9e800198"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0093_57a0b814/manifest.sha256",
+        "sha256": "6bae9763234905b2b6c5442467442afd1ae17d13e2ed46ec5f81820fc8614168"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0093_57a0b814/state.pt",
+        "sha256": "5716c433a5cc27571eb4d8702da29e251b313d840f5b0803c3c7afadedc42dae"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0094_37f25cac/manifest.json",
+        "sha256": "75c428b629947cafc4e54073fb8de99e4ebaa00232324b3f158553becb89b6d2"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0094_37f25cac/manifest.sha256",
+        "sha256": "d3896ee57ba76bff72476310e231449530b2282ef516f49853c1e3ac472dfeae"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0094_37f25cac/state.pt",
+        "sha256": "a35c23e35435b77e7fbd778e33a8528ef4bd18517854e2ef91e04a97b79b8750"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0095_e144787d/manifest.json",
+        "sha256": "b23cf03c2ab2f8def87720bd1faeed3c4ddaae067b201f4bc5723920e8622de3"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0095_e144787d/manifest.sha256",
+        "sha256": "c247f5ab7f8ac0e0a0cb6e9fbf16db3c99bc8a95a0b14cbaf93b524cef31f101"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0095_e144787d/state.pt",
+        "sha256": "fadc7efc3a86249e8ab59456fedeac694d3a1aac6977fd8be850ce5b502491e9"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0096_9e3b143f/manifest.json",
+        "sha256": "347445228897ffdc3e6908122129d57237a79735e6cbe5c008b318baa43b8772"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0096_9e3b143f/manifest.sha256",
+        "sha256": "e2b0a8cc53d11d969e0b4a356047f3328b11d4402d738efa87038bfaba6ab22c"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0096_9e3b143f/state.pt",
+        "sha256": "294daae4ad66253c9a9a5fec9a0c3a25ddc9faec28e164f69ce3548b3f4d1325"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0097_6720551e/manifest.json",
+        "sha256": "ac5414047086f029af5231e73673f2b593feec4089a45971559171917d5b9e12"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0097_6720551e/manifest.sha256",
+        "sha256": "1d915503914f82ccc551d50403991a87a607c94c766de48ab6dae6e5436321b6"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0097_6720551e/state.pt",
+        "sha256": "44bf28ffb8e45edbdc8c19afc3171b7464200c2a59744cc4f850ac5d93df027c"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0098_bc04c7bf/manifest.json",
+        "sha256": "1c682adddfe7f9858262a0caf652eb872c594db935438afe0fd64cce1a5bc7fd"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0098_bc04c7bf/manifest.sha256",
+        "sha256": "5e260a3bcc03399cff0515e455b7310398bdb33ebf9a444ce1df3e1c8a3263e9"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0098_bc04c7bf/state.pt",
+        "sha256": "4ff3230db1ab4e216dbf13fe20da7d7d56b8d03fb1150f4a4ab683f119eed1fc"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0099_bb07a39d/manifest.json",
+        "sha256": "2d4c40429692e5fee47ad68914a9f12cb7e71feddaf78891ad3c7ce9c095713b"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0099_bb07a39d/manifest.sha256",
+        "sha256": "9fe1c71f890953e090f226656caad9fa1a76afd8e819f94d1166fa3b430e478b"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0099_bb07a39d/state.pt",
+        "sha256": "0a706f9fee972e6e9a7da712f5db48fee425ad3ac192b0c40560419e6fe14095"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0100_68bc3519/manifest.json",
+        "sha256": "362e10fda8c4549e9961e5f0f66981eb7667d68156c6f3ad8c1c1347ab92800a"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0100_68bc3519/manifest.sha256",
+        "sha256": "5e5c0ae99bb17b4002471ce414d6fff5c8e33f4c62ab1ea5cdb7a9b2c94e7b36"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0100_68bc3519/state.pt",
+        "sha256": "1491cba90cabc7902be05566507bcc290f6def551a793ed16ac3d47583e9204e"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0101_831a6466/manifest.json",
+        "sha256": "6b411c75bf45a00c694c5ebc430928e527acbf7d2b0bb9bf22f8a369703e8bfc"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0101_831a6466/manifest.sha256",
+        "sha256": "fc8a93575f1a624beb1279d0166d0372c0e88743fee1465f87ea7685f3d74635"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0101_831a6466/state.pt",
+        "sha256": "0e4de298f443598c02c9587a6214bd11d5c418e33d243c35c3e750831dbb4407"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0102_958540b3/manifest.json",
+        "sha256": "53409192fd5cdf5d9b5d5ede48eeb793926dbe62dabd97ffe2a0b79574c8df2f"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0102_958540b3/manifest.sha256",
+        "sha256": "83efb3ae36c3daa9b30c1041cb2aa41a756da47840a600fbb2a1f90b411b5535"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0102_958540b3/state.pt",
+        "sha256": "d7d0f7ea2f1e32f6ddbbcbce83b23f548c1a3d8668fcb12bb4c0a138b7b67c96"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0103_8cb125ea/manifest.json",
+        "sha256": "8967c9407ff269dae8025eed65395a24b3c46e1a75d9ded68dfcaa951fcf56f4"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0103_8cb125ea/manifest.sha256",
+        "sha256": "97afe62bf1e6d56be8167aa92f20a03b357db61424f1bcee9e229662eca99a91"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0103_8cb125ea/state.pt",
+        "sha256": "5d3470aad1aff66422141eda0b74b759d492e9e9a7573163c1be0f00b36bb1df"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0104_24e4e475/manifest.json",
+        "sha256": "8d746e0544819424a2ccb0c596fbdb8deb90e3832d3b2d577a9cbaf04d6165ee"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0104_24e4e475/manifest.sha256",
+        "sha256": "b8e5a049ef926a9132318d93fd773472347cea811061b9b8ea371993d7b5c74f"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0104_24e4e475/state.pt",
+        "sha256": "9e8d793f360b30e32c40e50f0e411ab119e17df1714dd0b6dd4d21cb97624b23"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0105_743d9626/manifest.json",
+        "sha256": "9c55d6c216e22f02ac1b144837f05e6dd3d03be75a165d2954f6981df772de10"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0105_743d9626/manifest.sha256",
+        "sha256": "4412954ac2139ff57b316471dddd64cc813b32ee8f12406e3aeb34f2fec87101"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0105_743d9626/state.pt",
+        "sha256": "69b4694ba068fa485a56cd6fd511a2c2402f375db419183b4826dc5844f4af02"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0106_97fee4ef/manifest.json",
+        "sha256": "773c9ebeb3d89ba08f850b826058a31537c0bf9b2140015dc3109eb4f4be29a8"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0106_97fee4ef/manifest.sha256",
+        "sha256": "0d1d853cee8738ba9907ac455e1e17371631374815080c05629f72c57c72fca1"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0106_97fee4ef/state.pt",
+        "sha256": "408b50496243698b54aa2117ddd7724cb6bb734c085c4aced0d05db2eb8f3a29"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0107_bed11717/manifest.json",
+        "sha256": "e9e06619dc6f6b3d7eaac06102b16fa48917407e59892a7e2fe8aa2e1ea9b163"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0107_bed11717/manifest.sha256",
+        "sha256": "bc5c59238d5765a33088c1a58b6d8262887184350b298cfadb6e69c865a5d6f3"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0107_bed11717/state.pt",
+        "sha256": "d746537cfe98cf4fd8210e4c13cf35f714bad8e0c3475e7c80a84ff3022f83b3"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0108_46226cd5/manifest.json",
+        "sha256": "689e60d91d47caf279f794ac2baedfcb453872ac22838a35a74e14d328fa1850"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0108_46226cd5/manifest.sha256",
+        "sha256": "5a8a2a92e17b2427bc61b89356797f7ba0e4dbaa4e6a10394e408bf1d5216cfa"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0108_46226cd5/state.pt",
+        "sha256": "7d497f1136d4d9035e7a8a6d0a9375da87f355e044f45073a1651b3bc1eae4f0"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0109_241ee886/manifest.json",
+        "sha256": "668056c1469bb4b5cacfe89c54a38994296d7eb8de26b93dbabddce4b1455105"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0109_241ee886/manifest.sha256",
+        "sha256": "23218e77375731d8f596867ade1ad3d2c07ebe8c25c3a123f460c451e07a6cd4"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0109_241ee886/state.pt",
+        "sha256": "3eabadc6af280df5372162e5260ae5fbeeda2337d921485c9559f786987ec161"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0110_30af7102/manifest.json",
+        "sha256": "5217f51109d10a67325e6c1e80fafc6b16b7a627d5f1560437f0d19649e68d91"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0110_30af7102/manifest.sha256",
+        "sha256": "7cb15eecd5d8cf743fa2fca722a5eed05986d39ebe753d7d25eaa2a157bf150b"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0110_30af7102/state.pt",
+        "sha256": "82290f9c2a77493eabcb720e1d551bc83484eb56252a74a3ea0e8a7f9620b04d"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0111_70b8690d/manifest.json",
+        "sha256": "bd4fc455f8a02034341ae08dbb1ac758185275ba2d01eec958080c78305245c5"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0111_70b8690d/manifest.sha256",
+        "sha256": "66424859db6a9cd6bfd23c620f3a030871aa356cba9c6110b49e47cce77c20e6"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0111_70b8690d/state.pt",
+        "sha256": "9c81e19407239de592c1b90d11c6f3c1e68a0b24e02f42d5f1d370ea7596fe30"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0112_40a1ad81/manifest.json",
+        "sha256": "881e89581cf9bfa53296cba62f5180c9b721dfe537303b308dd02451bfe3afe7"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0112_40a1ad81/manifest.sha256",
+        "sha256": "fd483c101f14eb1e4028d3aa1e95bbc2c75da8b5386c917adf068549d396994a"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0112_40a1ad81/state.pt",
+        "sha256": "99da28302c765ec7992b150a1905c5a2579e6702a44e27db96484aa5e961221f"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0113_72cef295/manifest.json",
+        "sha256": "bb09eb134371e28d8318a8aafe7adbb14023f4671572adf32e89339ee70a7ad2"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0113_72cef295/manifest.sha256",
+        "sha256": "278d1746fad281c59bfbb07cb52eea37a95798f120cd80c342a6fbf73258ddf3"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0113_72cef295/state.pt",
+        "sha256": "14e7d1d52062b22c88dfd4542245c7d9b4a721eeb46e936a9e09cb85f8826082"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0114_28f62af9/manifest.json",
+        "sha256": "299da3d7c2bc261725814249b58e466656ed722fe54504244ca0b889b7d1fa3b"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0114_28f62af9/manifest.sha256",
+        "sha256": "6fe19ccd74a63a655c0c8be82cf261b6825c2ee2508be29eef940524dc8b96f0"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0114_28f62af9/state.pt",
+        "sha256": "42810dac2b9ee202bcf2dd94cf0b18c822e67a086391e2fa28c51f55143be928"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0115_3c8cba93/manifest.json",
+        "sha256": "8c8a6fdac8f5aa381eb09a67babb7e4fb23a05d65ddada0d3d994e477c48e082"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0115_3c8cba93/manifest.sha256",
+        "sha256": "bb93d5804adc24b23ffc10e8dc8f77ab0702b2ff4033c42f6bd75cbb97a68ab8"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0115_3c8cba93/state.pt",
+        "sha256": "25e3c90d81c000cee5e391c9633b2b4cb305af04d81f6ec90895dcddc84d05d6"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0116_5b73b1ca/manifest.json",
+        "sha256": "97a080b37d976ae1e6bc27784fcb9e181dc8ce79d238a2b8ed91235428903671"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0116_5b73b1ca/manifest.sha256",
+        "sha256": "8278fd5249fb98c1da53b3e839f223f860a83d633d506cd047ef2c298cd515fb"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0116_5b73b1ca/state.pt",
+        "sha256": "2673297823840c78c942f773591b31693959c5761c98257e1d900764b2b42339"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0117_885142c0/manifest.json",
+        "sha256": "206dba2b21e80127e856c52e970c6ef3877ad253aaf3cc862705bd66b8297e86"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0117_885142c0/manifest.sha256",
+        "sha256": "5adafc552a4bd86135664a82d542ea6e41c7935b4bfa99cb8a0a012ad87ac169"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0117_885142c0/state.pt",
+        "sha256": "8da50628a9815d84e87122e7576ea037252016ac7ccbee466cb7373631eb3a0c"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0118_8f86cf38/manifest.json",
+        "sha256": "1e29718e76e06b7c11414cbbed4f46536c605e5abbebb456d35fbccebfd0fec2"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0118_8f86cf38/manifest.sha256",
+        "sha256": "fb8675c9c567c99e8bcd6114a80ae3ae509fb672ce6f160ea7f2f4ef614a3c86"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0118_8f86cf38/state.pt",
+        "sha256": "151b0ca18a3fed364bb35ad5478a186900deb9576e07b3256fc3df6932b99098"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0119_d260e027/manifest.json",
+        "sha256": "2970b58ad024ebd442fc988399ad17f9a796cd2c9add8917be637e20fa62ad9a"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0119_d260e027/manifest.sha256",
+        "sha256": "658be3e247441ae5958c34a4f76865615391d0d29e78f8bcf5db0708f1e5dc31"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0119_d260e027/state.pt",
+        "sha256": "2b63285bdef6fc9922c2b14fdd9b14401bd70a2f10ce33d407713c2cff130574"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0120_a5e41461/manifest.json",
+        "sha256": "84026bcb20abaeaef80ed3f02a6b4a4569b88834f551ae124c6c99bfaceb6a7a"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0120_a5e41461/manifest.sha256",
+        "sha256": "f78c612f2e79184adc133ce21ee36a080bd4c8af42477543ad53f4873d6f423c"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0120_a5e41461/state.pt",
+        "sha256": "e53bd549282984e3607007529ee91815cda396e2e719383573ca48c45e64634c"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0121_3b69ce81/manifest.json",
+        "sha256": "3bfe7ccbe89126eafda466f9938d8724f28743f9e9df6ac0dc9dc777450486a5"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0121_3b69ce81/manifest.sha256",
+        "sha256": "34fb385eb54d18d3f7530df71ab5126422d6dbd70a211c5abc53cbaaf6920539"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0121_3b69ce81/state.pt",
+        "sha256": "0efcb46c78ba55694cb1a617347020fd5147543180b56fcf23055b4c0c5c4694"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0122_29f618d7/manifest.json",
+        "sha256": "1a7172d21e69fc0f04bd45aefa6b34239f9ac3caa6208864eda3edd554e9309b"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0122_29f618d7/manifest.sha256",
+        "sha256": "c2e5a4dfac9ae55ff3a62a602213a7ff8db24de517f128eded72dd69b154f90b"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0122_29f618d7/state.pt",
+        "sha256": "6173ebd7b444bfa37fe0fc0cf359e1b88a052a9cfab241c0aa30db90e5134cc1"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0123_20323c6c/manifest.json",
+        "sha256": "51243a03eea829a4561ea53b5961868e3f21adc2a4b86cffbadf740a701ee56f"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0123_20323c6c/manifest.sha256",
+        "sha256": "217f635186bc28d3d7815a9d94dd33941521bae1100e421b49a3f87f8bb9f7db"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0123_20323c6c/state.pt",
+        "sha256": "dd9fdf3deab6042f12a0ad9af9d92d616e13ca5468c5eff97cbe6e4b889ed2d2"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0124_56f23e59/manifest.json",
+        "sha256": "11ac0f0e681354502f5cfa3e4ecb42d77ce18576756e39b3767ebb370673199a"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0124_56f23e59/manifest.sha256",
+        "sha256": "0e137eff2f882e96ab94cc7b9528af0b0b3179444ec625eec043c843a17ed6f2"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0124_56f23e59/state.pt",
+        "sha256": "3cd519816d3037a5907cba078b9cab6561d491f1f1b496b28a70e483d4d2d035"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0125_20d0bed3/manifest.json",
+        "sha256": "fab66c61d164e76cb243e0ccb55aec1b44f2c93282630f397d3d90b6c8a2eaf1"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0125_20d0bed3/manifest.sha256",
+        "sha256": "4fe531d03b83102c261e09668c6e1bfebe75686f100dc7500a0246a33d8f9ef9"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0125_20d0bed3/state.pt",
+        "sha256": "52c2e3177956cf650caf2d6c3661a45234a00b00aeec52239ca878d8e5dd8638"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0126_99046eee/manifest.json",
+        "sha256": "943143d10af604f9580f02f0c93853c14fe5497e4f609a480cb621e36e2911db"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0126_99046eee/manifest.sha256",
+        "sha256": "a9bfb05479b12e3d8aeec79b6707753c34370c6cfb9b67adefeae9fd80b4a3b3"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0126_99046eee/state.pt",
+        "sha256": "10f9a1d73d370c920bde7bb03f45f4a1b93d6e8a29a31d83c31cc3038ac7fa69"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0127_a6ff2f4d/manifest.json",
+        "sha256": "3312943d05c17057b3493c0d522aaa91b59c936673d5e0d2fe41046e05827a59"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0127_a6ff2f4d/manifest.sha256",
+        "sha256": "93e24797cae613bf586d646d29f09c8685ebf1f2c5149eba85bafe386f02ea59"
+      },
+      {
+        "path": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/distillation/buffer/trajectory_0127_a6ff2f4d/state.pt",
+        "sha256": "a8779f385f503de25f058827f820e0a9c302e97dbe8e351d9bd54d6ab86bdd1b"
+      }
+    ],
+    "buffer_shards": [
+      {
+        "manifest_sha256": "1d3e2b52a6b01d5151ddfa14108f4b130a7fb967c73fb6dae3e8ae5c912c22d0",
+        "path": "buffer/trajectory_0000_001d8f12",
+        "payload_sha256": "46026e49d983a1972c14c6ade4e1d6d93261ae5f2dce8f23120fba1f20009101"
+      },
+      {
+        "manifest_sha256": "e05d89c2e7b499838ab5d29dde8d85b91a65bc8645cc91e0040d512481f511b1",
+        "path": "buffer/trajectory_0001_ae6395d0",
+        "payload_sha256": "2b7e9e5315907bc7f8496a7c14e24963fcf68f97f1c7e303572581956a24b1d2"
+      },
+      {
+        "manifest_sha256": "4b69d8f5e5ec2fc92806bbc95d4fabccd56e41e37742b5777d26f59aa79f361d",
+        "path": "buffer/trajectory_0002_7827e7e5",
+        "payload_sha256": "ec0ed190dc59f9aa5cf6855a895be0429467d1bd5d40e9e371391ae758939c3c"
+      },
+      {
+        "manifest_sha256": "8ef27cd277c2df240ae087c5f015d75a3bcdfb6540f4e65cb17828823a510a4d",
+        "path": "buffer/trajectory_0003_9eabbde6",
+        "payload_sha256": "e309f2784e09302cabe69f5c07dcaac9de76d2f58474f1ee8251d0d570671eec"
+      },
+      {
+        "manifest_sha256": "1d9d3b0d34e65cdad43f831bb610a694421bf5b957d30d3be0247281430692a9",
+        "path": "buffer/trajectory_0004_5465bc74",
+        "payload_sha256": "79efe131cc428b01ab336ab61ce5e55edee6dda43773d629a165d5edf958d2f5"
+      },
+      {
+        "manifest_sha256": "af49f271586b9893a89431fa7ded30c089771ed9cd83df2c07b5652cbd37b500",
+        "path": "buffer/trajectory_0005_60de7fdf",
+        "payload_sha256": "6e640c2e5f6291039ada015b87ade193e98bc82f45f30174795439db454bdb9e"
+      },
+      {
+        "manifest_sha256": "ba36c93dc2046de9f73531e02007094260096b30010817f91a79ed45a80172aa",
+        "path": "buffer/trajectory_0006_eb7c3c86",
+        "payload_sha256": "0404f97d510556fdbb23418693ebedcf30443aaa509c9e097a51911bc4ed7eb9"
+      },
+      {
+        "manifest_sha256": "dc0110a2d5367152bb4908635ef94b12ab6fca6cabbe9f5b6053cb7abc9a8905",
+        "path": "buffer/trajectory_0007_dd854c46",
+        "payload_sha256": "cc82037e0a8fad1d62dcb5036ef00e67c811c156ba78a4b7965c034a7a1fa425"
+      },
+      {
+        "manifest_sha256": "46179118ac1cb4529324db68769e9d18f9d1a03e1bb32802a08761aad1582edf",
+        "path": "buffer/trajectory_0008_981a0c4a",
+        "payload_sha256": "e56b68abccb10cf61997ffedc81aa513d80321472c950490e7d44407a11df6e0"
+      },
+      {
+        "manifest_sha256": "c60577cdfa4deb30ea99b910fcfea765b67590865139a9cfbaf87487e3e078f5",
+        "path": "buffer/trajectory_0009_398875ac",
+        "payload_sha256": "9855d3ea3ee72a7d180ed4e7c11be280f8c3c2e33b4c299e9def280e969c2f78"
+      },
+      {
+        "manifest_sha256": "51b1c0b27a0cdd5caf7d0bdb3afa58152f72f6c5acdc703cd6b321d7cd1c1b28",
+        "path": "buffer/trajectory_0010_aa2ae682",
+        "payload_sha256": "285f62c61c13922d31ef826d729467d5e91076ac27b93bf81749e9990119fa81"
+      },
+      {
+        "manifest_sha256": "5f6d4445ff759e47ee6aaccf47ec3a2b1925e8bf1cf1735f9a62afaacd51b8b6",
+        "path": "buffer/trajectory_0011_c90263f1",
+        "payload_sha256": "2533f722b57c293d1ec656182c328eecc52866d2bd0135cc2897e414706c0046"
+      },
+      {
+        "manifest_sha256": "38904664a91303b5d16916b31ff310aed9320ca435b011d73bfcbd3bc1d2edc3",
+        "path": "buffer/trajectory_0012_87c404e7",
+        "payload_sha256": "da60aa358c4eab8051b00c2a66f486c6cc8799754be761fde3104bd885efb1f6"
+      },
+      {
+        "manifest_sha256": "1cdb561d6d14c5de6c60ad984fbbee79f0e1b548b04c188aa21674fcb29220c9",
+        "path": "buffer/trajectory_0013_e37d1183",
+        "payload_sha256": "60f3fd58c64f7068e39e7abfac0f7838c1b89d7ca82233c2fd8bcb8f5e62d18a"
+      },
+      {
+        "manifest_sha256": "5e4ef63f11db1dbc723164c70132a283b2f63f7ce5def71f72766802a9efc865",
+        "path": "buffer/trajectory_0014_563ccdf6",
+        "payload_sha256": "804fb7f152346dd6486ce1aca6116009f482676c8b5891b2d46b5bac7cffeb48"
+      },
+      {
+        "manifest_sha256": "1d6d5025cfb2dda20419acaecce2cd64d3610696e054c35612f255e0e065cc30",
+        "path": "buffer/trajectory_0015_220165c3",
+        "payload_sha256": "d909c7087f3ffde3c6c7488c6033bfcf5dcaa84bd128614a9a79ffbfbd808244"
+      },
+      {
+        "manifest_sha256": "66cf75c5643122e72019dd82fa7f5ff008641e437372728ef90c84b63ad8b172",
+        "path": "buffer/trajectory_0016_61f255c5",
+        "payload_sha256": "815c221063af00710c1b7a67863152cdfd5376ee14d7306b50c0021490965d74"
+      },
+      {
+        "manifest_sha256": "4a7c9208df498b6cc818be8e5e36bfb87b9a7d9a0d1c0081eef05ab25387a5bd",
+        "path": "buffer/trajectory_0017_d59a4434",
+        "payload_sha256": "2b71b64450f72ffbf805c7e24abc7c4801b294cc05136f902e4cd4cb9731d476"
+      },
+      {
+        "manifest_sha256": "5384ae1aa10712a969a3752c66617fe60163346190f60ef4cff0cbd6295dc7b8",
+        "path": "buffer/trajectory_0018_acd8ce10",
+        "payload_sha256": "58ea5c5b08767256073aab844223221e6f7474ab15448f778e498a854da1aa21"
+      },
+      {
+        "manifest_sha256": "217739135b629390e7625e0b5cc0b8b649b206e9010534254a772ffcafe2da2a",
+        "path": "buffer/trajectory_0019_3459c4d6",
+        "payload_sha256": "ced1622c777bf980ea283bc99d54c41d606b15c10808d041a0c75ba08506af8e"
+      },
+      {
+        "manifest_sha256": "68e5c207e8e0912e4d499ff23e33db3a82d955e93270ffe585eea16dd9eaf7d1",
+        "path": "buffer/trajectory_0020_ca095386",
+        "payload_sha256": "dd1eeb14b5b4e7d1f28940c06f4334ad6ce7d26f84f8ced375b66a3444c6e3a9"
+      },
+      {
+        "manifest_sha256": "63d526c5e6fbf6c0204a93a1594463a96aa845fcd4730ae9c22940138a54ab33",
+        "path": "buffer/trajectory_0021_093dfac4",
+        "payload_sha256": "8b811e03b35af838b4f5802e2c49c3f251e836a4856b8039bc27cb6ba436bf88"
+      },
+      {
+        "manifest_sha256": "9d40fef1b80a01c0e14d4582a2700d43e4cdcb4f802b5c8282869ebe08860a96",
+        "path": "buffer/trajectory_0022_8d2cdb79",
+        "payload_sha256": "0614f680a7e33d5d3f4a0f74f2ab5ff1bf03fcdcdefbef1939b4d2f44ea48acb"
+      },
+      {
+        "manifest_sha256": "b3bb69e9aa3f92e231228bdf859fe6d1ebe3b90f007db6468c3426abf501e81d",
+        "path": "buffer/trajectory_0023_079636bd",
+        "payload_sha256": "80042174c5ae4e6f78d3c7cb1544a5faffc17caf9025bbcb92593834f79e1d03"
+      },
+      {
+        "manifest_sha256": "e6e2c905a2975308ad51a42a28254250034a81ad867063eefff615e090a9b37e",
+        "path": "buffer/trajectory_0024_a3979950",
+        "payload_sha256": "4ab3b4212280ef073cfc1e6d0c8e9c34fc17964db3ab029ae0c9fc0f51facdd7"
+      },
+      {
+        "manifest_sha256": "80d5e193a42c9887d7361703ce4e6a19d568161e85ea61942e3640e1cf716ab3",
+        "path": "buffer/trajectory_0025_2d0b7e77",
+        "payload_sha256": "14cb4c437f49561802c8cf94673ccdba0dfb33b60e57ff63b06f2592ac21593e"
+      },
+      {
+        "manifest_sha256": "9cce963bc01fe87fa3ed667c738de76db23b6ad99c144d236eb18a038746c5d0",
+        "path": "buffer/trajectory_0026_a2eafab4",
+        "payload_sha256": "eeea1d8522c52cb1fd60eb7d71a241c59d2c2c54025d2eca7903c50d48134ebd"
+      },
+      {
+        "manifest_sha256": "d4ac2c4bbd2baeb2137421105ff336721e8dd02477ff9449655fe859223c661f",
+        "path": "buffer/trajectory_0027_1a3d2bfc",
+        "payload_sha256": "fdd96813de8c55d5ba2c0630f66a809737acd877def3050a4f9b2f2220e0a28f"
+      },
+      {
+        "manifest_sha256": "18e3f64dd01ccdebda49854fec02e73730cdbb1bc951812c07730aeeab187bf5",
+        "path": "buffer/trajectory_0028_8e36f8c4",
+        "payload_sha256": "ddc49b7b3e53fbbced2494856e2a846efbcb941ef0e879bb4ce88d36920d3243"
+      },
+      {
+        "manifest_sha256": "7017697bb9e118726a92a073567b1115343c50ae5cc06906d8ced3f2f4106355",
+        "path": "buffer/trajectory_0029_aebacd3b",
+        "payload_sha256": "77c3fd8baf0af832897e7e8fc711cc5ee918d59d7665cc5ebd1f2f3601a67824"
+      },
+      {
+        "manifest_sha256": "d5d4a1e90affd70605c29a26746f8a7faa0175b86537e6c592add54cd1dbf095",
+        "path": "buffer/trajectory_0030_ce3e6e1d",
+        "payload_sha256": "ee2dc83da7520df88087aba0dbf836047569c361c5ed6cb3cbe62112d9f1fbe1"
+      },
+      {
+        "manifest_sha256": "3adb1f82e173f7073b65bca1ee52e17e665ae8ccb033736690d3216f48d0c493",
+        "path": "buffer/trajectory_0031_321fda58",
+        "payload_sha256": "9fb1866c54bf7062b9f0bedb3b3626f3b64330a895fdfe9e6b6e7db252f38525"
+      },
+      {
+        "manifest_sha256": "fa0ae352abacae0792a0047a7f2fd0ab64db358339f266e6da1af4ea15150223",
+        "path": "buffer/trajectory_0032_88d30bc7",
+        "payload_sha256": "564a2696a05f0fa800b74c1f020f9727121bdf494ed64c56fd349afeb6ddcaf0"
+      },
+      {
+        "manifest_sha256": "eeb1b31ab7267da0efce96cb576f1adce21e858a211f2c6fd4502c1db59cbdb7",
+        "path": "buffer/trajectory_0033_a2ce7355",
+        "payload_sha256": "c4a50935a2fa0fe5d108eb270f265ce5b865baaae03d00c3505d31101c0df8ad"
+      },
+      {
+        "manifest_sha256": "27867c826f495fba267daed9ea185d7012c32df8778b8e1ef1cbcccc39bc9cab",
+        "path": "buffer/trajectory_0034_b4cec50b",
+        "payload_sha256": "f72b40f4de134c02e1195a683d3515cdf5f9c030a1e4bcbaf1f538f2057f6628"
+      },
+      {
+        "manifest_sha256": "9c262e81ea659d95b1f828ff012486ecb6cbd85dc093404869a18a4d1176eeb1",
+        "path": "buffer/trajectory_0035_44499442",
+        "payload_sha256": "ce1c4d858665cfe65b33fc90a2d0c32687a85294c50acb9ad185156e6ac8a8a3"
+      },
+      {
+        "manifest_sha256": "dc4fad82ec0020373427e787c1871679957a8f1b1fe8f631503c0a618dbdc4e0",
+        "path": "buffer/trajectory_0036_58271843",
+        "payload_sha256": "d311dae423628b712e88e80dd7926ac821e41f42c1cfec79667ed9c37d215fb1"
+      },
+      {
+        "manifest_sha256": "ac906f64e7b33e491b1eba0eb7b3c27991173f772bad254643f87eefbb644f1f",
+        "path": "buffer/trajectory_0037_21c98000",
+        "payload_sha256": "08eb7c1fedd12f21d6b8510daece92307d1ce2223a17ee9beba71710da048ca2"
+      },
+      {
+        "manifest_sha256": "aedd0ec0aa28b24d9ed8c81dd33a0bcb69e45828a21b4318b066f6eaad0272b5",
+        "path": "buffer/trajectory_0038_bf075e4c",
+        "payload_sha256": "960bb4db00871049a30d05d1aa05dd4858805970829c92be82bbd1b102364964"
+      },
+      {
+        "manifest_sha256": "e7f2345e040f848bdf7e32038713c1c3341047d7b4590dc43602a70f013637eb",
+        "path": "buffer/trajectory_0039_3fcb44b7",
+        "payload_sha256": "3be9104bb73f560c2e78db32afd300f3200b2cfb642211e760e2084ec5eccb27"
+      },
+      {
+        "manifest_sha256": "7db2ca57f3126a281b2ca4f700d592839e213a362d97d1b5b6c19c322e50fa48",
+        "path": "buffer/trajectory_0040_10f776b5",
+        "payload_sha256": "d947526b717a9fccd4e72fc7fe497a20e01a7afc1c2b6f66d1da2045c3e879fb"
+      },
+      {
+        "manifest_sha256": "730d8d96773e21c6321e8098eede8d0796247144a4c739999c8aad187de6b437",
+        "path": "buffer/trajectory_0041_562daf29",
+        "payload_sha256": "eb1e51bdb5695ce54c61051e0445645c32906181ad8c364b97dae0a03f599b2f"
+      },
+      {
+        "manifest_sha256": "6f307546df24f9d043ee8792d87eccc9b196057bba7b099240d5b84b7c13f78a",
+        "path": "buffer/trajectory_0042_815cd280",
+        "payload_sha256": "a47a8a8787931a2c47e44e7b833880b0d886ca931523d6f54e0cdba35a565ef9"
+      },
+      {
+        "manifest_sha256": "958c9b52bd2e0690352d16dbdef9032336d914384b72450d5f312cfba162f542",
+        "path": "buffer/trajectory_0043_8ce3a258",
+        "payload_sha256": "243ebba6f293b6bfe23893df7c1a9bb10672a116acb2280515ae2820db07b3b8"
+      },
+      {
+        "manifest_sha256": "f941b770eea9bc9f26eb239e9c7bc0dc9ed5099d71868b0eb6de41be0bdb0b72",
+        "path": "buffer/trajectory_0044_0c9d5d0a",
+        "payload_sha256": "88c724b1f0152fa11d6714f975db42fe1d35b489d5fd644e2b5a0f099b75756c"
+      },
+      {
+        "manifest_sha256": "cbed2941ea9b1ebe447122c0005c08f0fd887fa6b19379d5d86107ec3a2b973a",
+        "path": "buffer/trajectory_0045_12208c22",
+        "payload_sha256": "ec50d0f277083ee3b49ac18338b14b38b368d6f8ade43b6ecdcf903170eb490f"
+      },
+      {
+        "manifest_sha256": "ca5d91a75441bf99690eb7e805480bf7ff813c624cd481cf25d589cd828d2507",
+        "path": "buffer/trajectory_0046_81a00b50",
+        "payload_sha256": "77eaf11e1bde1710b100d3045bd4444cd1c090f3b8708b9ffe310191176d97a4"
+      },
+      {
+        "manifest_sha256": "2efb3db0ba322555d6c05c70c8166052fa21074623743e1dded04e71ad698bea",
+        "path": "buffer/trajectory_0047_9b4202ef",
+        "payload_sha256": "dfeff7d90f0de373037aef5e5d761b511505df577a0cf78c5ea0a22c3142c698"
+      },
+      {
+        "manifest_sha256": "42e72316f49b65c8ba298efc68fc69c51eccf610e4481f8f2a31afddc036fafe",
+        "path": "buffer/trajectory_0048_c4880d4a",
+        "payload_sha256": "0235b01287ca7ace7370b217adac05c8032d6d0cb77a73cb1dbe3bbf4b4c82c6"
+      },
+      {
+        "manifest_sha256": "6ea63ccf73ac5d6a5f549311373ec4a5ff4d88336fcda0283167f26de0a0fb4e",
+        "path": "buffer/trajectory_0049_2cdf7b99",
+        "payload_sha256": "161c2e615e1facec781fb2d58cc0efbcdb5c7ebcdca9c542252b9fd3860c97a9"
+      },
+      {
+        "manifest_sha256": "020cc68feec682e60e298506457e85ac1f152c605cbf2719d4726c38c1f57fc1",
+        "path": "buffer/trajectory_0050_8f7a9367",
+        "payload_sha256": "e062b109cc8e4339e94aadb7130a981ed11367d9564fe53561de2b36fa7b17e3"
+      },
+      {
+        "manifest_sha256": "64927107e3fe3cfd15011772d66d9a2e3f3ec310c056c9b2e5565808f59d4dd3",
+        "path": "buffer/trajectory_0051_7e9e281e",
+        "payload_sha256": "bf7aba87b2c5b5079bc5f54a6a09fd01dfaecce8780b5eb400baf9830bf630ba"
+      },
+      {
+        "manifest_sha256": "fb16f5e6555c4d0bcfd6f5d8747a92a317fe6cd800691a08c9eb3b4ded7b672a",
+        "path": "buffer/trajectory_0052_6b6cc086",
+        "payload_sha256": "d577c1a6bf7ebf3cde1781e7c0340d4cc4d32a128ba3093969b96afd5c567073"
+      },
+      {
+        "manifest_sha256": "478a7c83d316e372b6e12986f5f60efa0adcb257d59f24bb7c58113f1ee7f29d",
+        "path": "buffer/trajectory_0053_9cb42896",
+        "payload_sha256": "44008658c7326a1438cf8a6065fbdf4d778e49e9b1270983469825d57c86d9b6"
+      },
+      {
+        "manifest_sha256": "b816f82491bce44aa8b3e2fc5a02566a62b015565208a9744e3a6d750109f634",
+        "path": "buffer/trajectory_0054_49f538f4",
+        "payload_sha256": "4514ffc8ece66801740e489290a50860d6d5ad817940de2d4bf35072b93c0444"
+      },
+      {
+        "manifest_sha256": "74e8d60bcd6ae9c55f9c63d3508c19b09fb71118541c1fd61aeb0bec7db45077",
+        "path": "buffer/trajectory_0055_8c7590d2",
+        "payload_sha256": "22a10e8845125772fc039af65d8762b2a92bc3996855e503bf745cb41ff68a62"
+      },
+      {
+        "manifest_sha256": "c892121ebb96fcbd74611f712f2246a703d6f64aefe9054441366255885ee751",
+        "path": "buffer/trajectory_0056_98310415",
+        "payload_sha256": "af6f0348c215db656cb2dcb5dd0f2308d8f8a2ae282079516d3ac850c211c370"
+      },
+      {
+        "manifest_sha256": "b8c87c5ab0f17d8737bcffecd482e811d7025c7dc23e0a2d7d0fee37a2d1414c",
+        "path": "buffer/trajectory_0057_36f89b7e",
+        "payload_sha256": "b53c3800d976f9cbbdad4703071cd79f2006bcf8beda0f0183f34562a87bcf22"
+      },
+      {
+        "manifest_sha256": "688a0f428ac4b1eb7333560b4293e31776779b8600bcbf5b826eb80e6459b8a9",
+        "path": "buffer/trajectory_0058_3b331267",
+        "payload_sha256": "c7edd7c20f0126514a44d48da3a28f1660146b9c8bff794c6e12f32390b6a2ba"
+      },
+      {
+        "manifest_sha256": "7b1606b5bf862123434116aa4b52e8c21b4a98241cd19b03965f5b3b5d05fa50",
+        "path": "buffer/trajectory_0059_4ee0966d",
+        "payload_sha256": "c02c46d668f11f7f97ea87536bc3c7243b2de2d69b4f3d12f14fc3ab6bd1d52e"
+      },
+      {
+        "manifest_sha256": "8714d1bf2825f381cc3f92d0c38c8cf1ab1543a2883445190282d13053f3aaea",
+        "path": "buffer/trajectory_0060_fcdb7b32",
+        "payload_sha256": "a6ee08e76ab4973359bd3a56adf76556f91d7023d623388b89d08a04b4664608"
+      },
+      {
+        "manifest_sha256": "c695e25ab5dee148a5a2f831ef65363938abe20278267fd22fb2cd6bb8ee1ee4",
+        "path": "buffer/trajectory_0061_fab5d8c3",
+        "payload_sha256": "c60693b6ca7c9bc2ce932acd50a4d78feab70ddcdfdc3d2324f354ddd9f56b49"
+      },
+      {
+        "manifest_sha256": "f6e636e0ba7a90595f2abb33f090d048d92a9ee7bdfb249bad882432239c1d77",
+        "path": "buffer/trajectory_0062_409d9b69",
+        "payload_sha256": "54adfa37c6d589989f26c781c1f80311bd4a9990ddae943f1fdcf953eb1e39f1"
+      },
+      {
+        "manifest_sha256": "b775e850a91bc919118437345feb0b909339b86156c6d2060bc4617901fefb71",
+        "path": "buffer/trajectory_0063_a985dba9",
+        "payload_sha256": "db286632cf0badd90d085487d944f42cd58865495458d0fab9f33b8d2028f781"
+      },
+      {
+        "manifest_sha256": "3544672ef21a51e8b2124904bceea3e9d32c206f1ed653a22aef6a00401c6544",
+        "path": "buffer/trajectory_0064_a56fac83",
+        "payload_sha256": "97be6ecd95315f3059e370f25be56a24b835916fa82c24a7ece19799f5800e8a"
+      },
+      {
+        "manifest_sha256": "951542d74caf7d8aa446d7209317d3c2aebf62c3769959b41a578bedb10713e3",
+        "path": "buffer/trajectory_0065_5e82087a",
+        "payload_sha256": "35b1f407190fd3341c2e05b98cdf0d6c5750d41daf4001045b26118bc2fdf528"
+      },
+      {
+        "manifest_sha256": "61b801fa796c83108a76420f7d8285e5d0a28425065c08b1c0aab2ecd3ca310e",
+        "path": "buffer/trajectory_0066_0d0b99cd",
+        "payload_sha256": "4f30b792d5cd4b54210b7f5d99752428859ea94d76522a0d9224782336261675"
+      },
+      {
+        "manifest_sha256": "74e5661e6d3406ac61685b23d438b6f9d3fe6b9909169d0787a55ac76102379b",
+        "path": "buffer/trajectory_0067_55b52e2b",
+        "payload_sha256": "b6a46d989e03a11972c31ee3e4ca7cf15fd2a398ea838a1a6e1708d97a768af7"
+      },
+      {
+        "manifest_sha256": "b3b9fcd6bffb77deb7297046530d09d251107f992d59f58630bbf45dbf707274",
+        "path": "buffer/trajectory_0068_11d2f6fc",
+        "payload_sha256": "a6fb415eb89fa7590ca1878509eb62169d9309dacada15b284a53517204c4e02"
+      },
+      {
+        "manifest_sha256": "47f964fb160f02d41a1e8446ac039cf98bc06a2687dad963fed8ef42b9c32fc2",
+        "path": "buffer/trajectory_0069_6397d3ec",
+        "payload_sha256": "5ee0a47011f540758272871e9e00622d7b31fe5a524ae73c45db4b62c2734256"
+      },
+      {
+        "manifest_sha256": "bf2ddbbf9d37f0ec9ff8f59587e738ddc1f3009a36e95ece63de295c7a2b15a6",
+        "path": "buffer/trajectory_0070_6f50e64a",
+        "payload_sha256": "2d41f7ac0b9f6ddb3298d9cc1e53ec3e62100f62afa81bc03cbd0b99be994783"
+      },
+      {
+        "manifest_sha256": "c294c257784bbe04254a0ad1d651d03849b16c9f9fec40ae2fc592dcef14785e",
+        "path": "buffer/trajectory_0071_9b49da17",
+        "payload_sha256": "dd7fd10b3fe9cb19f2894dd81f5154b89812a02980d282185e02fde42e316dc6"
+      },
+      {
+        "manifest_sha256": "ca88d6cafbed484e4d980132efdcfe64a42642e43b4178195dc22bdc8d062734",
+        "path": "buffer/trajectory_0072_aac4af5c",
+        "payload_sha256": "e851bee083a7382df330b54711cd4e8aef875c156b1375343bc0451a38684556"
+      },
+      {
+        "manifest_sha256": "54bc0c50a5363556259b53b83d68f7b9353fcc294a3c09bb1a38abf5fa1a3b26",
+        "path": "buffer/trajectory_0073_f48936c2",
+        "payload_sha256": "376938827db73600fb3791296c87fcc4aee526432ed284e28c0e533d64d9db3c"
+      },
+      {
+        "manifest_sha256": "3f64a7bd04230f8fa96c5253abc23bcfef06a9e1f59d4ced81a3198ec17d67e0",
+        "path": "buffer/trajectory_0074_1adb2444",
+        "payload_sha256": "d22802d2794cd8c0fa1f7a044d3a981161541ff1c9788710d91dca909ac83762"
+      },
+      {
+        "manifest_sha256": "46cf71a7d994ee716d30c3223d61157455b1759d0e6fbec7dc72a7cee27492b8",
+        "path": "buffer/trajectory_0075_7c6b4e8e",
+        "payload_sha256": "5c06c42362c1db580cdd7563f666ea2e1a83434986d1f76b8b18ad38f5c200e6"
+      },
+      {
+        "manifest_sha256": "0709b392fc10f0c6f14a072ea620244d5b32be1545b9df35af15bade5b5658b6",
+        "path": "buffer/trajectory_0076_eedf280e",
+        "payload_sha256": "c6ff9f72d084a6c5d70d82076c640fad6c11bfecc4a1b3334550ef83d3a02999"
+      },
+      {
+        "manifest_sha256": "ade2f589f74f116858bf4dba6faed1edf338df448c864758b5e051e75c5092b1",
+        "path": "buffer/trajectory_0077_39e9921c",
+        "payload_sha256": "375f5e87a6005297bcd8475744adabaa20cbea48caa430efd6a14bffa4e27bb9"
+      },
+      {
+        "manifest_sha256": "888582654c76f436dfd7a62bccb6a7fea518c851ab53c699c3876799439f9138",
+        "path": "buffer/trajectory_0078_c8c89d96",
+        "payload_sha256": "17c599761d8647c05dd88cfd2686bdb7fc79e93ef7e482567c2128f13f16b221"
+      },
+      {
+        "manifest_sha256": "c65bf87c65ecd81f7d0b7393daeca09f6a3c32b0b1f13ab59d4cf8a1c0f7d141",
+        "path": "buffer/trajectory_0079_ddd2c9b6",
+        "payload_sha256": "beb36c6f7299317fd396a5b3c9f604569207f2cc52a70057c0966d774de1084e"
+      },
+      {
+        "manifest_sha256": "784da87114af9a6b73d5b16713844c5005ee9fc6d39a8ff2416313499f9e5534",
+        "path": "buffer/trajectory_0080_2d082ad5",
+        "payload_sha256": "545dc49e0e339298580adf051f81ffe332eb3ca42e12f4319177ecc287cebfe3"
+      },
+      {
+        "manifest_sha256": "90537872989fa241a3a187753576b3307c38b2403a3e966705776972a11555dd",
+        "path": "buffer/trajectory_0081_1f001f6e",
+        "payload_sha256": "faa2616a89b94a48f46e00dcbc4a2479e3814159f526d4b2ba0c2fec68920ffa"
+      },
+      {
+        "manifest_sha256": "e09a66aa0525fc5c0674684d717b3c8ce03096b2723cda9a619a9f760670fb0f",
+        "path": "buffer/trajectory_0082_62b5adf3",
+        "payload_sha256": "11cac5c04c2205790882145af2966ff0f913e166e68d9afa615f1f9e506e83ec"
+      },
+      {
+        "manifest_sha256": "70287c91c9daa9c1aea0846e4a74dac88d4cd641244360617e05b1386ebfcf9b",
+        "path": "buffer/trajectory_0083_a36e3f88",
+        "payload_sha256": "a27b4497c0c121e93640177e7014296afaa73f1efe02f5ca248476cf3f7a7248"
+      },
+      {
+        "manifest_sha256": "bcd53b430dcaa0ff98c07ebe4a29091494f8baaa9836df7cf60215fc4bee7fee",
+        "path": "buffer/trajectory_0084_b20d71a1",
+        "payload_sha256": "d1978395802d70cfd40361d721768b90a91c6b8c2cd99f2cf5dc528db3699ff9"
+      },
+      {
+        "manifest_sha256": "e771b54a0466bd9d03dcfdb0ae754f3db98d0ef8bfde3978ca5a160a7b87ddda",
+        "path": "buffer/trajectory_0085_f7874b1c",
+        "payload_sha256": "70471c7f43d3aa63041b5185c19973995560c5ee68dbb0b119d7cd74eae76902"
+      },
+      {
+        "manifest_sha256": "672a415ca9c2593930930b4be3b3d5e7d3852f753d01cf9da9ebd4b3bcfe6d69",
+        "path": "buffer/trajectory_0086_f1109a5d",
+        "payload_sha256": "24e3a1ea69a27722a87c82517ab46f8af9ca060de17608682d22a4d88c3ea115"
+      },
+      {
+        "manifest_sha256": "c672c024a9be1a1ebb7a0d8e6b1598a2b1963a44d05e2da0358d83a04af9689a",
+        "path": "buffer/trajectory_0087_b04f2b42",
+        "payload_sha256": "991478a6ec779c830b285078bc303281fadc0aad46823ead995a8beda8d11ec8"
+      },
+      {
+        "manifest_sha256": "9ed1392b442cf3eeb13cfe283d5f4aae101f2b18c9bcf6f93b0a7796b228b20b",
+        "path": "buffer/trajectory_0088_3c1fb4ed",
+        "payload_sha256": "a288c3df8c9691135144698b451a146869fecaa26a8cc11dd1ba9fb2a230c94e"
+      },
+      {
+        "manifest_sha256": "ddf6ba5afbd52b8be7441bafdc1509d64ddf22d02d2a743fadc57f0d84247172",
+        "path": "buffer/trajectory_0089_aa3ab98e",
+        "payload_sha256": "2025dc29aabc4fc31bdf839e8f0888c8e88079ebe40bf8cbcc99bfa8d700bcdd"
+      },
+      {
+        "manifest_sha256": "75bc429b788ecc3aadbbd86cc1c40dc2f6fc701a826d4919757c22cbc70ac058",
+        "path": "buffer/trajectory_0090_f733d0bd",
+        "payload_sha256": "62c16680d3a92e5f5494e3fa5bbacf52d793ce56e9f4033b0a9e53fd8600c420"
+      },
+      {
+        "manifest_sha256": "a77616dea01e100fc9bbfacfed00f33550d51c1c4d8339690b2630ff6b9dfe31",
+        "path": "buffer/trajectory_0091_6f292500",
+        "payload_sha256": "1750b09e13769bd1745010242e567af6e4ec56393196b5df37e184b63cb6f5a8"
+      },
+      {
+        "manifest_sha256": "eb09970c545e6e3109d4d2ac02bc6214337c0dc90c007a2243fa7bdfbc1a7654",
+        "path": "buffer/trajectory_0092_db459bcb",
+        "payload_sha256": "c20f7ffce95671524dabb640406ce0db0f243cb0ef395eb5559b2633bba51337"
+      },
+      {
+        "manifest_sha256": "c947b265adc95e9c38d788fe33bd23ec6e6aec301e50f4c3b8e7077b9e800198",
+        "path": "buffer/trajectory_0093_57a0b814",
+        "payload_sha256": "5716c433a5cc27571eb4d8702da29e251b313d840f5b0803c3c7afadedc42dae"
+      },
+      {
+        "manifest_sha256": "75c428b629947cafc4e54073fb8de99e4ebaa00232324b3f158553becb89b6d2",
+        "path": "buffer/trajectory_0094_37f25cac",
+        "payload_sha256": "a35c23e35435b77e7fbd778e33a8528ef4bd18517854e2ef91e04a97b79b8750"
+      },
+      {
+        "manifest_sha256": "b23cf03c2ab2f8def87720bd1faeed3c4ddaae067b201f4bc5723920e8622de3",
+        "path": "buffer/trajectory_0095_e144787d",
+        "payload_sha256": "fadc7efc3a86249e8ab59456fedeac694d3a1aac6977fd8be850ce5b502491e9"
+      },
+      {
+        "manifest_sha256": "347445228897ffdc3e6908122129d57237a79735e6cbe5c008b318baa43b8772",
+        "path": "buffer/trajectory_0096_9e3b143f",
+        "payload_sha256": "294daae4ad66253c9a9a5fec9a0c3a25ddc9faec28e164f69ce3548b3f4d1325"
+      },
+      {
+        "manifest_sha256": "ac5414047086f029af5231e73673f2b593feec4089a45971559171917d5b9e12",
+        "path": "buffer/trajectory_0097_6720551e",
+        "payload_sha256": "44bf28ffb8e45edbdc8c19afc3171b7464200c2a59744cc4f850ac5d93df027c"
+      },
+      {
+        "manifest_sha256": "1c682adddfe7f9858262a0caf652eb872c594db935438afe0fd64cce1a5bc7fd",
+        "path": "buffer/trajectory_0098_bc04c7bf",
+        "payload_sha256": "4ff3230db1ab4e216dbf13fe20da7d7d56b8d03fb1150f4a4ab683f119eed1fc"
+      },
+      {
+        "manifest_sha256": "2d4c40429692e5fee47ad68914a9f12cb7e71feddaf78891ad3c7ce9c095713b",
+        "path": "buffer/trajectory_0099_bb07a39d",
+        "payload_sha256": "0a706f9fee972e6e9a7da712f5db48fee425ad3ac192b0c40560419e6fe14095"
+      },
+      {
+        "manifest_sha256": "362e10fda8c4549e9961e5f0f66981eb7667d68156c6f3ad8c1c1347ab92800a",
+        "path": "buffer/trajectory_0100_68bc3519",
+        "payload_sha256": "1491cba90cabc7902be05566507bcc290f6def551a793ed16ac3d47583e9204e"
+      },
+      {
+        "manifest_sha256": "6b411c75bf45a00c694c5ebc430928e527acbf7d2b0bb9bf22f8a369703e8bfc",
+        "path": "buffer/trajectory_0101_831a6466",
+        "payload_sha256": "0e4de298f443598c02c9587a6214bd11d5c418e33d243c35c3e750831dbb4407"
+      },
+      {
+        "manifest_sha256": "53409192fd5cdf5d9b5d5ede48eeb793926dbe62dabd97ffe2a0b79574c8df2f",
+        "path": "buffer/trajectory_0102_958540b3",
+        "payload_sha256": "d7d0f7ea2f1e32f6ddbbcbce83b23f548c1a3d8668fcb12bb4c0a138b7b67c96"
+      },
+      {
+        "manifest_sha256": "8967c9407ff269dae8025eed65395a24b3c46e1a75d9ded68dfcaa951fcf56f4",
+        "path": "buffer/trajectory_0103_8cb125ea",
+        "payload_sha256": "5d3470aad1aff66422141eda0b74b759d492e9e9a7573163c1be0f00b36bb1df"
+      },
+      {
+        "manifest_sha256": "8d746e0544819424a2ccb0c596fbdb8deb90e3832d3b2d577a9cbaf04d6165ee",
+        "path": "buffer/trajectory_0104_24e4e475",
+        "payload_sha256": "9e8d793f360b30e32c40e50f0e411ab119e17df1714dd0b6dd4d21cb97624b23"
+      },
+      {
+        "manifest_sha256": "9c55d6c216e22f02ac1b144837f05e6dd3d03be75a165d2954f6981df772de10",
+        "path": "buffer/trajectory_0105_743d9626",
+        "payload_sha256": "69b4694ba068fa485a56cd6fd511a2c2402f375db419183b4826dc5844f4af02"
+      },
+      {
+        "manifest_sha256": "773c9ebeb3d89ba08f850b826058a31537c0bf9b2140015dc3109eb4f4be29a8",
+        "path": "buffer/trajectory_0106_97fee4ef",
+        "payload_sha256": "408b50496243698b54aa2117ddd7724cb6bb734c085c4aced0d05db2eb8f3a29"
+      },
+      {
+        "manifest_sha256": "e9e06619dc6f6b3d7eaac06102b16fa48917407e59892a7e2fe8aa2e1ea9b163",
+        "path": "buffer/trajectory_0107_bed11717",
+        "payload_sha256": "d746537cfe98cf4fd8210e4c13cf35f714bad8e0c3475e7c80a84ff3022f83b3"
+      },
+      {
+        "manifest_sha256": "689e60d91d47caf279f794ac2baedfcb453872ac22838a35a74e14d328fa1850",
+        "path": "buffer/trajectory_0108_46226cd5",
+        "payload_sha256": "7d497f1136d4d9035e7a8a6d0a9375da87f355e044f45073a1651b3bc1eae4f0"
+      },
+      {
+        "manifest_sha256": "668056c1469bb4b5cacfe89c54a38994296d7eb8de26b93dbabddce4b1455105",
+        "path": "buffer/trajectory_0109_241ee886",
+        "payload_sha256": "3eabadc6af280df5372162e5260ae5fbeeda2337d921485c9559f786987ec161"
+      },
+      {
+        "manifest_sha256": "5217f51109d10a67325e6c1e80fafc6b16b7a627d5f1560437f0d19649e68d91",
+        "path": "buffer/trajectory_0110_30af7102",
+        "payload_sha256": "82290f9c2a77493eabcb720e1d551bc83484eb56252a74a3ea0e8a7f9620b04d"
+      },
+      {
+        "manifest_sha256": "bd4fc455f8a02034341ae08dbb1ac758185275ba2d01eec958080c78305245c5",
+        "path": "buffer/trajectory_0111_70b8690d",
+        "payload_sha256": "9c81e19407239de592c1b90d11c6f3c1e68a0b24e02f42d5f1d370ea7596fe30"
+      },
+      {
+        "manifest_sha256": "881e89581cf9bfa53296cba62f5180c9b721dfe537303b308dd02451bfe3afe7",
+        "path": "buffer/trajectory_0112_40a1ad81",
+        "payload_sha256": "99da28302c765ec7992b150a1905c5a2579e6702a44e27db96484aa5e961221f"
+      },
+      {
+        "manifest_sha256": "bb09eb134371e28d8318a8aafe7adbb14023f4671572adf32e89339ee70a7ad2",
+        "path": "buffer/trajectory_0113_72cef295",
+        "payload_sha256": "14e7d1d52062b22c88dfd4542245c7d9b4a721eeb46e936a9e09cb85f8826082"
+      },
+      {
+        "manifest_sha256": "299da3d7c2bc261725814249b58e466656ed722fe54504244ca0b889b7d1fa3b",
+        "path": "buffer/trajectory_0114_28f62af9",
+        "payload_sha256": "42810dac2b9ee202bcf2dd94cf0b18c822e67a086391e2fa28c51f55143be928"
+      },
+      {
+        "manifest_sha256": "8c8a6fdac8f5aa381eb09a67babb7e4fb23a05d65ddada0d3d994e477c48e082",
+        "path": "buffer/trajectory_0115_3c8cba93",
+        "payload_sha256": "25e3c90d81c000cee5e391c9633b2b4cb305af04d81f6ec90895dcddc84d05d6"
+      },
+      {
+        "manifest_sha256": "97a080b37d976ae1e6bc27784fcb9e181dc8ce79d238a2b8ed91235428903671",
+        "path": "buffer/trajectory_0116_5b73b1ca",
+        "payload_sha256": "2673297823840c78c942f773591b31693959c5761c98257e1d900764b2b42339"
+      },
+      {
+        "manifest_sha256": "206dba2b21e80127e856c52e970c6ef3877ad253aaf3cc862705bd66b8297e86",
+        "path": "buffer/trajectory_0117_885142c0",
+        "payload_sha256": "8da50628a9815d84e87122e7576ea037252016ac7ccbee466cb7373631eb3a0c"
+      },
+      {
+        "manifest_sha256": "1e29718e76e06b7c11414cbbed4f46536c605e5abbebb456d35fbccebfd0fec2",
+        "path": "buffer/trajectory_0118_8f86cf38",
+        "payload_sha256": "151b0ca18a3fed364bb35ad5478a186900deb9576e07b3256fc3df6932b99098"
+      },
+      {
+        "manifest_sha256": "2970b58ad024ebd442fc988399ad17f9a796cd2c9add8917be637e20fa62ad9a",
+        "path": "buffer/trajectory_0119_d260e027",
+        "payload_sha256": "2b63285bdef6fc9922c2b14fdd9b14401bd70a2f10ce33d407713c2cff130574"
+      },
+      {
+        "manifest_sha256": "84026bcb20abaeaef80ed3f02a6b4a4569b88834f551ae124c6c99bfaceb6a7a",
+        "path": "buffer/trajectory_0120_a5e41461",
+        "payload_sha256": "e53bd549282984e3607007529ee91815cda396e2e719383573ca48c45e64634c"
+      },
+      {
+        "manifest_sha256": "3bfe7ccbe89126eafda466f9938d8724f28743f9e9df6ac0dc9dc777450486a5",
+        "path": "buffer/trajectory_0121_3b69ce81",
+        "payload_sha256": "0efcb46c78ba55694cb1a617347020fd5147543180b56fcf23055b4c0c5c4694"
+      },
+      {
+        "manifest_sha256": "1a7172d21e69fc0f04bd45aefa6b34239f9ac3caa6208864eda3edd554e9309b",
+        "path": "buffer/trajectory_0122_29f618d7",
+        "payload_sha256": "6173ebd7b444bfa37fe0fc0cf359e1b88a052a9cfab241c0aa30db90e5134cc1"
+      },
+      {
+        "manifest_sha256": "51243a03eea829a4561ea53b5961868e3f21adc2a4b86cffbadf740a701ee56f",
+        "path": "buffer/trajectory_0123_20323c6c",
+        "payload_sha256": "dd9fdf3deab6042f12a0ad9af9d92d616e13ca5468c5eff97cbe6e4b889ed2d2"
+      },
+      {
+        "manifest_sha256": "11ac0f0e681354502f5cfa3e4ecb42d77ce18576756e39b3767ebb370673199a",
+        "path": "buffer/trajectory_0124_56f23e59",
+        "payload_sha256": "3cd519816d3037a5907cba078b9cab6561d491f1f1b496b28a70e483d4d2d035"
+      },
+      {
+        "manifest_sha256": "fab66c61d164e76cb243e0ccb55aec1b44f2c93282630f397d3d90b6c8a2eaf1",
+        "path": "buffer/trajectory_0125_20d0bed3",
+        "payload_sha256": "52c2e3177956cf650caf2d6c3661a45234a00b00aeec52239ca878d8e5dd8638"
+      },
+      {
+        "manifest_sha256": "943143d10af604f9580f02f0c93853c14fe5497e4f609a480cb621e36e2911db",
+        "path": "buffer/trajectory_0126_99046eee",
+        "payload_sha256": "10f9a1d73d370c920bde7bb03f45f4a1b93d6e8a29a31d83c31cc3038ac7fa69"
+      },
+      {
+        "manifest_sha256": "3312943d05c17057b3493c0d522aaa91b59c936673d5e0d2fe41046e05827a59",
+        "path": "buffer/trajectory_0127_a6ff2f4d",
+        "payload_sha256": "a8779f385f503de25f058827f820e0a9c302e97dbe8e351d9bd54d6ab86bdd1b"
+      }
+    ],
+    "checkpoint": "checkpoints/state_00000229_f1405adb",
+    "checkpoint_manifest_sha256": "c5eefd91229b0aebe91d6515621406039876e09753d2759a14ac1169ed77e7e8",
+    "checkpoint_payload_sha256": "d4e39710125081153ca74114656c04a3d43abea2de478ee471872c7c6a7e054e",
+    "cross_runtime_numerical_equivalence_measured": false,
+    "frozen_teacher_sha256": "09e2ffcfc16d9fc4b82f82ecfc59bfb616f8fda4046edd0fc7668fc2f7fb8508",
+    "handoff_device": "cuda:0",
+    "imported_network_versions": {
+      "actor": "51cde6fb174cb6b82b5999097ee4b3fb6754a1f7aa243df62fc9d0cba0fb3fb5",
+      "critic": "2ca90868843be2c8b56b95a4432c0c0838fd4ac26211af56dbbfc58366d25a31",
+      "model": "186f5099c3c0e132f1a6bd985bf604743b02284b5b7b6c2c43277ab1a622884f"
+    },
+    "initial_inputs": {
+      "config_root": "/home/zixuan/projects/WM1/configs",
+      "data_root": "/home/zixuan/projects/WM1/data/initial_replay/pilot",
+      "initial_selection": "/home/zixuan/projects/WM1/artifacts/phase24_selection/shortened_v1/selection.json",
+      "master_seed": 0,
+      "statistics_root": "/home/zixuan/projects/WM1/artifacts/phase23/normalization"
+    },
+    "initial_snapshot": {
+      "checkpoint": "checkpoints/state_00000001_004a354a",
+      "checkpoint_manifest_sha256": "1484fc2e3fc0436a215f524b42abc8e344881cf6406ea0976c5e20eeb0128427",
+      "checkpoint_payload_sha256": "2364d1cf0be1ae0d5ca794443e50b10e09b0660c0ae2d155d2a7d246ce76ec7c"
+    },
+    "paired_initial_versions": {
+      "actor": "aaebb0ac4ad04f7e965dc2cda9b395c1fb098037254c9fd4d520021920b42f02",
+      "critic": "2ca90868843be2c8b56b95a4432c0c0838fd4ac26211af56dbbfc58366d25a31"
+    },
+    "run_identity": "cbd19b0b63268628847c2a1cc6657a2762e89496e7f8e27961436bf639f6ad44",
+    "run_manifest_sha256": "d27acc058b5b324db9b41dfd372347e6f293cb53689b9034f49451d86f8e2d58",
+    "schema_version": "p43-completed-student-input-v1",
+    "teacher_checkpoint": "checkpoints/state_00000026_3c8100d6",
+    "teacher_checkpoint_manifest_sha256": "e0a7d738cae4edc15af95cc2f0d2bdf639728ecc04fff959453c69ee6c03f26f",
+    "teacher_checkpoint_payload_sha256": "64b4d33470b9621e6f6d6df1ac3a67a6e2aeb6815f3f1d8cfb5e4610c0be0770",
+    "teacher_constructed_or_queried": false,
+    "teacher_run": "/home/zixuan/projects/WM1/artifacts/phase5_runs/cohort_20261112_090039/runs/D/seed_0/stages/teacher",
+    "teacher_run_manifest_sha256": "50b9a112b9fb1afea346fd492a14906a0f88dbc4c9dd9fa691e66ce0579a9a36",
+    "upstream_optimizers_restored": false,
+    "verified_origin_device": "cuda:0",
+    "warm_started_student_sha256": "7fbbd682b118dae0d0dff2d4f6024d50941ab96a5134f104270066ba87e46b9d"
+  },
+  "master_seed": 0,
+  "phase4_acceptance": false,
+  "precision": "bfloat16",
+  "protocol": {
+    "actor_history": "current_student_complete_own_real_prefix_then_own_imagined_actions",
+    "distillation_optimizer_steps": 0,
+    "epochs": 4,
+    "evaluation_executed": false,
+    "full_d_pipeline_implemented": false,
+    "guidance_decay_enabled": false,
+    "horizon": 15,
+    "initial_model_updates": 4500,
+    "initial_transitions": 50000,
+    "local_cycles": 20,
+    "local_ppo_optimizer_initialization": "fresh_after_distillation",
+    "master_seeds": [
+      0,
+      1
+    ],
+    "minibatches": 4,
+    "new_environment_interactions": 0,
+    "new_model_updates": 0,
+    "rollout_behavior": "current_local_student_only",
+    "schema_version": "p43-local-refinement-protocol-v1",
+    "stage": "unguided_local_refinement",
+    "starts": 256,
+    "study_profile": "relay_four_day_v1",
+    "task_family": "relay",
+    "teacher_kl_weight": 0.0,
+    "teacher_optimizer_steps": 0,
+    "teacher_queries": 0,
+    "teacher_refresh_cycles": 0,
+    "variant": "D"
+  },
+  "protocol_sha256": "9194e35efb61dd199c69ca758794e4c847e70869e5b3d981dfb30251bf0f6213",
+  "rng_namespaces": {
+    "imagination_anchors": 1539329565,
+    "imagination_prefixes": 1509936900,
+    "local_policy_updates": 2426092349
+  },
+  "rollout_stream_identity": {
+    "device": "cuda:0",
+    "master_seed": 0,
+    "schema_version": "p33-rollout-streams-v1",
+    "seeds": {
+      "actor_0": 575866510,
+      "actor_1": 6441760,
+      "outcome": 2395485017089183058,
+      "posterior": 2844902579416195799,
+      "prior": 3211356740397680327,
+      "world": 3045293928
+    },
+    "task_family": "relay",
+    "variant": "D"
+  },
+  "runtime": {
+    "cpu_threads": 1,
+    "cublas_workspace_config": ":4096:8",
+    "cuda_runtime": "13.2",
+    "cudnn": 92600,
+    "cudnn_benchmark": false,
+    "deterministic_algorithms": true,
+    "gpu_capability": [
+      9,
+      0
+    ],
+    "gpu_name": "NVIDIA H200",
+    "logical_device": "cuda:0",
+    "numpy": "2.5.4",
+    "python": "3.12.16",
+    "torch": "2.15.0+cu132"
+  },
+  "schema_version": "p43-local-refinement-run-v1",
+  "source_sha256": {
+    "scripts/phase41.py": "3f79e6555526a64d6a9b6ea475d3e72af444b7f4495a00e639f6f92528ce4979",
+    "scripts/phase42.py": "b78b6fa8abd7ff59989d787e4ac345d21dddeaae4073b67ae1752b6c72d31e47",
+    "scripts/phase43.py": "a2d1f7e73105c318e2824e51c8883aeed52ac15d275966bc4f47b4ce0e553514",
+    "src/world_models/__init__.py": "a9f08fbd05cbe4e766827dfee9d04e7ff48056887127e8b78c436e294bb10f9a",
+    "src/world_models/contracts.py": "e751564f3d0f7087234663e5e0133bd2c1811ffe5811173d3a2c446e74e1cd84",
+    "src/world_models/cycle/__init__.py": "9979b79efbcc489f8518d2a2fdfb578e3a83a2f3a0a82bef42d31aacfd8ba994",
+    "src/world_models/cycle/checkpoints.py": "de0db9b42b5a988dec9ec1710728195be07fb8e3ffcc8884ec337b5965e22ed9",
+    "src/world_models/cycle/collection.py": "56e68f4b61edcad8ef52caf678469198ebf9a16b668ed3680635746d08fdce9a",
+    "src/world_models/cycle/controller.py": "0e1d879467f32ce3dcea3358227ec6b519eaa7ec2142a21658fe1ebdb11324d0",
+    "src/world_models/cycle/provenance.py": "4256d4dc962c9dcdcbcfd6d1bb83743fae696ae97ce122f77b0f39dd6a3a69eb",
+    "src/world_models/cycle/recovery.py": "2308778cd1d8b57a009c8a7779cdeb4ae02e427e4b964bf576e3d0040a84ad8a",
+    "src/world_models/cycle/refresh.py": "929da740a00657ee4d59ea2b1a245639b2da2bd927edfbac232117f8e08484f4",
+    "src/world_models/cycle/schedule.py": "50b4f272d4e2f21ef2249e2d3ee58a6ac4711e0cb32220a4ab4666c7832c3873",
+    "src/world_models/cycle/study.py": "2b87e3f671fc18d9f88a2a43a029c6ec8c77c010edbc4ab3fa2ca77c4c4549ae",
+    "src/world_models/data/__init__.py": "100c8630d44dc3eac2419c8bc9b19034322c57c3d0bd2876ba463c2a3116a80b",
+    "src/world_models/data/audit.py": "0ac471a49b0fe3f802401c9aa7f67c118a3c246d68a0d8b7efa716432714eecd",
+    "src/world_models/data/benchmark.py": "259424b85ca49d2a495e9633fce4830b0732d178db289a774432c3e71653d593",
+    "src/world_models/data/collection.py": "6b9435f2b8cebb8eea38e0f98592cd8ef9ba1070ffa87c6d52122ef0caefac5a",
+    "src/world_models/data/ledger.py": "d185997f16f08db58ffb3aac9231fc2da30b2b200cace92e664c9aecd6149507",
+    "src/world_models/data/recovery.py": "01790809c2f8112d6d83f4b0c1ce6e39f6d7e1cd5a98a95d49935d4933ca5b00",
+    "src/world_models/data/replay.py": "e4006006321a526084bb8fee7e2e5e6c0ce6250b8c538b2ababf42aaaa3327aa",
+    "src/world_models/data/resources.py": "c6439c9fc17a368023783f9577cefc566254e94316fc8822ffc7e6a59040b07d",
+    "src/world_models/data/schema.py": "3d68de72f95b666930c128534175529fb3a7fae8956afaa191675c356b8e5f88",
+    "src/world_models/data/spool.py": "465843014a3d7c152660838b4a805133cd7ba0a35906f2960957ca05a8314b52",
+    "src/world_models/distillation/__init__.py": "1a1365e2b5f1cc39f810b95020ba95d0af2c5800d56da8686797c40a43909ea2",
+    "src/world_models/distillation/buffer.py": "053b3c1fba4930e1f5cb7bfdceb73a8668b00beb07efb99abb107363fbc0d827",
+    "src/world_models/distillation/handoff.py": "05ca02819157f9fb52a9f76140253c24a1a2588f2b93fd528d64a10f70659bb5",
+    "src/world_models/distillation/learning.py": "9808662b7dcef839c5d9176adcf260f766dd70ab83b0624d959a52a952813be2",
+    "src/world_models/distillation/protocol.py": "58850d9d778fc9d45a861d897f157671818c5a9fda16b23cc7df44c32d538158",
+    "src/world_models/distillation/runner.py": "c55ff3ea78fe22b30bc071faa61ed9e877c42b2c283185e69520a1a7c8a914cc",
+    "src/world_models/distillation/versions.py": "eddfee8d13b1d097b04aa6cd413619f0971aee4ee6ee9ffe8bdf5e2d760fb556",
+    "src/world_models/env/__init__.py": "ac27e8fc9f1e58c924ebff8976f906580f9d43623121b688fda786f4554b84af",
+    "src/world_models/env/acceptance.py": "fa8951ef05d63fd412d27dd574a238d4a6af2f3b19174e92045f63100eb74ba5",
+    "src/world_models/env/acceptance_metrics.py": "355a4d862f91abbe1b6ced085f3aeb755aaf81cf3d6ae7c9d2cc85edd6d7eaf1",
+    "src/world_models/env/actions.py": "58a94c50070d0cd5f0dd3f6775a65018100f17533eff14d1e350c01c93ec8b8d",
+    "src/world_models/env/coop.py": "0c46811a31ed9ec92143cb82c23648f6a3a7b386ba7d5bf2295fc311cfc895d8",
+    "src/world_models/env/coordinator.py": "ab4f58fad33409763459eab484e21630a619e0de04e298dbe5c92ef4acda8808",
+    "src/world_models/env/locality.py": "cbacd94e6d3dd4e56d7ef812abdae83fa695ea6baa4035d8f69c270a751e767b",
+    "src/world_models/env/marker_diagnostics.py": "d8a81ead76a7388cf298bd7a5c69e05108601b32428cae28184d771c323d5db7",
+    "src/world_models/env/mechanics_video.py": "633d09a1227d92021d0753cc3cfd0afddd62139325ad47e71eb64bc8a640805b",
+    "src/world_models/env/observations.py": "cb5b031e1061edfaaff1f1fd5b0e664db9a3517b2755b9a597303adcd0b9266e",
+    "src/world_models/env/provenance.py": "971ccfb0bea730d7d0115313d751e22f7daf9b7213c27c4f6c53526f45df8500",
+    "src/world_models/env/replay_diagnostics.py": "497e2b7fcee3b78d7c0dcbe4868eec5a989d0adda4b686ce6d6f2cc5ec5a145e",
+    "src/world_models/env/scenario_builder.py": "641492ba510dd6d82483402fc102ad157d17ade1ece9edcd2235e9c215f8c241",
+    "src/world_models/env/scripted.py": "50e7038b33bfcc271542bf651af994c895383875b77059b32326854d92abc549",
+    "src/world_models/env/splits.py": "282f4edb9b414b6eeb90abe8cc0b17f521d45b8841ec03820676fc820c0d1c11",
+    "src/world_models/env/targets.py": "d6ec7f8cfcab2203496cb9f23106ff099c06a4159b75b32eb7495530d7284e01",
+    "src/world_models/env/validation_data.py": "ac7ef5bd909953497ea068baf477c2dcda2793923553221784c976b4f029dfd6",
+    "src/world_models/env/workers.py": "e35625ad195f213545a2437fae503ea1eaf1be93fb60ebd931165b323f7db6f9",
+    "src/world_models/evaluation/__init__.py": "1340c59397c099a84b839cdf424063f83f1433f211bea0d69e4eb604111a5baa",
+    "src/world_models/evaluation/compact.py": "1954984be609b4365a0ec21eb66c62db9dde4d10f47f1f432dafd0ecc96db932",
+    "src/world_models/evaluation/metrics.py": "d5f1f65788a27a6f6a9444440ca522f07fec5bb9b8be70ea76608def67b89f23",
+    "src/world_models/evaluation/selection.py": "aa9109a891cad9fc7f99887f22eb59e8d9cb6ee3bd31c571271e80184ea91c40",
+    "src/world_models/evaluation/verification.py": "26eb792d1f1518e199ab7102714baf27ddb5b267ab10d0653f9f00c6d5ca2b5f",
+    "src/world_models/imagination/__init__.py": "3d8db7e6719b0ed9ac3990770ea084c5dc5f0b5690d85d99d5b495a1a2c0f4b5",
+    "src/world_models/imagination/anchors.py": "cd66cd967e674068b19de1393eb805242dbcc9752606d1ad12c723d5657e5d6b",
+    "src/world_models/imagination/replay.py": "87fdf61facdfb088f8e68c84d32e3cc945a9f8bcbdf15dd0e0256de22f08a2b5",
+    "src/world_models/imagination/versions.py": "16f15630eed839860fe4a763f2774482a99d250a02e8e99cb09ba21aeb11e070",
+    "src/world_models/infrastructure/__init__.py": "912be893007858f1c9bbcef48cf3ec050e84c130b24dde1b1b2d4274a2786a95",
+    "src/world_models/infrastructure/config.py": "4e43fde458e13b74166282f85a988a81ea174faa6b5bb2517e504d25f90a71cd",
+    "src/world_models/infrastructure/inventory.py": "bbbdbd4481dc7319199737ebfd7a089e61540b05454fefdddf5ad91e00e83553",
+    "src/world_models/infrastructure/reproducibility.py": "4667d44c461ecd98c5838c560dec27e1708930e2ca90410e84b791e0277bb4be",
+    "src/world_models/mappo/__init__.py": "efa87070de97b07a5d934cbc3682c4fd660d6c9cdabeb6f13e8ede7e3781ece4",
+    "src/world_models/mappo/config.py": "3af4f76da52e9729faca920f15ecdc5ad376b82950f5ff1dc195879518770bb3",
+    "src/world_models/mappo/objectives.py": "f5bd2c125e96767d2334a1bd7d51ce85b5757d3a575b487e29b56913f44af448",
+    "src/world_models/mappo/recurrent.py": "d15aa799c970d9a95fa433100af712f37d3b1226b5f2818ad1117a6ac254c304",
+    "src/world_models/mappo/updater.py": "d35f0484c971bb274b2081241cb648f0bbe013c8d7504cd3a56af1b307510ab5",
+    "src/world_models/models/__init__.py": "ce1bfc1cfcd29f37cd99045ce774ac669737fc0eaffcb7e125303091c288c5ea",
+    "src/world_models/models/core.py": "4efa9d638bc5645fa6d9476f8f60a3e8116ed780f3b1da64c5a87b32fbebeb9e",
+    "src/world_models/models/heads.py": "9ab30036f46084fc4269e6355b050d076e76c616b1b3118f00e1387544631d70",
+    "src/world_models/models/world_model.py": "25f9ef42357d90ea06c3a94821135ab897b3610232776839ed744e1be15982c4",
+    "src/world_models/policies/__init__.py": "3a6c30681133952c8863c91ec6f6750cbfa8464469c3c869711e941c3c88bc2d",
+    "src/world_models/policies/actor.py": "47886733655981b07fcec85835d370b7abf40f99bae28a6a9397f8544503af6c",
+    "src/world_models/policies/config.py": "680dbc764bfc3bc87de0b32738b8aedd0a61c4a599b8a53d80f19082fba49f47",
+    "src/world_models/policies/critic.py": "4d784f709200bee322b98afd00669d77ccd514dce2af2eb55ed11989ec414f60",
+    "src/world_models/policies/initialization.py": "e17b2b873d661857df3abc4fc3f8f211f7abd36f0715e3dcf73d18e859da40b0",
+    "src/world_models/policies/teacher.py": "2e38c1353eaa1d021a78210ee0a022fa726f4d40ea2a13e0ca6bdc78ba6db8d1",
+    "src/world_models/refinement/__init__.py": "23b75242a712f5589a4783fa0655b668ab0cacd678a4341a05daeede71658e54",
+    "src/world_models/refinement/handoff.py": "86027aafe90b640d10670f70f94d0f715da0379efa9cfcb81354dfec591a0557",
+    "src/world_models/refinement/protocol.py": "e38c95cde44062c1215f990fe3ad59bd81ad68e09d23a4e53753cd1767ecf71c",
+    "src/world_models/refinement/runner.py": "edce5e49cf95fec0ed26cb4bb1d8d01bdb4724acf80d8f6f78139d612eb24fb7",
+    "src/world_models/rollouts/__init__.py": "9e65b15f0467c9b0a08031a651a24544d05a6dff14b329701557c1c3b6bd454c",
+    "src/world_models/rollouts/generator.py": "d09b883a15200a2a8fc8e9376dc121a38c403f51abf2f47e4bc84a003fd7ea7c",
+    "src/world_models/rollouts/schema.py": "be3a995396cc37e3d42bcf11025ba56f00723a784cefbe0e1fa210b167c2cf70",
+    "src/world_models/rollouts/storage.py": "a138e6530548616d0abdebe82c7e097ad7993eb7a0c9cecbbeed172f8c8d4583",
+    "src/world_models/rollouts/streams.py": "f98294aa56c39371e8b8988c61fabd7f41c87ac8c23a4c6f3ea2fb9cd7a82e8a",
+    "src/world_models/teacher/__init__.py": "e15ee46e8c7c4134244411867de3295ddd8f9d592038e874fde75414cda876dc",
+    "src/world_models/teacher/learning.py": "267e9307edd3db4b590dae63117b83d4d401963a2eff6336f2c072e743fd022d",
+    "src/world_models/teacher/protocol.py": "7d3c2fd6509e64a80f5fd074c7d68108fb5e0135f1fb7ea384a4a2be3d3dc514",
+    "src/world_models/teacher/runner.py": "f969bda7c726bf6b7bf3829725e08e73732df8a673faac61c64000eb8a2f05e3",
+    "src/world_models/training/__init__.py": "4db8ffc0c1f8a1641c1667cd12f064e065ca87fdfd4f493f0415bef0f986d81b",
+    "src/world_models/training/checkpoints.py": "f03eb288734f7557a51c633b48123801505f75bf87b79c92f87cbaf3b25ca311",
+    "src/world_models/training/diagnostics.py": "dadab0dfd21fe1b435fecb8e266e2c09748b05832466dd2bcf5e3c31062cc89b",
+    "src/world_models/training/fitting.py": "feb680515514b38ea898466bf0f70c0d58ee965213ec4551d38e9ca81d455d93",
+    "src/world_models/training/losses.py": "18222dd71c08509df1ee9d97d8bba7afc12c1b13d2e5fa5926f9d0e2e78c0044",
+    "src/world_models/training/normalization.py": "3ade5e03070e820fadf49bc3f46fbffae6b2d469dafff82966a761987d9eff80",
+    "src/world_models/training/objective.py": "91fb91b5c0aa8aa0ecc3d7042356d2ed659ebbc24efe55d4fc2d7af52a637483",
+    "src/world_models/training/objective_batch.py": "698cf289925c785d735586034621e13aca7bae76a2fcd9cf4936ace5bceb3773",
+    "src/world_models/training/runner.py": "b8c7f9091c2cb0e9b93603b625a137fe93ffcaac5d7f9a20de68d858123b29c8",
+    "src/world_models/training/sampling.py": "95eeab790196472634e5cef2bced8502576c42e70f98a58d41077cc51cbe1f18",
+    "src/world_models/training/selection.py": "b861a10a717e96e7ca6bfbb0076dc098e3804c278d9605f6d7d68e5c21feda60",
+    "src/world_models/training/validation.py": "7a894abf9e3ce33bc8062988c5bc2486e6848bdc42c4f06be2ea7380194c8fad"
+  },
+  "training_executed_at_prepare": false,
+  "warm_start_input_identity": "adee975cb5e87993e2ee4b076746ab198cea8b4de8d764d6b01a117ef49cf53f"
+}

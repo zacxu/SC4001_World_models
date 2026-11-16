@@ -1,0 +1,47 @@
+#!/bin/bash -l
+#PBS -N wm-p36-check
+#PBS -P 11704278
+#PBS -q normal
+#PBS -l select=1:ngpus=1
+#PBS -l walltime=04:00:00
+#PBS -j oe
+
+# Evaluate immutable exports from the SAME P3.5 run. This job does not train B.
+set -euo pipefail
+export WM_ROOT=/home/users/create/smrksun/scratch/WM1
+cd "$WM_ROOT"
+mkdir -p artifacts/pbs
+exec > "artifacts/pbs/p36_${PBS_JOBID}.log" 2>&1
+
+CASE=artifacts/phase35_runs/B_acceptance_v1/relay/seed_0
+OUT="artifacts/phase36_runs/relay_seed0_${PBS_JOBID}"
+BASELINE="$CASE/evaluation/real_000000000"
+TRAINED="$CASE/evaluation/real_000050000"
+for EXPORT in "$BASELINE" "$TRAINED"; do
+  if [ ! -s "$EXPORT/manifest.sha256" ]; then
+    printf 'Missing actor export: %s\nSet CASE to a P3.5 run with both completed exports.\n' "$EXPORT" >&2
+    exit 1
+  fi
+done
+
+module load miniforge3
+source "$(conda info --base)/etc/profile.d/conda.sh"
+conda activate "$WM_ROOT/.envs/wm312"
+export LD_LIBRARY_PATH="$CONDA_PREFIX/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+source scripts/aspire2a_cuda.sh
+export WORLD_MODELS_ACC="$WM_ROOT/.tools/acc-linux/acc"
+test -x "$WORLD_MODELS_ACC"
+export OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1
+export CUBLAS_WORKSPACE_CONFIG=:4096:8 PYTHONUNBUFFERED=1
+
+python -m scripts.phase36 verify --output-dir "$OUT/checks"
+python -m scripts.phase36 mechanics --output-dir "$OUT/mechanics"
+python -m scripts.phase36 evaluate --actor-export "$BASELINE" \
+  --output-dir "$OUT/baseline" --episodes 8 --bank-seed 3600 --device cuda:0
+python -m scripts.phase36 evaluate --actor-export "$TRAINED" \
+  --output-dir "$OUT/trained" --episodes 8 --bank-seed 3600 --device cuda:0
+
+# Exit 2 means the report needs evidence/review; preserve it and the job log.
+python -m scripts.phase36 accept --checks "$OUT/checks/implementation_checks.json" \
+  --mechanics "$OUT/mechanics/report.json" --baseline "$OUT/baseline/evaluation.json" \
+  --trained "$OUT/trained/evaluation.json" --output "$OUT/phase3_acceptance.json"

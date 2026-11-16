@@ -32,7 +32,7 @@ STRUCTURAL_TESTS = (
     "tests.test_model_sampling.ReplaySamplingTests.test_fit_and_diagnostic_partitions_have_separate_rng_and_purpose_guards",
 )
 NEW_TEST_MODULES = ("tests.test_phase25_selection", "tests.test_phase25_metrics",
-                    "tests.test_phase25_evaluation", "tests.test_phase25_cli")
+                    "tests.test_phase25_evaluation", "tests.test_phase25_cli", "tests.test_initial_selection")
 _FIXTURE_MODULES = ("tests.test_replay_storage", "tests.test_targets")
 
 
@@ -81,6 +81,7 @@ def source_identity() -> dict[str, str]:
     """Bind the unchanged P2.4 checkpoint sources plus evaluation code/tests."""
     identity = dict(p24_source_identity(ROOT))
     paths = [*sorted((ROOT / "src/world_models/evaluation").glob("*.py")), ROOT / "scripts/phase25.py",
+             ROOT / "src/world_models/training/selection.py", ROOT / "scripts/phase24_freeze.py",
              *(ROOT / (name.replace(".", "/") + ".py") for name in NEW_TEST_MODULES),
              ROOT / "tests/__init__.py", ROOT / "tests/test_world_model.py", ROOT / "tests/test_model_heads.py",
              ROOT / "tests/test_model_sampling.py", *(ROOT / (name.replace(".", "/")+".py") for name in _FIXTURE_MODULES)]

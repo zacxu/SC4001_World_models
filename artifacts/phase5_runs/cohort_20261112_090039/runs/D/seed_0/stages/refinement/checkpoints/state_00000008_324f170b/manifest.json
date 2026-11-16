@@ -1,0 +1,3613 @@
+{
+  "data_source": "training_controller_state",
+  "learning_eligible_for_world_model": false,
+  "metadata": {
+    "actor_optimizer_steps": 112,
+    "actor_version": "de32f8c48d5e4457b422c4e388c29c841491ae918e347a7b73dd7d04328c96ae",
+    "critic_optimizer_steps": 112,
+    "critic_version": "f9c1d08ec93c4a928824191dff13f6f64d089bf37527d565fe9508774100cb49",
+    "distillation_optimizer_steps": 0,
+    "imagined_joint_steps": 24996,
+    "local_cycles_completed": 7,
+    "local_player_decisions": 49992,
+    "model_version": "186f5099c3c0e132f1a6bd985bf604743b02284b5b7b6c2c43277ab1a622884f",
+    "new_environment_interactions": 0,
+    "new_model_updates": 0,
+    "phase": "local",
+    "run_identity": "c9655f68449066da55342fa58095fc2f373bddff97a64a1ae14a79f5f3ee1e1a",
+    "schema_version": "p43-local-refinement-checkpoint-v1",
+    "sequence": 8,
+    "teacher_kl_weight": 0.0,
+    "teacher_optimizer_steps": 0,
+    "teacher_queries": 0
+  },
+  "payload": {
+    "bytes": 59723315,
+    "path": "state.pt",
+    "sha256": "0b5e32078b6f68388448896c21961cc5978e2dee3e5cb81879e0997152e957e0"
+  },
+  "schema_version": "real-model-policy-cycle-checkpoint-v1",
+  "status": "complete",
+  "tensor_specs": [
+    {
+      "bytes": 6144,
+      "dtype": "torch.float32",
+      "elements": 1536,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.0.weight"
+        ]
+      ],
+      "shape": [
+        32,
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 128,
+      "dtype": "torch.float32",
+      "elements": 32,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.0.bias"
+        ]
+      ],
+      "shape": [
+        32
+      ]
+    },
+    {
+      "bytes": 128,
+      "dtype": "torch.float32",
+      "elements": 32,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.1.weight"
+        ]
+      ],
+      "shape": [
+        32
+      ]
+    },
+    {
+      "bytes": 128,
+      "dtype": "torch.float32",
+      "elements": 32,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.1.bias"
+        ]
+      ],
+      "shape": [
+        32
+      ]
+    },
+    {
+      "bytes": 131072,
+      "dtype": "torch.float32",
+      "elements": 32768,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.3.weight"
+        ]
+      ],
+      "shape": [
+        64,
+        32,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 256,
+      "dtype": "torch.float32",
+      "elements": 64,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.3.bias"
+        ]
+      ],
+      "shape": [
+        64
+      ]
+    },
+    {
+      "bytes": 256,
+      "dtype": "torch.float32",
+      "elements": 64,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.4.weight"
+        ]
+      ],
+      "shape": [
+        64
+      ]
+    },
+    {
+      "bytes": 256,
+      "dtype": "torch.float32",
+      "elements": 64,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.4.bias"
+        ]
+      ],
+      "shape": [
+        64
+      ]
+    },
+    {
+      "bytes": 524288,
+      "dtype": "torch.float32",
+      "elements": 131072,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.6.weight"
+        ]
+      ],
+      "shape": [
+        128,
+        64,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 512,
+      "dtype": "torch.float32",
+      "elements": 128,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.6.bias"
+        ]
+      ],
+      "shape": [
+        128
+      ]
+    },
+    {
+      "bytes": 512,
+      "dtype": "torch.float32",
+      "elements": 128,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.7.weight"
+        ]
+      ],
+      "shape": [
+        128
+      ]
+    },
+    {
+      "bytes": 512,
+      "dtype": "torch.float32",
+      "elements": 128,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.7.bias"
+        ]
+      ],
+      "shape": [
+        128
+      ]
+    },
+    {
+      "bytes": 2097152,
+      "dtype": "torch.float32",
+      "elements": 524288,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.9.weight"
+        ]
+      ],
+      "shape": [
+        256,
+        128,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.9.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.10.weight"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "encoder.10.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 12582912,
+      "dtype": "torch.float32",
+      "elements": 3145728,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "projection.1.weight"
+        ]
+      ],
+      "shape": [
+        256,
+        12288
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "projection.1.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 826368,
+      "dtype": "torch.float32",
+      "elements": 206592,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "gru.weight_ih"
+        ]
+      ],
+      "shape": [
+        768,
+        269
+      ]
+    },
+    {
+      "bytes": 786432,
+      "dtype": "torch.float32",
+      "elements": 196608,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "gru.weight_hh"
+        ]
+      ],
+      "shape": [
+        768,
+        256
+      ]
+    },
+    {
+      "bytes": 3072,
+      "dtype": "torch.float32",
+      "elements": 768,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "gru.bias_ih"
+        ]
+      ],
+      "shape": [
+        768
+      ]
+    },
+    {
+      "bytes": 3072,
+      "dtype": "torch.float32",
+      "elements": 768,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "gru.bias_hh"
+        ]
+      ],
+      "shape": [
+        768
+      ]
+    },
+    {
+      "bytes": 262144,
+      "dtype": "torch.float32",
+      "elements": 65536,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "action_head.0.weight"
+        ]
+      ],
+      "shape": [
+        256,
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "action_head.0.bias"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 12288,
+      "dtype": "torch.float32",
+      "elements": 3072,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "action_head.2.weight"
+        ]
+      ],
+      "shape": [
+        12,
+        256
+      ]
+    },
+    {
+      "bytes": 48,
+      "dtype": "torch.float32",
+      "elements": 12,
+      "path": [
+        [
+          "key",
+          "actor"
+        ],
+        [
+          "key",
+          "action_head.2.bias"
+        ]
+      ],
+      "shape": [
+        12
+      ]
+    },
+    {
+      "bytes": 1574912,
+      "dtype": "torch.float32",
+      "elements": 393728,
+      "path": [
+        [
+          "key",
+          "critic"
+        ],
+        [
+          "key",
+          "mlp.0.weight"
+        ]
+      ],
+      "shape": [
+        512,
+        769
+      ]
+    },
+    {
+      "bytes": 2048,
+      "dtype": "torch.float32",
+      "elements": 512,
+      "path": [
+        [
+          "key",
+          "critic"
+        ],
+        [
+          "key",
+          "mlp.0.bias"
+        ]
+      ],
+      "shape": [
+        512
+      ]
+    },
+    {
+      "bytes": 1048576,
+      "dtype": "torch.float32",
+      "elements": 262144,
+      "path": [
+        [
+          "key",
+          "critic"
+        ],
+        [
+          "key",
+          "mlp.2.weight"
+        ]
+      ],
+      "shape": [
+        512,
+        512
+      ]
+    },
+    {
+      "bytes": 2048,
+      "dtype": "torch.float32",
+      "elements": 512,
+      "path": [
+        [
+          "key",
+          "critic"
+        ],
+        [
+          "key",
+          "mlp.2.bias"
+        ]
+      ],
+      "shape": [
+        512
+      ]
+    },
+    {
+      "bytes": 2048,
+      "dtype": "torch.float32",
+      "elements": 512,
+      "path": [
+        [
+          "key",
+          "critic"
+        ],
+        [
+          "key",
+          "mlp.4.weight"
+        ]
+      ],
+      "shape": [
+        1,
+        512
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "critic"
+        ],
+        [
+          "key",
+          "mlp.4.bias"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 5056,
+      "dtype": "torch.uint8",
+      "elements": 5056,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "shuffle_rng"
+        ]
+      ],
+      "shape": [
+        5056
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          0
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 6144,
+      "dtype": "torch.float32",
+      "elements": 1536,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          0
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        32,
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 6144,
+      "dtype": "torch.float32",
+      "elements": 1536,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          0
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        32,
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          1
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 128,
+      "dtype": "torch.float32",
+      "elements": 32,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          1
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        32
+      ]
+    },
+    {
+      "bytes": 128,
+      "dtype": "torch.float32",
+      "elements": 32,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          1
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        32
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          2
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 128,
+      "dtype": "torch.float32",
+      "elements": 32,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          2
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        32
+      ]
+    },
+    {
+      "bytes": 128,
+      "dtype": "torch.float32",
+      "elements": 32,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          2
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        32
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          3
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 128,
+      "dtype": "torch.float32",
+      "elements": 32,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          3
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        32
+      ]
+    },
+    {
+      "bytes": 128,
+      "dtype": "torch.float32",
+      "elements": 32,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          3
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        32
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          4
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 131072,
+      "dtype": "torch.float32",
+      "elements": 32768,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          4
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        64,
+        32,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 131072,
+      "dtype": "torch.float32",
+      "elements": 32768,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          4
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        64,
+        32,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          5
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 256,
+      "dtype": "torch.float32",
+      "elements": 64,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          5
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        64
+      ]
+    },
+    {
+      "bytes": 256,
+      "dtype": "torch.float32",
+      "elements": 64,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          5
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        64
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          6
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 256,
+      "dtype": "torch.float32",
+      "elements": 64,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          6
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        64
+      ]
+    },
+    {
+      "bytes": 256,
+      "dtype": "torch.float32",
+      "elements": 64,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          6
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        64
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          7
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 256,
+      "dtype": "torch.float32",
+      "elements": 64,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          7
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        64
+      ]
+    },
+    {
+      "bytes": 256,
+      "dtype": "torch.float32",
+      "elements": 64,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          7
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        64
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          8
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 524288,
+      "dtype": "torch.float32",
+      "elements": 131072,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          8
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        128,
+        64,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 524288,
+      "dtype": "torch.float32",
+      "elements": 131072,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          8
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        128,
+        64,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          9
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 512,
+      "dtype": "torch.float32",
+      "elements": 128,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          9
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        128
+      ]
+    },
+    {
+      "bytes": 512,
+      "dtype": "torch.float32",
+      "elements": 128,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          9
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        128
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          10
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 512,
+      "dtype": "torch.float32",
+      "elements": 128,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          10
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        128
+      ]
+    },
+    {
+      "bytes": 512,
+      "dtype": "torch.float32",
+      "elements": 128,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          10
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        128
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          11
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 512,
+      "dtype": "torch.float32",
+      "elements": 128,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          11
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        128
+      ]
+    },
+    {
+      "bytes": 512,
+      "dtype": "torch.float32",
+      "elements": 128,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          11
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        128
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          12
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 2097152,
+      "dtype": "torch.float32",
+      "elements": 524288,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          12
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        256,
+        128,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 2097152,
+      "dtype": "torch.float32",
+      "elements": 524288,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          12
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        256,
+        128,
+        4,
+        4
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          13
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          13
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          13
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          14
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          14
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          14
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          15
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          15
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          15
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          16
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 12582912,
+      "dtype": "torch.float32",
+      "elements": 3145728,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          16
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        256,
+        12288
+      ]
+    },
+    {
+      "bytes": 12582912,
+      "dtype": "torch.float32",
+      "elements": 3145728,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          16
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        256,
+        12288
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          17
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          17
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          17
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          18
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 826368,
+      "dtype": "torch.float32",
+      "elements": 206592,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          18
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        768,
+        269
+      ]
+    },
+    {
+      "bytes": 826368,
+      "dtype": "torch.float32",
+      "elements": 206592,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          18
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        768,
+        269
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          19
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 786432,
+      "dtype": "torch.float32",
+      "elements": 196608,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          19
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        768,
+        256
+      ]
+    },
+    {
+      "bytes": 786432,
+      "dtype": "torch.float32",
+      "elements": 196608,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          19
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        768,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          20
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 3072,
+      "dtype": "torch.float32",
+      "elements": 768,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          20
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        768
+      ]
+    },
+    {
+      "bytes": 3072,
+      "dtype": "torch.float32",
+      "elements": 768,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          20
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        768
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          21
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 3072,
+      "dtype": "torch.float32",
+      "elements": 768,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          21
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        768
+      ]
+    },
+    {
+      "bytes": 3072,
+      "dtype": "torch.float32",
+      "elements": 768,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          21
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        768
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          22
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 262144,
+      "dtype": "torch.float32",
+      "elements": 65536,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          22
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        256,
+        256
+      ]
+    },
+    {
+      "bytes": 262144,
+      "dtype": "torch.float32",
+      "elements": 65536,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          22
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        256,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          23
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          23
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 1024,
+      "dtype": "torch.float32",
+      "elements": 256,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          23
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          24
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 12288,
+      "dtype": "torch.float32",
+      "elements": 3072,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          24
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        12,
+        256
+      ]
+    },
+    {
+      "bytes": 12288,
+      "dtype": "torch.float32",
+      "elements": 3072,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          24
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        12,
+        256
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          25
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 48,
+      "dtype": "torch.float32",
+      "elements": 12,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          25
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        12
+      ]
+    },
+    {
+      "bytes": 48,
+      "dtype": "torch.float32",
+      "elements": 12,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "actor_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          25
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        12
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "critic_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          0
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 1574912,
+      "dtype": "torch.float32",
+      "elements": 393728,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "critic_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          0
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        512,
+        769
+      ]
+    },
+    {
+      "bytes": 1574912,
+      "dtype": "torch.float32",
+      "elements": 393728,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "critic_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          0
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        512,
+        769
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "critic_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          1
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 2048,
+      "dtype": "torch.float32",
+      "elements": 512,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "critic_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          1
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        512
+      ]
+    },
+    {
+      "bytes": 2048,
+      "dtype": "torch.float32",
+      "elements": 512,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "critic_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          1
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        512
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "critic_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          2
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 1048576,
+      "dtype": "torch.float32",
+      "elements": 262144,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "critic_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          2
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        512,
+        512
+      ]
+    },
+    {
+      "bytes": 1048576,
+      "dtype": "torch.float32",
+      "elements": 262144,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "critic_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          2
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        512,
+        512
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "critic_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          3
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 2048,
+      "dtype": "torch.float32",
+      "elements": 512,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "critic_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          3
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        512
+      ]
+    },
+    {
+      "bytes": 2048,
+      "dtype": "torch.float32",
+      "elements": 512,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "critic_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          3
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        512
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "critic_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          4
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 2048,
+      "dtype": "torch.float32",
+      "elements": 512,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "critic_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          4
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        1,
+        512
+      ]
+    },
+    {
+      "bytes": 2048,
+      "dtype": "torch.float32",
+      "elements": 512,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "critic_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          4
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        1,
+        512
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "critic_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          5
+        ],
+        [
+          "key",
+          "step"
+        ]
+      ],
+      "shape": []
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "critic_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          5
+        ],
+        [
+          "key",
+          "exp_avg"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 4,
+      "dtype": "torch.float32",
+      "elements": 1,
+      "path": [
+        [
+          "key",
+          "learner"
+        ],
+        [
+          "key",
+          "critic_optimizer"
+        ],
+        [
+          "key",
+          "state"
+        ],
+        [
+          "key",
+          5
+        ],
+        [
+          "key",
+          "exp_avg_sq"
+        ]
+      ],
+      "shape": [
+        1
+      ]
+    },
+    {
+      "bytes": 16,
+      "dtype": "torch.uint8",
+      "elements": 16,
+      "path": [
+        [
+          "key",
+          "streams"
+        ],
+        [
+          "key",
+          "world"
+        ],
+        [
+          "key",
+          "prior"
+        ]
+      ],
+      "shape": [
+        16
+      ]
+    },
+    {
+      "bytes": 16,
+      "dtype": "torch.uint8",
+      "elements": 16,
+      "path": [
+        [
+          "key",
+          "streams"
+        ],
+        [
+          "key",
+          "world"
+        ],
+        [
+          "key",
+          "posterior"
+        ]
+      ],
+      "shape": [
+        16
+      ]
+    },
+    {
+      "bytes": 16,
+      "dtype": "torch.uint8",
+      "elements": 16,
+      "path": [
+        [
+          "key",
+          "streams"
+        ],
+        [
+          "key",
+          "world"
+        ],
+        [
+          "key",
+          "outcome"
+        ]
+      ],
+      "shape": [
+        16
+      ]
+    },
+    {
+      "bytes": 16,
+      "dtype": "torch.uint8",
+      "elements": 16,
+      "path": [
+        [
+          "key",
+          "streams"
+        ],
+        [
+          "key",
+          "actors"
+        ],
+        [
+          "key",
+          "0"
+        ]
+      ],
+      "shape": [
+        16
+      ]
+    },
+    {
+      "bytes": 16,
+      "dtype": "torch.uint8",
+      "elements": 16,
+      "path": [
+        [
+          "key",
+          "streams"
+        ],
+        [
+          "key",
+          "actors"
+        ],
+        [
+          "key",
+          "1"
+        ]
+      ],
+      "shape": [
+        16
+      ]
+    }
+  ]
+}
