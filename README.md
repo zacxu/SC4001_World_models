@@ -1,6 +1,6 @@
 # Shared Imagination and Policy Distillation for Decentralized Visual Cooperation
 
-**SC4001 Deep Learning Research Project· Xu Zixuan, Chong Bo Yu and Chew Yee Chen**
+**SC4001 Deep Learning Research Project: Xu Zixuan, Chong Bo Yu and Chew Yee Chen**
 
 [Read our written paper (PDF)](SC4001%20Initial%20Draft.pdf) 
 
