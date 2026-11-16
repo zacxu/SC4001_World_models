@@ -1,8 +1,5 @@
 # Shared imagination for decentralized cooperation
 
-**Completed study:** [final paper](paper/research_paper_draft.md),
-[claim audit](paper/claim_evidence.md), and [local P6.3 verification](docs/phase63_paper.md).
-
 The project compares direct local MAPPO learning in a shared Transformer world
 model (**B**) with teacher learning, action distillation, and local refinement in
 the same framework (**D**). Both deploy two actors using only their own visual
