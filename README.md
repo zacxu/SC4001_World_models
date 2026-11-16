@@ -1,9 +1,7 @@
 # Shared imagination for decentralized cooperation
 
-**Completed reduced study (14 November 2026):** [final paper](paper/research_paper_draft.md),
+**Completed study:** [final paper](paper/research_paper_draft.md),
 [claim audit](paper/claim_evidence.md), and [local P6.3 verification](docs/phase63_paper.md).
-Four matched Relay actors completed evaluation; all had 0/20 successes. Final
-study/report acceptance does not establish successful teacher transfer.
 
 The project compares direct local MAPPO learning in a shared Transformer world
 model (**B**) with teacher learning, action distillation, and local refinement in
@@ -14,7 +12,7 @@ Start with the [approved proposal](research_implementation_proposal.md),
 [detailed plan](detailed_research_implementation_plan.md),
 [research contract](docs/research_contract.md), and [runbook](docs/runbook.md).
 
-**Active four-day plan (2026-11-11):** Relay, seeds 0/1, B/D (four fresh runs),
+**Plan:** Relay, seeds 0/1, B/D (four fresh runs),
 frozen 50k initial data and 4,500-update models, 20 local PPO cycles per arm.
 D adds 25 teacher cycles, 128 distillation trajectories and 100 supervised
 updates. Final evaluation is 20 test episodes per actor. No online training
@@ -288,23 +286,6 @@ All **93 synthetic CPU checks passed**, with zero failures/errors/skips;
 see the [implementation proof](artifacts/phase6162/implementation_v1/implementation_checks.json).
 The earlier 296 scientific and 17 reporting source files remain unchanged.
 
-The shortened-checkpoint workflow has [historical CPU verification and a saved-checkpoint
-audit](artifacts/shortened_pilot_checks/README.md). The latest server P2.5 screen
-is synchronized; native learned-policy acceptance remains pending. Changes to
-the one-week policy profile require current implementation checks before execution.
-The amended runtime has [current CPU verification and read-only checkpoint/budget
-evidence](artifacts/relay_week_checks/README.md).
-
-Preserve `configs/base.yaml` and the original task/variant/experiment files:
-saved P2.4 checkpoints bind their exact contents. The prior online development budget
-is the separate [study amendment](configs/studies/relay_week_v1.yaml), selected
-with `--profile pilot --study-profile relay_week_v1 --initial-selection ...`.
-It validates the original checkpoint configuration, records amended budgets,
-and rejects changed identities on resume. Original pilot/final schedules remain
-available for historical runs; do not convert an existing run to the new schedule.
-P4.1 uses its own fixed teacher-stage registration. The four-day profile now has
-an integrated D launcher and P5.2 adds the matched B launcher. The additive
-Phase 5 entry points provide the final endpoint pipeline and prospective freeze.
 
 The importable code uses the standard `src/world_models/` package layout; the
 submodules follow the detailed plan's environment/data/model/policy/training/
