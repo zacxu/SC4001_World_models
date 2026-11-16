@@ -1,289 +1,272 @@
-# Shared imagination for decentralized cooperation
+# Shared Imagination and Policy Distillation for Decentralized Visual Cooperation
 
-The project compares direct local MAPPO learning in a shared Transformer world
-model (**B**) with teacher learning, action distillation, and local refinement in
-the same framework (**D**). Both deploy two actors using only their own visual
-observations, previous actions, and separate recurrent memories.
+**SC4001 research project · Group 180 · Xu Zixuan, Chong Bo Yu and Chew Yee Chen**
 
-Start with the [approved proposal](research_implementation_proposal.md),
-[detailed plan](detailed_research_implementation_plan.md),
-[research contract](docs/research_contract.md), and [runbook](docs/runbook.md).
+[Read the written paper (PDF)](SC4001%20Initial%20Draft.pdf) ·
+[Study configuration](configs/studies/relay_four_day_v1.yaml) ·
+[Experimental protocol](configs/studies/relay_endpoint_protocol_v1.yaml) ·
+[Training and evaluation guide](docs/phase5_study.md)
 
-**Plan:** Relay, seeds 0/1, B/D (four fresh runs),
-frozen 50k initial data and 4,500-update models, 20 local PPO cycles per arm.
-D adds 25 teacher cycles, 128 distillation trajectories and 100 supervised
-updates. Final evaluation is 20 test episodes per actor. No online training
-collection or model refresh is planned. P4.1's teacher, P4.2's distillation and
-P4.3's unguided local refinement and P4.4's integrated D controller are implemented;
-P5.2 supplies the matched reduced B controller and fresh D adapter. P5.3-P5.5
-now supply accounting, final testing, paired analysis and a separate prospective
-cohort freeze. Start with the [Phase 5 guide](docs/phase5_study.md); research
-training and final test execution remain operator-controlled.
-The old `relay_week_v1` configuration retains its historical online schedule.
+This project investigates whether a teacher with access to joint world-model
+representations can improve cooperation between agents that must act from local
+visual observations. We implement a shared stochastic Transformer world model,
+recurrent decentralized policies, imagined multi-agent PPO, and teacher-to-student
+action-distribution distillation in a custom two-player ViZDoom environment.
 
-Both latest Relay P2.5 screens are ready for exploratory Phase 3; the complete
-four-model campaign still needs review because of Cover. Preserve and finish
-the existing [B development check](docs/phase36_acceptance.md) in its original
-checkout before synchronizing new source. The [P4.1 guide](docs/phase41_teacher.md)
-provides verification and operator-controlled teacher training. Freeze all
-cohort sources before preparing comparative runs. See the
-[section-by-section reduction and four-day allocation](detailed_research_implementation_plan.md).
+**The reduced study is complete.** In the completed Relay comparison, distillation
+improved agreement with the teacher on its training buffers, but neither method
+achieved native task success. The results support an exploratory negative finding
+under the tested configuration; successful transfer remains unestablished.
 
-Phase 0 implements configuration, contracts, seed derivation, inventory, and
-verification; its record is [artifacts/phase0_acceptance.json](artifacts/phase0_acceptance.json).
-Phase 1's complete environment interface and acceptance campaign are documented
-in the [P1.5-P1.7 runbook](docs/phase1_complete.md), with a versioned
-[target registry](configs/privileged_registry_v1.json),
-[geometry splits](configs/environment_splits.yaml), and measured
-[phase1_acceptance.json](artifacts/phase1_complete/phase1_acceptance.json).
-The [readable results](artifacts/phase1_complete/README.md) include replay,
-10,000-decision/100-reset checks, native mechanics videos and collector selection.
+## Research question
 
-Phase 1's first step implements P1.1–P1.4: the live two-player coordinator, local
-visual/action adapters, relay, and cover-and-activate mechanics. See the
-[implementation and commands](docs/phase1_steps1_4.md) and its generated
-[verification report](artifacts/phase1_requested_fixes/acceptance.json).
-The revised mechanics include visible extraction cues, unrestricted console
-roles, moving persistent enemies, paired fire/no-fire diagnostics, durable
-wrapper recovery, and explicit IWAD/port handling. Earlier evidence is archived
-under `artifacts/phase1_steps1_4/before_requested_fixes/`.
+> With fixed real replay, a shared frozen world model and matched local PPO
+> budgets, does a teacher-distilled initialization improve final native
+> cooperation over direct local learning in imagination?
 
-## Set up on Windows PowerShell
+The work brings together three research components:
 
-From this project directory:
+- **Shared imagination:** both agents' trajectories are generated from one
+  shared stochastic world state.
+- **Strict decentralized execution:** each deployed actor uses only its own RGB
+  observations, previous actions and separate recurrent memory.
+- **Controlled teacher transfer:** paired runs isolate the complete teacher-training
+  and distillation procedure as an addition to a common local-learning budget,
+  while recording its extra computation.
 
-```powershell
-python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements-phase0.lock
-.\.venv\Scripts\python.exe -m pip install --no-build-isolation -e .
-.\.venv\Scripts\python.exe -m scripts.phase0 check --output artifacts/phase0_acceptance.json
+The completed experiment measures final performance at one fixed data budget.
+It does not measure an online sample-efficiency learning curve.
+
+## Methods
+
+| | B: direct local learning | D: teacher-guided initialization |
+|---|---|---|
+| Initial replay and world model | Shared within each seed pair | Same as B |
+| Policy initialization | Paired local actor and critic parameters | Same initial local parameters as B |
+| Before local PPO | No teacher stage | Train a joint-context teacher, then distill its action distributions |
+| Local policy learning | Recurrent MAPPO in imagination | The same local PPO budget after distillation |
+| Inputs at deployment | Own RGB, previous action and local recurrent state | Identical restrictions |
+
+The world model learns from synchronized joint transitions. Real replay prefixes
+reconstruct model and actor states before short autonomous imagined rollouts.
+Local CNN/GRU actors train with a centralized critic; the critic and world model
+are absent from deployed actor inputs.
+
+D's teacher can attend to joint latent tokens inferred from visual histories.
+This is training-only model context, rather than direct access to true simulator
+state. Forward-KL distillation transfers the teacher's action probabilities to
+local students. Subsequent local PPO uses fresh optimizers, with no teacher
+queries, continuing teacher loss or guidance-decay schedule.
+
+```mermaid
+flowchart LR
+    R["Paired real replay"] --> W["Frozen shared world model"]
+    W --> B["B: local imagined MAPPO"]
+    W --> T["D: joint-context teacher"]
+    T --> K["Action-distribution distillation"]
+    K --> D["D: local imagined MAPPO"]
+    W --> D
+    B --> E["Local actors evaluated in native ViZDoom"]
+    D --> E
 ```
 
-## Set up on Linux
+## Environment and completed experiment
 
-For the current GPU server at `/home/zixuan/projects/WM1`, follow the
-[WinSCP transfer and server setup guide](linux_gpu_server_setup.md), then
-[P2.5 validation](docs/phase25_validation.md). Choose available GPUs with
-`CUDA_VISIBLE_DEVICES` and use tmux for persistent execution. The
-[ASPIRE2A guide](linux_gpu_server_setup_through_p23.md) is retained for the previous
-cluster. The commands below provide the generic Phase 0 setup.
+**Relay** is a project-authored cooperative ViZDoom scenario: the two players
+must coordinate pressure-plate and gate mechanics, activate a latch, and reach
+extraction alive within a 400-joint-decision episode. The repository also implements
+**Cover**, a combat-and-console task used in earlier data collection and model
+diagnostics. Cover is outside the final B-versus-D policy comparison.
+
+| Experimental choice | Completed protocol |
+|---|---|
+| Task and training seeds | Relay; seeds 0 and 1 |
+| Comparative runs | B and D for each seed: four runs |
+| Initial real replay | 50,000 synchronized joint transitions per seed, reused by B and D |
+| Replay split | Deterministic 90%/10% episode split for fitting and diagnostics |
+| Initial world-model fit | 4,500 optimizer updates per Relay model |
+| Model and replay during policy training | Frozen; no new real training collection or model updates |
+| Local PPO budget | 20 cycles per run; 320 actor and 320 critic optimizer steps |
+| Imagination | 256 starts per cycle; maximum horizon of 15 joint steps |
+| Additional D stages | 25 teacher PPO cycles, 128 distillation trajectories, 100 supervised updates |
+| Final native evaluation | 20 episodes per actor: 10 on each of two held-out test layouts |
+| Primary outcome | Final team success rate; descriptive paired differences |
+
+A joint transition advances both players together and is counted once.
+The replay split is by episode, so its transition proportions need not be
+exactly 90%/10%. Model diagnostics on training geometry are separate from native
+evaluation on held-out layouts.
+
+The [fixed-data configuration](configs/studies/relay_four_day_v1.yaml) and
+[endpoint protocol](configs/studies/relay_endpoint_protocol_v1.yaml) define this
+comparison. Earlier online development schedules are retained as historical
+configurations and are not part of these four runs.
+
+## Results
+
+All four actors completed their registered training schedules and native test
+banks. Across all 80 evaluation episodes, every episode reached the deadline;
+no actor activated the latch or completed Relay.
+
+| Method | Seed | Successes | Episodes with latch activation | Mean return | Mean episode length |
+|---|---:|---:|---:|---:|---:|
+| B | 0 | 0/20 | 0/20 | -1.40 | 400 joint decisions |
+| D | 0 | 0/20 | 0/20 | -1.40 | 400 joint decisions |
+| B | 1 | 0/20 | 0/20 | -1.40 | 400 joint decisions |
+| D | 1 | 0/20 | 0/20 | -1.40 | 400 joint decisions |
+
+Distillation did optimize its supervised objective:
+
+| D run | Training-buffer forward KL before | After 100 updates |
+|---|---:|---:|
+| Seed 0 | 0.3384 | 0.0133 |
+| Seed 1 | 0.3525 | 0.0174 |
+
+These measurements use the same teacher buffers before and after distillation.
+They do not establish held-out imitation, retained teacher agreement after PPO,
+or successful real-environment behavior.
+
+| Run | Generated imagined joint steps | Recorded training-unit elapsed hours |
+|---|---:|---:|
+| B, seed 0 | 75,125 | 2.427 |
+| D, seed 0 | 165,710 | 4.265 |
+| B, seed 1 | 75,516 | 2.475 |
+| D, seed 1 | 164,097 | 4.326 |
+
+The total is **480,448 imagined joint steps**. D's counts include teacher rollouts
+and distillation-buffer generation as well as local PPO. Recorded durations are
+sums of elapsed training units, not measured GPU occupancy or total campaign
+wall time.
+
+### Interpretation and limitations
+
+The observed D-minus-B differences in success, return and latch rate are zero
+for both seeds. A common performance floor with two training seeds does not
+establish equivalence or show that teacher guidance is generally ineffective.
+
+The main limits are:
+
+- One final task family selected after model diagnostics, two reused development
+  seeds and two authored test layouts.
+- Incomplete formal world-model qualification; image prediction alone does not
+  establish reliable action effects, rewards or terminal events.
+- No native teacher-competence benchmark or held-out imitation evaluation.
+- Additional teacher computation in D: local PPO is matched, total compute is not.
+- No component ablation that identifies the cause of failure.
+- A single final evaluation budget, with no demonstrated sample-efficiency gain.
+
+The completed study distinguishes implementation and evidence completeness from
+learned competence. Earlier development runs and Cover diagnostics remain
+separate from the comparative results.
+
+## Written paper
+
+**[Shared Imagination and Policy Distillation for Decentralized Visual Cooperation — PDF](SC4001%20Initial%20Draft.pdf)**
+
+Authors: Xu Zixuan, Chong Bo Yu and Chew Yee Chen.
+
+The linked document is the team's **initial written draft**, not a peer-reviewed
+publication. The protocol and result summary above describe the completed reduced
+study; the draft remains subject to revision.
+
+## Repository guide
+
+| Location | Contents |
+|---|---|
+| [`src/world_models/`](src/world_models/) | Environment interfaces, replay, world model, policies and core training |
+| [`src/world_models_campaign/`](src/world_models_campaign/) | Integrated teacher, distillation and refinement controller |
+| [`src/world_models_paired/`](src/world_models_paired/) | Matched B/D training support |
+| [`src/world_models_study/`](src/world_models_study/) | Static protocol, input binding and test-bank registration |
+| [`src/world_models_endpoint/`](src/world_models_endpoint/) | Frozen cohort orchestration, accounting, final evaluation and paired analysis |
+| [`src/world_models_acceptance/`](src/world_models_acceptance/) | Phase 4 integration and local-deployment engineering checks |
+| [`scenarios/`](scenarios/) | Authored Relay/Cover scenario sources and probes |
+| [`configs/`](configs/) | Architectures, task geometry, seeds and study protocols |
+| [`scripts/`](scripts/) | Phase-specific command-line entry points |
+| [`tests/`](tests/) | Unit and integration checks |
+| [`study_reporting/`](study_reporting/) | Saved-result diagnostics, accounting, figures and cohort-completion checks |
+| [`study_release/`](study_release/) | Trace review, packaging and saved-record reproduction |
+| [`study_paper/`](study_paper/) | Manuscript tables and claim-to-evidence checks |
+| [`docs/`](docs/) | Architecture descriptions and operator guides |
+| [`artifacts/README.md`](artifacts/README.md) | Model, dataset and research-archive inclusion policy |
+
+## Setup and reproduction
+
+Use **Python 3.12** for the recorded development stack. Run commands from the
+repository root. The following prepares the lightweight configuration and
+infrastructure checks.
+
+**Linux / Bash**
 
 ```bash
-python3 -m venv .venv
-.venv/bin/python -m pip install -r requirements-phase0.lock
-.venv/bin/python -m pip install --no-build-isolation -e .
-.venv/bin/python -m scripts.phase0 check --output artifacts/phase0_acceptance.json
+python3.12 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements-phase0.lock
+python -m pip install --no-build-isolation -e .
+python -m scripts.phase0 check --output artifacts/local_check/phase0_acceptance.json
 ```
 
-For the implemented Phase 1 environment, use the tested Python 3.12 stack.
-After creating the virtual environment, install its complete dependency lock and
-scenario compiler:
+**Windows / PowerShell**
 
 ```powershell
-.\.venv\Scripts\python.exe -m pip install -r requirements-phase1.lock
+py -3.12 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements-phase0.lock
 .\.venv\Scripts\python.exe -m pip install --no-build-isolation -e .
-.\.venv\Scripts\python.exe -m scripts.bootstrap_acc
+.\.venv\Scripts\python.exe -m scripts.phase0 check --output artifacts/local_check/phase0_acceptance.json
 ```
 
-See [the artifact policy and fresh-clone checks](artifacts/README.md) for which
-reports are versioned and how to regenerate the excluded raw outputs.
+Additional dependencies are separated by purpose:
 
-**P2.1 is completed for the approved pilot scope:** relay and cover, seeds 0 and 1,
-with four shared 50,000-transition stores. See the [measured results and acceptance](artifacts/phase21/README.md)
-and [real replay runbook](docs/phase21_replay.md). World-model and policy training
-remain later steps. Raw data stays outside Git; preserve a separate verified backup.
+| Work | Dependency file / guide |
+|---|---|
+| Native ViZDoom environment and scenario compiler | [Phase 1 dependencies](requirements-phase1.lock) and [environment guide](docs/phase1_complete.md) |
+| Model/policy implementation checks on CPU | [CPU dependency lock](requirements-phase2-cpu.lock) |
+| Linux GPU training | [GPU dependency recipe](requirements-linux-gpu.txt); its pinned CUDA wheel requires a compatible driver/runtime |
+| Saved-results reporting and packaging | [Reporting dependencies](study_reporting/requirements.txt) and [release dependencies](study_release/requirements.txt) |
 
-**P2.2 is completed:** the shared stochastic Transformer architecture, visual
-encoder/decoder, supervised heads, and prior-only imagination interface are
-implemented and verified. See the [architecture and API](docs/phase22_architecture.md)
-and [verification report](artifacts/phase22/phase22_acceptance.json).
-These checks used untrained models. Trained predictive quality is assessed
-after the server's P2.4 fit.
+For research execution, follow the existing guides in order:
 
-**P2.3 is completed:** the reduced model objective, fitting-only normalization,
-and loss/gradient/event diagnostics are implemented and verified. See the
-[objectives and usage](docs/phase23_objectives.md) and
-[verification report](artifacts/phase23/phase23_acceptance.json).
-The four frozen pilot normalization files are shared by B/D within each
-task/seed pair.
+1. [Replay collection](docs/phase21_replay.md), [model fitting/selection](docs/phase24_training.md) and [model diagnostics](docs/phase25_validation.md).
+2. [Protocol registration](docs/phase51_protocol.md), then [paired training and final evaluation](docs/phase5_study.md).
+3. [Result reporting and accounting](docs/phase5_completion.md).
+4. [Diagnosis, release packaging and saved-record reproduction](docs/phase6_release.md).
 
-**P2.4 implementation is completed; initial fitting is shortened for the pilot.** Recurrent
-sampling/burn-in, exact microbatch accumulation, AdamW fitting, checkpoint/resume,
-held-out diagnostics, validation banks and branch refresh are implemented.
-On 2026-11-08 the user approved using the latest committed checkpoints instead
-of waiting for the original 5,000-update target. Freeze all four selections with
-`scripts.phase24_freeze`; preserve actual counts and use identical weights for
-B/D within each task/seed. See the [selection runbook](docs/phase24_training.md)
-and [original implementation evidence](artifacts/phase24/README.md). The earlier
-two-GPU training script now refuses to start by default.
+The operator guides retain historical server paths and expected artifact
+locations. Adapt paths to your environment and restore the required inputs before
+execution. Core checks do not launch research training. Model/policy training
+uses the GPU environment; the completed study's native endpoint evaluation ran
+on CPU, and saved-record reporting needs no GPU.
 
-**P2.5 uses a compact pilot engineering gate:** screen the four shared initial
-models from the frozen P2.4 selection once each, with up to 64 windows per
-model. Prior-only rollouts provide 1/5/10/15-step diagnostics and simple baseline
-comparisons. See the [compact validation guide](docs/phase25_validation.md).
-The campaign's `pilot_model_selection.json` records four explicit checkpoint
-identities, actual update counts and provisional readiness, and binds the same
-P2.4 selection used by Phase 3. Counts may differ across cases in this shortened
-pilot; within-case B/D pairing is unchanged.
-Readiness for a small Phase 3 pilot is separate from formal P2.5 acceptance;
-training-geometry diagnostic episodes do not establish held-out geometry or
-final-test performance. No trained-model acceptance result is claimed here.
+### Available files and reproduction boundary
 
-**P3.1 is implemented:** the shared local CNN/GRU actor and centralized team critic,
-paired B/D initialization, raw Huber value loss and strict local deployment API.
-See [the policy interfaces and CPU checks](docs/phase31_policy.md) and
-[implementation evidence](artifacts/phase31/implementation_v1/implementation_checks.json).
-Research policy training and trained-policy acceptance remain pending.
+Source, tests, configurations, dependency files and the linked written paper are
+intended for the repository. Model weights and checkpoints are configured for
+**Git LFS**; a weights download requires the corresponding LFS objects. For a
+source-only clone, Git LFS supports skipping automatic model downloads with
+`GIT_LFS_SKIP_SMUDGE=1`.
 
-**P3.2 is implemented:** fitting-replay imagination anchors, full-prefix world
-posterior and local actor memory reconstruction, and automatic cache invalidation
-after parameter changes. See [the anchor API and CPU checks](docs/phase32_anchors.md)
-and [implementation evidence](artifacts/phase32/implementation_v1/implementation_checks.json).
+**Datasets are excluded**, including real replay and synthetic distillation
+buffers. Generated research reports, evaluation records, working manuscripts
+and sealed releases also remain outside Git. The root written-paper PDF is the
+explicit exception to the working-paper exclusion.
 
-**P3.3 is implemented:** frozen on-policy imagined trajectories with independent
-action streams, exact stopping/bootstrap masks and separate receipt-bound
-synthetic buffers. See [the rollout API and local checks](docs/phase33_rollouts.md)
-and [implementation evidence](artifacts/phase33/implementation_v1/implementation_checks.json).
+Consequently, a source/LFS clone is not the complete experiment archive.
+Retraining requires the original replay, selected checkpoints, normalization
+and registration metadata, or a separately registered fresh collection.
+Reproducing the original tables and figures requires the saved evaluation
+records and sealed release. Preserve their manifests and SHA-256 receipts.
+The saved-record workflow reproduces six CSV tables and two figures without
+retraining or opening the simulator.
 
-**P3.4 is implemented:** recurrent local MAPPO with full current-policy prefix
-replay, raw GAE/critic returns, individual player PPO ratios and complete fixed
-optimizer schedules. See [the update API and CPU checks](docs/phase34_mappo.md)
-and [implementation evidence](artifacts/phase34/implementation_v1/implementation_checks.json).
+## Citation
 
-**P3.5 is implemented:** variant B's real collection, model refresh and imagined
-PPO controller, with exact budgets, completed-block checkpoints, actor exports
-and safe stop/resume. See [the GPU server training guide](docs/phase35_training.md)
-and [CPU implementation evidence](artifacts/phase35/implementation_v1/implementation_checks.json).
-Development training has run; P3.6 acceptance and the complete D treatment remain unresolved.
+If referring to this project or its draft, a suggested citation is:
 
-**P3.6 is implemented:** invariant verification, a small synthetic PPO learning
-check, local-actor evaluation in native ViZDoom and an evidence-based acceptance
-report. See [the acceptance guide](docs/phase36_acceptance.md). CPU engineering
-evidence is recorded locally; actual policy acceptance requires paired untrained/
-trained actor evaluations from the server. The synchronized initial development
-check is `needs_review`; B-versus-D efficacy has not been measured.
-
-**P4.1 is implemented:** the globally informed teacher, full-prefix teacher
-imagination and recurrent PPO, with strict local memory and frozen world-model
-weights. Its standalone runner checkpoints every cycle and supports safe
-stop/resume. [All 249 CPU implementation checks passed](artifacts/phase41/implementation_v1/implementation_checks.json).
-See [teacher verification and Linux training commands](docs/phase41_teacher.md).
-Research teacher training is left to the operator.
-
-**P4.2 is implemented:** a receipt-verified completed teacher supplies 128 fixed
-trajectories for 100 student-only forward-KL updates. The paired student critic,
-teacher and world model stay frozen. The separate runner checkpoints every
-trajectory/update and records before/after training-buffer diagnostics. See
-[distillation verification and Linux commands](docs/phase42_distillation.md).
-The [CPU verification report](artifacts/phase42/implementation_v1/implementation_checks.json)
-records 292 passing tests with zero failures, errors or skips at its original
-source snapshot. The [device-handoff correction](artifacts/phase42/device_handoff_fix_v1/implementation_checks.json)
-adds CUDA-origin identity and checkpoint-based initial-weight checks; the
-[saved-teacher audit](artifacts/phase42/device_handoff_fix_v1/saved_teacher_audit.json)
-verifies the completed Relay seed-0 teacher's original hashes. All 32 focused
-regression checks passed; GPU execution itself remains operator-controlled.
-Keep the active P4.1 server checkout unchanged until its final handoff is saved.
-P4.5 now supplies the separate engineering gate; no research distillation was
-run by the CPU implementation checks.
-
-**P4.3 is implemented:** the completed P4.2 actor and original paired critic
-start 20 ordinary local PPO cycles with fresh optimizers, producing 320 actor
-and 320 critic optimizer steps. Every rollout uses the current local student;
-teacher queries and teacher KL stay zero, with data/model/normalization frozen.
-Each cycle commits optimizer, sampling and counter state for safe stop/resume.
-Completion publishes a checkpoint-bound student handoff and actor-only export.
-See [verification, training and resume commands](docs/phase43_refinement.md) and
-the [CPU implementation checks](artifacts/phase43/implementation_v1/implementation_checks.json).
-All **225 tests passed**, with zero failures, errors or skips.
-Research refinement and native evaluation remain operator-controlled. This
-standalone stage does not complete the integrated D controller or acceptance gate.
-
-**P4.4 is implemented:** the [fixed-data registration](configs/studies/relay_four_day_v1.yaml)
-and separate `world_models_campaign` controller connect all four D stages,
-preserving the existing P4.1-P4.3 source hashes. Fresh runs save paired local
-initial values before teacher training. Resume reconciles committed child work
-before training again; completion publishes accounting and a local-only actor.
-Your current P4.3 run can finish unchanged and then be registered with `adopt`
-without repeating optimization, explicitly marked as development history.
-See [Linux commands and completed-run registration](docs/phase44_integration.md)
-and the [CPU implementation checks](artifacts/phase44/implementation_v1/implementation_checks.json).
-All **87 tests passed**, with zero failures, errors or skips.
-Training is operator-controlled; trained-run acceptance remains a separate audit.
-P5.2 supplies reduced B execution tools and P5.3-P5.5 provide the endpoint pipeline.
-
-**P4.5 is implemented:** [CPU verification and completed-run acceptance](docs/phase45_acceptance.md)
-combine eight named invariant groups, a tiny complete D smoke fixture, a read-only
-checkpoint/optimizer/RNG/input audit and isolated actor-only deployment. The
-new acceptance package preserves the running P4.4 source identity. Reports
-include training-buffer KL/entropy, teacher/local progression and accounting.
-See the [implementation checks](artifacts/phase45/implementation_v1/implementation_checks.json).
-All **82 tests passed**, with zero failures, errors or skips; all eight named
-requirements passed and verification sources remained unchanged.
-Run `verify` while training continues, then `accept` after P4.4 completes.
-Engineering acceptance does not establish transfer benefit or cohort eligibility;
-the separate Phase 5 freeze and real endpoint results remain required.
-
-**P5.1 is implemented:** [protocol registration guide](docs/phase51_protocol.md)
-provides static CPU `plan`, `verify`, `register` and `inspect` commands. The new
-[`relay_endpoint_protocol_v1`](configs/studies/relay_endpoint_protocol_v1.yaml)
-binds the unchanged P4.4 amendment, paired seeds, fixed inputs, exact stage/compute
-budgets, 20 final test episodes, descriptive analysis and retry policies.
-Receipt-bound registration freezes these choices with `candidate_only: true`;
-`execution_ready` and `cohort_frozen` retain their original false values. The
-additive Phase 5 freeze creates a distinct executable cohort. Existing D runs
-retain their historical provenance. No training or test episodes are launched.
-See the [static implementation checks](artifacts/phase51/implementation_v1/implementation_checks.json).
-All **44 CPU checks passed**, with zero failures, errors or skips and unchanged
-verification sources. Training and research evaluation remain operator-controlled.
-
-**P5.2 is implemented:** [paired training guide](docs/phase52_training.md)
-provides matched fresh B initialization, 20 local PPO cycles, a fresh-only D
-adapter, four receipt-bound candidate slots, durable progress and safe stop/resume.
-The separate package preserves historical source hashes and registered profiles.
-Use the new Phase 5 verification and prospective freeze before comparative
-training. Explicit development candidates retain their own chronology and
-eligibility limits. Training and real test evaluation remain operator-controlled.
-All **52 CPU checks passed**, with zero failures/errors/skips and unchanged
-sources; see the [implementation evidence](artifacts/phase52/implementation_v1/implementation_checks.json).
-
-**P5.3-P5.5 are implemented:** the [complete operator guide](docs/phase5_study.md)
-connects source-bound verification, a fresh four-run cohort, safe preparation
-and continuation, cumulative physical/logical ledgers, one 20-episode test bank
-per final actor, and receipt-bound descriptive paired tables. The evaluator
-loads only the local actor and refuses intermediate or incomplete cohorts;
-analysis rejects missing, duplicated, mismatched or fixture evidence. Existing
-P5.1/P5.2 registrations remain unchanged parents. Implementation checks use CPU
-fixtures; they establish neither research completion nor transfer benefit.
-See the [combined evidence](artifacts/phase535455/implementation_v1/implementation_checks.json).
-All **186 CPU checks passed**, with zero failures/errors/skips, including the
-complete four-arm synthetic pipeline; all 279 original P5.2 source files are
-unchanged. No research training or native test evaluation was executed.
-
-**P5.6-P5.8 are implemented:** the [server completion guide](docs/phase5_completion.md)
-summarizes saved secondary diagnostics and actual resource accounting, renders
-two endpoint/compute figures and authenticates final execution completeness.
-The root-level `study_reporting` package preserves the existing cohort's exact
-296-file source freeze and adds its own independent source-bound checks.
-Run its completion commands on the original Linux server CPU after the final
-episodes; no further training or native evaluation is started. Missing resource
-measurements remain explicit unknowns, and zero/negative outcomes are valid.
-All **121 synthetic CPU checks passed**, with zero failures/errors/skips;
-see the [reporting implementation evidence](artifacts/phase565758/implementation_v1/implementation_checks.json).
-Actual scientific reporting and figure rendering remain server-side steps.
-
-**P6.1-P6.2 are implemented:** the [server diagnosis/release guide](docs/phase6_release.md)
-reviews a fixed sample of saved native traces and packages sources, local actors,
-records, ledgers, tables and figures. Large binary archives remain indexed on the
-original server. A relocatable CPU command recreates all six tables and two
-figures from the sealed release, with no simulator, Torch weight loading or
-training. The independent `study_release` package preserves both earlier source
-freezes. Scientific diagnosis/packaging remain operator-run; P6.3's manuscript
-and full Phase 6 acceptance remain outstanding.
-All **93 synthetic CPU checks passed**, with zero failures/errors/skips;
-see the [implementation proof](artifacts/phase6162/implementation_v1/implementation_checks.json).
-The earlier 296 scientific and 17 reporting source files remain unchanged.
-
-
-The importable code uses the standard `src/world_models/` package layout; the
-submodules follow the detailed plan's environment/data/model/policy/training/
-evaluation/infrastructure separation. The tests use Python's built-in unittest.
+```bibtex
+@misc{xu2026sharedimagination,
+  title        = {Shared Imagination and Policy Distillation for Decentralized Visual Cooperation},
+  author       = {Xu, Zixuan and Chong, Bo Yu and Chew, Yee Chen},
+  year         = {2026},
+  howpublished = {SC4001 research project, initial draft},
+  url          = {https://github.com/zacxu/SC4001_World_models}
+}
+```

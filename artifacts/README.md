@@ -1,7 +1,9 @@
 # Model artifacts in Git
 
 Source code, tests, configs, dependency locks and ordinary project documentation
-remain versioned. Papers and research reports stay local: the root `.gitignore`
+remain versioned. The explicitly included written paper is
+[SC4001 Initial Draft.pdf](../SC4001%20Initial%20Draft.pdf). Other working papers
+and research reports stay local: the root `.gitignore`
 excludes `paper/`, `papers/`, `reports/`, `research_reports/`, `results/`, and
 artifact outputs except for model files and their required operational metadata.
 
@@ -9,7 +11,8 @@ Model weights/checkpoints use Git LFS through `.gitattributes`. The model
 exceptions include adjacent checkpoint/export manifests and SHA receipts,
 run/launch configuration, selected-checkpoint metadata and normalization
 statistics. Generated acceptance reports, metrics, native evaluation records,
-analysis tables/figures, paper PDFs and saved research releases are excluded.
+analysis tables/figures, generated paper PDFs and saved research releases are
+excluded. The linked root draft PDF is separate from those generated outputs.
 
 Datasets are also excluded, including root `data/`, nested real replay, NumPy
 archives and synthetic distillation buffers. Buffer trajectory `state.pt` files
